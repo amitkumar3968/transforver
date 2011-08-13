@@ -1,0 +1,104 @@
+TNavTab
+v7
+r1
+cCheck dependencies
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/FavoritesTabView.xib
+c000000004BA34ADE0000000000001C34
+t1268992734
+s7220
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/MainWindow.xib
+c000000004BA34ADE0000000000002A14
+t1268992734
+s10772
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/MoreOptionView.xib
+c000000004BA34ADE0000000000001E2F
+t1268992734
+s7727
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/MoreTabView.xib
+c000000004BA34ADE0000000000001F77
+t1268992734
+s8055
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/RootViewController.xib
+c000000004BA34ADE0000000000001E02
+t1268992734
+s7682
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/TabViewController.xib
+c000000004BA34ADE000000000000279C
+t1268992734
+s10140
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug/NavTab.app
+t2
+s0
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug/NavTab.app/Contents/Info.plist
+t2
+s0
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug/NavTab.app/Contents/PkgInfo
+t2
+s0
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug/NavTab.app/Contents/Resources/FavoritesTabView.nib
+t2
+s0
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug/NavTab.app/Contents/Resources/MainWindow.nib
+t2
+s0
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug/NavTab.app/Contents/Resources/MoreOptionView.nib
+t2
+s0
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug/NavTab.app/Contents/Resources/MoreTabView.nib
+t2
+s0
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug/NavTab.app/Contents/Resources/RootViewController.nib
+t2
+s0
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug/NavTab.app/Contents/Resources/TabViewController.nib
+t2
+s0
+
+NInfo.plist
+c000000004BA34ADE0000000000000385
+t1268992734
+s901
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies330562399#330562399#0(68"[BEROR]error: There is no SDK with the name or path 'iphoneos2.2.1'1(4@60"error: There is no SDK with the name or path 'iphoneos2.2.1'330562399#18446744073709551615#0#0(1@0"0(0#1#0"8616709888#0"0#
+
+CCompileXIB /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/FavoritesTabView.xib
+r0
+
+CCompileXIB /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/MainWindow.xib
+r0
+
+CCompileXIB /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/MoreOptionView.xib
+r0
+
+CCompileXIB /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/MoreTabView.xib
+r0
+
+CCompileXIB /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/RootViewController.xib
+r0
+
+CCompileXIB /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/TabViewController.xib
+r0
+
+CProcessInfoPlistFile /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug/NavTab.app/Contents/Info.plist Info.plist
+r0
+
+CTouch /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug/NavTab.app
+r0
+
