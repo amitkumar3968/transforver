@@ -1,0 +1,459 @@
+TNavTab
+v7
+r0
+t330562511.336490
+cCheck dependencies
+cProcessInfoPlistFile /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/Info.plist Info.plist
+cCompileXIB /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/MainWindow.xib
+cCompileXIB /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/RootViewController.xib
+cCompileXIB /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/TabViewController.xib
+cCompileXIB /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/FavoritesTabView.xib
+cCompileXIB /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/MoreTabView.xib
+cCompileXIB /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/MoreOptionView.xib
+cProcessPCH /var/folders/8j/8jy36RAyF4a4q2xtp1-hok+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-afgngwluhaqbnlbhauesptiqnjjs/NavTab_Prefix.pch.gch NavTab_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/main.o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/NavTabAppDelegate.o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/NavTabAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/RootViewController.o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/UICustomTabViewController.o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/UICustomTabViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/FavoritesTabViewController.o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/FavoritesTabViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/MoreTabViewController.o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/MoreTabViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/MoreOptionViewController.o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/MoreOptionViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/NavTab normal i386
+cGenerateDSYMFile /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app.dSYM /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/NavTab
+cTouch /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk
+c000000004C6F3A500000000000000132
+t1282357840
+s306
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004BFDFE39000000000027C7D0
+t1274936889
+s2607056
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004BFDFE7C000000000029D5D0
+t1274936956
+s2741712
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004BFDFE6E0000000000001466
+t1274936942
+s5222
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004C0470BB00000000000009CD
+t1275359419
+s2509
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004C0471620000000001D47210
+t1275359586
+s30700048
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/FavoritesTabViewController.h
+c000000004BA34ADE00000000000000FB
+t1268992734
+s251
+i<UIKit/UIKit.h>
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/FavoritesTabViewController.m
+c000000004BA34ADE0000000000000439
+t1268992734
+s1081
+i"FavoritesTabViewController.h"
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/MoreOptionViewController.h
+c000000004BA34ADE000000000000013F
+t1268992734
+s319
+i<UIKit/UIKit.h>
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/MoreOptionViewController.m
+c000000004BA34ADE0000000000000597
+t1268992734
+s1431
+i"MoreOptionViewController.h"
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/MoreTabViewController.h
+c000000004BA34ADE0000000000000141
+t1268992734
+s321
+i<UIKit/UIKit.h>
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/MoreTabViewController.m
+c000000004BA34ADE0000000000000B06
+t1268992734
+s2822
+i"MoreTabViewController.h"
+i"MoreOptionViewController.h"
+i"NavTabAppDelegate.h"
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/NavTabAppDelegate.h
+c000000004BA34ADE00000000000001D4
+t1268992734
+s468
+i<UIKit/UIKit.h>
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/NavTabAppDelegate.m
+c000000004BA34ADE00000000000002AB
+t1268992734
+s683
+i"NavTabAppDelegate.h"
+i"RootViewController.h"
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.h
+c000000004BA34ADE00000000000001D5
+t1268992734
+s469
+i<UIKit/UIKit.h>
+i"UICustomTabViewController.h"
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m
+c000000004BA34ADE000000000000086C
+t1268992734
+s2156
+i"RootViewController.h"
+i"NavTabAppDelegate.h"
+i"UICustomTabViewController.h"
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/UICustomTabViewController.h
+c000000004BA34ADE000000000000030C
+t1268992734
+s780
+i<UIKit/UIKit.h>
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/UICustomTabViewController.m
+c000000004BA34ADE0000000000000A86
+t1268992734
+s2694
+i"UICustomTabViewController.h"
+i"FavoritesTabViewController.h"
+i"MoreTabViewController.h"
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/FavoritesTabView.xib
+c000000004BA34ADE0000000000001C34
+t1268992734
+s7220
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/MainWindow.xib
+c000000004BA34ADE0000000000002A14
+t1268992734
+s10772
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/MoreOptionView.xib
+c000000004BA34ADE0000000000001E2F
+t1268992734
+s7727
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/MoreTabView.xib
+c000000004BA34ADE0000000000001F77
+t1268992734
+s8055
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/NavTab_Prefix.pch
+c000000004BA34ADE00000000000000B5
+t1268992734
+s181
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/RootViewController.xib
+c000000004BA34ADE0000000000001E02
+t1268992734
+s7682
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/TabViewController.xib
+c000000004BA34ADE000000000000279C
+t1268992734
+s10140
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app
+t1308869711
+s374
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app.dSYM
+t1308869711
+s102
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/FavoritesTabView.nib
+t1308869709
+s1171
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/Info.plist
+t1308869708
+s586
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/MainWindow.nib
+t1308869709
+s1484
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/MoreOptionView.nib
+t1308869710
+s1219
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/MoreTabView.nib
+t1308869709
+s1096
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/NavTab
+t1308869711
+s34400
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/PkgInfo
+t1308869708
+s8
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/RootViewController.nib
+t1308869709
+s1077
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/TabViewController.nib
+t1308869709
+s1214
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/FavoritesTabViewController.o
+t1308869711
+s34144
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/MoreOptionViewController.o
+t1308869711
+s36480
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/MoreTabViewController.o
+t1308869711
+s50276
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/NavTab.LinkFileList
+c000000004E03C44C00000000000003F2
+t1308869708
+s1010
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/NavTabAppDelegate.o
+t1308869711
+s47296
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/RootViewController.o
+t1308869711
+s43936
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/UICustomTabViewController.o
+t1308869711
+s49180
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/main.o
+t1308869711
+s6320
+
+N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/main.m
+c000000004BA34ADE000000000000016C
+t1268992734
+s364
+i<UIKit/UIKit.h>
+
+N/var/folders/8j/8jy36RAyF4a4q2xtp1-hok+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-afgngwluhaqbnlbhauesptiqnjjs/NavTab_Prefix.pch.gch
+t1308869710
+s15232016
+
+NInfo.plist
+c000000004BA34ADE0000000000000385
+t1268992734
+s901
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies330562508#330562508#0(0"0(0#1#0"8616037056#0"0#
+
+CCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/FavoritesTabViewController.o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/FavoritesTabViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s330562511.098794
+e330562511.169563
+r1
+xCompileC
+xbuild/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/FavoritesTabViewController.o
+x/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/FavoritesTabViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@92"Compile /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/FavoritesTabViewController.m330562511#330562511#0(0"0(0#0#84"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/FavoritesTabViewController.m8615576032#2032"    cd /Users/poioit/Downloads/wiredbob-NavTab-f2ae762    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-generated-files.hmap -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-own-target-headers.hmap -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-project-headers.hmap -F/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/include -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources/i386 -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources -include /var/folders/8j/8jy36RAyF4a4q2xtp1-hok+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-afgngwluhaqbnlbhauesptiqnjjs/NavTab_Prefix.pch -c /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/FavoritesTabViewController.m -o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/FavoritesTabViewController.o0#
+
+CCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/MoreOptionViewController.o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/MoreOptionViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s330562511.197303
+e330562511.280729
+r1
+xCompileC
+xbuild/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/MoreOptionViewController.o
+x/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/MoreOptionViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@90"Compile /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/MoreOptionViewController.m330562511#330562511#0(0"0(0#0#82"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/MoreOptionViewController.m8616399328#2028"    cd /Users/poioit/Downloads/wiredbob-NavTab-f2ae762    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-generated-files.hmap -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-own-target-headers.hmap -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-project-headers.hmap -F/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/include -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources/i386 -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources -include /var/folders/8j/8jy36RAyF4a4q2xtp1-hok+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-afgngwluhaqbnlbhauesptiqnjjs/NavTab_Prefix.pch -c /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/MoreOptionViewController.m -o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/MoreOptionViewController.o0#
+
+CCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/MoreTabViewController.o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/MoreTabViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s330562511.169674
+e330562511.250766
+r1
+xCompileC
+xbuild/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/MoreTabViewController.o
+x/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/MoreTabViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/MoreTabViewController.m: In function '-[MoreTabViewController tableView:cellForRowAtIndexPath:]':
+o/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/MoreTabViewController.m:66: warning: 'setText:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:211)
+lSLF07#2@87"Compile /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/MoreTabViewController.m330562511#330562511#0(442"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/MoreTabViewController.m: In function '-[MoreTabViewController tableView:cellForRowAtIndexPath:]':/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/MoreTabViewController.m:66: warning: 'setText:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:211)1(22@194"'setText:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:211)330562511#154#288#0(6@79"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/MoreTabViewController.m290685534#66#0#66#0#33"'*' is deprecated (declared at *)0(0#0#79"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/MoreTabViewController.m8616860192#2022"    cd /Users/poioit/Downloads/wiredbob-NavTab-f2ae762    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-generated-files.hmap -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-own-target-headers.hmap -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-project-headers.hmap -F/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/include -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources/i386 -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources -include /var/folders/8j/8jy36RAyF4a4q2xtp1-hok+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-afgngwluhaqbnlbhauesptiqnjjs/NavTab_Prefix.pch -c /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/MoreTabViewController.m -o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/MoreTabViewController.o0#
+
+CCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/NavTabAppDelegate.o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/NavTabAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s330562510.964180
+e330562511.069926
+r1
+xCompileC
+xbuild/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/NavTabAppDelegate.o
+x/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/NavTabAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@83"Compile /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/NavTabAppDelegate.m330562510#330562511#0(0"0(0#0#75"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/NavTabAppDelegate.m8615959392#2014"    cd /Users/poioit/Downloads/wiredbob-NavTab-f2ae762    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-generated-files.hmap -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-own-target-headers.hmap -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-project-headers.hmap -F/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/include -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources/i386 -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources -include /var/folders/8j/8jy36RAyF4a4q2xtp1-hok+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-afgngwluhaqbnlbhauesptiqnjjs/NavTab_Prefix.pch -c /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/NavTabAppDelegate.m -o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/NavTabAppDelegate.o0#
+
+CCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/RootViewController.o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s330562511.019661
+e330562511.098696
+r1
+xCompileC
+xbuild/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/RootViewController.o
+x/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m: In function '-[RootViewController tableView:cellForRowAtIndexPath:]':
+o/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m:63: warning: 'setText:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:211)
+lSLF07#2@84"Compile /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m330562511#330562511#0(433"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m: In function '-[RootViewController tableView:cellForRowAtIndexPath:]':/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m:63: warning: 'setText:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:211)1(22@194"'setText:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:211)330562511#148#285#0(6@76"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m290685534#63#0#63#0#33"'*' is deprecated (declared at *)0(0#0#76"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m8615856992#2016"    cd /Users/poioit/Downloads/wiredbob-NavTab-f2ae762    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-generated-files.hmap -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-own-target-headers.hmap -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-project-headers.hmap -F/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/include -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources/i386 -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources -include /var/folders/8j/8jy36RAyF4a4q2xtp1-hok+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-afgngwluhaqbnlbhauesptiqnjjs/NavTab_Prefix.pch -c /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m -o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/RootViewController.o0#
+
+CCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/UICustomTabViewController.o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/UICustomTabViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s330562511.070030
+e330562511.197208
+r1
+xCompileC
+xbuild/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/UICustomTabViewController.o
+x/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/UICustomTabViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@91"Compile /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/UICustomTabViewController.m330562511#330562511#0(0"0(0#0#83"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/UICustomTabViewController.m8615723936#2030"    cd /Users/poioit/Downloads/wiredbob-NavTab-f2ae762    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-generated-files.hmap -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-own-target-headers.hmap -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-project-headers.hmap -F/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/include -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources/i386 -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources -include /var/folders/8j/8jy36RAyF4a4q2xtp1-hok+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-afgngwluhaqbnlbhauesptiqnjjs/NavTab_Prefix.pch -c /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/UICustomTabViewController.m -o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/UICustomTabViewController.o0#
+
+CCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/main.o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s330562510.963134
+e330562511.019557
+r1
+xCompileC
+xbuild/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/main.o
+x/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@62"Compile /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/main.m330562510#330562511#0(0"0(0#0#54"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/main.m8616038816#1980"    cd /Users/poioit/Downloads/wiredbob-NavTab-f2ae762    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-generated-files.hmap -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-own-target-headers.hmap -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-project-headers.hmap -F/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/include -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources/i386 -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources -include /var/folders/8j/8jy36RAyF4a4q2xtp1-hok+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-afgngwluhaqbnlbhauesptiqnjjs/NavTab_Prefix.pch -c /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/main.m -o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/main.o0#
+
+CCompileXIB /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/FavoritesTabView.xib
+s330562509.173208
+e330562509.602520
+r1
+xCompileXIB
+x/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/FavoritesTabView.xib
+lSLF07#2@31"CompileXIB FavoritesTabView.xib330562509#330562509#0(0"0(0#0#68"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/FavoritesTabView.xib8613379392#608"    cd /Users/poioit/Downloads/wiredbob-NavTab-f2ae762    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/FavoritesTabView.nib /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/FavoritesTabView.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/MainWindow.xib
+s330562508.741950
+e330562509.173126
+r1
+xCompileXIB
+x/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/MainWindow.xib
+lSLF07#2@25"CompileXIB MainWindow.xib330562508#330562509#0(0"0(0#0#62"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/MainWindow.xib8615664064#596"    cd /Users/poioit/Downloads/wiredbob-NavTab-f2ae762    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/MainWindow.nib /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/MainWindow.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/MoreOptionView.xib
+s330562509.602607
+e330562510.062740
+r1
+xCompileXIB
+x/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/MoreOptionView.xib
+lSLF07#2@29"CompileXIB MoreOptionView.xib330562509#330562510#0(0"0(0#0#66"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/MoreOptionView.xib8617105984#604"    cd /Users/poioit/Downloads/wiredbob-NavTab-f2ae762    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/MoreOptionView.nib /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/MoreOptionView.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/MoreTabView.xib
+s330562509.573167
+e330562509.972027
+r1
+xCompileXIB
+x/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/MoreTabView.xib
+lSLF07#2@26"CompileXIB MoreTabView.xib330562509#330562509#0(0"0(0#0#63"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/MoreTabView.xib8618385312#598"    cd /Users/poioit/Downloads/wiredbob-NavTab-f2ae762    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/MoreTabView.nib /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/MoreTabView.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/RootViewController.xib
+s330562508.742669
+e330562509.132227
+r1
+xCompileXIB
+x/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/RootViewController.xib
+lSLF07#2@33"CompileXIB RootViewController.xib330562508#330562509#0(0"0(0#0#70"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/RootViewController.xib8615570272#612"    cd /Users/poioit/Downloads/wiredbob-NavTab-f2ae762    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/RootViewController.nib /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/RootViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/TabViewController.xib
+s330562509.132311
+e330562509.573083
+r1
+xCompileXIB
+x/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/TabViewController.xib
+lSLF07#2@32"CompileXIB TabViewController.xib330562509#330562509#0(0"0(0#0#69"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/TabViewController.xib8611505216#610"    cd /Users/poioit/Downloads/wiredbob-NavTab-f2ae762    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/TabViewController.nib /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/TabViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CGenerateDSYMFile /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app.dSYM /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/NavTab
+s330562511.312195
+e330562511.333799
+r1
+xGenerateDSYMFile
+x/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app.dSYM
+x/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/NavTab
+lSLF07#2@106"GenerateDSYMFile build/Debug-iphonesimulator/NavTab.app.dSYM build/Debug-iphonesimulator/NavTab.app/NavTab330562511#330562511#0(0"0(0#0#93"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/NavTab8616606464#407"    cd /Users/poioit/Downloads/wiredbob-NavTab-f2ae762    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/NavTab -o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app.dSYM0#
+
+CLd /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/NavTab normal i386
+s330562511.280822
+e330562511.312100
+r1
+xLd
+x/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/NavTab
+xnormal
+xi386
+lSLF07#2@98"Link /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/NavTab330562511#330562511#0(0"0(0#0#0"8618328768#940"    cd /Users/poioit/Downloads/wiredbob-NavTab-f2ae762    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -L/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator -F/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator -filelist /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/NavTab.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/NavTab0#
+
+CProcessInfoPlistFile /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/Info.plist Info.plist
+s330562508.734874
+e330562508.741866
+r1
+xProcessInfoPlistFile
+x/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/Info.plist
+xInfo.plist
+lSLF07#2@18"Process Info.plist330562508#330562508#0(0"0(0#0#58"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Info.plist8613590080#496"    cd /Users/poioit/Downloads/wiredbob-NavTab-f2ae762    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility Info.plist -genpkginfo /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/Info.plist0#
+
+CProcessPCH /var/folders/8j/8jy36RAyF4a4q2xtp1-hok+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-afgngwluhaqbnlbhauesptiqnjjs/NavTab_Prefix.pch.gch NavTab_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s330562510.062850
+e330562510.962931
+r1
+xProcessPCH
+x/var/folders/8j/8jy36RAyF4a4q2xtp1-hok+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-afgngwluhaqbnlbhauesptiqnjjs/NavTab_Prefix.pch.gch
+xNavTab_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@28"Precompile NavTab_Prefix.pch330562510#330562510#0(0"0(0#0#65"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/NavTab_Prefix.pch8616724064#1864"    cd /Users/poioit/Downloads/wiredbob-NavTab-f2ae762    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-generated-files.hmap -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-own-target-headers.hmap -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-project-headers.hmap -F/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/include -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources/i386 -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources -c /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/NavTab_Prefix.pch -o /var/folders/8j/8jy36RAyF4a4q2xtp1-hok+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-afgngwluhaqbnlbhauesptiqnjjs/NavTab_Prefix.pch.gch0#
+
+CTouch /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app
+s330562511.333875
+e330562511.336448
+r1
+xTouch
+x/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app
+lSLF07#2@92"Touch /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app330562511#330562511#0(0"0(0#0#0"8616353696#295"    cd /Users/poioit/Downloads/wiredbob-NavTab-f2ae762    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app0#
+
