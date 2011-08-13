@@ -31,7 +31,7 @@
 	self.navigationItem.leftBarButtonItem = leftButton;
 	[leftButton release];
 	
-	UIImage *image = [UIImage imageNamed:@"star.jpg"];
+	UIImage *image = [UIImage imageNamed:@"phone.png"];
 	CGRect frame = CGRectMake(0, 0, image.size.width, image.size.height);
 	UIButton* button = [[UIButton alloc] initWithFrame:frame];
 	[button setBackgroundImage:image forState:UIControlStateNormal];
@@ -68,7 +68,7 @@
 	CFRelease(people);
 	CFRelease(peopleMutable);
 	
-	NSArray *array = [[NSArray alloc] initWithObjects:@"Raymond", @"Raymond", @"John", nil];
+	NSArray *array = [[NSArray alloc] initWithObjects:@"find friends",@"Raymond", @"Raymond", @"John", nil];
 	self.accounts = array;
 	[array release];
 	
@@ -78,14 +78,20 @@
 
 - (void) playSound {
 	SystemSoundID soundID = 0;
-	NSString* str =  [[NSBundle mainBundle] pathForResource:@"0123.wav" ofType:@"wav"];
-	CFURLRef soundFileURL = (CFURLRef)[NSURL URLWithString:str ];
+	NSString* str =  [[NSBundle mainBundle] pathForResource:@"123" ofType:@"wav"];
+	NSURL* tmpUrl = [[NSURL alloc] initFileURLWithPath:str ];
+	CFURLRef soundFileURL = (CFURLRef)tmpUrl;
 	OSStatus errorCode = AudioServicesCreateSystemSoundID(soundFileURL, &soundID);
 	if (errorCode != 0) {
 		// Handle failure here
 	}
 	else
+	{
+		AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
 		AudioServicesPlaySystemSound(soundID);
+	}
+		
+	[tmpUrl release];
 }
 
 - (void) showMenu:(id) sender {
@@ -94,12 +100,14 @@
 	[self playSound];
 	[self uploadFile];
 	return ;
+	/*
 	UIActionSheet *myMenu = [[UIActionSheet alloc]
                              initWithTitle: @"Menu"
                              delegate:self
                              cancelButtonTitle:@"Cancel"
                              destructiveButtonTitle:@"Etwas unwiderrufliches"
                              otherButtonTitles:@"Eins", @"Zwei", nil];
+	 */
 	UIImageView *imageView = [[UIImageView alloc] initWithFrame:
 							  CGRectMake(100.0, 100.0, 57.0, 57.0)];
 	imageView.image = [UIImage imageNamed:@"star.jpg"];
@@ -109,14 +117,14 @@
     imageButton.frame = CGRectMake(100.0, 100.0, 57.0, 57.0);
 	[imageButton addTarget:self action:@selector(buttonPushed:)
 		  forControlEvents:UIControlEventTouchUpInside];
-    [imageButton setImage:[UIImage imageNamed:@"star.jpg"] forState:UIControlStateNormal];
+    [imageButton setImage:[UIImage imageNamed:@"phone.png"] forState:UIControlStateNormal];
     [self.view addSubview:imageButton];
 	
 	UIButton *myButton = [UIButton buttonWithType:UIButtonTypeCustom];
 	
 	CGRect newSize = CGRectMake(200, 200, 200, 200);
 	myButton.frame = newSize;
-	[myButton setImage:[UIImage imageNamed:@"star.jpg"] forState:UIControlStateNormal];
+	[myButton setImage:[UIImage imageNamed:@"phone.png"] forState:UIControlStateNormal];
 	[myButton addTarget:self action:@selector(buttonClicked) forControlEvents:UIControlEventTouchUpInside];
 	[self.view addSubview:myButton];
     //[myMenu showInView:self.view];
@@ -132,9 +140,9 @@
 	UIImageView *image = [[UIImageView alloc] initWithFrame:
 							  CGRectMake(100.0, 100.0, 57.0, 57.0)];
 	image.image = 
-	[UIImage imageNamed:@"star.jpg"];
-	NSData *imageData = UIImageJPEGRepresentation(image.image, 90);
-	NSString* str =  [[NSBundle mainBundle] pathForResource:@"mysoundcompressed.caf" ofType:@"wav"];
+	[UIImage imageNamed:@"phone.png"];
+	//NSData *imageData = UIImageJPEGRepresentation(image.image, 90);
+	//NSString* str =  [[NSBundle mainBundle] pathForResource:@"mysoundcompressed" ofType:@"caf"];
 	NSString *audioFile = [NSString stringWithFormat:@"%@/%@.caf", [[NSBundle mainBundle] resourcePath], @"111"]; 
 	NSData *wavData = [NSData dataWithContentsOfFile:audioFile];
 	// setting up the URL to post to
@@ -173,7 +181,7 @@
 	NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
 	NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
 	
-	NSLog(returnString);
+	NSLog(@"%@",returnString);
 }
 
 - (void) loginServer {

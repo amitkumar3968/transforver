@@ -16,6 +16,9 @@
 
 - (void) showMenu:(id) sender;
 - (void) buttonPushed:(id)sender;
+- (void) loginServer;
+- (void) playSound;
+- (void) uploadFile;
 
 @property (nonatomic, retain) NSArray *accounts;
 @property (nonatomic, retain) UICustomTabViewController *tabViewController;
