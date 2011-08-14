@@ -11,6 +11,7 @@
 #import "UICustomTabViewController.h"
 #import <AudioToolbox/AudioServices.h>
 #import <AddressBook/AddressBook.h>
+#import <AddressBookUI/AddressBookUI.h>
 
 #define USE_CUSTOM_DRAWING 1
 
@@ -238,6 +239,11 @@
     // Release anything that's not essential, such as cached data
 }
 
+- (void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker;
+{
+    [self dismissModalViewControllerAnimated:YES];
+}
+
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -427,12 +433,24 @@
 }
 
 
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSInteger row = [indexPath row];
     if ( row == 0 )
     {
-        [self.tabViewController setTitle:[accounts objectAtIndex:indexPath.row]];
-        [self.navigationController pushViewController:self.tabViewController animated:YES];
+        ABPeoplePickerNavigationController *myPicker = [[ABPeoplePickerNavigationController alloc] init];
+        [myPicker setPeoplePickerDelegate:self];
+        //myPicker.peoplePickerDelegate = self;   
+        // 只show e-mail
+        //myPicker.displayedProperties = [NSArray arrayWithObject:[NSNumber numberWithInt:kABPersonEmailProperty]]; 
+        //ABPersonViewController* ppnc = [[ABPersonViewController alloc] init];
+        [self.navigationController presentModalViewController:myPicker animated:YES];   
+        //[myPicker release];
+        [myPicker release];
+
+        //[self.tabViewController setTitle:[accounts objectAtIndex:indexPath.row]];
+        //[self.navigationController pushViewController:self.tabViewController animated:YES];
     }else
     {
         [self.tabViewController setTitle:[accounts objectAtIndex:indexPath.row]];
