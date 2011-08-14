@@ -12,6 +12,8 @@
 #import <AudioToolbox/AudioServices.h>
 #import <AddressBook/AddressBook.h>
 
+#define USE_CUSTOM_DRAWING 1
+
 @implementation RootViewController
 
 @synthesize accounts;
@@ -22,6 +24,12 @@
 	
 	UICustomTabViewController *tvController = [[UICustomTabViewController alloc] initWithNibName:@"TabViewController" bundle:nil];
 	self.tabViewController = tvController;
+    
+    //self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+	//self.tableView.rowHeight = 100;
+	//self.tableView.backgroundColor = [UIColor clearColor];
+
+    
 	[tvController release];
 	self.title = @"Accounts";
 	
@@ -117,14 +125,14 @@
     imageButton.frame = CGRectMake(100.0, 100.0, 57.0, 57.0);
 	[imageButton addTarget:self action:@selector(buttonPushed:)
 		  forControlEvents:UIControlEventTouchUpInside];
-    [imageButton setImage:[UIImage imageNamed:@"phone.png"] forState:UIControlStateNormal];
+    [imageButton setImage:[UIImage imageNamed:@"images/phone.png"] forState:UIControlStateNormal];
     [self.view addSubview:imageButton];
 	
 	UIButton *myButton = [UIButton buttonWithType:UIButtonTypeCustom];
 	
 	CGRect newSize = CGRectMake(200, 200, 200, 200);
 	myButton.frame = newSize;
-	[myButton setImage:[UIImage imageNamed:@"phone.png"] forState:UIControlStateNormal];
+	[myButton setImage:[UIImage imageNamed:@"images/phone.png"] forState:UIControlStateNormal];
 	[myButton addTarget:self action:@selector(buttonClicked) forControlEvents:UIControlEventTouchUpInside];
 	[self.view addSubview:myButton];
     //[myMenu showInView:self.view];
@@ -245,24 +253,191 @@
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+#if USE_CUSTOM_DRAWING
+	const NSInteger TOP_LABEL_TAG = 1001;
+	const NSInteger BOTTOM_LABEL_TAG = 1002;
+	UILabel *topLabel;
+	UILabel *bottomLabel;
+#endif
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+        //cell.opaque = NO; 
+#if USE_CUSTOM_DRAWING
+        
+		
+		
+		//const CGFloat LABEL_HEIGHT = 20;
+		//UIImage *image = [UIImage imageNamed:@"imageA.png"];
+        /*
+		//
+		// Create the label for the top row of text
+		//
+		topLabel =
+        [[[UILabel alloc]
+          initWithFrame:
+          CGRectMake(
+                     image.size.width + 2.0 * cell.indentationWidth,
+                     0.5 * (tableView.rowHeight - 2 * LABEL_HEIGHT),
+                     tableView.bounds.size.width -
+                     image.size.width - 4.0 * cell.indentationWidth
+                     - indicatorImage.size.width,
+                     LABEL_HEIGHT)]
+         autorelease];
+		[cell.contentView addSubview:topLabel];
+        
+		//
+		// Configure the properties for the text that are the same on every row
+		//
+		topLabel.tag = TOP_LABEL_TAG;
+		topLabel.backgroundColor = [UIColor clearColor];
+		topLabel.textColor = [UIColor colorWithRed:0.25 green:0.0 blue:0.0 alpha:1.0];
+		topLabel.highlightedTextColor = [UIColor colorWithRed:1.0 green:1.0 blue:0.9 alpha:1.0];
+		topLabel.font = [UIFont systemFontOfSize:[UIFont labelFontSize]];
+        
+		//
+		// Create the label for the top row of text
+		//
+		bottomLabel =
+        [[[UILabel alloc]
+          initWithFrame:
+          CGRectMake(
+                     image.size.width + 2.0 * cell.indentationWidth,
+                     0.5 * (tableView.rowHeight - 2 * LABEL_HEIGHT) + LABEL_HEIGHT,
+                     tableView.bounds.size.width -
+                     image.size.width - 4.0 * cell.indentationWidth
+                     - indicatorImage.size.width,
+                     LABEL_HEIGHT)]
+         autorelease];
+		[cell.contentView addSubview:bottomLabel];
+        
+		//
+		// Configure the properties for the text that are the same on every row
+		//
+		bottomLabel.tag = BOTTOM_LABEL_TAG;
+		bottomLabel.backgroundColor = [UIColor clearColor];
+		bottomLabel.textColor = [UIColor colorWithRed:0.25 green:0.0 blue:0.0 alpha:1.0];
+		bottomLabel.highlightedTextColor = [UIColor colorWithRed:1.0 green:1.0 blue:0.9 alpha:1.0];
+		bottomLabel.font = [UIFont systemFontOfSize:[UIFont labelFontSize] - 2];
+        */
+		//
+		// Create a background image view.
+		//
+		cell.backgroundView =
+        [[[UIImageView alloc] init] autorelease];
+		cell.selectedBackgroundView =
+        [[[UIImageView alloc] init] autorelease];
+#endif
+        //cell.textColor = [UIColor whiteColor];
     }
+#if USE_CUSTOM_DRAWING
+    else
+    {
+        topLabel = (UILabel *)[cell viewWithTag:TOP_LABEL_TAG];
+        bottomLabel = (UILabel *)[cell viewWithTag:BOTTOM_LABEL_TAG];
+    }
+	
+	//topLabel.text = [NSString stringWithFormat:@"Cell at row %ld.", [indexPath row]];
+	//bottomLabel.text = [NSString stringWithFormat:@"Some other information.", [indexPath row]];
+	
+	//
+	// Set the background and selected background images for the text.
+	// Since we will round the corners at the top and bottom of sections, we
+	// need to conditionally choose the images based on the row index and the
+	// number of rows in the section.
+	//
+    /*
+	UIImage *rowBackground;
+	UIImage *selectionBackground;
+	NSInteger sectionRows = [tableView numberOfRowsInSection:[indexPath section]];
+	NSInteger row = [indexPath row];
+	if (row == 0 && row == sectionRows - 1)
+	{
+		rowBackground = [UIImage imageNamed:@"topAndBottomRow.png"];
+		selectionBackground = [UIImage imageNamed:@"topAndBottomRowSelected.png"];
+	}
+	else if (row == 0)
+	{
+		rowBackground = [UIImage imageNamed:@"topRow.png"];
+		selectionBackground = [UIImage imageNamed:@"topRowSelected.png"];
+	}
+	else if (row == sectionRows - 1)
+	{
+		rowBackground = [UIImage imageNamed:@"bottomRow.png"];
+		selectionBackground = [UIImage imageNamed:@"bottomRowSelected.png"];
+	}
+	else
+	{
+		rowBackground = [UIImage imageNamed:@"middleRow.png"];
+		selectionBackground = [UIImage imageNamed:@"middleRowSelected.png"];
+	}
+	((UIImageView *)cell.backgroundView).image = rowBackground;
+	((UIImageView *)cell.selectedBackgroundView).image = selectionBackground;
+	*/
+	//
+	// Here I set an image based on the row. This is just to have something
+	// colorful to show on each row.
+	//
+    /*
+	if ((row % 3) == 0)
+	{
+		cell.image = [UIImage imageNamed:@"imageA.png"];
+	}
+	else if ((row % 3) == 1)
+	{
+		cell.image = [UIImage imageNamed:@"imageB.png"];
+	}
+	else
+	{
+		cell.image = [UIImage imageNamed:@"imageC.png"];
+	}
+     */
+#else
+	cell.text = [NSString stringWithFormat:@"Cell at row %ld.", [indexPath row]];
+#endif
     
-    // Set up the cell...
-	NSUInteger row = indexPath.row;
-	cell.text = [accounts objectAtIndex:row];
+    //
+    //cell.backgroundColor = [UIColor colorWithRed:.1 green:.1 blue:.1 alpha:.4];
+    
+    NSInteger row = [indexPath row];
+    if( row == 0 )
+    {
+        UIImage *indicatorImage = [UIImage imageNamed:@"indicator.png"];
+        cell.userInteractionEnabled = YES;
+		cell.accessoryView =
+        [[[UIImageView alloc]
+          initWithImage:indicatorImage]
+         autorelease];
+        UIImage *rowBackground;
+        rowBackground = [UIImage imageNamed:@"topRow.png"];
+        ((UIImageView *)cell.backgroundView).image = rowBackground;
+        //[cell contentView].backgroundColor = [UIColor clearColor];
+        //[cell contentView].backgroundColor = [UIColor colorWithRed:.1 green:.1 blue:.1 alpha:1];
+        cell.textLabel.backgroundColor = [UIColor colorWithRed:.1 green:.1 blue:.1 alpha:.1];
+        //cell.textLabel.backgroundColor = [UIColor colorWithRed:.1 green:.1 blue:.1 alpha:.9];
+        //cell.contentView.backgroundColor = [UIColor colorWithRed:.1 green:.1 blue:.1 alpha:.9];
+        //UIView *backView = [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
+        //backView.backgroundColor = [UIColor clearColor];
+        //cell.contentView.backgroundColor = [UIColor clearColor];
+    }
+    cell.text = [accounts objectAtIndex:row];
     return cell;
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	[self.tabViewController setTitle:[accounts objectAtIndex:indexPath.row]];
-	[self.navigationController pushViewController:self.tabViewController animated:YES];
+    NSInteger row = [indexPath row];
+    if ( row == 0 )
+    {
+        [self.tabViewController setTitle:[accounts objectAtIndex:indexPath.row]];
+        [self.navigationController pushViewController:self.tabViewController animated:YES];
+    }else
+    {
+        [self.tabViewController setTitle:[accounts objectAtIndex:indexPath.row]];
+        [self.navigationController pushViewController:self.tabViewController animated:YES];
+    }
 
 }
 
