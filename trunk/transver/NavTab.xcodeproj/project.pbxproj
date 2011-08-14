@@ -30,6 +30,7 @@
 		4F724CB213F7619300A6F871 /* topRow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F724CA513F7619300A6F871 /* topRow.png */; };
 		4F724CB313F7619300A6F871 /* topRowSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F724CA613F7619300A6F871 /* topRowSelected.png */; };
 		4F724CB513F76E5200A6F871 /* indicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F724CB413F76E5200A6F871 /* indicator.png */; };
+		4F724CB713F774C500A6F871 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F724CB613F774C400A6F871 /* AddressBookUI.framework */; };
 		4F9BAFBE13EB740C004179FC /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9BAFBD13EB740C004179FC /* AddressBook.framework */; };
 		4F9BB0BC13F2E932004179FC /* 111.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4F9BB0BB13F2E931004179FC /* 111.caf */; };
 		4F9BB0C013F2E9BE004179FC /* mysoundcompressed.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4F9BB0BF13F2E9BE004179FC /* mysoundcompressed.caf */; };
@@ -72,6 +73,7 @@
 		4F724CA513F7619300A6F871 /* topRow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topRow.png; sourceTree = "<group>"; };
 		4F724CA613F7619300A6F871 /* topRowSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topRowSelected.png; sourceTree = "<group>"; };
 		4F724CB413F76E5200A6F871 /* indicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = indicator.png; sourceTree = "<group>"; };
+		4F724CB613F774C400A6F871 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		4F9BAFBD13EB740C004179FC /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		4F9BB0BB13F2E931004179FC /* 111.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = 111.caf; path = ../111.caf; sourceTree = "<group>"; };
 		4F9BB0BF13F2E9BE004179FC /* mysoundcompressed.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = mysoundcompressed.caf; path = ../mysoundcompressed.caf; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F724CB713F774C500A6F871 /* AddressBookUI.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
@@ -137,6 +140,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				4F724CB613F774C400A6F871 /* AddressBookUI.framework */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
