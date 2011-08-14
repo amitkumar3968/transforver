@@ -200,7 +200,7 @@
 	post = [post stringByAppendingFormat:deviceUDID];
 	NSURL *url=[NSURL URLWithString:@"http://www.entalkie.url.tw/login.php"];
 	
-	NSLog(post);
+	NSLog(@"%@",post);
 	NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
 	
 	NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
