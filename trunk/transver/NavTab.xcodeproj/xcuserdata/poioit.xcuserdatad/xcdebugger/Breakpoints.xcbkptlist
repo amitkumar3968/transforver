@@ -21,11 +21,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Classes/UICustomTabViewController.m"
-         timestampString = "334894959.599771"
+         timestampString = "335231688.690028"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "91"
-         endingLineNumber = "91">
+         startingLineNumber = "95"
+         endingLineNumber = "95">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
@@ -33,11 +33,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Classes/UICustomTabViewController.m"
-         timestampString = "334894959.607752"
+         timestampString = "335231688.690028"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "77"
-         endingLineNumber = "77">
+         startingLineNumber = "81"
+         endingLineNumber = "81">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -45,27 +45,13 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Classes/UICustomTabViewController.h"
-         timestampString = "335146830.507202"
+         timestampString = "335231688.690028"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "25"
-         endingLineNumber = "25"
+         startingLineNumber = "26"
+         endingLineNumber = "26"
          landmarkName = "localFilePath"
          landmarkType = "19">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "Classes/UICustomTabViewController.m"
-         timestampString = "335146935.049397"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "163"
-         endingLineNumber = "163"
-         landmarkName = "-connectionDidFinishLoading:"
-         landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

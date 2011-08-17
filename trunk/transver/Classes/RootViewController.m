@@ -77,7 +77,7 @@
 	CFRelease(people);
 	CFRelease(peopleMutable);
 	
-	NSArray *array = [[NSArray alloc] initWithObjects:@"find friends",@"Raymond", @"Raymond", @"John", nil];
+	NSArray *array = [[NSArray alloc] initWithObjects:@"find friends",@"Jerry", @"Raymond", @"John", nil];
 	self.accounts = array;
 	[array release];
 	
@@ -408,6 +408,8 @@
     //cell.backgroundColor = [UIColor colorWithRed:.1 green:.1 blue:.1 alpha:.4];
     
     NSInteger row = [indexPath row];
+    
+    
     if( row == 0 )
     {
         UIImage *indicatorImage = [UIImage imageNamed:@"indicator.png"];
@@ -416,17 +418,27 @@
         [[[UIImageView alloc]
           initWithImage:indicatorImage]
          autorelease];
+                //[cell contentView].backgroundColor = [UIColor clearColor];
+        //[cell contentView].backgroundColor = [UIColor colorWithRed:.1 green:.1 blue:.1 alpha:1];
         UIImage *rowBackground;
         rowBackground = [UIImage imageNamed:@"topRow.png"];
         ((UIImageView *)cell.backgroundView).image = rowBackground;
-        //[cell contentView].backgroundColor = [UIColor clearColor];
-        //[cell contentView].backgroundColor = [UIColor colorWithRed:.1 green:.1 blue:.1 alpha:1];
-        cell.textLabel.backgroundColor = [UIColor colorWithRed:.1 green:.1 blue:.1 alpha:.1];
+        cell.textLabel.backgroundColor = [UIColor colorWithRed:.0 green:.2 blue:.2 alpha:.1];
+        cell.textLabel.backgroundColor = [UIColor colorWithRed:.1 green:.1 blue:.1 alpha:.01];
         //cell.textLabel.backgroundColor = [UIColor colorWithRed:.1 green:.1 blue:.1 alpha:.9];
         //cell.contentView.backgroundColor = [UIColor colorWithRed:.1 green:.1 blue:.1 alpha:.9];
         //UIView *backView = [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
         //backView.backgroundColor = [UIColor clearColor];
         //cell.contentView.backgroundColor = [UIColor clearColor];
+    }
+    else
+    {
+        NSInteger row = [indexPath row];
+        UIImage *rowBackground;
+        rowBackground = [UIImage imageNamed:@"gradientBackground.png"];
+        ((UIImageView *)cell.backgroundView).image = rowBackground;
+        cell.textLabel.backgroundColor = [UIColor colorWithRed:.0 green:.2 blue:.2 alpha:.1];
+
     }
     cell.text = [accounts objectAtIndex:row];
     return cell;
