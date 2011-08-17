@@ -10,7 +10,11 @@
 
 
 @interface FavoritesTabViewController : UIViewController {
-
+    IBOutlet UIButton *mybutton;
 }
-
+- (void) downloadToFile;
+- (IBAction)downloadingButtonClick:(id)sender;
+- (IBAction)recordingButtonClick:(id)sender;
+- (IBAction)recordingButtonRelease:(id)sender;
+@property (nonatomic, retain) UIButton *mybutton;
 @end
