@@ -1,32 +1,49 @@
 TNavTab
 v7
 r0
-t334894950.206570
+t335321098.413693
 cCheck dependencies
-cProcessInfoPlistFile /Users/poioit/Code/transver/build/Debug-iphonesimulator/NavTab.app/Info.plist Info.plist
-cCompileXIB /Users/poioit/Code/transver/MainWindow.xib
-cCompileXIB /Users/poioit/Code/transver/RootViewController.xib
-cCompileXIB /Users/poioit/Code/transver/TabViewController.xib
-cCompileXIB /Users/poioit/Code/transver/FavoritesTabView.xib
-cCompileXIB /Users/poioit/Code/transver/MoreTabView.xib
-cCompileXIB /Users/poioit/Code/transver/MoreOptionView.xib
-cCpResource build/Debug-iphonesimulator/NavTab.app/111.caf 111.caf
-cCpResource build/Debug-iphonesimulator/NavTab.app/mysoundcompressed.caf mysoundcompressed.caf
-cProcessPCH /var/folders/zx/zx5pwyE6ECu1VRpfjY48AE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-fnlptfhrhcklcoakrdesoxebjgjr/NavTab_Prefix.pch.gch NavTab_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/main.o /Users/poioit/Code/transver/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/NavTabAppDelegate.o /Users/poioit/Code/transver/Classes/NavTabAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/RootViewController.o /Users/poioit/Code/transver/Classes/RootViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/UICustomTabViewController.o /Users/poioit/Code/transver/Classes/UICustomTabViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/FavoritesTabViewController.o /Users/poioit/Code/transver/Classes/FavoritesTabViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/MoreTabViewController.o /Users/poioit/Code/transver/Classes/MoreTabViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/MoreOptionViewController.o /Users/poioit/Code/transver/Classes/MoreOptionViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cLd /Users/poioit/Code/transver/build/Debug-iphonesimulator/NavTab.app/NavTab normal i386
-cGenerateDSYMFile /Users/poioit/Code/transver/build/Debug-iphonesimulator/NavTab.app.dSYM /Users/poioit/Code/transver/build/Debug-iphonesimulator/NavTab.app/NavTab
-cTouch /Users/poioit/Code/transver/build/Debug-iphonesimulator/NavTab.app
+cProcessInfoPlistFile /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/Info.plist Info.plist
+cCompileXIB /Users/poioit/Code/transforver/MainWindow.xib
+cCompileXIB /Users/poioit/Code/transforver/RootViewController.xib
+cCompileXIB /Users/poioit/Code/transforver/TabViewController.xib
+cCompileXIB /Users/poioit/Code/transforver/FavoritesTabView.xib
+cCompileXIB /Users/poioit/Code/transforver/MoreTabView.xib
+cCompileXIB /Users/poioit/Code/transforver/MoreOptionView.xib
+cCpResource build/Debug-iphonesimulator/NavTab.app/111.caf sounds/../111.caf
+cCpResource build/Debug-iphonesimulator/NavTab.app/mysoundcompressed.caf sounds/../mysoundcompressed.caf
+cCpResource build/Debug-iphonesimulator/NavTab.app/phone.png images/../phone.png
+cCpResource build/Debug-iphonesimulator/NavTab.app/123.wav sounds/../123.wav
+cCpResource build/Debug-iphonesimulator/NavTab.app/bottomRow.png images/bottomRow.png
+cCpResource build/Debug-iphonesimulator/NavTab.app/bottomRowSelected.png images/bottomRowSelected.png
+cCpResource build/Debug-iphonesimulator/NavTab.app/gradientBackground.png images/gradientBackground.png
+cCpResource build/Debug-iphonesimulator/NavTab.app/imageA.png images/imageA.png
+cCpResource build/Debug-iphonesimulator/NavTab.app/imageB.png images/imageB.png
+cCpResource build/Debug-iphonesimulator/NavTab.app/imageC.png images/imageC.png
+cCpResource build/Debug-iphonesimulator/NavTab.app/middleRow.png images/middleRow.png
+cCpResource build/Debug-iphonesimulator/NavTab.app/middleRowSelected.png images/middleRowSelected.png
+cCpResource build/Debug-iphonesimulator/NavTab.app/topAndBottomRow.png images/topAndBottomRow.png
+cCpResource build/Debug-iphonesimulator/NavTab.app/topAndBottomRowSelected.png images/topAndBottomRowSelected.png
+cCpResource build/Debug-iphonesimulator/NavTab.app/topRow.png images/topRow.png
+cCpResource build/Debug-iphonesimulator/NavTab.app/topRowSelected.png images/topRowSelected.png
+cCpResource build/Debug-iphonesimulator/NavTab.app/indicator.png images/indicator.png
+cCpResource build/Debug-iphonesimulator/NavTab.app/Icon.png images/Icon.png
+cProcessPCH /var/folders/8j/8jy36RAyF4a4q2xtp1-hok+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-gfalfudnfxfatjbgtaxxjbjacfyx/NavTab_Prefix.pch.gch NavTab_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/main.o /Users/poioit/Code/transforver/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/NavTabAppDelegate.o /Users/poioit/Code/transforver/Classes/NavTabAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/RootViewController.o /Users/poioit/Code/transforver/Classes/RootViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/UICustomTabViewController.o /Users/poioit/Code/transforver/Classes/UICustomTabViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/FavoritesTabViewController.o /Users/poioit/Code/transforver/Classes/FavoritesTabViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/MoreTabViewController.o /Users/poioit/Code/transforver/Classes/MoreTabViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/MoreOptionViewController.o /Users/poioit/Code/transforver/Classes/MoreOptionViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/ChatBubbleView.o /Users/poioit/Code/transforver/Classes/ChatBubbleView.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/NavTab normal i386
+cGenerateDSYMFile /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app.dSYM /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/NavTab
+cTouch /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app
 
 N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk
-c000000004C9AD4330000000000000132
-t1285215283
+c000000004C6F3A500000000000000132
+t1282357840
 s306
 
 N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/AddressBook.framework/AddressBook
@@ -38,6 +55,16 @@ N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0
 c000000004BFF3B830000000000000424
 t1275018115
 s1060
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
+c000000004C04722E0000000000147690
+t1275359790
+s1341072
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/AddressBookUI.framework/Headers/AddressBookUI.h
+c000000004C0472220000000000000202
+t1275359778
+s514
 
 N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/AudioToolbox.framework/AudioToolbox
 c000000004BFF3B7600000000001C8900
@@ -73,6 +100,396 @@ N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0
 c000000004C0471620000000001D47210
 t1275359586
 s30700048
+
+N/Users/poioit/Code/transforver/Classes/ChatBubbleView.h
+c000000004E086E6C0000000000000332
+t1309175404
+s818
+i<UIKit/UIKit.h>
+
+N/Users/poioit/Code/transforver/Classes/ChatBubbleView.m
+c000000004E086E6C0000000000001D8A
+t1309175404
+s7562
+i"ChatBubbleView.h"
+
+N/Users/poioit/Code/transforver/Classes/FavoritesTabViewController.h
+c000000004E4C5B3D00000000000001F0
+t1313626941
+s496
+i<UIKit/UIKit.h>
+
+N/Users/poioit/Code/transforver/Classes/FavoritesTabViewController.m
+c000000004E4C5B3D0000000000001060
+t1313626941
+s4192
+i"FavoritesTabViewController.h"
+
+N/Users/poioit/Code/transforver/Classes/MoreOptionViewController.h
+c000000004E479EA9000000000000013F
+t1313316521
+s319
+i<UIKit/UIKit.h>
+
+N/Users/poioit/Code/transforver/Classes/MoreOptionViewController.m
+c000000004E479EA90000000000000597
+t1313316521
+s1431
+i"MoreOptionViewController.h"
+
+N/Users/poioit/Code/transforver/Classes/MoreTabViewController.h
+c000000004E479EA90000000000000141
+t1313316521
+s321
+i<UIKit/UIKit.h>
+
+N/Users/poioit/Code/transforver/Classes/MoreTabViewController.m
+c000000004E479EA90000000000000B06
+t1313316521
+s2822
+i"MoreTabViewController.h"
+i"MoreOptionViewController.h"
+i"NavTabAppDelegate.h"
+
+N/Users/poioit/Code/transforver/Classes/NavTabAppDelegate.h
+c000000004E479EA900000000000001D4
+t1313316521
+s468
+i<UIKit/UIKit.h>
+
+N/Users/poioit/Code/transforver/Classes/NavTabAppDelegate.m
+c000000004E479EA900000000000002AB
+t1313316521
+s683
+i"NavTabAppDelegate.h"
+i"RootViewController.h"
+
+N/Users/poioit/Code/transforver/Classes/RootViewController.h
+c000000004E479EA90000000000000256
+t1313316521
+s598
+i<UIKit/UIKit.h>
+i"UICustomTabViewController.h"
+
+N/Users/poioit/Code/transforver/Classes/RootViewController.m
+c000000004E4C5B3D000000000000434B
+t1313626941
+s17227
+i"RootViewController.h"
+i"UICustomTabViewController.h"
+i<AudioToolbox/AudioServices.h>
+i<AddressBook/AddressBook.h>
+i<AddressBookUI/AddressBookUI.h>
+
+N/Users/poioit/Code/transforver/Classes/UICustomTabViewController.h
+c000000004E4C5FB90000000000000465
+t1313628089
+s1125
+i<UIKit/UIKit.h>
+i"ChatBubbleView.h"
+
+N/Users/poioit/Code/transforver/Classes/UICustomTabViewController.m
+c000000004E4C5B3D0000000000000BB0
+t1313626941
+s2992
+i"UICustomTabViewController.h"
+i"FavoritesTabViewController.h"
+i"MoreTabViewController.h"
+
+N/Users/poioit/Code/transforver/FavoritesTabView.xib
+c000000004E4C5B3E0000000000003363
+t1313626942
+s13155
+
+N/Users/poioit/Code/transforver/MainWindow.xib
+c000000004E479EAD0000000000005FA1
+t1313316525
+s24481
+
+N/Users/poioit/Code/transforver/MoreOptionView.xib
+c000000004E479EAD0000000000001E2F
+t1313316525
+s7727
+
+N/Users/poioit/Code/transforver/MoreTabView.xib
+c000000004E479EAD0000000000001F77
+t1313316525
+s8055
+
+N/Users/poioit/Code/transforver/NavTab_Prefix.pch
+c000000004E479EAD00000000000000B5
+t1313316525
+s181
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/poioit/Code/transforver/RootViewController.xib
+c000000004E479EAD0000000000001E72
+t1313316525
+s7794
+
+N/Users/poioit/Code/transforver/TabViewController.xib
+c000000004E4C5B3E0000000000002DBF
+t1313626942
+s11711
+
+N/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app
+t1313628298
+s1054
+
+N/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app.dSYM
+t1313628090
+s136
+
+N/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/111.caf
+t1313322886
+s361096
+
+N/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/123.wav
+t1313322886
+s70830
+
+N/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/FavoritesTabView.nib
+t1313627138
+s4060
+
+N/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/Icon.png
+t1313628298
+s3551
+
+N/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/Icon57x57.png
+t1313628246
+s3551
+
+N/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/Info.plist
+t1313627136
+s587
+
+N/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/MainWindow.nib
+t1313627137
+s2424
+
+N/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/MoreOptionView.nib
+t1313627138
+s1961
+
+N/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/MoreTabView.nib
+t1313627138
+s1785
+
+N/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/NavTab
+t1313628090
+s64988
+
+N/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/PkgInfo
+t1313627136
+s8
+
+N/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/RootViewController.nib
+t1313627137
+s1632
+
+N/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/TabViewController.nib
+t1313627137
+s2127
+
+N/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/bottomRow.png
+t1313322886
+s1747
+
+N/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/bottomRowSelected.png
+t1313322886
+s1820
+
+N/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/gradientBackground.png
+t1313322886
+s9799
+
+N/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/imageA.png
+t1313322886
+s4650
+
+N/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/imageB.png
+t1313322886
+s4600
+
+N/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/imageC.png
+t1313322886
+s4646
+
+N/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/indicator.png
+t1313322886
+s1395
+
+N/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/middleRow.png
+t1313322886
+s1055
+
+N/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/middleRowSelected.png
+t1313322886
+s1216
+
+N/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/mysoundcompressed.caf
+t1313322886
+s361164
+
+N/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/phone.png
+t1313322886
+s3006
+
+N/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/topAndBottomRow.png
+t1313322886
+s2280
+
+N/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/topAndBottomRowSelected.png
+t1313322886
+s2356
+
+N/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/topRow.png
+t1313322886
+s1607
+
+N/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/topRowSelected.png
+t1313322886
+s1747
+
+N/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/ChatBubbleView.o
+t1313627139
+s55448
+
+N/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/FavoritesTabViewController.o
+t1313627138
+s46140
+
+N/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/MoreOptionViewController.o
+t1313322888
+s36444
+
+N/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/MoreTabViewController.o
+t1313322888
+s50240
+
+N/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/NavTab.LinkFileList
+c000000004E4C5C0000000000000003F5
+t1313627136
+s1013
+
+N/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/NavTabAppDelegate.o
+t1313628090
+s47264
+
+N/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/RootViewController.o
+t1313628090
+s70864
+
+N/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/UICustomTabViewController.o
+t1313628090
+s53652
+
+N/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/main.o
+t1313322888
+s6288
+
+N/Users/poioit/Code/transforver/images/../phone.png
+c000000004E479EAD0000000000000BBE
+t1313316525
+s3006
+
+N/Users/poioit/Code/transforver/images/Icon.png
+c000000004E086E6C0000000000000DDF
+t1309175404
+s3551
+
+N/Users/poioit/Code/transforver/images/Icon57x57.png
+c000000004E086E6C0000000000000DDF
+t1309175404
+s3551
+
+N/Users/poioit/Code/transforver/images/bottomRow.png
+c000000004E479EAD00000000000006D3
+t1313316525
+s1747
+
+N/Users/poioit/Code/transforver/images/bottomRowSelected.png
+c000000004E479EAD000000000000071C
+t1313316525
+s1820
+
+N/Users/poioit/Code/transforver/images/gradientBackground.png
+c000000004E479EAD0000000000002647
+t1313316525
+s9799
+
+N/Users/poioit/Code/transforver/images/imageA.png
+c000000004E479EAD000000000000122A
+t1313316525
+s4650
+
+N/Users/poioit/Code/transforver/images/imageB.png
+c000000004E479EAD00000000000011F8
+t1313316525
+s4600
+
+N/Users/poioit/Code/transforver/images/imageC.png
+c000000004E479EAD0000000000001226
+t1313316525
+s4646
+
+N/Users/poioit/Code/transforver/images/indicator.png
+c000000004E479EAD0000000000000573
+t1313316525
+s1395
+
+N/Users/poioit/Code/transforver/images/middleRow.png
+c000000004E479EAD000000000000041F
+t1313316525
+s1055
+
+N/Users/poioit/Code/transforver/images/middleRowSelected.png
+c000000004E479EAD00000000000004C0
+t1313316525
+s1216
+
+N/Users/poioit/Code/transforver/images/topAndBottomRow.png
+c000000004E479EAD00000000000008E8
+t1313316525
+s2280
+
+N/Users/poioit/Code/transforver/images/topAndBottomRowSelected.png
+c000000004E479EAD0000000000000934
+t1313316525
+s2356
+
+N/Users/poioit/Code/transforver/images/topRow.png
+c000000004E479EAD0000000000000647
+t1313316525
+s1607
+
+N/Users/poioit/Code/transforver/images/topRowSelected.png
+c000000004E479EAD00000000000006D3
+t1313316525
+s1747
+
+N/Users/poioit/Code/transforver/main.m
+c000000004E479EAD000000000000016C
+t1313316525
+s364
+i<UIKit/UIKit.h>
+
+N/Users/poioit/Code/transforver/sounds/../111.caf
+c000000004E479EAD0000000000058288
+t1313316525
+s361096
+
+N/Users/poioit/Code/transforver/sounds/../123.wav
+c000000004E479EAD00000000000114AE
+t1313316525
+s70830
+
+N/Users/poioit/Code/transforver/sounds/../mysoundcompressed.caf
+c000000004E479EAD00000000000582CC
+t1313316525
+s361164
 
 N/Users/poioit/Code/transver/../../Documents/star.jpg
 c00000000000000000000000000000000
@@ -566,18 +983,50 @@ N/var/folders/8j/8jy36RAyF4a4q2xtp1-hok+++TI/-Caches-/com.apple.Xcode.501/Shared
 t1308869710
 s15232016
 
+N/var/folders/8j/8jy36RAyF4a4q2xtp1-hok+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-gfalfudnfxfatjbgtaxxjbjacfyx/NavTab_Prefix.pch.gch
+t1313322888
+s15232016
+
 N/var/folders/zx/zx5pwyE6ECu1VRpfjY48AE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-fnlptfhrhcklcoakrdesoxebjgjr/NavTab_Prefix.pch.gch
 t1313202049
 s15211536
 
 NInfo.plist
-c000000004E45DEE70000000000000385
-t1313201895
-s901
+c000000004E4C5B3E0000000000000372
+t1313626942
+s882
 
 CCheck dependencies
 r0
-lSLF07#2@18"Check dependencies334894950#334894950#0(0"0(0#1#0"8617080608#0"0#
+lSLF07#2@18"Check dependencies335321098#335321098#0(0"0(0#1#0"8616651168#0"0#
+
+CCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/ChatBubbleView.o /Users/poioit/Code/transforver/Classes/ChatBubbleView.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s335319938.967165
+e335319939.059025
+r1
+xCompileC
+xbuild/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/ChatBubbleView.o
+x/Users/poioit/Code/transforver/Classes/ChatBubbleView.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@63"Compile /Users/poioit/Code/transforver/Classes/ChatBubbleView.m335319938#335319939#0(0"0(0#0#55"/Users/poioit/Code/transforver/Classes/ChatBubbleView.m8612535808#1821"    cd /Users/poioit/Code/transforver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-generated-files.hmap -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-own-target-headers.hmap -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-project-headers.hmap -F/Users/poioit/Code/transforver/build/Debug-iphonesimulator -I/Users/poioit/Code/transforver/build/Debug-iphonesimulator/include -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources/i386 -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources -include /var/folders/8j/8jy36RAyF4a4q2xtp1-hok+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-gfalfudnfxfatjbgtaxxjbjacfyx/NavTab_Prefix.pch -c /Users/poioit/Code/transforver/Classes/ChatBubbleView.m -o /Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/ChatBubbleView.o0#
+
+CCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/FavoritesTabViewController.o /Users/poioit/Code/transforver/Classes/FavoritesTabViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s335319938.875941
+e335319938.976214
+r1
+xCompileC
+xbuild/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/FavoritesTabViewController.o
+x/Users/poioit/Code/transforver/Classes/FavoritesTabViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/poioit/Code/transforver/Classes/FavoritesTabViewController.m: In function '-[FavoritesTabViewController connection:didReceiveData:]':
+o/Users/poioit/Code/transforver/Classes/FavoritesTabViewController.m:86: warning: unused variable 'ex'
+lSLF07#2@75"Compile /Users/poioit/Code/transforver/Classes/FavoritesTabViewController.m335319938#335319938#0(243"/Users/poioit/Code/transforver/Classes/FavoritesTabViewController.m: In function '-[FavoritesTabViewController connection:didReceiveData:]':/Users/poioit/Code/transforver/Classes/FavoritesTabViewController.m:86: warning: unused variable 'ex'1(22@20"Unused variable 'ex'335319938#141#102#0(6@67"/Users/poioit/Code/transforver/Classes/FavoritesTabViewController.m335319741#86#0#86#0#19"unused variable '*'0(0#0#67"/Users/poioit/Code/transforver/Classes/FavoritesTabViewController.m8613231456#1845"    cd /Users/poioit/Code/transforver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-generated-files.hmap -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-own-target-headers.hmap -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-project-headers.hmap -F/Users/poioit/Code/transforver/build/Debug-iphonesimulator -I/Users/poioit/Code/transforver/build/Debug-iphonesimulator/include -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources/i386 -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources -include /var/folders/8j/8jy36RAyF4a4q2xtp1-hok+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-gfalfudnfxfatjbgtaxxjbjacfyx/NavTab_Prefix.pch -c /Users/poioit/Code/transforver/Classes/FavoritesTabViewController.m -o /Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/FavoritesTabViewController.o0#
 
 CCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/FavoritesTabViewController.o /Users/poioit/Code/transver/Classes/FavoritesTabViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s334894849.681732
@@ -607,6 +1056,19 @@ xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@92"Compile /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/FavoritesTabViewController.m330562511#330562511#0(0"0(0#0#84"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/FavoritesTabViewController.m8615576032#2032"    cd /Users/poioit/Downloads/wiredbob-NavTab-f2ae762    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-generated-files.hmap -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-own-target-headers.hmap -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-project-headers.hmap -F/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/include -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources/i386 -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources -include /var/folders/8j/8jy36RAyF4a4q2xtp1-hok+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-afgngwluhaqbnlbhauesptiqnjjs/NavTab_Prefix.pch -c /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/FavoritesTabViewController.m -o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/FavoritesTabViewController.o0#
 
+CCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/MoreOptionViewController.o /Users/poioit/Code/transforver/Classes/MoreOptionViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s335015688.631346
+e335015688.709931
+r1
+xCompileC
+xbuild/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/MoreOptionViewController.o
+x/Users/poioit/Code/transforver/Classes/MoreOptionViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@73"Compile /Users/poioit/Code/transforver/Classes/MoreOptionViewController.m335015688#335015688#0(0"0(0#0#65"/Users/poioit/Code/transforver/Classes/MoreOptionViewController.m8615716864#1841"    cd /Users/poioit/Code/transforver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-generated-files.hmap -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-own-target-headers.hmap -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-project-headers.hmap -F/Users/poioit/Code/transforver/build/Debug-iphonesimulator -I/Users/poioit/Code/transforver/build/Debug-iphonesimulator/include -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources/i386 -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources -include /var/folders/8j/8jy36RAyF4a4q2xtp1-hok+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-gfalfudnfxfatjbgtaxxjbjacfyx/NavTab_Prefix.pch -c /Users/poioit/Code/transforver/Classes/MoreOptionViewController.m -o /Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/MoreOptionViewController.o0#
+
 CCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/MoreOptionViewController.o /Users/poioit/Code/transver/Classes/MoreOptionViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s334894849.782364
 e334894849.906305
@@ -634,6 +1096,21 @@ xi386
 xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@90"Compile /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/MoreOptionViewController.m330562511#330562511#0(0"0(0#0#82"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/MoreOptionViewController.m8616399328#2028"    cd /Users/poioit/Downloads/wiredbob-NavTab-f2ae762    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-generated-files.hmap -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-own-target-headers.hmap -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-project-headers.hmap -F/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/include -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources/i386 -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources -include /var/folders/8j/8jy36RAyF4a4q2xtp1-hok+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-afgngwluhaqbnlbhauesptiqnjjs/NavTab_Prefix.pch -c /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/MoreOptionViewController.m -o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/MoreOptionViewController.o0#
+
+CCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/MoreTabViewController.o /Users/poioit/Code/transforver/Classes/MoreTabViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s335015688.629246
+e335015688.727439
+r1
+xCompileC
+xbuild/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/MoreTabViewController.o
+x/Users/poioit/Code/transforver/Classes/MoreTabViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/poioit/Code/transforver/Classes/MoreTabViewController.m: In function '-[MoreTabViewController tableView:cellForRowAtIndexPath:]':
+o/Users/poioit/Code/transforver/Classes/MoreTabViewController.m:66: warning: 'setText:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:211)
+lSLF07#2@70"Compile /Users/poioit/Code/transforver/Classes/MoreTabViewController.m335015688#335015688#0(408"/Users/poioit/Code/transforver/Classes/MoreTabViewController.m: In function '-[MoreTabViewController tableView:cellForRowAtIndexPath:]':/Users/poioit/Code/transforver/Classes/MoreTabViewController.m:66: warning: 'setText:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:211)1(22@194"'setText:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:211)335015688#137#271#0(6@62"/Users/poioit/Code/transforver/Classes/MoreTabViewController.m335009321#66#0#66#0#33"'*' is deprecated (declared at *)0(0#0#62"/Users/poioit/Code/transforver/Classes/MoreTabViewController.m8599582080#1835"    cd /Users/poioit/Code/transforver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-generated-files.hmap -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-own-target-headers.hmap -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-project-headers.hmap -F/Users/poioit/Code/transforver/build/Debug-iphonesimulator -I/Users/poioit/Code/transforver/build/Debug-iphonesimulator/include -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources/i386 -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources -include /var/folders/8j/8jy36RAyF4a4q2xtp1-hok+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-gfalfudnfxfatjbgtaxxjbjacfyx/NavTab_Prefix.pch -c /Users/poioit/Code/transforver/Classes/MoreTabViewController.m -o /Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/MoreTabViewController.o0#
 
 CCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/MoreTabViewController.o /Users/poioit/Code/transver/Classes/MoreTabViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s334894849.713770
@@ -667,6 +1144,19 @@ o/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/MoreTabViewController.m
 o/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/MoreTabViewController.m:66: warning: 'setText:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:211)
 lSLF07#2@87"Compile /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/MoreTabViewController.m330562511#330562511#0(442"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/MoreTabViewController.m: In function '-[MoreTabViewController tableView:cellForRowAtIndexPath:]':/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/MoreTabViewController.m:66: warning: 'setText:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:211)1(22@194"'setText:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:211)330562511#154#288#0(6@79"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/MoreTabViewController.m290685534#66#0#66#0#33"'*' is deprecated (declared at *)0(0#0#79"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/MoreTabViewController.m8616860192#2022"    cd /Users/poioit/Downloads/wiredbob-NavTab-f2ae762    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-generated-files.hmap -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-own-target-headers.hmap -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-project-headers.hmap -F/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/include -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources/i386 -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources -include /var/folders/8j/8jy36RAyF4a4q2xtp1-hok+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-afgngwluhaqbnlbhauesptiqnjjs/NavTab_Prefix.pch -c /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/MoreTabViewController.m -o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/MoreTabViewController.o0#
 
+CCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/NavTabAppDelegate.o /Users/poioit/Code/transforver/Classes/NavTabAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s335320889.983768
+e335320890.187143
+r1
+xCompileC
+xbuild/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/NavTabAppDelegate.o
+x/Users/poioit/Code/transforver/Classes/NavTabAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@66"Compile /Users/poioit/Code/transforver/Classes/NavTabAppDelegate.m335320889#335320890#0(0"0(0#0#58"/Users/poioit/Code/transforver/Classes/NavTabAppDelegate.m8616241248#1827"    cd /Users/poioit/Code/transforver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-generated-files.hmap -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-own-target-headers.hmap -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-project-headers.hmap -F/Users/poioit/Code/transforver/build/Debug-iphonesimulator -I/Users/poioit/Code/transforver/build/Debug-iphonesimulator/include -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources/i386 -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources -include /var/folders/8j/8jy36RAyF4a4q2xtp1-hok+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-gfalfudnfxfatjbgtaxxjbjacfyx/NavTab_Prefix.pch -c /Users/poioit/Code/transforver/Classes/NavTabAppDelegate.m -o /Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/NavTabAppDelegate.o0#
+
 CCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/NavTabAppDelegate.o /Users/poioit/Code/transver/Classes/NavTabAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s334894849.424858
 e334894849.531068
@@ -694,6 +1184,30 @@ xi386
 xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@83"Compile /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/NavTabAppDelegate.m334800822#334800822#0(0"0(0#0#75"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/NavTabAppDelegate.m8619898208#2014"    cd /Users/poioit/Downloads/wiredbob-NavTab-f2ae762    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-generated-files.hmap -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-own-target-headers.hmap -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-project-headers.hmap -F/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/include -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources/i386 -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources -include /var/folders/8j/8jy36RAyF4a4q2xtp1-hok+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-afgngwluhaqbnlbhauesptiqnjjs/NavTab_Prefix.pch -c /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/NavTabAppDelegate.m -o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/NavTabAppDelegate.o0#
+
+CCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/RootViewController.o /Users/poioit/Code/transforver/Classes/RootViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s335320889.985954
+e335320890.305434
+r1
+xCompileC
+xbuild/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/RootViewController.o
+x/Users/poioit/Code/transforver/Classes/RootViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/poioit/Code/transforver/Classes/RootViewController.m: In function '-[RootViewController loginServer]':
+o/Users/poioit/Code/transforver/Classes/RootViewController.m:200: warning: format not a string literal and no format arguments
+o/Users/poioit/Code/transforver/Classes/RootViewController.m:218: warning: 'NSURLRequest' may not respond to '+setAllowsAnyHTTPSCertificate:forHost:'
+o/Users/poioit/Code/transforver/Classes/RootViewController.m:218: warning: (Messages without a matching method signature
+o/Users/poioit/Code/transforver/Classes/RootViewController.m:218: warning: will be assumed to return 'id' and accept
+o/Users/poioit/Code/transforver/Classes/RootViewController.m:218: warning: '...' as arguments.)
+o/Users/poioit/Code/transforver/Classes/RootViewController.m: In function '-[RootViewController tableView:cellForRowAtIndexPath:]':
+o/Users/poioit/Code/transforver/Classes/RootViewController.m:436: warning: unused variable 'row'
+o/Users/poioit/Code/transforver/Classes/RootViewController.m:443: warning: 'setText:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:211)
+o/Users/poioit/Code/transforver/Classes/RootViewController.m: In function '-[RootViewController tableView:didSelectRowAtIndexPath:]':
+o/Users/poioit/Code/transforver/Classes/RootViewController.m:455: warning: class 'RootViewController' does not implement the 'ABPeoplePickerNavigationControllerDelegate' protocol
+lSLF07#2@67"Compile /Users/poioit/Code/transforver/Classes/RootViewController.m335320889#335320890#0(1523"/Users/poioit/Code/transforver/Classes/RootViewController.m: In function '-[RootViewController loginServer]':/Users/poioit/Code/transforver/Classes/RootViewController.m:200: warning: format not a string literal and no format arguments/Users/poioit/Code/transforver/Classes/RootViewController.m:218: warning: 'NSURLRequest' may not respond to '+setAllowsAnyHTTPSCertificate:forHost:'/Users/poioit/Code/transforver/Classes/RootViewController.m:218: warning: (Messages without a matching method signature/Users/poioit/Code/transforver/Classes/RootViewController.m:218: warning: will be assumed to return 'id' and accept/Users/poioit/Code/transforver/Classes/RootViewController.m:218: warning: '...' as arguments.)/Users/poioit/Code/transforver/Classes/RootViewController.m: In function '-[RootViewController tableView:cellForRowAtIndexPath:]':/Users/poioit/Code/transforver/Classes/RootViewController.m:436: warning: unused variable 'row'/Users/poioit/Code/transforver/Classes/RootViewController.m:443: warning: 'setText:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:211)/Users/poioit/Code/transforver/Classes/RootViewController.m: In function '-[RootViewController tableView:didSelectRowAtIndexPath:]':/Users/poioit/Code/transforver/Classes/RootViewController.m:455: warning: class 'RootViewController' does not implement the 'ABPeoplePickerNavigationControllerDelegate' protocol6(22@51"Format not a string literal and no format arguments335320890#110#126#0(6@59"/Users/poioit/Code/transforver/Classes/RootViewController.m335319741#200#0#200#0#51"format not a string literal and no format arguments0(22@74"'NSURLRequest' may not respond to '+setAllowsAnyHTTPSCertificate:forHost:'335320890#236#149#0(6@59"/Users/poioit/Code/transforver/Classes/RootViewController.m335319741#218#0#218#0#26"'*' may not respond to '*'0(13@108"(Messages without a matching method signature will be assumed to return 'id' and accept '...' as arguments.)335320890#385#120#0(6@59"/Users/poioit/Code/transforver/Classes/RootViewController.m335319741#218#0#218#0#0"0(22@21"Unused variable 'row'335320890#847#96#0(6@59"/Users/poioit/Code/transforver/Classes/RootViewController.m335319741#436#0#436#0#19"unused variable '*'0(22@194"'setText:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:211)335320890#943#269#0(6@59"/Users/poioit/Code/transforver/Classes/RootViewController.m335319741#443#0#443#0#33"'*' is deprecated (declared at *)0(22@103"Class 'RootViewController' does not implement the 'ABPeoplePickerNavigationControllerDelegate' protocol335320890#1345#178#0(6@59"/Users/poioit/Code/transforver/Classes/RootViewController.m335319741#455#0#455#0#45"class '*' does not implement the '*' protocol0(0#0#59"/Users/poioit/Code/transforver/Classes/RootViewController.m8616203808#1829"    cd /Users/poioit/Code/transforver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-generated-files.hmap -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-own-target-headers.hmap -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-project-headers.hmap -F/Users/poioit/Code/transforver/build/Debug-iphonesimulator -I/Users/poioit/Code/transforver/build/Debug-iphonesimulator/include -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources/i386 -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources -include /var/folders/8j/8jy36RAyF4a4q2xtp1-hok+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-gfalfudnfxfatjbgtaxxjbjacfyx/NavTab_Prefix.pch -c /Users/poioit/Code/transforver/Classes/RootViewController.m -o /Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/RootViewController.o0#
 
 CCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/RootViewController.o /Users/poioit/Code/transver/Classes/RootViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s334894849.497785
@@ -759,6 +1273,20 @@ o/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m: I
 o/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m:250: warning: 'setText:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:211)
 lSLF07#2@84"Compile /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m334807412#334807413#0(2596"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m: In function '-[RootViewController showMenu:]':/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m:93: warning: 'RootViewController' may not respond to '-loginServer'/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m:93: warning: (Messages without a matching method signature/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m:93: warning: will be assumed to return 'id' and accept/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m:93: warning: '...' as arguments.)/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m:95: warning: 'RootViewController' may not respond to '-uploadFile'/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m:102: warning: class 'RootViewController' does not implement the 'UIActionSheetDelegate' protocol/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m:97: warning: unused variable 'myMenu'/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m: In function '-[RootViewController uploadFile]':/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m:176: warning: format not a string literal and no format arguments/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m:137: warning: unused variable 'str'/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m:136: warning: unused variable 'imageData'/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m: In function '-[RootViewController loginServer]':/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m:183: warning: format not a string literal and no format arguments/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m:186: warning: format not a string literal and no format arguments/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m:201: warning: 'NSURLRequest' may not respond to '+setAllowsAnyHTTPSCertificate:forHost:'/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m: In function '-[RootViewController tableView:cellForRowAtIndexPath:]':/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m:250: warning: 'setText:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:211)12(22@54"'RootViewController' may not respond to '-loginServer'334807413#125#145#0(6@76"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m334807408#93#0#93#0#26"'*' may not respond to '*'0(13@108"(Messages without a matching method signature will be assumed to return 'id' and accept '...' as arguments.)334807413#270#136#0(6@76"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m334807408#93#0#93#0#0"0(22@53"'RootViewController' may not respond to '-uploadFile'334807413#649#144#0(6@76"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m334807408#95#0#95#0#26"'*' may not respond to '*'0(22@82"Class 'RootViewController' does not implement the 'UIActionSheetDelegate' protocol334807413#793#174#0(6@76"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m334807408#102#0#102#0#45"class '*' does not implement the '*' protocol0(22@24"Unused variable 'myMenu'334807413#967#115#0(6@76"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m334807408#97#0#97#0#19"unused variable '*'0(22@51"Format not a string literal and no format arguments334807413#1208#143#0(6@76"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m334807408#176#0#176#0#51"format not a string literal and no format arguments0(22@21"Unused variable 'str'334807413#1351#113#0(6@76"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m334807408#137#0#137#0#19"unused variable '*'0(22@27"Unused variable 'imageData'334807413#1464#119#0(6@76"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m334807408#136#0#136#0#19"unused variable '*'0(22@51"Format not a string literal and no format arguments334807413#1710#143#0(6@76"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m334807408#183#0#183#0#51"format not a string literal and no format arguments0(22@51"Format not a string literal and no format arguments334807413#1853#143#0(6@76"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m334807408#186#0#186#0#51"format not a string literal and no format arguments0(22@74"'NSURLRequest' may not respond to '+setAllowsAnyHTTPSCertificate:forHost:'334807413#1996#166#0(6@76"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m334807408#201#0#201#0#26"'*' may not respond to '*'0(22@194"'setText:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:211)334807413#2310#286#0(6@76"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m334807408#250#0#250#0#33"'*' is deprecated (declared at *)0(0#0#76"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m8610038848#2016"    cd /Users/poioit/Downloads/wiredbob-NavTab-f2ae762    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-generated-files.hmap -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-own-target-headers.hmap -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-project-headers.hmap -F/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/include -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources/i386 -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources -include /var/folders/8j/8jy36RAyF4a4q2xtp1-hok+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-afgngwluhaqbnlbhauesptiqnjjs/NavTab_Prefix.pch -c /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m -o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/RootViewController.o0#
 
+CCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/UICustomTabViewController.o /Users/poioit/Code/transforver/Classes/UICustomTabViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s335320890.187239
+e335320890.339172
+r1
+xCompileC
+xbuild/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/UICustomTabViewController.o
+x/Users/poioit/Code/transforver/Classes/UICustomTabViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/poioit/Code/transforver/Classes/UICustomTabViewController.m:101: warning: '@end' missing in implementation context
+lSLF07#2@74"Compile /Users/poioit/Code/transforver/Classes/UICustomTabViewController.m335320890#335320890#0(122"/Users/poioit/Code/transforver/Classes/UICustomTabViewController.m:101: warning: '@end' missing in implementation context1(22@40"'@end' missing in implementation context335320890#0#122#0(6@66"/Users/poioit/Code/transforver/Classes/UICustomTabViewController.m335319741#101#0#101#0#40"'@end' missing in implementation context0(0#0#66"/Users/poioit/Code/transforver/Classes/UICustomTabViewController.m8616276576#1843"    cd /Users/poioit/Code/transforver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-generated-files.hmap -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-own-target-headers.hmap -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-project-headers.hmap -F/Users/poioit/Code/transforver/build/Debug-iphonesimulator -I/Users/poioit/Code/transforver/build/Debug-iphonesimulator/include -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources/i386 -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources -include /var/folders/8j/8jy36RAyF4a4q2xtp1-hok+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-gfalfudnfxfatjbgtaxxjbjacfyx/NavTab_Prefix.pch -c /Users/poioit/Code/transforver/Classes/UICustomTabViewController.m -o /Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/UICustomTabViewController.o0#
+
 CCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/UICustomTabViewController.o /Users/poioit/Code/transver/Classes/UICustomTabViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s334894849.531180
 e334894849.713655
@@ -787,6 +1315,19 @@ xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@91"Compile /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/UICustomTabViewController.m334800960#334800961#0(0"0(0#0#83"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/UICustomTabViewController.m8602720864#2030"    cd /Users/poioit/Downloads/wiredbob-NavTab-f2ae762    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-generated-files.hmap -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-own-target-headers.hmap -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-project-headers.hmap -F/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/include -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources/i386 -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources -include /var/folders/8j/8jy36RAyF4a4q2xtp1-hok+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-afgngwluhaqbnlbhauesptiqnjjs/NavTab_Prefix.pch -c /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/UICustomTabViewController.m -o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/UICustomTabViewController.o0#
 
+CCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/main.o /Users/poioit/Code/transforver/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s335015688.373248
+e335015688.459360
+r1
+xCompileC
+xbuild/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/main.o
+x/Users/poioit/Code/transforver/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@45"Compile /Users/poioit/Code/transforver/main.m335015688#335015688#0(0"0(0#0#37"/Users/poioit/Code/transforver/main.m8613250688#1793"    cd /Users/poioit/Code/transforver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-generated-files.hmap -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-own-target-headers.hmap -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-project-headers.hmap -F/Users/poioit/Code/transforver/build/Debug-iphonesimulator -I/Users/poioit/Code/transforver/build/Debug-iphonesimulator/include -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources/i386 -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources -include /var/folders/8j/8jy36RAyF4a4q2xtp1-hok+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-gfalfudnfxfatjbgtaxxjbjacfyx/NavTab_Prefix.pch -c /Users/poioit/Code/transforver/main.m -o /Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/main.o0#
+
 CCompileC build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/main.o /Users/poioit/Code/transver/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s334894849.423592
 e334894849.497672
@@ -814,6 +1355,69 @@ xi386
 xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@62"Compile /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/main.m330562510#330562511#0(0"0(0#0#54"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/main.m8616038816#1980"    cd /Users/poioit/Downloads/wiredbob-NavTab-f2ae762    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-generated-files.hmap -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-own-target-headers.hmap -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-project-headers.hmap -F/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/include -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources/i386 -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources -include /var/folders/8j/8jy36RAyF4a4q2xtp1-hok+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-afgngwluhaqbnlbhauesptiqnjjs/NavTab_Prefix.pch -c /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/main.m -o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/main.o0#
+
+CCompileXIB /Users/poioit/Code/transforver/FavoritesTabView.xib
+s335319937.515885
+e335319938.165726
+r1
+xCompileXIB
+x/Users/poioit/Code/transforver/FavoritesTabView.xib
+o/* com.apple.ibtool.document.warnings */
+o/Users/poioit/Code/transforver/FavoritesTabView.xib:6: warning: The 'Touch Down' event of 'Rounded Rect Button (Recording)' is connected to the 'recordingButtonClick:' selector of 'File's Owner', but 'recordingButtonClick:' is no longer defined on 'FavoritesTabViewController'.
+o/Users/poioit/Code/transforver/FavoritesTabView.xib:6: warning: The 'Touch Up Outside' event of 'Rounded Rect Button (Recording)' is connected to the 'recordingButtonRelease:' selector of 'File's Owner', but 'recordingButtonRelease:' is no longer defined on 'FavoritesTabViewController'.
+o/Users/poioit/Code/transforver/FavoritesTabView.xib:6: warning: The 'Touch Up Inside' event of 'Rounded Rect Button (Recording)' is connected to the 'recordingButtonRelease:' selector of 'File's Owner', but 'recordingButtonRelease:' is no longer defined on 'FavoritesTabViewController'.
+o/Users/poioit/Code/transforver/FavoritesTabView.xib:7: warning: The 'Touch Down' event of 'Rounded Rect Button (Download)' is connected to the 'downloadingButtonClick:' selector of 'File's Owner', but 'downloadingButtonClick:' is no longer defined on 'FavoritesTabViewController'.
+o/Users/poioit/Code/transforver/FavoritesTabView.xib:-1: warning: The 'view' outlet of 'File's Owner' is connected to 'View' but 'view' is no longer defined on FavoritesTabViewController.
+lSLF07#2@31"CompileXIB FavoritesTabView.xib335319937#335319938#0(1362"/* com.apple.ibtool.document.warnings *//Users/poioit/Code/transforver/FavoritesTabView.xib:6: warning: The 'Touch Down' event of 'Rounded Rect Button (Recording)' is connected to the 'recordingButtonClick:' selector of 'File's Owner', but 'recordingButtonClick:' is no longer defined on 'FavoritesTabViewController'./Users/poioit/Code/transforver/FavoritesTabView.xib:6: warning: The 'Touch Up Outside' event of 'Rounded Rect Button (Recording)' is connected to the 'recordingButtonRelease:' selector of 'File's Owner', but 'recordingButtonRelease:' is no longer defined on 'FavoritesTabViewController'./Users/poioit/Code/transforver/FavoritesTabView.xib:6: warning: The 'Touch Up Inside' event of 'Rounded Rect Button (Recording)' is connected to the 'recordingButtonRelease:' selector of 'File's Owner', but 'recordingButtonRelease:' is no longer defined on 'FavoritesTabViewController'./Users/poioit/Code/transforver/FavoritesTabView.xib:7: warning: The 'Touch Down' event of 'Rounded Rect Button (Download)' is connected to the 'downloadingButtonClick:' selector of 'File's Owner', but 'downloadingButtonClick:' is no longer defined on 'FavoritesTabViewController'./Users/poioit/Code/transforver/FavoritesTabView.xib:-1: warning: The 'view' outlet of 'File's Owner' is connected to 'View' but 'view' is no longer defined on FavoritesTabViewController.5(22@213"The 'Touch Down' event of 'Rounded Rect Button (Recording)' is connected to the 'recordingButtonClick:' selector of 'File's Owner', but 'recordingButtonClick:' is no longer defined on 'FavoritesTabViewController'.335319938#18446744073709551615#0#0(6@51"/Users/poioit/Code/transforver/FavoritesTabView.xib335319742#6#0#6#0#0"0(22@223"The 'Touch Up Outside' event of 'Rounded Rect Button (Recording)' is connected to the 'recordingButtonRelease:' selector of 'File's Owner', but 'recordingButtonRelease:' is no longer defined on 'FavoritesTabViewController'.335319938#18446744073709551615#0#0(6@51"/Users/poioit/Code/transforver/FavoritesTabView.xib335319742#6#0#6#0#0"0(22@222"The 'Touch Up Inside' event of 'Rounded Rect Button (Recording)' is connected to the 'recordingButtonRelease:' selector of 'File's Owner', but 'recordingButtonRelease:' is no longer defined on 'FavoritesTabViewController'.335319938#18446744073709551615#0#0(6@51"/Users/poioit/Code/transforver/FavoritesTabView.xib335319742#6#0#6#0#0"0(22@216"The 'Touch Down' event of 'Rounded Rect Button (Download)' is connected to the 'downloadingButtonClick:' selector of 'File's Owner', but 'downloadingButtonClick:' is no longer defined on 'FavoritesTabViewController'.335319938#18446744073709551615#0#0(6@51"/Users/poioit/Code/transforver/FavoritesTabView.xib335319742#7#0#7#0#0"0(22@121"The 'view' outlet of 'File's Owner' is connected to 'View' but 'view' is no longer defined on FavoritesTabViewController.335319938#18446744073709551615#0#0(6@51"/Users/poioit/Code/transforver/FavoritesTabView.xib335319742#18446744073709551615#0#18446744073709551615#0#0"0(0#0#51"/Users/poioit/Code/transforver/FavoritesTabView.xib8615143136#557"    cd /Users/poioit/Code/transforver    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/FavoritesTabView.nib /Users/poioit/Code/transforver/FavoritesTabView.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/poioit/Code/transforver/MainWindow.xib
+s335319936.898946
+e335319937.439816
+r1
+xCompileXIB
+x/Users/poioit/Code/transforver/MainWindow.xib
+lSLF07#2@25"CompileXIB MainWindow.xib335319936#335319937#0(0"0(0#0#45"/Users/poioit/Code/transforver/MainWindow.xib8613431808#545"    cd /Users/poioit/Code/transforver    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/MainWindow.nib /Users/poioit/Code/transforver/MainWindow.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/poioit/Code/transforver/MoreOptionView.xib
+s335319938.165814
+e335319938.551288
+r1
+xCompileXIB
+x/Users/poioit/Code/transforver/MoreOptionView.xib
+lSLF07#2@29"CompileXIB MoreOptionView.xib335319938#335319938#0(0"0(0#0#49"/Users/poioit/Code/transforver/MoreOptionView.xib8611724480#553"    cd /Users/poioit/Code/transforver    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/MoreOptionView.nib /Users/poioit/Code/transforver/MoreOptionView.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/poioit/Code/transforver/MoreTabView.xib
+s335319937.884494
+e335319938.337847
+r1
+xCompileXIB
+x/Users/poioit/Code/transforver/MoreTabView.xib
+lSLF07#2@26"CompileXIB MoreTabView.xib335319937#335319938#0(0"0(0#0#46"/Users/poioit/Code/transforver/MoreTabView.xib8615293056#547"    cd /Users/poioit/Code/transforver    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/MoreTabView.nib /Users/poioit/Code/transforver/MoreTabView.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/poioit/Code/transforver/RootViewController.xib
+s335319936.899735
+e335319937.515801
+r1
+xCompileXIB
+x/Users/poioit/Code/transforver/RootViewController.xib
+o/* com.apple.ibtool.document.warnings */
+o/Users/poioit/Code/transforver/RootViewController.xib:-1: warning: The 'tableView' outlet of 'File's Owner' is connected to 'Table View' but 'tableView' is no longer defined on RootViewController.
+o/Users/poioit/Code/transforver/RootViewController.xib:-1: warning: The 'view' outlet of 'File's Owner' is connected to 'Table View' but 'view' is no longer defined on RootViewController.
+lSLF07#2@33"CompileXIB RootViewController.xib335319936#335319937#0(425"/* com.apple.ibtool.document.warnings *//Users/poioit/Code/transforver/RootViewController.xib:-1: warning: The 'tableView' outlet of 'File's Owner' is connected to 'Table View' but 'tableView' is no longer defined on RootViewController./Users/poioit/Code/transforver/RootViewController.xib:-1: warning: The 'view' outlet of 'File's Owner' is connected to 'Table View' but 'view' is no longer defined on RootViewController.2(22@129"The 'tableView' outlet of 'File's Owner' is connected to 'Table View' but 'tableView' is no longer defined on RootViewController.335319937#18446744073709551615#0#0(6@53"/Users/poioit/Code/transforver/RootViewController.xib335009325#18446744073709551615#0#18446744073709551615#0#0"0(22@119"The 'view' outlet of 'File's Owner' is connected to 'Table View' but 'view' is no longer defined on RootViewController.335319937#18446744073709551615#0#0(6@53"/Users/poioit/Code/transforver/RootViewController.xib335009325#18446744073709551615#0#18446744073709551615#0#0"0(0#0#53"/Users/poioit/Code/transforver/RootViewController.xib8612882208#561"    cd /Users/poioit/Code/transforver    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/RootViewController.nib /Users/poioit/Code/transforver/RootViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/poioit/Code/transforver/TabViewController.xib
+s335319937.439900
+e335319937.884410
+r1
+xCompileXIB
+x/Users/poioit/Code/transforver/TabViewController.xib
+o/* com.apple.ibtool.document.warnings */
+o/Users/poioit/Code/transforver/TabViewController.xib:-1: warning: The 'favouritesTabBarItem' outlet of 'File's Owner' is connected to 'Tab Bar Item (Favorites)' but 'favouritesTabBarItem' is no longer defined on UICustomTabViewController.
+o/Users/poioit/Code/transforver/TabViewController.xib:-1: warning: The 'view' outlet of 'File's Owner' is connected to 'View' but 'view' is no longer defined on UICustomTabViewController.
+o/Users/poioit/Code/transforver/TabViewController.xib:-1: warning: The 'recordingTabBarItem' outlet of 'File's Owner' is connected to 'Tab Bar Item (Recording)' but 'recordingTabBarItem' is no longer defined on UICustomTabViewController.
+o/Users/poioit/Code/transforver/TabViewController.xib:-1: warning: The 'tabBar' outlet of 'File's Owner' is connected to 'Tab Bar' but 'tabBar' is no longer defined on UICustomTabViewController.
+o/Users/poioit/Code/transforver/TabViewController.xib:-1: warning: The 'moreTabBarItem' outlet of 'File's Owner' is connected to 'Tab Bar Item (More)' but 'moreTabBarItem' is no longer defined on UICustomTabViewController.
+lSLF07#2@32"CompileXIB TabViewController.xib335319937#335319937#0(1120"/* com.apple.ibtool.document.warnings *//Users/poioit/Code/transforver/TabViewController.xib:-1: warning: The 'favouritesTabBarItem' outlet of 'File's Owner' is connected to 'Tab Bar Item (Favorites)' but 'favouritesTabBarItem' is no longer defined on UICustomTabViewController./Users/poioit/Code/transforver/TabViewController.xib:-1: warning: The 'view' outlet of 'File's Owner' is connected to 'View' but 'view' is no longer defined on UICustomTabViewController./Users/poioit/Code/transforver/TabViewController.xib:-1: warning: The 'recordingTabBarItem' outlet of 'File's Owner' is connected to 'Tab Bar Item (Recording)' but 'recordingTabBarItem' is no longer defined on UICustomTabViewController./Users/poioit/Code/transforver/TabViewController.xib:-1: warning: The 'tabBar' outlet of 'File's Owner' is connected to 'Tab Bar' but 'tabBar' is no longer defined on UICustomTabViewController./Users/poioit/Code/transforver/TabViewController.xib:-1: warning: The 'moreTabBarItem' outlet of 'File's Owner' is connected to 'Tab Bar Item (More)' but 'moreTabBarItem' is no longer defined on UICustomTabViewController.5(22@172"The 'favouritesTabBarItem' outlet of 'File's Owner' is connected to 'Tab Bar Item (Favorites)' but 'favouritesTabBarItem' is no longer defined on UICustomTabViewController.335319937#18446744073709551615#0#0(6@52"/Users/poioit/Code/transforver/TabViewController.xib335319742#18446744073709551615#0#18446744073709551615#0#0"0(22@120"The 'view' outlet of 'File's Owner' is connected to 'View' but 'view' is no longer defined on UICustomTabViewController.335319937#18446744073709551615#0#0(6@52"/Users/poioit/Code/transforver/TabViewController.xib335319742#18446744073709551615#0#18446744073709551615#0#0"0(22@170"The 'recordingTabBarItem' outlet of 'File's Owner' is connected to 'Tab Bar Item (Recording)' but 'recordingTabBarItem' is no longer defined on UICustomTabViewController.335319937#18446744073709551615#0#0(6@52"/Users/poioit/Code/transforver/TabViewController.xib335319742#18446744073709551615#0#18446744073709551615#0#0"0(22@127"The 'tabBar' outlet of 'File's Owner' is connected to 'Tab Bar' but 'tabBar' is no longer defined on UICustomTabViewController.335319937#18446744073709551615#0#0(6@52"/Users/poioit/Code/transforver/TabViewController.xib335319742#18446744073709551615#0#18446744073709551615#0#0"0(22@155"The 'moreTabBarItem' outlet of 'File's Owner' is connected to 'Tab Bar Item (More)' but 'moreTabBarItem' is no longer defined on UICustomTabViewController.335319937#18446744073709551615#0#0(6@52"/Users/poioit/Code/transforver/TabViewController.xib335319742#18446744073709551615#0#18446744073709551615#0#0"0(0#0#52"/Users/poioit/Code/transforver/TabViewController.xib8611486272#559"    cd /Users/poioit/Code/transforver    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/TabViewController.nib /Users/poioit/Code/transforver/TabViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
 
 CCompileXIB /Users/poioit/Code/transver/FavoritesTabView.xib
 s334894846.621685
@@ -935,8 +1539,125 @@ xbuild/Debug-iphonesimulator/NavTab.app/111.caf
 x111.caf
 lSLF07#2@12"Copy 111.caf334894847#334894848#0(0"0(0#0#35"/Users/poioit/Code/transver/111.caf8616970240#431"    cd /Users/poioit/Code/transver    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/poioit/Code/transver/111.caf /Users/poioit/Code/transver/build/Debug-iphonesimulator/NavTab.app0#
 
+CCpResource build/Debug-iphonesimulator/NavTab.app/111.caf sounds/../111.caf
+s335015686.644858
+e335015686.800896
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/NavTab.app/111.caf
+xsounds/../111.caf
+lSLF07#2@22"Copy sounds/../111.caf335015686#335015686#0(0"0(0#0#48"/Users/poioit/Code/transforver/sounds/../111.caf8608447296#436"    cd /Users/poioit/Code/transforver    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/poioit/Code/transforver/sounds/../111.caf /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app0#
+
+CCpResource build/Debug-iphonesimulator/NavTab.app/123.wav sounds/../123.wav
+s335015686.649336
+e335015686.788978
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/NavTab.app/123.wav
+xsounds/../123.wav
+lSLF07#2@22"Copy sounds/../123.wav335015686#335015686#0(0"0(0#0#48"/Users/poioit/Code/transforver/sounds/../123.wav8603670688#436"    cd /Users/poioit/Code/transforver    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/poioit/Code/transforver/sounds/../123.wav /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app0#
+
 CCpResource build/Debug-iphonesimulator/NavTab.app/334686339710.caf 334686339710.caf
 r0
+
+CCpResource build/Debug-iphonesimulator/NavTab.app/Icon.png images/Icon.png
+s335321098.404750
+e335321098.409548
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/NavTab.app/Icon.png
+ximages/Icon.png
+lSLF07#2@20"Copy images/Icon.png335321098#335321098#0(0"0(0#0#46"/Users/poioit/Code/transforver/images/Icon.png8613366240#434"    cd /Users/poioit/Code/transforver    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/poioit/Code/transforver/images/Icon.png /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app0#
+
+CCpResource build/Debug-iphonesimulator/NavTab.app/Icon57x57.png images/Icon57x57.png
+s335321046.280432
+e335321046.328455
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/NavTab.app/Icon57x57.png
+ximages/Icon57x57.png
+lSLF07#2@25"Copy images/Icon57x57.png335321046#335321046#0(0"0(0#0#51"/Users/poioit/Code/transforver/images/Icon57x57.png8614024416#439"    cd /Users/poioit/Code/transforver    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/poioit/Code/transforver/images/Icon57x57.png /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app0#
+
+CCpResource build/Debug-iphonesimulator/NavTab.app/bottomRow.png images/bottomRow.png
+s335015686.650622
+e335015686.772003
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/NavTab.app/bottomRow.png
+ximages/bottomRow.png
+lSLF07#2@25"Copy images/bottomRow.png335015686#335015686#0(0"0(0#0#51"/Users/poioit/Code/transforver/images/bottomRow.png8602305472#439"    cd /Users/poioit/Code/transforver    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/poioit/Code/transforver/images/bottomRow.png /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app0#
+
+CCpResource build/Debug-iphonesimulator/NavTab.app/bottomRowSelected.png images/bottomRowSelected.png
+s335015686.652359
+e335015686.740831
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/NavTab.app/bottomRowSelected.png
+ximages/bottomRowSelected.png
+lSLF07#2@33"Copy images/bottomRowSelected.png335015686#335015686#0(0"0(0#0#59"/Users/poioit/Code/transforver/images/bottomRowSelected.png8601811808#447"    cd /Users/poioit/Code/transforver    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/poioit/Code/transforver/images/bottomRowSelected.png /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app0#
+
+CCpResource build/Debug-iphonesimulator/NavTab.app/gradientBackground.png images/gradientBackground.png
+s335015686.654149
+e335015686.740963
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/NavTab.app/gradientBackground.png
+ximages/gradientBackground.png
+lSLF07#2@34"Copy images/gradientBackground.png335015686#335015686#0(0"0(0#0#60"/Users/poioit/Code/transforver/images/gradientBackground.png8601398944#448"    cd /Users/poioit/Code/transforver    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/poioit/Code/transforver/images/gradientBackground.png /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app0#
+
+CCpResource build/Debug-iphonesimulator/NavTab.app/imageA.png images/imageA.png
+s335015686.655906
+e335015686.747953
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/NavTab.app/imageA.png
+ximages/imageA.png
+lSLF07#2@22"Copy images/imageA.png335015686#335015686#0(0"0(0#0#48"/Users/poioit/Code/transforver/images/imageA.png8590198400#436"    cd /Users/poioit/Code/transforver    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/poioit/Code/transforver/images/imageA.png /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app0#
+
+CCpResource build/Debug-iphonesimulator/NavTab.app/imageB.png images/imageB.png
+s335015686.656570
+e335015686.745896
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/NavTab.app/imageB.png
+ximages/imageB.png
+lSLF07#2@22"Copy images/imageB.png335015686#335015686#0(0"0(0#0#48"/Users/poioit/Code/transforver/images/imageB.png8615677696#436"    cd /Users/poioit/Code/transforver    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/poioit/Code/transforver/images/imageB.png /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app0#
+
+CCpResource build/Debug-iphonesimulator/NavTab.app/imageC.png images/imageC.png
+s335015686.721250
+e335015686.773999
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/NavTab.app/imageC.png
+ximages/imageC.png
+lSLF07#2@22"Copy images/imageC.png335015686#335015686#0(0"0(0#0#48"/Users/poioit/Code/transforver/images/imageC.png8613700672#436"    cd /Users/poioit/Code/transforver    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/poioit/Code/transforver/images/imageC.png /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app0#
+
+CCpResource build/Debug-iphonesimulator/NavTab.app/indicator.png images/indicator.png
+s335015686.774077
+e335015686.780421
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/NavTab.app/indicator.png
+ximages/indicator.png
+lSLF07#2@25"Copy images/indicator.png335015686#335015686#0(0"0(0#0#51"/Users/poioit/Code/transforver/images/indicator.png8609942656#439"    cd /Users/poioit/Code/transforver    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/poioit/Code/transforver/images/indicator.png /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app0#
+
+CCpResource build/Debug-iphonesimulator/NavTab.app/middleRow.png images/middleRow.png
+s335015686.737699
+e335015686.776730
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/NavTab.app/middleRow.png
+ximages/middleRow.png
+lSLF07#2@25"Copy images/middleRow.png335015686#335015686#0(0"0(0#0#51"/Users/poioit/Code/transforver/images/middleRow.png8613226624#439"    cd /Users/poioit/Code/transforver    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/poioit/Code/transforver/images/middleRow.png /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app0#
+
+CCpResource build/Debug-iphonesimulator/NavTab.app/middleRowSelected.png images/middleRowSelected.png
+s335015686.741028
+e335015686.778386
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/NavTab.app/middleRowSelected.png
+ximages/middleRowSelected.png
+lSLF07#2@33"Copy images/middleRowSelected.png335015686#335015686#0(0"0(0#0#59"/Users/poioit/Code/transforver/images/middleRowSelected.png8611332288#447"    cd /Users/poioit/Code/transforver    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/poioit/Code/transforver/images/middleRowSelected.png /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app0#
 
 CCpResource build/Debug-iphonesimulator/NavTab.app/mysoundcompressed.caf mysoundcompressed.caf
 s334894847.851448
@@ -947,6 +1668,24 @@ xbuild/Debug-iphonesimulator/NavTab.app/mysoundcompressed.caf
 xmysoundcompressed.caf
 lSLF07#2@26"Copy mysoundcompressed.caf334894847#334894848#0(0"0(0#0#49"/Users/poioit/Code/transver/mysoundcompressed.caf8616824928#445"    cd /Users/poioit/Code/transver    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/poioit/Code/transver/mysoundcompressed.caf /Users/poioit/Code/transver/build/Debug-iphonesimulator/NavTab.app0#
 
+CCpResource build/Debug-iphonesimulator/NavTab.app/mysoundcompressed.caf sounds/../mysoundcompressed.caf
+s335015686.646572
+e335015686.801833
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/NavTab.app/mysoundcompressed.caf
+xsounds/../mysoundcompressed.caf
+lSLF07#2@36"Copy sounds/../mysoundcompressed.caf335015686#335015686#0(0"0(0#0#62"/Users/poioit/Code/transforver/sounds/../mysoundcompressed.caf8605473472#450"    cd /Users/poioit/Code/transforver    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/poioit/Code/transforver/sounds/../mysoundcompressed.caf /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app0#
+
+CCpResource build/Debug-iphonesimulator/NavTab.app/phone.png images/../phone.png
+s335015686.648282
+e335015686.721159
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/NavTab.app/phone.png
+ximages/../phone.png
+lSLF07#2@24"Copy images/../phone.png335015686#335015686#0(0"0(0#0#50"/Users/poioit/Code/transforver/images/../phone.png8604108640#438"    cd /Users/poioit/Code/transforver    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/poioit/Code/transforver/images/../phone.png /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app0#
+
 CCpResource build/Debug-iphonesimulator/NavTab.app/star.jpg ../../Documents/star.jpg
 s334894847.849149
 e334894847.911216
@@ -956,6 +1695,51 @@ xbuild/Debug-iphonesimulator/NavTab.app/star.jpg
 x../../Documents/star.jpg
 opbxcp: star.jpg: No such file or directory
 lSLF07#2@29"Copy ../../Documents/star.jpg334894847#334894847#0(43"pbxcp: star.jpg: No such file or directory1(4@42"pbxcp: star.jpg: No such file or directory334894847#18446744073709551615#0#0(6@0"334894847#0#0#0#0#0"0(0#0#52"/Users/poioit/Code/transver/../../Documents/star.jpg8617138016#448"    cd /Users/poioit/Code/transver    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/poioit/Code/transver/../../Documents/star.jpg /Users/poioit/Code/transver/build/Debug-iphonesimulator/NavTab.app1#
+
+CCpResource build/Debug-iphonesimulator/NavTab.app/topAndBottomRow.png images/topAndBottomRow.png
+s335015686.742707
+e335015686.779103
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/NavTab.app/topAndBottomRow.png
+ximages/topAndBottomRow.png
+lSLF07#2@31"Copy images/topAndBottomRow.png335015686#335015686#0(0"0(0#0#57"/Users/poioit/Code/transforver/images/topAndBottomRow.png8611236704#445"    cd /Users/poioit/Code/transforver    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/poioit/Code/transforver/images/topAndBottomRow.png /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app0#
+
+CCpResource build/Debug-iphonesimulator/NavTab.app/topAndBottomRowSelected.png images/topAndBottomRowSelected.png
+s335015686.745975
+e335015686.775864
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/NavTab.app/topAndBottomRowSelected.png
+ximages/topAndBottomRowSelected.png
+lSLF07#2@39"Copy images/topAndBottomRowSelected.png335015686#335015686#0(0"0(0#0#65"/Users/poioit/Code/transforver/images/topAndBottomRowSelected.png8610841920#453"    cd /Users/poioit/Code/transforver    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/poioit/Code/transforver/images/topAndBottomRowSelected.png /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app0#
+
+CCpResource build/Debug-iphonesimulator/NavTab.app/topRow.png images/topRow.png
+s335015686.748029
+e335015686.776236
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/NavTab.app/topRow.png
+ximages/topRow.png
+lSLF07#2@22"Copy images/topRow.png335015686#335015686#0(0"0(0#0#48"/Users/poioit/Code/transforver/images/topRow.png8610691136#436"    cd /Users/poioit/Code/transforver    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/poioit/Code/transforver/images/topRow.png /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app0#
+
+CCpResource build/Debug-iphonesimulator/NavTab.app/topRowSelected.png images/topRowSelected.png
+s335015686.772086
+e335015686.783510
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/NavTab.app/topRowSelected.png
+ximages/topRowSelected.png
+lSLF07#2@30"Copy images/topRowSelected.png335015686#335015686#0(0"0(0#0#56"/Users/poioit/Code/transforver/images/topRowSelected.png8610325184#444"    cd /Users/poioit/Code/transforver    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/poioit/Code/transforver/images/topRowSelected.png /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app0#
+
+CGenerateDSYMFile /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app.dSYM /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/NavTab
+s335320890.385699
+e335320890.515368
+r1
+xGenerateDSYMFile
+x/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app.dSYM
+x/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/NavTab
+lSLF07#2@106"GenerateDSYMFile build/Debug-iphonesimulator/NavTab.app.dSYM build/Debug-iphonesimulator/NavTab.app/NavTab335320890#335320890#0(0"0(0#0#76"/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/NavTab8615927552#356"    cd /Users/poioit/Code/transforver    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/NavTab -o /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app.dSYM0#
 
 CGenerateDSYMFile /Users/poioit/Code/transver/build/Debug-iphonesimulator/NavTab.app.dSYM /Users/poioit/Code/transver/build/Debug-iphonesimulator/NavTab.app/NavTab
 s334894849.990677
@@ -974,6 +1758,16 @@ xGenerateDSYMFile
 x/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app.dSYM
 x/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/NavTab
 lSLF07#2@106"GenerateDSYMFile build/Debug-iphonesimulator/NavTab.app.dSYM build/Debug-iphonesimulator/NavTab.app/NavTab334807413#334807413#0(0"0(0#0#93"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/NavTab8618223232#407"    cd /Users/poioit/Downloads/wiredbob-NavTab-f2ae762    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/NavTab -o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app.dSYM0#
+
+CLd /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/NavTab normal i386
+s335320890.339252
+e335320890.385595
+r1
+xLd
+x/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/NavTab
+xnormal
+xi386
+lSLF07#2@81"Link /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/NavTab335320890#335320890#0(0"0(0#0#0"8616287808#927"    cd /Users/poioit/Code/transforver    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -L/Users/poioit/Code/transforver/build/Debug-iphonesimulator -F/Users/poioit/Code/transforver/build/Debug-iphonesimulator -filelist /Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/NavTab.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -framework AddressBookUI -framework Foundation -framework UIKit -framework CoreGraphics -framework AddressBook -framework AudioToolbox -o /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/NavTab0#
 
 CLd /Users/poioit/Code/transver/build/Debug-iphonesimulator/NavTab.app/NavTab normal i386
 s334894849.906408
@@ -994,6 +1788,15 @@ x/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/Nav
 xnormal
 xi386
 lSLF07#2@98"Link /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/NavTab334807413#334807413#0(0"0(0#0#0"8619817728#987"    cd /Users/poioit/Downloads/wiredbob-NavTab-f2ae762    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -L/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator -F/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator -filelist /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/Objects-normal/i386/NavTab.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -framework AddressBook -framework AudioToolbox -o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/NavTab.app/NavTab0#
+
+CProcessInfoPlistFile /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/Info.plist Info.plist
+s335319936.852722
+e335319936.898866
+r1
+xProcessInfoPlistFile
+x/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/Info.plist
+xInfo.plist
+lSLF07#2@18"Process Info.plist335319936#335319936#0(0"0(0#0#41"/Users/poioit/Code/transforver/Info.plist27303536605069420#445"    cd /Users/poioit/Code/transforver    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility Info.plist -genpkginfo /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app/Info.plist0#
 
 CProcessInfoPlistFile /Users/poioit/Code/transver/build/Debug-iphonesimulator/NavTab.app/Info.plist Info.plist
 s334894845.421494
@@ -1026,6 +1829,19 @@ xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@28"Precompile NavTab_Prefix.pch330562510#330562510#0(0"0(0#0#65"/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/NavTab_Prefix.pch8616724064#1864"    cd /Users/poioit/Downloads/wiredbob-NavTab-f2ae762    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-generated-files.hmap -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-own-target-headers.hmap -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-project-headers.hmap -F/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphonesimulator/include -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources/i386 -I/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources -c /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/NavTab_Prefix.pch -o /var/folders/8j/8jy36RAyF4a4q2xtp1-hok+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-afgngwluhaqbnlbhauesptiqnjjs/NavTab_Prefix.pch.gch0#
 
+CProcessPCH /var/folders/8j/8jy36RAyF4a4q2xtp1-hok+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-gfalfudnfxfatjbgtaxxjbjacfyx/NavTab_Prefix.pch.gch NavTab_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s335015686.802001
+e335015688.373071
+r1
+xProcessPCH
+x/var/folders/8j/8jy36RAyF4a4q2xtp1-hok+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-gfalfudnfxfatjbgtaxxjbjacfyx/NavTab_Prefix.pch.gch
+xNavTab_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@28"Precompile NavTab_Prefix.pch335015686#335015688#0(0"0(0#0#48"/Users/poioit/Code/transforver/NavTab_Prefix.pch8613614176#1694"    cd /Users/poioit/Code/transforver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-generated-files.hmap -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-own-target-headers.hmap -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-project-headers.hmap -F/Users/poioit/Code/transforver/build/Debug-iphonesimulator -I/Users/poioit/Code/transforver/build/Debug-iphonesimulator/include -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources/i386 -I/Users/poioit/Code/transforver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources -c /Users/poioit/Code/transforver/NavTab_Prefix.pch -o /var/folders/8j/8jy36RAyF4a4q2xtp1-hok+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-gfalfudnfxfatjbgtaxxjbjacfyx/NavTab_Prefix.pch.gch0#
+
 CProcessPCH /var/folders/zx/zx5pwyE6ECu1VRpfjY48AE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-fnlptfhrhcklcoakrdesoxebjgjr/NavTab_Prefix.pch.gch NavTab_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
 s334894848.100597
 e334894849.423359
@@ -1040,6 +1856,14 @@ xcom.apple.compilers.gcc.4_2
 o<command-line>: warning: "__IPHONE_OS_VERSION_MIN_REQUIRED" redefined
 o<command-line>: warning: this is the location of the previous definition
 lSLF07#2@28"Precompile NavTab_Prefix.pch334894848#334894849#0(143"<command-line>: warning: "__IPHONE_OS_VERSION_MIN_REQUIRED" redefined<command-line>: warning: this is the location of the previous definition0(0#0#45"/Users/poioit/Code/transver/NavTab_Prefix.pch8621529888#1718"    cd /Users/poioit/Code/transver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 -iquote /Users/poioit/Code/transver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-generated-files.hmap -I/Users/poioit/Code/transver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-own-target-headers.hmap -I/Users/poioit/Code/transver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/poioit/Code/transver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/NavTab-project-headers.hmap -F/Users/poioit/Code/transver/build/Debug-iphonesimulator -I/Users/poioit/Code/transver/build/Debug-iphonesimulator/include -I/Users/poioit/Code/transver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources/i386 -I/Users/poioit/Code/transver/build/NavTab.build/Debug-iphonesimulator/NavTab.build/DerivedSources -c /Users/poioit/Code/transver/NavTab_Prefix.pch -o /var/folders/zx/zx5pwyE6ECu1VRpfjY48AE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-fnlptfhrhcklcoakrdesoxebjgjr/NavTab_Prefix.pch.gch0#
+
+CTouch /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app
+s335321098.410696
+e335321098.413643
+r1
+xTouch
+x/Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app
+lSLF07#2@75"Touch /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app335321098#335321098#0(0"0(0#0#0"8611289952#261"    cd /Users/poioit/Code/transforver    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/poioit/Code/transforver/build/Debug-iphonesimulator/NavTab.app0#
 
 CTouch /Users/poioit/Code/transver/build/Debug-iphonesimulator/NavTab.app
 r0
