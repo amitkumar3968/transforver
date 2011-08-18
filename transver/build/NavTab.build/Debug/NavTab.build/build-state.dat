@@ -3,6 +3,225 @@ v7
 r1
 cCheck dependencies
 
+N/Users/poioit/Code/transforver/FavoritesTabView.xib
+c000000004E4C5B3E0000000000003363
+t1313626942
+s13155
+
+N/Users/poioit/Code/transforver/MainWindow.xib
+c000000004E479EAD0000000000005FA1
+t1313316525
+s24481
+
+N/Users/poioit/Code/transforver/MoreOptionView.xib
+c000000004E479EAD0000000000001E2F
+t1313316525
+s7727
+
+N/Users/poioit/Code/transforver/MoreTabView.xib
+c000000004E479EAD0000000000001F77
+t1313316525
+s8055
+
+N/Users/poioit/Code/transforver/RootViewController.xib
+c000000004E479EAD0000000000001E72
+t1313316525
+s7794
+
+N/Users/poioit/Code/transforver/TabViewController.xib
+c000000004E4C5B3E0000000000002DBF
+t1313626942
+s11711
+
+N/Users/poioit/Code/transforver/build/Debug/NavTab.app
+t2
+s0
+
+N/Users/poioit/Code/transforver/build/Debug/NavTab.app/Contents/Info.plist
+t2
+s0
+
+N/Users/poioit/Code/transforver/build/Debug/NavTab.app/Contents/PkgInfo
+t2
+s0
+
+N/Users/poioit/Code/transforver/build/Debug/NavTab.app/Contents/Resources/111.caf
+t2
+s0
+
+N/Users/poioit/Code/transforver/build/Debug/NavTab.app/Contents/Resources/123.wav
+t2
+s0
+
+N/Users/poioit/Code/transforver/build/Debug/NavTab.app/Contents/Resources/FavoritesTabView.nib
+t2
+s0
+
+N/Users/poioit/Code/transforver/build/Debug/NavTab.app/Contents/Resources/MainWindow.nib
+t2
+s0
+
+N/Users/poioit/Code/transforver/build/Debug/NavTab.app/Contents/Resources/MoreOptionView.nib
+t2
+s0
+
+N/Users/poioit/Code/transforver/build/Debug/NavTab.app/Contents/Resources/MoreTabView.nib
+t2
+s0
+
+N/Users/poioit/Code/transforver/build/Debug/NavTab.app/Contents/Resources/RootViewController.nib
+t2
+s0
+
+N/Users/poioit/Code/transforver/build/Debug/NavTab.app/Contents/Resources/TabViewController.nib
+t2
+s0
+
+N/Users/poioit/Code/transforver/build/Debug/NavTab.app/Contents/Resources/bottomRow.png
+t2
+s0
+
+N/Users/poioit/Code/transforver/build/Debug/NavTab.app/Contents/Resources/bottomRowSelected.png
+t2
+s0
+
+N/Users/poioit/Code/transforver/build/Debug/NavTab.app/Contents/Resources/gradientBackground.png
+t2
+s0
+
+N/Users/poioit/Code/transforver/build/Debug/NavTab.app/Contents/Resources/imageA.png
+t2
+s0
+
+N/Users/poioit/Code/transforver/build/Debug/NavTab.app/Contents/Resources/imageB.png
+t2
+s0
+
+N/Users/poioit/Code/transforver/build/Debug/NavTab.app/Contents/Resources/imageC.png
+t2
+s0
+
+N/Users/poioit/Code/transforver/build/Debug/NavTab.app/Contents/Resources/indicator.png
+t2
+s0
+
+N/Users/poioit/Code/transforver/build/Debug/NavTab.app/Contents/Resources/middleRow.png
+t2
+s0
+
+N/Users/poioit/Code/transforver/build/Debug/NavTab.app/Contents/Resources/middleRowSelected.png
+t2
+s0
+
+N/Users/poioit/Code/transforver/build/Debug/NavTab.app/Contents/Resources/mysoundcompressed.caf
+t2
+s0
+
+N/Users/poioit/Code/transforver/build/Debug/NavTab.app/Contents/Resources/phone.png
+t2
+s0
+
+N/Users/poioit/Code/transforver/build/Debug/NavTab.app/Contents/Resources/topAndBottomRow.png
+t2
+s0
+
+N/Users/poioit/Code/transforver/build/Debug/NavTab.app/Contents/Resources/topAndBottomRowSelected.png
+t2
+s0
+
+N/Users/poioit/Code/transforver/build/Debug/NavTab.app/Contents/Resources/topRow.png
+t2
+s0
+
+N/Users/poioit/Code/transforver/build/Debug/NavTab.app/Contents/Resources/topRowSelected.png
+t2
+s0
+
+N/Users/poioit/Code/transforver/images/../phone.png
+c000000004E479EAD0000000000000BBE
+t1313316525
+s3006
+
+N/Users/poioit/Code/transforver/images/bottomRow.png
+c000000004E479EAD00000000000006D3
+t1313316525
+s1747
+
+N/Users/poioit/Code/transforver/images/bottomRowSelected.png
+c000000004E479EAD000000000000071C
+t1313316525
+s1820
+
+N/Users/poioit/Code/transforver/images/gradientBackground.png
+c000000004E479EAD0000000000002647
+t1313316525
+s9799
+
+N/Users/poioit/Code/transforver/images/imageA.png
+c000000004E479EAD000000000000122A
+t1313316525
+s4650
+
+N/Users/poioit/Code/transforver/images/imageB.png
+c000000004E479EAD00000000000011F8
+t1313316525
+s4600
+
+N/Users/poioit/Code/transforver/images/imageC.png
+c000000004E479EAD0000000000001226
+t1313316525
+s4646
+
+N/Users/poioit/Code/transforver/images/indicator.png
+c000000004E479EAD0000000000000573
+t1313316525
+s1395
+
+N/Users/poioit/Code/transforver/images/middleRow.png
+c000000004E479EAD000000000000041F
+t1313316525
+s1055
+
+N/Users/poioit/Code/transforver/images/middleRowSelected.png
+c000000004E479EAD00000000000004C0
+t1313316525
+s1216
+
+N/Users/poioit/Code/transforver/images/topAndBottomRow.png
+c000000004E479EAD00000000000008E8
+t1313316525
+s2280
+
+N/Users/poioit/Code/transforver/images/topAndBottomRowSelected.png
+c000000004E479EAD0000000000000934
+t1313316525
+s2356
+
+N/Users/poioit/Code/transforver/images/topRow.png
+c000000004E479EAD0000000000000647
+t1313316525
+s1607
+
+N/Users/poioit/Code/transforver/images/topRowSelected.png
+c000000004E479EAD00000000000006D3
+t1313316525
+s1747
+
+N/Users/poioit/Code/transforver/sounds/../111.caf
+c000000004E479EAD0000000000058288
+t1313316525
+s361096
+
+N/Users/poioit/Code/transforver/sounds/../123.wav
+c000000004E479EAD00000000000114AE
+t1313316525
+s70830
+
+N/Users/poioit/Code/transforver/sounds/../mysoundcompressed.caf
+c000000004E479EAD00000000000582CC
+t1313316525
+s361164
+
 N/Users/poioit/Downloads/wiredbob-NavTab-f2ae762/FavoritesTabView.xib
 c000000004BA34ADE0000000000001C34
 t1268992734
@@ -70,13 +289,31 @@ t2
 s0
 
 NInfo.plist
-c000000004BA34ADE0000000000000385
-t1268992734
-s901
+c000000004E4C5B3E0000000000000372
+t1313626942
+s882
 
 CCheck dependencies
 r0
-lSLF07#2@18"Check dependencies330562399#330562399#0(68"[BEROR]error: There is no SDK with the name or path 'iphoneos2.2.1'1(4@60"error: There is no SDK with the name or path 'iphoneos2.2.1'330562399#18446744073709551615#0#0(1@0"0(0#1#0"8616709888#0"0#
+lSLF07#2@18"Check dependencies335319907#335319907#0(214"[BEROR]error: There is no SDK with the name or path 'iphoneos'[BEROR]Code Signing Identity 'iPhone Developer: Ray Yu (55P7VD7797)' does not match any valid, non-expired, code-signing certificate in your keychain.2(4@55"error: There is no SDK with the name or path 'iphoneos'335319907#18446744073709551615#0#0(1@0"0(4@143"Code Signing Identity 'iPhone Developer: Ray Yu (55P7VD7797)' does not match any valid, non-expired, code-signing certificate in your keychain.335319907#18446744073709551615#0#0(1@0"0(0#1#0"3343187568374212096#0"0#
+
+CCompileXIB /Users/poioit/Code/transforver/FavoritesTabView.xib
+r0
+
+CCompileXIB /Users/poioit/Code/transforver/MainWindow.xib
+r0
+
+CCompileXIB /Users/poioit/Code/transforver/MoreOptionView.xib
+r0
+
+CCompileXIB /Users/poioit/Code/transforver/MoreTabView.xib
+r0
+
+CCompileXIB /Users/poioit/Code/transforver/RootViewController.xib
+r0
+
+CCompileXIB /Users/poioit/Code/transforver/TabViewController.xib
+r0
 
 CCompileXIB /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/FavoritesTabView.xib
 r0
@@ -96,7 +333,64 @@ r0
 CCompileXIB /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/TabViewController.xib
 r0
 
+CCpResource build/Debug/NavTab.app/Contents/Resources/111.caf sounds/../111.caf
+r0
+
+CCpResource build/Debug/NavTab.app/Contents/Resources/123.wav sounds/../123.wav
+r0
+
+CCpResource build/Debug/NavTab.app/Contents/Resources/bottomRow.png images/bottomRow.png
+r0
+
+CCpResource build/Debug/NavTab.app/Contents/Resources/bottomRowSelected.png images/bottomRowSelected.png
+r0
+
+CCpResource build/Debug/NavTab.app/Contents/Resources/gradientBackground.png images/gradientBackground.png
+r0
+
+CCpResource build/Debug/NavTab.app/Contents/Resources/imageA.png images/imageA.png
+r0
+
+CCpResource build/Debug/NavTab.app/Contents/Resources/imageB.png images/imageB.png
+r0
+
+CCpResource build/Debug/NavTab.app/Contents/Resources/imageC.png images/imageC.png
+r0
+
+CCpResource build/Debug/NavTab.app/Contents/Resources/indicator.png images/indicator.png
+r0
+
+CCpResource build/Debug/NavTab.app/Contents/Resources/middleRow.png images/middleRow.png
+r0
+
+CCpResource build/Debug/NavTab.app/Contents/Resources/middleRowSelected.png images/middleRowSelected.png
+r0
+
+CCpResource build/Debug/NavTab.app/Contents/Resources/mysoundcompressed.caf sounds/../mysoundcompressed.caf
+r0
+
+CCpResource build/Debug/NavTab.app/Contents/Resources/phone.png images/../phone.png
+r0
+
+CCpResource build/Debug/NavTab.app/Contents/Resources/topAndBottomRow.png images/topAndBottomRow.png
+r0
+
+CCpResource build/Debug/NavTab.app/Contents/Resources/topAndBottomRowSelected.png images/topAndBottomRowSelected.png
+r0
+
+CCpResource build/Debug/NavTab.app/Contents/Resources/topRow.png images/topRow.png
+r0
+
+CCpResource build/Debug/NavTab.app/Contents/Resources/topRowSelected.png images/topRowSelected.png
+r0
+
+CProcessInfoPlistFile /Users/poioit/Code/transforver/build/Debug/NavTab.app/Contents/Info.plist Info.plist
+r0
+
 CProcessInfoPlistFile /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug/NavTab.app/Contents/Info.plist Info.plist
+r0
+
+CTouch /Users/poioit/Code/transforver/build/Debug/NavTab.app
 r0
 
 CTouch /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug/NavTab.app
