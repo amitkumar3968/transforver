@@ -9,6 +9,7 @@
 #import "RootViewController.h"
 //#import "NavTabAppDelegate.h"
 #import "UICustomTabViewController.h"
+#import "ChatBubbleView.h"
 #import <AudioToolbox/AudioServices.h>
 #import <AddressBook/AddressBook.h>
 #import <AddressBookUI/AddressBookUI.h>
