@@ -7,6 +7,7 @@
 //
 
 #import "DBHandler.h"
+#import "JSON.h"
 
 
 @implementation DBHandler
