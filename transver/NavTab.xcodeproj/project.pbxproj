@@ -27,6 +27,7 @@
 		4F03B2B7140133CC00FEC9D4 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F03B2AA140133CC00FEC9D4 /* SBJsonTokeniser.m */; };
 		4F03B2B8140133CC00FEC9D4 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F03B2AC140133CC00FEC9D4 /* SBJsonUTF8Stream.m */; };
 		4F03B2B9140133CC00FEC9D4 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F03B2AE140133CC00FEC9D4 /* SBJsonWriter.m */; };
+		4F03B2C31401372900FEC9D4 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F03B2C21401372900FEC9D4 /* NSString+SBJSON.m */; };
 		4F5E380013FC93130025B24A /* ChatBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5E37FF13FC93130025B24A /* ChatBubbleView.m */; };
 		4F5E385313FC98080025B24A /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F5E385213FC98080025B24A /* Icon.png */; };
 		4F724C8D13F6D91700A6F871 /* phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F724C8C13F6D91700A6F871 /* phone.png */; };
@@ -97,6 +98,9 @@
 		4F03B2AC140133CC00FEC9D4 /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
 		4F03B2AD140133CC00FEC9D4 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		4F03B2AE140133CC00FEC9D4 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		4F03B2C0140136D400FEC9D4 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		4F03B2C11401372900FEC9D4 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		4F03B2C21401372900FEC9D4 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
 		4F5E37FE13FC93130025B24A /* ChatBubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatBubbleView.h; sourceTree = "<group>"; };
 		4F5E37FF13FC93130025B24A /* ChatBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatBubbleView.m; sourceTree = "<group>"; };
 		4F5E385213FC98080025B24A /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -245,6 +249,8 @@
 		4F03B297140133B000FEC9D4 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
+				4F03B2C11401372900FEC9D4 /* NSString+SBJSON.h */,
+				4F03B2C21401372900FEC9D4 /* NSString+SBJSON.m */,
 				4F03B298140133CC00FEC9D4 /* NSObject+SBJson.h */,
 				4F03B299140133CC00FEC9D4 /* NSObject+SBJson.m */,
 				4F03B29A140133CC00FEC9D4 /* SBJson.h */,
@@ -268,6 +274,7 @@
 				4F03B2AC140133CC00FEC9D4 /* SBJsonUTF8Stream.m */,
 				4F03B2AD140133CC00FEC9D4 /* SBJsonWriter.h */,
 				4F03B2AE140133CC00FEC9D4 /* SBJsonWriter.m */,
+				4F03B2C0140136D400FEC9D4 /* JSON.h */,
 			);
 			name = JSON;
 			sourceTree = "<group>";
@@ -408,6 +415,7 @@
 				4F03B2B7140133CC00FEC9D4 /* SBJsonTokeniser.m in Sources */,
 				4F03B2B8140133CC00FEC9D4 /* SBJsonUTF8Stream.m in Sources */,
 				4F03B2B9140133CC00FEC9D4 /* SBJsonWriter.m in Sources */,
+				4F03B2C31401372900FEC9D4 /* NSString+SBJSON.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
