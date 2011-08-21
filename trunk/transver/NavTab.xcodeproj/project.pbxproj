@@ -155,7 +155,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				4F03B2961401339500FEC9D4 /* lib */,
+				4F03B2961401339500FEC9D4 /* Lib */,
 				4F03B2931401315600FEC9D4 /* DBHandler.h */,
 				4F03B2941401315600FEC9D4 /* DBHandler.m */,
 				4F5E37FE13FC93130025B24A /* ChatBubbleView.h */,
@@ -234,15 +234,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4F03B2961401339500FEC9D4 /* lib */ = {
+		4F03B2961401339500FEC9D4 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				4F03B297140133B000FEC9D4 /* json */,
+				4F03B297140133B000FEC9D4 /* JSON */,
 			);
-			name = lib;
+			name = Lib;
 			sourceTree = "<group>";
 		};
-		4F03B297140133B000FEC9D4 /* json */ = {
+		4F03B297140133B000FEC9D4 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
 				4F03B298140133CC00FEC9D4 /* NSObject+SBJson.h */,
@@ -269,7 +269,7 @@
 				4F03B2AD140133CC00FEC9D4 /* SBJsonWriter.h */,
 				4F03B2AE140133CC00FEC9D4 /* SBJsonWriter.m */,
 			);
-			name = json;
+			name = JSON;
 			sourceTree = "<group>";
 		};
 		4F724C9813F75F1D00A6F871 /* images */ = {
