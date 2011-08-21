@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "UICustomTabViewController.h"
+#import "ChatBubbleView.h"
 
 @interface RootViewController : UITableViewController {
 	NSArray *accounts;

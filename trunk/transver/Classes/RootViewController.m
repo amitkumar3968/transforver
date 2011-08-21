@@ -9,7 +9,7 @@
 #import "RootViewController.h"
 //#import "NavTabAppDelegate.h"
 #import "UICustomTabViewController.h"
-#import "ChatBubbleView.h"
+
 #import <AudioToolbox/AudioServices.h>
 #import <AddressBook/AddressBook.h>
 #import <AddressBookUI/AddressBookUI.h>
@@ -451,7 +451,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSInteger row = [indexPath row];
     if ( row == 0 )
-    {
+    {//to add the contact list
         ABPeoplePickerNavigationController *myPicker = [[ABPeoplePickerNavigationController alloc] init];
         [myPicker setPeoplePickerDelegate:self];
         //myPicker.peoplePickerDelegate = self;   
