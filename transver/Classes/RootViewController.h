@@ -9,10 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "UICustomTabViewController.h"
 #import "ChatBubbleView.h"
+#import "AudioRecorder.h"
 
 @interface RootViewController : UITableViewController {
 	NSArray *accounts;
 	UICustomTabViewController *tabViewController;
+	AudioRecorder *audioRecorder;
+	
 }
 
 - (void) showMenu:(id) sender;
@@ -24,5 +27,7 @@
 
 @property (nonatomic, retain) NSArray *accounts;
 @property (nonatomic, retain) UICustomTabViewController *tabViewController;
+@property(nonatomic,retain)  AudioRecorder *audioRecorder;
+
 
 @end

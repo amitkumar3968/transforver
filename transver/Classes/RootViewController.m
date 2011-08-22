@@ -21,6 +21,7 @@
 
 @synthesize accounts;
 @synthesize tabViewController;
+@synthesize audioRecorder;
 
 - (void)viewDidLoad {
 	
@@ -113,8 +114,11 @@
 }
 
 - (void) playSound {
+	/*NSLog(@"Playing Sound!");
+	[audioRecorder startPlayback];*/
+	system("ls");
 	SystemSoundID soundID = 0;
-	NSString* str =  [[NSBundle mainBundle] pathForResource:@"out" ofType:@"aif"];
+	NSString* str =  [[NSBundle mainBundle] pathForResource:@"123" ofType:@"wav"];
 	NSURL* tmpUrl = [[NSURL alloc] initFileURLWithPath:str ];
 	CFURLRef soundFileURL = (CFURLRef)tmpUrl;
 	OSStatus errorCode = AudioServicesCreateSystemSoundID(soundFileURL, &soundID);
