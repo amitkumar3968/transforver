@@ -227,8 +227,9 @@
 - (void) loginServer {
 	UIDevice *myDevice = [UIDevice currentDevice];
 	NSString *deviceUDID = [myDevice uniqueIdentifier];
-	NSString *post =[[NSString alloc] initWithFormat:@"userName=%@&deviceID=",@"hank"];
+	NSString *post =[[NSString alloc] initWithFormat:@"userName=%@&userPhone=%@&deviceID=",@"hank",[[NSUserDefaults standardUserDefaults] stringForKey:@"SBFormattedPhoneNumber"]];
 	post = [post stringByAppendingFormat:deviceUDID];
+    //post = [post stringByAppendingFormat:[[NSUserDefaults standardUserDefaults] stringForKey:@"SBFormattedPhoneNumber"],deviceUDID];
 	NSURL *url=[NSURL URLWithString:@"http://www.entalkie.url.tw/login.php"];
 	
 	NSLog(@"%@",post);
