@@ -20,6 +20,7 @@
 - (void) loginServer;
 - (void) playSound;
 - (void) uploadFile;
+- (NSArray*) fetchRelationships;
 
 @property (nonatomic, retain) NSArray *accounts;
 @property (nonatomic, retain) UICustomTabViewController *tabViewController;
