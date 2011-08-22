@@ -10,6 +10,7 @@
 #import "FavoritesTabViewController.h"
 #import "MoreTabViewController.h"
 
+
 #define TEMP_FOLDER [NSHomeDirectory() stringByAppendingPathComponent:@"tmp"]
 
 @implementation UICustomTabViewController
@@ -165,9 +166,11 @@ static int recording=0;
 			[audioRecorder stopRecording];
 			//@Ray
 			NSLog(@"stop recording!");
+			[Util copyFile];
 			recording=0;
 			dovocode(filepath);
 			[self uploadFile:filepath];
+			
 		} // end if
 		else
 		{
