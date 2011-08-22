@@ -1,7 +1,7 @@
 TNavTab
 v7
 r0
-t335724113.428964
+t335725894.016358
 cCheck dependencies
 cCpResource build/Debug-iphoneos/NavTab.app/ResourceRules.plist /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/ResourceRules.plist
 cProcessInfoPlistFile /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/Info.plist Info.plist
@@ -55,7 +55,6 @@ cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/ex
 cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/fftaux.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/fftaux.c normal armv6 c com.apple.compilers.gcc.4_2
 cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/fftn.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/fftn.c normal armv6 c com.apple.compilers.gcc.4_2
 cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/riff.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/riff.c normal armv6 c com.apple.compilers.gcc.4_2
-cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/vocode.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/vocode.c normal armv6 c com.apple.compilers.gcc.4_2
 cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/wave.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/wave.c normal armv6 c com.apple.compilers.gcc.4_2
 cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJSON.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJSON.m normal armv6 objective-c com.apple.compilers.gcc.4_2
 cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJsonBase.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonBase.m normal armv6 objective-c com.apple.compilers.gcc.4_2
@@ -65,6 +64,7 @@ cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/NS
 cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/NSString+SBJSON.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSString+SBJSON.m normal armv6 objective-c com.apple.compilers.gcc.4_2
 cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/Util.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/Util.m normal armv6 objective-c com.apple.compilers.gcc.4_2
 cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/dovocode.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/vocode.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/vocode.m normal armv6 objective-c com.apple.compilers.gcc.4_2
 cLd /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/NavTab normal armv6
 cGenerateDSYMFile /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app.dSYM /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/NavTab
 cProcessProductPackaging "/Users/shuang/Library/MobileDevice/Provisioning Profiles/B6BFE3F8-6E8D-470D-AEA4-6BA9612ADCA0.mobileprovision" /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/embedded.mobileprovision
@@ -897,9 +897,9 @@ i"ChatBubbleView.h"
 i"Util.h"
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m
-c000000004E52842500000000000023AD
-t1314030629
-s9133
+c000000004E528AA600000000000023A5
+t1314032294
+s9125
 i"UICustomTabViewController.h"
 i"FavoritesTabViewController.h"
 i"MoreTabViewController.h"
@@ -955,9 +955,9 @@ i"vocode.h"
 i"fft.h"
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m
-c000000004E522D850000000000001F6D
-t1314008453
-s8045
+c000000004E528AA60000000000001F6E
+t1314032294
+s8046
 i<stdio.h>
 i<stdlib.h>
 i<stdarg.h>
@@ -1063,6 +1063,19 @@ t1314008453
 s987
 i"config.h"
 
+N/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/vocode.m
+c000000004E528DB90000000000002E6F
+t1314033081
+s11887
+i<stdio.h>
+i<math.h>
+i"config.h"
+i"error.h"
+i"wave.h"
+i"fft.h"
+i"vocode.h"
+i"Util.h"
+
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/wave.c
 c000000004E522D8500000000000019BE
 t1314008453
@@ -1128,11 +1141,11 @@ t1314008464
 s11711
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app
-t1314031313
+t1314033093
 s1190
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app.dSYM
-t1314031309
+t1314033089
 s102
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/111.caf
@@ -1176,7 +1189,7 @@ t1314009644
 s1096
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/NavTab
-t1314031308
+t1314033089
 s191936
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/PkgInfo
@@ -1324,8 +1337,8 @@ t1314029853
 s8260
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/NavTab.LinkFileList
-c000000004E5286CA00000000000011BB
-t1314031306
+c000000004E528AF700000000000011BB
+t1314032375
 s4539
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/NavTabAppDelegate.o
@@ -1385,8 +1398,8 @@ t1314029851
 s24744
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/UICustomTabViewController.o
-t1314030640
-s68272
+t1314032299
+s68268
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/Util.o
 t1314030345
@@ -1397,7 +1410,7 @@ t1314009683
 s9872
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/dovocode.o
-t1314031308
+t1314032304
 s20200
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/error.o
@@ -1425,8 +1438,8 @@ t1314009687
 s8988
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/vocode.o
-t1314009688
-s22272
+t1314033088
+s26856
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/wave.o
 t1314009689
@@ -1552,15 +1565,15 @@ s882
 
 CCheck dependencies
 r0
-lSLF07#2@18"Check dependencies335724105#335724106#0(0"0(0#1#0"8620339936#0"0#
+lSLF07#2@18"Check dependencies335725882#335725884#0(0"0(0#1#0"8619577888#0"0#
 
 CCodeSign /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app
-s335724109.210583
-e335724113.428508
+s335725889.691533
+e335725894.015904
 r1
 xCodeSign
 x/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app
-lSLF07#2@40"CodeSign build/Debug-iphoneos/NavTab.app335724109#335724113#0(0"0(0#0#90"/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app8619497664#717"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv _CODESIGN_ALLOCATE_ /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate    /usr/bin/codesign -f -s "iPhone Developer: Ray Yu (55P7VD7797)" --resource-rules=/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/ResourceRules.plist --entitlements /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab.xcent /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app0#
+lSLF07#2@40"CodeSign build/Debug-iphoneos/NavTab.app335725889#335725894#0(0"0(0#0#90"/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app8622944256#717"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv _CODESIGN_ALLOCATE_ /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate    /usr/bin/codesign -f -s "iPhone Developer: Ray Yu (55P7VD7797)" --resource-rules=/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/ResourceRules.plist --entitlements /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab.xcent /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app0#
 
 CCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/AudioRecorder.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/AudioRecorder.m normal armv6 objective-c com.apple.compilers.gcc.4_2
 s335713147.129165
@@ -1995,8 +2008,8 @@ CCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/UI
 r0
 
 CCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/UICustomTabViewController.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
-s335723438.646223
-e335723440.912674
+s335725095.207802
+e335725099.827956
 r1
 xCompileC
 xbuild/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/UICustomTabViewController.o
@@ -2012,7 +2025,7 @@ o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabV
 o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m: At top level:
 o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m:256: warning: property 'bubbleView' requires method '-bubbleView' to be defined - use @synthesize, @dynamic or provide a method implementation
 o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m:256: warning: property 'bubbleView' requires the method 'setBubbleView:' to be defined - use @synthesize, @dynamic or provide a method implementation
-lSLF07#2@102"Compile /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m335723438#335723440#0(1225"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m: In function '-[UICustomTabViewController uploadFile:]':/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m:99: warning: local declaration of 'audioFile' hides instance variable/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m: In function '-[UICustomTabViewController tabBar:didSelectItem:]':/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m:171: warning: implicit declaration of function 'dovocode'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m: At top level:/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m:256: warning: property 'bubbleView' requires method '-bubbleView' to be defined - use @synthesize, @dynamic or provide a method implementation/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m:256: warning: property 'bubbleView' requires the method 'setBubbleView:' to be defined - use @synthesize, @dynamic or provide a method implementation5(22@56"Local declaration of 'audioFile' hides instance variable335723440#152#165#0(6@94"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m335723429#99#0#99#0#0"0(22@43"Implicit declaration of function 'dovocode'335723440#479#153#0(6@94"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m335723429#171#0#171#0#36"implicit declaration of function '*'0(23@13"At top level:335723440#632#110#0(6@94"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m335723429#0#0#0#0#0"0(22@128"Property 'bubbleView' requires method '-bubbleView' to be defined - use @synthesize, @dynamic or provide a method implementation335723440#742#238#0(6@94"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m335723429#256#0#256#0#0"0(22@135"Property 'bubbleView' requires the method 'setBubbleView:' to be defined - use @synthesize, @dynamic or provide a method implementation335723440#980#245#0(6@94"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m335723429#256#0#256#0#0"0(0#0#94"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m8622731904#1974"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-generated-files.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-own-target-headers.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-project-headers.hmap -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/include -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources/armv6 -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources -include /var/folders/Wt/WtussHh-E-aIgP-nF-0sn++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-cjsnlwhcpriujlhbawkabfoslixc/NavTab_Prefix.pch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/UICustomTabViewController.o0#
+lSLF07#2@102"Compile /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m335725095#335725099#0(1225"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m: In function '-[UICustomTabViewController uploadFile:]':/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m:99: warning: local declaration of 'audioFile' hides instance variable/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m: In function '-[UICustomTabViewController tabBar:didSelectItem:]':/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m:171: warning: implicit declaration of function 'dovocode'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m: At top level:/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m:256: warning: property 'bubbleView' requires method '-bubbleView' to be defined - use @synthesize, @dynamic or provide a method implementation/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m:256: warning: property 'bubbleView' requires the method 'setBubbleView:' to be defined - use @synthesize, @dynamic or provide a method implementation5(22@56"Local declaration of 'audioFile' hides instance variable335725099#152#165#0(6@94"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m335725094#99#0#99#0#0"0(22@43"Implicit declaration of function 'dovocode'335725099#479#153#0(6@94"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m335725094#171#0#171#0#36"implicit declaration of function '*'0(23@13"At top level:335725099#632#110#0(6@94"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m335725094#0#0#0#0#0"0(22@128"Property 'bubbleView' requires method '-bubbleView' to be defined - use @synthesize, @dynamic or provide a method implementation335725099#742#238#0(6@94"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m335725094#256#0#256#0#0"0(22@135"Property 'bubbleView' requires the method 'setBubbleView:' to be defined - use @synthesize, @dynamic or provide a method implementation335725099#980#245#0(6@94"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m335725094#256#0#256#0#0"0(0#0#94"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m8621724640#1974"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-generated-files.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-own-target-headers.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-project-headers.hmap -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/include -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources/armv6 -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources -include /var/folders/Wt/WtussHh-E-aIgP-nF-0sn++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-cjsnlwhcpriujlhbawkabfoslixc/NavTab_Prefix.pch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/UICustomTabViewController.o0#
 
 CCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/Util.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/Util.m normal armv6 objective-c com.apple.compilers.gcc.4_2
 s335723140.148844
@@ -2068,8 +2081,8 @@ o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c:1
 lSLF07#2@85"Compile /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c335702484#335702485#0(1838"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c: In function 'parse_args':/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c:155: warning: unused variable 'vocode_window_length'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c:163: warning: unused variable 'vocode_window_overlap'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c:184: warning: initialization makes pointer from integer without a cast/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c:189: warning: unused variable 'vocode_output_filename'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c:186: warning: unused variable 'vocode_window_overlap'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c:184: warning: unused variable 'vocode_window_length'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c:183: warning: unused variable 'vocode_carrier_filename'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c:182: warning: unused variable 'vocode_modulator_filename'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c:208: warning: unused variable 'vocode_window_overlap'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c:220: warning: unused variable 'vocode_output_filename'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c:219: warning: unused variable 'vocode_carrier_filename'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c:218: warning: unused variable 'vocode_modulator_filename'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c:129: warning: unused variable 'prog_name'13(22@38"Unused variable 'vocode_window_length'335702485#105#131#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c335701253#155#0#155#0#19"unused variable '*'0(22@39"Unused variable 'vocode_window_overlap'335702485#236#132#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c335701253#163#0#163#0#19"unused variable '*'0(22@56"Initialization makes pointer from integer without a cast335702485#368#149#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c335701253#184#0#184#0#0"0(22@40"Unused variable 'vocode_output_filename'335702485#517#133#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c335701253#189#0#189#0#19"unused variable '*'0(22@39"Unused variable 'vocode_window_overlap'335702485#650#132#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c335701253#186#0#186#0#19"unused variable '*'0(22@38"Unused variable 'vocode_window_length'335702485#782#131#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c335701253#184#0#184#0#19"unused variable '*'0(22@41"Unused variable 'vocode_carrier_filename'335702485#913#134#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c335701253#183#0#183#0#19"unused variable '*'0(22@43"Unused variable 'vocode_modulator_filename'335702485#1047#136#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c335701253#182#0#182#0#19"unused variable '*'0(22@39"Unused variable 'vocode_window_overlap'335702485#1183#132#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c335701253#208#0#208#0#19"unused variable '*'0(22@40"Unused variable 'vocode_output_filename'335702485#1315#133#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c335701253#220#0#220#0#19"unused variable '*'0(22@41"Unused variable 'vocode_carrier_filename'335702485#1448#134#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c335701253#219#0#219#0#19"unused variable '*'0(22@43"Unused variable 'vocode_modulator_filename'335702485#1582#136#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c335701253#218#0#218#0#19"unused variable '*'0(22@27"Unused variable 'prog_name'335702485#1718#120#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c335701253#129#0#129#0#19"unused variable '*'0(0#0#77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c8607667936#1930"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-generated-files.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-own-target-headers.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-project-headers.hmap -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/include -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources/armv6 -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources -include /var/folders/Wt/WtussHh-E-aIgP-nF-0sn++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-eencztvrzoaefbeldmxdcxyijcav/NavTab_Prefix.pch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/dovocode.o0#
 
 CCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/dovocode.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m normal armv6 objective-c com.apple.compilers.gcc.4_2
-s335724106.365285
-e335724108.149967
+s335725099.835305
+e335725104.372939
 r1
 xCompileC
 xbuild/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/dovocode.o
@@ -2079,20 +2092,20 @@ xarmv6
 xobjective-c
 xcom.apple.compilers.gcc.4_2
 o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m: In function 'parse_args':
-o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:155: warning: unused variable 'vocode_window_length'
-o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:163: warning: unused variable 'vocode_window_overlap'
-o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:184: warning: initialization makes pointer from integer without a cast
-o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:189: warning: unused variable 'vocode_output_filename'
-o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:186: warning: unused variable 'vocode_window_overlap'
-o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:184: warning: unused variable 'vocode_window_length'
-o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:183: warning: unused variable 'vocode_carrier_filename'
-o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:182: warning: unused variable 'vocode_modulator_filename'
-o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:208: warning: unused variable 'vocode_window_overlap'
-o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:220: warning: unused variable 'vocode_output_filename'
-o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:219: warning: unused variable 'vocode_carrier_filename'
-o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:218: warning: unused variable 'vocode_modulator_filename'
-o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:129: warning: unused variable 'prog_name'
-lSLF07#2@85"Compile /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335724106#335724108#0(1838"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m: In function 'parse_args':/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:155: warning: unused variable 'vocode_window_length'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:163: warning: unused variable 'vocode_window_overlap'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:184: warning: initialization makes pointer from integer without a cast/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:189: warning: unused variable 'vocode_output_filename'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:186: warning: unused variable 'vocode_window_overlap'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:184: warning: unused variable 'vocode_window_length'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:183: warning: unused variable 'vocode_carrier_filename'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:182: warning: unused variable 'vocode_modulator_filename'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:208: warning: unused variable 'vocode_window_overlap'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:220: warning: unused variable 'vocode_output_filename'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:219: warning: unused variable 'vocode_carrier_filename'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:218: warning: unused variable 'vocode_modulator_filename'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:129: warning: unused variable 'prog_name'13(22@38"Unused variable 'vocode_window_length'335724107#105#131#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335701253#155#0#155#0#19"unused variable '*'0(22@39"Unused variable 'vocode_window_overlap'335724107#236#132#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335701253#163#0#163#0#19"unused variable '*'0(22@56"Initialization makes pointer from integer without a cast335724107#368#149#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335701253#184#0#184#0#0"0(22@40"Unused variable 'vocode_output_filename'335724107#517#133#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335701253#189#0#189#0#19"unused variable '*'0(22@39"Unused variable 'vocode_window_overlap'335724107#650#132#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335701253#186#0#186#0#19"unused variable '*'0(22@38"Unused variable 'vocode_window_length'335724107#782#131#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335701253#184#0#184#0#19"unused variable '*'0(22@41"Unused variable 'vocode_carrier_filename'335724107#913#134#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335701253#183#0#183#0#19"unused variable '*'0(22@43"Unused variable 'vocode_modulator_filename'335724107#1047#136#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335701253#182#0#182#0#19"unused variable '*'0(22@39"Unused variable 'vocode_window_overlap'335724107#1183#132#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335701253#208#0#208#0#19"unused variable '*'0(22@40"Unused variable 'vocode_output_filename'335724107#1315#133#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335701253#220#0#220#0#19"unused variable '*'0(22@41"Unused variable 'vocode_carrier_filename'335724107#1448#134#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335701253#219#0#219#0#19"unused variable '*'0(22@43"Unused variable 'vocode_modulator_filename'335724107#1582#136#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335701253#218#0#218#0#19"unused variable '*'0(22@27"Unused variable 'prog_name'335724107#1718#120#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335701253#129#0#129#0#19"unused variable '*'0(0#0#77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m8622400064#1940"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-generated-files.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-own-target-headers.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-project-headers.hmap -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/include -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources/armv6 -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources -include /var/folders/Wt/WtussHh-E-aIgP-nF-0sn++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-cjsnlwhcpriujlhbawkabfoslixc/NavTab_Prefix.pch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/dovocode.o0#
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:156: warning: unused variable 'vocode_window_length'
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:164: warning: unused variable 'vocode_window_overlap'
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:185: warning: initialization makes pointer from integer without a cast
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:190: warning: unused variable 'vocode_output_filename'
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:187: warning: unused variable 'vocode_window_overlap'
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:185: warning: unused variable 'vocode_window_length'
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:184: warning: unused variable 'vocode_carrier_filename'
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:183: warning: unused variable 'vocode_modulator_filename'
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:209: warning: unused variable 'vocode_window_overlap'
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:221: warning: unused variable 'vocode_output_filename'
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:220: warning: unused variable 'vocode_carrier_filename'
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:219: warning: unused variable 'vocode_modulator_filename'
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:130: warning: unused variable 'prog_name'
+lSLF07#2@85"Compile /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335725099#335725104#0(1838"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m: In function 'parse_args':/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:156: warning: unused variable 'vocode_window_length'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:164: warning: unused variable 'vocode_window_overlap'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:185: warning: initialization makes pointer from integer without a cast/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:190: warning: unused variable 'vocode_output_filename'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:187: warning: unused variable 'vocode_window_overlap'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:185: warning: unused variable 'vocode_window_length'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:184: warning: unused variable 'vocode_carrier_filename'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:183: warning: unused variable 'vocode_modulator_filename'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:209: warning: unused variable 'vocode_window_overlap'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:221: warning: unused variable 'vocode_output_filename'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:220: warning: unused variable 'vocode_carrier_filename'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:219: warning: unused variable 'vocode_modulator_filename'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:130: warning: unused variable 'prog_name'13(22@38"Unused variable 'vocode_window_length'335725103#105#131#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335725094#156#0#156#0#19"unused variable '*'0(22@39"Unused variable 'vocode_window_overlap'335725103#236#132#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335725094#164#0#164#0#19"unused variable '*'0(22@56"Initialization makes pointer from integer without a cast335725103#368#149#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335725094#185#0#185#0#0"0(22@40"Unused variable 'vocode_output_filename'335725103#517#133#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335725094#190#0#190#0#19"unused variable '*'0(22@39"Unused variable 'vocode_window_overlap'335725103#650#132#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335725094#187#0#187#0#19"unused variable '*'0(22@38"Unused variable 'vocode_window_length'335725103#782#131#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335725094#185#0#185#0#19"unused variable '*'0(22@41"Unused variable 'vocode_carrier_filename'335725103#913#134#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335725094#184#0#184#0#19"unused variable '*'0(22@43"Unused variable 'vocode_modulator_filename'335725103#1047#136#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335725094#183#0#183#0#19"unused variable '*'0(22@39"Unused variable 'vocode_window_overlap'335725103#1183#132#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335725094#209#0#209#0#19"unused variable '*'0(22@40"Unused variable 'vocode_output_filename'335725103#1315#133#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335725094#221#0#221#0#19"unused variable '*'0(22@41"Unused variable 'vocode_carrier_filename'335725103#1448#134#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335725094#220#0#220#0#19"unused variable '*'0(22@43"Unused variable 'vocode_modulator_filename'335725103#1582#136#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335725094#219#0#219#0#19"unused variable '*'0(22@27"Unused variable 'prog_name'335725103#1718#120#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335725094#130#0#130#0#19"unused variable '*'0(0#0#77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m8612932064#1940"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-generated-files.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-own-target-headers.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-project-headers.hmap -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/include -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources/armv6 -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources -include /var/folders/Wt/WtussHh-E-aIgP-nF-0sn++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-cjsnlwhcpriujlhbawkabfoslixc/NavTab_Prefix.pch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/dovocode.o0#
 
 CCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/error.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/error.c normal armv6 c com.apple.compilers.gcc.4_2
 s335702485.348140
@@ -2187,6 +2200,23 @@ xarmv6
 xc
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@83"Compile /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/vocode.c335702487#335702488#0(0"0(0#0#75"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/vocode.c8620512000#1926"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-generated-files.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-own-target-headers.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-project-headers.hmap -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/include -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources/armv6 -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources -include /var/folders/Wt/WtussHh-E-aIgP-nF-0sn++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-eencztvrzoaefbeldmxdcxyijcav/NavTab_Prefix.pch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/vocode.c -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/vocode.o0#
+
+CCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/vocode.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/vocode.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s335725882.788422
+e335725888.624756
+r1
+xCompileC
+xbuild/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/vocode.o
+x/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/vocode.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/vocode.m: In function 'vocode_open_files':
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/vocode.m:266: warning: assignment discards qualifiers from pointer target type
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/vocode.m:267: warning: assignment discards qualifiers from pointer target type
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/vocode.m:268: warning: assignment discards qualifiers from pointer target type
+lSLF07#2@83"Compile /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/vocode.m335725882#335725888#0(548"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/vocode.m: In function 'vocode_open_files':/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/vocode.m:266: warning: assignment discards qualifiers from pointer target type/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/vocode.m:267: warning: assignment discards qualifiers from pointer target type/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/vocode.m:268: warning: assignment discards qualifiers from pointer target type3(22@55"Assignment discards qualifiers from pointer target type335725888#110#146#0(6@75"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/vocode.m335725881#266#0#266#0#55"assignment discards qualifiers from pointer target type0(22@55"Assignment discards qualifiers from pointer target type335725888#256#146#0(6@75"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/vocode.m335725881#267#0#267#0#55"assignment discards qualifiers from pointer target type0(22@55"Assignment discards qualifiers from pointer target type335725888#402#146#0(6@75"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/vocode.m335725881#268#0#268#0#55"assignment discards qualifiers from pointer target type0(0#0#75"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/vocode.m8620853056#1936"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-generated-files.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-own-target-headers.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-project-headers.hmap -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/include -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources/armv6 -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources -include /var/folders/Wt/WtussHh-E-aIgP-nF-0sn++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-cjsnlwhcpriujlhbawkabfoslixc/NavTab_Prefix.pch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/vocode.m -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/vocode.o0#
 
 CCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/wave.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/wave.c normal armv6 c com.apple.compilers.gcc.4_2
 s335702488.570225
@@ -2478,26 +2508,26 @@ CGenerateDSYMFile /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-ip
 r0
 
 CGenerateDSYMFile /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app.dSYM /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/NavTab
-s335724108.663874
-e335724109.181814
+s335725889.097842
+e335725889.664984
 r1
 xGenerateDSYMFile
 x/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app.dSYM
 x/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/NavTab
-lSLF07#2@92"GenerateDSYMFile build/Debug-iphoneos/NavTab.app.dSYM build/Debug-iphoneos/NavTab.app/NavTab335724108#335724109#0(0"0(0#0#97"/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/NavTab8621139968#419"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/NavTab -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app.dSYM0#
+lSLF07#2@92"GenerateDSYMFile build/Debug-iphoneos/NavTab.app.dSYM build/Debug-iphoneos/NavTab.app/NavTab335725889#335725889#0(0"0(0#0#97"/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/NavTab8622898400#419"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/NavTab -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app.dSYM0#
 
 CLd /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphoneos/NavTab.app/NavTab normal armv6
 r0
 
 CLd /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/NavTab normal armv6
-s335724108.150627
-e335724108.663677
+s335725888.625229
+e335725889.097652
 r1
 xLd
 x/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/NavTab
 xnormal
 xarmv6
-lSLF07#2@102"Link /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/NavTab335724108#335724108#0(0"0(0#0#0"8621070880#1009"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv IPHONEOS_DEPLOYMENT_TARGET 4.2    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -arch armv6 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -L/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -filelist /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/NavTab.LinkFileList -dead_strip -miphoneos-version-min=4.2 -framework CoreData -framework AddressBookUI -framework Foundation -framework UIKit -framework CoreGraphics -framework AddressBook -framework AudioToolbox -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/NavTab0#
+lSLF07#2@102"Link /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/NavTab335725888#335725889#0(0"0(0#0#0"8623449632#1009"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv IPHONEOS_DEPLOYMENT_TARGET 4.2    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -arch armv6 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -L/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -filelist /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/NavTab.LinkFileList -dead_strip -miphoneos-version-min=4.2 -framework CoreData -framework AddressBookUI -framework Foundation -framework UIKit -framework CoreGraphics -framework AddressBook -framework AudioToolbox -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/NavTab0#
 
 CProcessInfoPlistFile /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphoneos/NavTab.app/Info.plist Info.plist
 r0
@@ -2562,10 +2592,10 @@ CTouch /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphoneos/NavT
 r0
 
 CTouch /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app
-s335724109.182214
-e335724109.209130
+s335725889.668669
+e335725889.690844
 r1
 xTouch
 x/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app
-lSLF07#2@96"Touch /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app335724109#335724109#0(0"0(0#0#0"8619938144#303"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app0#
+lSLF07#2@96"Touch /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app335725889#335725889#0(0"0(0#0#0"8623149728#303"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app0#
 

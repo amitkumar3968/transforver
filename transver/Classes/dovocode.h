@@ -8,7 +8,5 @@
 
 #ifndef DOVOCODE_H_INCLUDED
 #define DOVOCODE_H_INCLUDED
-
-int dovocode(char *filepath);
-
 #endif /* DOVOCODE_H_INCLUDED */
+int dovocode(char *filepath);
