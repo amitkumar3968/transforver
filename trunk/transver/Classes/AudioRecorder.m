@@ -121,7 +121,7 @@ void AudioOutputCallback(
 
 - (void)setupAudioFormat:(AudioStreamBasicDescription*)format 
 {
-	format->mSampleRate = 44100;    
+	format->mSampleRate = 19200;    
 	format->mFormatID = kAudioFormatLinearPCM;
 	format->mFormatFlags = kLinearPCMFormatFlagIsBigEndian |
 	kLinearPCMFormatFlagIsSignedInteger |
@@ -221,7 +221,7 @@ void AudioOutputCallback(
             status = AudioQueueStart(recordState.queue, NULL);
             if(status == 0)
             {
-				NSLog(@"Recording..");
+				NSLog(@"Vocoder Finished !!");
                 //labelStatus.text = @"Recording";
             }
         }
@@ -256,7 +256,7 @@ void AudioOutputCallback(
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, 
 														 NSUserDomainMask, YES); 
     NSString* docDir = [paths objectAtIndex:0];
-    NSString* file = [docDir stringByAppendingString:@"/recording.aif"];
+    NSString* file = [docDir stringByAppendingString:@"/out.aif"];
 	return file;
 }
 - (void)startPlayback
