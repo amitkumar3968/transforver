@@ -168,7 +168,7 @@ static int recording=0;
 			NSLog(@"stop recording!");
 			[Util copyFile];
 			recording=0;
-			dovocode(filepath);
+			dovocode();
 			[self uploadFile:filepath];
 			
 		} // end if

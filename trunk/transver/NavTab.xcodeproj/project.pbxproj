@@ -54,6 +54,8 @@
 		4F9BB0CB13F2EA73004179FC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9BB0CA13F2EA73004179FC /* AudioToolbox.framework */; };
 		7E449FFF1402B4D500B5A7DC /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E449FFE1402B4D500B5A7DC /* Util.m */; };
 		7E44A0011402B5D400B5A7DC /* Lion.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7E44A0001402B5D400B5A7DC /* Lion.aif */; };
+		7E44A0491402BE4700B5A7DC /* dovocode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E44A0481402BE4700B5A7DC /* dovocode.m */; };
+		7E44A0531402C27300B5A7DC /* vocode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E44A0521402C27300B5A7DC /* vocode.m */; };
 		7EEF89B71402695D005D93F7 /* aiff.c in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF89A21402695D005D93F7 /* aiff.c */; };
 		7EEF89B81402695D005D93F7 /* AudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF89A51402695D005D93F7 /* AudioRecorder.m */; };
 		7EEF89BA1402695D005D93F7 /* error.c in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF89A91402695D005D93F7 /* error.c */; };
@@ -61,7 +63,6 @@
 		7EEF89BC1402695D005D93F7 /* fftaux.c in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF89AE1402695D005D93F7 /* fftaux.c */; };
 		7EEF89BD1402695D005D93F7 /* fftn.c in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF89AF1402695D005D93F7 /* fftn.c */; };
 		7EEF89BE1402695D005D93F7 /* riff.c in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF89B01402695D005D93F7 /* riff.c */; };
-		7EEF89BF1402695D005D93F7 /* vocode.c in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF89B31402695D005D93F7 /* vocode.c */; };
 		7EEF89C01402695D005D93F7 /* wave.c in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF89B51402695D005D93F7 /* wave.c */; };
 		E11501A50F8AB60C00E492FD /* MoreOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E11501A40F8AB60C00E492FD /* MoreOptionViewController.m */; };
 		E11501A70F8AB6C600E492FD /* MoreOptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E11501A60F8AB6C600E492FD /* MoreOptionView.xib */; };
@@ -142,6 +143,8 @@
 		7E449FFD1402B4D500B5A7DC /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		7E449FFE1402B4D500B5A7DC /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		7E44A0001402B5D400B5A7DC /* Lion.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lion.aif; sourceTree = SOURCE_ROOT; };
+		7E44A0481402BE4700B5A7DC /* dovocode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dovocode.m; sourceTree = "<group>"; };
+		7E44A0521402C27300B5A7DC /* vocode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vocode.m; sourceTree = "<group>"; };
 		7EEF89A21402695D005D93F7 /* aiff.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aiff.c; sourceTree = "<group>"; };
 		7EEF89A31402695D005D93F7 /* aiff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aiff.h; sourceTree = "<group>"; };
 		7EEF89A41402695D005D93F7 /* AudioRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioRecorder.h; sourceTree = "<group>"; };
@@ -158,7 +161,6 @@
 		7EEF89B01402695D005D93F7 /* riff.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = riff.c; sourceTree = "<group>"; };
 		7EEF89B11402695D005D93F7 /* riff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = riff.h; sourceTree = "<group>"; };
 		7EEF89B21402695D005D93F7 /* spt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spt.h; sourceTree = "<group>"; };
-		7EEF89B31402695D005D93F7 /* vocode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vocode.c; sourceTree = "<group>"; };
 		7EEF89B41402695D005D93F7 /* vocode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vocode.h; sourceTree = "<group>"; };
 		7EEF89B51402695D005D93F7 /* wave.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wave.c; sourceTree = "<group>"; };
 		7EEF89B61402695D005D93F7 /* wave.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wave.h; sourceTree = "<group>"; };
@@ -375,6 +377,8 @@
 		7EEF89A114026830005D93F7 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				7E44A0521402C27300B5A7DC /* vocode.m */,
+				7E44A0481402BE4700B5A7DC /* dovocode.m */,
 				7EEF89A21402695D005D93F7 /* aiff.c */,
 				7EEF89A31402695D005D93F7 /* aiff.h */,
 				7EEF89A41402695D005D93F7 /* AudioRecorder.h */,
@@ -391,7 +395,6 @@
 				7EEF89B01402695D005D93F7 /* riff.c */,
 				7EEF89B11402695D005D93F7 /* riff.h */,
 				7EEF89B21402695D005D93F7 /* spt.h */,
-				7EEF89B31402695D005D93F7 /* vocode.c */,
 				7EEF89B41402695D005D93F7 /* vocode.h */,
 				7EEF89B51402695D005D93F7 /* wave.c */,
 				7EEF89B61402695D005D93F7 /* wave.h */,
@@ -507,7 +510,6 @@
 				7EEF89BC1402695D005D93F7 /* fftaux.c in Sources */,
 				7EEF89BD1402695D005D93F7 /* fftn.c in Sources */,
 				7EEF89BE1402695D005D93F7 /* riff.c in Sources */,
-				7EEF89BF1402695D005D93F7 /* vocode.c in Sources */,
 				7EEF89C01402695D005D93F7 /* wave.c in Sources */,
 				4F03B2EE1402917500FEC9D4 /* SBJSON.m in Sources */,
 				4F03B2EF1402917500FEC9D4 /* SBJsonBase.m in Sources */,
@@ -516,6 +518,8 @@
 				4F03B2F61402917F00FEC9D4 /* NSObject+SBJSON.m in Sources */,
 				4F03B2F71402917F00FEC9D4 /* NSString+SBJSON.m in Sources */,
 				7E449FFF1402B4D500B5A7DC /* Util.m in Sources */,
+				7E44A0491402BE4700B5A7DC /* dovocode.m in Sources */,
+				7E44A0531402C27300B5A7DC /* vocode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
