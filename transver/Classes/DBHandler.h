@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface SBHandler : NSObject {
+@interface DBHandler : NSObject {
     
 }
 
@@ -18,6 +18,6 @@
 +(NSData*)uploadImageToUrl:(NSString*)urlString body:(NSData*)body 
 				  boundary:(NSString*)boundary;
 +(void)loadUrl:(NSString*)urlStr webView:(UIWebView*)webView;
-+(NSData*)sendReqForUrl:(NSString*)urlString postString:(NSString*)postString;
++(NSData*)sendReqToUrl:(NSString*)urlString postString:(NSString*)postString;
 
 @end
