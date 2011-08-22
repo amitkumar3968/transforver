@@ -58,6 +58,16 @@
 		4F9BB0BC13F2E932004179FC /* 111.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4F9BB0BB13F2E931004179FC /* 111.caf */; };
 		4F9BB0C013F2E9BE004179FC /* mysoundcompressed.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4F9BB0BF13F2E9BE004179FC /* mysoundcompressed.caf */; };
 		4F9BB0CB13F2EA73004179FC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9BB0CA13F2EA73004179FC /* AudioToolbox.framework */; };
+		7EEF89B71402695D005D93F7 /* aiff.c in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF89A21402695D005D93F7 /* aiff.c */; };
+		7EEF89B81402695D005D93F7 /* AudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF89A51402695D005D93F7 /* AudioRecorder.m */; };
+		7EEF89B91402695D005D93F7 /* dovocode.c in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF89A71402695D005D93F7 /* dovocode.c */; };
+		7EEF89BA1402695D005D93F7 /* error.c in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF89A91402695D005D93F7 /* error.c */; };
+		7EEF89BB1402695D005D93F7 /* extended.c in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF89AB1402695D005D93F7 /* extended.c */; };
+		7EEF89BC1402695D005D93F7 /* fftaux.c in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF89AE1402695D005D93F7 /* fftaux.c */; };
+		7EEF89BD1402695D005D93F7 /* fftn.c in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF89AF1402695D005D93F7 /* fftn.c */; };
+		7EEF89BE1402695D005D93F7 /* riff.c in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF89B01402695D005D93F7 /* riff.c */; };
+		7EEF89BF1402695D005D93F7 /* vocode.c in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF89B31402695D005D93F7 /* vocode.c */; };
+		7EEF89C01402695D005D93F7 /* wave.c in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF89B51402695D005D93F7 /* wave.c */; };
 		E11501A50F8AB60C00E492FD /* MoreOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E11501A40F8AB60C00E492FD /* MoreOptionViewController.m */; };
 		E11501A70F8AB6C600E492FD /* MoreOptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E11501A60F8AB6C600E492FD /* MoreOptionView.xib */; };
 		E124FF800F82CC6B008BC374 /* UICustomTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E124FF7F0F82CC6B008BC374 /* UICustomTabViewController.m */; };
@@ -147,6 +157,27 @@
 		4F9BB0BB13F2E931004179FC /* 111.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = 111.caf; path = ../111.caf; sourceTree = "<group>"; };
 		4F9BB0BF13F2E9BE004179FC /* mysoundcompressed.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = mysoundcompressed.caf; path = ../mysoundcompressed.caf; sourceTree = "<group>"; };
 		4F9BB0CA13F2EA73004179FC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		7EEF89A21402695D005D93F7 /* aiff.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aiff.c; sourceTree = "<group>"; };
+		7EEF89A31402695D005D93F7 /* aiff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aiff.h; sourceTree = "<group>"; };
+		7EEF89A41402695D005D93F7 /* AudioRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioRecorder.h; sourceTree = "<group>"; };
+		7EEF89A51402695D005D93F7 /* AudioRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioRecorder.m; sourceTree = "<group>"; };
+		7EEF89A61402695D005D93F7 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		7EEF89A71402695D005D93F7 /* dovocode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = dovocode.c; sourceTree = "<group>"; };
+		7EEF89A81402695D005D93F7 /* dovocode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dovocode.h; sourceTree = "<group>"; };
+		7EEF89A91402695D005D93F7 /* error.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = error.c; sourceTree = "<group>"; };
+		7EEF89AA1402695D005D93F7 /* error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = error.h; sourceTree = "<group>"; };
+		7EEF89AB1402695D005D93F7 /* extended.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = extended.c; sourceTree = "<group>"; };
+		7EEF89AC1402695D005D93F7 /* extended.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = extended.h; sourceTree = "<group>"; };
+		7EEF89AD1402695D005D93F7 /* fft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fft.h; sourceTree = "<group>"; };
+		7EEF89AE1402695D005D93F7 /* fftaux.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fftaux.c; sourceTree = "<group>"; };
+		7EEF89AF1402695D005D93F7 /* fftn.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fftn.c; sourceTree = "<group>"; };
+		7EEF89B01402695D005D93F7 /* riff.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = riff.c; sourceTree = "<group>"; };
+		7EEF89B11402695D005D93F7 /* riff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = riff.h; sourceTree = "<group>"; };
+		7EEF89B21402695D005D93F7 /* spt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spt.h; sourceTree = "<group>"; };
+		7EEF89B31402695D005D93F7 /* vocode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vocode.c; sourceTree = "<group>"; };
+		7EEF89B41402695D005D93F7 /* vocode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vocode.h; sourceTree = "<group>"; };
+		7EEF89B51402695D005D93F7 /* wave.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wave.c; sourceTree = "<group>"; };
+		7EEF89B61402695D005D93F7 /* wave.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wave.h; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E11501A30F8AB60C00E492FD /* MoreOptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreOptionViewController.h; sourceTree = "<group>"; };
 		E11501A40F8AB60C00E492FD /* MoreOptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreOptionViewController.m; sourceTree = "<group>"; };
@@ -183,6 +214,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				7EEF89A114026830005D93F7 /* Audio */,
 				4F03B2D21401D42300FEC9D4 /* Common */,
 				4F03B2C91401D31100FEC9D4 /* CellView */,
 				4F03B2961401339500FEC9D4 /* Lib */,
@@ -366,6 +398,34 @@
 			path = sounds;
 			sourceTree = "<group>";
 		};
+		7EEF89A114026830005D93F7 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				7EEF89A21402695D005D93F7 /* aiff.c */,
+				7EEF89A31402695D005D93F7 /* aiff.h */,
+				7EEF89A41402695D005D93F7 /* AudioRecorder.h */,
+				7EEF89A51402695D005D93F7 /* AudioRecorder.m */,
+				7EEF89A61402695D005D93F7 /* config.h */,
+				7EEF89A71402695D005D93F7 /* dovocode.c */,
+				7EEF89A81402695D005D93F7 /* dovocode.h */,
+				7EEF89A91402695D005D93F7 /* error.c */,
+				7EEF89AA1402695D005D93F7 /* error.h */,
+				7EEF89AB1402695D005D93F7 /* extended.c */,
+				7EEF89AC1402695D005D93F7 /* extended.h */,
+				7EEF89AD1402695D005D93F7 /* fft.h */,
+				7EEF89AE1402695D005D93F7 /* fftaux.c */,
+				7EEF89AF1402695D005D93F7 /* fftn.c */,
+				7EEF89B01402695D005D93F7 /* riff.c */,
+				7EEF89B11402695D005D93F7 /* riff.h */,
+				7EEF89B21402695D005D93F7 /* spt.h */,
+				7EEF89B31402695D005D93F7 /* vocode.c */,
+				7EEF89B41402695D005D93F7 /* vocode.h */,
+				7EEF89B51402695D005D93F7 /* wave.c */,
+				7EEF89B61402695D005D93F7 /* wave.h */,
+			);
+			name = Audio;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -478,6 +538,16 @@
 				4F03B2D51401D44700FEC9D4 /* Message.m in Sources */,
 				4F03B2D91401D4C000FEC9D4 /* ChatMeUser.m in Sources */,
 				4F03B2DC1401D4DC00FEC9D4 /* Invitation.m in Sources */,
+				7EEF89B71402695D005D93F7 /* aiff.c in Sources */,
+				7EEF89B81402695D005D93F7 /* AudioRecorder.m in Sources */,
+				7EEF89B91402695D005D93F7 /* dovocode.c in Sources */,
+				7EEF89BA1402695D005D93F7 /* error.c in Sources */,
+				7EEF89BB1402695D005D93F7 /* extended.c in Sources */,
+				7EEF89BC1402695D005D93F7 /* fftaux.c in Sources */,
+				7EEF89BD1402695D005D93F7 /* fftn.c in Sources */,
+				7EEF89BE1402695D005D93F7 /* riff.c in Sources */,
+				7EEF89BF1402695D005D93F7 /* vocode.c in Sources */,
+				7EEF89C01402695D005D93F7 /* wave.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

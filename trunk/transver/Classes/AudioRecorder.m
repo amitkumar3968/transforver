@@ -126,10 +126,10 @@ void AudioOutputCallback(
 	format->mFormatFlags = kLinearPCMFormatFlagIsBigEndian |
 	kLinearPCMFormatFlagIsSignedInteger |
 	kLinearPCMFormatFlagIsPacked;
-	format->mBytesPerPacket = 4;
+	format->mBytesPerPacket = 2;
 	format->mFramesPerPacket = 1;
-	format->mBytesPerFrame = 4;
-	format->mChannelsPerFrame = 2;
+	format->mBytesPerFrame = 2;
+	format->mChannelsPerFrame = 1;
 	format->mBitsPerChannel = 16;
 	/*
 	format->mSampleRate = 8000.0;
