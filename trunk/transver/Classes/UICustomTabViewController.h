@@ -25,7 +25,7 @@
     AudioRecorder *audioRecorder;
 }
 
-
+- (void) uploadFile:(char*)filepath;
 
 @property (nonatomic, retain) NSArray *viewControllers;
 @property (nonatomic, retain) NSString *localFilePath;
