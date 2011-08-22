@@ -1,7 +1,7 @@
 TNavTab
 v7
 r0
-t335716028.376069
+t335724113.428964
 cCheck dependencies
 cCpResource build/Debug-iphoneos/NavTab.app/ResourceRules.plist /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/ResourceRules.plist
 cProcessInfoPlistFile /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/Info.plist Info.plist
@@ -30,6 +30,7 @@ cCopyPNGFile /Users/shuang/Desktop/transforver_rev/transforver/transver/build/De
 cCopyPNGFile /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/indicator.png images/indicator.png
 cCopyPNGFile /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/Icon.png images/Icon.png
 cCompileXIB /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/ContactTableViewCell.xib
+cCpResource build/Debug-iphoneos/NavTab.app/Lion.aif Lion.aif
 cProcessPCH /var/folders/Wt/WtussHh-E-aIgP-nF-0sn++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-cjsnlwhcpriujlhbawkabfoslixc/NavTab_Prefix.pch.gch NavTab_Prefix.pch normal armv6 objective-c com.apple.compilers.gcc.4_2
 cProcessPCH /var/folders/Wt/WtussHh-E-aIgP-nF-0sn++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-eencztvrzoaefbeldmxdcxyijcav/NavTab_Prefix.pch.gch NavTab_Prefix.pch normal armv6 c com.apple.compilers.gcc.4_2
 cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/main.o /Users/shuang/Desktop/transforver_rev/transforver/transver/main.m normal armv6 objective-c com.apple.compilers.gcc.4_2
@@ -41,18 +42,6 @@ cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/Mo
 cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/MoreOptionViewController.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/MoreOptionViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
 cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/ChatBubbleView.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/ChatBubbleView.m normal armv6 objective-c com.apple.compilers.gcc.4_2
 cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/DBHandler.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/DBHandler.m normal armv6 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/NSObject+SBJson.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSObject+SBJson.m normal armv6 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJsonParser.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonParser.m normal armv6 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJsonStreamParser.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonStreamParser.m normal armv6 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJsonStreamParserAccumulator.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonStreamParserAccumulator.m normal armv6 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJsonStreamParserState.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonStreamParserState.m normal armv6 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJsonStreamWriter.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonStreamWriter.m normal armv6 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJsonStreamWriterAccumulator.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonStreamWriterAccumulator.m normal armv6 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJsonStreamWriterState.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonStreamWriterState.m normal armv6 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJsonTokeniser.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonTokeniser.m normal armv6 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJsonUTF8Stream.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonUTF8Stream.m normal armv6 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJsonWriter.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonWriter.m normal armv6 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/NSString+SBJSON.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSString+SBJSON.m normal armv6 objective-c com.apple.compilers.gcc.4_2
 cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/ChatViewController.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/ChatViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
 cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/ContactTableViewCell.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/ContactTableViewCell.m normal armv6 objective-c com.apple.compilers.gcc.4_2
 cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/MessageTableViewCell.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/MessageTableViewCell.m normal armv6 objective-c com.apple.compilers.gcc.4_2
@@ -61,7 +50,6 @@ cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/Ch
 cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/Invitation.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/Invitation.m normal armv6 objective-c com.apple.compilers.gcc.4_2
 cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/aiff.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/aiff.c normal armv6 c com.apple.compilers.gcc.4_2
 cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/AudioRecorder.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/AudioRecorder.m normal armv6 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/dovocode.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c normal armv6 c com.apple.compilers.gcc.4_2
 cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/error.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/error.c normal armv6 c com.apple.compilers.gcc.4_2
 cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/extended.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/extended.c normal armv6 c com.apple.compilers.gcc.4_2
 cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/fftaux.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/fftaux.c normal armv6 c com.apple.compilers.gcc.4_2
@@ -69,6 +57,14 @@ cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/ff
 cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/riff.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/riff.c normal armv6 c com.apple.compilers.gcc.4_2
 cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/vocode.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/vocode.c normal armv6 c com.apple.compilers.gcc.4_2
 cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/wave.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/wave.c normal armv6 c com.apple.compilers.gcc.4_2
+cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJSON.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJSON.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJsonBase.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonBase.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJsonParser.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonParser.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJsonWriter.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonWriter.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/NSObject+SBJSON.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSObject+SBJSON.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/NSString+SBJSON.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSString+SBJSON.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/Util.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/Util.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/dovocode.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m normal armv6 objective-c com.apple.compilers.gcc.4_2
 cLd /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/NavTab normal armv6
 cGenerateDSYMFile /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app.dSYM /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/NavTab
 cProcessProductPackaging "/Users/shuang/Library/MobileDevice/Provisioning Profiles/B6BFE3F8-6E8D-470D-AEA4-6BA9612ADCA0.mobileprovision" /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/embedded.mobileprovision
@@ -587,9 +583,9 @@ i"ChatMeUser.h"
 i"Common.h"
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/JSON.h
-c000000004E522D8500000000000008F0
-t1314008453
-s2288
+c000000004E5268ED00000000000008F9
+t1314023661
+s2297
 i"SBJSON.h"
 i"NSObject+SBJSON.h"
 i"NSString+SBJSON.h"
@@ -647,6 +643,19 @@ i"MoreTabViewController.h"
 i"MoreOptionViewController.h"
 i"NavTabAppDelegate.h"
 
+N/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSObject+SBJSON.h
+c000000004E526B8C0000000000000A01
+t1314024332
+s2561
+i<Foundation/Foundation.h>
+
+N/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSObject+SBJSON.m
+c000000004E526B8C000000000000089E
+t1314024332
+s2206
+i"NSObject+SBJSON.h"
+i"SBJsonWriter.h"
+
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSObject+SBJson.h
 c000000004E522D8500000000000008B7
 t1314008453
@@ -662,14 +671,14 @@ i"SBJsonWriter.h"
 i"SBJsonParser.h"
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSString+SBJSON.h
-c000000004E522D850000000000000916
-t1314008453
+c000000004E5268CD0000000000000916
+t1314023629
 s2326
 i<Foundation/Foundation.h>
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSString+SBJSON.m
-c000000004E522D85000000000000087D
-t1314008453
+c000000004E5268ED000000000000087D
+t1314023661
 s2173
 i"NSString+SBJSON.h"
 i"SBJsonParser.h"
@@ -688,23 +697,39 @@ i"NavTabAppDelegate.h"
 i"RootViewController.h"
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.h
-c000000004E525E2300000000000002E8
-t1314020899
-s744
+c000000004E5268ED0000000000000309
+t1314023661
+s777
 i<UIKit/UIKit.h>
 i"UICustomTabViewController.h"
 i"ChatBubbleView.h"
 i"AudioRecorder.h"
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m
-c000000004E52673100000000000043CE
-t1314023217
-s17358
+c000000004E527CC60000000000004817
+t1314028742
+s18455
 i"RootViewController.h"
 i"UICustomTabViewController.h"
+i"DBHandler.h"
+i"JSON.h"
 i<AudioToolbox/AudioServices.h>
 i<AddressBook/AddressBook.h>
 i<AddressBookUI/AddressBookUI.h>
+
+N/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJSON.h
+c000000004E526B8C0000000000000AED
+t1314024332
+s2797
+i<Foundation/Foundation.h>
+i"SBJsonParser.h"
+i"SBJsonWriter.h"
+
+N/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJSON.m
+c000000004E526B8C0000000000001ABC
+t1314024332
+s6844
+i"SBJSON.h"
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJson.h
 c000000004E522D850000000000000D7C
@@ -716,19 +741,30 @@ i"SBJsonStreamParser.h"
 i"SBJsonStreamWriter.h"
 i"NSObject+SBJson.h"
 
-N/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonParser.h
-c000000004E522D850000000000000DCA
-t1314008453
-s3530
+N/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonBase.h
+c000000004E526B8C0000000000000B82
+t1314024332
+s2946
 i<Foundation/Foundation.h>
 
+N/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonBase.m
+c000000004E526B8C0000000000000AC1
+t1314024332
+s2753
+i"SBJsonBase.h"
+
+N/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonParser.h
+c000000004E5268ED0000000000000C0B
+t1314023661
+s3083
+i<Foundation/Foundation.h>
+i"SBJsonBase.h"
+
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonParser.m
-c000000004E522D850000000000000C17
-t1314008453
-s3095
+c000000004E5268ED00000000000036D0
+t1314023661
+s14032
 i"SBJsonParser.h"
-i"SBJsonStreamParser.h"
-i"SBJsonStreamParserAccumulator.h"
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonStreamParser.h
 c000000004E522D850000000000001B47
@@ -837,36 +873,48 @@ s3877
 i"SBJsonUTF8Stream.h"
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonWriter.h
-c000000004E522D850000000000001059
-t1314008453
-s4185
+c000000004E5268ED0000000000001140
+t1314023661
+s4416
 i<Foundation/Foundation.h>
+i"SBJsonBase.h"
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonWriter.m
-c000000004E522D850000000000000DBF
-t1314008453
-s3519
+c000000004E5268ED0000000000001F26
+t1314023661
+s7974
 i"SBJsonWriter.h"
-i"SBJsonStreamWriter.h"
-i"SBJsonStreamWriterAccumulator.h"
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.h
-c000000004E522D85000000000000056B
-t1314008453
-s1387
+c000000004E528424000000000000059F
+t1314030628
+s1439
 i<UIKit/UIKit.h>
 i<AVFoundation/AVFoundation.h>
 i<CoreAudio/CoreAudioTypes.h>
 i"AudioRecorder.h"
 i"ChatBubbleView.h"
+i"Util.h"
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m
-c000000004E52334E000000000000197D
-t1314009934
-s6525
+c000000004E52842500000000000023AD
+t1314030629
+s9133
 i"UICustomTabViewController.h"
 i"FavoritesTabViewController.h"
 i"MoreTabViewController.h"
+
+N/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/Util.h
+c000000004E527CC60000000000000100
+t1314028742
+s256
+i<Foundation/Foundation.h>
+
+N/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/Util.m
+c000000004E52830300000000000003AA
+t1314030339
+s938
+i"Util.h"
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/aiff.c
 c000000004E522D8500000000000012E1
@@ -891,6 +939,22 @@ t1314008453
 s877
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c
+c000000004E522D850000000000001F6D
+t1314008453
+s8045
+i<stdio.h>
+i<stdlib.h>
+i<stdarg.h>
+i<ctype.h>
+i<string.h>
+i<math.h>
+i<errno.h>
+i<limits.h>
+i"error.h"
+i"vocode.h"
+i"fft.h"
+
+N/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m
 c000000004E522D850000000000001F6D
 t1314008453
 s8045
@@ -1026,6 +1090,11 @@ c000000004E522D900000000000003363
 t1314008464
 s13155
 
+N/Users/shuang/Desktop/transforver_rev/transforver/transver/Lion.aif
+c000000004E51BD4D000000000001DDF4
+t1313979725
+s122356
+
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/MainWindow.xib
 c000000004E522D900000000000005FA1
 t1314008464
@@ -1059,11 +1128,11 @@ t1314008464
 s11711
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app
-t1314023228
-s1156
+t1314031313
+s1190
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app.dSYM
-t1314023225
+t1314031309
 s102
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/111.caf
@@ -1090,6 +1159,10 @@ N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos
 t1314009629
 s835
 
+N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/Lion.aif
+t1314029839
+s122356
+
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/MainWindow.nib
 t1314009633
 s1484
@@ -1103,8 +1176,8 @@ t1314009644
 s1096
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/NavTab
-t1314023224
-s247708
+t1314031308
+s191936
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/PkgInfo
 t1314009629
@@ -1211,7 +1284,7 @@ t1314009680
 s55992
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/DBHandler.o
-t1314009668
+t1314029847
 s45360
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/FavoritesTabViewController.o
@@ -1238,30 +1311,42 @@ N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/D
 t1314009665
 s53024
 
+N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/NSObject+SBJSON.o
+t1314029852
+s8332
+
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/NSObject+SBJson.o
 t1314009668
 s8576
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/NSString+SBJSON.o
-t1314009677
-s7964
+t1314029853
+s8260
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/NavTab.LinkFileList
-c000000004E52321D00000000000014DC
-t1314009629
-s5340
+c000000004E5286CA00000000000011BB
+t1314031306
+s4539
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/NavTabAppDelegate.o
-t1314020903
+t1314030634
 s51916
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/RootViewController.o
-t1314023224
-s77176
+t1314030638
+s79752
+
+N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJSON.o
+t1314029849
+s18516
+
+N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJsonBase.o
+t1314029849
+s12948
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJsonParser.o
-t1314009669
-s15436
+t1314029851
+s34568
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJsonStreamParser.o
 t1314009670
@@ -1296,20 +1381,24 @@ t1314009676
 s16824
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJsonWriter.o
-t1314009677
-s17924
+t1314029851
+s24744
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/UICustomTabViewController.o
-t1314009939
-s60920
+t1314030640
+s68272
+
+N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/Util.o
+t1314030345
+s9724
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/aiff.o
 t1314009683
 s9872
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/dovocode.o
-t1314009685
-s19092
+t1314031308
+s20200
 
 N/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/error.o
 t1314009685
@@ -1463,15 +1552,15 @@ s882
 
 CCheck dependencies
 r0
-lSLF07#2@18"Check dependencies335716018#335716019#0(0"0(0#1#0"8636141440#0"0#
+lSLF07#2@18"Check dependencies335724105#335724106#0(0"0(0#1#0"8620339936#0"0#
 
 CCodeSign /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app
-s335716025.531694
-e335716028.375605
+s335724109.210583
+e335724113.428508
 r1
 xCodeSign
 x/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app
-lSLF07#2@40"CodeSign build/Debug-iphoneos/NavTab.app335716025#335716028#0(0"0(0#0#90"/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app8632451712#717"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv _CODESIGN_ALLOCATE_ /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate    /usr/bin/codesign -f -s "iPhone Developer: Ray Yu (55P7VD7797)" --resource-rules=/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/ResourceRules.plist --entitlements /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab.xcent /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app0#
+lSLF07#2@40"CodeSign build/Debug-iphoneos/NavTab.app335724109#335724113#0(0"0(0#0#90"/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app8619497664#717"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv _CODESIGN_ALLOCATE_ /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate    /usr/bin/codesign -f -s "iPhone Developer: Ray Yu (55P7VD7797)" --resource-rules=/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/ResourceRules.plist --entitlements /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab.xcent /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app0#
 
 CCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/AudioRecorder.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/AudioRecorder.m normal armv6 objective-c com.apple.compilers.gcc.4_2
 s335713147.129165
@@ -1558,8 +1647,8 @@ xcom.apple.compilers.gcc.4_2
 lSLF07#2@97"Compile /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/ContactTableViewCell.m335702479#335702480#0(0"0(0#0#89"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/ContactTableViewCell.m8624582624#1964"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-generated-files.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-own-target-headers.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-project-headers.hmap -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/include -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources/armv6 -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources -include /var/folders/Wt/WtussHh-E-aIgP-nF-0sn++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-cjsnlwhcpriujlhbawkabfoslixc/NavTab_Prefix.pch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/ContactTableViewCell.m -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/ContactTableViewCell.o0#
 
 CCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/DBHandler.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/DBHandler.m normal armv6 objective-c com.apple.compilers.gcc.4_2
-s335702467.096389
-e335702468.130250
+s335722646.718526
+e335722647.767057
 r1
 xCompileC
 xbuild/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/DBHandler.o
@@ -1570,7 +1659,7 @@ xobjective-c
 xcom.apple.compilers.gcc.4_2
 o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/DBHandler.m:131: warning: incomplete implementation of class 'DBHandler'
 o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/DBHandler.m:131: warning: method definition for '+sendReqForUrl:body:' not found
-lSLF07#2@86"Compile /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/DBHandler.m335702467#335702468#0(288"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/DBHandler.m:131: warning: incomplete implementation of class 'DBHandler'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/DBHandler.m:131: warning: method definition for '+sendReqForUrl:body:' not found2(22@46"Incomplete implementation of class 'DBHandler'335702467#0#140#0(6@78"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/DBHandler.m335701253#131#0#131#0#38"incomplete implementation of class '*'0(22@54"Method definition for '+sendReqForUrl:body:' not found335702467#140#148#0(6@78"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/DBHandler.m335701253#131#0#131#0#35"method definition for '*' not found0(0#0#78"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/DBHandler.m8596387360#1942"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-generated-files.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-own-target-headers.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-project-headers.hmap -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/include -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources/armv6 -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources -include /var/folders/Wt/WtussHh-E-aIgP-nF-0sn++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-cjsnlwhcpriujlhbawkabfoslixc/NavTab_Prefix.pch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/DBHandler.m -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/DBHandler.o0#
+lSLF07#2@86"Compile /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/DBHandler.m335722646#335722648#0(288"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/DBHandler.m:131: warning: incomplete implementation of class 'DBHandler'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/DBHandler.m:131: warning: method definition for '+sendReqForUrl:body:' not found2(22@46"Incomplete implementation of class 'DBHandler'335722647#0#140#0(6@78"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/DBHandler.m335701253#131#0#131#0#38"incomplete implementation of class '*'0(22@54"Method definition for '+sendReqForUrl:body:' not found335722647#140#148#0(6@78"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/DBHandler.m335701253#131#0#131#0#35"method definition for '*' not found0(0#0#78"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/DBHandler.m8619518272#1942"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-generated-files.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-own-target-headers.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-project-headers.hmap -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/include -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources/armv6 -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources -include /var/folders/Wt/WtussHh-E-aIgP-nF-0sn++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-cjsnlwhcpriujlhbawkabfoslixc/NavTab_Prefix.pch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/DBHandler.m -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/DBHandler.o0#
 
 CCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/FavoritesTabViewController.o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/FavoritesTabViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
 r0
@@ -1664,6 +1753,19 @@ o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/MoreTabViewC
 o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/MoreTabViewController.m:66: warning: 'setText:' is deprecated (declared at /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:213)
 lSLF07#2@98"Compile /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/MoreTabViewController.m335702464#335702465#0(450"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/MoreTabViewController.m: In function '-[MoreTabViewController tableView:cellForRowAtIndexPath:]':/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/MoreTabViewController.m:66: warning: 'setText:' is deprecated (declared at /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:213)1(22@180"'setText:' is deprecated (declared at /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:213)335702465#165#285#0(6@90"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/MoreTabViewController.m335701253#66#0#66#0#33"'*' is deprecated (declared at *)0(0#0#90"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/MoreTabViewController.m8621867808#1966"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-generated-files.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-own-target-headers.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-project-headers.hmap -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/include -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources/armv6 -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources -include /var/folders/Wt/WtussHh-E-aIgP-nF-0sn++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-cjsnlwhcpriujlhbawkabfoslixc/NavTab_Prefix.pch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/MoreTabViewController.m -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/MoreTabViewController.o0#
 
+CCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/NSObject+SBJSON.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSObject+SBJSON.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s335722651.944820
+e335722652.756177
+r1
+xCompileC
+xbuild/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/NSObject+SBJSON.o
+x/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSObject+SBJSON.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@92"Compile /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSObject+SBJSON.m335722651#335722652#0(0"0(0#0#84"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSObject+SBJSON.m8609067904#1954"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-generated-files.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-own-target-headers.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-project-headers.hmap -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/include -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources/armv6 -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources -include /var/folders/Wt/WtussHh-E-aIgP-nF-0sn++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-cjsnlwhcpriujlhbawkabfoslixc/NavTab_Prefix.pch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSObject+SBJSON.m -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/NSObject+SBJSON.o0#
+
 CCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/NSObject+SBJson.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSObject+SBJson.m normal armv6 objective-c com.apple.compilers.gcc.4_2
 s335702468.130688
 e335702469.053664
@@ -1678,8 +1780,8 @@ xcom.apple.compilers.gcc.4_2
 lSLF07#2@92"Compile /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSObject+SBJson.m335702468#335702469#0(0"0(0#0#84"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSObject+SBJson.m8622418816#1954"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-generated-files.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-own-target-headers.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-project-headers.hmap -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/include -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources/armv6 -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources -include /var/folders/Wt/WtussHh-E-aIgP-nF-0sn++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-cjsnlwhcpriujlhbawkabfoslixc/NavTab_Prefix.pch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSObject+SBJson.m -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/NSObject+SBJson.o0#
 
 CCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/NSString+SBJSON.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSString+SBJSON.m normal armv6 objective-c com.apple.compilers.gcc.4_2
-s335702477.204076
-e335702477.963197
+s335722652.756355
+e335722653.489361
 r1
 xCompileC
 xbuild/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/NSString+SBJSON.o
@@ -1688,22 +1790,14 @@ xnormal
 xarmv6
 xobjective-c
 xcom.apple.compilers.gcc.4_2
-o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSString+SBJSON.m: In function '-[NSString(NSString_SBJSON) JSONFragmentValue]':
-o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSString+SBJSON.m:38: warning: 'SBJsonParser' may not respond to '-fragmentWithString:'
-o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSString+SBJSON.m:38: warning: (Messages without a matching method signature
-o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSString+SBJSON.m:38: warning: will be assumed to return 'id' and accept
-o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSString+SBJSON.m:38: warning: '...' as arguments.)
-o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSString+SBJSON.m:40: warning: 'SBJsonParser' may not respond to '-errorTrace'
-o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSString+SBJSON.m: In function '-[NSString(NSString_SBJSON) JSONValue]':
-o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSString+SBJSON.m:50: warning: 'SBJsonParser' may not respond to '-errorTrace'
-lSLF07#2@92"Compile /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSString+SBJSON.m335702477#335702477#0(1138"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSString+SBJSON.m: In function '-[NSString(NSString_SBJSON) JSONFragmentValue]':/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSString+SBJSON.m:38: warning: 'SBJsonParser' may not respond to '-fragmentWithString:'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSString+SBJSON.m:38: warning: (Messages without a matching method signature/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSString+SBJSON.m:38: warning: will be assumed to return 'id' and accept/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSString+SBJSON.m:38: warning: '...' as arguments.)/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSString+SBJSON.m:40: warning: 'SBJsonParser' may not respond to '-errorTrace'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSString+SBJSON.m: In function '-[NSString(NSString_SBJSON) JSONValue]':/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSString+SBJSON.m:50: warning: 'SBJsonParser' may not respond to '-errorTrace'4(22@56"'SBJsonParser' may not respond to '-fragmentWithString:'335702477#148#155#0(6@84"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSString+SBJSON.m335701253#38#0#38#0#26"'*' may not respond to '*'0(13@108"(Messages without a matching method signature will be assumed to return 'id' and accept '...' as arguments.)335702477#303#144#0(6@84"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSString+SBJSON.m335701253#38#0#38#0#0"0(22@47"'SBJsonParser' may not respond to '-errorTrace'335702477#706#146#0(6@84"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSString+SBJSON.m335701253#40#0#40#0#26"'*' may not respond to '*'0(22@47"'SBJsonParser' may not respond to '-errorTrace'335702477#992#146#0(6@84"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSString+SBJSON.m335701253#50#0#50#0#26"'*' may not respond to '*'0(0#0#84"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSString+SBJSON.m8620808768#1954"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-generated-files.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-own-target-headers.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-project-headers.hmap -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/include -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources/armv6 -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources -include /var/folders/Wt/WtussHh-E-aIgP-nF-0sn++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-cjsnlwhcpriujlhbawkabfoslixc/NavTab_Prefix.pch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSString+SBJSON.m -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/NSString+SBJSON.o0#
+lSLF07#2@92"Compile /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSString+SBJSON.m335722652#335722653#0(0"0(0#0#84"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSString+SBJSON.m8622259232#1954"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-generated-files.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-own-target-headers.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-project-headers.hmap -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/include -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources/armv6 -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources -include /var/folders/Wt/WtussHh-E-aIgP-nF-0sn++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-cjsnlwhcpriujlhbawkabfoslixc/NavTab_Prefix.pch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NSString+SBJSON.m -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/NSString+SBJSON.o0#
 
 CCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/NavTabAppDelegate.o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/NavTabAppDelegate.m normal armv6 objective-c com.apple.compilers.gcc.4_2
 r0
 
 CCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/NavTabAppDelegate.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NavTabAppDelegate.m normal armv6 objective-c com.apple.compilers.gcc.4_2
-s335713700.392969
-e335713703.546090
+s335723430.839878
+e335723434.889038
 r1
 xCompileC
 xbuild/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/NavTabAppDelegate.o
@@ -1712,14 +1806,14 @@ xnormal
 xarmv6
 xobjective-c
 xcom.apple.compilers.gcc.4_2
-lSLF07#2@94"Compile /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NavTabAppDelegate.m335713700#335713703#0(0"0(0#0#86"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NavTabAppDelegate.m8631035392#1958"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-generated-files.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-own-target-headers.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-project-headers.hmap -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/include -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources/armv6 -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources -include /var/folders/Wt/WtussHh-E-aIgP-nF-0sn++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-cjsnlwhcpriujlhbawkabfoslixc/NavTab_Prefix.pch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NavTabAppDelegate.m -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/NavTabAppDelegate.o0#
+lSLF07#2@94"Compile /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NavTabAppDelegate.m335723430#335723434#0(0"0(0#0#86"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NavTabAppDelegate.m8619682816#1958"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-generated-files.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-own-target-headers.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-project-headers.hmap -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/include -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources/armv6 -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources -include /var/folders/Wt/WtussHh-E-aIgP-nF-0sn++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-cjsnlwhcpriujlhbawkabfoslixc/NavTab_Prefix.pch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/NavTabAppDelegate.m -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/NavTabAppDelegate.o0#
 
 CCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/RootViewController.o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/RootViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
 r0
 
 CCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/RootViewController.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
-s335716018.398184
-e335716024.447010
+s335723434.889578
+e335723438.645680
 r1
 xCompileC
 xbuild/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/RootViewController.o
@@ -1729,21 +1823,47 @@ xarmv6
 xobjective-c
 xcom.apple.compilers.gcc.4_2
 o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m: In function '-[RootViewController loginServer]':
-o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m:205: warning: format not a string literal and no format arguments
-o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m:223: warning: 'NSURLRequest' may not respond to '+setAllowsAnyHTTPSCertificate:forHost:'
-o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m:223: warning: (Messages without a matching method signature
-o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m:223: warning: will be assumed to return 'id' and accept
-o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m:223: warning: '...' as arguments.)
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m:231: warning: format not a string literal and no format arguments
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m:250: warning: 'NSURLRequest' may not respond to '+setAllowsAnyHTTPSCertificate:forHost:'
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m:250: warning: (Messages without a matching method signature
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m:250: warning: will be assumed to return 'id' and accept
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m:250: warning: '...' as arguments.)
 o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m: In function '-[RootViewController tableView:cellForRowAtIndexPath:]':
-o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m:441: warning: unused variable 'row'
-o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m:448: warning: 'setText:' is deprecated (declared at /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:213)
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m:468: warning: unused variable 'row'
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m:475: warning: 'setText:' is deprecated (declared at /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:213)
 o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m: In function '-[RootViewController tableView:didSelectRowAtIndexPath:]':
-o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m:460: warning: class 'RootViewController' does not implement the 'ABPeoplePickerNavigationControllerDelegate' protocol
-lSLF07#2@95"Compile /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m335716018#335716024#0(1817"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m: In function '-[RootViewController loginServer]':/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m:205: warning: format not a string literal and no format arguments/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m:223: warning: 'NSURLRequest' may not respond to '+setAllowsAnyHTTPSCertificate:forHost:'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m:223: warning: (Messages without a matching method signature/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m:223: warning: will be assumed to return 'id' and accept/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m:223: warning: '...' as arguments.)/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m: In function '-[RootViewController tableView:cellForRowAtIndexPath:]':/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m:441: warning: unused variable 'row'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m:448: warning: 'setText:' is deprecated (declared at /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:213)/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m: In function '-[RootViewController tableView:didSelectRowAtIndexPath:]':/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m:460: warning: class 'RootViewController' does not implement the 'ABPeoplePickerNavigationControllerDelegate' protocol6(22@51"Format not a string literal and no format arguments335716023#138#154#0(6@87"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m335716017#205#0#205#0#51"format not a string literal and no format arguments0(22@74"'NSURLRequest' may not respond to '+setAllowsAnyHTTPSCertificate:forHost:'335716023#292#177#0(6@87"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m335716017#223#0#223#0#26"'*' may not respond to '*'0(13@108"(Messages without a matching method signature will be assumed to return 'id' and accept '...' as arguments.)335716023#469#148#0(6@87"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m335716017#223#0#223#0#0"0(22@21"Unused variable 'row'335716023#1043#124#0(6@87"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m335716017#441#0#441#0#19"unused variable '*'0(22@180"'setText:' is deprecated (declared at /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:213)335716023#1167#283#0(6@87"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m335716017#448#0#448#0#33"'*' is deprecated (declared at *)0(22@103"Class 'RootViewController' does not implement the 'ABPeoplePickerNavigationControllerDelegate' protocol335716024#1611#206#0(6@87"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m335716017#460#0#460#0#45"class '*' does not implement the '*' protocol0(0#0#87"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m8636126624#1960"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-generated-files.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-own-target-headers.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-project-headers.hmap -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/include -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources/armv6 -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources -include /var/folders/Wt/WtussHh-E-aIgP-nF-0sn++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-cjsnlwhcpriujlhbawkabfoslixc/NavTab_Prefix.pch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/RootViewController.o0#
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m:487: warning: class 'RootViewController' does not implement the 'ABPeoplePickerNavigationControllerDelegate' protocol
+lSLF07#2@95"Compile /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m335723434#335723438#0(1817"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m: In function '-[RootViewController loginServer]':/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m:231: warning: format not a string literal and no format arguments/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m:250: warning: 'NSURLRequest' may not respond to '+setAllowsAnyHTTPSCertificate:forHost:'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m:250: warning: (Messages without a matching method signature/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m:250: warning: will be assumed to return 'id' and accept/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m:250: warning: '...' as arguments.)/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m: In function '-[RootViewController tableView:cellForRowAtIndexPath:]':/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m:468: warning: unused variable 'row'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m:475: warning: 'setText:' is deprecated (declared at /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:213)/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m: In function '-[RootViewController tableView:didSelectRowAtIndexPath:]':/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m:487: warning: class 'RootViewController' does not implement the 'ABPeoplePickerNavigationControllerDelegate' protocol6(22@51"Format not a string literal and no format arguments335723437#138#154#0(6@87"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m335721542#231#0#231#0#51"format not a string literal and no format arguments0(22@74"'NSURLRequest' may not respond to '+setAllowsAnyHTTPSCertificate:forHost:'335723437#292#177#0(6@87"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m335721542#250#0#250#0#26"'*' may not respond to '*'0(13@108"(Messages without a matching method signature will be assumed to return 'id' and accept '...' as arguments.)335723437#469#148#0(6@87"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m335721542#250#0#250#0#0"0(22@21"Unused variable 'row'335723437#1043#124#0(6@87"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m335721542#468#0#468#0#19"unused variable '*'0(22@180"'setText:' is deprecated (declared at /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:213)335723437#1167#283#0(6@87"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m335721542#475#0#475#0#33"'*' is deprecated (declared at *)0(22@103"Class 'RootViewController' does not implement the 'ABPeoplePickerNavigationControllerDelegate' protocol335723437#1611#206#0(6@87"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m335721542#487#0#487#0#45"class '*' does not implement the '*' protocol0(0#0#87"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m8622318016#1960"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-generated-files.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-own-target-headers.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-project-headers.hmap -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/include -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources/armv6 -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources -include /var/folders/Wt/WtussHh-E-aIgP-nF-0sn++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-cjsnlwhcpriujlhbawkabfoslixc/NavTab_Prefix.pch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/RootViewController.m -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/RootViewController.o0#
+
+CCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJSON.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJSON.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s335722647.771338
+e335722649.119334
+r1
+xCompileC
+xbuild/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJSON.o
+x/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJSON.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@83"Compile /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJSON.m335722647#335722649#0(0"0(0#0#75"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJSON.m8619979008#1936"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-generated-files.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-own-target-headers.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-project-headers.hmap -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/include -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources/armv6 -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources -include /var/folders/Wt/WtussHh-E-aIgP-nF-0sn++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-cjsnlwhcpriujlhbawkabfoslixc/NavTab_Prefix.pch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJSON.m -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJSON.o0#
+
+CCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJsonBase.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonBase.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s335722649.119517
+e335722649.978969
+r1
+xCompileC
+xbuild/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJsonBase.o
+x/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonBase.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@87"Compile /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonBase.m335722649#335722649#0(0"0(0#0#79"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonBase.m8622607776#1944"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-generated-files.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-own-target-headers.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-project-headers.hmap -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/include -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources/armv6 -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources -include /var/folders/Wt/WtussHh-E-aIgP-nF-0sn++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-cjsnlwhcpriujlhbawkabfoslixc/NavTab_Prefix.pch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonBase.m -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJsonBase.o0#
 
 CCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJsonParser.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonParser.m normal armv6 objective-c com.apple.compilers.gcc.4_2
-s335702469.053995
-e335702469.805062
+s335722649.979444
+e335722651.072103
 r1
 xCompileC
 xbuild/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJsonParser.o
@@ -1752,7 +1872,7 @@ xnormal
 xarmv6
 xobjective-c
 xcom.apple.compilers.gcc.4_2
-lSLF07#2@89"Compile /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonParser.m335702469#335702469#0(0"0(0#0#81"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonParser.m8621272896#1948"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-generated-files.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-own-target-headers.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-project-headers.hmap -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/include -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources/armv6 -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources -include /var/folders/Wt/WtussHh-E-aIgP-nF-0sn++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-cjsnlwhcpriujlhbawkabfoslixc/NavTab_Prefix.pch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonParser.m -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJsonParser.o0#
+lSLF07#2@89"Compile /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonParser.m335722649#335722651#0(0"0(0#0#81"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonParser.m8620640800#1948"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-generated-files.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-own-target-headers.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-project-headers.hmap -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/include -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources/armv6 -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources -include /var/folders/Wt/WtussHh-E-aIgP-nF-0sn++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-cjsnlwhcpriujlhbawkabfoslixc/NavTab_Prefix.pch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonParser.m -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJsonParser.o0#
 
 CCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJsonStreamParser.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonStreamParser.m normal armv6 objective-c com.apple.compilers.gcc.4_2
 s335702469.805457
@@ -1859,8 +1979,8 @@ xcom.apple.compilers.gcc.4_2
 lSLF07#2@93"Compile /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonUTF8Stream.m335702475#335702476#0(0"0(0#0#85"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonUTF8Stream.m8609491648#1956"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-generated-files.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-own-target-headers.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-project-headers.hmap -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/include -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources/armv6 -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources -include /var/folders/Wt/WtussHh-E-aIgP-nF-0sn++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-cjsnlwhcpriujlhbawkabfoslixc/NavTab_Prefix.pch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonUTF8Stream.m -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJsonUTF8Stream.o0#
 
 CCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJsonWriter.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonWriter.m normal armv6 objective-c com.apple.compilers.gcc.4_2
-s335702476.466919
-e335702477.203867
+s335722651.072311
+e335722651.943554
 r1
 xCompileC
 xbuild/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJsonWriter.o
@@ -1869,14 +1989,14 @@ xnormal
 xarmv6
 xobjective-c
 xcom.apple.compilers.gcc.4_2
-lSLF07#2@89"Compile /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonWriter.m335702476#335702477#0(0"0(0#0#81"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonWriter.m8622231200#1948"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-generated-files.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-own-target-headers.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-project-headers.hmap -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/include -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources/armv6 -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources -include /var/folders/Wt/WtussHh-E-aIgP-nF-0sn++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-cjsnlwhcpriujlhbawkabfoslixc/NavTab_Prefix.pch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonWriter.m -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJsonWriter.o0#
+lSLF07#2@89"Compile /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonWriter.m335722651#335722651#0(0"0(0#0#81"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonWriter.m8623048032#1948"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-generated-files.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-own-target-headers.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-project-headers.hmap -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/include -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources/armv6 -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources -include /var/folders/Wt/WtussHh-E-aIgP-nF-0sn++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-cjsnlwhcpriujlhbawkabfoslixc/NavTab_Prefix.pch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/SBJsonWriter.m -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/SBJsonWriter.o0#
 
 CCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/UICustomTabViewController.o /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/Classes/UICustomTabViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
 r0
 
 CCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/UICustomTabViewController.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
-s335702735.240369
-e335702739.403854
+s335723438.646223
+e335723440.912674
 r1
 xCompileC
 xbuild/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/UICustomTabViewController.o
@@ -1885,12 +2005,27 @@ xnormal
 xarmv6
 xobjective-c
 xcom.apple.compilers.gcc.4_2
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m: In function '-[UICustomTabViewController uploadFile:]':
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m:99: warning: local declaration of 'audioFile' hides instance variable
 o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m: In function '-[UICustomTabViewController tabBar:didSelectItem:]':
-o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m:115: warning: implicit declaration of function 'dovocode'
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m:171: warning: implicit declaration of function 'dovocode'
 o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m: At top level:
-o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m:199: warning: property 'bubbleView' requires method '-bubbleView' to be defined - use @synthesize, @dynamic or provide a method implementation
-o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m:199: warning: property 'bubbleView' requires the method 'setBubbleView:' to be defined - use @synthesize, @dynamic or provide a method implementation
-lSLF07#2@102"Compile /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m335702735#335702739#0(908"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m: In function '-[UICustomTabViewController tabBar:didSelectItem:]':/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m:115: warning: implicit declaration of function 'dovocode'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m: At top level:/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m:199: warning: property 'bubbleView' requires method '-bubbleView' to be defined - use @synthesize, @dynamic or provide a method implementation/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m:199: warning: property 'bubbleView' requires the method 'setBubbleView:' to be defined - use @synthesize, @dynamic or provide a method implementation4(22@43"Implicit declaration of function 'dovocode'335702739#162#153#0(6@94"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m335702734#115#0#115#0#36"implicit declaration of function '*'0(23@13"At top level:335702739#315#110#0(6@94"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m335702734#0#0#0#0#0"0(22@128"Property 'bubbleView' requires method '-bubbleView' to be defined - use @synthesize, @dynamic or provide a method implementation335702739#425#238#0(6@94"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m335702734#199#0#199#0#0"0(22@135"Property 'bubbleView' requires the method 'setBubbleView:' to be defined - use @synthesize, @dynamic or provide a method implementation335702739#663#245#0(6@94"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m335702734#199#0#199#0#0"0(0#0#94"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m8634524096#1974"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-generated-files.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-own-target-headers.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-project-headers.hmap -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/include -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources/armv6 -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources -include /var/folders/Wt/WtussHh-E-aIgP-nF-0sn++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-cjsnlwhcpriujlhbawkabfoslixc/NavTab_Prefix.pch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/UICustomTabViewController.o0#
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m:256: warning: property 'bubbleView' requires method '-bubbleView' to be defined - use @synthesize, @dynamic or provide a method implementation
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m:256: warning: property 'bubbleView' requires the method 'setBubbleView:' to be defined - use @synthesize, @dynamic or provide a method implementation
+lSLF07#2@102"Compile /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m335723438#335723440#0(1225"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m: In function '-[UICustomTabViewController uploadFile:]':/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m:99: warning: local declaration of 'audioFile' hides instance variable/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m: In function '-[UICustomTabViewController tabBar:didSelectItem:]':/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m:171: warning: implicit declaration of function 'dovocode'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m: At top level:/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m:256: warning: property 'bubbleView' requires method '-bubbleView' to be defined - use @synthesize, @dynamic or provide a method implementation/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m:256: warning: property 'bubbleView' requires the method 'setBubbleView:' to be defined - use @synthesize, @dynamic or provide a method implementation5(22@56"Local declaration of 'audioFile' hides instance variable335723440#152#165#0(6@94"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m335723429#99#0#99#0#0"0(22@43"Implicit declaration of function 'dovocode'335723440#479#153#0(6@94"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m335723429#171#0#171#0#36"implicit declaration of function '*'0(23@13"At top level:335723440#632#110#0(6@94"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m335723429#0#0#0#0#0"0(22@128"Property 'bubbleView' requires method '-bubbleView' to be defined - use @synthesize, @dynamic or provide a method implementation335723440#742#238#0(6@94"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m335723429#256#0#256#0#0"0(22@135"Property 'bubbleView' requires the method 'setBubbleView:' to be defined - use @synthesize, @dynamic or provide a method implementation335723440#980#245#0(6@94"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m335723429#256#0#256#0#0"0(0#0#94"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m8622731904#1974"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-generated-files.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-own-target-headers.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-project-headers.hmap -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/include -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources/armv6 -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources -include /var/folders/Wt/WtussHh-E-aIgP-nF-0sn++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-cjsnlwhcpriujlhbawkabfoslixc/NavTab_Prefix.pch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/UICustomTabViewController.m -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/UICustomTabViewController.o0#
+
+CCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/Util.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/Util.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s335723140.148844
+e335723145.230484
+r1
+xCompileC
+xbuild/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/Util.o
+x/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/Util.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@81"Compile /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/Util.m335723140#335723145#0(0"0(0#0#73"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/Util.m8620537824#1932"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-generated-files.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-own-target-headers.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-project-headers.hmap -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/include -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources/armv6 -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources -include /var/folders/Wt/WtussHh-E-aIgP-nF-0sn++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-cjsnlwhcpriujlhbawkabfoslixc/NavTab_Prefix.pch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/Util.m -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/Util.o0#
 
 CCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/aiff.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/aiff.c normal armv6 c com.apple.compilers.gcc.4_2
 s335702483.291314
@@ -1931,6 +2066,33 @@ o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c:2
 o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c:218: warning: unused variable 'vocode_modulator_filename'
 o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c:129: warning: unused variable 'prog_name'
 lSLF07#2@85"Compile /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c335702484#335702485#0(1838"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c: In function 'parse_args':/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c:155: warning: unused variable 'vocode_window_length'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c:163: warning: unused variable 'vocode_window_overlap'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c:184: warning: initialization makes pointer from integer without a cast/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c:189: warning: unused variable 'vocode_output_filename'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c:186: warning: unused variable 'vocode_window_overlap'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c:184: warning: unused variable 'vocode_window_length'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c:183: warning: unused variable 'vocode_carrier_filename'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c:182: warning: unused variable 'vocode_modulator_filename'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c:208: warning: unused variable 'vocode_window_overlap'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c:220: warning: unused variable 'vocode_output_filename'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c:219: warning: unused variable 'vocode_carrier_filename'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c:218: warning: unused variable 'vocode_modulator_filename'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c:129: warning: unused variable 'prog_name'13(22@38"Unused variable 'vocode_window_length'335702485#105#131#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c335701253#155#0#155#0#19"unused variable '*'0(22@39"Unused variable 'vocode_window_overlap'335702485#236#132#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c335701253#163#0#163#0#19"unused variable '*'0(22@56"Initialization makes pointer from integer without a cast335702485#368#149#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c335701253#184#0#184#0#0"0(22@40"Unused variable 'vocode_output_filename'335702485#517#133#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c335701253#189#0#189#0#19"unused variable '*'0(22@39"Unused variable 'vocode_window_overlap'335702485#650#132#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c335701253#186#0#186#0#19"unused variable '*'0(22@38"Unused variable 'vocode_window_length'335702485#782#131#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c335701253#184#0#184#0#19"unused variable '*'0(22@41"Unused variable 'vocode_carrier_filename'335702485#913#134#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c335701253#183#0#183#0#19"unused variable '*'0(22@43"Unused variable 'vocode_modulator_filename'335702485#1047#136#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c335701253#182#0#182#0#19"unused variable '*'0(22@39"Unused variable 'vocode_window_overlap'335702485#1183#132#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c335701253#208#0#208#0#19"unused variable '*'0(22@40"Unused variable 'vocode_output_filename'335702485#1315#133#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c335701253#220#0#220#0#19"unused variable '*'0(22@41"Unused variable 'vocode_carrier_filename'335702485#1448#134#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c335701253#219#0#219#0#19"unused variable '*'0(22@43"Unused variable 'vocode_modulator_filename'335702485#1582#136#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c335701253#218#0#218#0#19"unused variable '*'0(22@27"Unused variable 'prog_name'335702485#1718#120#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c335701253#129#0#129#0#19"unused variable '*'0(0#0#77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c8607667936#1930"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-generated-files.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-own-target-headers.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-project-headers.hmap -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/include -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources/armv6 -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources -include /var/folders/Wt/WtussHh-E-aIgP-nF-0sn++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-eencztvrzoaefbeldmxdcxyijcav/NavTab_Prefix.pch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.c -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/dovocode.o0#
+
+CCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/dovocode.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s335724106.365285
+e335724108.149967
+r1
+xCompileC
+xbuild/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/dovocode.o
+x/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m: In function 'parse_args':
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:155: warning: unused variable 'vocode_window_length'
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:163: warning: unused variable 'vocode_window_overlap'
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:184: warning: initialization makes pointer from integer without a cast
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:189: warning: unused variable 'vocode_output_filename'
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:186: warning: unused variable 'vocode_window_overlap'
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:184: warning: unused variable 'vocode_window_length'
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:183: warning: unused variable 'vocode_carrier_filename'
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:182: warning: unused variable 'vocode_modulator_filename'
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:208: warning: unused variable 'vocode_window_overlap'
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:220: warning: unused variable 'vocode_output_filename'
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:219: warning: unused variable 'vocode_carrier_filename'
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:218: warning: unused variable 'vocode_modulator_filename'
+o/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:129: warning: unused variable 'prog_name'
+lSLF07#2@85"Compile /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335724106#335724108#0(1838"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m: In function 'parse_args':/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:155: warning: unused variable 'vocode_window_length'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:163: warning: unused variable 'vocode_window_overlap'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:184: warning: initialization makes pointer from integer without a cast/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:189: warning: unused variable 'vocode_output_filename'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:186: warning: unused variable 'vocode_window_overlap'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:184: warning: unused variable 'vocode_window_length'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:183: warning: unused variable 'vocode_carrier_filename'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:182: warning: unused variable 'vocode_modulator_filename'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:208: warning: unused variable 'vocode_window_overlap'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:220: warning: unused variable 'vocode_output_filename'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:219: warning: unused variable 'vocode_carrier_filename'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:218: warning: unused variable 'vocode_modulator_filename'/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m:129: warning: unused variable 'prog_name'13(22@38"Unused variable 'vocode_window_length'335724107#105#131#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335701253#155#0#155#0#19"unused variable '*'0(22@39"Unused variable 'vocode_window_overlap'335724107#236#132#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335701253#163#0#163#0#19"unused variable '*'0(22@56"Initialization makes pointer from integer without a cast335724107#368#149#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335701253#184#0#184#0#0"0(22@40"Unused variable 'vocode_output_filename'335724107#517#133#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335701253#189#0#189#0#19"unused variable '*'0(22@39"Unused variable 'vocode_window_overlap'335724107#650#132#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335701253#186#0#186#0#19"unused variable '*'0(22@38"Unused variable 'vocode_window_length'335724107#782#131#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335701253#184#0#184#0#19"unused variable '*'0(22@41"Unused variable 'vocode_carrier_filename'335724107#913#134#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335701253#183#0#183#0#19"unused variable '*'0(22@43"Unused variable 'vocode_modulator_filename'335724107#1047#136#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335701253#182#0#182#0#19"unused variable '*'0(22@39"Unused variable 'vocode_window_overlap'335724107#1183#132#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335701253#208#0#208#0#19"unused variable '*'0(22@40"Unused variable 'vocode_output_filename'335724107#1315#133#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335701253#220#0#220#0#19"unused variable '*'0(22@41"Unused variable 'vocode_carrier_filename'335724107#1448#134#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335701253#219#0#219#0#19"unused variable '*'0(22@43"Unused variable 'vocode_modulator_filename'335724107#1582#136#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335701253#218#0#218#0#19"unused variable '*'0(22@27"Unused variable 'prog_name'335724107#1718#120#0(6@77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m335701253#129#0#129#0#19"unused variable '*'0(0#0#77"/Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m8622400064#1940"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-generated-files.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-own-target-headers.hmap -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-all-target-headers.hmap -iquote /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/NavTab-project-headers.hmap -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/include -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources/armv6 -I/Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/DerivedSources -include /var/folders/Wt/WtussHh-E-aIgP-nF-0sn++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavTab_Prefix-cjsnlwhcpriujlhbawkabfoslixc/NavTab_Prefix.pch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/dovocode.m -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/dovocode.o0#
 
 CCompileC build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/error.o /Users/shuang/Desktop/transforver_rev/transforver/transver/Classes/error.c normal armv6 c com.apple.compilers.gcc.4_2
 s335702485.348140
@@ -2282,6 +2444,15 @@ xbuild/Debug-iphoneos/NavTab.app/123.wav
 xsounds/../123.wav
 lSLF07#2@22"Copy sounds/../123.wav335702447#335702447#0(0"0(0#0#76"/Users/shuang/Desktop/transforver_rev/transforver/transver/sounds/../123.wav8606970464#520"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/shuang/Desktop/transforver_rev/transforver/transver/sounds/../123.wav /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app0#
 
+CCpResource build/Debug-iphoneos/NavTab.app/Lion.aif Lion.aif
+s335722639.100654
+e335722639.266114
+r1
+xCpResource
+xbuild/Debug-iphoneos/NavTab.app/Lion.aif
+xLion.aif
+lSLF07#2@13"Copy Lion.aif335722639#335722641#0(0"0(0#0#67"/Users/shuang/Desktop/transforver_rev/transforver/transver/Lion.aif8622641088#511"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/shuang/Desktop/transforver_rev/transforver/transver/Lion.aif /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app0#
+
 CCpResource build/Debug-iphoneos/NavTab.app/ResourceRules.plist /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist
 r0
 
@@ -2307,26 +2478,26 @@ CGenerateDSYMFile /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-ip
 r0
 
 CGenerateDSYMFile /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app.dSYM /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/NavTab
-s335716025.048827
-e335716025.507318
+s335724108.663874
+e335724109.181814
 r1
 xGenerateDSYMFile
 x/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app.dSYM
 x/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/NavTab
-lSLF07#2@92"GenerateDSYMFile build/Debug-iphoneos/NavTab.app.dSYM build/Debug-iphoneos/NavTab.app/NavTab335716025#335716025#0(0"0(0#0#97"/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/NavTab8625682560#419"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/NavTab -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app.dSYM0#
+lSLF07#2@92"GenerateDSYMFile build/Debug-iphoneos/NavTab.app.dSYM build/Debug-iphoneos/NavTab.app/NavTab335724108#335724109#0(0"0(0#0#97"/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/NavTab8621139968#419"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/NavTab -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app.dSYM0#
 
 CLd /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphoneos/NavTab.app/NavTab normal armv6
 r0
 
 CLd /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/NavTab normal armv6
-s335716024.455869
-e335716025.048620
+s335724108.150627
+e335724108.663677
 r1
 xLd
 x/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/NavTab
 xnormal
 xarmv6
-lSLF07#2@102"Link /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/NavTab335716024#335716025#0(0"0(0#0#0"8625461664#1009"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv IPHONEOS_DEPLOYMENT_TARGET 4.2    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -arch armv6 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -L/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -filelist /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/NavTab.LinkFileList -dead_strip -miphoneos-version-min=4.2 -framework CoreData -framework AddressBookUI -framework Foundation -framework UIKit -framework CoreGraphics -framework AddressBook -framework AudioToolbox -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/NavTab0#
+lSLF07#2@102"Link /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/NavTab335724108#335724108#0(0"0(0#0#0"8621070880#1009"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv IPHONEOS_DEPLOYMENT_TARGET 4.2    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -arch armv6 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -L/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -F/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos -filelist /Users/shuang/Desktop/transforver_rev/transforver/transver/build/NavTab.build/Debug-iphoneos/NavTab.build/Objects-normal/armv6/NavTab.LinkFileList -dead_strip -miphoneos-version-min=4.2 -framework CoreData -framework AddressBookUI -framework Foundation -framework UIKit -framework CoreGraphics -framework AddressBook -framework AudioToolbox -o /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app/NavTab0#
 
 CProcessInfoPlistFile /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphoneos/NavTab.app/Info.plist Info.plist
 r0
@@ -2391,10 +2562,10 @@ CTouch /Users/poioit/Downloads/wiredbob-NavTab-f2ae762/build/Debug-iphoneos/NavT
 r0
 
 CTouch /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app
-s335716025.507783
-e335716025.531169
+s335724109.182214
+e335724109.209130
 r1
 xTouch
 x/Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app
-lSLF07#2@96"Touch /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app335716025#335716025#0(0"0(0#0#0"8633746656#303"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app0#
+lSLF07#2@96"Touch /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app335724109#335724109#0(0"0(0#0#0"8619938144#303"    cd /Users/shuang/Desktop/transforver_rev/transforver/transver    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/shuang/Desktop/transforver_rev/transforver/transver/build/Debug-iphoneos/NavTab.app0#
 

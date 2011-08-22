@@ -23,10 +23,10 @@
 	
 	NSFileManager *fileManager = [NSFileManager defaultManager];
     
-    if (![fileManager fileExistsAtPath:[documentsPath stringByAppendingPathComponent:@"Lion.caf"]]) {
-		NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Lion.caf"];
+    if (![fileManager fileExistsAtPath:[documentsPath stringByAppendingPathComponent:@"Lion.aif"]]) {
+		NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Lion.aif"];
 		[fileManager copyItemAtPath:defaultDBPath 
-							 toPath:[documentsPath stringByAppendingPathComponent:@"Lion.caf"] 
+							 toPath:[documentsPath stringByAppendingPathComponent:@"Lion.aif"] 
 							  error:nil];
 		//firstStart = YES;//only check UserData.sqlite
 	}
