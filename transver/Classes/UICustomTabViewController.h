@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
+#import <CoreAudio/CoreAudioTypes.h> 
+#import "AudioRecorder.h"
 #import "ChatBubbleView.h"
 
 @interface UICustomTabViewController : UIViewController <UITabBarDelegate, ChatBubbleViewDelegate> {
@@ -19,6 +22,7 @@
 	UIViewController *selectedViewController;
     NSString* localFilePath;
     NSFileHandle* audioFile;
+    AudioRecorder *audioRecorder;
 }
 
 
@@ -32,5 +36,6 @@
 @property (nonatomic, retain) IBOutlet UITabBarItem *moreTabBarItem;
 @property (nonatomic, retain) IBOutlet UITabBarItem *recordingTabBarItem;
 @property (nonatomic, retain) UIViewController *selectedViewController;
+@property(nonatomic,retain)  AudioRecorder *audioRecorder;
 
 @end
