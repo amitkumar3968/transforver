@@ -88,7 +88,7 @@
 
 - (void) playSound {
 	SystemSoundID soundID = 0;
-	NSString* str =  [[NSBundle mainBundle] pathForResource:@"123" ofType:@"wav"];
+	NSString* str =  [[NSBundle mainBundle] pathForResource:@"out" ofType:@"aif"];
 	NSURL* tmpUrl = [[NSURL alloc] initFileURLWithPath:str ];
 	CFURLRef soundFileURL = (CFURLRef)tmpUrl;
 	OSStatus errorCode = AudioServicesCreateSystemSoundID(soundFileURL, &soundID);
