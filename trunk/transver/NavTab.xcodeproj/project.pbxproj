@@ -28,6 +28,14 @@
 		4F03B2B8140133CC00FEC9D4 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F03B2AC140133CC00FEC9D4 /* SBJsonUTF8Stream.m */; };
 		4F03B2B9140133CC00FEC9D4 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F03B2AE140133CC00FEC9D4 /* SBJsonWriter.m */; };
 		4F03B2C31401372900FEC9D4 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F03B2C21401372900FEC9D4 /* NSString+SBJSON.m */; };
+		4F03B2C61401D05100FEC9D4 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F03B2C51401D05100FEC9D4 /* ChatViewController.m */; };
+		4F03B2C81401D0F700FEC9D4 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F03B2C71401D0F600FEC9D4 /* CoreData.framework */; };
+		4F03B2CF1401D34100FEC9D4 /* ContactTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F03B2CB1401D34100FEC9D4 /* ContactTableViewCell.m */; };
+		4F03B2D01401D34100FEC9D4 /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F03B2CC1401D34100FEC9D4 /* ContactTableViewCell.xib */; };
+		4F03B2D11401D34100FEC9D4 /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F03B2CE1401D34100FEC9D4 /* MessageTableViewCell.m */; };
+		4F03B2D51401D44700FEC9D4 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F03B2D41401D44700FEC9D4 /* Message.m */; };
+		4F03B2D91401D4C000FEC9D4 /* ChatMeUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F03B2D81401D4C000FEC9D4 /* ChatMeUser.m */; };
+		4F03B2DC1401D4DC00FEC9D4 /* Invitation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F03B2DB1401D4DC00FEC9D4 /* Invitation.m */; };
 		4F5E380013FC93130025B24A /* ChatBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5E37FF13FC93130025B24A /* ChatBubbleView.m */; };
 		4F5E385313FC98080025B24A /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F5E385213FC98080025B24A /* Icon.png */; };
 		4F724C8D13F6D91700A6F871 /* phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F724C8C13F6D91700A6F871 /* phone.png */; };
@@ -101,6 +109,21 @@
 		4F03B2C0140136D400FEC9D4 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		4F03B2C11401372900FEC9D4 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
 		4F03B2C21401372900FEC9D4 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		4F03B2C41401D05100FEC9D4 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		4F03B2C51401D05100FEC9D4 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		4F03B2C71401D0F600FEC9D4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
+		4F03B2CA1401D34100FEC9D4 /* ContactTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactTableViewCell.h; sourceTree = "<group>"; };
+		4F03B2CB1401D34100FEC9D4 /* ContactTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactTableViewCell.m; sourceTree = "<group>"; };
+		4F03B2CC1401D34100FEC9D4 /* ContactTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
+		4F03B2CD1401D34100FEC9D4 /* MessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTableViewCell.h; sourceTree = "<group>"; };
+		4F03B2CE1401D34100FEC9D4 /* MessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTableViewCell.m; sourceTree = "<group>"; };
+		4F03B2D31401D44700FEC9D4 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		4F03B2D41401D44700FEC9D4 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
+		4F03B2D61401D48300FEC9D4 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		4F03B2D71401D4C000FEC9D4 /* ChatMeUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMeUser.h; sourceTree = "<group>"; };
+		4F03B2D81401D4C000FEC9D4 /* ChatMeUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMeUser.m; sourceTree = "<group>"; };
+		4F03B2DA1401D4DC00FEC9D4 /* Invitation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Invitation.h; sourceTree = "<group>"; };
+		4F03B2DB1401D4DC00FEC9D4 /* Invitation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Invitation.m; sourceTree = "<group>"; };
 		4F5E37FE13FC93130025B24A /* ChatBubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatBubbleView.h; sourceTree = "<group>"; };
 		4F5E37FF13FC93130025B24A /* ChatBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatBubbleView.m; sourceTree = "<group>"; };
 		4F5E385213FC98080025B24A /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -144,6 +167,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F03B2C81401D0F700FEC9D4 /* CoreData.framework in Frameworks */,
 				4F724CB713F774C500A6F871 /* AddressBookUI.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
@@ -159,8 +183,12 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4F03B2D21401D42300FEC9D4 /* Common */,
+				4F03B2C91401D31100FEC9D4 /* CellView */,
 				4F03B2961401339500FEC9D4 /* Lib */,
 				4F03B2931401315600FEC9D4 /* DBHandler.h */,
+				4F03B2C41401D05100FEC9D4 /* ChatViewController.h */,
+				4F03B2C51401D05100FEC9D4 /* ChatViewController.m */,
 				4F03B2941401315600FEC9D4 /* DBHandler.m */,
 				4F5E37FE13FC93130025B24A /* ChatBubbleView.h */,
 				4F5E37FF13FC93130025B24A /* ChatBubbleView.m */,
@@ -191,7 +219,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				4F724CB613F774C400A6F871 /* AddressBookUI.framework */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -229,6 +256,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4F03B2C71401D0F600FEC9D4 /* CoreData.framework */,
+				4F724CB613F774C400A6F871 /* AddressBookUI.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
@@ -277,6 +306,32 @@
 				4F03B2C0140136D400FEC9D4 /* JSON.h */,
 			);
 			name = JSON;
+			sourceTree = "<group>";
+		};
+		4F03B2C91401D31100FEC9D4 /* CellView */ = {
+			isa = PBXGroup;
+			children = (
+				4F03B2CA1401D34100FEC9D4 /* ContactTableViewCell.h */,
+				4F03B2CB1401D34100FEC9D4 /* ContactTableViewCell.m */,
+				4F03B2CC1401D34100FEC9D4 /* ContactTableViewCell.xib */,
+				4F03B2CD1401D34100FEC9D4 /* MessageTableViewCell.h */,
+				4F03B2CE1401D34100FEC9D4 /* MessageTableViewCell.m */,
+			);
+			name = CellView;
+			sourceTree = "<group>";
+		};
+		4F03B2D21401D42300FEC9D4 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				4F03B2D71401D4C000FEC9D4 /* ChatMeUser.h */,
+				4F03B2D81401D4C000FEC9D4 /* ChatMeUser.m */,
+				4F03B2D61401D48300FEC9D4 /* Common.h */,
+				4F03B2D31401D44700FEC9D4 /* Message.h */,
+				4F03B2DA1401D4DC00FEC9D4 /* Invitation.h */,
+				4F03B2DB1401D4DC00FEC9D4 /* Invitation.m */,
+				4F03B2D41401D44700FEC9D4 /* Message.m */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 		4F724C9813F75F1D00A6F871 /* images */ = {
@@ -385,6 +440,7 @@
 				4F724CB313F7619300A6F871 /* topRowSelected.png in Resources */,
 				4F724CB513F76E5200A6F871 /* indicator.png in Resources */,
 				4F5E385313FC98080025B24A /* Icon.png in Resources */,
+				4F03B2D01401D34100FEC9D4 /* ContactTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +472,12 @@
 				4F03B2B8140133CC00FEC9D4 /* SBJsonUTF8Stream.m in Sources */,
 				4F03B2B9140133CC00FEC9D4 /* SBJsonWriter.m in Sources */,
 				4F03B2C31401372900FEC9D4 /* NSString+SBJSON.m in Sources */,
+				4F03B2C61401D05100FEC9D4 /* ChatViewController.m in Sources */,
+				4F03B2CF1401D34100FEC9D4 /* ContactTableViewCell.m in Sources */,
+				4F03B2D11401D34100FEC9D4 /* MessageTableViewCell.m in Sources */,
+				4F03B2D51401D44700FEC9D4 /* Message.m in Sources */,
+				4F03B2D91401D4C000FEC9D4 /* ChatMeUser.m in Sources */,
+				4F03B2DC1401D4DC00FEC9D4 /* Invitation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +497,7 @@
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = NavTab;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos4.3;
 			};
 			name = Debug;
 		};

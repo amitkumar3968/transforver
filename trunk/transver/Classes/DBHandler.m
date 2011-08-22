@@ -97,22 +97,21 @@
 	return responseData;
 }
 
-+(NSData*)sendReqForUrl:(NSString*)urlString body:(NSData*)body
++(NSData*)sendReqToUrl:(NSString*)urlString postString:(NSString*)postString
 {	
 	NSURL *url = [NSURL URLWithString:urlString];
 	NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url  
 															  cachePolicy:NSURLRequestReturnCacheDataElseLoad
 														  timeoutInterval:30];
-	if(body == nil)
+	if(postString == nil)
     {
 		[urlRequest setHTTPMethod: @"GET" ];
     }
 	else
     {
+        NSData *body = [postString dataUsingEncoding:NSUTF8StringEncoding];
 		[urlRequest setHTTPMethod: @"POST" ];
 		[urlRequest setHTTPBody:body];
-		
-		
     }
 	
 	NSURLResponse *urlResponse = nil;
