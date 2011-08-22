@@ -9,7 +9,8 @@
 #import "RootViewController.h"
 //#import "NavTabAppDelegate.h"
 #import "UICustomTabViewController.h"
-
+#import "DBHandler.h"
+#import "JSON.h"
 #import <AudioToolbox/AudioServices.h>
 #import <AddressBook/AddressBook.h>
 #import <AddressBookUI/AddressBookUI.h>
@@ -30,6 +31,7 @@
     //self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 	//self.tableView.rowHeight = 100;
 	//self.tableView.backgroundColor = [UIColor clearColor];
+    [self loginServer];
 
     
 	[tvController release];
@@ -78,12 +80,36 @@
 	CFRelease(people);
 	CFRelease(peopleMutable);
 	
-	NSArray *array = [[NSArray alloc] initWithObjects:@"find friends",@"Jerry", @"Raymond", @"John", nil];
+	NSArray *array = [self fetchRelationships];//[[NSArray alloc] initWithObjects:@"find friends",@"Jerry", @"Raymond", @"John", nil];
 	self.accounts = array;
 	[array release];
 	
 	[super viewDidLoad];
 
+}
+
+- (NSArray*) fetchRelationships {
+    NSString *urlString = @"http://www.entalkie.url.tw/getRelationships.php?masterID=1";
+    NSData *data = [DBHandler sendReqToUrl:urlString postString:nil];
+	NSArray *array = nil;
+    NSMutableArray *ret = [[NSMutableArray alloc] init ];
+	
+	if(data)
+	{
+		NSString *responseString = [[NSString alloc] initWithData:data
+                                                         encoding:NSUTF8StringEncoding];
+		array = [responseString JSONValue];
+		[responseString release];
+	}
+    [ret addObject:@"get friends"];
+    for (NSDictionary *dic in array) {
+        [ret addObject: [dic objectForKey:@"USER_NAME"]];
+    }
+    //[ret addObject:nil];
+    NSArray *retArr = [[NSArray alloc ]initWithArray:ret];
+    [ret release];
+    
+	return retArr;
 }
 
 - (void) playSound {
