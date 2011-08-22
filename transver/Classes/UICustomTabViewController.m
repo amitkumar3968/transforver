@@ -84,6 +84,7 @@ static int recording=0;
 
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
 {
+	char *filepath;
 	if (item == favouritesTabBarItem) {
 
 		UIViewController *fabViewController = [viewControllers objectAtIndex:0];
@@ -111,7 +112,7 @@ static int recording=0;
 			//@Ray
 			NSLog(@"stop recording!");
 			recording=0;
-			[audioRecorder stopRecording];
+			dovocode(filepath);
 			
 		} // end if
 		else
