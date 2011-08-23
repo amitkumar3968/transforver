@@ -7,6 +7,7 @@
 //
 
 #import "FavoritesTabViewController.h"
+#import <AudioToolbox/AudioServices.h>
 #import "Util.h"
 
 
@@ -96,6 +97,41 @@
     //[self uploadFile:filepath];
 
 }
+
+- (IBAction)playButtonClick:(id)sender {
+	NSLog(@"playing");
+    // if we're currently recording
+    [self playSound];
+}
+
+
+- (void) playSound {
+	/*NSLog(@"Playing Sound!");
+     [audioRecorder startPlayback];*/
+	system("ls");
+	SystemSoundID soundID = 0;
+	//NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *documentsPath = [Util getDocumentPath];
+	NSString *audioPath = [documentsPath stringByAppendingPathComponent:@"out.aif"];
+    NSString *filePath = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"recording"];
+	//NSString *filePath = [[NSBundle mainBundle] resourcePath];// stringByAppendingPathComponent:@"123.wav"];
+	NSLog(documentsPath);
+	NSLog(filePath);
+	NSURL* tmpUrl = [[NSURL alloc] initFileURLWithPath:audioPath ];
+	CFURLRef soundFileURL = (CFURLRef)tmpUrl;
+	OSStatus errorCode = AudioServicesCreateSystemSoundID(soundFileURL, &soundID);
+	if (errorCode != 0) {
+		// Handle failure here
+	}
+	else
+	{
+		AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+		AudioServicesPlaySystemSound(soundID);
+	}
+    
+	[tmpUrl release];
+}
+
 
 #pragma mark -
 #pragma mark NSURLConnection methods
