@@ -230,14 +230,15 @@ NSURLConnection* connection;
 }
 */
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
 	
 	
     [super viewDidLoad];
+    audioRecorder = [[[AudioRecorder	alloc] init] retain];
 }
-*/
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
@@ -246,6 +247,7 @@ NSURLConnection* connection;
 
 
 - (void)dealloc {
+    [audioRecorder release];
     [super dealloc];
 }
 
