@@ -122,7 +122,7 @@
 	//NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	NSString *documentsPath = [Util getDocumentPath];
 	NSString *audioPath = [documentsPath stringByAppendingPathComponent:@"out.aif"];
-    NSString *filePath = [NSString stringWithFormat:@"%@/%@.caf", [Util getDocumentPath], @"recording"];
+    NSString *filePath = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"recording"];
 	//NSString *filePath = [[NSBundle mainBundle] resourcePath];// stringByAppendingPathComponent:@"123.wav"];
 	NSLog(documentsPath);
 	NSLog(filePath);
@@ -145,7 +145,7 @@
 	NSLog(@"showMenu");
 	//[self loginServer];
 	[self playSound];
-	[self uploadFile];
+	//[self uploadFile];
 	return ;
 	/*
 	UIActionSheet *myMenu = [[UIActionSheet alloc]
