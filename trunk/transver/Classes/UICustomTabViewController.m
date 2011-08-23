@@ -95,7 +95,7 @@ static int recording=0;
 	[UIImage imageNamed:@"phone.png"];
 	//NSData *imageData = UIImageJPEGRepresentation(image.image, 90);
 	//NSString* str =  [[NSBundle mainBundle] pathForResource:@"mysoundcompressed" ofType:@"caf"];
-	NSString *audioFile = [NSString stringWithFormat:@"%@/%@.caf", [[NSBundle mainBundle] resourcePath], @"111"]; 
+	NSString *audioFile = [NSString stringWithFormat:@"%@/%@.caf", [Util getDocumentPath], @"recording"]; 
 	NSData *wavData = [NSData dataWithContentsOfFile:audioFile];
 	// setting up the URL to post to
 	NSString *urlString = @"http://www.entalkie.url.tw/upload.php";
