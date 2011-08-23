@@ -166,6 +166,7 @@ static int recording=0;
 			[audioRecorder stopRecording];
 			//@Ray
 			NSLog(@"stop recording!");
+			NSLog(@"playing...");
 			[Util copyFile];
 			recording=0;
 			dovocode();

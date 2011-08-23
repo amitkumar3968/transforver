@@ -18,7 +18,7 @@ typedef struct
     AudioQueueBufferRef          buffers[NUM_BUFFERS];
     AudioFileID                  audioFile;
     SInt64                       currentPacket;
-    bool                         recording;    
+    bool                         recording;
 } RecordState;
 
 typedef struct
