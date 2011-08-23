@@ -13,7 +13,7 @@
 #import "ChatBubbleView.h"
 #import "Util.h"
 
-@interface UICustomTabViewController : UIViewController <UITabBarDelegate, ChatBubbleViewDelegate> {
+@interface UICustomTabViewController : UIViewController <UITabBarDelegate> {
 	NSArray *viewControllers;
 	IBOutlet UITabBar *tabBar;
 	IBOutlet UITabBarItem *favouritesTabBarItem;
