@@ -10,6 +10,7 @@
 #import "UICustomTabViewController.h"
 #import "ChatBubbleView.h"
 #import "AudioRecorder.h"
+#import "Util.h"
 
 @interface RootViewController : UITableViewController {
 	NSArray *accounts;

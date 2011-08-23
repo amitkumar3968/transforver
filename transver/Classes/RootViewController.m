@@ -118,8 +118,13 @@
 	[audioRecorder startPlayback];*/
 	system("ls");
 	SystemSoundID soundID = 0;
-	NSString* str =  [[NSBundle mainBundle] pathForResource:@"123" ofType:@"wav"];
-	NSURL* tmpUrl = [[NSURL alloc] initFileURLWithPath:str ];
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *documentsPath = [paths objectAtIndex:0];
+	NSString *audioPath = [documentsPath stringByAppendingPathComponent:@"out.aif"];
+	NSString *filePath = [[NSBundle mainBundle] resourcePath];// stringByAppendingPathComponent:@"123.wav"];
+	NSLog(documentsPath);
+	NSLog(filePath);
+	NSURL* tmpUrl = [[NSURL alloc] initFileURLWithPath:audioPath ];
 	CFURLRef soundFileURL = (CFURLRef)tmpUrl;
 	OSStatus errorCode = AudioServicesCreateSystemSoundID(soundFileURL, &soundID);
 	if (errorCode != 0) {
