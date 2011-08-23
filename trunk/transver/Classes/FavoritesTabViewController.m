@@ -113,7 +113,7 @@
 	//NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	NSString *documentsPath = [Util getDocumentPath];
 	NSString *audioPath = [documentsPath stringByAppendingPathComponent:@"out.aif"];
-    NSString *filePath = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"recording"];
+    NSString *filePath = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"star"];
 	//NSString *filePath = [[NSBundle mainBundle] resourcePath];// stringByAppendingPathComponent:@"123.wav"];
 	NSLog(documentsPath);
 	NSLog(filePath);
@@ -168,7 +168,7 @@ NSURLConnection* connection;
     tempData = [NSMutableData alloc];
     connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     
-    [super viewDidLoad];
+    //[super viewDidLoad];
     
 }
 
@@ -199,7 +199,7 @@ NSURLConnection* connection;
 	NSString *path = [pathList objectAtIndex:0];
     
 	//加上檔名
-	path = [path stringByAppendingPathComponent: @"00.wav"];
+	path = [path stringByAppendingPathComponent: @"star.aif"];
     NSLog(@"儲存路徑：%@", path);
 	
 	//寫入檔案
