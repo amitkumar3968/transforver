@@ -32,7 +32,7 @@
     //self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 	//self.tableView.rowHeight = 100;
 	//self.tableView.backgroundColor = [UIColor clearColor];
-    [self loginServer];
+    int uid = [self loginServer];
 
     
 	[tvController release];
@@ -81,7 +81,7 @@
 	CFRelease(people);
 	CFRelease(peopleMutable);
 	
-	NSArray *array = [self fetchRelationships];//[[NSArray alloc] initWithObjects:@"find friends",@"Jerry", @"Raymond", @"John", nil];
+	NSArray *array = [self fetchRelationships:uid];//[[NSArray alloc] initWithObjects:@"find friends",@"Jerry", @"Raymond", @"John", nil];
 	self.accounts = array;
 	[array release];
 	
@@ -89,8 +89,9 @@
 
 }
 
-- (NSArray*) fetchRelationships {
-    NSString *urlString = @"http://www.entalkie.url.tw/getRelationships.php?masterID=1";
+- (NSArray*) fetchRelationships:(int) uid {
+    NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/getRelationships.php?masterID=%d", uid];
+    //NSString *urlString = @"http://www.entalkie.url.tw/getRelationships.php?masterID=1";
     NSData *data = [DBHandler sendReqToUrl:urlString postString:nil];
 	NSArray *array = nil;
     NSMutableArray *ret = [[NSMutableArray alloc] init ];
@@ -142,7 +143,7 @@
 
 - (void) showMenu:(id) sender {
 	NSLog(@"showMenu");
-	[self loginServer];
+	//[self loginServer];
 	[self playSound];
 	[self uploadFile];
 	return ;
@@ -230,7 +231,7 @@
 	NSLog(@"%@",returnString);
 }
 
-- (void) loginServer {
+- (int) loginServer {
 	UIDevice *myDevice = [UIDevice currentDevice];
 	NSString *deviceUDID = [myDevice uniqueIdentifier];
 	//NSString *post =[[NSString alloc] initWithFormat:@"userName=%@&userPhone=%@&deviceID=",@"hank",[[NSUserDefaults standardUserDefaults] stringForKey:@"SBFormattedPhoneNumber"]];
@@ -262,6 +263,7 @@
 	
 	NSString *data=[[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
 	NSLog(@"data:%@ error:%@",data, error);
+    return [data intValue];
 }
 
 - (void) downloadFile {
