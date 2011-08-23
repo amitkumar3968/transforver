@@ -21,10 +21,10 @@
 
 - (void) showMenu:(id) sender;
 - (void) buttonPushed:(id)sender;
-- (void) loginServer;
+- (int) loginServer;
 - (void) playSound;
 - (void) uploadFile;
-- (NSArray*) fetchRelationships;
+- (NSArray*) fetchRelationships:(int) uid;
 
 @property (nonatomic, retain) NSArray *accounts;
 @property (nonatomic, retain) UICustomTabViewController *tabViewController;
