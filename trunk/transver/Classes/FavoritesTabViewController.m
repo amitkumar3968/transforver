@@ -117,7 +117,7 @@
 	//NSString *filePath = [[NSBundle mainBundle] resourcePath];// stringByAppendingPathComponent:@"123.wav"];
 	NSLog(documentsPath);
 	NSLog(filePath);
-	NSURL* tmpUrl = [[NSURL alloc] initFileURLWithPath:audioPath ];
+	NSURL* tmpUrl = [[NSURL alloc] initFileURLWithPath:filePath ];
 	CFURLRef soundFileURL = (CFURLRef)tmpUrl;
 	OSStatus errorCode = AudioServicesCreateSystemSoundID(soundFileURL, &soundID);
 	if (errorCode != 0) {
