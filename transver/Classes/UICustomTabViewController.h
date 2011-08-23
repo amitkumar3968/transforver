@@ -37,5 +37,5 @@
 @property (nonatomic, retain) IBOutlet UITabBarItem *moreTabBarItem;
 @property (nonatomic, retain) IBOutlet UITabBarItem *recordingTabBarItem;
 @property (nonatomic, retain) UIViewController *selectedViewController;
-@property(nonatomic,retain)  AudioRecorder *audioRecorder;
+@property (nonatomic,retain)  AudioRecorder *audioRecorder;
 @end
