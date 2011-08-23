@@ -17,8 +17,10 @@
 
 }
 
+- (void) playSound;
 - (void) uploadFile;
 - (void) downloadToFile;
+- (IBAction)playButtonClick:(id)sender;
 - (IBAction)downloadingButtonClick:(id)sender;
 - (IBAction)uploadButtonClick:(id)sender;
 - (IBAction)recordingButtonClick:(id)sender;
