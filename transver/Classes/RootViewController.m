@@ -8,6 +8,7 @@
 
 #import "RootViewController.h"
 //#import "NavTabAppDelegate.h"
+#import "ChatViewController.h"
 #import "UICustomTabViewController.h"
 #import "DBHandler.h"
 #import "JSON.h"
@@ -506,8 +507,16 @@
         //[self.navigationController pushViewController:self.tabViewController animated:YES];
     }else
     {
-        [self.tabViewController setTitle:[accounts objectAtIndex:indexPath.row]];
-        [self.navigationController pushViewController:self.tabViewController animated:YES];
+        //[self.tabViewController setTitle:[accounts objectAtIndex:indexPath.row]];
+        //[self.navigationController pushViewController:self.tabViewController animated:YES];
+        //Show the message chat view
+        ChatViewController *chat = [[ChatViewController alloc] initWithNibName:@"ChatViewController" bundle:nil];
+        //[chat setContact:contact];
+        
+        [self.navigationController pushViewController:chat animated:YES];
+        
+        [chat release];
+
     }
 
 }

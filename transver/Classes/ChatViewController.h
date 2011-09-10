@@ -12,13 +12,14 @@
 
 @class Contact;
 
-@interface ChatViewController : UIViewController <ChatBubbleViewDelegate, NSFetchedResultsControllerDelegate> {
-    
+@interface ChatViewController : UIViewController <ChatBubbleViewDelegate> {
+    NSMutableArray *listOfItems;
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) IBOutlet ChatBubbleView *bubbleView;
 @property (nonatomic, retain) Contact *contact;
+@property (nonatomic, retain) NSMutableArray *listOfItems;
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 
 @end
