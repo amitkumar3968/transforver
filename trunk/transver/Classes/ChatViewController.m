@@ -9,6 +9,7 @@
 #import "ChatViewController.h"
 #import "MessageTableViewCell.h"
 #import "Message.h"
+#import "Contact.h"
 /*
 #import "Contact.h"
 #import "ChatMeUser.h"
@@ -26,15 +27,17 @@
 
 @implementation ChatViewController
 
-@synthesize fetchedResultsController=__fetchedResultsController;
+//@synthesize fetchedResultsController=__fetchedResultsController;
 @synthesize tableView=_tableView;
 @synthesize bubbleView=_bubbleView;
 @synthesize contact=_contact;
+@synthesize listOfItems=_listOfItems;
 
 - (void)dealloc
 {
-    [__fetchedResultsController release];
+    //[__fetchedResultsController release];
     self.contact = nil;
+    [_listOfItems release];
     [super dealloc];
 }
 
@@ -62,10 +65,27 @@
     [self.bubbleView setDelegate:self];
     
     //Scroll to the bottom
-    NSArray *messages = [self.fetchedResultsController fetchedObjects];
+    
+    //NSArray *messages = [self.fetchedResultsController fetchedObjects];
+    //Initialize the array.
+    _listOfItems = [[NSMutableArray alloc] init];
+    
+    NSArray *countriesToLiveInArray = [NSArray arrayWithObjects:@"Iceland", @"Greenland", @"Switzerland", @"Norway", @"New Zealand", @"Greece", @"Rome", @"Ireland", nil];
+    NSDictionary *countriesToLiveInDict = [NSDictionary dictionaryWithObject:countriesToLiveInArray forKey:@"Countries"];
+    
+    NSArray *countriesLivedInArray = [NSArray arrayWithObjects:@"India", @"U.S.A", nil];
+    NSDictionary *countriesLivedInDict = [NSDictionary dictionaryWithObject:countriesLivedInArray forKey:@"Countries"];
+    
+    [_listOfItems addObject:countriesToLiveInDict];
+    [_listOfItems addObject:countriesLivedInDict];
+    
+    //Set the title
+    //self.navigationItem.title = @"Countries";
+    //NSArray *messages = [[NSArray alloc] initWithObjects:@"find friends",@"Jerry", @"Raymond", @"John", nil];
+    /* 
     if ([messages count] > 1) {
-        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[messages count]-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
-    }
+        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[messages count]-2 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+    }*/
 }
 
 - (void)viewDidUnload
@@ -123,27 +143,34 @@
 
 // Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [[self.fetchedResultsController sections] count];
+    return [_listOfItems count];
 }
 
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
-    return [sectionInfo numberOfObjects];
+    //Number of rows it should expect should be based on the section
+    NSDictionary *dictionary = [_listOfItems objectAtIndex:section];
+    NSArray *array = [dictionary objectForKey:@"Countries"];
+    return [array count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     
-    MessageTableViewCell *cell = (MessageTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[MessageTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    // Configure the cell...
-    //[self configureCell:cell atIndexPath:indexPath];
+    // Set up the cell...
+    
+    //First get the dictionary object
+    NSDictionary *dictionary = [_listOfItems objectAtIndex:indexPath.section];
+    NSArray *array = [dictionary objectForKey:@"Countries"];
+    NSString *cellValue = [array objectAtIndex:indexPath.row];
+    [cell.textLabel setText:cellValue];
     
     return cell;
 }
@@ -182,10 +209,17 @@
 
 
 #pragma mark - Table view delegate
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+	
+	if(section == 0)
+		return @"Countries to visit";
+	else
+		return @"Countries visited";
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    Message *message = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    return 20;
+    Message *message = [_listOfItems objectAtIndexPath:indexPath];
     
     CGRect textRect = CGRectMake(0.0, 0.0, tableView.frame.size.width - kMessageSideSeparation*2 - kMessageImageWidth - kMessageBigSeparation, kMaxHeight);
     UIFont *font = [UIFont systemFontOfSize:16.0];
@@ -293,7 +327,7 @@
 }
 
 #pragma mark - Fetched results controller
-
+#if 0
 - (NSFetchedResultsController *)fetchedResultsController
 {
     if (__fetchedResultsController != nil)
@@ -351,7 +385,7 @@
     
     return __fetchedResultsController;
 }    
-
+#endif
 #pragma mark - Fetched results controller delegate
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
