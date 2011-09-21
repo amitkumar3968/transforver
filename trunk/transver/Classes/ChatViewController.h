@@ -12,8 +12,9 @@
 
 @class Contact;
 
-@interface ChatViewController : UIViewController <ChatBubbleViewDelegate> {
+@interface ChatViewController : UIViewController <ChatBubbleViewDelegate, UINavigationBarDelegate> {
     NSMutableArray *listOfItems;
+    NSTimer *myTimer;
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;

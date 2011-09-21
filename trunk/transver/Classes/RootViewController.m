@@ -514,6 +514,7 @@
         //[chat setContact:contact];
         
         [self.navigationController pushViewController:chat animated:YES];
+        //self.navigationController.navigationBar.delegate = self;
         
         [chat release];
 
@@ -525,6 +526,11 @@
 	[tabViewController release];
 	[accounts release];
     [super dealloc];
+}
+
+- (BOOL)navigationBar:(UINavigationBar *)navigationBar
+        shouldPopItem:(UINavigationItem *)item{
+    return FALSE;
 }
 
 
