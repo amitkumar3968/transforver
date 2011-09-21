@@ -70,15 +70,18 @@
     //Initialize the array.
     _listOfItems = [[NSMutableArray alloc] init];
     
-    NSArray *countriesToLiveInArray = [NSArray arrayWithObjects:@"Iceland", @"Greenland", @"Switzerland", @"Norway", @"New Zealand", @"Greece", @"Rome", @"Ireland", nil];
+    NSMutableArray *countriesToLiveInArray = [NSMutableArray arrayWithObjects:@"Iceland", @"Greenland", @"Switzerland", @"Norway", @"New Zealand", @"Greece", @"Rome", @"Ireland", nil];
     NSDictionary *countriesToLiveInDict = [NSDictionary dictionaryWithObject:countriesToLiveInArray forKey:@"Countries"];
     
-    NSArray *countriesLivedInArray = [NSArray arrayWithObjects:@"India", @"U.S.A", nil];
+    
+    NSMutableArray *countriesLivedInArray = [NSMutableArray arrayWithObjects:@"India", @"U.S.A", nil];
     NSDictionary *countriesLivedInDict = [NSDictionary dictionaryWithObject:countriesLivedInArray forKey:@"Countries"];
     
     [_listOfItems addObject:countriesToLiveInDict];
     [_listOfItems addObject:countriesLivedInDict];
+    myTimer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(moveACar) userInfo:nil repeats:YES];
     
+    //self.navigationController.navigationBar.delegate = self;
     //Set the title
     //self.navigationItem.title = @"Countries";
     //NSArray *messages = [[NSArray alloc] initWithObjects:@"find friends",@"Jerry", @"Raymond", @"John", nil];
@@ -86,6 +89,10 @@
     if ([messages count] > 1) {
         [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[messages count]-2 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
     }*/
+}
+
+- (void) moveACar {
+    //NSLog(@"move!!");
 }
 
 - (void)viewDidUnload
@@ -129,6 +136,7 @@
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
+    [myTimer invalidate];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
@@ -218,12 +226,15 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 20;
-    Message *message = [_listOfItems objectAtIndexPath:indexPath];
+    //return 20;
+    NSDictionary *dictionary = [_listOfItems objectAtIndex:indexPath.section];
+    NSArray *array = [dictionary objectForKey:@"Countries"];
+    NSString *cellValue = [array objectAtIndex:indexPath.row];
+    //Message *message = [_listOfItems objectAtIndex:indexPath.section];
     
     CGRect textRect = CGRectMake(0.0, 0.0, tableView.frame.size.width - kMessageSideSeparation*2 - kMessageImageWidth - kMessageBigSeparation, kMaxHeight);
     UIFont *font = [UIFont systemFontOfSize:16.0];
-    CGSize textSize = [message.text sizeWithFont:font constrainedToSize:textRect.size lineBreakMode:UILineBreakModeWordWrap];
+    CGSize textSize = [cellValue sizeWithFont:font constrainedToSize:textRect.size lineBreakMode:UILineBreakModeWordWrap];
     
     CGFloat effectiveHeight = textSize.height + kMessageTopSeparation*2;
     //Check the minimum
@@ -319,7 +330,10 @@
         
         //Update the contact's last message
         [self.contact setLastCommunicationText:message];
-        
+        NSDictionary *oldDic = [_listOfItems objectAtIndex:1];
+        NSMutableArray *oldArray = [oldDic objectForKey:@"Countries"];
+        [oldArray addObject:message];
+        [self.tableView beginUpdates];
         //Send to server
         //ChatMeUser *currentUser = [[ChatMeService sharedChatMeService] currentUser];
         //[[ChatMeService sharedChatMeService] sendMessage:message fromUser:currentUser toUser:self.contact.contactUser];
@@ -442,6 +456,12 @@
     //Scroll to the bottom
     NSUInteger num = [self.tableView numberOfRowsInSection:0];
     [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:num-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+}
+
+
+-(void)textFieldDidEndEditing:(UITextField *)textField {
+	NSLog(@"prepare to hide keyboard");
+	//scrollView.frame = CGRectMake(0,44,320,416); //original setup
 }
 
 @end

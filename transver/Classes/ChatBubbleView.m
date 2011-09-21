@@ -209,4 +209,7 @@
     [self resizeViews];
 }
 
+#pragma mark -
+#pragma mark navigationbar methods
+
 @end

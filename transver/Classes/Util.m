@@ -7,7 +7,7 @@
 //
 
 #import "Util.h"
-
+#import "Reachability.h"
 
 @implementation Util
 
@@ -32,6 +32,16 @@
 	}
 
 
+}
+
++ (bool) checkNetConn {
+	
+	Reachability *reachAbility = [Reachability reachabilityWithHostName: @"www.apple.com"];
+	bool reach = [reachAbility currentReachabilityStatus];
+	
+	NSLog(@"checkNetConn, status:%d", reach);
+	
+	return reach;
 }
 
 @end

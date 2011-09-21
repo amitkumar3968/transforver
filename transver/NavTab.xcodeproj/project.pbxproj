@@ -52,6 +52,8 @@
 		4F724CB313F7619300A6F871 /* topRowSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F724CA613F7619300A6F871 /* topRowSelected.png */; };
 		4F724CB513F76E5200A6F871 /* indicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F724CB413F76E5200A6F871 /* indicator.png */; };
 		4F724CB713F774C500A6F871 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F724CB613F774C400A6F871 /* AddressBookUI.framework */; };
+		4F74C55914231D9400B97CC3 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F74C55814231D9400B97CC3 /* Reachability.m */; };
+		4F74C55B1423973900B97CC3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F74C55A1423973900B97CC3 /* SystemConfiguration.framework */; };
 		4F9BAFBE13EB740C004179FC /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9BAFBD13EB740C004179FC /* AddressBook.framework */; };
 		4F9BB0BC13F2E932004179FC /* 111.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4F9BB0BB13F2E931004179FC /* 111.caf */; };
 		4F9BB0C013F2E9BE004179FC /* mysoundcompressed.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4F9BB0BF13F2E9BE004179FC /* mysoundcompressed.caf */; };
@@ -146,6 +148,9 @@
 		4F724CA613F7619300A6F871 /* topRowSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topRowSelected.png; sourceTree = "<group>"; };
 		4F724CB413F76E5200A6F871 /* indicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = indicator.png; sourceTree = "<group>"; };
 		4F724CB613F774C400A6F871 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		4F74C55714231D9400B97CC3 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		4F74C55814231D9400B97CC3 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		4F74C55A1423973900B97CC3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		4F9BAFBD13EB740C004179FC /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		4F9BB0BB13F2E931004179FC /* 111.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = 111.caf; path = ../111.caf; sourceTree = "<group>"; };
 		4F9BB0BF13F2E9BE004179FC /* mysoundcompressed.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = mysoundcompressed.caf; path = ../mysoundcompressed.caf; sourceTree = "<group>"; };
@@ -195,6 +200,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F74C55B1423973900B97CC3 /* SystemConfiguration.framework in Frameworks */,
 				4F03B2C81401D0F700FEC9D4 /* CoreData.framework in Frameworks */,
 				4F724CB713F774C500A6F871 /* AddressBookUI.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
@@ -249,6 +255,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				4F74C55A1423973900B97CC3 /* SystemConfiguration.framework */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -342,6 +349,8 @@
 		4F03B2D21401D42300FEC9D4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				4F74C55714231D9400B97CC3 /* Reachability.h */,
+				4F74C55814231D9400B97CC3 /* Reachability.m */,
 				7E449FFD1402B4D500B5A7DC /* Util.h */,
 				7E449FFE1402B4D500B5A7DC /* Util.m */,
 				4F03B2D71401D4C000FEC9D4 /* ChatMeUser.h */,
@@ -550,6 +559,7 @@
 				7E44A0531402C27300B5A7DC /* vocode.m in Sources */,
 				4F2045F71417C7100002AC6A /* Contact.m in Sources */,
 				4F2045FA1417D2360002AC6A /* chatmodel.xcdatamodeld in Sources */,
+				4F74C55914231D9400B97CC3 /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
