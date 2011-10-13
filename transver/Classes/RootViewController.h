@@ -16,6 +16,7 @@
 	NSArray *accounts;
 	UICustomTabViewController *tabViewController;
 	AudioRecorder *audioRecorder;
+    int m_userid;
 	
 }
 
@@ -24,11 +25,12 @@
 - (int) loginServer;
 - (void) playSound;
 - (void) uploadFile;
-- (NSArray*) fetchRelationships:(int) uid;
+- (NSArray*) fetchRelationships:(int) m_userid;
 
 @property (nonatomic, retain) NSArray *accounts;
 @property (nonatomic, retain) UICustomTabViewController *tabViewController;
-@property(nonatomic,retain)  AudioRecorder *audioRecorder;
+@property (nonatomic, retain) AudioRecorder *audioRecorder;
+@property (nonatomic, assign) int m_userid;
 
 
 @end

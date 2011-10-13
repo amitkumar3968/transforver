@@ -195,9 +195,14 @@
     
     //delete the text
     [self.messageTextView setText:@""];
+    [_messageTextView resignFirstResponder];
     
     //Resize accordingly
     [self resizeViews];
+}
+
+- (void)recordButtonTapped {
+    NSLog(@"Record");
 }
 
 #pragma mark -
