@@ -20,6 +20,7 @@
 @property (nonatomic, assign) id<ChatBubbleViewDelegate> delegate;
 
 - (IBAction)sendButtonTapped;
+- (IBAction)recordButtonTapped;
 
 @end
 

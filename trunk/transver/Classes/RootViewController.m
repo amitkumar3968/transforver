@@ -23,6 +23,7 @@
 @synthesize accounts;
 @synthesize tabViewController;
 @synthesize audioRecorder;
+@synthesize m_userid;
 
 - (void)viewDidLoad {
 	
@@ -33,7 +34,7 @@
     //self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 	//self.tableView.rowHeight = 100;
 	//self.tableView.backgroundColor = [UIColor clearColor];
-    int uid = [self loginServer];
+    m_userid = [self loginServer];
 
     
 	[tvController release];
@@ -82,7 +83,7 @@
 	CFRelease(people);
 	CFRelease(peopleMutable);
 	
-	NSArray *array = [self fetchRelationships:uid];//[[NSArray alloc] initWithObjects:@"find friends",@"Jerry", @"Raymond", @"John", nil];
+	NSArray *array = [self fetchRelationships:m_userid];//[[NSArray alloc] initWithObjects:@"find friends",@"Jerry", @"Raymond", @"John", nil];
 	self.accounts = array;
 	[array release];
 	
@@ -510,7 +511,9 @@
         //[self.tabViewController setTitle:[accounts objectAtIndex:indexPath.row]];
         //[self.navigationController pushViewController:self.tabViewController animated:YES];
         //Show the message chat view
-        ChatViewController *chat = [[ChatViewController alloc] initWithNibName:@"ChatViewController" bundle:nil];
+        //ChatViewController *chat = [[ChatViewController alloc] initWithNibName:@"ChatViewController" bundle:nil];
+        ChatViewController *chat = [[ChatViewController alloc] initWithRelation:m_userid DstID:2];
+                                    
         //[chat setContact:contact];
         
         [self.navigationController pushViewController:chat animated:YES];

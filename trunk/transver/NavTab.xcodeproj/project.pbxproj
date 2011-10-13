@@ -30,6 +30,11 @@
 		4F03B2F11402917500FEC9D4 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F03B2ED1402917500FEC9D4 /* SBJsonWriter.m */; };
 		4F03B2F61402917F00FEC9D4 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F03B2F31402917F00FEC9D4 /* NSObject+SBJSON.m */; };
 		4F03B2F71402917F00FEC9D4 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F03B2F51402917F00FEC9D4 /* NSString+SBJSON.m */; };
+		4F08E1E514346AB8008DACEE /* SectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F08E1E414346AB7008DACEE /* SectionHeaderView.m */; };
+		4F08E1E81434C7DA008DACEE /* SectionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F08E1E71434C7D9008DACEE /* SectionInfo.m */; };
+		4F08E1EB1434D1BB008DACEE /* Play.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F08E1EA1434D1BB008DACEE /* Play.m */; };
+		4F08E1ED14353CC4008DACEE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F08E1EC14353CC4008DACEE /* QuartzCore.framework */; };
+		4F08E1F0143542FC008DACEE /* Quotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F08E1EF143542FA008DACEE /* Quotation.m */; };
 		4F2045DF1417B3EF0002AC6A /* bgTextBubbleLC20TC20.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F2045DE1417B3EF0002AC6A /* bgTextBubbleLC20TC20.png */; };
 		4F2045F31417C0540002AC6A /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F2045F21417C0540002AC6A /* ChatViewController.xib */; };
 		4F2045F71417C7100002AC6A /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2045F61417C7100002AC6A /* Contact.m */; };
@@ -124,6 +129,15 @@
 		4F03B2F41402917F00FEC9D4 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
 		4F03B2F51402917F00FEC9D4 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
 		4F03B2F81402919D00FEC9D4 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		4F08E1E314346AB6008DACEE /* SectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionHeaderView.h; sourceTree = "<group>"; };
+		4F08E1E414346AB7008DACEE /* SectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionHeaderView.m; sourceTree = "<group>"; };
+		4F08E1E61434C7D9008DACEE /* SectionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionInfo.h; sourceTree = "<group>"; };
+		4F08E1E71434C7D9008DACEE /* SectionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionInfo.m; sourceTree = "<group>"; };
+		4F08E1E91434D1BA008DACEE /* Play.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Play.h; sourceTree = "<group>"; };
+		4F08E1EA1434D1BB008DACEE /* Play.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Play.m; sourceTree = "<group>"; };
+		4F08E1EC14353CC4008DACEE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		4F08E1EE143542F9008DACEE /* Quotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quotation.h; sourceTree = "<group>"; };
+		4F08E1EF143542FA008DACEE /* Quotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quotation.m; sourceTree = "<group>"; };
 		4F2045DE1417B3EF0002AC6A /* bgTextBubbleLC20TC20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgTextBubbleLC20TC20.png; sourceTree = "<group>"; };
 		4F2045F21417C0540002AC6A /* ChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
 		4F2045F51417C7100002AC6A /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
@@ -200,6 +214,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F08E1ED14353CC4008DACEE /* QuartzCore.framework in Frameworks */,
 				4F74C55B1423973900B97CC3 /* SystemConfiguration.framework in Frameworks */,
 				4F03B2C81401D0F700FEC9D4 /* CoreData.framework in Frameworks */,
 				4F724CB713F774C500A6F871 /* AddressBookUI.framework in Frameworks */,
@@ -223,8 +238,16 @@
 				4F03B2C91401D31100FEC9D4 /* CellView */,
 				4F03B2961401339500FEC9D4 /* Lib */,
 				4F03B2931401315600FEC9D4 /* DBHandler.h */,
+				4F08E1E91434D1BA008DACEE /* Play.h */,
+				4F08E1EA1434D1BB008DACEE /* Play.m */,
+				4F08E1EE143542F9008DACEE /* Quotation.h */,
+				4F08E1EF143542FA008DACEE /* Quotation.m */,
 				4F03B2C41401D05100FEC9D4 /* ChatViewController.h */,
 				4F03B2C51401D05100FEC9D4 /* ChatViewController.m */,
+				4F08E1E61434C7D9008DACEE /* SectionInfo.h */,
+				4F08E1E71434C7D9008DACEE /* SectionInfo.m */,
+				4F08E1E314346AB6008DACEE /* SectionHeaderView.h */,
+				4F08E1E414346AB7008DACEE /* SectionHeaderView.m */,
 				4F03B2941401315600FEC9D4 /* DBHandler.m */,
 				E176A2270F893FC200EEE756 /* MoreTabViewController.h */,
 				4F5E37FE13FC93130025B24A /* ChatBubbleView.h */,
@@ -255,6 +278,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				4F08E1EC14353CC4008DACEE /* QuartzCore.framework */,
 				4F74C55A1423973900B97CC3 /* SystemConfiguration.framework */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -277,10 +301,10 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4F2045F21417C0540002AC6A /* ChatViewController.xib */,
 				4F724C9913F75F7800A6F871 /* sounds */,
 				4F724C9813F75F1D00A6F871 /* images */,
 				2899E55F0DE3E45000AC0155 /* RootViewController.xib */,
+				4F2045F21417C0540002AC6A /* ChatViewController.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				E124FF810F82CD8F008BC374 /* TabViewController.xib */,
@@ -560,6 +584,10 @@
 				4F2045F71417C7100002AC6A /* Contact.m in Sources */,
 				4F2045FA1417D2360002AC6A /* chatmodel.xcdatamodeld in Sources */,
 				4F74C55914231D9400B97CC3 /* Reachability.m in Sources */,
+				4F08E1E514346AB8008DACEE /* SectionHeaderView.m in Sources */,
+				4F08E1E81434C7DA008DACEE /* SectionInfo.m in Sources */,
+				4F08E1EB1434D1BB008DACEE /* Play.m in Sources */,
+				4F08E1F0143542FC008DACEE /* Quotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
