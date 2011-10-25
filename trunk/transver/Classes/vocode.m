@@ -346,6 +346,7 @@ void vocode(void)
 	vocode_window_overlap = vocode_window_length / 2;
 	vocode_volume = 1.0;
 	vocode_band_count = 16;	
+	vocode_normalize=1;
   allocate_memory();
   fft_create_arrays (&fft_c, &fft_s, &fft_rev, vocode_window_length);
   vocoder();

@@ -68,6 +68,7 @@
 		7E44A0011402B5D400B5A7DC /* Lion.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7E44A0001402B5D400B5A7DC /* Lion.aif */; };
 		7E44A0491402BE4700B5A7DC /* dovocode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E44A0481402BE4700B5A7DC /* dovocode.m */; };
 		7E44A0531402C27300B5A7DC /* vocode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E44A0521402C27300B5A7DC /* vocode.m */; };
+		7E68D6F91456388100DB3684 /* conv.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E68D6F71456388000DB3684 /* conv.c */; };
 		7EEF89B71402695D005D93F7 /* aiff.c in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF89A21402695D005D93F7 /* aiff.c */; };
 		7EEF89B81402695D005D93F7 /* AudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF89A51402695D005D93F7 /* AudioRecorder.m */; };
 		7EEF89BA1402695D005D93F7 /* error.c in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF89A91402695D005D93F7 /* error.c */; };
@@ -175,6 +176,8 @@
 		7E44A0001402B5D400B5A7DC /* Lion.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lion.aif; sourceTree = SOURCE_ROOT; };
 		7E44A0481402BE4700B5A7DC /* dovocode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dovocode.m; sourceTree = "<group>"; };
 		7E44A0521402C27300B5A7DC /* vocode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vocode.m; sourceTree = "<group>"; };
+		7E68D6F71456388000DB3684 /* conv.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = conv.c; sourceTree = "<group>"; };
+		7E68D6F81456388000DB3684 /* conv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = conv.h; sourceTree = "<group>"; };
 		7EEF89A21402695D005D93F7 /* aiff.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aiff.c; sourceTree = "<group>"; };
 		7EEF89A31402695D005D93F7 /* aiff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aiff.h; sourceTree = "<group>"; };
 		7EEF89A41402695D005D93F7 /* AudioRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioRecorder.h; sourceTree = "<group>"; };
@@ -435,6 +438,8 @@
 		7EEF89A114026830005D93F7 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				7E68D6F71456388000DB3684 /* conv.c */,
+				7E68D6F81456388000DB3684 /* conv.h */,
 				7E44A0521402C27300B5A7DC /* vocode.m */,
 				7E44A0481402BE4700B5A7DC /* dovocode.m */,
 				7EEF89A21402695D005D93F7 /* aiff.c */,
@@ -588,6 +593,7 @@
 				4F08E1E81434C7DA008DACEE /* SectionInfo.m in Sources */,
 				4F08E1EB1434D1BB008DACEE /* Play.m in Sources */,
 				4F08E1F0143542FC008DACEE /* Quotation.m in Sources */,
+				7E68D6F91456388100DB3684 /* conv.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
