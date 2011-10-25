@@ -17,6 +17,7 @@
 #include "error.h"
 #include "vocode.h"
 #include "fft.h"
+#include "conv.h"
 
 
 #define COPYRIGHT \
@@ -281,6 +282,7 @@ int dovocode(char *filepath)
 	vocode_update_status_cb = update_status;
 	vocode_finish_status_cb = finish_status;
 	error_display_cb = display_error;
+	conv();
   vocode_open_files(filepath);	
   vocode();
   vocode_cleanup();
