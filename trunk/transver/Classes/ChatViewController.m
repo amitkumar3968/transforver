@@ -41,6 +41,7 @@
 @synthesize listOfItems=_listOfItems;
 @synthesize sectionInfoArray;
 @synthesize openSectionIndex;
+@synthesize m_Messages;
 
 - (void)dealloc
 {
@@ -63,7 +64,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"viewDidLoad");
+    NSLog(@"viewDidLoad %@", m_Messages);
     
     //self.title = [self.contact.contactUser fullName];
 
@@ -85,10 +86,10 @@
     NSDictionary *countriesToLiveInDict = [NSDictionary dictionaryWithObject:countriesToLiveInArray forKey:@"Countries"];
     
     
-    NSMutableArray *countriesLivedInArray = [NSMutableArray arrayWithObjects:@"India", @"U.S.A", nil];
+    NSMutableArray *countriesLivedInArray = m_Messages;
     NSDictionary *countriesLivedInDict = [NSDictionary dictionaryWithObject:countriesLivedInArray forKey:@"Countries"];
     
-    [_listOfItems addObject:countriesToLiveInDict];
+    //[_listOfItems addObject:countriesToLiveInDict];
     [_listOfItems addObject:countriesLivedInDict];
     myTimer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(moveACar) userInfo:nil repeats:YES];
     
@@ -104,7 +105,7 @@
 
 - (id) initWithRelation: (int) srcid DstID:(int) dstid {
     NSLog(@"initWithDstName");
-    [self fetchMessages:srcid DstID:dstid];
+    m_Messages = [self fetchMessages:srcid DstID:dstid];
     return self;
     
 }
@@ -228,7 +229,9 @@
 {
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    MessageTableViewCell *cell = (MessageTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
     }
@@ -241,12 +244,17 @@
     NSString *cellValue = [array objectAtIndex:indexPath.row];
     [cell.textLabel setText:cellValue];
     
+    [self configureCell:cell atIndexPath:indexPath];
+    
     return cell;
 }
 
 - (void)configureCell:(MessageTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    /*
-    ChatMeUser *currentUser = [[ChatMeService sharedChatMeService] currentUser];
+    
+    //ChatMeUser *currentUser = [[ChatMeService sharedChatMeService] currentUser];
+    NSDictionary *dictionary = [_listOfItems objectAtIndex:indexPath.section];
+    NSArray *array = [dictionary objectForKey:@"Countries"];
+    NSString *cellValue = [array objectAtIndex:indexPath.row];
     Message *message = [self.fetchedResultsController objectAtIndexPath:indexPath];
     [cell setText:message.text];
     
@@ -271,7 +279,7 @@
     } else {
         [cell setMessageAlignment:kMessageAlignmentRight];
     }
-    */
+    
     [cell setNeedsDisplay];
 }
 
@@ -386,7 +394,7 @@
     }
     [ret addObject:@"get friends"];
     for (NSDictionary *dic in array) {
-        [ret addObject: [dic objectForKey:@"USER_NAME"]];
+        [ret addObject: [dic objectForKey:@"DIALOG_MESSAGE"]];
     }
     //[ret addObject:nil];
     NSArray *retArr = [[NSArray alloc ]initWithArray:ret];
