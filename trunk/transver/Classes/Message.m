@@ -13,7 +13,7 @@
 @implementation Message
 @dynamic sentDate;
 @dynamic seenByRecepient;
-@dynamic text;
+@synthesize text;
 @dynamic fromUser;
 @dynamic toUser;
 
