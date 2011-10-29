@@ -12,6 +12,7 @@
 #import "Contact.h"
 #import "Play.h"
 #import "Quotation.h"
+#import "Common.h"
 /*
 #import "Contact.h"
 #import "ChatMeUser.h"
@@ -242,7 +243,7 @@
     NSDictionary *dictionary = [_listOfItems objectAtIndex:indexPath.section];
     NSArray *array = [dictionary objectForKey:@"Countries"];
     NSString *cellValue = [array objectAtIndex:indexPath.row];
-    [cell.textLabel setText:cellValue];
+    //[cell.textLabel setText:cellValue];
     
     [self configureCell:cell atIndexPath:indexPath];
     
@@ -256,12 +257,10 @@
     NSArray *array = [dictionary objectForKey:@"Countries"];
     NSString *cellValue = [array objectAtIndex:indexPath.row];
     Message *message = [[Message alloc] init];
-    if( indexPath.row != 0)
-    {
+    
     message.text = cellValue;
     
     [cell setText:message.text];
-    }
     //We only set the image if the previous message was from a different user
     BOOL showImage = (indexPath.row == 0);
     if (indexPath.row != 0) {
@@ -278,6 +277,7 @@
     } else {
         [cell setImage:nil];
     }
+    [cell setMessageAlignment:kMessageAlignmentLeft];
     /*
     //Also, if fromUser is us (currentUser) we align it to the left, right otherwise
     if (message.fromUser == currentUser) {
