@@ -43,7 +43,7 @@
     //We want to draw the image (if any)
     if (image) {
         CGFloat effectiveOriginY;
-        messageAlignment = kMessageAlignmentLeft;
+        //messageAlignment = kMessageAlignmentRight;
         if (messageAlignment == kMessageAlignmentLeft) {
             effectiveOriginY = kMessageSideSeparation;
         } else {
@@ -57,6 +57,7 @@
     UIFont *font = [UIFont systemFontOfSize:16.0];
     
     //Draw the text
+    
     CGFloat effectiveOriginY;
     UITextAlignment alignment;
     if (messageAlignment == kMessageAlignmentLeft) {
@@ -70,6 +71,7 @@
     CGSize textSize = [text sizeWithFont:font constrainedToSize:textRect.size lineBreakMode:UILineBreakModeWordWrap];
     textRect.size.height = textSize.height;
     [text drawInRect:textRect withFont:font lineBreakMode:UILineBreakModeWordWrap alignment:alignment];
+     
     
 }
 
