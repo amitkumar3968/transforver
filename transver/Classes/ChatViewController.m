@@ -233,7 +233,7 @@
     MessageTableViewCell *cell = (MessageTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[MessageTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
     // Set up the cell...
@@ -255,31 +255,37 @@
     NSDictionary *dictionary = [_listOfItems objectAtIndex:indexPath.section];
     NSArray *array = [dictionary objectForKey:@"Countries"];
     NSString *cellValue = [array objectAtIndex:indexPath.row];
-    Message *message = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    [cell setText:message.text];
+    Message *message = [[Message alloc] init];
+    if( indexPath.row != 0)
+    {
+    message.text = cellValue;
     
+    [cell setText:message.text];
+    }
     //We only set the image if the previous message was from a different user
     BOOL showImage = (indexPath.row == 0);
     if (indexPath.row != 0) {
+        /*
         Message *prev = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row-1 inSection:indexPath.section]];
         if (prev.fromUser != message.fromUser) {
             showImage = YES;
-        }
+        }*/
     }
-    
+    NSString *myImagePath =  [[NSBundle mainBundle] pathForResource:@"userWaldo" ofType:@"png"];
+    UIImage *userImg = [UIImage imageWithContentsOfFile:myImagePath];
     if (showImage) {
-        [cell setImage:message.fromUser.image];
+        [cell setImage:userImg];
     } else {
         [cell setImage:nil];
     }
-    
+    /*
     //Also, if fromUser is us (currentUser) we align it to the left, right otherwise
     if (message.fromUser == currentUser) {
         [cell setMessageAlignment:kMessageAlignmentLeft];
     } else {
         [cell setMessageAlignment:kMessageAlignmentRight];
     }
-    
+    */
     [cell setNeedsDisplay];
 }
 

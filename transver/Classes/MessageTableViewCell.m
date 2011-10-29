@@ -43,6 +43,7 @@
     //We want to draw the image (if any)
     if (image) {
         CGFloat effectiveOriginY;
+        messageAlignment = kMessageAlignmentLeft;
         if (messageAlignment == kMessageAlignmentLeft) {
             effectiveOriginY = kMessageSideSeparation;
         } else {

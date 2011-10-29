@@ -39,6 +39,7 @@
 		4F2045F31417C0540002AC6A /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F2045F21417C0540002AC6A /* ChatViewController.xib */; };
 		4F2045F71417C7100002AC6A /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2045F61417C7100002AC6A /* Contact.m */; };
 		4F2045FA1417D2360002AC6A /* chatmodel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F2045F81417D2360002AC6A /* chatmodel.xcdatamodeld */; };
+		4F38BB1A145B80F300671269 /* userWaldo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F38BB19145B80F300671269 /* userWaldo.png */; };
 		4F5E380013FC93130025B24A /* ChatBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5E37FF13FC93130025B24A /* ChatBubbleView.m */; };
 		4F5E385313FC98080025B24A /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F5E385213FC98080025B24A /* Icon.png */; };
 		4F724C8D13F6D91700A6F871 /* phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F724C8C13F6D91700A6F871 /* phone.png */; };
@@ -144,6 +145,7 @@
 		4F2045F51417C7100002AC6A /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
 		4F2045F61417C7100002AC6A /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
 		4F2045F91417D2360002AC6A /* chatmodel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = chatmodel.xcdatamodel; sourceTree = "<group>"; };
+		4F38BB19145B80F300671269 /* userWaldo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userWaldo.png; sourceTree = "<group>"; };
 		4F5E37FE13FC93130025B24A /* ChatBubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatBubbleView.h; sourceTree = "<group>"; };
 		4F5E37FF13FC93130025B24A /* ChatBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatBubbleView.m; sourceTree = "<group>"; };
 		4F5E385213FC98080025B24A /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -403,6 +405,7 @@
 		4F724C9813F75F1D00A6F871 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				4F38BB19145B80F300671269 /* userWaldo.png */,
 				4F2045DE1417B3EF0002AC6A /* bgTextBubbleLC20TC20.png */,
 				4FA83DCC140C685100B63437 /* btnSend.png */,
 				4F5E385213FC98080025B24A /* Icon.png */,
@@ -544,6 +547,7 @@
 				4FA83DCD140C685100B63437 /* btnSend.png in Resources */,
 				4F2045DF1417B3EF0002AC6A /* bgTextBubbleLC20TC20.png in Resources */,
 				4F2045F31417C0540002AC6A /* ChatViewController.xib in Resources */,
+				4F38BB1A145B80F300671269 /* userWaldo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
