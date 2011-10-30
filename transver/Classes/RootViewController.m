@@ -513,7 +513,8 @@
         //[self.navigationController pushViewController:self.tabViewController animated:YES];
         //Show the message chat view
         //ChatViewController *chat = [[ChatViewController alloc] initWithNibName:@"ChatViewController" bundle:nil];
-        ChatViewController *chat = [[ChatViewController alloc] initWithRelation:m_userid DstID:2];
+        //ChatViewController *chat = [[ChatViewController alloc] initWithRelation:m_userid DstID:2];
+        ChatViewController *chat = [[ChatViewController alloc] initWithRelation:1 DstID:2];
                                     
         //[chat setContact:contact];
         
