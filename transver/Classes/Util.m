@@ -18,6 +18,14 @@
 	return documentsPath;
 }
 
++ (void) removeFile:(NSString*)filename {
+	NSString *documentPath = [Util getDocumentPath];
+	NSFileManager *fileManager = [NSFileManager defaultManager];
+	if ([fileManager fileExistsAtPath:[documentPath stringByAppendingPathComponent:filename]]) {
+		[fileManager removeItemAtPath:[documentPath stringByAppendingPathComponent:filename] error:nil];
+	}
+}
+
 + (void) copyFile{
     NSString *documentsPath = [Util getDocumentPath];
 	

@@ -12,6 +12,7 @@
 #import "UICustomTabViewController.h"
 #import "DBHandler.h"
 #import "JSON.h"
+#import "AddUserViewController.h"
 #import <AudioToolbox/AudioServices.h>
 #import <AddressBook/AddressBook.h>
 #import <AddressBookUI/AddressBookUI.h>
@@ -24,21 +25,36 @@
 @synthesize tabViewController;
 @synthesize audioRecorder;
 @synthesize m_userid;
+@synthesize m_ShowMenu;
+@synthesize m_PhoneNumber;
+@synthesize m_UserName;
 
 
 - (void)viewDidLoad {
 	
-	
+	m_ShowMenu = 0;
 	UICustomTabViewController *tvController = [[UICustomTabViewController alloc] initWithNibName:@"TabViewController" bundle:nil];
 	self.tabViewController = tvController;
-    
+    [tvController release];
     //self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 	//self.tableView.rowHeight = 100;
 	//self.tableView.backgroundColor = [UIColor clearColor];
-    m_userid = [self loginServer];
+    if( ![self checkUserInfoExist])
+    {
+        AddUserViewController *addUserView = [[AddUserViewController alloc] initWithNibName:@"AddUserViewController" bundle:nil];
+        addUserView.title = @"Add Phone Number";
+        addUserView.delegate = self;
+        [self.navigationController pushViewController:addUserView animated:YES];
+        //[self saveParameter];
+    }else
+    {
+        [self getParameter];
+        m_userid = [self loginServer];
+    }
+    
 
     
-	[tvController release];
+	
 	self.title = @"Accounts";
 	
 	UIBarButtonItem *leftButton = 
@@ -144,12 +160,93 @@
 	[tmpUrl release];
 }
 
+-(void)MenuSetting:(id)sender{
+    NSLog(@"MenuSetting");
+}
 - (void) showMenu:(id) sender {
 	NSLog(@"showMenu");
 	//[self loginServer];
-	[self playSound];
+	//[self playSound];
 	//[self uploadFile];
-	return ;
+	//return ;
+    if( m_ShowMenu == 0)
+    {
+        CGRect transparentViewFrame = CGRectMake(0.0, 0.0,360.0,480.0);
+        UIView *transparentView = [[UIView alloc] initWithFrame:transparentViewFrame];
+            transparentView.backgroundColor = [UIColor lightGrayColor];
+            transparentView.alpha = 0.3;
+        transparentView.tag = 1;
+    
+    
+            CGRect menuViewFrame = CGRectMake(120.0, 20.0,180.0,240.0);
+            UIView *menuView = [[UIView alloc] initWithFrame:menuViewFrame];
+            menuView.backgroundColor = [UIColor lightGrayColor];
+            menuView.alpha = 1;
+            [transparentView addSubview:menuView];
+        [self.view addSubview:transparentView];
+        CGRect btnViewFrame = CGRectMake(120.0, 20.0,64.0,64.0);
+        UIButton *settingBtn = [[UIButton alloc] initWithFrame:btnViewFrame];
+        //[settingBtn setTitle:@"Ok" forState:UIControlStateNormal];
+        //settingBtn.backgroundColor = [UIColor blackColor];
+        UIImage *snap_picture = [UIImage imageNamed:@"project-open-3.png"];
+        [settingBtn setBackgroundImage:snap_picture forState:UIControlStateNormal];
+        [settingBtn addTarget:self action:@selector(MenuSetting:) forControlEvents:UIControlEventTouchUpInside];
+        settingBtn.tag = 2;
+        [self.view addSubview:settingBtn];
+        [settingBtn release];
+        
+        btnViewFrame = CGRectMake(220.0, 20.0,64.0,64.0);
+        settingBtn = [[UIButton alloc] initWithFrame:btnViewFrame];
+        snap_picture = [UIImage imageNamed:@"view-media-artist.png"];
+        [settingBtn setBackgroundImage:snap_picture forState:UIControlStateNormal];
+        [settingBtn addTarget:self action:@selector(MenuSetting:) forControlEvents:UIControlEventTouchUpInside];
+        settingBtn.tag = 3;
+        [self.view addSubview:settingBtn];
+        [settingBtn release];
+        
+        btnViewFrame = CGRectMake(120.0, 100.0,64.0,64.0);
+        settingBtn = [[UIButton alloc] initWithFrame:btnViewFrame];
+        snap_picture = [UIImage imageNamed:@"quickopen-file.png"];
+        [settingBtn setBackgroundImage:snap_picture forState:UIControlStateNormal];
+        [settingBtn addTarget:self action:@selector(MenuSetting:) forControlEvents:UIControlEventTouchUpInside];
+        settingBtn.tag = 4;
+        [self.view addSubview:settingBtn];
+        [settingBtn release];
+        
+        btnViewFrame = CGRectMake(220.0, 100,64.0,64.0);
+        settingBtn = [[UIButton alloc] initWithFrame:btnViewFrame];
+        snap_picture = [UIImage imageNamed:@"media-skip-forward-10.png"];
+        [settingBtn setBackgroundImage:snap_picture forState:UIControlStateNormal];
+        [settingBtn addTarget:self action:@selector(MenuSetting:) forControlEvents:UIControlEventTouchUpInside];
+        settingBtn.tag = 5;
+        [self.view addSubview:settingBtn];
+        [settingBtn release];
+        
+        
+    
+        
+        
+        [menuView release];
+        [transparentView release];
+            m_ShowMenu = 1;
+    }else
+    {
+        m_ShowMenu = 0;
+        UIView *transparentView = [self.view viewWithTag:1];
+        [transparentView removeFromSuperview];
+        transparentView = [self.view viewWithTag:2];
+        [transparentView removeFromSuperview];
+        transparentView = [self.view viewWithTag:3];
+        [transparentView removeFromSuperview];
+        transparentView = [self.view viewWithTag:4];
+        [transparentView removeFromSuperview];
+        transparentView = [self.view viewWithTag:5];
+        [transparentView removeFromSuperview];
+        
+    }
+    
+    
+    return;
 	/*
 	UIActionSheet *myMenu = [[UIActionSheet alloc]
                              initWithTitle: @"Menu"
@@ -238,7 +335,7 @@
 	UIDevice *myDevice = [UIDevice currentDevice];
 	NSString *deviceUDID = [myDevice uniqueIdentifier];
 	//NSString *post =[[NSString alloc] initWithFormat:@"userName=%@&userPhone=%@&deviceID=",@"hank",[[NSUserDefaults standardUserDefaults] stringForKey:@"SBFormattedPhoneNumber"]];
-	NSString *post =[[NSString alloc] initWithFormat:@"userName=%@&deviceID=",@"hank"];
+	NSString *post =[[NSString alloc] initWithFormat:@"userPhone=%@&deviceID=",m_PhoneNumber];
 	post = [post stringByAppendingFormat:deviceUDID];
     //post = [post stringByAppendingFormat:[[NSUserDefaults standardUserDefaults] stringForKey:@"SBFormattedPhoneNumber"],deviceUDID];
 	NSURL *url=[NSURL URLWithString:@"http://www.entalkie.url.tw/login.php"];
@@ -513,8 +610,8 @@
         //[self.navigationController pushViewController:self.tabViewController animated:YES];
         //Show the message chat view
         //ChatViewController *chat = [[ChatViewController alloc] initWithNibName:@"ChatViewController" bundle:nil];
-        //ChatViewController *chat = [[ChatViewController alloc] initWithRelation:m_userid DstID:2];
-        ChatViewController *chat = [[ChatViewController alloc] initWithRelation:1 DstID:2];
+        ChatViewController *chat = [[ChatViewController alloc] initWithRelation:m_userid DstID:2];
+        //ChatViewController *chat = [[ChatViewController alloc] initWithRelation:1 DstID:2];
                                     
         //[chat setContact:contact];
         
@@ -527,6 +624,51 @@
 
 }
 
+
+- (void) delUserInfo {
+	[Util removeFile:@"user.status"];
+}
+
+- (bool) checkUserInfoExist {
+	NSString *documentPath = [Util getDocumentPath];
+    NSLog(@"%@", documentPath);
+	NSFileManager *fileManager = [NSFileManager defaultManager];
+	if ([fileManager fileExistsAtPath:[documentPath stringByAppendingPathComponent:@"user.status"]] ) {
+		return YES;
+	} else {
+		[self delUserInfo];
+		return NO;
+	}
+}
+
+- (void) saveParameter {
+    NSString *documentPath = [Util getDocumentPath];
+    
+	//[self delEventInfo];
+	
+	
+	NSArray *plumberArr = [[NSArray alloc] initWithObjects: [NSString stringWithFormat:@"%@",  m_PhoneNumber ],
+						   [NSString stringWithFormat:@"%@",  m_UserName ],
+                           nil];
+	
+	NSLog(@"###saveParameter, lives:%@, level:%@", [plumberArr objectAtIndex:0], [plumberArr objectAtIndex:1] );
+	
+	[plumberArr writeToFile:[documentPath stringByAppendingPathComponent:@"user.status"] atomically:YES];
+	[plumberArr release];
+    
+	
+}
+
+- (void) getParameter {
+    NSString *documentPath = [Util getDocumentPath];
+    
+    NSArray *plumberArr = [[NSArray alloc] initWithContentsOfFile:[documentPath stringByAppendingPathComponent:@"user.status"]];
+    
+    m_PhoneNumber = [plumberArr objectAtIndex:0];
+    m_UserName = [plumberArr objectAtIndex:1];
+}
+
+
 - (void)dealloc {
 	[tabViewController release];
 	[accounts release];
@@ -538,6 +680,17 @@
     return FALSE;
 }
 
+#pragma mark AddUserViewDelegate methods
 
+- (void) savePhoneNumber:(NSString *)phonenumber{
+    NSLog(@"save phone: %@", phonenumber);
+    m_PhoneNumber = phonenumber;
+    [self saveParameter];
+    m_userid = [self loginServer];
+    NSArray *array = [self fetchRelationships:m_userid];//[[NSArray alloc] initWithObjects:@"find friends",@"Jerry", @"Raymond", @"John", nil];
+	self.accounts = array;
+	[array release];
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end
 
