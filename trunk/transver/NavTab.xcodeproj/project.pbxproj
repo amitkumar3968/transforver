@@ -60,6 +60,17 @@
 		4F724CB713F774C500A6F871 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F724CB613F774C400A6F871 /* AddressBookUI.framework */; };
 		4F74C55914231D9400B97CC3 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F74C55814231D9400B97CC3 /* Reachability.m */; };
 		4F74C55B1423973900B97CC3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F74C55A1423973900B97CC3 /* SystemConfiguration.framework */; };
+		4F76F5FB145EFB90003E944B /* AddUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F76F5F9145EFB90003E944B /* AddUserViewController.m */; };
+		4F76F5FC145EFB90003E944B /* AddUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F76F5FA145EFB90003E944B /* AddUserViewController.xib */; };
+		4F76F61A145F073F003E944B /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F76F618145F073E003E944B /* MenuViewController.m */; };
+		4F76F61B145F073F003E944B /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F76F619145F073F003E944B /* MenuViewController.xib */; };
+		4F76F64014619FE8003E944B /* media-seek-backward-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76F63A14619FE8003E944B /* media-seek-backward-3.png */; };
+		4F76F64114619FE8003E944B /* media-skip-forward-10.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76F63B14619FE8003E944B /* media-skip-forward-10.png */; };
+		4F76F64214619FE8003E944B /* project-open-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76F63C14619FE8003E944B /* project-open-3.png */; };
+		4F76F64314619FE8003E944B /* quickopen-file.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76F63D14619FE8003E944B /* quickopen-file.png */; };
+		4F76F64414619FE8003E944B /* run-build-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76F63E14619FE8003E944B /* run-build-3.png */; };
+		4F76F64514619FE8003E944B /* user-new-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76F63F14619FE8003E944B /* user-new-2.png */; };
+		4F76F6471461A0EB003E944B /* view-media-artist.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76F6461461A0EB003E944B /* view-media-artist.png */; };
 		4F9BAFBE13EB740C004179FC /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9BAFBD13EB740C004179FC /* AddressBook.framework */; };
 		4F9BB0BC13F2E932004179FC /* 111.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4F9BB0BB13F2E931004179FC /* 111.caf */; };
 		4F9BB0C013F2E9BE004179FC /* mysoundcompressed.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4F9BB0BF13F2E9BE004179FC /* mysoundcompressed.caf */; };
@@ -168,6 +179,19 @@
 		4F74C55714231D9400B97CC3 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		4F74C55814231D9400B97CC3 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		4F74C55A1423973900B97CC3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		4F76F5F8145EFB90003E944B /* AddUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddUserViewController.h; path = ../NavTab.xcodeproj/AddUserViewController.h; sourceTree = "<group>"; };
+		4F76F5F9145EFB90003E944B /* AddUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddUserViewController.m; path = ../NavTab.xcodeproj/AddUserViewController.m; sourceTree = "<group>"; };
+		4F76F5FA145EFB90003E944B /* AddUserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddUserViewController.xib; path = NavTab.xcodeproj/AddUserViewController.xib; sourceTree = "<group>"; };
+		4F76F617145F073D003E944B /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		4F76F618145F073E003E944B /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		4F76F619145F073F003E944B /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuViewController.xib; path = Classes/MenuViewController.xib; sourceTree = "<group>"; };
+		4F76F63A14619FE8003E944B /* media-seek-backward-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "media-seek-backward-3.png"; sourceTree = "<group>"; };
+		4F76F63B14619FE8003E944B /* media-skip-forward-10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "media-skip-forward-10.png"; sourceTree = "<group>"; };
+		4F76F63C14619FE8003E944B /* project-open-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "project-open-3.png"; sourceTree = "<group>"; };
+		4F76F63D14619FE8003E944B /* quickopen-file.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "quickopen-file.png"; sourceTree = "<group>"; };
+		4F76F63E14619FE8003E944B /* run-build-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "run-build-3.png"; sourceTree = "<group>"; };
+		4F76F63F14619FE8003E944B /* user-new-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user-new-2.png"; sourceTree = "<group>"; };
+		4F76F6461461A0EB003E944B /* view-media-artist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "view-media-artist.png"; sourceTree = "<group>"; };
 		4F9BAFBD13EB740C004179FC /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		4F9BB0BB13F2E931004179FC /* 111.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = 111.caf; path = ../111.caf; sourceTree = "<group>"; };
 		4F9BB0BF13F2E9BE004179FC /* mysoundcompressed.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = mysoundcompressed.caf; path = ../mysoundcompressed.caf; sourceTree = "<group>"; };
@@ -242,6 +266,10 @@
 				4F03B2D21401D42300FEC9D4 /* Common */,
 				4F03B2C91401D31100FEC9D4 /* CellView */,
 				4F03B2961401339500FEC9D4 /* Lib */,
+				4F76F5F8145EFB90003E944B /* AddUserViewController.h */,
+				4F76F5F9145EFB90003E944B /* AddUserViewController.m */,
+				4F76F617145F073D003E944B /* MenuViewController.h */,
+				4F76F618145F073E003E944B /* MenuViewController.m */,
 				4F03B2931401315600FEC9D4 /* DBHandler.h */,
 				4F08E1E91434D1BA008DACEE /* Play.h */,
 				4F08E1EA1434D1BB008DACEE /* Play.m */,
@@ -309,6 +337,8 @@
 				4F724C9913F75F7800A6F871 /* sounds */,
 				4F724C9813F75F1D00A6F871 /* images */,
 				2899E55F0DE3E45000AC0155 /* RootViewController.xib */,
+				4F76F5FA145EFB90003E944B /* AddUserViewController.xib */,
+				4F76F619145F073F003E944B /* MenuViewController.xib */,
 				4F2045F21417C0540002AC6A /* ChatViewController.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
@@ -405,6 +435,13 @@
 		4F724C9813F75F1D00A6F871 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				4F76F6461461A0EB003E944B /* view-media-artist.png */,
+				4F76F63A14619FE8003E944B /* media-seek-backward-3.png */,
+				4F76F63B14619FE8003E944B /* media-skip-forward-10.png */,
+				4F76F63C14619FE8003E944B /* project-open-3.png */,
+				4F76F63D14619FE8003E944B /* quickopen-file.png */,
+				4F76F63E14619FE8003E944B /* run-build-3.png */,
+				4F76F63F14619FE8003E944B /* user-new-2.png */,
 				4F38BB19145B80F300671269 /* userWaldo.png */,
 				4F2045DE1417B3EF0002AC6A /* bgTextBubbleLC20TC20.png */,
 				4FA83DCC140C685100B63437 /* btnSend.png */,
@@ -548,6 +585,15 @@
 				4F2045DF1417B3EF0002AC6A /* bgTextBubbleLC20TC20.png in Resources */,
 				4F2045F31417C0540002AC6A /* ChatViewController.xib in Resources */,
 				4F38BB1A145B80F300671269 /* userWaldo.png in Resources */,
+				4F76F5FC145EFB90003E944B /* AddUserViewController.xib in Resources */,
+				4F76F61B145F073F003E944B /* MenuViewController.xib in Resources */,
+				4F76F64014619FE8003E944B /* media-seek-backward-3.png in Resources */,
+				4F76F64114619FE8003E944B /* media-skip-forward-10.png in Resources */,
+				4F76F64214619FE8003E944B /* project-open-3.png in Resources */,
+				4F76F64314619FE8003E944B /* quickopen-file.png in Resources */,
+				4F76F64414619FE8003E944B /* run-build-3.png in Resources */,
+				4F76F64514619FE8003E944B /* user-new-2.png in Resources */,
+				4F76F6471461A0EB003E944B /* view-media-artist.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,6 +644,8 @@
 				4F08E1EB1434D1BB008DACEE /* Play.m in Sources */,
 				4F08E1F0143542FC008DACEE /* Quotation.m in Sources */,
 				7E68D6F91456388100DB3684 /* conv.c in Sources */,
+				4F76F5FB145EFB90003E944B /* AddUserViewController.m in Sources */,
+				4F76F61A145F073F003E944B /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,7 +656,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ray Yu (55P7VD7797)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -616,6 +664,7 @@
 				GCC_PREFIX_HEADER = NavTab_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = NavTab;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B6BFE3F8-6E8D-470D-AEA4-6BA9612ADCA0";
 				SDKROOT = iphoneos4.3;
 			};
 			name = Debug;
@@ -662,7 +711,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = "B6BFE3F8-6E8D-470D-AEA4-6BA9612ADCA0";
-				SDKROOT = iphoneos2.2.1;
+				SDKROOT = iphoneos4.3;
 			};
 			name = Release;
 		};

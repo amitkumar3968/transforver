@@ -7,17 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddUserViewController.h"
 #import "UICustomTabViewController.h"
 #import "ChatBubbleView.h"
 #import "AudioRecorder.h"
 #import "Util.h"
 
-@interface RootViewController : UITableViewController {
+@interface RootViewController : UITableViewController <AddUserViewDelegate>{
 	NSArray *accounts;
+    NSString *m_PhoneNumber;
+    NSString *m_UserName;
 	UICustomTabViewController *tabViewController;
 	AudioRecorder *audioRecorder;
     int m_userid;
-	
+	int m_ShowMenu;
 }
 
 - (void) showMenu:(id) sender;
@@ -26,12 +29,21 @@
 - (void) playSound;
 - (void) uploadFile;
 - (NSArray*) fetchRelationships:(int) m_userid;
+- (void)MenuSetting:(id)sender;
+
+- (void) getParameter;
+- (void) saveParameter;
+- (bool) checkUserInfoExist;
+- (void) delUserInfo;
+
 
 @property (nonatomic, retain) NSArray *accounts;
+@property (nonatomic, retain) NSString *m_PhoneNumber;
+@property (nonatomic, retain) NSString *m_UserName;
 @property (nonatomic, retain) UICustomTabViewController *tabViewController;
 @property (nonatomic, retain) AudioRecorder *audioRecorder;
 @property (nonatomic, assign) int m_userid;
-
+@property (nonatomic, assign) int m_ShowMenu;
 
 
 @end

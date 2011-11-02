@@ -15,4 +15,5 @@
 
 + (NSString*) getDocumentPath;
 + (void) copyFile;
++ (void) removeFile:(NSString*)filename;
 @end
