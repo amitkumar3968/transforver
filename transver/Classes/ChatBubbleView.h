@@ -21,6 +21,7 @@
 
 - (IBAction)sendButtonTapped;
 - (IBAction)recordButtonTapped;
+- (IBAction)recordButtonTouchUp;
 
 @end
 
