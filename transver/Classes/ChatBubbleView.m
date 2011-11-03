@@ -202,8 +202,13 @@
     [self resizeViews];
 }
 
+
 - (void)recordButtonTapped {
     NSLog(@"Record");
+}
+
+- (void)recordButtonTouchUp {
+    NSLog(@"Record stop");
 }
 
 #pragma mark -
