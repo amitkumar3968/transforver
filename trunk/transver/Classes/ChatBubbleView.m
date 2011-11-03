@@ -28,6 +28,8 @@
 @synthesize messageTextView=_messageTextView;
 @synthesize sendBtn=_sendBtn;
 @synthesize delegate=_delegate;
+@synthesize audioFile;
+@synthesize audioRecorder;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -53,6 +55,7 @@
     UIImage *img = [UIImage imageNamed:@"bgTextBubbleLC20TC20"];
     UIImage *bg = [img stretchableImageWithLeftCapWidth:20 topCapHeight:20];
     [self.bgImageView setImage:bg];
+    audioRecorder = [[[AudioRecorder	alloc] init] retain];	
 }
 
 /*
@@ -66,6 +69,7 @@
 
 - (void)dealloc
 {
+	[audioRecorder release];
     self.bgImageView = nil;
     self.messageTextView = nil;
     self.sendBtn = nil;
@@ -205,10 +209,13 @@
 
 - (void)recordButtonTapped {
     NSLog(@"Record");
+	[audioRecorder startRecording];
 }
 
 - (void)recordButtonTouchUp {
+	[audioRecorder stopRecording];
     NSLog(@"Record stop");
+	
 }
 
 #pragma mark -
