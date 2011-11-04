@@ -24,6 +24,7 @@
 
 @implementation ChatBubbleView
 
+@synthesize view;
 @synthesize bgImageView=_bgImageView;
 @synthesize messageTextView=_messageTextView;
 @synthesize sendBtn=_sendBtn;
@@ -214,6 +215,63 @@
 - (void)recordButtonTouchUp {
 	[audioRecorder stopRecording];
     NSLog(@"Record stop");
+    CGRect transparentViewFrame = CGRectMake(0.0, 0.0,360.0,480.0);
+    UIView *transparentView = [[UIView alloc] initWithFrame:transparentViewFrame];
+    transparentView.backgroundColor = [UIColor lightGrayColor];
+    transparentView.alpha = 1;
+    transparentView.tag = 1;
+    
+    
+    CGRect menuViewFrame = CGRectMake(120.0, 20.0,180.0,240.0);
+    UIView *menuView = [[UIView alloc] initWithFrame:menuViewFrame];
+    menuView.backgroundColor = [UIColor lightGrayColor];
+    menuView.alpha = 1;
+    [transparentView addSubview:menuView];
+    [self.view addSubview:transparentView];
+    CGRect btnViewFrame = CGRectMake(120.0, 20.0,64.0,64.0);
+    UIButton *settingBtn = [[UIButton alloc] initWithFrame:btnViewFrame];
+    //[settingBtn setTitle:@"Ok" forState:UIControlStateNormal];
+    //settingBtn.backgroundColor = [UIColor blackColor];
+    UIImage *snap_picture = [UIImage imageNamed:@"project-open-3.png"];
+    [settingBtn setBackgroundImage:snap_picture forState:UIControlStateNormal];
+    [settingBtn addTarget:self action:@selector(MenuSetting:) forControlEvents:UIControlEventTouchUpInside];
+    settingBtn.tag = 2;
+    [self.view addSubview:settingBtn];
+    [settingBtn release];
+    
+    btnViewFrame = CGRectMake(220.0, 20.0,64.0,64.0);
+    settingBtn = [[UIButton alloc] initWithFrame:btnViewFrame];
+    snap_picture = [UIImage imageNamed:@"view-media-artist.png"];
+    [settingBtn setBackgroundImage:snap_picture forState:UIControlStateNormal];
+    [settingBtn addTarget:self action:@selector(MenuSetting:) forControlEvents:UIControlEventTouchUpInside];
+    settingBtn.tag = 3;
+    [self.view addSubview:settingBtn];
+    [settingBtn release];
+    
+    btnViewFrame = CGRectMake(120.0, 100.0,64.0,64.0);
+    settingBtn = [[UIButton alloc] initWithFrame:btnViewFrame];
+    snap_picture = [UIImage imageNamed:@"quickopen-file.png"];
+    [settingBtn setBackgroundImage:snap_picture forState:UIControlStateNormal];
+    [settingBtn addTarget:self action:@selector(MenuSetting:) forControlEvents:UIControlEventTouchUpInside];
+    settingBtn.tag = 4;
+    [self.view addSubview:settingBtn];
+    [settingBtn release];
+    
+    btnViewFrame = CGRectMake(220.0, 100,64.0,64.0);
+    settingBtn = [[UIButton alloc] initWithFrame:btnViewFrame];
+    snap_picture = [UIImage imageNamed:@"media-skip-forward-10.png"];
+    [settingBtn setBackgroundImage:snap_picture forState:UIControlStateNormal];
+    [settingBtn addTarget:self action:@selector(MenuSetting:) forControlEvents:UIControlEventTouchUpInside];
+    settingBtn.tag = 5;
+    [self.view addSubview:settingBtn];
+    [settingBtn release];
+    
+    
+    
+    
+    
+    [menuView release];
+    [transparentView release];
 	
 }
 

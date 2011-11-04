@@ -174,7 +174,7 @@
         CGRect transparentViewFrame = CGRectMake(0.0, 0.0,360.0,480.0);
         UIView *transparentView = [[UIView alloc] initWithFrame:transparentViewFrame];
             transparentView.backgroundColor = [UIColor lightGrayColor];
-            transparentView.alpha = 0.3;
+            transparentView.alpha = 1;
         transparentView.tag = 1;
     
     
