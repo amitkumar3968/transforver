@@ -26,7 +26,7 @@
 @interface ChatViewController (Private) 
 
 #define DEFAULT_ROW_HEIGHT 78
-#define HEADER_HEIGHT 45
+#define HEADER_HEIGHT 20
 //- (void)configureCell:(MessageTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 - (void)dismissKeyboardIfNeeded;
 - (void)registerForKeyboardNotifications;
@@ -49,6 +49,7 @@
     //[__fetchedResultsController release];
     self.contact = nil;
     [_listOfItems release];
+    [sectionInfoArray release];
     [super dealloc];
 }
 
@@ -83,14 +84,24 @@
     //Initialize the array.
     _listOfItems = [[NSMutableArray alloc] init];
     
-    NSMutableArray *countriesToLiveInArray = [NSMutableArray arrayWithObjects:@"Iceland", @"Greenland", @"Switzerland", @"Norway", @"New Zealand", @"Greece", @"Rome", @"Ireland", nil];
-    NSDictionary *countriesToLiveInDict = [NSDictionary dictionaryWithObject:countriesToLiveInArray forKey:@"Countries"];
+    //NSMutableArray *countriesToLiveInArray = [NSMutableArray arrayWithObjects:@"Iceland", @"Greenland", @"Switzerland", @"Norway", @"New Zealand", @"Greece", @"Rome", @"Ireland", nil];
+    //NSDictionary *countriesToLiveInDict = [NSDictionary dictionaryWithObject:countriesToLiveInArray forKey:@"Countries"];
     
     
     NSMutableArray *countriesLivedInArray = m_Messages;
-    NSDictionary *countriesLivedInDict = [NSDictionary dictionaryWithObject:countriesLivedInArray forKey:@"Countries"];
+    NSDictionary *countriesLivedInDict = [NSDictionary dictionaryWithObject:countriesLivedInArray forKey:@"Messages"];
     
     //[_listOfItems addObject:countriesToLiveInDict];
+    NSDate *today = [NSDate date];
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"yyyy-MM-dd"];
+    NSString *todayString = [format stringFromDate:today];
+    sectionInfoArray = [[NSMutableArray alloc] init];
+    SectionInfo *sectionInfo = [[SectionInfo alloc] init];			
+    sectionInfo.open = NO;
+    sectionInfo.header = todayString;
+    [self.sectionInfoArray addObject:sectionInfo];
+    [sectionInfo release];
     [_listOfItems addObject:countriesLivedInDict];
     myTimer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(moveACar) userInfo:nil repeats:YES];
     
@@ -165,8 +176,8 @@
      */
 	SectionInfo *sectionInfo = [sectionInfoArray objectAtIndex:section];
     if (!sectionInfo.headerView) {
-		NSString *playName = sectionInfo.play.name;
-        sectionInfo.headerView = [[[SectionHeaderView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.tableView.bounds.size.width, HEADER_HEIGHT) title:playName section:section delegate:self] autorelease];
+		//NSString *playName = sectionInfo.play.name;
+        sectionInfo.headerView = [[[SectionHeaderView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.tableView.bounds.size.width, HEADER_HEIGHT) title:sectionInfo.header section:section delegate:self] autorelease];
     }
     
     return sectionInfo.headerView;
@@ -222,8 +233,10 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     //Number of rows it should expect should be based on the section
     NSDictionary *dictionary = [_listOfItems objectAtIndex:section];
-    NSArray *array = [dictionary objectForKey:@"Countries"];
-    return [array count];
+    NSArray *array = [dictionary objectForKey:@"Messages"];
+    SectionInfo *tmpSect = [sectionInfoArray objectAtIndex:section];
+    NSLog(@"%d",tmpSect.open);
+    return tmpSect.open?[array count]:0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -241,8 +254,9 @@
     
     //First get the dictionary object
     NSDictionary *dictionary = [_listOfItems objectAtIndex:indexPath.section];
-    NSArray *array = [dictionary objectForKey:@"Countries"];
-    NSString *cellValue = [array objectAtIndex:indexPath.row];
+    NSArray *array = [dictionary objectForKey:@"Messages"];
+    NSArray *elementArr = [array objectAtIndex:indexPath.row];
+    //NSString *cellValue = [elementArr objectAtIndex:0];
     //[cell.textLabel setText:cellValue];
     
     [self configureCell:cell atIndexPath:indexPath];
@@ -254,8 +268,9 @@
     
     //ChatMeUser *currentUser = [[ChatMeService sharedChatMeService] currentUser];
     NSDictionary *dictionary = [_listOfItems objectAtIndex:indexPath.section];
-    NSArray *array = [dictionary objectForKey:@"Countries"];
-    NSString *cellValue = [array objectAtIndex:indexPath.row];
+    NSArray *array = [dictionary objectForKey:@"Messages"];
+    NSArray *elementArr = [array objectAtIndex:indexPath.row];
+    NSString *cellValue = [elementArr objectAtIndex:0];
     Message *message = [[Message alloc] init];
     
     message.text = cellValue;
@@ -294,17 +309,16 @@
 #pragma mark - Table view delegate
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
 	
-	if(section == 0)
-		return @"Countries to visit";
-	else
-		return @"Countries visited";
+    SectionInfo *sect = [self.sectionInfoArray objectAtIndex:section];
+    return sect.header;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     //return 20;
     NSDictionary *dictionary = [_listOfItems objectAtIndex:indexPath.section];
-    NSArray *array = [dictionary objectForKey:@"Countries"];
-    NSString *cellValue = [array objectAtIndex:indexPath.row];
+    NSArray *array = [dictionary objectForKey:@"Messages"];
+    NSArray *elementArr = [array objectAtIndex:indexPath.row];
+    NSString *cellValue = [elementArr objectAtIndex:0];
     //Message *message = [_listOfItems objectAtIndex:indexPath.section];
     
     CGRect textRect = CGRectMake(0.0, 0.0, tableView.frame.size.width - kMessageSideSeparation*2 - kMessageImageWidth - kMessageBigSeparation, kMaxHeight);
@@ -383,12 +397,25 @@
                          self.bubbleView.frame = bubbleFrame;
                      }];
 }
-- (NSArray*) fetchMessages:(int) srcid DstID:(int)dstid {
+- (NSMutableArray*) fetchMessages:(int) srcid DstID:(int)dstid {
+    NSDate *today = [NSDate date];
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"yyyy-MM-dd"];
+    
+    NSString *todayString = [format stringFromDate:today];
+    
+    NSDateComponents *dayComponent = [[[NSDateComponents alloc] init] autorelease];
+    dayComponent.day = 1;
+    
+    NSCalendar *theCalendar = [NSCalendar currentCalendar];
+    NSDate *dateToBeIncremented = [theCalendar dateByAddingComponents:dayComponent toDate:today options:0];
+    NSString *tomorrowString = [format stringFromDate:dateToBeIncremented];
     NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/getMessages.php"];
-    NSString *postString = [NSString stringWithFormat:@"srcID=%d&dstID=%d",srcid,dstid];
+    NSString *postString = [NSString stringWithFormat:@"srcID=%d&dstID=%d&fromdate=%@&todate=%@",srcid,dstid,todayString,tomorrowString];
     //NSString *urlString = @"http://www.entalkie.url.tw/getRelationships.php?masterID=1";
     NSData *data = [DBHandler sendReqToUrl:urlString postString:postString];
     NSArray *array = nil;
+    NSMutableArray *element = [[NSMutableArray alloc] init ];
     NSMutableArray *ret = [[NSMutableArray alloc] init ];
 
     if(data)
@@ -398,12 +425,14 @@
         array = [responseString JSONValue];
         [responseString release];
     }
-    [ret addObject:@"get friends"];
+    //[ret addObject:todayString];
     for (NSDictionary *dic in array) {
-        [ret addObject: [dic objectForKey:@"DIALOG_MESSAGE"]];
+        [element addObject: [dic objectForKey:@"DIALOG_MESSAGE"]];
+        [element addObject: [dic objectForKey:@"DIALOG_CREATEDTIME"]];
+        [ret addObject:element];
     }
     //[ret addObject:nil];
-    NSArray *retArr = [[NSArray alloc ]initWithArray:ret];
+    NSMutableArray *retArr = [[NSMutableArray alloc ]initWithArray:ret];
     [ret release];
 
     return retArr;
@@ -456,7 +485,7 @@
         //Update the contact's last message
         [self.contact setLastCommunicationText:message];
         NSDictionary *oldDic = [_listOfItems objectAtIndex:1];
-        NSMutableArray *oldArray = [oldDic objectForKey:@"Countries"];
+        NSMutableArray *oldArray = [oldDic objectForKey:@"Messages"];
         [oldArray addObject:message];
         [self.tableView reloadData];
         //Send to server
@@ -597,10 +626,17 @@
 	
 	sectionInfo.open = YES;
     
+    //[self.sectionInfoArray replaceObjectAtIndex:sectionOpened withObject:sectionInfo];
+    
     /*
      Create an array containing the index paths of the rows to insert: These correspond to the rows for each quotation in the current section.
      */
-    NSInteger countOfRowsToInsert = [sectionInfo.play.quotations count];
+    NSDictionary *dictionary = [_listOfItems objectAtIndex:sectionOpened];
+    NSArray *array = [dictionary objectForKey:@"Messages"];
+    NSInteger countOfRowsToInsert = [array count];
+    //NSString *cellValue = [elementArr objectAtIndex:0];
+
+    //NSInteger countOfRowsToInsert = [sectionInfo.play.quotations count];
     NSMutableArray *indexPathsToInsert = [[NSMutableArray alloc] init];
     for (NSInteger i = 0; i < countOfRowsToInsert; i++) {
         [indexPathsToInsert addObject:[NSIndexPath indexPathForRow:i inSection:sectionOpened]];
@@ -612,7 +648,7 @@
     NSMutableArray *indexPathsToDelete = [[NSMutableArray alloc] init];
     
     NSInteger previousOpenSectionIndex = self.openSectionIndex;
-    if (previousOpenSectionIndex != NSNotFound) {
+    if (previousOpenSectionIndex != NSNotFound && previousOpenSectionIndex != sectionOpened) {
 		
 		SectionInfo *previousOpenSection = [self.sectionInfoArray objectAtIndex:previousOpenSectionIndex];
         previousOpenSection.open = NO;

@@ -21,7 +21,7 @@
     NSMutableArray *listOfItems;
     NSTimer *myTimer;
     NSInteger openSectionIndex;
-    NSMutableArray* sectionInfoArray;
+    NSMutableArray *sectionInfoArray;
     NSMutableArray *m_Messages;
 }
 
@@ -35,7 +35,7 @@
 @property (nonatomic, retain) NSMutableArray *m_Messages;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;
-- (NSArray*) fetchMessages:(int) uid DstID:(int)dstid;
+- (NSMutableArray*) fetchMessages:(int) uid DstID:(int)dstid;
 - (NSArray*) sendMessages:(int) uid;
 - (id) initWithRelation: (int) srcid DstID:(int) dstid;
 - (void)configureCell:(MessageTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath ;
