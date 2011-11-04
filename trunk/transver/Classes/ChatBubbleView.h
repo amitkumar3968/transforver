@@ -15,8 +15,10 @@
     BOOL initialSetupDone;
     NSFileHandle* audioFile;
     AudioRecorder *audioRecorder;
+    UIView *view;
 }
 
+@property (nonatomic, retain) UIView *view;
 @property (nonatomic, retain) IBOutlet UIImageView *bgImageView;
 @property (nonatomic, retain) IBOutlet UITextView *messageTextView;
 @property (nonatomic, retain) IBOutlet UIButton *sendBtn;

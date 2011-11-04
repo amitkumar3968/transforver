@@ -43,6 +43,8 @@
 @synthesize sectionInfoArray;
 @synthesize openSectionIndex;
 @synthesize m_Messages;
+@synthesize m_dstid;
+@synthesize m_srcid;
 
 - (void)dealloc
 {
@@ -75,9 +77,10 @@
     CGRect bubbleFrame = self.bubbleView.frame;
     bubbleFrame.origin.y = CGRectGetHeight(self.view.frame) - CGRectGetHeight(bubbleFrame);
     [self.bubbleView setFrame:bubbleFrame];
+    self.bubbleView.view = self.view;
     [self.bubbleView setDelegate:self];
     //[self fetchMessages:1 ];
-    [self sendMessages:1 ];
+    //[self sendMessages:1 ];
     //Scroll to the bottom
     
     //NSArray *messages = [self.fetchedResultsController fetchedObjects];
@@ -103,7 +106,7 @@
     [self.sectionInfoArray addObject:sectionInfo];
     [sectionInfo release];
     [_listOfItems addObject:countriesLivedInDict];
-    myTimer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(moveACar) userInfo:nil repeats:YES];
+    myTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(ScanMessages) userInfo:nil repeats:YES];
     
     //self.navigationController.navigationBar.delegate = self;
     //Set the title
@@ -117,13 +120,21 @@
 
 - (id) initWithRelation: (int) srcid DstID:(int) dstid {
     NSLog(@"initWithDstName");
+    m_srcid = srcid;
+    m_dstid = dstid;
     m_Messages = [self fetchMessages:srcid DstID:dstid];
     return self;
     
 }
 
-- (void) moveACar {
-    //NSLog(@"move!!");
+- (void) ScanMessages {
+    NSLog(@"Scan Messages!!");
+    m_Messages = [self fetchMessages:m_srcid DstID:m_dstid];
+    NSMutableArray *countriesLivedInArray = m_Messages;
+    NSDictionary *countriesLivedInDict = [NSDictionary dictionaryWithObject:countriesLivedInArray forKey:@"Messages"];
+    [_listOfItems replaceObjectAtIndex:0 withObject:countriesLivedInDict];
+    //[_listOfItems addObject:countriesLivedInDict];
+    [self.tableView reloadData];
 }
 
 - (void)viewDidUnload
@@ -318,6 +329,7 @@
     NSDictionary *dictionary = [_listOfItems objectAtIndex:indexPath.section];
     NSArray *array = [dictionary objectForKey:@"Messages"];
     NSArray *elementArr = [array objectAtIndex:indexPath.row];
+    NSLog(@"index path %d",indexPath.row);
     NSString *cellValue = [elementArr objectAtIndex:0];
     //Message *message = [_listOfItems objectAtIndex:indexPath.section];
     
@@ -415,7 +427,7 @@
     //NSString *urlString = @"http://www.entalkie.url.tw/getRelationships.php?masterID=1";
     NSData *data = [DBHandler sendReqToUrl:urlString postString:postString];
     NSArray *array = nil;
-    NSMutableArray *element = [[NSMutableArray alloc] init ];
+    
     NSMutableArray *ret = [[NSMutableArray alloc] init ];
 
     if(data)
@@ -427,10 +439,13 @@
     }
     //[ret addObject:todayString];
     for (NSDictionary *dic in array) {
+        NSMutableArray *element = [[NSMutableArray alloc] init ];
         [element addObject: [dic objectForKey:@"DIALOG_MESSAGE"]];
         [element addObject: [dic objectForKey:@"DIALOG_CREATEDTIME"]];
         [ret addObject:element];
+        [element release];
     }
+    
     //[ret addObject:nil];
     NSMutableArray *retArr = [[NSMutableArray alloc ]initWithArray:ret];
     [ret release];
@@ -439,8 +454,9 @@
 }
 - (NSArray*) sendMessages:(int) uid {
     NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/sendMessages.php"];
+    NSString *postString = [NSString stringWithFormat:@"srcID=%d&dstID=%d",m_srcid,m_dstid];
     //NSString *urlString = @"http://www.entalkie.url.tw/getRelationships.php?masterID=1";
-    NSData *data = [DBHandler sendReqToUrl:urlString postString:@"srcID=2&dstID=3"];
+    NSData *data = [DBHandler sendReqToUrl:urlString postString:postString];
     NSArray *array = nil;
     NSMutableArray *ret = [[NSMutableArray alloc] init ];
     

@@ -23,8 +23,12 @@
     NSInteger openSectionIndex;
     NSMutableArray *sectionInfoArray;
     NSMutableArray *m_Messages;
+    int m_srcid;
+    int m_dstid;
 }
 
+@property (nonatomic, assign) int m_srcid;
+@property (nonatomic, assign) int m_dstid;
 @property (nonatomic, retain) NSMutableArray* sectionInfoArray;
 @property (nonatomic, assign) NSInteger openSectionIndex;
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
@@ -38,5 +42,6 @@
 - (NSMutableArray*) fetchMessages:(int) uid DstID:(int)dstid;
 - (NSArray*) sendMessages:(int) uid;
 - (id) initWithRelation: (int) srcid DstID:(int) dstid;
-- (void)configureCell:(MessageTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath ;
+- (void)configureCell:(MessageTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+- (void) ScanMessages;
 @end
