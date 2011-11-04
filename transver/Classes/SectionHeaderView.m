@@ -93,7 +93,7 @@
         
         // Create and configure the disclosure button.
         disclosureButton = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
-        disclosureButton.frame = CGRectMake(0.0, 5.0, 35.0, 35.0);
+        disclosureButton.frame = CGRectMake(0.0, 2.0, 20.0, 20.0);
         [disclosureButton setImage:[UIImage imageNamed:@"carat.png"] forState:UIControlStateNormal];
         [disclosureButton setImage:[UIImage imageNamed:@"carat-open.png"] forState:UIControlStateSelected];
         [disclosureButton addTarget:self action:@selector(toggleOpen:) forControlEvents:UIControlEventTouchUpInside];

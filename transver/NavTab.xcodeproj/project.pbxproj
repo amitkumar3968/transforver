@@ -71,6 +71,8 @@
 		4F76F64414619FE8003E944B /* run-build-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76F63E14619FE8003E944B /* run-build-3.png */; };
 		4F76F64514619FE8003E944B /* user-new-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76F63F14619FE8003E944B /* user-new-2.png */; };
 		4F76F6471461A0EB003E944B /* view-media-artist.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76F6461461A0EB003E944B /* view-media-artist.png */; };
+		4F76F652146354C7003E944B /* carat-open.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76F650146354C6003E944B /* carat-open.png */; };
+		4F76F653146354C7003E944B /* carat.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76F651146354C6003E944B /* carat.png */; };
 		4F9BAFBE13EB740C004179FC /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9BAFBD13EB740C004179FC /* AddressBook.framework */; };
 		4F9BB0BC13F2E932004179FC /* 111.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4F9BB0BB13F2E931004179FC /* 111.caf */; };
 		4F9BB0C013F2E9BE004179FC /* mysoundcompressed.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4F9BB0BF13F2E9BE004179FC /* mysoundcompressed.caf */; };
@@ -192,6 +194,8 @@
 		4F76F63E14619FE8003E944B /* run-build-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "run-build-3.png"; sourceTree = "<group>"; };
 		4F76F63F14619FE8003E944B /* user-new-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user-new-2.png"; sourceTree = "<group>"; };
 		4F76F6461461A0EB003E944B /* view-media-artist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "view-media-artist.png"; sourceTree = "<group>"; };
+		4F76F650146354C6003E944B /* carat-open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "carat-open.png"; sourceTree = "<group>"; };
+		4F76F651146354C6003E944B /* carat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carat.png; sourceTree = "<group>"; };
 		4F9BAFBD13EB740C004179FC /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		4F9BB0BB13F2E931004179FC /* 111.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = 111.caf; path = ../111.caf; sourceTree = "<group>"; };
 		4F9BB0BF13F2E9BE004179FC /* mysoundcompressed.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = mysoundcompressed.caf; path = ../mysoundcompressed.caf; sourceTree = "<group>"; };
@@ -435,6 +439,8 @@
 		4F724C9813F75F1D00A6F871 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				4F76F650146354C6003E944B /* carat-open.png */,
+				4F76F651146354C6003E944B /* carat.png */,
 				4F76F6461461A0EB003E944B /* view-media-artist.png */,
 				4F76F63A14619FE8003E944B /* media-seek-backward-3.png */,
 				4F76F63B14619FE8003E944B /* media-skip-forward-10.png */,
@@ -594,6 +600,8 @@
 				4F76F64414619FE8003E944B /* run-build-3.png in Resources */,
 				4F76F64514619FE8003E944B /* user-new-2.png in Resources */,
 				4F76F6471461A0EB003E944B /* view-media-artist.png in Resources */,
+				4F76F652146354C7003E944B /* carat-open.png in Resources */,
+				4F76F653146354C7003E944B /* carat.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

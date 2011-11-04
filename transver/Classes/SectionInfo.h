@@ -57,12 +57,14 @@
 @class Play;
 
 @interface SectionInfo : NSObject {
-	
+    NSString *header;
+    BOOL open;
 }
 
 @property (assign) BOOL open;
 @property (retain) Play* play;
 @property (retain) SectionHeaderView* headerView;
+@property (nonatomic, retain) NSString *header;
 
 @property (nonatomic,retain,readonly) NSMutableArray *rowHeights;
 

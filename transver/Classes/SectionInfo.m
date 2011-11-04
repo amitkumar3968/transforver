@@ -58,7 +58,7 @@
 
 @implementation SectionInfo
 
-@synthesize open, rowHeights, play, headerView;
+@synthesize open, rowHeights, play, headerView, header;
 
 - init {
 	

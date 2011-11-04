@@ -119,8 +119,7 @@
     
     //Inform the delegate if we are resizing
     if (self.frame.size.height != viewHeight) {
-        if (self.delegate && [self.delegate respondsToSelector:@selector(chatBubbleView:willResizeToHeight:)]) 
-        {
+        if (self.delegate && [self.delegate respondsToSelector:@selector(chatBubbleView:willResizeToHeight:)]) {
             [self.delegate chatBubbleView:self willResizeToHeight:viewHeight];
         }
     }
