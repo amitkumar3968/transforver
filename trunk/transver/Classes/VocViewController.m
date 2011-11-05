@@ -36,6 +36,8 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 */
+@synthesize audioFile;
+@synthesize audioRecorder;
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
@@ -50,10 +52,30 @@
     // e.g. self.myOutlet = nil;
 }
 
+- (void)initialSetup {
+    UIImage *img = [UIImage imageNamed:@"bgTextBubbleLC20TC20"];
+    UIImage *bg = [img stretchableImageWithLeftCapWidth:20 topCapHeight:20];
+    //audioRecorder = [[[AudioRecorder	alloc] init] retain];	
+}
+
 
 - (void)dealloc {
     [super dealloc];
 }
 
+- (IBAction)vocodeTapped :(id)sender{
+	NSLog(@"show up!");
+}
+
+- (void)recordButtonTapped {
+    NSLog(@"Record");
+	[audioRecorder startRecording];
+}
+
+- (void)recordButtonTouchUp {
+	[audioRecorder stopRecording];
+    NSLog(@"Record stop");
+
+}
 
 @end
