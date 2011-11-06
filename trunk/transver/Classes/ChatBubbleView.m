@@ -72,7 +72,6 @@
 
 - (void)dealloc
 {
-	[audioRecorder release];
     [m_vocView  release];
     self.bgImageView = nil;
     self.messageTextView = nil;
@@ -217,6 +216,7 @@
 
 - (void)recordButtonTouchUp {
 	[audioRecorder stopRecording];
+	[audioRecorder release];
     NSLog(@"Record stop");
     CGRect transparentViewFrame = CGRectMake(0.0, 0.0,360.0,480.0);
     VocViewController *vView = [[VocViewController alloc] init];
