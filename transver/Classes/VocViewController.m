@@ -12,7 +12,7 @@
 @implementation VocViewController
 
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-/*
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -20,22 +20,21 @@
     }
     return self;
 }
-*/
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
-*/
 
-/*
+
+
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations.
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
-*/
+
 @synthesize audioFile;
 @synthesize audioRecorder;
 
@@ -77,5 +76,18 @@
     NSLog(@"Record stop");
 
 }
+
+- (IBAction) playorig_playback{
+    NSLog(@"Record stop");
+};
+- (IBAction) playtrans_playback{
+    NSLog(@"Record stop");
+};
+- (IBAction) dovocode_playback{};
+//- (IBAction) recordButtonTapped;
+//- (IBAction) recordButtonTouchUp;
+- (IBAction) sendexit_playback{};
+- (IBAction) quit_playback{};
+
 
 @end

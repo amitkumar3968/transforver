@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AudioRecorder.h"
+#import "VocViewController.h"
 
 @protocol ChatBubbleViewDelegate;
 
@@ -15,6 +16,7 @@
     BOOL initialSetupDone;
     NSFileHandle* audioFile;
     AudioRecorder *audioRecorder;
+    VocViewController *m_vocView;
     UIView *view;
 }
 
@@ -25,6 +27,7 @@
 @property (nonatomic, assign) id<ChatBubbleViewDelegate> delegate;
 @property (nonatomic, retain) NSFileHandle *audioFile;
 @property (nonatomic,retain)  AudioRecorder *audioRecorder;
+@property (nonatomic,retain)  VocViewController *m_vocView;
 
 - (IBAction)sendButtonTapped;
 - (IBAction)recordButtonTapped;

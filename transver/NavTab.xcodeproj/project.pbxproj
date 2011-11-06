@@ -35,6 +35,9 @@
 		4F08E1EB1434D1BB008DACEE /* Play.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F08E1EA1434D1BB008DACEE /* Play.m */; };
 		4F08E1ED14353CC4008DACEE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F08E1EC14353CC4008DACEE /* QuartzCore.framework */; };
 		4F08E1F0143542FC008DACEE /* Quotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F08E1EF143542FA008DACEE /* Quotation.m */; };
+		4F1BC6A21464FFDF004F02C1 /* VocViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1BC6A11464FFDF004F02C1 /* VocViewController.m */; };
+		4F1BC6B814658122004F02C1 /* VocoderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F1BC6B714658122004F02C1 /* VocoderViewController.xib */; };
+		4F1BC6CC14658806004F02C1 /* VocViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F1BC6CB14658806004F02C1 /* VocViewController.xib */; };
 		4F2045DF1417B3EF0002AC6A /* bgTextBubbleLC20TC20.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F2045DE1417B3EF0002AC6A /* bgTextBubbleLC20TC20.png */; };
 		4F2045F31417C0540002AC6A /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F2045F21417C0540002AC6A /* ChatViewController.xib */; };
 		4F2045F71417C7100002AC6A /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2045F61417C7100002AC6A /* Contact.m */; };
@@ -153,6 +156,10 @@
 		4F08E1EC14353CC4008DACEE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		4F08E1EE143542F9008DACEE /* Quotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quotation.h; sourceTree = "<group>"; };
 		4F08E1EF143542FA008DACEE /* Quotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quotation.m; sourceTree = "<group>"; };
+		4F1BC6A01464FFD0004F02C1 /* VocViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VocViewController.h; sourceTree = "<group>"; };
+		4F1BC6A11464FFDF004F02C1 /* VocViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VocViewController.m; sourceTree = "<group>"; };
+		4F1BC6B714658122004F02C1 /* VocoderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VocoderViewController.xib; sourceTree = "<group>"; };
+		4F1BC6CB14658806004F02C1 /* VocViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VocViewController.xib; path = Classes/VocViewController.xib; sourceTree = "<group>"; };
 		4F2045DE1417B3EF0002AC6A /* bgTextBubbleLC20TC20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgTextBubbleLC20TC20.png; sourceTree = "<group>"; };
 		4F2045F21417C0540002AC6A /* ChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
 		4F2045F51417C7100002AC6A /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
@@ -277,6 +284,8 @@
 				4F03B2931401315600FEC9D4 /* DBHandler.h */,
 				4F08E1E91434D1BA008DACEE /* Play.h */,
 				4F08E1EA1434D1BB008DACEE /* Play.m */,
+				4F1BC6A11464FFDF004F02C1 /* VocViewController.m */,
+				4F1BC6A01464FFD0004F02C1 /* VocViewController.h */,
 				4F08E1EE143542F9008DACEE /* Quotation.h */,
 				4F08E1EF143542FA008DACEE /* Quotation.m */,
 				4F03B2C41401D05100FEC9D4 /* ChatViewController.h */,
@@ -341,6 +350,7 @@
 				4F724C9913F75F7800A6F871 /* sounds */,
 				4F724C9813F75F1D00A6F871 /* images */,
 				2899E55F0DE3E45000AC0155 /* RootViewController.xib */,
+				4F1BC6B714658122004F02C1 /* VocoderViewController.xib */,
 				4F76F5FA145EFB90003E944B /* AddUserViewController.xib */,
 				4F76F619145F073F003E944B /* MenuViewController.xib */,
 				4F2045F21417C0540002AC6A /* ChatViewController.xib */,
@@ -349,6 +359,7 @@
 				E124FF810F82CD8F008BC374 /* TabViewController.xib */,
 				E176A12B0F8811A200EEE756 /* FavoritesTabView.xib */,
 				E176A2250F893F7C00EEE756 /* MoreTabView.xib */,
+				4F1BC6CB14658806004F02C1 /* VocViewController.xib */,
 				E11501A60F8AB6C600E492FD /* MoreOptionView.xib */,
 				4F2045F81417D2360002AC6A /* chatmodel.xcdatamodeld */,
 			);
@@ -602,6 +613,8 @@
 				4F76F6471461A0EB003E944B /* view-media-artist.png in Resources */,
 				4F76F652146354C7003E944B /* carat-open.png in Resources */,
 				4F76F653146354C7003E944B /* carat.png in Resources */,
+				4F1BC6B814658122004F02C1 /* VocoderViewController.xib in Resources */,
+				4F1BC6CC14658806004F02C1 /* VocViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -654,6 +667,7 @@
 				7E68D6F91456388100DB3684 /* conv.c in Sources */,
 				4F76F5FB145EFB90003E944B /* AddUserViewController.m in Sources */,
 				4F76F61A145F073F003E944B /* MenuViewController.m in Sources */,
+				4F1BC6A21464FFDF004F02C1 /* VocViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
