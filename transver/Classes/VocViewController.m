@@ -12,9 +12,13 @@
 
 @implementation VocViewController
 
-@synthesize audioFile;
-@synthesize audioRecorder;
+//@synthesize audioFile;
+//@synthesize audioRecorder;
 @synthesize localFilePath;
+@synthesize password;
+@synthesize voice_opt;
+@synthesize encrypt;
+
 
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 
@@ -57,7 +61,7 @@
 - (void)initialSetup {
     UIImage *img = [UIImage imageNamed:@"bgTextBubbleLC20TC20"];
     UIImage *bg = [img stretchableImageWithLeftCapWidth:20 topCapHeight:20];
-    audioRecorder = [[[AudioRecorder	alloc] init] retain];	
+    //audioRecorder = [[[AudioRecorder	alloc] init] retain];	
 }
 
 
@@ -65,7 +69,7 @@
     [super dealloc];
 }
 
-- (void) uploadFile:(char *)filepath {
+- (void) uploadFile:(NSString *)filepath {
 	/*
 	 turning the image into a NSData object
 	 getting the image back out of the UIImageView
@@ -77,8 +81,8 @@
 	[UIImage imageNamed:@"phone.png"];
 	//NSData *imageData = UIImageJPEGRepresentation(image.image, 90);
 	//NSString* str =  [[NSBundle mainBundle] pathForResource:@"mysoundcompressed" ofType:@"caf"];
-	NSString *audioFile = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"recording"]; 
-	NSData *wavData = [NSData dataWithContentsOfFile:audioFile];
+	//NSString *audioFile = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"recording"]; 
+	NSData *wavData = [NSData dataWithContentsOfFile:filepath];
 	// setting up the URL to post to
 	NSString *urlString = @"http://www.entalkie.url.tw/upload.php";
 	
@@ -130,25 +134,38 @@
 	audioFile = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"out"];
 	const char *output_filepath=[audioFile UTF8String];
 	audioFile = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"meta"];
-	const char *meta_filepath=[audioFile UTF8String];								
-	int encrypt=1;
-	dovocode(encrypt, output_filepath, meta_filepath, modulator_filepath, carrier_filepath);
-	[self uploadFile:modulator_filepath];
+	const char *meta_filepath=[audioFile UTF8String];
+	int encrypt_para;
+	if (encrypt.on==YES){
+		encrypt_para=1;
+	}
+	else {
+		encrypt_para=0;
+	}	
+	dovocode(encrypt_para, output_filepath, meta_filepath, modulator_filepath, carrier_filepath);
 	///[self uploadFile:recording_filepath];
 }
 
 
-- (IBAction) playorig_playback{
-    NSLog(@"Record stop");
+- (IBAction) playorig_playback:(id)sender{
+    NSLog(@"play orig");
 };
 - (IBAction) playtrans_playback{
+	
     NSLog(@"Record stop");
 };
-- (IBAction) dovocode_playback{};
 //- (IBAction) recordButtonTapped;
 //- (IBAction) recordButtonTouchUp;
-- (IBAction) sendexit_playback{};
-- (IBAction) quit_playback{};
+- (IBAction) sendexit_playback:(id)sender{
+	NSLog(@"QUIT");
+	NSString *recordedFilepath = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"recording"];
+	[self uploadFile:recordedFilepath];
+	NSString *vocodedFilepath = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"out"];
+	[self uploadFile:vocodedFilepath];	
+};
+- (IBAction) quit_playback:(id)sender{
+	[self.view removeFromSuperview];
+};
 
 
 @end

@@ -11,26 +11,23 @@
 #import "Util.h"
 
 @interface VocViewController : UIViewController {
-	IBOutlet UITextField *passwd;
-	IBOutlet UIButton *playorig;
-	IBOutlet UIButton *playtrans;
-	IBOutlet UIButton *record;
-	IBOutlet UIButton *sendexit;
-	IBOutlet UIButton *quit;
+	IBOutlet UITextField *password;
 	IBOutlet UIPickerView *voice_opt;
 	IBOutlet UISwitch *encrypt;
 	NSString* localFilePath;
 }
 
-@property (nonatomic,retain)  AudioRecorder *audioRecorder;
-@property (nonatomic, retain) NSFileHandle *audioFile;
+//@property (nonatomic,retain)  AudioRecorder *audioRecorder;
+//@property (nonatomic, retain) NSFileHandle *audioFile;
 @property (nonatomic, retain) NSString *localFilePath;
+@property (nonatomic, retain) UITextField *password;
+@property (nonatomic, retain) UIPickerView *voice_opt;
+@property (nonatomic, retain) UISwitch *encrypt;
 
-- (IBAction) playorig_playback;
+- (IBAction) playorig_playback:(id)sender;
 - (IBAction) playtrans_playback;
-- (IBAction) dovocode_playback;
-- (IBAction) sendexit_playback;
-- (IBAction) quit_playback;
+- (IBAction) sendexit_playback:(id)sender;
+- (IBAction) quit_playback:(id)sender;
 - (IBAction) vocodeTapped :(id)sender;
 - (void) uploadFile:(char*)filepath;
 
