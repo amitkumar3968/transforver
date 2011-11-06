@@ -19,6 +19,6 @@ extern VINT vocode_modulator_rate;
 extern void (*vocode_start_status_cb)(VINT num_frames);
 extern VBOOL (*vocode_update_status_cb)(VINT frame_no);
 extern void (*vocode_finish_status_cb)(void);
-void conv(void);
+void conv(char *output_filepath, char* vocode_modulator_filename);
 
 

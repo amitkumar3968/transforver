@@ -9,4 +9,4 @@
 #ifndef DOVOCODE_H_INCLUDED
 #define DOVOCODE_H_INCLUDED
 #endif /* DOVOCODE_H_INCLUDED */
-int dovocode(char *filepath);
+int dovocode(int encrypt, char *output_filepath, char *meta_filepath, char *modulator_filepath, char *carrier_filepath);
