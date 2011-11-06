@@ -276,14 +276,19 @@ static void display_error(char *msg)
   exit(1);
 }
 
-int dovocode(char *filepath)
+int dovocode(int encrypt, char *output_filepath, char *meta_filepath, char *modulator_filepath, char *carrier_filepath)
 {
 	vocode_start_status_cb = start_status;
 	vocode_update_status_cb = update_status;
 	vocode_finish_status_cb = finish_status;
 	error_display_cb = display_error;
-	conv();
-  vocode_open_files(filepath);	
+	if(encrypt==1){
+		conv(meta_filepath, modulator_filepath);
+		vocode_open_files(meta_filepath, carrier_filepath, output_filepath);
+	}
+	else {
+		vocode_open_files(modulator_filepath, carrier_filepath, output_filepath);
+	}
   vocode();
   vocode_cleanup();
   return 0;

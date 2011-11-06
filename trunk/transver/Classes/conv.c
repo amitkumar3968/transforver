@@ -21,7 +21,7 @@ static void wave_close_if_open(WAVE_FILE **pp);
 static void allocate_memory(void);
 //static void free_memory(void);
 
-char *vocode_modulator_filename, *vocode_carrier_filename, *vocode_output_filename;
+char *vocode_carrier_filename, *vocode_output_filename;
 size_t vocode_window_length, vocode_window_overlap;
 int vocode_band_count;
 VREAL vocode_volume;
@@ -48,7 +48,7 @@ void (*vocode_finish_status_cb)(void);
 /*
  @Ray:
  */
-void conv(void)
+void conv(char *output_filepath, char* vocode_modulator_filename)
 {
 	/* INI for reading wav file
 	 */
@@ -56,15 +56,14 @@ void conv(void)
 	size_t i;
 	VINT num_frames, frame_no;
 	
-	vocode_modulator_filename = "1.wav";
-	vocode_output_filename = "1rev.wav";
+
 	modulator_file = wave_open(vocode_modulator_filename, &wave_info);
 	if (wave_info.channels != 1)
 		error_display("modulator must be mono (1 channel)");
 	modulator_max_magnitude = (1 << (wave_info.bits - 1)) - 1;
 	modulator_length = wave_info.length;
 	vocode_modulator_rate = wave_info.rate;
-	output_file = wave_create(vocode_output_filename, &wave_info);
+	output_file = wave_create(output_filepath, &wave_info);
 	output_max_magnitude = (1 << (wave_info.bits - 1)) - 1;
 	vocode_window_length = ipow(2, ilog2(vocode_modulator_rate / 15));//15 derived from DEFAULT WINDOW TIME
 	vocode_window_overlap = vocode_window_length / 2;

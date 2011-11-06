@@ -253,19 +253,9 @@ static void complex_to_sample_array(COMPLEX_ARRAY complex_array,
     }
 }
 
-void vocode_open_files(char *filepath)
+void vocode_open_files(char *vocode_modulator_filename, char *vocode_carrier_filename, char *vocode_output_filename)
 {
-	/*
-	 @Ray: hard code paarameters into the program
-	 */
-	NSString *documentPath = [Util getDocumentPath];
-	NSString *modulatorPath=[documentPath stringByAppendingPathComponent:@"recording.aif"];
-	NSString *carrierPath=[documentPath stringByAppendingPathComponent:@"Lion.aif"];
-	NSString *outputPath=[documentPath stringByAppendingPathComponent:@"out.aif"];
-	
-	vocode_modulator_filename = [modulatorPath cStringUsingEncoding:NSUTF8StringEncoding];
-	vocode_carrier_filename = [carrierPath cStringUsingEncoding:NSUTF8StringEncoding];
-	vocode_output_filename = [outputPath cStringUsingEncoding:NSUTF8StringEncoding];;  
+
 	
   WAVE_INFO wave_info;
   carrier_file = wave_open(vocode_carrier_filename, &wave_info);
