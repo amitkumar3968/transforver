@@ -32,6 +32,7 @@
 @synthesize delegate=_delegate;
 @synthesize audioFile;
 @synthesize audioRecorder;
+@synthesize m_vocView;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -72,6 +73,7 @@
 - (void)dealloc
 {
 	[audioRecorder release];
+    [m_vocView  release];
     self.bgImageView = nil;
     self.messageTextView = nil;
     self.sendBtn = nil;
@@ -221,8 +223,8 @@
     //vView.backgroundColor = [UIColor lightGrayColor];
     //vView.alpha = 1;
     //vView.tag = 1;
-	[self.view addSubview:(UIView *)vView.view];
-
+	[self.view addSubview:vView.view];
+    self.m_vocView = vView;
     
     
     
