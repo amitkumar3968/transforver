@@ -263,6 +263,8 @@
     
     // Set up the cell...
     
+	NSString *imagefile = [[NSBundle mainBundle] pathForResource:@"userWaldo" ofType:@"png"];
+	UIImage *ui= [[UIImage alloc] initWithContentsOfFile:imagefile];
     //First get the dictionary object
     NSDictionary *dictionary = [_listOfItems objectAtIndex:indexPath.section];
     NSArray *array = [dictionary objectForKey:@"Messages"];
