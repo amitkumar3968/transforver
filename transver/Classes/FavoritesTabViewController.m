@@ -93,7 +93,6 @@
     NSLog(@"stop recording!");
     NSLog(@"playing...");
     [Util copyFile];
-    dovocode();
     //[self uploadFile:filepath];
 
 }
