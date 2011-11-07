@@ -125,9 +125,7 @@
 }
 
 - (IBAction)vocodeTapped :(id)sender{
-	NSLog(@"show up!");
-	NSLog(@"stop recording!");
-	NSLog(@"playing...");
+
 	NSString *carrierFilename=[NSString stringWithFormat:@"%@.aif",[vocodeCarrierOptions objectAtIndex:vocode_carrier_index]];
 	[Util copyFileWithFilename:carrierFilename];
 	NSString *audioFile = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"recording"];
@@ -152,14 +150,15 @@
 
 
 - (IBAction) playorig_playback:(id)sender{
-	NSLog(@"play orig");
 	NSString *audioFile = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"recording"];
 	[audioRecorder startPlaybackWithFilepath:audioFile];
 };
 
 - (IBAction) playtrans_playback{
-	
-    NSLog(@"Record stop");
+	if(done_vocode==1){
+		NSString *audioFile = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"out"];
+		[audioRecorder startPlaybackWithFilepath:audioFile];
+	}
 };
 
 - (IBAction) sendexit_playback:(id)sender{
@@ -169,6 +168,7 @@
 		[self uploadFile:vocodedFilepath];
 	}
 	if (encrypt.on==YES&&done_vocode==1){
+		NSLog(password);
 		NSLog(@"send password here!");
 	}
 
