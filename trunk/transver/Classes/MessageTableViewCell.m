@@ -14,10 +14,14 @@
 @synthesize messageAlignment;
 @synthesize text;
 @synthesize image;
+@synthesize backgroundImg;
+@synthesize m_date;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    NSString *imagefile = [[NSBundle mainBundle] pathForResource:@"topRow" ofType:@"png"];
+    backgroundImg = [[UIImage alloc] initWithContentsOfFile:imagefile];
     if (self) {
         // Initialization code
     }
@@ -31,14 +35,19 @@
     CGContextRef c = UIGraphicsGetCurrentContext();	
 	CGContextSaveGState(c);
     UIColor *bgColor;
+    CGRect backRect;
     if (messageAlignment == kMessageAlignmentLeft) {
         bgColor = [UIColor whiteColor];
+        backRect = CGRectMake(rect.origin.x+20, rect.origin.y , rect.size.width-20, rect.size.height);
     } else {
         bgColor = [UIColor colorWithHue:215.0/360.0 saturation:0.05 brightness:1.0 alpha:1.0];
+        backRect = CGRectMake(rect.origin.x, rect.origin.y , rect.size.width-20, rect.size.height);
     }
     [bgColor setFill];
     CGContextFillRect(c, rect);
     CGContextRestoreGState(c);
+    
+    [backgroundImg drawInRect:backRect];
     
     //We want to draw the image (if any)
     if (image) {
@@ -47,6 +56,8 @@
         if (messageAlignment == kMessageAlignmentLeft) {
             effectiveOriginY = kMessageSideSeparation;
         } else {
+            NSString *myImagePath =  [[NSBundle mainBundle] pathForResource:@"user" ofType:@"png"];
+            image = [UIImage imageWithContentsOfFile:myImagePath];
             effectiveOriginY = CGRectGetWidth(rect) - kMessageSideSeparation - kMessageImageWidth;
         }
         CGRect imageRect = CGRectMake(effectiveOriginY, kMessageTopSeparation, kMessageImageWidth, kMessageImageWidth);
@@ -72,13 +83,24 @@
     textRect.size.height = textSize.height;
     [text drawInRect:textRect withFont:font lineBreakMode:UILineBreakModeWordWrap alignment:alignment];
      
-    
+    //Draw the date
+    CGRect dateRect;
+    if (messageAlignment == kMessageAlignmentLeft) {
+        dateRect = CGRectMake(210.0, 5.0, 50.0, 50.0);
+        alignment = UITextAlignmentLeft;
+    } else {
+        dateRect = CGRectMake(30.0, 5.0, 50.0, 50.0);
+        alignment = UITextAlignmentRight;
+    }
+    font = [UIFont systemFontOfSize:12.0];
+    [m_date drawInRect:dateRect withFont:font lineBreakMode:UILineBreakModeWordWrap alignment:alignment];
 }
 
 - (void)dealloc
 {
     self.text = nil;
     self.image = nil;
+    self.backgroundImg = nil;
     [super dealloc];
 }
 

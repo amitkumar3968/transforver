@@ -28,6 +28,7 @@
 @synthesize m_ShowMenu;
 @synthesize m_PhoneNumber;
 @synthesize m_UserName;
+@synthesize m_AccountID;
 
 
 - (void)viewDidLoad {
@@ -100,10 +101,13 @@
 	CFRelease(people);
 	CFRelease(peopleMutable);
 	
+    m_AccountID = [[NSMutableArray alloc] init];
+
 	NSArray *array = [self fetchRelationships:m_userid];//[[NSArray alloc] initWithObjects:@"find friends",@"Jerry", @"Raymond", @"John", nil];
 	self.accounts = array;
 	[array release];
-	
+    
+    	
 	[super viewDidLoad];
 
 }
@@ -125,6 +129,8 @@
     [ret addObject:@"get friends"];
     for (NSDictionary *dic in array) {
         [ret addObject: [dic objectForKey:@"USER_NAME"]];
+        NSLog(@"%@",[dic objectForKey:@"RELATION_SLAVEID"]);
+        [m_AccountID addObject: [dic objectForKey:@"RELATION_SLAVEID"]];
     }
     //[ret addObject:nil];
     NSArray *retArr = [[NSArray alloc ]initWithArray:ret];
@@ -574,14 +580,27 @@
     }
     else
     {
-        NSInteger row = [indexPath row];
+        //NSInteger row = [indexPath row];
         UIImage *rowBackground;
         rowBackground = [UIImage imageNamed:@"gradientBackground.png"];
         ((UIImageView *)cell.backgroundView).image = rowBackground;
         cell.textLabel.backgroundColor = [UIColor colorWithRed:.0 green:.2 blue:.2 alpha:.1];
 
     }
-    cell.text = [accounts objectAtIndex:row];
+    cell.textLabel.text = [accounts objectAtIndex:row];
+    UIImageView *MyImageView = [[UIImageView alloc] initWithFrame:CGRectMake(100.0, 33.0, 10.0, 10.0)]; //put your size and coordinates here
+    
+    //MyImageView.image = [UIImage imageNamed:@"carat-open.png"];
+    //[cell.contentView addSubview: MyImageView];
+    //[MyImageView release];
+    UILabel *MyLabel = [[UILabel alloc] initWithFrame:CGRectMake(290.0, 23.0, 19.0, 15.0)];
+    MyLabel.text = @"2";
+    MyLabel.layer.cornerRadius = 5;
+    cell.layer.cornerRadius = 8;
+    cell.layer.masksToBounds = YES;
+    [cell.contentView addSubview: MyLabel];
+    [MyLabel release];
+
     return cell;
 }
 
@@ -610,7 +629,7 @@
         //[self.navigationController pushViewController:self.tabViewController animated:YES];
         //Show the message chat view
         //ChatViewController *chat = [[ChatViewController alloc] initWithNibName:@"ChatViewController" bundle:nil];
-        ChatViewController *chat = [[ChatViewController alloc] initWithRelation:m_userid DstID:2];
+        ChatViewController *chat = [[ChatViewController alloc] initWithRelation:m_userid DstID:[[m_AccountID objectAtIndex:indexPath.row-1] integerValue]];
         //ChatViewController *chat = [[ChatViewController alloc] initWithRelation:1 DstID:2];
                                     
         //[chat setContact:contact];
@@ -672,6 +691,7 @@
 - (void)dealloc {
 	[tabViewController release];
 	[accounts release];
+    [m_AccountID release];
     [super dealloc];
 }
 

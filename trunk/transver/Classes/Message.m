@@ -11,11 +11,13 @@
 
 
 @implementation Message
-@dynamic sentDate;
+@synthesize sentDate;
 @dynamic seenByRecepient;
 @synthesize text;
 @dynamic fromUser;
 @dynamic toUser;
+@synthesize srcUser;
+@synthesize dstUser;
 
 
 
