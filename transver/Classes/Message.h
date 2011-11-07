@@ -15,6 +15,8 @@
 @private
 }
 @property (nonatomic, retain) NSDate * sentDate;
+@property (nonatomic, assign) NSInteger srcUser;
+@property (nonatomic, assign) NSInteger dstUser;
 @property (nonatomic, retain) NSString * text;
 @property (nonatomic, retain) NSNumber * seenByRecepient;
 @property (nonatomic, retain) ChatMeUser * fromUser;

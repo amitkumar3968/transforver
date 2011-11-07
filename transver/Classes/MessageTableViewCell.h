@@ -15,11 +15,14 @@
 #define kMaxHeight              9999.0
 
 @interface MessageTableViewCell : UITableViewCell {
-    
+    UIImage *backgroundImg;
+    NSString *m_date;
 }
 
 @property (nonatomic) NSInteger messageAlignment;
 @property (nonatomic, copy) NSString *text;
+@property (nonatomic, retain) NSString *m_date;
 @property (nonatomic, retain) UIImage *image;
+@property (nonatomic, retain) UIImage *backgroundImg;
 
 @end

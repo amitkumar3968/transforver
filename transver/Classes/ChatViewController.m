@@ -106,7 +106,7 @@
     [self.sectionInfoArray addObject:sectionInfo];
     [sectionInfo release];
     [_listOfItems addObject:countriesLivedInDict];
-    myTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(ScanMessages) userInfo:nil repeats:YES];
+    myTimer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(ScanMessages) userInfo:nil repeats:YES];
     
     //self.navigationController.navigationBar.delegate = self;
     //Set the title
@@ -276,7 +276,51 @@
     
     return cell;
 }
-
+- (NSMutableArray*) fetchMessages:(int) srcid DstID:(int)dstid {
+    NSDate *today = [NSDate date];
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"yyyy-MM-dd"];
+    
+    NSString *todayString = [format stringFromDate:today];
+    
+    NSDateComponents *dayComponent = [[[NSDateComponents alloc] init] autorelease];
+    dayComponent.day = 1;
+    
+    NSCalendar *theCalendar = [NSCalendar currentCalendar];
+    NSDate *dateToBeIncremented = [theCalendar dateByAddingComponents:dayComponent toDate:today options:0];
+    NSString *tomorrowString = [format stringFromDate:dateToBeIncremented];
+    NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/getMessages.php"];
+    NSString *postString = [NSString stringWithFormat:@"srcID=%d&dstID=%d&fromdate=%@&todate=%@",srcid,dstid,todayString,tomorrowString];
+    //NSString *urlString = @"http://www.entalkie.url.tw/getRelationships.php?masterID=1";
+    NSData *data = [DBHandler sendReqToUrl:urlString postString:postString];
+    NSArray *array = nil;
+    
+    NSMutableArray *ret = [[NSMutableArray alloc] init ];
+    
+    if(data)
+    {
+        NSString *responseString = [[NSString alloc] initWithData:data
+                                                         encoding:NSUTF8StringEncoding];
+        array = [responseString JSONValue];
+        [responseString release];
+    }
+    //[ret addObject:todayString];
+    for (NSDictionary *dic in array) {
+        NSMutableArray *element = [[NSMutableArray alloc] init ];
+        [element addObject: [dic objectForKey:@"DIALOG_MESSAGE"]];
+        [element addObject: [dic objectForKey:@"DIALOG_CREATEDTIME"]];
+        [element addObject: [dic objectForKey:@"DIALOG_SOURCEID"]];
+        [element addObject: [dic objectForKey:@"DIALOG_DESTINATIONID"]];
+        [ret addObject:element];
+        [element release];
+    }
+    
+    //[ret addObject:nil];
+    NSMutableArray *retArr = [[NSMutableArray alloc ]initWithArray:ret];
+    [ret release];
+    
+    return retArr;
+}
 - (void)configureCell:(MessageTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     
     //ChatMeUser *currentUser = [[ChatMeService sharedChatMeService] currentUser];
@@ -287,33 +331,52 @@
     Message *message = [[Message alloc] init];
     
     message.text = cellValue;
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     
-    [cell setText:message.text];
+    NSDate *date = [dateFormat dateFromString:[elementArr objectAtIndex:1]];
+    [dateFormat setDateFormat:@"h:mm a"];
+    NSString *str = [dateFormat stringFromDate:date]; 
+    [dateFormat release];
+    
+    message.sentDate = date;
+    message.srcUser = [[elementArr objectAtIndex:2] integerValue];
+    message.dstUser = [[elementArr objectAtIndex:3] integerValue];
+    
+    [cell setText:cellValue];
+    cell.m_date = str;
     //We only set the image if the previous message was from a different user
     BOOL showImage = (indexPath.row == 0);
     if (indexPath.row != 0) {
+        NSDictionary *dictionary = [_listOfItems objectAtIndex:indexPath.section];
+        NSArray *array = [dictionary objectForKey:@"Messages"];
+        NSArray *elementArr = [array objectAtIndex:indexPath.row-1];
+        if ([[elementArr objectAtIndex:2] integerValue] != message.srcUser) {
+            showImage = YES;
+        }
         /*
         Message *prev = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row-1 inSection:indexPath.section]];
         if (prev.fromUser != message.fromUser) {
             showImage = YES;
         }*/
     }
-    NSString *myImagePath =  [[NSBundle mainBundle] pathForResource:@"userWaldo" ofType:@"png"];
-    UIImage *userImg = [UIImage imageWithContentsOfFile:myImagePath];
+    //NSString *myImagePath =  [[NSBundle mainBundle] pathForResource:@"userWaldo" ofType:@"png"];
+    UIImage *userImg = [UIImage imageNamed:@"userWaldo.png"];
     if (showImage) {
-        [cell setImage:userImg];
+        //[cell setImage:userImg];
     } else {
         [cell setImage:nil];
     }
-    [cell setMessageAlignment:kMessageAlignmentLeft];
-    /*
+    userImg = nil;
+    //[cell setMessageAlignment:kMessageAlignmentLeft];
+    
     //Also, if fromUser is us (currentUser) we align it to the left, right otherwise
-    if (message.fromUser == currentUser) {
+    if (message.srcUser == m_srcid) {
         [cell setMessageAlignment:kMessageAlignmentLeft];
     } else {
         [cell setMessageAlignment:kMessageAlignmentRight];
     }
-    */
+    [message release];
     [cell setNeedsDisplay];
 }
 
@@ -411,49 +474,7 @@
                          self.bubbleView.frame = bubbleFrame;
                      }];
 }
-- (NSMutableArray*) fetchMessages:(int) srcid DstID:(int)dstid {
-    NSDate *today = [NSDate date];
-    NSDateFormatter *format = [[NSDateFormatter alloc] init];
-    [format setDateFormat:@"yyyy-MM-dd"];
-    
-    NSString *todayString = [format stringFromDate:today];
-    
-    NSDateComponents *dayComponent = [[[NSDateComponents alloc] init] autorelease];
-    dayComponent.day = 1;
-    
-    NSCalendar *theCalendar = [NSCalendar currentCalendar];
-    NSDate *dateToBeIncremented = [theCalendar dateByAddingComponents:dayComponent toDate:today options:0];
-    NSString *tomorrowString = [format stringFromDate:dateToBeIncremented];
-    NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/getMessages.php"];
-    NSString *postString = [NSString stringWithFormat:@"srcID=%d&dstID=%d&fromdate=%@&todate=%@",srcid,dstid,todayString,tomorrowString];
-    //NSString *urlString = @"http://www.entalkie.url.tw/getRelationships.php?masterID=1";
-    NSData *data = [DBHandler sendReqToUrl:urlString postString:postString];
-    NSArray *array = nil;
-    
-    NSMutableArray *ret = [[NSMutableArray alloc] init ];
 
-    if(data)
-    {
-        NSString *responseString = [[NSString alloc] initWithData:data
-                                                     encoding:NSUTF8StringEncoding];
-        array = [responseString JSONValue];
-        [responseString release];
-    }
-    //[ret addObject:todayString];
-    for (NSDictionary *dic in array) {
-        NSMutableArray *element = [[NSMutableArray alloc] init ];
-        [element addObject: [dic objectForKey:@"DIALOG_MESSAGE"]];
-        [element addObject: [dic objectForKey:@"DIALOG_CREATEDTIME"]];
-        [ret addObject:element];
-        [element release];
-    }
-    
-    //[ret addObject:nil];
-    NSMutableArray *retArr = [[NSMutableArray alloc ]initWithArray:ret];
-    [ret release];
-
-    return retArr;
-}
 - (NSArray*) sendMessages:(int) uid {
     NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/sendMessages.php"];
     NSString *postString = [NSString stringWithFormat:@"srcID=%d&dstID=%d",m_srcid,m_dstid];

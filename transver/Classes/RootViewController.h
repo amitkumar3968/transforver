@@ -19,6 +19,7 @@
     NSString *m_UserName;
 	UICustomTabViewController *tabViewController;
 	AudioRecorder *audioRecorder;
+    NSMutableArray *m_AccountID;
     int m_userid;
 	int m_ShowMenu;
 }
@@ -36,7 +37,7 @@
 - (bool) checkUserInfoExist;
 - (void) delUserInfo;
 
-
+@property (nonatomic, retain) NSMutableArray *m_AccountID;
 @property (nonatomic, retain) NSArray *accounts;
 @property (nonatomic, retain) NSString *m_PhoneNumber;
 @property (nonatomic, retain) NSString *m_UserName;
