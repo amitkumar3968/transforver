@@ -42,6 +42,22 @@
 
 }
 
++ (void) copyFileWithFilename:(NSString *) fileName{
+    NSString *documentsPath = [Util getDocumentPath];
+	
+	NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    if (![fileManager fileExistsAtPath:[documentsPath stringByAppendingPathComponent:fileName]]) {
+		NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:fileName];
+		[fileManager copyItemAtPath:defaultDBPath 
+							 toPath:[documentsPath stringByAppendingPathComponent:fileName] 
+							  error:nil];
+		//firstStart = YES;//only check UserData.sqlite
+	}
+	
+	
+}
+
 + (bool) checkNetConn {
 	
 	Reachability *reachAbility = [Reachability reachabilityWithHostName: @"www.apple.com"];
