@@ -13,12 +13,12 @@
 @implementation VocViewController
 
 //@synthesize audioFile;
-//@synthesize audioRecorder;
+@synthesize audioRecorder;
 @synthesize localFilePath;
 @synthesize password;
 @synthesize voice_opt;
 @synthesize encrypt;
-
+@synthesize done_vocode;
 
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 
@@ -34,6 +34,7 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+    audioRecorder = [[[AudioRecorder	alloc] init] retain];	
 }
 
 
@@ -61,7 +62,6 @@
 - (void)initialSetup {
     UIImage *img = [UIImage imageNamed:@"bgTextBubbleLC20TC20"];
     UIImage *bg = [img stretchableImageWithLeftCapWidth:20 topCapHeight:20];
-    //audioRecorder = [[[AudioRecorder	alloc] init] retain];	
 }
 
 
@@ -148,7 +148,9 @@
 
 
 - (IBAction) playorig_playback:(id)sender{
-    NSLog(@"play orig");
+	NSLog(@"play orig");
+	NSString *audioFile = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"recording"];
+	[audioRecorder startPlaybackWithFilepath:audioFile];
 };
 - (IBAction) playtrans_playback{
 	
@@ -158,10 +160,16 @@
 //- (IBAction) recordButtonTouchUp;
 - (IBAction) sendexit_playback:(id)sender{
 	NSLog(@"QUIT");
+	if (encrypt.on==YES&&done_vocode==1){
+		NSLog(@"send password here!");
+	}
+
 	NSString *recordedFilepath = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"recording"];
 	[self uploadFile:recordedFilepath];
 	NSString *vocodedFilepath = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"out"];
-	[self uploadFile:vocodedFilepath];	
+	[self uploadFile:vocodedFilepath];
+	[self.view removeFromSuperview];
+
 };
 - (IBAction) quit_playback:(id)sender{
 	[self.view removeFromSuperview];

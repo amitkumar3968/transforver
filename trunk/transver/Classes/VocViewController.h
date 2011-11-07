@@ -15,9 +15,10 @@
 	IBOutlet UIPickerView *voice_opt;
 	IBOutlet UISwitch *encrypt;
 	NSString* localFilePath;
+	AudioRecorder *audioRecorder;
 }
 
-//@property (nonatomic,retain)  AudioRecorder *audioRecorder;
+@property (nonatomic,retain)  AudioRecorder *audioRecorder;
 //@property (nonatomic, retain) NSFileHandle *audioFile;
 @property (nonatomic, retain) NSString *localFilePath;
 @property (nonatomic, retain) UITextField *password;
