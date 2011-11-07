@@ -68,7 +68,7 @@
     [super dealloc];
 }
 
-- (void) uploadFile:(NSString *)filepath {
+- (void) uploadFile:(NSString *)fileName {
 	/*
 	 turning the image into a NSData object
 	 getting the image back out of the UIImageView
@@ -80,8 +80,8 @@
 	[UIImage imageNamed:@"phone.png"];
 	//NSData *imageData = UIImageJPEGRepresentation(image.image, 90);
 	//NSString* str =  [[NSBundle mainBundle] pathForResource:@"mysoundcompressed" ofType:@"caf"];
-	//NSString *audioFile = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"recording"]; 
-	NSData *wavData = [NSData dataWithContentsOfFile:filepath];
+	NSString *filePath = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], fileName]; 
+	NSData *wavData = [NSData dataWithContentsOfFile:filePath];
 	// setting up the URL to post to
 	NSString *urlString = @"http://www.entalkie.url.tw/upload.php";
 	
@@ -107,7 +107,7 @@
 	 */
 	NSMutableData *body = [NSMutableData data];
 	[body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-	[body appendData:[[NSString stringWithString:@"Content-Disposition: form-data; name=\"userfile\"; filename=\"star.caf\"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"userfile\"; filename=\"%@\"\r\n",fileName] dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[[NSString stringWithString:@"Content-Type: application/octet-stream\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[NSData dataWithData:wavData]];
 	[body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
@@ -142,6 +142,7 @@
 		encrypt_para=0;
 	}	
 	dovocode(encrypt_para, output_filepath, meta_filepath, modulator_filepath, carrier_filepath);
+	done_vocode=1;
 	///[self uploadFile:recording_filepath];
 }
 
@@ -159,14 +160,16 @@
 //- (IBAction) recordButtonTouchUp;
 - (IBAction) sendexit_playback:(id)sender{
 	NSLog(@"QUIT");
+	if(done_vocode==1){
+		NSString *vocodedFilepath = [NSString stringWithString:@"out.aif"];
+		[self uploadFile:vocodedFilepath];
+	}
 	if (encrypt.on==YES&&done_vocode==1){
 		NSLog(@"send password here!");
 	}
 
-	NSString *recordedFilepath = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"recording"];
+	NSString *recordedFilepath = [NSString stringWithString:@"recording.aif"];
 	[self uploadFile:recordedFilepath];
-	NSString *vocodedFilepath = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"out"];
-	[self uploadFile:vocodedFilepath];
 	[self.view removeFromSuperview];
 
 };
