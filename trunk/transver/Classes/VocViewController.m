@@ -18,6 +18,7 @@
 @synthesize password;
 @synthesize voice_opt;
 @synthesize encrypt;
+@synthesize vocodeCarrierOptions;
 
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 
@@ -32,7 +33,9 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-    [super viewDidLoad];
+	vocodeCarrierOptions = [[NSArray alloc] initWithObjects: @"Lion", @"Piano", nil];
+    vocode_carrier_index=0;
+	[super viewDidLoad];
     audioRecorder = [[[AudioRecorder	alloc] init] retain];	
 }
 
@@ -125,10 +128,11 @@
 	NSLog(@"show up!");
 	NSLog(@"stop recording!");
 	NSLog(@"playing...");
-	[Util copyFile];
+	NSString *carrierFilename=[NSString stringWithFormat:@"%@.aif",[vocodeCarrierOptions objectAtIndex:vocode_carrier_index]];
+	[Util copyFileWithFilename:carrierFilename];
 	NSString *audioFile = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"recording"];
 	const char *modulator_filepath = [audioFile UTF8String];
-	audioFile = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"Lion"];
+	audioFile = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], [vocodeCarrierOptions objectAtIndex:vocode_carrier_index]];
 	const char *carrier_filepath = [audioFile UTF8String];
 	audioFile = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"out"];
 	const char *output_filepath=[audioFile UTF8String];
@@ -152,12 +156,12 @@
 	NSString *audioFile = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"recording"];
 	[audioRecorder startPlaybackWithFilepath:audioFile];
 };
+
 - (IBAction) playtrans_playback{
 	
     NSLog(@"Record stop");
 };
-//- (IBAction) recordButtonTapped;
-//- (IBAction) recordButtonTouchUp;
+
 - (IBAction) sendexit_playback:(id)sender{
 	NSLog(@"QUIT");
 	if(done_vocode==1){
@@ -173,9 +177,33 @@
 	[self.view removeFromSuperview];
 
 };
+
 - (IBAction) quit_playback:(id)sender{
 	[self.view removeFromSuperview];
 };
 
+//UIPickerViewDeligate
+- (NSString *)pickerView:(UIPickerView *)pickerView 
+		titleForRow:(NSInteger)row 
+			forComponent:(NSInteger)component
+{
+	return [vocodeCarrierOptions objectAtIndex:row];
+}
+- (void)pickerView:(UIPickerView *)pickerView 
+	  didSelectRow:(NSInteger)row 
+	   inComponent:(NSInteger)component
+{
+	vocode_carrier_index=row;
+}
 
+//UIPickerViewDatasource
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+	return 1;
+}
+- (NSInteger)pickerView:(UIPickerView *)pickerView 
+numberOfRowsInComponent:(NSInteger)component
+{
+	return vocodeCarrierOptions.count;
+}
 @end
