@@ -16,6 +16,7 @@
 	IBOutlet UISwitch *encrypt;
 	NSString* localFilePath;
 	AudioRecorder *audioRecorder;
+	int done_vocode;
 }
 
 @property (nonatomic,retain)  AudioRecorder *audioRecorder;
