@@ -19,7 +19,7 @@
     char path[512];
     [self getFilename:path maxLenth:sizeof path];
     fileURL = CFURLCreateFromFileSystemRepresentation(NULL, (UInt8*)path, strlen(path), false);
-    
+
     // Init state variables
     playState.playing = false;
     recordState.recording = false;
@@ -265,6 +265,60 @@ void AudioOutputCallback(
     
     [self setupAudioFormat:&playState.dataFormat];
     
+    OSStatus status;
+	//NSLog([fileURL description]);
+    status = AudioFileOpenURL(fileURL, 0x01, kAudioFileAIFFType, &playState.audioFile);
+    if(status == 0)
+    {
+        status = AudioQueueNewOutput(
+									 &playState.dataFormat,
+									 AudioOutputCallback,
+									 &playState,
+									 CFRunLoopGetCurrent(),
+									 kCFRunLoopCommonModes,
+									 0,
+									 &playState.queue);
+        
+        if(status == 0)
+        {
+            playState.playing = true;
+            for(int i = 0; i < NUM_BUFFERS && playState.playing; i++)
+            {
+                if(playState.playing)
+                {
+                    AudioQueueAllocateBuffer(playState.queue, 16000, &playState.buffers[i]);
+                    AudioOutputCallback(&playState, playState.queue, playState.buffers[i]);
+                }
+            }
+			
+            if(playState.playing)
+            {
+                status = AudioQueueStart(playState.queue, NULL);
+                if(status == 0)
+                {
+					NSLog(@"Playing..");
+                    //labelStatus.text = @"Playing";
+                }
+            }
+        }        
+    }
+    
+    if(status != 0)
+    {
+        [self stopPlayback];
+		NSLog(@"Play Failed.");
+        //labelStatus.text = @"Play failed";
+    }
+}
+
+- (void)startPlaybackWithFilepath:(NSString *)filePath
+{
+    playState.currentPacket = 0;
+    
+    [self setupAudioFormat:&playState.dataFormat];
+	const char *path_buffer=[filePath UTF8String];
+	const char *path=[filePath UTF8String];
+    fileURL = CFURLCreateFromFileSystemRepresentation(NULL, (UInt8*)path_buffer, strlen(path_buffer), false); 
     OSStatus status;
 	//NSLog([fileURL description]);
     status = AudioFileOpenURL(fileURL, 0x01, kAudioFileAIFFType, &playState.audioFile);
