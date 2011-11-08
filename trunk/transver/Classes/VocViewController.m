@@ -224,9 +224,16 @@
 
 	NSString *recordedFilepath = [NSString stringWithString:@"recording.aif"];
 	[self uploadFile:recordedFilepath];
+    NSDate *date = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"YYYY_MM_dd HH_MM_ss"];
+    NSString *dateString = [dateFormat stringFromDate:date];  
+    [dateFormat release];
+    //time_t unixTime = [[NSDate date] timeIntervalSince1970];
+    NSLog(@"%@",dateString);
     if (self.delegate && [self.delegate respondsToSelector:@selector(sendVoice:vocode:pass:)]) 
     {
-        [self.delegate sendVoice:@"" vocode:@"" pass:@""];
+        [self.delegate sendVoice:@"recording.aif" vocode:@"out.aif" pass:@""];
     }
 	[self.view removeFromSuperview];
 
