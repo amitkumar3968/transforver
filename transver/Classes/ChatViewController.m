@@ -398,10 +398,13 @@ NSString *downloadfilename;
     //[cell setMessageAlignment:kMessageAlignmentLeft];
     
     //Also, if fromUser is us (currentUser) we align it to the left, right otherwise
+    CGRect frame;
     if (message.srcUser == m_srcid) {
         [cell setMessageAlignment:kMessageAlignmentLeft];
+        frame = CGRectMake(55.0, 15.0, 150.0, 5.0);
     } else {
         [cell setMessageAlignment:kMessageAlignmentRight];
+        frame = CGRectMake(85.0, 15.0, 150.0, 5.0);
     }
     [message release];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
@@ -421,7 +424,7 @@ NSString *downloadfilename;
         [cell addSubview:settingBtn];
         [settingBtn release];
         
-        CGRect frame = CGRectMake(55.0, 15.0, 150.0, 5.0);
+        
         UISlider *slider = [[UISlider alloc] initWithFrame:frame];
         //[slider addTarget:self action:@selector(sliderAction:) forControlEvents:UIControlEventValueChanged];
         [slider setBackgroundColor:[UIColor clearColor]];
