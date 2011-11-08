@@ -26,6 +26,7 @@
 @synthesize vocodeCarrierOptions;
 @synthesize delegate;
 
+
 //@Ray add for AudioPlayer UI
 @synthesize player,slider,increaseSound,timeSlider,timer;
 
@@ -212,14 +213,17 @@
 };
 
 - (IBAction) sendexit_playback:(id)sender{
-	NSLog(@"QUIT");
-	if(done_vocode==1){
-		NSString *vocodedFilepath = [NSString stringWithString:@"out.aif"];
+	//NSMutableString *randomFilename = [self genRandStringLength:23];
+	
+	//NSString *originalFilename = [NSString stringWithFormat:@"%@%@", randomFilename, @"recording.aif"];
+	/*if(done_vocode==1){
+		randomFilename = [self genRandStringLength:23];
+		NSString *vocodedFilename = [NSString stringWithFormat:@"%@%@", randomFilename, @"out.aif"];
 		[self uploadFile:vocodedFilepath];
-	}
+	}*/
+	
 	if (encrypt.on==YES&&done_vocode==1){
-		NSLog(@"%@",password);
-		NSLog(@"send password here!");
+
 	}
 
 	NSString *recordedFilepath = [NSString stringWithString:@"recording.aif"];
@@ -229,11 +233,17 @@
     [dateFormat setDateFormat:@"YYYY_MM_dd HH_MM_ss"];
     NSString *dateString = [dateFormat stringFromDate:date];  
     [dateFormat release];
+	NSMutableString *randomFilename = [self genRandStringLength:23];
+	NSString *vocodedFilename = [NSString stringWithFormat:@"%@%@%@", randomFilename, dateString, @"out.aif"];
+	randomFilename = [self genRandStringLength:23];
+	
+	NSString *originalFilename = [NSString stringWithFormat:@"%@%@%@", randomFilename, dateString, @"recording.aif"];
+	
     //time_t unixTime = [[NSDate date] timeIntervalSince1970];
     NSLog(@"%@",dateString);
     if (self.delegate && [self.delegate respondsToSelector:@selector(sendVoice:vocode:pass:)]) 
     {
-        [self.delegate sendVoice:@"recording.aif" vocode:@"out.aif" pass:@""];
+        [self.delegate sendVoice:originalFilename vocode:vocodedFilename pass:password.text];
     }
 	[self.view removeFromSuperview];
 
@@ -306,5 +316,17 @@ numberOfRowsInComponent:(NSInteger)component
 	player.volume = increaseSound;
 }
 
+
+-(NSMutableString *) genRandStringLength: (int) len
+{
+	NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    NSMutableString *randomString = [NSMutableString stringWithCapacity: len];
+	
+    for (int i=0; i<len; i++) {
+		[randomString appendFormat: @"%c", [letters characterAtIndex: rand()%[letters length]] ];
+	}
+	return randomString;
+}
+		 
 
 @end

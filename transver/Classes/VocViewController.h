@@ -26,6 +26,7 @@
 	AudioRecorder *audioRecorder;
 	int done_vocode;
 	int vocode_carrier_index;
+	// elements for random string generator	
 	
 	//Ray add for AudioPlayer UI
 	AVAudioPlayer *player ;
@@ -34,7 +35,7 @@
 	IBOutlet UIButton *pauseButton;        //Pause button to pause song 
 	IBOutlet UIButton *stopButton;          //stop button to start song from starting 
 	double increaseSound;                      //to hold the value of the slider
- 	NSTimer *timer;
+ 	NSTimer *timer;	
 	//============================
     id <VocSendVoiceDelegate> delegate;
 }
@@ -53,6 +54,7 @@
 - (IBAction) quit_playback:(id)sender;
 - (IBAction) vocodeTapped :(id)sender;
 - (void) uploadFile:(char*)filepath;
++ (NSString*) genRandStringLength:(int)len;
 
 //@Ray add for AudioPlayer UI
 @property(retain,nonatomic)AVAudioPlayer *player;
