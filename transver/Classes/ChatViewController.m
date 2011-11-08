@@ -47,6 +47,7 @@
 @synthesize m_srcid;
 @synthesize m_DstName;
 
+NSString *downloadfilename;
 - (void)dealloc
 {
     //[__fetchedResultsController release];
@@ -322,8 +323,17 @@
         else
         {
             //to download the voice file
-            [self downloadToFile:@"recording.aif"];
-            [element addObject: [dic objectForKey:@"DIALOG_VOICE"]];
+            if( [dic objectForKey:@"DIALOG_VOICE_ENCRYPT"] )
+            {
+                [self downloadToFile:[dic objectForKey:@"DIALOG_VOICE_ENCRYPT"]];
+                downloadfilename = [dic objectForKey:@"DIALOG_VOICE_ENCRYPT"];
+                [element addObject: [dic objectForKey:@"DIALOG_VOICE_ENCRYPT"]];
+            }else
+            {
+                [self downloadToFile:[dic objectForKey:@"DIALOG_VOICE"]];
+                downloadfilename = [dic objectForKey:@"DIALOG_VOICE"];
+                [element addObject: [dic objectForKey:@"DIALOG_VOICE"]];
+            }
         }
         [element addObject: [dic objectForKey:@"DIALOG_CREATEDTIME"]];
         [element addObject: [dic objectForKey:@"DIALOG_SOURCEID"]];
@@ -461,7 +471,12 @@
 {
     NSLog(@"selected row:%d",indexPath.row);
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    
+    NSDictionary *dictionary = [_listOfItems objectAtIndex:indexPath.section];
+    NSArray *array = [dictionary objectForKey:@"Messages"];
+    NSArray *elementArr = [array objectAtIndex:indexPath.row];
+    NSString *cellValue = [elementArr objectAtIndex:0];
+    NSLog(@"selected value:%@",cellValue);
+    [self playSound:cellValue];
 }
 
 #pragma mark -
@@ -617,20 +632,48 @@ NSURLConnection* connection;
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {   //檔案下載完成
     //取得可讀寫的路徑
-	NSArray *pathList = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	NSString *path = [pathList objectAtIndex:0];
-    
+	//NSArray *pathList = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	//NSString *path = [pathList objectAtIndex:0];
+    NSString *documentsPath = [Util getDocumentPath];
 	//加上檔名
-	path = [path stringByAppendingPathComponent: @"star.aif"];
-    NSLog(@"儲存路徑：%@", path);
+	documentsPath = [documentsPath stringByAppendingPathComponent: downloadfilename];
+    NSLog(@"儲存路徑：%@", documentsPath);
 	
 	//寫入檔案
-    [tempData writeToFile:path atomically:NO];
+    [tempData writeToFile:documentsPath atomically:NO];
     [tempData release];
     tempData = nil;
     
     //img.image = [UIImage imageWithContentsOfFile:path]; //顯示圖片在畫面中
 }
+
+- (void) playSound:(NSString *) filename {
+	/*NSLog(@"Playing Sound!");
+     [audioRecorder startPlayback];*/
+	system("ls");
+	SystemSoundID soundID = 0;
+	//NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *documentsPath = [Util getDocumentPath];
+	NSString *audioPath = [documentsPath stringByAppendingPathComponent:filename];
+    NSString *filePath = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"star"];
+	//NSString *filePath = [[NSBundle mainBundle] resourcePath];// stringByAppendingPathComponent:@"123.wav"];
+	NSLog(documentsPath);
+	NSLog(filePath);
+	NSURL* tmpUrl = [[NSURL alloc] initFileURLWithPath:audioPath ];
+	CFURLRef soundFileURL = (CFURLRef)tmpUrl;
+	OSStatus errorCode = AudioServicesCreateSystemSoundID(soundFileURL, &soundID);
+	if (errorCode != 0) {
+		// Handle failure here
+	}
+	else
+	{
+		AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+		AudioServicesPlaySystemSound(soundID);
+	}
+    
+	[tmpUrl release];
+}
+
 
 #pragma mark ChatBubbleViewDelegate methods
 
