@@ -599,7 +599,7 @@
     MyLabel.layer.cornerRadius = 5;
     cell.layer.cornerRadius = 8;
     cell.layer.masksToBounds = YES;
-    [cell.contentView addSubview: MyLabel];
+    //[cell.contentView addSubview: MyLabel];
     [MyLabel release];
 
     return cell;
