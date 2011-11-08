@@ -6,6 +6,8 @@
 //  Copyright 2011 OneZeroWare. All rights reserved.
 //
 
+#import <AVFoundation/AVFoundation.h>
+#import <AudioToolbox/AudioToolbox.h>
 #import "ChatViewController.h"
 #import "MessageTableViewCell.h"
 #import "Message.h"
@@ -477,9 +479,9 @@ NSString *downloadfilename;
     NSDictionary *dictionary = [_listOfItems objectAtIndex:indexPath.section];
     NSArray *array = [dictionary objectForKey:@"Messages"];
     NSArray *elementArr = [array objectAtIndex:indexPath.row];
-    NSString *cellValue = [elementArr objectAtIndex:0];
+    NSString *cellValue = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], [elementArr objectAtIndex:0]];
     NSLog(@"play selected value:%@",cellValue);
-    [self playSound:cellValue];
+    [self audioFdPlay:cellValue];
 }
 
 #pragma mark -
@@ -660,8 +662,7 @@ NSURLConnection* connection;
 	NSString *audioPath = [documentsPath stringByAppendingPathComponent:filename];
     NSString *filePath = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"star"];
 	//NSString *filePath = [[NSBundle mainBundle] resourcePath];// stringByAppendingPathComponent:@"123.wav"];
-	NSLog(documentsPath);
-	NSLog(filePath);
+
 	NSURL* tmpUrl = [[NSURL alloc] initFileURLWithPath:audioPath ];
 	CFURLRef soundFileURL = (CFURLRef)tmpUrl;
 	OSStatus errorCode = AudioServicesCreateSystemSoundID(soundFileURL, &soundID);
@@ -920,6 +921,26 @@ NSURLConnection* connection;
     }
     self.openSectionIndex = NSNotFound;
 }
+
+- (void) audioFdPlay:(NSString *)filePath{
+	//NSString *audioFile = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"recording"];
+	//[audioRecorder startPlaybackWithFilepath:audioFile];
+	
+	//@ Ray added for audio player UI
+	
+	//int a=0;
+	//initialize string to the path of the song in the resource folder
+	//NSString *myMusic = [NSString stringWithFormat:@"%@", filePath];
+	NSString *stringEscapedMyMusic = [filePath stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+	AVAudioPlayer *cellPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:[NSURL fileURLWithPath:stringEscapedMyMusic] error:NULL];
+	cellPlayer.numberOfLoops = 0;
+	cellPlayer.volume = .5;
+	//timeSlider.maximumValue = player.duration;
+	//timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(timeLoader) userInfo:nil repeats:YES];
+	[cellPlayer play];
+	[cellPlayer dealloc];
+	//==========================
+};
 
 #pragma mark VocSendVoiceDelegate methods
 
