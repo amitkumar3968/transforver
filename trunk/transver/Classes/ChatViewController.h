@@ -46,4 +46,5 @@
 - (void)configureCell:(MessageTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 - (void) ScanMessages;
 - (void)downloadToFile:(NSString *)filename;
+- (void) playSound:(NSString *) filename;
 @end
