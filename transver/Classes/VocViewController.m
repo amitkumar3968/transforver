@@ -179,7 +179,7 @@
 
 	//@ Ray added for audio player UI	
 	[player dealloc];
-	int a=0;
+	//int a=0;
 	//initialize string to the path of the song in the resource folder
 	NSString *myMusic = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"recording"];
 	NSString *stringEscapedMyMusic = [myMusic stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];

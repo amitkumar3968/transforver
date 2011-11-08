@@ -81,15 +81,21 @@
     CGRect textRect = CGRectMake(effectiveOriginY, kMessageTopSeparation, rect.size.width - kMessageSideSeparation*2 - kMessageImageWidth - kMessageBigSeparation, kMaxHeight);
     CGSize textSize = [text sizeWithFont:font constrainedToSize:textRect.size lineBreakMode:UILineBreakModeWordWrap];
     textRect.size.height = textSize.height;
-    [text drawInRect:textRect withFont:font lineBreakMode:UILineBreakModeWordWrap alignment:alignment];
-     
+    
+    NSRange aRange = [text rangeOfString:@"aif"];
+    if (aRange.location ==NSNotFound) {
+        NSLog(@"string not found");
+        [text drawInRect:textRect withFont:font lineBreakMode:UILineBreakModeWordWrap alignment:alignment];
+    } 
+    
+    
     //Draw the date
     CGRect dateRect;
     if (messageAlignment == kMessageAlignmentLeft) {
-        dateRect = CGRectMake(210.0, 5.0, 50.0, 50.0);
+        dateRect = CGRectMake(210.0, 5.0, 60.0, 50.0);
         alignment = UITextAlignmentLeft;
     } else {
-        dateRect = CGRectMake(30.0, 5.0, 50.0, 50.0);
+        dateRect = CGRectMake(30.0, 5.0, 60.0, 50.0);
         alignment = UITextAlignmentRight;
     }
     font = [UIFont systemFontOfSize:12.0];
@@ -100,7 +106,8 @@
 {
     self.text = nil;
     self.image = nil;
-    self.backgroundImg = nil;
+    [backgroundImg release];
+    self.m_date = nil;
     [super dealloc];
 }
 
