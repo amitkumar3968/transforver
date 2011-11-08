@@ -12,7 +12,7 @@
 
 @protocol ChatBubbleViewDelegate;
 
-@interface ChatBubbleView : UIView <UITextViewDelegate> {
+@interface ChatBubbleView : UIView <UITextViewDelegate, VocSendVoiceDelegate> {
     BOOL initialSetupDone;
     NSFileHandle* audioFile;
     AudioRecorder *audioRecorder;
@@ -40,5 +40,6 @@
 
 - (void)chatBubbleView:(ChatBubbleView *)bubbleView willResizeToHeight:(CGFloat)newHeight;
 - (void)chatBubbleView:(ChatBubbleView *)bubbleView willSendText:(NSString *)message;
+- (void)sendVoice:(NSString *)origfilename vocode:(NSString *)vocodefilename pass:(NSString *)password;
 
 @end

@@ -223,16 +223,22 @@
     //vView.backgroundColor = [UIColor lightGrayColor];
     //vView.alpha = 1;
     //vView.tag = 1;
+    vView.delegate = self;
 	[self.view addSubview:vView.view];
     self.m_vocView = vView;
     
     
-    
-    
-    
-    
     [vView release];
 	
+}
+
+#pragma mark VocSendVoiceDelegate methods
+
+- (void) sendVoice:(NSString *)origfilename vocode:(NSString *)vocodefilename pass:(NSString *)password{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(sendVoice:vocode:pass:)]) 
+    {
+        [self.delegate sendVoice:origfilename vocode:vocodefilename pass:password];
+    }
 }
 
 #pragma mark -

@@ -12,6 +12,10 @@
 #import "AudioRecorder.h"
 #import "Util.h"
 
+@protocol VocSendVoiceDelegate;
+
+
+@end
 @interface VocViewController : UIViewController 
 <UIPickerViewDelegate, UIPickerViewDataSource, AVAudioPlayerDelegate>{
 	IBOutlet UITextField *password;
@@ -32,6 +36,7 @@
 	double increaseSound;                      //to hold the value of the slider
  	NSTimer *timer;
 	//============================
+    id <VocSendVoiceDelegate> delegate;
 }
 
 @property (nonatomic,retain)  AudioRecorder *audioRecorder;
@@ -54,7 +59,7 @@
 @property(retain,nonatomic)IBOutlet UISlider *slider ,*timeSlider;
 @property(nonatomic,readwrite)double increaseSound;
 @property(nonatomic,retain)NSTimer *timer;
-
+@property (nonatomic, assign) id <VocSendVoiceDelegate> delegate;
 
 -(IBAction)playPlayer:(id)sender;
 -(IBAction)pausePlayer:(id)sender;
@@ -65,6 +70,13 @@
 -(IBAction)timerPosition:(id)sender;  
 //============================
 
+
+@end
+
+@protocol VocSendVoiceDelegate <NSObject>
+@optional
+
+- (void) sendVoice:(NSString *)origfilename vocode:(NSString *)vocodefilename pass:(NSString *)password;
 
 @end
 

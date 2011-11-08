@@ -45,6 +45,7 @@
 @synthesize m_Messages;
 @synthesize m_dstid;
 @synthesize m_srcid;
+@synthesize m_DstName;
 
 - (void)dealloc
 {
@@ -70,7 +71,7 @@
     [super viewDidLoad];
     NSLog(@"viewDidLoad %@", m_Messages);
     
-    //self.title = [self.contact.contactUser fullName];
+    self.title = m_DstName;
 
     //Position the bubbleView on the bottom
     [self.view addSubview:self.bubbleView];
@@ -743,6 +744,26 @@
         [indexPathsToDelete release];
     }
     self.openSectionIndex = NSNotFound;
+}
+
+#pragma mark VocSendVoiceDelegate methods
+
+- (void) sendVoice:(NSString *)origfilename vocode:(NSString *)vocodefilename pass:(NSString *)password{
+    NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/sendMessages.php"];
+    NSString *postString = [NSString stringWithFormat:@"srcID=%d&dstID=%d&type=1&orig=%@&vocode=%@",m_srcid,m_dstid,origfilename,vocodefilename];
+    //NSString *urlString = @"http://www.entalkie.url.tw/getRelationships.php?masterID=1";
+    NSData *data = [DBHandler sendReqToUrl:urlString postString:postString];
+    NSArray *array = nil;
+    NSMutableArray *ret = [[NSMutableArray alloc] init ];
+    
+    if(data)
+    {
+        NSString *responseString = [[NSString alloc] initWithData:data
+                                                         encoding:NSUTF8StringEncoding];
+        array = [responseString JSONValue];
+        [responseString release];
+    }
+    
 }
 
 @end
