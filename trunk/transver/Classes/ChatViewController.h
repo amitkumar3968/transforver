@@ -40,7 +40,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;
 - (NSMutableArray*) fetchMessages:(int) uid DstID:(int)dstid;
-- (NSArray*) sendMessages:(int) uid;
+- (NSArray*) sendMessages:(NSString *) message;
 - (id) initWithRelation: (int) srcid DstID:(int) dstid;
 - (void)configureCell:(MessageTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 - (void) ScanMessages;

@@ -475,9 +475,9 @@
                      }];
 }
 
-- (NSArray*) sendMessages:(int) uid {
+- (NSArray*) sendMessages:(NSString *) message {
     NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/sendMessages.php"];
-    NSString *postString = [NSString stringWithFormat:@"srcID=%d&dstID=%d",m_srcid,m_dstid];
+    NSString *postString = [NSString stringWithFormat:@"srcID=%d&dstID=%d&type=0&message=%@",m_srcid,m_dstid,message];
     //NSString *urlString = @"http://www.entalkie.url.tw/getRelationships.php?masterID=1";
     NSData *data = [DBHandler sendReqToUrl:urlString postString:postString];
     NSArray *array = nil;
@@ -520,13 +520,15 @@
 - (void)chatBubbleView:(ChatBubbleView *)bubbleView willSendText:(NSString *)message {
     
     if (message && [message length] > 0) {
-        
+        [self sendMessages:message];
+        /*
         //Update the contact's last message
         [self.contact setLastCommunicationText:message];
         NSDictionary *oldDic = [_listOfItems objectAtIndex:1];
         NSMutableArray *oldArray = [oldDic objectForKey:@"Messages"];
         [oldArray addObject:message];
-        [self.tableView reloadData];
+         */
+        [self ScanMessages];
         //Send to server
         //ChatMeUser *currentUser = [[ChatMeService sharedChatMeService] currentUser];
         //[[ChatMeService sharedChatMeService] sendMessage:message fromUser:currentUser toUser:self.contact.contactUser];
