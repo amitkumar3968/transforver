@@ -308,7 +308,10 @@
     //[ret addObject:todayString];
     for (NSDictionary *dic in array) {
         NSMutableArray *element = [[NSMutableArray alloc] init ];
-        [element addObject: [dic objectForKey:@"DIALOG_MESSAGE"]];
+        if( [dic objectForKey:@"DIALOG_TYPE"] == 0)
+            [element addObject: [dic objectForKey:@"DIALOG_MESSAGE"]];
+        else
+            [element addObject: [dic objectForKey:@"DIALOG_VOICE"]];
         [element addObject: [dic objectForKey:@"DIALOG_CREATEDTIME"]];
         [element addObject: [dic objectForKey:@"DIALOG_SOURCEID"]];
         [element addObject: [dic objectForKey:@"DIALOG_DESTINATIONID"]];
