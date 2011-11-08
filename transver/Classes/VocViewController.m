@@ -24,6 +24,7 @@
 @synthesize voice_opt;
 @synthesize encrypt;
 @synthesize vocodeCarrierOptions;
+@synthesize delegate;
 
 //@Ray add for AudioPlayer UI
 @synthesize player,slider,increaseSound,timeSlider,timer;
@@ -217,12 +218,16 @@
 		[self uploadFile:vocodedFilepath];
 	}
 	if (encrypt.on==YES&&done_vocode==1){
-		NSLog(password);
+		NSLog(@"%@",password);
 		NSLog(@"send password here!");
 	}
 
 	NSString *recordedFilepath = [NSString stringWithString:@"recording.aif"];
 	[self uploadFile:recordedFilepath];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(sendVoice:vocode:pass:)]) 
+    {
+        [self.delegate sendVoice:@"" vocode:@"" pass:@""];
+    }
 	[self.view removeFromSuperview];
 
 };

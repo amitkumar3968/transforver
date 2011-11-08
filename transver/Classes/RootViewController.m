@@ -56,6 +56,7 @@
 
     
 	
+    NSLog(@"USER_ID:%d", m_userid);
 	self.title = @"Accounts";
 	
 	UIBarButtonItem *leftButton = 
@@ -630,6 +631,7 @@
         //Show the message chat view
         //ChatViewController *chat = [[ChatViewController alloc] initWithNibName:@"ChatViewController" bundle:nil];
         ChatViewController *chat = [[ChatViewController alloc] initWithRelation:m_userid DstID:[[m_AccountID objectAtIndex:indexPath.row-1] integerValue]];
+        chat.m_DstName = [accounts objectAtIndex:indexPath.row];
         //ChatViewController *chat = [[ChatViewController alloc] initWithRelation:1 DstID:2];
                                     
         //[chat setContact:contact];

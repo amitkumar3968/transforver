@@ -25,17 +25,18 @@
     NSMutableArray *m_Messages;
     int m_srcid;
     int m_dstid;
+    NSString *m_DstName;
 }
 
 @property (nonatomic, assign) int m_srcid;
 @property (nonatomic, assign) int m_dstid;
+@property (nonatomic, retain) NSString *m_DstName;
 @property (nonatomic, retain) NSMutableArray* sectionInfoArray;
 @property (nonatomic, assign) NSInteger openSectionIndex;
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) IBOutlet ChatBubbleView *bubbleView;
 @property (nonatomic, retain) Contact *contact;
 @property (nonatomic, retain) NSMutableArray *listOfItems;
-@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) NSMutableArray *m_Messages;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;

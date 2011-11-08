@@ -46,6 +46,7 @@
 		4F38BB1A145B80F300671269 /* userWaldo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F38BB19145B80F300671269 /* userWaldo.png */; };
 		4F5E380013FC93130025B24A /* ChatBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5E37FF13FC93130025B24A /* ChatBubbleView.m */; };
 		4F5E385313FC98080025B24A /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F5E385213FC98080025B24A /* Icon.png */; };
+		4F6898FC14696275007927E3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F6898FB14696275007927E3 /* AVFoundation.framework */; };
 		4F724C8D13F6D91700A6F871 /* phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F724C8C13F6D91700A6F871 /* phone.png */; };
 		4F724C8F13F6D93800A6F871 /* 123.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F724C8E13F6D93800A6F871 /* 123.wav */; };
 		4F724CA713F7619300A6F871 /* bottomRow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F724C9A13F7619300A6F871 /* bottomRow.png */; };
@@ -171,6 +172,7 @@
 		4F5E37FE13FC93130025B24A /* ChatBubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatBubbleView.h; sourceTree = "<group>"; };
 		4F5E37FF13FC93130025B24A /* ChatBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatBubbleView.m; sourceTree = "<group>"; };
 		4F5E385213FC98080025B24A /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		4F6898FB14696275007927E3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		4F724C8C13F6D91700A6F871 /* phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = phone.png; path = ../phone.png; sourceTree = "<group>"; };
 		4F724C8E13F6D93800A6F871 /* 123.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = 123.wav; path = ../123.wav; sourceTree = "<group>"; };
 		4F724C9A13F7619300A6F871 /* bottomRow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottomRow.png; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F6898FC14696275007927E3 /* AVFoundation.framework in Frameworks */,
 				4F08E1ED14353CC4008DACEE /* QuartzCore.framework in Frameworks */,
 				4F74C55B1423973900B97CC3 /* SystemConfiguration.framework in Frameworks */,
 				4F03B2C81401D0F700FEC9D4 /* CoreData.framework in Frameworks */,
@@ -326,6 +329,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				4F6898FB14696275007927E3 /* AVFoundation.framework */,
 				4F08E1EC14353CC4008DACEE /* QuartzCore.framework */,
 				4F74C55A1423973900B97CC3 /* SystemConfiguration.framework */,
 				080E96DDFE201D6D7F000001 /* Classes */,
