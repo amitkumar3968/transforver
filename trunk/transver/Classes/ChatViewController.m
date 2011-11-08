@@ -72,7 +72,7 @@
     NSLog(@"viewDidLoad %@", m_Messages);
     
     self.title = m_DstName;
-
+    //self.tableView.allowsSelection = NO;
     //Position the bubbleView on the bottom
     [self.view addSubview:self.bubbleView];
     CGRect bubbleFrame = self.bubbleView.frame;
@@ -262,18 +262,25 @@
         cell = [[[MessageTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
     
+    for (NSInteger ko=0; ko<[[cell subviews] count]; ko++){
+        //This code never gets hit
+        UIView *l=[[cell subviews] objectAtIndex:0];
+        [l removeFromSuperview];
+        l=nil;
+    }
     // Set up the cell...
     
-	NSString *imagefile = [[NSBundle mainBundle] pathForResource:@"userWaldo" ofType:@"png"];
-	UIImage *ui= [[UIImage alloc] initWithContentsOfFile:imagefile];
+	//NSString *imagefile = [[NSBundle mainBundle] pathForResource:@"userWaldo" ofType:@"png"];
+	//UIImage *ui= [[UIImage alloc] initWithContentsOfFile:imagefile];
     //First get the dictionary object
-    NSDictionary *dictionary = [_listOfItems objectAtIndex:indexPath.section];
-    NSArray *array = [dictionary objectForKey:@"Messages"];
-    NSArray *elementArr = [array objectAtIndex:indexPath.row];
+    //NSDictionary *dictionary = [_listOfItems objectAtIndex:indexPath.section];
+    //NSArray *array = [dictionary objectForKey:@"Messages"];
+    //NSArray *elementArr = [array objectAtIndex:indexPath.row];
     //NSString *cellValue = [elementArr objectAtIndex:0];
     //[cell.textLabel setText:cellValue];
     
     [self configureCell:cell atIndexPath:indexPath];
+    
     
     return cell;
 }
@@ -308,10 +315,16 @@
     //[ret addObject:todayString];
     for (NSDictionary *dic in array) {
         NSMutableArray *element = [[NSMutableArray alloc] init ];
-        if( [dic objectForKey:@"DIALOG_TYPE"] == 0)
+        if( [[dic objectForKey:@"DIALOG_TYPE"] integerValue] == 0)
+        {
             [element addObject: [dic objectForKey:@"DIALOG_MESSAGE"]];
+        }
         else
+        {
+            //to download the voice file
+            [self downloadToFile:@"recording.aif"];
             [element addObject: [dic objectForKey:@"DIALOG_VOICE"]];
+        }
         [element addObject: [dic objectForKey:@"DIALOG_CREATEDTIME"]];
         [element addObject: [dic objectForKey:@"DIALOG_SOURCEID"]];
         [element addObject: [dic objectForKey:@"DIALOG_DESTINATIONID"]];
@@ -339,14 +352,14 @@
     [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     
     NSDate *date = [dateFormat dateFromString:[elementArr objectAtIndex:1]];
-    [dateFormat setDateFormat:@"h:mm a"];
+    [dateFormat setDateFormat:@"a h:mm "];
     NSString *str = [dateFormat stringFromDate:date]; 
     [dateFormat release];
     
     message.sentDate = date;
     message.srcUser = [[elementArr objectAtIndex:2] integerValue];
     message.dstUser = [[elementArr objectAtIndex:3] integerValue];
-    
+    NSLog(@"cellvalue: %@", cellValue);
     [cell setText:cellValue];
     cell.m_date = str;
     //We only set the image if the previous message was from a different user
@@ -381,7 +394,36 @@
         [cell setMessageAlignment:kMessageAlignmentRight];
     }
     [message release];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     [cell setNeedsDisplay];
+    
+    NSRange aRange = [cellValue rangeOfString:@"aif"];
+    if (aRange.location ==NSNotFound) {
+    } else {
+        NSLog(@" %@ %d ",cellValue, aRange.location);
+        CGRect btnViewFrame = CGRectMake(35.0, 10.0,16.0,16.0);
+        UIButton *settingBtn = [[UIButton alloc] initWithFrame:btnViewFrame];
+        UIImage *snap_picture = [UIImage imageNamed:@"arrow-right.png"];
+        [settingBtn setBackgroundImage:snap_picture forState:UIControlStateNormal];
+        //[settingBtn addTarget:self action:@selector(playVoice:) forControlEvents:UIControlEventTouchUpInside];
+        settingBtn.tag = 2;
+        [settingBtn setEnabled:NO];
+        [cell addSubview:settingBtn];
+        [settingBtn release];
+        
+        CGRect frame = CGRectMake(55.0, 15.0, 150.0, 5.0);
+        UISlider *slider = [[UISlider alloc] initWithFrame:frame];
+        //[slider addTarget:self action:@selector(sliderAction:) forControlEvents:UIControlEventValueChanged];
+        [slider setBackgroundColor:[UIColor clearColor]];
+        slider.minimumValue = 0.0;
+        slider.maximumValue = 50.0;
+        slider.continuous = YES;
+        slider.value = 0.0;
+        slider.enabled = NO;
+        [cell addSubview:slider];
+        [slider release];
+    }
+    
 }
 
 
@@ -413,6 +455,13 @@
     }
     
     return effectiveHeight;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"selected row:%d",indexPath.row);
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    
 }
 
 #pragma mark -
@@ -505,6 +554,83 @@
     return retArr;
 }
 
+#pragma mark -
+#pragma mark NSURLConnection methods
+NSMutableData *tempData;    //下載時暫存用的記憶體
+long expectedLength;        //檔案大小
+NSURLConnection* connection;
+
+
+- (void)downloadToFile:(NSString *)filename
+{
+    /*
+     NSString* filePath = [[NSString stringWithFormat:@"%@/%@.wav", TEMP_FOLDER, name] retain];
+     self.localFilePath = filePath;
+     
+     // set up FileHandle
+     self.audioFile = [[NSFileHandle fileHandleForWritingAtPath:localFilePath] retain];
+     [filePath release];
+     
+     
+     NSURL *webURL=[NSURL URLWithString:@"http://www.entalkie.url.tw/download.php"];
+     // Open the connection
+     NSURLRequest* request = [NSURLRequest 
+     requestWithURL:webURL
+     cachePolicy:NSURLRequestUseProtocolCachePolicy
+     timeoutInterval:60.0];
+     NSURLConnection* connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+     */
+    //downloadProgress.progress = 0.0;
+    NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
+    NSString* filePath = [NSString stringWithFormat:@"http://www.entalkie.url.tw/download.php?filename=%@", filename];
+    [request setURL:[NSURL URLWithString:filePath]];
+    [request setHTTPMethod:@"GET"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"Mobile Safari 1.1.3 (iPhone; U; CPU like Mac OS X; en)" forHTTPHeaderField:@"User-Agent"];
+    tempData = [NSMutableData alloc];
+    connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+    //[super viewDidLoad];
+    
+}
+
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{   //發生錯誤
+    [connection release];
+	NSLog(@"發生錯誤");
+}
+- (void)connection: (NSURLConnection *)connection didReceiveResponse: (NSURLResponse *)aResponse {  //連線建立成功
+    //取得狀態
+    NSInteger status = (NSInteger)[(NSHTTPURLResponse *)aResponse statusCode];
+    NSLog(@"%d", status);
+    
+	expectedLength = [aResponse expectedContentLength]; //儲存檔案長度
+}
+-(void) connection:(NSURLConnection *)connection didReceiveData: (NSData *) incomingData
+{   //收到封包，將收到的資料塞進緩衝中並修改進度條
+	[tempData appendData:incomingData];
+    
+    double ex = expectedLength;
+    //downloadProgress.progress = [tempData length] / ex;;
+}
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{   //檔案下載完成
+    //取得可讀寫的路徑
+	NSArray *pathList = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *path = [pathList objectAtIndex:0];
+    
+	//加上檔名
+	path = [path stringByAppendingPathComponent: @"star.aif"];
+    NSLog(@"儲存路徑：%@", path);
+	
+	//寫入檔案
+    [tempData writeToFile:path atomically:NO];
+    [tempData release];
+    tempData = nil;
+    
+    //img.image = [UIImage imageWithContentsOfFile:path]; //顯示圖片在畫面中
+}
 
 #pragma mark ChatBubbleViewDelegate methods
 
