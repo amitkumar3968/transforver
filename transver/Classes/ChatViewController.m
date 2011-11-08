@@ -108,7 +108,7 @@ NSString *downloadfilename;
     [self.sectionInfoArray addObject:sectionInfo];
     [sectionInfo release];
     [_listOfItems addObject:countriesLivedInDict];
-    myTimer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(ScanMessages) userInfo:nil repeats:YES];
+    myTimer = [NSTimer scheduledTimerWithTimeInterval:30 target:self selector:@selector(ScanMessages) userInfo:nil repeats:YES];
     
     //self.navigationController.navigationBar.delegate = self;
     //Set the title
@@ -475,7 +475,7 @@ NSString *downloadfilename;
     NSArray *array = [dictionary objectForKey:@"Messages"];
     NSArray *elementArr = [array objectAtIndex:indexPath.row];
     NSString *cellValue = [elementArr objectAtIndex:0];
-    NSLog(@"selected value:%@",cellValue);
+    NSLog(@"play selected value:%@",cellValue);
     [self playSound:cellValue];
 }
 
