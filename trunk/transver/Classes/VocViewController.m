@@ -10,6 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
 
+
 #import "VocViewController.h"
 #include "dovocode.h"
 
@@ -221,23 +222,31 @@
 		NSString *vocodedFilename = [NSString stringWithFormat:@"%@%@", randomFilename, @"out.aif"];
 		[self uploadFile:vocodedFilepath];
 	}*/
-	
-	if (encrypt.on==YES&&done_vocode==1){
 
-	}
 
-	NSString *recordedFilepath = [NSString stringWithString:@"recording.aif"];
-	[self uploadFile:recordedFilepath];
+
     NSDate *date = [NSDate date];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"YYYY_MM_dd HH_MM_ss"];
     NSString *dateString = [dateFormat stringFromDate:date];  
     [dateFormat release];
-	NSMutableString *randomFilename = [self genRandStringLength:23];
-	NSString *vocodedFilename = [NSString stringWithFormat:@"%@%@%@", randomFilename, dateString, @"out.aif"];
-	randomFilename = [self genRandStringLength:23];
 	
-	NSString *originalFilename = [NSString stringWithFormat:@"%@%@%@", randomFilename, dateString, @"recording.aif"];
+	//rename and upload original audio
+	NSMutableString *randomFilename = [self genRandStringLength:23];
+	NSString *originalFilename = [NSString stringWithFormat:@"%@%@", randomFilename, @"recording.aif"];
+	NSString *originalFilepath = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], originalFilename];
+	NSString *targetPath= [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], @"recording.aif"];
+	NSFileManager * fileManager =  [NSFileManager defaultManager];
+	[fileManager moveItemAtPath:targetPath
+						 toPath:originalFilepath error:nil];
+	
+	//rename and upload vocoded audio
+	randomFilename = [self genRandStringLength:23];
+	NSString *vocodedFilename = [NSString stringWithFormat:@"%@%@", randomFilename, @"out.aif"];
+	NSString *vocodedFilepath = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], vocodedFilename];
+	targetPath= [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], @"out.aif"];
+	[fileManager moveItemAtPath:targetPath
+						 toPath:vocodedFilepath error:nil];	
 	
     //time_t unixTime = [[NSDate date] timeIntervalSince1970];
     NSLog(@"%@",dateString);
@@ -323,7 +332,7 @@ numberOfRowsInComponent:(NSInteger)component
     NSMutableString *randomString = [NSMutableString stringWithCapacity: len];
 	
     for (int i=0; i<len; i++) {
-		[randomString appendFormat: @"%c", [letters characterAtIndex: rand()%[letters length]] ];
+		[randomString appendFormat: @"%c", [letters characterAtIndex: arc4random()%[letters length]] ];
 	}
 	return randomString;
 }
