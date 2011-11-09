@@ -327,13 +327,15 @@ NSString *downloadfilename;
             //to download the voice file
             if( [dic objectForKey:@"DIALOG_VOICE_ENCRYPT"] )
             {
-                [self downloadToFile:[dic objectForKey:@"DIALOG_VOICE_ENCRYPT"]];
-                downloadfilename = [dic objectForKey:@"DIALOG_VOICE_ENCRYPT"];
+                //downloadfilename = [dic objectForKey:@"DIALOG_VOICE_ENCRYPT"];
+                //[self downloadToFile:[dic objectForKey:@"DIALOG_VOICE_ENCRYPT"]];
+                
                 [element addObject: [dic objectForKey:@"DIALOG_VOICE_ENCRYPT"]];
             }else
             {
-                [self downloadToFile:[dic objectForKey:@"DIALOG_VOICE"]];
-                downloadfilename = [dic objectForKey:@"DIALOG_VOICE"];
+                //downloadfilename = [dic objectForKey:@"DIALOG_VOICE"];
+                //[self downloadToFile:[dic objectForKey:@"DIALOG_VOICE"]];
+                
                 [element addObject: [dic objectForKey:@"DIALOG_VOICE"]];
             }
         }
@@ -480,8 +482,10 @@ NSString *downloadfilename;
     NSArray *array = [dictionary objectForKey:@"Messages"];
     NSArray *elementArr = [array objectAtIndex:indexPath.row];
     NSString *cellValue = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], [elementArr objectAtIndex:0]];
-    NSLog(@"play selected value:%@",cellValue);
-    [self audioFdPlay:cellValue];
+    NSLog(@"play selected value:%@",[elementArr objectAtIndex:0]);
+    downloadfilename = [elementArr objectAtIndex:0];
+    [self downloadToFile:[elementArr objectAtIndex:0]];
+    //[self playSound:[elementArr objectAtIndex:0]];
 }
 
 #pragma mark -
@@ -603,6 +607,7 @@ NSURLConnection* connection;
     //downloadProgress.progress = 0.0;
     NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
     NSString* filePath = [NSString stringWithFormat:@"http://www.entalkie.url.tw/download.php?filename=%@", filename];
+    NSLog(@"%@",filename);
     [request setURL:[NSURL URLWithString:filePath]];
     [request setHTTPMethod:@"GET"];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
@@ -648,22 +653,25 @@ NSURLConnection* connection;
     [tempData writeToFile:documentsPath atomically:NO];
     [tempData release];
     tempData = nil;
-    
+    [self playSound:downloadfilename];
     //img.image = [UIImage imageWithContentsOfFile:path]; //顯示圖片在畫面中
 }
 
 - (void) playSound:(NSString *) filename {
 	/*NSLog(@"Playing Sound!");
      [audioRecorder startPlayback];*/
-	system("ls");
+	//system("ls");
+    
+
 	SystemSoundID soundID = 0;
 	//NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	NSString *documentsPath = [Util getDocumentPath];
 	NSString *audioPath = [documentsPath stringByAppendingPathComponent:filename];
-    NSString *filePath = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"star"];
+    NSString *filePath = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath],filename];
+    NSLog(@"play %@",filePath);
 	//NSString *filePath = [[NSBundle mainBundle] resourcePath];// stringByAppendingPathComponent:@"123.wav"];
 
-	NSURL* tmpUrl = [[NSURL alloc] initFileURLWithPath:audioPath ];
+	NSURL* tmpUrl = [[NSURL alloc] initFileURLWithPath:filePath ];
 	CFURLRef soundFileURL = (CFURLRef)tmpUrl;
 	OSStatus errorCode = AudioServicesCreateSystemSoundID(soundFileURL, &soundID);
 	if (errorCode != 0) {
