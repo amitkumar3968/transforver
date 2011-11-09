@@ -108,8 +108,8 @@
 	[UIImage imageNamed:@"phone.png"];
 	//NSData *imageData = UIImageJPEGRepresentation(image.image, 90);
 	//NSString* str =  [[NSBundle mainBundle] pathForResource:@"mysoundcompressed" ofType:@"caf"];
-	NSString *filePath = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], fileName]; 
-	NSData *wavData = [NSData dataWithContentsOfFile:filePath];
+	//NSString *filePath = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], fileName]; 
+	NSData *wavData = [NSData dataWithContentsOfFile:fileName];
 	// setting up the URL to post to
 	NSString *urlString = @"http://www.entalkie.url.tw/upload.php";
 	
@@ -146,7 +146,7 @@
 	NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
 	NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
 	
-	NSLog(@"%@",returnString);
+	NSLog(@"upload file %@",returnString);
 }
 
 - (IBAction)vocodeTapped :(id)sender{
@@ -224,13 +224,13 @@
 	}*/
 
 
-
+    /*
     NSDate *date = [NSDate date];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"YYYY_MM_dd HH_MM_ss"];
     NSString *dateString = [dateFormat stringFromDate:date];  
     [dateFormat release];
-	
+	*/
 	//rename and upload original audio
 	NSMutableString *randomFilename = [self genRandStringLength:23];
 	NSString *originalFilename = [NSString stringWithFormat:@"%@%@", randomFilename, @"recording.aif"];
@@ -239,6 +239,12 @@
 	NSFileManager * fileManager =  [NSFileManager defaultManager];
 	[fileManager moveItemAtPath:targetPath
 						 toPath:originalFilepath error:nil];
+    if( [fileManager fileExistsAtPath:originalFilepath])
+        [self uploadFile:originalFilepath];
+    else
+    {
+        NSLog(@"NO orig file");
+    }
 	
 	//rename and upload vocoded audio
 	randomFilename = [self genRandStringLength:23];
@@ -247,9 +253,17 @@
 	targetPath= [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], @"out.aif"];
 	[fileManager moveItemAtPath:targetPath
 						 toPath:vocodedFilepath error:nil];	
+    if( [fileManager fileExistsAtPath:vocodedFilepath])
+        [self uploadFile:vocodedFilepath];
+    else
+    {
+        NSLog(@"NO vocode file");
+    }
+	
+	//rename 
 	
     //time_t unixTime = [[NSDate date] timeIntervalSince1970];
-    NSLog(@"%@",dateString);
+    //NSLog(@"%@",dateString);
     if (self.delegate && [self.delegate respondsToSelector:@selector(sendVoice:vocode:pass:)]) 
     {
         [self.delegate sendVoice:originalFilename vocode:vocodedFilename pass:password.text];

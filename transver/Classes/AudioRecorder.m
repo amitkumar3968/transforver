@@ -7,6 +7,7 @@
 //
 
 #import "AudioRecorder.h"
+#import "Util.h"
 
 
 @implementation AudioRecorder
@@ -255,7 +256,8 @@ void AudioOutputCallback(
 -(NSString *)getFileLocation{
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, 
 														 NSUserDomainMask, YES); 
-    NSString* docDir = [paths objectAtIndex:0];
+    //NSString* docDir = [paths objectAtIndex:0];
+    NSString* docDir = [Util getDocumentPath];
     NSString* file = [docDir stringByAppendingString:@"/out.aif"];
 	return file;
 }
@@ -391,7 +393,8 @@ void AudioOutputCallback(
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, 
 														 NSUserDomainMask, YES); 
-    NSString* docDir = [paths objectAtIndex:0];
+    //NSString* docDir = [paths objectAtIndex:0];
+    NSString* docDir = [Util getDocumentPath];
     NSString* file = [docDir stringByAppendingString:@"/recording.aif"];
     return [file getCString:buffer maxLength:maxBufferLength encoding:NSUTF8StringEncoding];
 }
