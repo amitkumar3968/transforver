@@ -258,6 +258,7 @@
     else
     {
         NSLog(@"NO vocode file");
+        vocodedFilename = @"";
     }
 	
 	//rename 
