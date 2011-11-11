@@ -325,7 +325,8 @@ NSString *downloadfilename;
         else
         {
             //to download the voice file
-            if( [dic objectForKey:@"DIALOG_VOICE_ENCRYPT"] )
+            NSLog(@"encrypt %@", [dic objectForKey:@"DIALOG_VOICE_ENCRYPT"]);
+            if( ![(NSString *)[dic objectForKey:@"DIALOG_VOICE_ENCRYPT"] isEqualToString:@""])
             {
                 //downloadfilename = [dic objectForKey:@"DIALOG_VOICE_ENCRYPT"];
                 //[self downloadToFile:[dic objectForKey:@"DIALOG_VOICE_ENCRYPT"]];

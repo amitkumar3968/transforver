@@ -12,6 +12,8 @@
 #import "ChatBubbleView.h"
 #import "AudioRecorder.h"
 #import "Util.h"
+#import <RestKit/RestKit.h>
+#import <RestKit/CoreData/CoreData.h>
 
 @interface RootViewController : UITableViewController <AddUserViewDelegate>{
 	NSArray *accounts;
