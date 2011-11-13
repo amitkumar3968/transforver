@@ -38,6 +38,8 @@
 - (void) saveParameter;
 - (bool) checkUserInfoExist;
 - (void) delUserInfo;
+- (void) AddUserMenu:(id) sender;
+- (NSArray*) addRelationships:(int) uid phonenumber:(NSString *) phone;
 
 @property (nonatomic, retain) NSMutableArray *m_AccountID;
 @property (nonatomic, retain) NSArray *accounts;
