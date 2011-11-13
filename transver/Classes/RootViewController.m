@@ -37,6 +37,7 @@
 	UICustomTabViewController *tvController = [[UICustomTabViewController alloc] initWithNibName:@"TabViewController" bundle:nil];
 	self.tabViewController = tvController;
     [tvController release];
+    m_userid = -1;
     //self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 	//self.tableView.rowHeight = 100;
 	//self.tableView.backgroundColor = [UIColor clearColor];
@@ -60,7 +61,7 @@
 	self.title = @"Accounts";
 	
 	UIBarButtonItem *leftButton = 
-	[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(compose:)];
+	[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(AddUserMenu:)];
 	
 	self.navigationItem.leftBarButtonItem = leftButton;
 	[leftButton release];
@@ -111,6 +112,33 @@
     	
 	[super viewDidLoad];
 
+}
+
+- (NSArray*) addRelationships:(int) uid phonenumber:(NSString *) phone{
+    NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/addRelationships.php?masterID=%d&dstphone=%@", uid, phone];
+    
+    NSData *data = [DBHandler sendReqToUrl:urlString postString:nil];
+	NSArray *array = nil;
+    NSMutableArray *ret = [[NSMutableArray alloc] init ];
+	
+	if(data)
+	{
+		NSString *responseString = [[NSString alloc] initWithData:data
+                                                         encoding:NSUTF8StringEncoding];
+		array = [responseString JSONValue];
+		[responseString release];
+	}
+    //[ret addObject:@"get friends"];
+    for (NSDictionary *dic in array) {
+        [ret addObject: [dic objectForKey:@"USER_NAME"]];
+        NSLog(@"%@",[dic objectForKey:@"RELATION_SLAVEID"]);
+        [m_AccountID addObject: [dic objectForKey:@"RELATION_SLAVEID"]];
+    }
+    //[ret addObject:nil];
+    NSArray *retArr = [[NSArray alloc ]initWithArray:ret];
+    [ret release];
+    
+	return retArr;
 }
 
 - (NSArray*) fetchRelationships:(int) uid {
@@ -169,6 +197,14 @@
 
 -(void)MenuSetting:(id)sender{
     NSLog(@"MenuSetting");
+}
+
+- (void) AddUserMenu:(id) sender {
+    NSLog(@"AddUserMenu");
+    AddUserViewController *addUserView = [[AddUserViewController alloc] initWithNibName:@"AddUserViewController" bundle:nil];
+    addUserView.title = @"Add Phone Number";
+    addUserView.delegate = self;
+    [self.navigationController pushViewController:addUserView animated:YES];
 }
 - (void) showMenu:(id) sender {
 	NSLog(@"showMenu");
@@ -706,12 +742,18 @@
 
 - (void) savePhoneNumber:(NSString *)phonenumber{
     NSLog(@"save phone: %@", phonenumber);
-    m_PhoneNumber = phonenumber;
-    [self saveParameter];
-    m_userid = [self loginServer];
-    NSArray *array = [self fetchRelationships:m_userid];//[[NSArray alloc] initWithObjects:@"find friends",@"Jerry", @"Raymond", @"John", nil];
-	self.accounts = array;
-	[array release];
+    if( m_userid != -1)
+    {
+        m_PhoneNumber = phonenumber;
+        [self saveParameter];
+        m_userid = [self loginServer];
+        NSArray *array = [self fetchRelationships:m_userid];//[[NSArray alloc] initWithObjects:@"find friends",@"Jerry", @"Raymond", @"John", nil];
+        self.accounts = array;
+        [array release];
+    }else
+    {
+        //add user for contact list
+    }
     [self.navigationController popViewControllerAnimated:YES];
 }
 @end
