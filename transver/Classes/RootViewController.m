@@ -114,8 +114,8 @@
 
 }
 
-- (NSArray*) addRelationships:(int) uid phonenumber:(NSString *) phone{
-    NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/addRelationships.php?masterID=%d&dstphone=%@", uid, phone];
+- (void) addRelationships:(int) uid phonenumber:(NSString *) phone{
+    NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/addRelationships.php?srcID=%d&dstPhone=%@", uid, phone];
     
     NSData *data = [DBHandler sendReqToUrl:urlString postString:nil];
 	NSArray *array = nil;
@@ -128,17 +128,7 @@
 		array = [responseString JSONValue];
 		[responseString release];
 	}
-    //[ret addObject:@"get friends"];
-    for (NSDictionary *dic in array) {
-        [ret addObject: [dic objectForKey:@"USER_NAME"]];
-        NSLog(@"%@",[dic objectForKey:@"RELATION_SLAVEID"]);
-        [m_AccountID addObject: [dic objectForKey:@"RELATION_SLAVEID"]];
-    }
-    //[ret addObject:nil];
-    NSArray *retArr = [[NSArray alloc ]initWithArray:ret];
-    [ret release];
     
-	return retArr;
 }
 
 - (NSArray*) fetchRelationships:(int) uid {
@@ -742,7 +732,7 @@
 
 - (void) savePhoneNumber:(NSString *)phonenumber{
     NSLog(@"save phone: %@", phonenumber);
-    if( m_userid != -1)
+    if( m_userid == -1)
     {
         m_PhoneNumber = phonenumber;
         [self saveParameter];
@@ -753,6 +743,8 @@
     }else
     {
         //add user for contact list
+        [self addRelationships:m_userid phonenumber:phonenumber];
+        [self fetchRelationships:m_userid];
     }
     [self.navigationController popViewControllerAnimated:YES];
 }
