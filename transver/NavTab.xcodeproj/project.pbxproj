@@ -734,6 +734,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ray Yu (55P7VD7797)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ray Yu (55P7VD7797)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -746,7 +747,8 @@
 					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = NavTab;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B6BFE3F8-6E8D-470D-AEA4-6BA9612ADCA0";
+				PROVISIONING_PROFILE = "CFB911B4-F48C-4E77-9772-7ECD41363B0A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "CFB911B4-F48C-4E77-9772-7ECD41363B0A";
 				SDKROOT = iphoneos4.3;
 			};
 			name = Debug;
@@ -755,6 +757,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ray Yu (55P7VD7797)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ray Yu (55P7VD7797)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = NavTab_Prefix.pch;
@@ -764,6 +768,8 @@
 					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = NavTab;
+				PROVISIONING_PROFILE = "CFB911B4-F48C-4E77-9772-7ECD41363B0A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "CFB911B4-F48C-4E77-9772-7ECD41363B0A";
 				SDKROOT = iphoneos4.3;
 			};
 			name = Release;
@@ -773,7 +779,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = "";
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yijen Lin (9744LY792J)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -794,8 +800,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yijen Lin (9744LY792J)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yijen Lin (9744LY792J)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -807,6 +813,8 @@
 					"-all_load",
 				);
 				PREBINDING = NO;
+				PROVISIONING_PROFILE = "4013EB65-2C95-4C03-B1CD-49E71DCA01E3";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4013EB65-2C95-4C03-B1CD-49E71DCA01E3";
 				SDKROOT = iphoneos4.3;
 			};
 			name = Release;
