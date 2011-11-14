@@ -45,6 +45,11 @@
 		4F2045FA1417D2360002AC6A /* chatmodel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F2045F81417D2360002AC6A /* chatmodel.xcdatamodeld */; };
 		4F238A811469AEBA0047EE1B /* arrow-right.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F238A801469AEBA0047EE1B /* arrow-right.png */; };
 		4F238A84146AC80C0047EE1B /* Dialog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F238A82146AC80C0047EE1B /* Dialog.xcdatamodeld */; };
+		4F2B30831470B2180033E43E /* libRestKitCoreData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2B307E1470B2180033E43E /* libRestKitCoreData.a */; };
+		4F2B30841470B2180033E43E /* libRestKitJSONParserJSONKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2B307F1470B2180033E43E /* libRestKitJSONParserJSONKit.a */; };
+		4F2B30851470B2180033E43E /* libRestKitNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2B30801470B2180033E43E /* libRestKitNetwork.a */; };
+		4F2B30861470B2180033E43E /* libRestKitObjectMapping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2B30811470B2180033E43E /* libRestKitObjectMapping.a */; };
+		4F2B30871470B2180033E43E /* libRestKitSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2B30821470B2180033E43E /* libRestKitSupport.a */; };
 		4F38BB1A145B80F300671269 /* userWaldo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F38BB19145B80F300671269 /* userWaldo.png */; };
 		4F5E380013FC93130025B24A /* ChatBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5E37FF13FC93130025B24A /* ChatBubbleView.m */; };
 		4F5E385313FC98080025B24A /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F5E385213FC98080025B24A /* Icon.png */; };
@@ -85,11 +90,6 @@
 		4F9BB0C013F2E9BE004179FC /* mysoundcompressed.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4F9BB0BF13F2E9BE004179FC /* mysoundcompressed.caf */; };
 		4F9BB0CB13F2EA73004179FC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9BB0CA13F2EA73004179FC /* AudioToolbox.framework */; };
 		4FA83DCD140C685100B63437 /* btnSend.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FA83DCC140C685100B63437 /* btnSend.png */; };
-		4FE62B2C146C31DE00B46F7C /* libRestKitCoreData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FE62B2B146C31DE00B46F7C /* libRestKitCoreData.a */; };
-		4FE62B31146C31F500B46F7C /* libRestKitJSONParserYAJL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FE62B2D146C31F500B46F7C /* libRestKitJSONParserYAJL.a */; };
-		4FE62B32146C31F500B46F7C /* libRestKitNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FE62B2E146C31F500B46F7C /* libRestKitNetwork.a */; };
-		4FE62B33146C31F500B46F7C /* libRestKitObjectMapping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FE62B2F146C31F500B46F7C /* libRestKitObjectMapping.a */; };
-		4FE62B34146C31F500B46F7C /* libRestKitSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FE62B30146C31F500B46F7C /* libRestKitSupport.a */; };
 		4FE62B36146C31FF00B46F7C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FE62B35146C31FF00B46F7C /* CFNetwork.framework */; };
 		4FE62B3A146C322900B46F7C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FE62B39146C322900B46F7C /* MobileCoreServices.framework */; };
 		7E449FFF1402B4D500B5A7DC /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E449FFE1402B4D500B5A7DC /* Util.m */; };
@@ -114,6 +114,93 @@
 		E176A2260F893F7D00EEE756 /* MoreTabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E176A2250F893F7C00EEE756 /* MoreTabView.xib */; };
 		E176A2290F893FC200EEE756 /* MoreTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E176A2280F893FC200EEE756 /* MoreTabViewController.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4F2B30661470AFF10033E43E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F2B30521470AFF10033E43E /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 253A07FC1255161B00976E89;
+			remoteInfo = RestKitNetwork;
+		};
+		4F2B30681470AFF10033E43E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F2B30521470AFF10033E43E /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 253A08031255162C00976E89;
+			remoteInfo = RestKitObjectMapping;
+		};
+		4F2B306A1470AFF10033E43E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F2B30521470AFF10033E43E /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 253A080C12551D3000976E89;
+			remoteInfo = RestKitSupport;
+		};
+		4F2B306C1470AFF10033E43E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F2B30521470AFF10033E43E /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 20808DBD13DE8CDC000A156A;
+			remoteInfo = "RestKitJSONParser+NXJSON";
+		};
+		4F2B306E1470AFF10033E43E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F2B30521470AFF10033E43E /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2590E64F125231F600531FA8;
+			remoteInfo = "RestKitJSONParser+YAJL";
+		};
+		4F2B30701470AFF10033E43E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F2B30521470AFF10033E43E /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2590E66B1252353700531FA8;
+			remoteInfo = "RestKitJSONParser+SBJSON";
+		};
+		4F2B30721470AFF10033E43E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F2B30521470AFF10033E43E /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 73057FD11331AD2E001908EE;
+			remoteInfo = "RestKitJSONParser+JSONKit";
+		};
+		4F2B30741470AFF10033E43E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F2B30521470AFF10033E43E /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25BD43BD1340315800DBACDD;
+			remoteInfo = "RestKitXMLParser+Libxml";
+		};
+		4F2B30761470AFF10033E43E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F2B30521470AFF10033E43E /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 253A081412551D5300976E89;
+			remoteInfo = RestKitCoreData;
+		};
+		4F2B30781470AFF10033E43E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F2B30521470AFF10033E43E /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2523360511E79F090048F9B4;
+			remoteInfo = RestKitThree20;
+		};
+		4F2B307A1470AFF10033E43E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F2B30521470AFF10033E43E /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3F6C39A510FE5C95008F47C5;
+			remoteInfo = UISpec;
+		};
+		4F2B307C1470B0130033E43E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F2B30521470AFF10033E43E /* RestKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 255B7588133BABBF00ED76AD;
+			remoteInfo = RestKit;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -179,6 +266,20 @@
 		4F2045F91417D2360002AC6A /* chatmodel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = chatmodel.xcdatamodel; sourceTree = "<group>"; };
 		4F238A801469AEBA0047EE1B /* arrow-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-right.png"; sourceTree = "<group>"; };
 		4F238A83146AC80C0047EE1B /* Dialog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Dialog.xcdatamodel; sourceTree = "<group>"; };
+		4F2B30451470AA210033E43E /* libRestKitCoreData.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; name = libRestKitCoreData.a; path = "/Users/poioit/Library/Developer/Xcode/DerivedData/NavTab-gdtjeaqbeqdwteddvgyoehnyltcn/Build/Products/Debug-iphoneos/libRestKitCoreData.a"; sourceTree = "<absolute>"; };
+		4F2B30461470AA210033E43E /* libRestKitJSONParserJSONKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; name = libRestKitJSONParserJSONKit.a; path = "/Users/poioit/Library/Developer/Xcode/DerivedData/NavTab-gdtjeaqbeqdwteddvgyoehnyltcn/Build/Products/Debug-iphoneos/libRestKitJSONParserJSONKit.a"; sourceTree = "<absolute>"; };
+		4F2B30471470AA210033E43E /* libRestKitNetwork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; name = libRestKitNetwork.a; path = "/Users/poioit/Library/Developer/Xcode/DerivedData/NavTab-gdtjeaqbeqdwteddvgyoehnyltcn/Build/Products/Debug-iphoneos/libRestKitNetwork.a"; sourceTree = "<absolute>"; };
+		4F2B30481470AA210033E43E /* libRestKitObjectMapping.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; name = libRestKitObjectMapping.a; path = "/Users/poioit/Library/Developer/Xcode/DerivedData/NavTab-gdtjeaqbeqdwteddvgyoehnyltcn/Build/Products/Debug-iphoneos/libRestKitObjectMapping.a"; sourceTree = "<absolute>"; };
+		4F2B30491470AA210033E43E /* libRestKitSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; name = libRestKitSupport.a; path = "/Users/poioit/Library/Developer/Xcode/DerivedData/NavTab-gdtjeaqbeqdwteddvgyoehnyltcn/Build/Products/Debug-iphoneos/libRestKitSupport.a"; sourceTree = "<absolute>"; };
+		4F2B304A1470AA210033E43E /* libRestKitXMLParserLibxml.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; name = libRestKitXMLParserLibxml.a; path = "/Users/poioit/Library/Developer/Xcode/DerivedData/NavTab-gdtjeaqbeqdwteddvgyoehnyltcn/Build/Products/Debug-iphoneos/libRestKitXMLParserLibxml.a"; sourceTree = "<absolute>"; };
+		4F2B30511470AD650033E43E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		4F2B30521470AFF10033E43E /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = RestKit.xcodeproj; sourceTree = "<group>"; };
+		4F2B307E1470B2180033E43E /* libRestKitCoreData.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; name = libRestKitCoreData.a; path = "/Users/poioit/Library/Developer/Xcode/DerivedData/NavTab-gdtjeaqbeqdwteddvgyoehnyltcn/Build/Products/Debug-iphoneos/libRestKitCoreData.a"; sourceTree = "<absolute>"; };
+		4F2B307F1470B2180033E43E /* libRestKitJSONParserJSONKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; name = libRestKitJSONParserJSONKit.a; path = "/Users/poioit/Library/Developer/Xcode/DerivedData/NavTab-gdtjeaqbeqdwteddvgyoehnyltcn/Build/Products/Debug-iphoneos/libRestKitJSONParserJSONKit.a"; sourceTree = "<absolute>"; };
+		4F2B30801470B2180033E43E /* libRestKitNetwork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; name = libRestKitNetwork.a; path = "/Users/poioit/Library/Developer/Xcode/DerivedData/NavTab-gdtjeaqbeqdwteddvgyoehnyltcn/Build/Products/Debug-iphoneos/libRestKitNetwork.a"; sourceTree = "<absolute>"; };
+		4F2B30811470B2180033E43E /* libRestKitObjectMapping.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; name = libRestKitObjectMapping.a; path = "/Users/poioit/Library/Developer/Xcode/DerivedData/NavTab-gdtjeaqbeqdwteddvgyoehnyltcn/Build/Products/Debug-iphoneos/libRestKitObjectMapping.a"; sourceTree = "<absolute>"; };
+		4F2B30821470B2180033E43E /* libRestKitSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; name = libRestKitSupport.a; path = "/Users/poioit/Library/Developer/Xcode/DerivedData/NavTab-gdtjeaqbeqdwteddvgyoehnyltcn/Build/Products/Debug-iphoneos/libRestKitSupport.a"; sourceTree = "<absolute>"; };
+		4F2B30881470B25F0033E43E /* libRestKitXMLParserLibxml.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; name = libRestKitXMLParserLibxml.a; path = "/Users/poioit/Library/Developer/Xcode/DerivedData/NavTab-gdtjeaqbeqdwteddvgyoehnyltcn/Build/Products/Debug-iphoneos/libRestKitXMLParserLibxml.a"; sourceTree = "<absolute>"; };
 		4F38BB19145B80F300671269 /* userWaldo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userWaldo.png; sourceTree = "<group>"; };
 		4F5E37FE13FC93130025B24A /* ChatBubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatBubbleView.h; sourceTree = "<group>"; };
 		4F5E37FF13FC93130025B24A /* ChatBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatBubbleView.m; sourceTree = "<group>"; };
@@ -223,11 +324,6 @@
 		4F9BB0BF13F2E9BE004179FC /* mysoundcompressed.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = mysoundcompressed.caf; path = ../mysoundcompressed.caf; sourceTree = "<group>"; };
 		4F9BB0CA13F2EA73004179FC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		4FA83DCC140C685100B63437 /* btnSend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnSend.png; sourceTree = "<group>"; };
-		4FE62B2B146C31DE00B46F7C /* libRestKitCoreData.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitCoreData.a; sourceTree = SOURCE_ROOT; };
-		4FE62B2D146C31F500B46F7C /* libRestKitJSONParserYAJL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitJSONParserYAJL.a; sourceTree = SOURCE_ROOT; };
-		4FE62B2E146C31F500B46F7C /* libRestKitNetwork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitNetwork.a; sourceTree = SOURCE_ROOT; };
-		4FE62B2F146C31F500B46F7C /* libRestKitObjectMapping.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitObjectMapping.a; sourceTree = SOURCE_ROOT; };
-		4FE62B30146C31F500B46F7C /* libRestKitSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitSupport.a; sourceTree = SOURCE_ROOT; };
 		4FE62B35146C31FF00B46F7C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
 		4FE62B37146C321200B46F7C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
 		4FE62B38146C321F00B46F7C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
@@ -278,15 +374,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F2B30831470B2180033E43E /* libRestKitCoreData.a in Frameworks */,
+				4F2B30841470B2180033E43E /* libRestKitJSONParserJSONKit.a in Frameworks */,
+				4F2B30851470B2180033E43E /* libRestKitNetwork.a in Frameworks */,
+				4F2B30861470B2180033E43E /* libRestKitObjectMapping.a in Frameworks */,
+				4F2B30871470B2180033E43E /* libRestKitSupport.a in Frameworks */,
+				4FE62B36146C31FF00B46F7C /* CFNetwork.framework in Frameworks */,
 				4FE62B3A146C322900B46F7C /* MobileCoreServices.framework in Frameworks */,
 				4F74C55B1423973900B97CC3 /* SystemConfiguration.framework in Frameworks */,
 				4F03B2C81401D0F700FEC9D4 /* CoreData.framework in Frameworks */,
-				4FE62B36146C31FF00B46F7C /* CFNetwork.framework in Frameworks */,
-				4FE62B31146C31F500B46F7C /* libRestKitJSONParserYAJL.a in Frameworks */,
-				4FE62B32146C31F500B46F7C /* libRestKitNetwork.a in Frameworks */,
-				4FE62B33146C31F500B46F7C /* libRestKitObjectMapping.a in Frameworks */,
-				4FE62B34146C31F500B46F7C /* libRestKitSupport.a in Frameworks */,
-				4FE62B2C146C31DE00B46F7C /* libRestKitCoreData.a in Frameworks */,
 				4F6898FC14696275007927E3 /* AVFoundation.framework in Frameworks */,
 				4F08E1ED14353CC4008DACEE /* QuartzCore.framework in Frameworks */,
 				4F724CB713F774C500A6F871 /* AddressBookUI.framework in Frameworks */,
@@ -356,16 +452,24 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				4F2B1242147083CB007EC874 /* New Group */,
+				4F2B30881470B25F0033E43E /* libRestKitXMLParserLibxml.a */,
+				4F2B307E1470B2180033E43E /* libRestKitCoreData.a */,
+				4F2B307F1470B2180033E43E /* libRestKitJSONParserJSONKit.a */,
+				4F2B30801470B2180033E43E /* libRestKitNetwork.a */,
+				4F2B30811470B2180033E43E /* libRestKitObjectMapping.a */,
+				4F2B30821470B2180033E43E /* libRestKitSupport.a */,
+				4F2B30511470AD650033E43E /* CFNetwork.framework */,
+				4F2B30451470AA210033E43E /* libRestKitCoreData.a */,
+				4F2B30461470AA210033E43E /* libRestKitJSONParserJSONKit.a */,
+				4F2B30471470AA210033E43E /* libRestKitNetwork.a */,
+				4F2B30481470AA210033E43E /* libRestKitObjectMapping.a */,
+				4F2B30491470AA210033E43E /* libRestKitSupport.a */,
+				4F2B304A1470AA210033E43E /* libRestKitXMLParserLibxml.a */,
+				4F2B1242147083CB007EC874 /* Libraries */,
 				4FE62B39146C322900B46F7C /* MobileCoreServices.framework */,
 				4FE62B38146C321F00B46F7C /* SystemConfiguration.framework */,
 				4FE62B37146C321200B46F7C /* CoreData.framework */,
 				4FE62B35146C31FF00B46F7C /* CFNetwork.framework */,
-				4FE62B2D146C31F500B46F7C /* libRestKitJSONParserYAJL.a */,
-				4FE62B2E146C31F500B46F7C /* libRestKitNetwork.a */,
-				4FE62B2F146C31F500B46F7C /* libRestKitObjectMapping.a */,
-				4FE62B30146C31F500B46F7C /* libRestKitSupport.a */,
-				4FE62B2B146C31DE00B46F7C /* libRestKitCoreData.a */,
 				4F6898FB14696275007927E3 /* AVFoundation.framework */,
 				4F08E1EC14353CC4008DACEE /* QuartzCore.framework */,
 				4F74C55A1423973900B97CC3 /* SystemConfiguration.framework */,
@@ -491,11 +595,38 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		4F2B1242147083CB007EC874 /* New Group */ = {
+		4F2B1242147083CB007EC874 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				4F2BFFED1470A5400033E43E /* RestKit */,
 			);
-			name = "New Group";
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		4F2B30531470AFF10033E43E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4F2B30671470AFF10033E43E /* libRestKitNetwork.a */,
+				4F2B30691470AFF10033E43E /* libRestKitObjectMapping.a */,
+				4F2B306B1470AFF10033E43E /* libRestKitSupport.a */,
+				4F2B306D1470AFF10033E43E /* libRestKitJSONParser+NXJSON.a */,
+				4F2B306F1470AFF10033E43E /* libRestKitJSONParserYAJL.a */,
+				4F2B30711470AFF10033E43E /* libRestKitJSONParserSBJSON.a */,
+				4F2B30731470AFF10033E43E /* libRestKitJSONParserJSONKit.a */,
+				4F2B30751470AFF10033E43E /* libRestKitXMLParserLibxml.a */,
+				4F2B30771470AFF10033E43E /* libRestKitCoreData.a */,
+				4F2B30791470AFF10033E43E /* libRestKitThree20.a */,
+				4F2B307B1470AFF10033E43E /* UISpec.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4F2BFFED1470A5400033E43E /* RestKit */ = {
+			isa = PBXGroup;
+			children = (
+				4F2B30521470AFF10033E43E /* RestKit.xcodeproj */,
+			);
+			path = RestKit;
 			sourceTree = "<group>";
 		};
 		4F724C9813F75F1D00A6F871 /* images */ = {
@@ -589,6 +720,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				4F2B307D1470B0130033E43E /* PBXTargetDependency */,
 			);
 			name = NavTab;
 			productName = NavTab;
@@ -613,12 +745,99 @@
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 4F2B30531470AFF10033E43E /* Products */;
+					ProjectRef = 4F2B30521470AFF10033E43E /* RestKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* NavTab */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		4F2B30671470AFF10033E43E /* libRestKitNetwork.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitNetwork.a;
+			remoteRef = 4F2B30661470AFF10033E43E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4F2B30691470AFF10033E43E /* libRestKitObjectMapping.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitObjectMapping.a;
+			remoteRef = 4F2B30681470AFF10033E43E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4F2B306B1470AFF10033E43E /* libRestKitSupport.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitSupport.a;
+			remoteRef = 4F2B306A1470AFF10033E43E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4F2B306D1470AFF10033E43E /* libRestKitJSONParser+NXJSON.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = "libRestKitJSONParser+NXJSON.a";
+			path = libRestKitJSONParserNXJSON.a;
+			remoteRef = 4F2B306C1470AFF10033E43E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4F2B306F1470AFF10033E43E /* libRestKitJSONParserYAJL.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitJSONParserYAJL.a;
+			remoteRef = 4F2B306E1470AFF10033E43E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4F2B30711470AFF10033E43E /* libRestKitJSONParserSBJSON.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitJSONParserSBJSON.a;
+			remoteRef = 4F2B30701470AFF10033E43E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4F2B30731470AFF10033E43E /* libRestKitJSONParserJSONKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitJSONParserJSONKit.a;
+			remoteRef = 4F2B30721470AFF10033E43E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4F2B30751470AFF10033E43E /* libRestKitXMLParserLibxml.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitXMLParserLibxml.a;
+			remoteRef = 4F2B30741470AFF10033E43E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4F2B30771470AFF10033E43E /* libRestKitCoreData.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitCoreData.a;
+			remoteRef = 4F2B30761470AFF10033E43E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4F2B30791470AFF10033E43E /* libRestKitThree20.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitThree20.a;
+			remoteRef = 4F2B30781470AFF10033E43E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4F2B307B1470AFF10033E43E /* UISpec.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = UISpec.app;
+			remoteRef = 4F2B307A1470AFF10033E43E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1D60588D0D05DD3D006BFB54 /* Resources */ = {
@@ -729,6 +948,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		4F2B307D1470B0130033E43E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RestKit;
+			targetProxy = 4F2B307C1470B0130033E43E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -737,6 +964,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ray Yu (55P7VD7797)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ray Yu (55P7VD7797)";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Specs/Runner\"",
+					"\"$(SRCROOT)/RestKit/Specs/Runner\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -745,6 +977,10 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Specs/Runner/OCMock\"",
+					"\"$(SRCROOT)/RestKit/Examples/RKDiscussionBoardExample/DiscussionBoard/Libraries/three20\"",
+					"\"$(SRCROOT)/RestKit/Specs/Runner/OCMock\"",
+					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/NavTab-gdtjeaqbeqdwteddvgyoehnyltcn/Build/Products/Debug-iphoneos\"",
 				);
 				PRODUCT_NAME = NavTab;
 				PROVISIONING_PROFILE = "CFB911B4-F48C-4E77-9772-7ECD41363B0A";
@@ -760,12 +996,21 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ray Yu (55P7VD7797)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ray Yu (55P7VD7797)";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Specs/Runner\"",
+					"\"$(SRCROOT)/RestKit/Specs/Runner\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = NavTab_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Specs/Runner/OCMock\"",
+					"\"$(SRCROOT)/RestKit/Examples/RKDiscussionBoardExample/DiscussionBoard/Libraries/three20\"",
+					"\"$(SRCROOT)/RestKit/Specs/Runner/OCMock\"",
+					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/NavTab-gdtjeaqbeqdwteddvgyoehnyltcn/Build/Products/Debug-iphoneos\"",
 				);
 				PRODUCT_NAME = NavTab;
 				PROVISIONING_PROFILE = "CFB911B4-F48C-4E77-9772-7ECD41363B0A";
