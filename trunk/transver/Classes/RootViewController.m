@@ -16,6 +16,8 @@
 #import <AudioToolbox/AudioServices.h>
 #import <AddressBook/AddressBook.h>
 #import <AddressBookUI/AddressBookUI.h>
+#import <RestKit/RestKit.h>
+#import <RestKit/CoreData/CoreData.h>
 
 #define USE_CUSTOM_DRAWING 1
 
