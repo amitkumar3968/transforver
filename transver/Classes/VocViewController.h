@@ -69,7 +69,8 @@
 -(IBAction)sound:(id)sender;
 
 -(void)timeLoader;                                         //to slide the song slider as the song slides
--(IBAction)timerPosition:(id)sender;  
+-(IBAction)timerPosition:(id)sender; 
+- (IBAction)textFieldFinished:(id)sender;
 //============================
 
 
