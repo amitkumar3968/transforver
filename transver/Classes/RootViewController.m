@@ -31,6 +31,8 @@
 @synthesize m_PhoneNumber;
 @synthesize m_UserName;
 @synthesize m_AccountID;
+@synthesize firstName;
+@synthesize lastName;
 
 
 - (void)viewDidLoad {
@@ -100,6 +102,11 @@
 					  (CFComparatorFunction) ABPersonComparePeopleByName,
 					  (void*) ABPersonGetSortOrdering()
 					  );
+	CFIndex nPeople = ABAddressBookGetPersonCount(addressBook);
+	for (int i=0;i < nPeople;i++) { 
+		ABRecordRef ref = CFArrayGetValueAtIndex(peopleMutable,i);
+		//NSLog((NSString *)ABRecordCopyValue(ref));
+	}
 	
 	CFRelease(addressBook);
 	CFRelease(people);
@@ -418,6 +425,24 @@
 - (void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker;
 {
     [self dismissModalViewControllerAnimated:YES];
+}
+
+//@Ray Define actions (add relationship in DB) when specific contact is selected
+- (BOOL)peoplePickerNavigationController:
+(ABPeoplePickerNavigationController *)peoplePicker
+      shouldContinueAfterSelectingPerson:(ABRecordRef)person {
+	
+	
+	ABMutableMultiValueRef phoneMulti = ABRecordCopyValue(person, kABPersonPhoneProperty);
+	
+	NSString *phone      = ABMultiValueCopyValueAtIndex(phoneMulti, 0);
+	NSString *stringWithoutSeperates = [phone stringByReplacingOccurrencesOfString:@"-" withString:@""];	
+	[self savePhoneNumber:stringWithoutSeperates];
+    [phone release];
+	
+    [self dismissModalViewControllerAnimated:YES];
+	
+    return NO;
 }
 
 #pragma mark Table view methods
