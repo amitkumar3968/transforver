@@ -54,6 +54,7 @@
 		4F5E380013FC93130025B24A /* ChatBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5E37FF13FC93130025B24A /* ChatBubbleView.m */; };
 		4F5E385313FC98080025B24A /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F5E385213FC98080025B24A /* Icon.png */; };
 		4F6898FC14696275007927E3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F6898FB14696275007927E3 /* AVFoundation.framework */; };
+		4F7169B41472A38E00E01990 /* Dialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7169B31472A38E00E01990 /* Dialog.m */; };
 		4F724C8D13F6D91700A6F871 /* phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F724C8C13F6D91700A6F871 /* phone.png */; };
 		4F724C8F13F6D93800A6F871 /* 123.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F724C8E13F6D93800A6F871 /* 123.wav */; };
 		4F724CA713F7619300A6F871 /* bottomRow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F724C9A13F7619300A6F871 /* bottomRow.png */; };
@@ -285,6 +286,8 @@
 		4F5E37FF13FC93130025B24A /* ChatBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatBubbleView.m; sourceTree = "<group>"; };
 		4F5E385213FC98080025B24A /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		4F6898FB14696275007927E3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		4F7169B21472A38E00E01990 /* Dialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dialog.h; sourceTree = "<group>"; };
+		4F7169B31472A38E00E01990 /* Dialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dialog.m; sourceTree = "<group>"; };
 		4F724C8C13F6D91700A6F871 /* phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = phone.png; path = ../phone.png; sourceTree = "<group>"; };
 		4F724C8E13F6D93800A6F871 /* 123.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = 123.wav; path = ../123.wav; sourceTree = "<group>"; };
 		4F724C9A13F7619300A6F871 /* bottomRow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottomRow.png; sourceTree = "<group>"; };
@@ -437,6 +440,8 @@
 				E176A2280F893FC200EEE756 /* MoreTabViewController.m */,
 				E11501A30F8AB60C00E492FD /* MoreOptionViewController.h */,
 				E11501A40F8AB60C00E492FD /* MoreOptionViewController.m */,
+				4F7169B21472A38E00E01990 /* Dialog.h */,
+				4F7169B31472A38E00E01990 /* Dialog.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -943,6 +948,7 @@
 				4F76F61A145F073F003E944B /* MenuViewController.m in Sources */,
 				4F1BC6A21464FFDF004F02C1 /* VocViewController.m in Sources */,
 				4F238A84146AC80C0047EE1B /* Dialog.xcdatamodeld in Sources */,
+				4F7169B41472A38E00E01990 /* Dialog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,6 +15,7 @@
 #import "Play.h"
 #import "Quotation.h"
 #import "Common.h"
+#import "Dialog.h"
 /*
 #import "Contact.h"
 #import "ChatMeUser.h"
@@ -48,6 +49,7 @@
 @synthesize m_dstid;
 @synthesize m_srcid;
 @synthesize m_DstName;
+@synthesize m_DicMessages;
 
 NSString *downloadfilename;
 - (void)dealloc
@@ -56,6 +58,7 @@ NSString *downloadfilename;
     self.contact = nil;
     [_listOfItems release];
     [sectionInfoArray release];
+    [m_DicMessages release];
     [super dealloc];
 }
 
@@ -72,6 +75,8 @@ NSString *downloadfilename;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if( m_DicMessages == nil)
+        m_DicMessages = [[NSMutableDictionary alloc] init];
     NSLog(@"viewDidLoad %@", m_Messages);
     
     self.title = m_DstName;
@@ -124,16 +129,17 @@ NSString *downloadfilename;
 
 - (id) initWithRelation: (int) srcid DstID:(int) dstid {
     NSLog(@"initWithDstName");
+    m_DicMessages = [[NSMutableDictionary alloc] init ];
     m_srcid = srcid;
     m_dstid = dstid;
-    m_Messages = [self fetchMessages:srcid DstID:dstid];
+    m_Messages = [self fetchMessages:srcid DstID:dstid Messages:m_DicMessages];
     return self;
     
 }
 
 - (void) ScanMessages {
     NSLog(@"Scan Messages!!");
-    m_Messages = [self fetchMessages:m_srcid DstID:m_dstid];
+    m_Messages = [self fetchMessages:m_srcid DstID:m_dstid Messages:m_DicMessages];
     NSMutableArray *countriesLivedInArray = m_Messages;
     NSDictionary *countriesLivedInDict = [NSDictionary dictionaryWithObject:countriesLivedInArray forKey:@"Messages"];
     [_listOfItems replaceObjectAtIndex:0 withObject:countriesLivedInDict];
@@ -287,7 +293,7 @@ NSString *downloadfilename;
     
     return cell;
 }
-- (NSMutableArray*) fetchMessages:(int) srcid DstID:(int)dstid {
+- (NSMutableArray*) fetchMessages:(int) srcid DstID:(int)dstid Messages:(NSMutableDictionary *)srcMessages{
     NSDate *today = [NSDate date];
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     [format setDateFormat:@"yyyy-MM-dd"];
@@ -318,6 +324,44 @@ NSString *downloadfilename;
     //[ret addObject:todayString];
     for (NSDictionary *dic in array) {
         NSMutableArray *element = [[NSMutableArray alloc] init ];
+        NSString *tmpDate = [dic objectForKey:@"DIALOG_CREATEDTIME"];
+        NSDateFormatter *tmpformat = [[NSDateFormatter alloc] init];
+        [tmpformat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        //NSDate *tmp = [tmpformat dateFromString:tmpDate];
+        
+        tmpDate = [format stringFromDate:[tmpformat dateFromString:tmpDate]];
+        [tmpformat release];
+        if( [srcMessages objectForKey:tmpDate] != nil )
+        {
+            NSMutableDictionary *tmpDic = [srcMessages objectForKey:tmpDate];
+            if([tmpDic objectForKey:[dic objectForKey:@"DIALOG_ID"]] != nil)
+            {
+                
+            }else
+            {
+                Dialog *element = [[Dialog alloc] init];
+                element.m_Dialog_ID = [[dic objectForKey:@"DIALOG_ID"] intValue];
+                element.m_Dialog_Type = [[dic objectForKey:@"DIALOG_TYPE"] intValue];
+                element.m_Dialog_Voice = [dic objectForKey:@"DIALOG_VOICE"];
+                element.m_Dialog_Encrypt  = [dic objectForKey:@"DIALOG_VOICE_ENCRYPT"];
+                element.m_Dialog_Message = [dic objectForKey:@"DIALOG_MESSAGE"];
+                [tmpDic setObject:element forKey:[dic objectForKey:@"DIALOG_ID"]];
+                [element release];
+            }
+        }else
+        {
+            NSMutableDictionary *tmpDic = [[NSMutableDictionary alloc] init];
+            Dialog *element = [[Dialog alloc] init];
+            element.m_Dialog_ID = [[dic objectForKey:@"DIALOG_ID"] intValue];
+            element.m_Dialog_Type = [[dic objectForKey:@"DIALOG_TYPE"] intValue];
+            element.m_Dialog_Voice = [dic objectForKey:@"DIALOG_VOICE"];
+            element.m_Dialog_Encrypt  = [dic objectForKey:@"DIALOG_VOICE_ENCRYPT"];
+            element.m_Dialog_Message = [dic objectForKey:@"DIALOG_MESSAGE"];
+            [tmpDic setObject:element forKey:[dic objectForKey:@"DIALOG_ID"]];
+            [element release];
+            [srcMessages setObject:tmpDic forKey:tmpDate];
+            [tmpDic release];
+        }
         if( [[dic objectForKey:@"DIALOG_TYPE"] integerValue] == 0)
         {
             [element addObject: [dic objectForKey:@"DIALOG_MESSAGE"]];
@@ -478,14 +522,21 @@ NSString *downloadfilename;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"selected row:%d",indexPath.row);
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    //UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     NSDictionary *dictionary = [_listOfItems objectAtIndex:indexPath.section];
     NSArray *array = [dictionary objectForKey:@"Messages"];
     NSArray *elementArr = [array objectAtIndex:indexPath.row];
     NSString *cellValue = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], [elementArr objectAtIndex:0]];
     NSLog(@"play selected value:%@",[elementArr objectAtIndex:0]);
-    downloadfilename = [elementArr objectAtIndex:0];
-    [self downloadToFile:[elementArr objectAtIndex:0]];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+	if (![fileManager fileExistsAtPath:cellValue] ) 
+    {
+        downloadfilename = [elementArr objectAtIndex:0];
+        [self downloadToFile:[elementArr objectAtIndex:0]];
+    }else
+    {
+        [self playSound:[elementArr objectAtIndex:0]];
+    }
     //[self playSound:[elementArr objectAtIndex:0]];
 }
 
