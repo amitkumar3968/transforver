@@ -31,8 +31,8 @@
 @synthesize m_PhoneNumber;
 @synthesize m_UserName;
 @synthesize m_AccountID;
-@synthesize firstName;
-@synthesize lastName;
+//@synthesize firstName;
+//@synthesize lastName;
 
 
 - (void)viewDidLoad {
@@ -87,6 +87,7 @@
 	[button release];
 	
 	//accessing the address book
+    /*
 	ABAddressBookRef addressBook = ABAddressBookCreate();
 	CFArrayRef people = ABAddressBookCopyArrayOfAllPeople(addressBook);
 	CFMutableArrayRef peopleMutable = CFArrayCreateMutableCopy(
@@ -111,7 +112,7 @@
 	CFRelease(addressBook);
 	CFRelease(people);
 	CFRelease(peopleMutable);
-	
+	*/
     m_AccountID = [[NSMutableArray alloc] init];
 
 	NSArray *array = [self fetchRelationships:m_userid];//[[NSArray alloc] initWithObjects:@"find friends",@"Jerry", @"Raymond", @"John", nil];
@@ -128,7 +129,7 @@
     
     NSData *data = [DBHandler sendReqToUrl:urlString postString:nil];
 	NSArray *array = nil;
-    NSMutableArray *ret = [[NSMutableArray alloc] init ];
+    //NSMutableArray *ret = [[NSMutableArray alloc] init ];
 	
 	if(data)
 	{
@@ -173,12 +174,12 @@
 	system("ls");
 	SystemSoundID soundID = 0;
 	//NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	NSString *documentsPath = [Util getDocumentPath];
-	NSString *audioPath = [documentsPath stringByAppendingPathComponent:@"out.aif"];
+	//NSString *documentsPath = [Util getDocumentPath];
+	//NSString *audioPath = [documentsPath stringByAppendingPathComponent:@"out.aif"];
     NSString *filePath = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"recording"];
 
 	//NSString *filePath = [[NSBundle mainBundle] resourcePath];// stringByAppendingPathComponent:@"123.wav"];
-	NSLog(filePath);
+	NSLog(@"%@",filePath);
 	NSURL* tmpUrl = [[NSURL alloc] initFileURLWithPath:filePath ];
 	CFURLRef soundFileURL = (CFURLRef)tmpUrl;
 	OSStatus errorCode = AudioServicesCreateSystemSoundID(soundFileURL, &soundID);
@@ -377,8 +378,8 @@
 	UIDevice *myDevice = [UIDevice currentDevice];
 	NSString *deviceUDID = [myDevice uniqueIdentifier];
 	//NSString *post =[[NSString alloc] initWithFormat:@"userName=%@&userPhone=%@&deviceID=",@"hank",[[NSUserDefaults standardUserDefaults] stringForKey:@"SBFormattedPhoneNumber"]];
-	NSString *post =[[NSString alloc] initWithFormat:@"userPhone=%@&deviceID=",m_PhoneNumber];
-	post = [post stringByAppendingFormat:deviceUDID];
+	NSString *post =[[NSString alloc] initWithFormat:@"userPhone=%@&userName=%@&deviceID=",m_PhoneNumber,[[UIDevice currentDevice] name ]];
+	post = [post stringByAppendingFormat:@"%@",deviceUDID];
     //post = [post stringByAppendingFormat:[[NSUserDefaults standardUserDefaults] stringForKey:@"SBFormattedPhoneNumber"],deviceUDID];
 	NSURL *url=[NSURL URLWithString:@"http://www.entalkie.url.tw/login.php"];
 	
@@ -404,7 +405,7 @@
 	NSData *urlData=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
 	
 	NSString *data=[[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
-	NSLog(@"data:%@ error:%@",data, error);
+	//NSLog(@"data:%@ error:%@",data, error);
     return [data intValue];
 }
 
@@ -435,7 +436,7 @@
 	
 	ABMutableMultiValueRef phoneMulti = ABRecordCopyValue(person, kABPersonPhoneProperty);
 	
-	NSString *phone      = ABMultiValueCopyValueAtIndex(phoneMulti, 0);
+	const NSString *phone      = ABMultiValueCopyValueAtIndex(phoneMulti, 0);
 	NSString *stringWithoutSeperates = [phone stringByReplacingOccurrencesOfString:@"-" withString:@""];	
 	[self savePhoneNumber:stringWithoutSeperates];
     [phone release];    
@@ -642,7 +643,7 @@
 
     }
     cell.textLabel.text = [accounts objectAtIndex:row];
-    UIImageView *MyImageView = [[UIImageView alloc] initWithFrame:CGRectMake(100.0, 33.0, 10.0, 10.0)]; //put your size and coordinates here
+    //UIImageView *MyImageView = [[UIImageView alloc] initWithFrame:CGRectMake(100.0, 33.0, 10.0, 10.0)]; //put your size and coordinates here
     
     //MyImageView.image = [UIImage imageNamed:@"carat-open.png"];
     //[cell.contentView addSubview: MyImageView];
@@ -666,7 +667,7 @@
     if ( row == 0 )
     {//to add the contact list
         ABPeoplePickerNavigationController *myPicker = [[ABPeoplePickerNavigationController alloc] init];
-        [myPicker setPeoplePickerDelegate:self];
+        [myPicker setPeoplePickerDelegate:(id<ABPeoplePickerNavigationControllerDelegate>)self];
         //myPicker.peoplePickerDelegate = self;   
         // 只show e-mail
         //myPicker.displayedProperties = [NSArray arrayWithObject:[NSNumber numberWithInt:kABPersonEmailProperty]]; 
