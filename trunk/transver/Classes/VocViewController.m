@@ -351,6 +351,16 @@ numberOfRowsInComponent:(NSInteger)component
 	}
 	return randomString;
 }
+
+- (IBAction)textFieldFinished:(id)sender
+{
+	[sender resignFirstResponder];
+}
+
+/*- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+	[textField resignFirstResponder];
+}*/
 		 
 
 @end
