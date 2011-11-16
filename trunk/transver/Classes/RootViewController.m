@@ -438,7 +438,7 @@
 	NSString *phone      = ABMultiValueCopyValueAtIndex(phoneMulti, 0);
 	NSString *stringWithoutSeperates = [phone stringByReplacingOccurrencesOfString:@"-" withString:@""];	
 	[self savePhoneNumber:stringWithoutSeperates];
-    [phone release];
+    [phone release];    
 	
     [self dismissModalViewControllerAnimated:YES];
 	
