@@ -24,7 +24,7 @@
 @property (nonatomic, assign) int m_Dialog_ID;
 @property (nonatomic, assign) int m_Dialog_Type;
 @property (nonatomic, assign) int m_Dialog_SourceID;
-@property (nonatomic, assign) int m_Dialof_DstID;
+@property (nonatomic, assign) int m_Dialog_DstID;
 @property (nonatomic, retain) NSString *m_Dialog_Message;
 @property (nonatomic, retain) NSString *m_Dialog_Voice;
 @property (nonatomic, retain) NSString *m_Dialog_Encrypt;

@@ -114,12 +114,15 @@
 	CFRelease(peopleMutable);
 	*/
     m_AccountID = [[NSMutableArray alloc] init];
+    if( m_userid != -1)
+    {
+        
 
-	NSArray *array = [self fetchRelationships:m_userid];//[[NSArray alloc] initWithObjects:@"find friends",@"Jerry", @"Raymond", @"John", nil];
-	self.accounts = array;
-	[array release];
-    
-    	
+        NSArray *array = [self fetchRelationships:m_userid];//[[NSArray alloc] initWithObjects:@"find friends",@"Jerry", @"Raymond", @"John", nil];
+        self.accounts = array;
+        //[array release];
+        NSLog(@"%d", [array retainCount]);
+    }
 	[super viewDidLoad];
 
 }
@@ -157,14 +160,19 @@
 	}
     [ret addObject:@"get friends"];
     for (NSDictionary *dic in array) {
-        [ret addObject: [dic objectForKey:@"USER_NAME"]];
+        if( [dic objectForKey:@"USER_NAME"] == [NSNull null])
+            [ret addObject: @"NO NAME"];
+        else
+            [ret addObject: [dic objectForKey:@"USER_NAME"]];
         NSLog(@"%@",[dic objectForKey:@"RELATION_SLAVEID"]);
         [m_AccountID addObject: [dic objectForKey:@"RELATION_SLAVEID"]];
     }
     //[ret addObject:nil];
     NSArray *retArr = [[NSArray alloc ]initWithArray:ret];
     [ret release];
-    
+    //NSLog(@"1:%d",[retArr retainCount]);
+    [retArr autorelease];
+    //NSLog(@"2:%d",[retArr retainCount]);
 	return retArr;
 }
 
@@ -767,7 +775,7 @@
         m_userid = [self loginServer];
         NSArray *array = [self fetchRelationships:m_userid];//[[NSArray alloc] initWithObjects:@"find friends",@"Jerry", @"Raymond", @"John", nil];
         self.accounts = array;
-        [array release];
+        //[array release];
     }else
     {
         //add user for contact list

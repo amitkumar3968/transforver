@@ -103,18 +103,26 @@ NSString *downloadfilename;
     NSMutableArray *countriesLivedInArray = m_Messages;
     NSDictionary *countriesLivedInDict = [NSDictionary dictionaryWithObject:countriesLivedInArray forKey:@"Messages"];
     
+    sectionInfoArray = [[NSMutableArray alloc] init];
+    NSArray *keys = [m_DicMessages allKeys];
+    int count = [keys count];
+    for (int i = 0; i < count; i++)
+    {
+        id key = [keys objectAtIndex: i];
+        SectionInfo *sectionInfo = [[SectionInfo alloc] init];			
+        sectionInfo.open = NO;
+        sectionInfo.header = key;
+        [self.sectionInfoArray addObject:sectionInfo];
+        [sectionInfo release];
+        [_listOfItems addObject:countriesLivedInDict];
+    }
     //[_listOfItems addObject:countriesToLiveInDict];
     NSDate *today = [NSDate date];
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     [format setDateFormat:@"yyyy-MM-dd"];
     NSString *todayString = [format stringFromDate:today];
-    sectionInfoArray = [[NSMutableArray alloc] init];
-    SectionInfo *sectionInfo = [[SectionInfo alloc] init];			
-    sectionInfo.open = NO;
-    sectionInfo.header = todayString;
-    [self.sectionInfoArray addObject:sectionInfo];
-    [sectionInfo release];
-    [_listOfItems addObject:countriesLivedInDict];
+    
+    
     myTimer = [NSTimer scheduledTimerWithTimeInterval:30 target:self selector:@selector(ScanMessages) userInfo:nil repeats:YES];
     
     //self.navigationController.navigationBar.delegate = self;
@@ -140,9 +148,9 @@ NSString *downloadfilename;
 - (void) ScanMessages {
     NSLog(@"Scan Messages!!");
     m_Messages = [self fetchMessages:m_srcid DstID:m_dstid Messages:m_DicMessages];
-    NSMutableArray *countriesLivedInArray = m_Messages;
-    NSDictionary *countriesLivedInDict = [NSDictionary dictionaryWithObject:countriesLivedInArray forKey:@"Messages"];
-    [_listOfItems replaceObjectAtIndex:0 withObject:countriesLivedInDict];
+    //NSMutableArray *countriesLivedInArray = m_Messages;
+    //NSDictionary *countriesLivedInDict = [NSDictionary dictionaryWithObject:countriesLivedInArray forKey:@"Messages"];
+    //[_listOfItems replaceObjectAtIndex:0 withObject:countriesLivedInDict];
     //[_listOfItems addObject:countriesLivedInDict];
     [self.tableView reloadData];
 }
@@ -246,18 +254,20 @@ NSString *downloadfilename;
 
 // Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [_listOfItems count];
+    return [m_DicMessages count];//[_listOfItems count];
 }
 
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     //Number of rows it should expect should be based on the section
-    NSDictionary *dictionary = [_listOfItems objectAtIndex:section];
-    NSArray *array = [dictionary objectForKey:@"Messages"];
+    //[m_DicMessages ob
+    //NSDictionary *dictionary = [_listOfItems objectAtIndex:section];
     SectionInfo *tmpSect = [sectionInfoArray objectAtIndex:section];
-    NSLog(@"%d",tmpSect.open);
-    return tmpSect.open?[array count]:0;
+    NSDictionary *dic = [m_DicMessages objectForKey:tmpSect.header];
+    
+    NSLog(@"%d %d %@",[dic count], tmpSect.open, tmpSect.header);
+    return tmpSect.open?[dic count]:0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -345,6 +355,7 @@ NSString *downloadfilename;
                 element.m_Dialog_Voice = [dic objectForKey:@"DIALOG_VOICE"];
                 element.m_Dialog_Encrypt  = [dic objectForKey:@"DIALOG_VOICE_ENCRYPT"];
                 element.m_Dialog_Message = [dic objectForKey:@"DIALOG_MESSAGE"];
+                element.m_Created_Time = [dic objectForKey:@"DIALOG_CREATEDTIME"];
                 [tmpDic setObject:element forKey:[dic objectForKey:@"DIALOG_ID"]];
                 [element release];
             }
@@ -357,6 +368,7 @@ NSString *downloadfilename;
             element.m_Dialog_Voice = [dic objectForKey:@"DIALOG_VOICE"];
             element.m_Dialog_Encrypt  = [dic objectForKey:@"DIALOG_VOICE_ENCRYPT"];
             element.m_Dialog_Message = [dic objectForKey:@"DIALOG_MESSAGE"];
+            element.m_Created_Time = [dic objectForKey:@"DIALOG_CREATEDTIME"];
             [tmpDic setObject:element forKey:[dic objectForKey:@"DIALOG_ID"]];
             [element release];
             [srcMessages setObject:tmpDic forKey:tmpDate];
@@ -400,34 +412,54 @@ NSString *downloadfilename;
 - (void)configureCell:(MessageTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     
     //ChatMeUser *currentUser = [[ChatMeService sharedChatMeService] currentUser];
-    NSDictionary *dictionary = [_listOfItems objectAtIndex:indexPath.section];
-    NSArray *array = [dictionary objectForKey:@"Messages"];
-    NSArray *elementArr = [array objectAtIndex:indexPath.row];
-    NSString *cellValue = [elementArr objectAtIndex:0];
+    //NSDictionary *dictionary = [_listOfItems objectAtIndex:indexPath.section];
+    SectionInfo *sect =[sectionInfoArray objectAtIndex:indexPath.section];
+    NSDictionary *dictionary = [m_DicMessages objectForKey:sect.header];
+    NSEnumerator *enumerator = [dictionary keyEnumerator];
+    id key;
+    int index = 0;
+    Dialog *tmpDialog, *prevDialog;
+    while ((key = [enumerator nextObject])) {
+        tmpDialog = [dictionary objectForKey:key];
+        if( index == indexPath.row)
+            break;
+        prevDialog = [dictionary objectForKey:key];
+    }
+    //NSArray *array = [dictionary objectForKey:@"Messages"];
+    //NSArray *elementArr = [array objectAtIndex:indexPath.row];
+    NSString *cellValue;
+    if( tmpDialog.m_Dialog_Type == 1)
+    {
+        if( [tmpDialog.m_Dialog_Encrypt length]!= 0)
+            cellValue = tmpDialog.m_Dialog_Encrypt;
+        else
+            cellValue = tmpDialog.m_Dialog_Voice;
+    }else
+        cellValue = tmpDialog.m_Dialog_Message;
     Message *message = [[Message alloc] init];
     
     message.text = cellValue;
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     
-    NSDate *date = [dateFormat dateFromString:[elementArr objectAtIndex:1]];
+    NSDate *date = [dateFormat dateFromString:tmpDialog.m_Created_Time];
     [dateFormat setDateFormat:@"a h:mm "];
     NSString *str = [dateFormat stringFromDate:date]; 
     [dateFormat release];
     
     message.sentDate = date;
-    message.srcUser = [[elementArr objectAtIndex:2] integerValue];
-    message.dstUser = [[elementArr objectAtIndex:3] integerValue];
+    message.srcUser = tmpDialog.m_Dialog_SourceID;
+    message.dstUser = tmpDialog.m_Dialog_DstID;
     NSLog(@"cellvalue: %@", cellValue);
     [cell setText:cellValue];
     cell.m_date = str;
     //We only set the image if the previous message was from a different user
     BOOL showImage = (indexPath.row == 0);
     if (indexPath.row != 0) {
-        NSDictionary *dictionary = [_listOfItems objectAtIndex:indexPath.section];
-        NSArray *array = [dictionary objectForKey:@"Messages"];
-        NSArray *elementArr = [array objectAtIndex:indexPath.row-1];
-        if ([[elementArr objectAtIndex:2] integerValue] != message.srcUser) {
+        //NSDictionary *dictionary = [_listOfItems objectAtIndex:indexPath.section];
+        //NSArray *array = [dictionary objectForKey:@"Messages"];
+        //NSArray *elementArr = [array objectAtIndex:indexPath.row-1];
+        if (prevDialog.m_Dialog_SourceID != message.srcUser) {
             showImage = YES;
         }
         /*
@@ -460,10 +492,10 @@ NSString *downloadfilename;
     [cell setNeedsDisplay];
     
     NSRange aRange = [cellValue rangeOfString:@"aif"];
-    if (aRange.location ==NSNotFound) {
+    if (aRange.location ==NSNotFound  ) {
     } else {
         NSLog(@" %@ %d ",cellValue, aRange.location);
-        CGRect btnViewFrame = CGRectMake(35.0, 10.0,16.0,16.0);
+        CGRect btnViewFrame = CGRectMake(55.0, 25.0,16.0,16.0);
         UIButton *settingBtn = [[UIButton alloc] initWithFrame:btnViewFrame];
         UIImage *snap_picture = [UIImage imageNamed:@"arrow-right.png"];
         [settingBtn setBackgroundImage:snap_picture forState:UIControlStateNormal];
@@ -499,11 +531,23 @@ NSString *downloadfilename;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     //return 20;
-    NSDictionary *dictionary = [_listOfItems objectAtIndex:indexPath.section];
-    NSArray *array = [dictionary objectForKey:@"Messages"];
-    NSArray *elementArr = [array objectAtIndex:indexPath.row];
+    //NSDictionary *dictionary = [_listOfItems objectAtIndex:indexPath.section];
+    //NSArray *array = [dictionary objectForKey:@"Messages"];
+    //NSArray *elementArr = [array objectAtIndex:indexPath.row];
+    SectionInfo *sect =[sectionInfoArray objectAtIndex:indexPath.section];
+    NSDictionary *dictionary = [m_DicMessages objectForKey:sect.header];
+    NSEnumerator *enumerator = [dictionary keyEnumerator];
+    id key;
+    int index = 0;
+    Dialog *tmpDialog;
+    while ((key = [enumerator nextObject])) {
+        tmpDialog = [dictionary objectForKey:key];
+        if( index == indexPath.row)
+            break;
+    }
+
     NSLog(@"index path %d",indexPath.row);
-    NSString *cellValue = [elementArr objectAtIndex:0];
+    NSString *cellValue = tmpDialog.m_Dialog_Message;
     //Message *message = [_listOfItems objectAtIndex:indexPath.section];
     
     CGRect textRect = CGRectMake(0.0, 0.0, tableView.frame.size.width - kMessageSideSeparation*2 - kMessageImageWidth - kMessageBigSeparation, kMaxHeight);
@@ -688,7 +732,7 @@ NSURLConnection* connection;
 {   //收到封包，將收到的資料塞進緩衝中並修改進度條
 	[tempData appendData:incomingData];
     
-    double ex = expectedLength;
+    //double ex = expectedLength;
     //downloadProgress.progress = [tempData length] / ex;;
 }
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
@@ -909,9 +953,19 @@ NSURLConnection* connection;
     /*
      Create an array containing the index paths of the rows to insert: These correspond to the rows for each quotation in the current section.
      */
-    NSDictionary *dictionary = [_listOfItems objectAtIndex:sectionOpened];
-    NSArray *array = [dictionary objectForKey:@"Messages"];
-    NSInteger countOfRowsToInsert = [array count];
+    //NSDictionary *dictionary = [_listOfItems objectAtIndex:sectionOpened];
+    //NSArray *array = [dictionary objectForKey:@"Messages"];
+    NSLog(@"%@", [sectionInfoArray objectAtIndex:sectionOpened]);
+    NSDictionary *dictionary = [m_DicMessages objectForKey:sectionInfo.header ];
+    NSEnumerator *enumerator = [m_DicMessages keyEnumerator];
+    id key;
+    int index = 0;
+    Dialog *tmpDialog;
+    while ((key = [enumerator nextObject])) {
+        tmpDialog = [dictionary objectForKey:key];
+    }
+
+    NSInteger countOfRowsToInsert = [dictionary count];
     //NSString *cellValue = [elementArr objectAtIndex:0];
 
     //NSInteger countOfRowsToInsert = [sectionInfo.play.quotations count];
@@ -1010,7 +1064,7 @@ NSURLConnection* connection;
     //NSString *urlString = @"http://www.entalkie.url.tw/getRelationships.php?masterID=1";
     NSData *data = [DBHandler sendReqToUrl:urlString postString:postString];
     NSArray *array = nil;
-    NSMutableArray *ret = [[NSMutableArray alloc] init ];
+    //NSMutableArray *ret = [[NSMutableArray alloc] init ];
     
     if(data)
     {
