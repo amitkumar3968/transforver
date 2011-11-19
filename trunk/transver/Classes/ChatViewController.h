@@ -26,6 +26,7 @@
     int m_srcid;
     int m_dstid;
     NSString *m_DstName;
+    NSMutableDictionary *m_DicMessages;
 }
 
 @property (nonatomic, assign) int m_srcid;
