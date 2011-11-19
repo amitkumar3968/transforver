@@ -86,6 +86,7 @@
 		4F76F6471461A0EB003E944B /* view-media-artist.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76F6461461A0EB003E944B /* view-media-artist.png */; };
 		4F76F652146354C7003E944B /* carat-open.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76F650146354C6003E944B /* carat-open.png */; };
 		4F76F653146354C7003E944B /* carat.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76F651146354C6003E944B /* carat.png */; };
+		4F93E2471478262200333F51 /* OrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F93E2461478262200333F51 /* OrderedDictionary.m */; };
 		4F9BAFBE13EB740C004179FC /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9BAFBD13EB740C004179FC /* AddressBook.framework */; };
 		4F9BB0BC13F2E932004179FC /* 111.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4F9BB0BB13F2E931004179FC /* 111.caf */; };
 		4F9BB0C013F2E9BE004179FC /* mysoundcompressed.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4F9BB0BF13F2E9BE004179FC /* mysoundcompressed.caf */; };
@@ -322,6 +323,8 @@
 		4F76F6461461A0EB003E944B /* view-media-artist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "view-media-artist.png"; sourceTree = "<group>"; };
 		4F76F650146354C6003E944B /* carat-open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "carat-open.png"; sourceTree = "<group>"; };
 		4F76F651146354C6003E944B /* carat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carat.png; sourceTree = "<group>"; };
+		4F93E2451478262200333F51 /* OrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderedDictionary.h; sourceTree = "<group>"; };
+		4F93E2461478262200333F51 /* OrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderedDictionary.m; sourceTree = "<group>"; };
 		4F9BAFBD13EB740C004179FC /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		4F9BB0BB13F2E931004179FC /* 111.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = 111.caf; path = ../111.caf; sourceTree = "<group>"; };
 		4F9BB0BF13F2E9BE004179FC /* mysoundcompressed.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = mysoundcompressed.caf; path = ../mysoundcompressed.caf; sourceTree = "<group>"; };
@@ -576,6 +579,8 @@
 		4F03B2D21401D42300FEC9D4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				4F93E2451478262200333F51 /* OrderedDictionary.h */,
+				4F93E2461478262200333F51 /* OrderedDictionary.m */,
 				4F74C55714231D9400B97CC3 /* Reachability.h */,
 				4F74C55814231D9400B97CC3 /* Reachability.m */,
 				7E449FFD1402B4D500B5A7DC /* Util.h */,
@@ -949,6 +954,7 @@
 				4F1BC6A21464FFDF004F02C1 /* VocViewController.m in Sources */,
 				4F238A84146AC80C0047EE1B /* Dialog.xcdatamodeld in Sources */,
 				4F7169B41472A38E00E01990 /* Dialog.m in Sources */,
+				4F93E2471478262200333F51 /* OrderedDictionary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -42,7 +42,7 @@
 @property (nonatomic, retain) NSMutableDictionary *m_DicMessages;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;
-- (NSMutableArray*) fetchMessages:(int) uid DstID:(int)dstid Messages:(NSMutableDictionary *)srcMessages;
+- (void) fetchMessages:(int) uid DstID:(int)dstid Messages:(NSMutableDictionary *)srcMessages;
 - (NSArray*) sendMessages:(NSString *) message;
 - (id) initWithRelation: (int) srcid DstID:(int) dstid;
 - (void)configureCell:(MessageTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
