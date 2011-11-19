@@ -124,7 +124,6 @@ NSString *downloadfilename;
     
     
     myTimer = [NSTimer scheduledTimerWithTimeInterval:30 target:self selector:@selector(ScanMessages) userInfo:nil repeats:YES];
-    
     //self.navigationController.navigationBar.delegate = self;
     //Set the title
     //self.navigationItem.title = @"Countries";
@@ -423,6 +422,7 @@ NSString *downloadfilename;
         tmpDialog = [dictionary objectForKey:key];
         if( index == indexPath.row)
             break;
+        index++;
         prevDialog = [dictionary objectForKey:key];
     }
     //NSArray *array = [dictionary objectForKey:@"Messages"];
@@ -544,6 +544,7 @@ NSString *downloadfilename;
         tmpDialog = [dictionary objectForKey:key];
         if( index == indexPath.row)
             break;
+        index++;
     }
 
     NSLog(@"index path %d",indexPath.row);
@@ -567,19 +568,41 @@ NSString *downloadfilename;
 {
     NSLog(@"selected row:%d",indexPath.row);
     //UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    NSDictionary *dictionary = [_listOfItems objectAtIndex:indexPath.section];
-    NSArray *array = [dictionary objectForKey:@"Messages"];
-    NSArray *elementArr = [array objectAtIndex:indexPath.row];
-    NSString *cellValue = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], [elementArr objectAtIndex:0]];
-    NSLog(@"play selected value:%@",[elementArr objectAtIndex:0]);
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-	if (![fileManager fileExistsAtPath:cellValue] ) 
+    //NSDictionary *dictionary = [_listOfItems objectAtIndex:indexPath.section];
+    //NSArray *array = [dictionary objectForKey:@"Messages"];
+    //NSArray *elementArr = [array objectAtIndex:indexPath.row];
+    SectionInfo *sect =[sectionInfoArray objectAtIndex:indexPath.section];
+    NSDictionary *dictionary = [m_DicMessages objectForKey:sect.header];
+    NSEnumerator *enumerator = [dictionary keyEnumerator];
+    id key;
+    int index = 0;
+    Dialog *tmpDialog;
+    while ((key = [enumerator nextObject])) {
+        tmpDialog = [dictionary objectForKey:key];
+        if( index == indexPath.row)
+            break;
+        index++;
+    }
+    NSString *cellValue;
+    if( tmpDialog.m_Dialog_Type == 1)
     {
-        downloadfilename = [elementArr objectAtIndex:0];
-        [self downloadToFile:[elementArr objectAtIndex:0]];
+        if( [tmpDialog.m_Dialog_Encrypt length]!= 0)
+            cellValue = [NSString stringWithFormat:@"%@", tmpDialog.m_Dialog_Encrypt];
+        else
+            cellValue = [NSString stringWithFormat:@"%@", tmpDialog.m_Dialog_Voice];
+    }else
+        return;
+    //NSString *cellValue = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], tmpDialog.m_Dialog_Message];
+    NSLog(@"play selected value:%@",cellValue);
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+	if (![fileManager fileExistsAtPath:[NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], cellValue]] ) 
+    {
+        downloadfilename = cellValue;
+        [downloadfilename retain];
+        [self downloadToFile:cellValue];
     }else
     {
-        [self playSound:[elementArr objectAtIndex:0]];
+        [self playSound:cellValue];
     }
     //[self playSound:[elementArr objectAtIndex:0]];
 }
@@ -750,6 +773,7 @@ NSURLConnection* connection;
     [tempData release];
     tempData = nil;
     [self playSound:downloadfilename];
+    [downloadfilename autorelease];
     //img.image = [UIImage imageWithContentsOfFile:path]; //顯示圖片在畫面中
 }
 
