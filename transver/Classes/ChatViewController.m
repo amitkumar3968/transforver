@@ -16,6 +16,7 @@
 #import "Quotation.h"
 #import "Common.h"
 #import "Dialog.h"
+#import "OrderedDictionary.h"
 /*
 #import "Contact.h"
 #import "ChatMeUser.h"
@@ -59,6 +60,7 @@ NSString *downloadfilename;
     [_listOfItems release];
     [sectionInfoArray release];
     [m_DicMessages release];
+    [m_Messages release];
     [super dealloc];
 }
 
@@ -77,7 +79,7 @@ NSString *downloadfilename;
     [super viewDidLoad];
     if( m_DicMessages == nil)
         m_DicMessages = [[NSMutableDictionary alloc] init];
-    NSLog(@"viewDidLoad %@", m_Messages);
+    m_Messages = [[NSMutableArray alloc] init];
     
     self.title = m_DstName;
     //self.tableView.allowsSelection = NO;
@@ -100,8 +102,8 @@ NSString *downloadfilename;
     //NSDictionary *countriesToLiveInDict = [NSDictionary dictionaryWithObject:countriesToLiveInArray forKey:@"Countries"];
     
     
-    NSMutableArray *countriesLivedInArray = m_Messages;
-    NSDictionary *countriesLivedInDict = [NSDictionary dictionaryWithObject:countriesLivedInArray forKey:@"Messages"];
+    //NSMutableArray *countriesLivedInArray = m_Messages;
+    //NSDictionary *countriesLivedInDict = [NSDictionary dictionaryWithObject:countriesLivedInArray forKey:@"Messages"];
     
     sectionInfoArray = [[NSMutableArray alloc] init];
     NSArray *keys = [m_DicMessages allKeys];
@@ -114,7 +116,7 @@ NSString *downloadfilename;
         sectionInfo.header = key;
         [self.sectionInfoArray addObject:sectionInfo];
         [sectionInfo release];
-        [_listOfItems addObject:countriesLivedInDict];
+        //[_listOfItems addObject:countriesLivedInDict];
     }
     //[_listOfItems addObject:countriesToLiveInDict];
     NSDate *today = [NSDate date];
@@ -139,14 +141,14 @@ NSString *downloadfilename;
     m_DicMessages = [[NSMutableDictionary alloc] init ];
     m_srcid = srcid;
     m_dstid = dstid;
-    m_Messages = [self fetchMessages:srcid DstID:dstid Messages:m_DicMessages];
+    [self fetchMessages:srcid DstID:dstid Messages:m_DicMessages];
     return self;
     
 }
 
 - (void) ScanMessages {
     NSLog(@"Scan Messages!!");
-    m_Messages = [self fetchMessages:m_srcid DstID:m_dstid Messages:m_DicMessages];
+    [self fetchMessages:m_srcid DstID:m_dstid Messages:m_DicMessages];
     //NSMutableArray *countriesLivedInArray = m_Messages;
     //NSDictionary *countriesLivedInDict = [NSDictionary dictionaryWithObject:countriesLivedInArray forKey:@"Messages"];
     //[_listOfItems replaceObjectAtIndex:0 withObject:countriesLivedInDict];
@@ -302,7 +304,7 @@ NSString *downloadfilename;
     
     return cell;
 }
-- (NSMutableArray*) fetchMessages:(int) srcid DstID:(int)dstid Messages:(NSMutableDictionary *)srcMessages{
+- (void) fetchMessages:(int) srcid DstID:(int)dstid Messages:(NSMutableDictionary *)srcMessages{
     NSDate *today = [NSDate date];
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     [format setDateFormat:@"yyyy-MM-dd"];
@@ -342,7 +344,7 @@ NSString *downloadfilename;
         [tmpformat release];
         if( [srcMessages objectForKey:tmpDate] != nil )
         {
-            NSMutableDictionary *tmpDic = [srcMessages objectForKey:tmpDate];
+            OrderedDictionary *tmpDic = [srcMessages objectForKey:tmpDate];
             if([tmpDic objectForKey:[dic objectForKey:@"DIALOG_ID"]] != nil)
             {
                 
@@ -360,7 +362,7 @@ NSString *downloadfilename;
             }
         }else
         {
-            NSMutableDictionary *tmpDic = [[NSMutableDictionary alloc] init];
+            OrderedDictionary *tmpDic = [[OrderedDictionary alloc] init];
             Dialog *element = [[Dialog alloc] init];
             element.m_Dialog_ID = [[dic objectForKey:@"DIALOG_ID"] intValue];
             element.m_Dialog_Type = [[dic objectForKey:@"DIALOG_TYPE"] intValue];
@@ -403,10 +405,10 @@ NSString *downloadfilename;
     }
     
     //[ret addObject:nil];
-    NSMutableArray *retArr = [[NSMutableArray alloc ]initWithArray:ret];
-    [ret release];
+    //NSMutableArray *retArr = [[NSMutableArray alloc ]initWithArray:ret];
+    //[ret release];
     
-    return retArr;
+    //return retArr;
 }
 - (void)configureCell:(MessageTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     
