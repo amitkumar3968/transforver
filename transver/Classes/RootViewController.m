@@ -790,7 +790,7 @@
 //  LocalPushAppDelegate.m
 //  LocalPush
 //
-
+/*
 @interface ToDoItem : NSObject  {
     NSInteger year;
     NSInteger month;
@@ -972,7 +972,7 @@
     [window release];
     [super dealloc];
 }
-
+*/
 
 @end
 
