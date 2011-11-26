@@ -17,6 +17,7 @@
 #import "Common.h"
 #import "Dialog.h"
 #import "OrderedDictionary.h"
+
 /*
 #import "Contact.h"
 #import "ChatMeUser.h"
@@ -119,11 +120,15 @@ NSString *downloadfilename;
         //[_listOfItems addObject:countriesLivedInDict];
     }
     //[_listOfItems addObject:countriesToLiveInDict];
-    NSDate *today = [NSDate date];
-    NSDateFormatter *format = [[NSDateFormatter alloc] init];
-    [format setDateFormat:@"yyyy-MM-dd"];
-    NSString *todayString = [format stringFromDate:today];
+    //NSDate *today = [NSDate date];
+    //NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    //[format setDateFormat:@"yyyy-MM-dd"];
+    //NSString *todayString = [format stringFromDate:today];
     
+    
+    // Ask RestKit to spin the network activity indicator for us
+    //client.requestQueue.delegate = self;
+    //client.requestQueue.showsNetworkActivityIndicatorWhenBusy = YES;
     
     myTimer = [NSTimer scheduledTimerWithTimeInterval:30 target:self selector:@selector(ScanMessages) userInfo:nil repeats:YES];
     //self.navigationController.navigationBar.delegate = self;
@@ -139,6 +144,8 @@ NSString *downloadfilename;
 - (id) initWithRelation: (int) srcid DstID:(int) dstid {
     NSLog(@"initWithDstName");
     m_DicMessages = [[NSMutableDictionary alloc] init ];
+    RKClient* client = [RKClient clientWithBaseURL:@"http://www.entalkie.url.tw"];
+    [RKClient setSharedClient:client];
     m_srcid = srcid;
     m_dstid = dstid;
     [self fetchMessages:srcid DstID:dstid Messages:m_DicMessages];
@@ -161,6 +168,9 @@ NSString *downloadfilename;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    //[[RKClient sharedClient].requestQueue cancelRequestsWithDelegate:self];
+    //[_queue cancelAllRequests];
+    //[_queue release];
     self.bubbleView = nil;
     self.tableView = nil;
 }
@@ -357,6 +367,13 @@ NSString *downloadfilename;
                 element.m_Dialog_Encrypt  = [dic objectForKey:@"DIALOG_VOICE_ENCRYPT"];
                 element.m_Dialog_Message = [dic objectForKey:@"DIALOG_MESSAGE"];
                 element.m_Created_Time = [dic objectForKey:@"DIALOG_CREATEDTIME"];
+                element.m_Dialog_SourceID = [[dic objectForKey:@"DIALOG_SOURCEID"] intValue];
+                element.m_Dialog_DstID = [[dic objectForKey:@"DIALOG_DESTINATIONID"] intValue];
+                if( element.m_Dialog_Type == 1)
+                    [self queueRequests:element.m_Dialog_Voice];
+                else
+                    [self queueRequests:element.m_Dialog_Encrypt];
+
                 [tmpDic setObject:element forKey:[dic objectForKey:@"DIALOG_ID"]];
                 [element release];
             }
@@ -370,6 +387,13 @@ NSString *downloadfilename;
             element.m_Dialog_Encrypt  = [dic objectForKey:@"DIALOG_VOICE_ENCRYPT"];
             element.m_Dialog_Message = [dic objectForKey:@"DIALOG_MESSAGE"];
             element.m_Created_Time = [dic objectForKey:@"DIALOG_CREATEDTIME"];
+            element.m_Dialog_SourceID = [[dic objectForKey:@"DIALOG_SOURCEID"] intValue];
+            element.m_Dialog_DstID = [[dic objectForKey:@"DIALOG_DESTINATIONID"] intValue];
+                
+            if( element.m_Dialog_Type == 1)
+                [self queueRequests:element.m_Dialog_Voice];
+            else
+                [self queueRequests:element.m_Dialog_Encrypt];
             [tmpDic setObject:element forKey:[dic objectForKey:@"DIALOG_ID"]];
             [element release];
             [srcMessages setObject:tmpDic forKey:tmpDate];
@@ -482,9 +506,10 @@ NSString *downloadfilename;
     
     //Also, if fromUser is us (currentUser) we align it to the left, right otherwise
     CGRect frame;
+    NSLog(@"srcUser: %d", message.srcUser);
     if (message.srcUser == m_srcid) {
         [cell setMessageAlignment:kMessageAlignmentLeft];
-        frame = CGRectMake(55.0, 15.0, 150.0, 5.0);
+        frame = CGRectMake(85.0, 15.0, 150.0, 5.0);
     } else {
         [cell setMessageAlignment:kMessageAlignmentRight];
         frame = CGRectMake(85.0, 15.0, 150.0, 5.0);
@@ -1102,4 +1127,72 @@ NSURLConnection* connection;
     
 }
 
+- (void)queueRequests:(NSString *)filename {
+    //NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
+    NSString* filePath = [NSString stringWithFormat:@"/download.php?filename=%@", filename];
+    NSLog(@"%@",filename);
+    /*
+    [request setURL:[NSURL URLWithString:filePath]];
+    [request setHTTPMethod:@"GET"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"Mobile Safari 1.1.3 (iPhone; U; CPU like Mac OS X; en)" forHTTPHeaderField:@"User-Agent"];
+    tempData = [NSMutableData alloc];
+    connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    */
+    RKRequestQueue* queue = [[RKRequestQueue alloc] init];
+    queue.delegate = self;
+    queue.concurrentRequestsLimit = 1;
+    queue.showsNetworkActivityIndicatorWhenBusy = YES;
+    
+    // Queue up 4 requests
+    RKRequest *quest = [[RKClient sharedClient] requestWithResourcePath:filePath delegate:self];
+    [queue addRequest:quest];
+    //[queue addRequest:[[RKClient sharedClient] requestWithResourcePath:filePath delegate:self]];
+    //[queue addRequest:[[RKClient sharedClient] requestWithResourcePath:filePath delegate:self]];
+    //[queue addRequest:[[RKClient sharedClient] requestWithResourcePath:filePath delegate:self]];
+    
+    // Start processing!
+    [queue start];
+}
+
+- (void)requestQueue:(RKRequestQueue *)queue didSendRequest:(RKRequest *)request {
+    NSLog(@"%@", [NSString stringWithFormat:@"RKRequestQueue %@ is current loading %d of %d requests", 
+                         queue, [queue loadingCount], [queue count]]);
+}
+
+- (void)requestQueueDidBeginLoading:(RKRequestQueue *)queue {
+    NSLog(@"%@",[NSString stringWithFormat:@"Queue %@ Began Loading...", queue]);
+}
+
+- (void)requestQueueDidFinishLoading:(RKRequestQueue *)queue {
+    NSLog(@"%@", [NSString stringWithFormat:@"Queue %@ Finished Loading...", queue]);
+}
+
+- (void)request:(RKRequest *)request didReceivedData:(NSInteger)bytesReceived totalBytesReceived:(NSInteger)totalBytesReceived totalBytesExectedToReceive:(NSInteger)totalBytesExpectedToReceive{
+    NSLog(@"%@", [NSString stringWithFormat:@"didReceivedData %d Finished Loading...", bytesReceived]);
+}
+
+- (void)request:(RKRequest*)request didLoadResponse:(RKResponse*)response {
+    if ([response isStream]) {
+        NSString *documentsPath = [Util getDocumentPath];
+        //加上檔名
+        NSLog(@"儲存路徑：%@", response.request.URL);
+        NSString *tmpurl = [response.request.URL absoluteString];
+        NSRange range = [tmpurl rangeOfString:@"=" options:NSBackwardsSearch];
+        NSString* fileName = [tmpurl substringFromIndex:range.location + 1];
+        documentsPath = [documentsPath stringByAppendingPathComponent: fileName];
+    
+	
+        //寫入檔案
+    
+        [response.body writeToFile:documentsPath atomically:NO];
+        //[tempData release];
+        //tempData = nil;
+        //[self playSound:downloadfilename];
+        //[downloadfilename autorelease];
+    }
+    if ([response isJSON]) {
+        NSLog(@"Got a JSON response back!");
+    }
+}
 @end

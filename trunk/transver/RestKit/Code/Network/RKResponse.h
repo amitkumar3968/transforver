@@ -240,4 +240,9 @@
  */
 - (BOOL)isJSON;
 
+/**
+ * True when the server turned an Stream response (MIME type is application/octet-stream)
+ */
+- (BOOL)isStream;
+
 @end

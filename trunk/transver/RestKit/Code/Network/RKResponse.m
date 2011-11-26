@@ -176,6 +176,9 @@ extern NSString* cacheURLKey;
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
 	[_body appendData:data];
+    if ([[_request delegate] respondsToSelector:@selector(request:didReceivedData:totalBytesReceived:totalBytesExectedToReceive:)]) {
+        [[_request delegate] request:_request didReceivedData:[data length] totalBytesReceived:[_body length] totalBytesExectedToReceive:_httpURLResponse.expectedContentLength];
+    }
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSHTTPURLResponse *)response {	
@@ -400,6 +403,13 @@ extern NSString* cacheURLKey;
 	NSString* contentType = [self contentType];
 	return (contentType &&
 			[contentType rangeOfString:@"application/json"
+							   options:NSCaseInsensitiveSearch|NSAnchoredSearch].length > 0);
+}
+
+- (BOOL)isStream {
+	NSString* contentType = [self contentType];
+	return (contentType &&
+			[contentType rangeOfString:@"application/octet-stream"
 							   options:NSCaseInsensitiveSearch|NSAnchoredSearch].length > 0);
 }
 
