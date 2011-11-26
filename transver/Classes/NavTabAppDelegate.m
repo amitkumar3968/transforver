@@ -7,19 +7,25 @@
 //
 
 #import "NavTabAppDelegate.h"
-#import "RootViewController.h"
+//#import "RootViewController.h"
 
 
 @implementation NavTabAppDelegate
 
 @synthesize window;
 @synthesize navigationController;
-
+@synthesize tabController;
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
+	navController = [[UINavigationController alloc] init];
+	//TableViewController *tabView = [[TableViewController alloc] init];
 	
+	[navController pushViewController:tabController animated:FALSE];
+	
+	[window addSubview:[navController view]];
+
 	// Configure and show the window
-	[window addSubview:[navigationController view]];
+	//[window addSubview:[tabController view]];
 	[window makeKeyAndVisible];
 }
 

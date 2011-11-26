@@ -14,10 +14,12 @@
 #import "SectionInfo.h"
 #import "SectionHeaderView.h"
 #import "MessageTableViewCell.h"
+#import <RestKit/RestKit.h>
+#import <RestKit/CoreData/CoreData.h>
 
 @class Contact;
 
-@interface ChatViewController : UIViewController <ChatBubbleViewDelegate, UINavigationBarDelegate, SectionHeaderViewDelegate> {
+@interface ChatViewController : UIViewController <ChatBubbleViewDelegate, UINavigationBarDelegate, SectionHeaderViewDelegate, RKRequestQueueDelegate, RKRequestDelegate > {
     NSMutableArray *listOfItems;
     NSTimer *myTimer;
     NSInteger openSectionIndex;
@@ -49,4 +51,5 @@
 - (void) ScanMessages;
 - (void)downloadToFile:(NSString *)filename;
 - (void) playSound:(NSString *) filename;
+- (void)queueRequests:(NSString *)filename;
 @end

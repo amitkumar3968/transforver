@@ -589,9 +589,9 @@
 				4F03B2D81401D4C000FEC9D4 /* ChatMeUser.m */,
 				4F03B2D61401D48300FEC9D4 /* Common.h */,
 				4F03B2D31401D44700FEC9D4 /* Message.h */,
+				4F03B2D41401D44700FEC9D4 /* Message.m */,
 				4F03B2DA1401D4DC00FEC9D4 /* Invitation.h */,
 				4F03B2DB1401D4DC00FEC9D4 /* Invitation.m */,
-				4F03B2D41401D44700FEC9D4 /* Message.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
