@@ -17,12 +17,12 @@
 @synthesize tabController;
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
-	//navController = [[UINavigationController alloc] init];
+	navController = [[UINavigationController alloc] init];
 	//TableViewController *tabView = [[TableViewController alloc] init];
 	
-	//[navController pushViewController:tabController animated:FALSE];
+	[navController pushViewController:tabController animated:FALSE];
 	
-	[window addSubview:[tabController view]];
+	[window addSubview:[navController view]];
 
 	// Configure and show the window
 	//[window addSubview:[tabController view]];
