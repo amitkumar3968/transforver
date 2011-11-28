@@ -86,6 +86,8 @@
 		4F76F6471461A0EB003E944B /* view-media-artist.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76F6461461A0EB003E944B /* view-media-artist.png */; };
 		4F76F652146354C7003E944B /* carat-open.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76F650146354C6003E944B /* carat-open.png */; };
 		4F76F653146354C7003E944B /* carat.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F76F651146354C6003E944B /* carat.png */; };
+		4F93189214822B6A00A6D1FD /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F93189014822B6A00A6D1FD /* PersonViewController.m */; };
+		4F93189314822B6A00A6D1FD /* PersonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F93189114822B6A00A6D1FD /* PersonViewController.xib */; };
 		4F93E2471478262200333F51 /* OrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F93E2461478262200333F51 /* OrderedDictionary.m */; };
 		4F9BAFBE13EB740C004179FC /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9BAFBD13EB740C004179FC /* AddressBook.framework */; };
 		4F9BB0BC13F2E932004179FC /* 111.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4F9BB0BB13F2E931004179FC /* 111.caf */; };
@@ -323,6 +325,9 @@
 		4F76F6461461A0EB003E944B /* view-media-artist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "view-media-artist.png"; sourceTree = "<group>"; };
 		4F76F650146354C6003E944B /* carat-open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "carat-open.png"; sourceTree = "<group>"; };
 		4F76F651146354C6003E944B /* carat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carat.png; sourceTree = "<group>"; };
+		4F93188F14822B6A00A6D1FD /* PersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PersonViewController.h; path = ../PersonViewController.h; sourceTree = "<group>"; };
+		4F93189014822B6A00A6D1FD /* PersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PersonViewController.m; path = ../PersonViewController.m; sourceTree = "<group>"; };
+		4F93189114822B6A00A6D1FD /* PersonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonViewController.xib; sourceTree = "<group>"; };
 		4F93E2451478262200333F51 /* OrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderedDictionary.h; sourceTree = "<group>"; };
 		4F93E2461478262200333F51 /* OrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderedDictionary.m; sourceTree = "<group>"; };
 		4F9BAFBD13EB740C004179FC /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
@@ -445,6 +450,8 @@
 				E11501A40F8AB60C00E492FD /* MoreOptionViewController.m */,
 				4F7169B21472A38E00E01990 /* Dialog.h */,
 				4F7169B31472A38E00E01990 /* Dialog.m */,
+				4F93188F14822B6A00A6D1FD /* PersonViewController.h */,
+				4F93189014822B6A00A6D1FD /* PersonViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -514,6 +521,7 @@
 				E124FF810F82CD8F008BC374 /* TabViewController.xib */,
 				E176A12B0F8811A200EEE756 /* FavoritesTabView.xib */,
 				E176A2250F893F7C00EEE756 /* MoreTabView.xib */,
+				4F93189114822B6A00A6D1FD /* PersonViewController.xib */,
 				4F1BC6CB14658806004F02C1 /* VocViewController.xib */,
 				E11501A60F8AB6C600E492FD /* MoreOptionView.xib */,
 				4F2045F81417D2360002AC6A /* chatmodel.xcdatamodeld */,
@@ -899,6 +907,7 @@
 				4F1BC6CC14658806004F02C1 /* VocViewController.xib in Resources */,
 				4F1BC6D614682449004F02C1 /* user.png in Resources */,
 				4F238A811469AEBA0047EE1B /* arrow-right.png in Resources */,
+				4F93189314822B6A00A6D1FD /* PersonViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -955,6 +964,7 @@
 				4F238A84146AC80C0047EE1B /* Dialog.xcdatamodeld in Sources */,
 				4F7169B41472A38E00E01990 /* Dialog.m in Sources */,
 				4F93E2471478262200333F51 /* OrderedDictionary.m in Sources */,
+				4F93189214822B6A00A6D1FD /* PersonViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

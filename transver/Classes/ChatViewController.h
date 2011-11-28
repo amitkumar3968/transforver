@@ -29,8 +29,10 @@
     int m_dstid;
     NSString *m_DstName;
     NSMutableDictionary *m_DicMessages;
+    RKRequestQueue *m_Quest;
 }
 
+@property (nonatomic, retain) RKRequestQueue *m_Quest;
 @property (nonatomic, assign) int m_srcid;
 @property (nonatomic, assign) int m_dstid;
 @property (nonatomic, retain) NSString *m_DstName;

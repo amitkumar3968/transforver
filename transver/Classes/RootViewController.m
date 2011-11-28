@@ -26,7 +26,7 @@
 @synthesize accounts;
 @synthesize tabViewController;
 @synthesize audioRecorder;
-@synthesize m_userid;
+//@synthesize m_userid;
 @synthesize m_ShowMenu;
 @synthesize m_PhoneNumber;
 @synthesize m_UserName;
@@ -36,7 +36,7 @@
 
 
 - (void)viewDidLoad {
-	
+	//[[UIApplication sharedApplication] setApplicationIconBadgeNumber:100];
 	m_ShowMenu = 0;
 	UICustomTabViewController *tvController = [[UICustomTabViewController alloc] initWithNibName:@"TabViewController" bundle:nil];
 	self.tabViewController = tvController;
