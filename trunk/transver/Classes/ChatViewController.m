@@ -52,6 +52,7 @@
 @synthesize m_srcid;
 @synthesize m_DstName;
 @synthesize m_DicMessages;
+@synthesize m_Quest;
 
 NSString *downloadfilename;
 - (void)dealloc
@@ -62,6 +63,7 @@ NSString *downloadfilename;
     [sectionInfoArray release];
     [m_DicMessages release];
     [m_Messages release];
+    [m_Quest release];
     [super dealloc];
 }
 
@@ -80,6 +82,13 @@ NSString *downloadfilename;
     [super viewDidLoad];
     if( m_DicMessages == nil)
         m_DicMessages = [[NSMutableDictionary alloc] init];
+    if( m_Quest == nil)
+    {
+        m_Quest = [[RKRequestQueue alloc] init];
+        m_Quest.delegate = self;
+        m_Quest.concurrentRequestsLimit = 1;
+        m_Quest.showsNetworkActivityIndicatorWhenBusy = YES;
+    }
     m_Messages = [[NSMutableArray alloc] init];
     
     self.title = m_DstName;
@@ -143,7 +152,16 @@ NSString *downloadfilename;
 
 - (id) initWithRelation: (int) srcid DstID:(int) dstid {
     NSLog(@"initWithDstName");
-    m_DicMessages = [[NSMutableDictionary alloc] init ];
+    //m_DicMessages = [[NSMutableDictionary alloc] init ];
+    if( m_DicMessages == nil)
+        m_DicMessages = [[NSMutableDictionary alloc] init];
+    if( m_Quest == nil)
+    {
+        m_Quest = [[RKRequestQueue alloc] init];
+        m_Quest.delegate = self;
+        m_Quest.concurrentRequestsLimit = 1;
+        m_Quest.showsNetworkActivityIndicatorWhenBusy = YES;
+    }
     RKClient* client = [RKClient clientWithBaseURL:@"http://www.entalkie.url.tw"];
     [RKClient setSharedClient:client];
     m_srcid = srcid;
@@ -427,7 +445,7 @@ NSString *downloadfilename;
         [ret addObject:element];
         [element release];
     }
-    
+    [m_Quest start];
     //[ret addObject:nil];
     //NSMutableArray *retArr = [[NSMutableArray alloc ]initWithArray:ret];
     //[ret release];
@@ -812,8 +830,8 @@ NSURLConnection* connection;
 
 	SystemSoundID soundID = 0;
 	//NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	NSString *documentsPath = [Util getDocumentPath];
-	NSString *audioPath = [documentsPath stringByAppendingPathComponent:filename];
+	//NSString *documentsPath = [Util getDocumentPath];
+	//NSString *audioPath = [documentsPath stringByAppendingPathComponent:filename];
     NSString *filePath = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath],filename];
     NSLog(@"play %@",filePath);
 	//NSString *filePath = [[NSBundle mainBundle] resourcePath];// stringByAppendingPathComponent:@"123.wav"];
@@ -1138,21 +1156,21 @@ NSURLConnection* connection;
     [request setValue:@"Mobile Safari 1.1.3 (iPhone; U; CPU like Mac OS X; en)" forHTTPHeaderField:@"User-Agent"];
     tempData = [NSMutableData alloc];
     connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    */
+    
     RKRequestQueue* queue = [[RKRequestQueue alloc] init];
     queue.delegate = self;
     queue.concurrentRequestsLimit = 1;
     queue.showsNetworkActivityIndicatorWhenBusy = YES;
-    
+    */
     // Queue up 4 requests
     RKRequest *quest = [[RKClient sharedClient] requestWithResourcePath:filePath delegate:self];
-    [queue addRequest:quest];
+    [m_Quest addRequest:quest];
     //[queue addRequest:[[RKClient sharedClient] requestWithResourcePath:filePath delegate:self]];
     //[queue addRequest:[[RKClient sharedClient] requestWithResourcePath:filePath delegate:self]];
     //[queue addRequest:[[RKClient sharedClient] requestWithResourcePath:filePath delegate:self]];
     
     // Start processing!
-    [queue start];
+    //[queue start];
 }
 
 - (void)requestQueue:(RKRequestQueue *)queue didSendRequest:(RKRequest *)request {

@@ -15,6 +15,8 @@
 #import <RestKit/RestKit.h>
 #import <RestKit/CoreData/CoreData.h>
 
+int m_userid;
+
 @interface RootViewController : UITableViewController <AddUserViewDelegate>{
 	NSArray *accounts;
     NSString *m_PhoneNumber;
@@ -22,7 +24,7 @@
 	UICustomTabViewController *tabViewController;
 	AudioRecorder *audioRecorder;
     NSMutableArray *m_AccountID;
-    int m_userid;
+    
 	int m_ShowMenu;
 }
 
@@ -48,7 +50,7 @@
 @property (nonatomic, retain) NSString *m_UserName;
 @property (nonatomic, retain) UICustomTabViewController *tabViewController;
 @property (nonatomic, retain) AudioRecorder *audioRecorder;
-@property (nonatomic, assign) int m_userid;
+//@property (nonatomic, assign) int m_userid;
 @property (nonatomic, assign) int m_ShowMenu;
 
 
