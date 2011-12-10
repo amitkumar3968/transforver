@@ -73,13 +73,14 @@ extern int m_userid;
     //[imageButton release];
     //[filterButton release];
     m_Picker.navigationBar.topItem.titleView = m_view;
+    
     //[m_view release];
     [m_Picker setPeoplePickerDelegate:(id<ABPeoplePickerNavigationControllerDelegate>)self];
     //myPicker.peoplePickerDelegate = self;   
     // 只show e-mail
     //myPicker.displayedProperties = [NSArray arrayWithObject:[NSNumber numberWithInt:kABPersonEmailProperty]]; 
     //ABPersonViewController* ppnc = [[ABPersonViewController alloc] init];
-    [self.view addSubview:[m_Picker view]];
+    //[self.view addSubview:[m_Picker view]];
     
     //[myPicker release];
     //[myPicker release];
@@ -168,11 +169,52 @@ extern int m_userid;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+{	
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+// Customize the appearance of table view cells.
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+    }
+    
+    cell.text = @"Add contact";
+    return cell;
+}
+
+
+
+// Creates and returns a person object.
+- (ABRecordRef)personObject {
+	// Create a new Person object.
+	ABRecordRef newRecord = ABPersonCreate();
+	
+	// Setting the value to the ABPerson object.
+	ABRecordSetValue(newRecord, kABPersonFirstNameProperty, @"Christian", nil);
+	ABRecordSetValue(newRecord, kABPersonLastNameProperty, @"Linder", nil);
+	ABRecordSetValue(newRecord, kABPersonNoteProperty, @"sweetsnippets - Address book example", nil);
+    
+	return newRecord;
+}
+
+- (void)newPersonViewController:(ABNewPersonViewController *)newPersonViewController didCompleteWithNewPerson:(ABRecordRef)person {
+	[self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	if(indexPath.row == 0) {
+		ABNewPersonViewController *newPersonViewController = [[ABNewPersonViewController alloc] init];
+		newPersonViewController.displayedPerson = [self personObject];
+		newPersonViewController.newPersonViewDelegate = self;
+		[self.navigationController pushViewController:newPersonViewController animated:YES];
+	}
+}
 /*
  - (ABAddressBookRef) getFilteredAddressBook {
  /// open the default address book. 
