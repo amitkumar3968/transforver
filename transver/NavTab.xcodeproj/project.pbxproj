@@ -298,10 +298,10 @@
 		4F38BB19145B80F300671269 /* userWaldo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userWaldo.png; sourceTree = "<group>"; };
 		4F3EA8A3149C2A30006944DD /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
 		4F3EA8A4149C2A31006944DD /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
-		4F3EA8A5149C2A31006944DD /* ContactsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactsViewController.xib; sourceTree = "<group>"; };
+		4F3EA8A5149C2A31006944DD /* ContactsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContactsViewController.xib; path = Classes/ContactsViewController.xib; sourceTree = "<group>"; };
 		4F3EA8B0149DF334006944DD /* NavContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavContactsViewController.h; sourceTree = "<group>"; };
 		4F3EA8B1149DF334006944DD /* NavContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavContactsViewController.m; sourceTree = "<group>"; };
-		4F3EA8B2149DF334006944DD /* NavContactsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavContactsViewController.xib; sourceTree = "<group>"; };
+		4F3EA8B2149DF334006944DD /* NavContactsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NavContactsViewController.xib; path = Classes/NavContactsViewController.xib; sourceTree = "<group>"; };
 		4F5E37FE13FC93130025B24A /* ChatBubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatBubbleView.h; sourceTree = "<group>"; };
 		4F5E37FF13FC93130025B24A /* ChatBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatBubbleView.m; sourceTree = "<group>"; };
 		4F5E385213FC98080025B24A /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -478,10 +478,8 @@
 				4F8FA98B148B039E00490C8A /* OverlayViewController.m */,
 				4F3EA8A3149C2A30006944DD /* ContactsViewController.h */,
 				4F3EA8A4149C2A31006944DD /* ContactsViewController.m */,
-				4F3EA8A5149C2A31006944DD /* ContactsViewController.xib */,
 				4F3EA8B0149DF334006944DD /* NavContactsViewController.h */,
 				4F3EA8B1149DF334006944DD /* NavContactsViewController.m */,
-				4F3EA8B2149DF334006944DD /* NavContactsViewController.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -542,6 +540,8 @@
 				4F724C9913F75F7800A6F871 /* sounds */,
 				4F724C9813F75F1D00A6F871 /* images */,
 				2899E55F0DE3E45000AC0155 /* RootViewController.xib */,
+				4F3EA8A5149C2A31006944DD /* ContactsViewController.xib */,
+				4F3EA8B2149DF334006944DD /* NavContactsViewController.xib */,
 				4F1BC6B714658122004F02C1 /* VocoderViewController.xib */,
 				4F76F5FA145EFB90003E944B /* AddUserViewController.xib */,
 				4F76F619145F073F003E944B /* MenuViewController.xib */,
