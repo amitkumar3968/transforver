@@ -11,7 +11,7 @@
 
 @interface ContactsViewController : UITableViewController <UISearchDisplayDelegate, UISearchBarDelegate>
 {
-	NSArray			*listContent;			// The master content.
+	NSMutableArray			*listContent;			// The master content.
 	NSMutableArray	*filteredListContent;	// The content filtered as a result of a search.
     NSArray         *sectionedListContent;  // The content filtered into alphabetical sections.
 	
@@ -21,7 +21,7 @@
     BOOL			searchWasActive;
 }
 
-@property (nonatomic, retain) NSArray *listContent;
+@property (nonatomic, retain) NSMutableArray *listContent;
 @property (nonatomic, retain) NSMutableArray *filteredListContent;
 @property (nonatomic, retain, readonly) NSArray *sectionedListContent;
 

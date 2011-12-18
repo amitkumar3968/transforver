@@ -84,7 +84,27 @@
 {
     [super viewDidLoad];
     
-    self.title = @"Products";
+    ABAddressBookRef addressBook = ABAddressBookCreate();
+    
+    NSArray *addresses = (NSArray *) ABAddressBookCopyArrayOfAllPeople(addressBook);
+    NSInteger addressesCount = [addresses count];
+    
+    for (int i = 0; i < addressesCount; i++) {
+        ABRecordRef record = [addresses objectAtIndex:i];
+        NSString *firstName = (NSString *)ABRecordCopyValue(record, kABPersonFirstNameProperty);
+        NSString *lastName = (NSString *)ABRecordCopyValue(record, kABPersonLastNameProperty);
+        //UIImageView *contactImage = (UIImageView *)ABPersonCopyImageData(record);
+        NSString *contactFirstLast = [NSString stringWithFormat: @"%@ %@", firstName, lastName];
+        
+        [listContent addObject:contactFirstLast];
+        
+        //Here I think something goes wrong, but I don't know what
+        // If I comment out this line, the application works, but now pictures is showing.
+        //[imageList addObject:contactImage];
+        
+        [firstName release];
+        [lastName release];
+    }
 	
 	// create a filtered list that will contain products for the search results table.
 	self.filteredListContent = [NSMutableArray arrayWithCapacity:[self.listContent count]];

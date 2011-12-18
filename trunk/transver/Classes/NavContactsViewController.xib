@@ -57,7 +57,7 @@
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
-			<object class="IBUINavigationController" id="792068158">
+			<object class="IBUINavigationController" id="968289581">
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
 				<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 					<int key="IBUIInterfaceOrientation">1</int>
@@ -65,7 +65,7 @@
 				</object>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				<bool key="IBUIHorizontal">NO</bool>
-				<object class="IBUINavigationBar" key="IBUINavigationBar" id="495634142">
+				<object class="IBUINavigationBar" key="IBUINavigationBar" id="195718372">
 					<nil key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<string key="NSFrameSize">{0, 0}</string>
@@ -76,13 +76,13 @@
 				</object>
 				<object class="NSMutableArray" key="IBUIViewControllers">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<object class="IBUIViewController" id="326747609">
-						<object class="IBUINavigationItem" key="IBUINavigationItem" id="760398015">
+					<object class="IBUIViewController" id="893097800">
+						<object class="IBUINavigationItem" key="IBUINavigationItem" id="992398605">
 							<reference key="IBUINavigationBar"/>
 							<string key="IBUITitle">Contacts</string>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
-						<reference key="IBUIParentViewController" ref="792068158"/>
+						<reference key="IBUIParentViewController" ref="968289581"/>
 						<string key="IBUINibName">ContactsViewController</string>
 						<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 							<int key="IBUIInterfaceOrientation">1</int>
@@ -108,7 +108,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">delegate</string>
-						<reference key="source" ref="792068158"/>
+						<reference key="source" ref="968289581"/>
 						<reference key="destination" ref="372490531"/>
 					</object>
 					<int key="connectionID">8</int>
@@ -117,7 +117,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">navigationController</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="792068158"/>
+						<reference key="destination" ref="968289581"/>
 					</object>
 					<int key="connectionID">9</int>
 				</object>
@@ -149,32 +149,32 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">4</int>
-						<reference key="object" ref="792068158"/>
+						<reference key="object" ref="968289581"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="495634142"/>
-							<reference ref="326747609"/>
+							<reference ref="195718372"/>
+							<reference ref="893097800"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">5</int>
-						<reference key="object" ref="495634142"/>
-						<reference key="parent" ref="792068158"/>
+						<reference key="object" ref="195718372"/>
+						<reference key="parent" ref="968289581"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">6</int>
-						<reference key="object" ref="326747609"/>
+						<reference key="object" ref="893097800"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="760398015"/>
+							<reference ref="992398605"/>
 						</object>
-						<reference key="parent" ref="792068158"/>
+						<reference key="parent" ref="968289581"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">7</int>
-						<reference key="object" ref="760398015"/>
-						<reference key="parent" ref="326747609"/>
+						<reference key="object" ref="992398605"/>
+						<reference key="parent" ref="893097800"/>
 						<string key="objectName">Navigation Item - Root View Controller</string>
 					</object>
 				</object>
