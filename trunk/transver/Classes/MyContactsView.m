@@ -126,7 +126,7 @@
     //searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0.0f, 44.0f, 320.0f, 44.0f)];
     //[searchBar setFrame:CGRectMake(0.0f, 44.0f, 320.0f, 44.0f)];
     //[self.tableView setFrame:CGRectMake(0.0f, 88.0f, 320.0f, 44.0f)];
-
+    //[m_view addSubview:search];
     
 	[tableViewNavigationBar addSubview:m_view];
     //[tableViewNavigationBar addSubview:searchBar];
@@ -363,6 +363,23 @@
 	ovController = nil;
 	
 	[self.tableView reloadData];
+}
+
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+{
+    
+}
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterContentForSearchText:searchString scope:
+     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+    
+}
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption
+{
+    [self filterContentForSearchText:[self.searchDisplayController.searchBar text] scope:
+     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
+    
 }
 
 @end
