@@ -21,7 +21,7 @@
 	//TableViewController *tabView = [[TableViewController alloc] init];
 	
 	//[navController pushViewController:tabController animated:FALSE];
-	
+	tabController.selectedIndex = 2;
 	[window addSubview:[tabController view]];
 
 	// Configure and show the window
