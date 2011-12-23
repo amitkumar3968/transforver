@@ -14,12 +14,13 @@
 
 @synthesize listContent, filteredListContent, sectionedListContent, savedSearchTerm, savedScopeButtonIndex, searchWasActive;
 
-- (void)setListContent:(NSArray *)inListContent
+- (void)setListContent:(NSMutableArray *)inListContent
 {
     if (listContent == inListContent) {
         return;
     }
-    [listContent release]; listContent = [inListContent retain];                                   
+    [listContent release]; 
+    listContent = [inListContent retain];                                   
     
     NSMutableArray *sections = [NSMutableArray array];
     UILocalizedIndexedCollation *collation = [UILocalizedIndexedCollation currentCollation];
@@ -32,7 +33,9 @@
         ABRecordRef record = [addresses objectAtIndex:i];
         NSString *firstName = (NSString *)ABRecordCopyValue(record, kABPersonFirstNameProperty);
         NSString *lastName = (NSString *)ABRecordCopyValue(record, kABPersonLastNameProperty);
-        UIImageView *contactImage = (UIImageView *)ABPersonCopyImageData(record);
+        //UIImageView *contactImage = (UIImageView *)ABPersonCopyImageData(record);
+        if( firstName == nil)
+            firstName = @"";
         NSString *contactFirstLast = [NSString stringWithFormat: @"%@ %@", firstName, lastName];
         
         [sections addObject:contactFirstLast];
@@ -83,6 +86,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    listContent = [[NSMutableArray alloc] init];
     
     ABAddressBookRef addressBook = ABAddressBookCreate();
     
@@ -94,6 +98,10 @@
         NSString *firstName = (NSString *)ABRecordCopyValue(record, kABPersonFirstNameProperty);
         NSString *lastName = (NSString *)ABRecordCopyValue(record, kABPersonLastNameProperty);
         //UIImageView *contactImage = (UIImageView *)ABPersonCopyImageData(record);
+        if( firstName == nil)
+            firstName = @"";
+        if( lastName == nil)
+            lastName = @"";
         NSString *contactFirstLast = [NSString stringWithFormat: @"%@ %@", firstName, lastName];
         
         [listContent addObject:contactFirstLast];
@@ -139,7 +147,9 @@
     self.savedScopeButtonIndex = [self.searchDisplayController.searchBar selectedScopeButtonIndex];
 	
 	self.filteredListContent = nil;
-    [sectionedListContent release]; sectionedListContent = nil;
+    [listContent release];
+    [sectionedListContent release]; 
+    sectionedListContent = nil;
 
 }
 
@@ -176,14 +186,14 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [listContent count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -196,6 +206,7 @@
     }
     
     // Configure the cell...
+    [cell.textLabel setText:[listContent objectAtIndex:indexPath.row]];
     
     return cell;
 }
