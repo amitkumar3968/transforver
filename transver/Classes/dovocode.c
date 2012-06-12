@@ -280,7 +280,9 @@ int dovocode(char *filepath)
 	vocode_update_status_cb = update_status;
 	vocode_finish_status_cb = finish_status;
 	error_display_cb = display_error;
-  vocode_open_files(filepath);	
+    char* carrier_filepath;
+    char* output_filepath;
+    vocode_open_files(filepath, carrier_filepath, output_filepath);	
   vocode();
   vocode_cleanup();
   return 0;

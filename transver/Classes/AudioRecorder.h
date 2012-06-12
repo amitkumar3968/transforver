@@ -44,4 +44,5 @@ typedef struct
 - (void)stopRecording;
 - (void)startPlayback;
 - (void)stopPlayback;
+-(NSString *)getFileLocation;
 @end

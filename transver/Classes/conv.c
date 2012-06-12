@@ -14,7 +14,7 @@
 #include "wave.h"
 #include "conv.h"
 #include "vocode.h"
-
+void convolve(SAMPLE *modulator_sample_buffer);
 static size_t read_zero(WAVE_FILE *source, SAMPLE *dest, size_t length);
 static void wave_close_if_open(WAVE_FILE **pp);
 
@@ -101,6 +101,52 @@ void conv(char *output_filepath, char* vocode_modulator_filename)
 	vocode_cleanup();
 }
 
+void convolve(SAMPLE *modulator_sample_buffer)
+{	
+	int size_mask=((1-(-1))/.05+1);
+	SAMPLE Arr_Mask[size_mask];
+	for (int index=0; index<size_mask; index++)
+	{
+		SAMPLE x=-1+.05*index;
+		Arr_Mask[index]=exp(-5*pow(x,2))*cos(4*PI*x);
+		//printf("arrmask #%d: %f\n",index,Arr_Mask[index]);
+	}
+	SAMPLE *COutput;
+    
+	COutput = (SAMPLE *)malloc((vocode_window_length+size_mask-1)* sizeof(SAMPLE));
+    
+	int sizeOutput = vocode_window_length+size_mask-1;
+    
+    
+	//Convolution Algorithm
+	for (int i=0; i<sizeOutput; i++) 
+	{
+		COutput[i]=0;
+        
+		for (int j=0; j<size_mask; j++) 
+		{
+			int idx=i-j/2;
+			if (idx > 0) 
+			{
+				COutput[i] += modulator_sample_buffer[idx] * Arr_Mask[j];
+				//printf("arrmask #%d: %f\n",j,Arr_Mask[j]);
+			}
+		}
+	}
+    
+	SAMPLE min=0;
+	for (int i=0; i<vocode_window_length; i++)
+	{
+		int shift=size_mask/2;
+		if (modulator_sample_buffer[i]<min)
+			min=modulator_sample_buffer[i];
+		//printf("arrmask #%d: %lf\n",i,modulator[i]);
+		modulator_sample_buffer[i]=COutput[i+shift];
+        
+		//printf("arrmask #%d: %f\n",i,modulator[i]);
+	}
+}
+
 static size_t read_zero(WAVE_FILE *source, SAMPLE *dest, size_t length)
 {
 	size_t i, n = wave_read(source, dest, length);
@@ -128,51 +174,7 @@ static void allocate_memory(void)
 	//output = error_malloc(sizeof(VREAL) * 2 * vocode_window_length);
 }
 
-void convolve(SAMPLE *modulator_sample_buffer)
-{	
-	int size_mask=((1-(-1))/.05+1);
-	SAMPLE Arr_Mask[size_mask];
-	for (int index=0; index<size_mask; index++)
-	{
-		SAMPLE x=-1+.05*index;
-		Arr_Mask[index]=exp(-5*pow(x,2))*cos(4*PI*x);
-		//printf("arrmask #%d: %f\n",index,Arr_Mask[index]);
-	}
-	SAMPLE *COutput;
- 
-	COutput = (SAMPLE *)malloc((vocode_window_length+size_mask-1)* sizeof(SAMPLE));
- 
-	int sizeOutput = vocode_window_length+size_mask-1;
- 
- 
-	//Convolution Algorithm
-	for (int i=0; i<sizeOutput; i++) 
-	{
-		COutput[i]=0;
- 
-		for (int j=0; j<size_mask; j++) 
-		{
-			int idx=i-j/2;
-			if (idx > 0) 
-			{
-				COutput[i] += modulator_sample_buffer[idx] * Arr_Mask[j];
-				//printf("arrmask #%d: %f\n",j,Arr_Mask[j]);
-			}
-		}
-	}
- 
-	SAMPLE min=0;
-	for (int i=0; i<vocode_window_length; i++)
-	{
-		int shift=size_mask/2;
-		if (modulator_sample_buffer[i]<min)
-			min=modulator_sample_buffer[i];
-		//printf("arrmask #%d: %lf\n",i,modulator[i]);
-		modulator_sample_buffer[i]=COutput[i+shift];
- 
-		//printf("arrmask #%d: %f\n",i,modulator[i]);
-	}
-}
+
 
 /*
 static void free_memory(void)

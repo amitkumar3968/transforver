@@ -106,6 +106,7 @@ static void ask_user(const char *prompt, char *buffer, size_t length,
   if (p) *p = '\0';
 }
 
+
 static void ask_user_filename(const char *prompt, char *buffer, size_t length,
                               VBOOL require_existance)
 {

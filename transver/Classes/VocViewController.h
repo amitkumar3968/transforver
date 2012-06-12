@@ -14,8 +14,6 @@
 
 @protocol VocSendVoiceDelegate;
 
-
-@end
 @interface VocViewController : UIViewController 
 <UIPickerViewDelegate, UIPickerViewDataSource, AVAudioPlayerDelegate>{
 	IBOutlet UITextField *password;
