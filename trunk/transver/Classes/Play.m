@@ -55,9 +55,7 @@
 @synthesize name, quotations;
 
 - (void)dealloc {
-    [name release];
-    [quotations release];
-    [super dealloc];
+
 }
 
 @end

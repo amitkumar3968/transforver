@@ -51,7 +51,8 @@
 
 
 @interface Play : NSObject {
-
+    NSString *name;
+    NSArray *quotations;
 }
 
 @property (nonatomic, retain) NSString *name;

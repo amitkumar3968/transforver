@@ -18,6 +18,20 @@
 
 @interface ChatMeUser : NSManagedObject {
 @private
+    NSString * userID;
+    NSString * firstName;
+    NSString * letterForSorting;
+    NSNumber * userStatus;
+    NSString * fullName;
+    NSString * username;
+    UIImage * image;
+    NSString * lastName;
+    NSSet* sentMessages;
+    NSSet* receivedMessages;
+    NSSet* contacts;
+    NSSet* contacted;
+    NSSet* contactRequestsSent;
+    NSSet* contactRequestsReceived;    
 }
 @property (nonatomic, retain) NSString * userID;
 @property (nonatomic, retain) NSString * firstName;

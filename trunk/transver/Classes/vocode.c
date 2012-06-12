@@ -252,7 +252,7 @@ static void complex_to_sample_array(COMPLEX_ARRAY complex_array,
     }
 }
 
-void vocode_open_files(char *filepath)
+void vocode_open_files(char *filepath, char* vocode_carrier_filename, char* vocode_output_filename)
 {
 	/*
 	 @Ray: hard code paarameters into the program

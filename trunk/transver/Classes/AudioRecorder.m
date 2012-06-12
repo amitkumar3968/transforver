@@ -10,7 +10,8 @@
 #import "Util.h"
 
 
-@implementation AudioRecorder
+@implementation AudioRecorder;
+
 
 - init{
 	if (self = [super init]) {
@@ -386,7 +387,6 @@ void AudioOutputCallback(
     //[buttonRecord release];
     //[buttonPlay release];
     //	[window release];
-    [super dealloc];
 }
 
 - (BOOL)getFilename:(char*)buffer maxLenth:(int)maxBufferLength
