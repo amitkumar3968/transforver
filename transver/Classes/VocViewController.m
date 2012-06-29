@@ -51,7 +51,7 @@
 	//@ Ray added for audio player UI
     int a=0;
 	//initialize string to the path of the song in the resource folder
-	NSString *myMusic = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"recording"];
+	NSString *myMusic = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"Lion"];
 	NSString *stringEscapedMyMusic = [myMusic stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 	player = [[AVAudioPlayer alloc]initWithContentsOfURL:[NSURL fileURLWithPath:stringEscapedMyMusic] error:NULL];
 	player.numberOfLoops = 0;
