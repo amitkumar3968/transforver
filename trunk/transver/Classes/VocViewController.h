@@ -27,7 +27,7 @@
 	// elements for random string generator	
 	
 	//Ray add for AudioPlayer UI
-	AVAudioPlayer *player ;
+	AVAudioPlayer *player ;//
 	IBOutlet UISlider *slider,*timeSlider;    //slider to increase sound as required
 	IBOutlet UIButton *playButton;           //Play button to start song
 	IBOutlet UIButton *pauseButton;        //Pause button to pause song 
@@ -55,15 +55,15 @@
 + (NSString*) genRandStringLength:(int)len;
 
 //@Ray add for AudioPlayer UI
-@property(retain,nonatomic)AVAudioPlayer *player;
+@property(retain,nonatomic)AVAudioPlayer *player;//
 @property(retain,nonatomic)IBOutlet UISlider *slider ,*timeSlider;
 @property(nonatomic,readwrite)double increaseSound;
 @property(nonatomic,retain)NSTimer *timer;
 @property (nonatomic, assign) id <VocSendVoiceDelegate> delegate;
 
--(IBAction)playPlayer:(id)sender;
--(IBAction)pausePlayer:(id)sender;
--(IBAction)stopPlayer:(id)sender;
+-(IBAction)playPlayer:(id)sender;//
+-(IBAction)pausePlayer:(id)sender;//
+-(IBAction)stopPlayer:(id)sender;//
 -(IBAction)sound:(id)sender;
 
 -(void)timeLoader;                                         //to slide the song slider as the song slides
