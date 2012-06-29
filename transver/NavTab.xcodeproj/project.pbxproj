@@ -360,6 +360,7 @@
 		A4F632A0159D84B8003C709D /* message_icon_unlock.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F6326B159D84B8003C709D /* message_icon_unlock.png */; };
 		A4F632A1159D84B8003C709D /* message_icon_unlock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F6326C159D84B8003C709D /* message_icon_unlock@2x.png */; };
 		A4F632A3159DD22F003C709D /* vwRecordController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4F632A2159DD22E003C709D /* vwRecordController.xib */; };
+		A4F632A6159DDC79003C709D /* vwRecordController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F632A5159DDC79003C709D /* vwRecordController.m */; };
 		E11501A50F8AB60C00E492FD /* MoreOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E11501A40F8AB60C00E492FD /* MoreOptionViewController.m */; };
 		E11501A70F8AB6C600E492FD /* MoreOptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E11501A60F8AB6C600E492FD /* MoreOptionView.xib */; };
 		E124FF800F82CC6B008BC374 /* UICustomTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E124FF7F0F82CC6B008BC374 /* UICustomTabViewController.m */; };
@@ -872,6 +873,8 @@
 		A4F6326B159D84B8003C709D /* message_icon_unlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = message_icon_unlock.png; path = ../../../../../VEMsg/vemsger/VEMsg/images/history/message/message_icon_unlock.png; sourceTree = "<group>"; };
 		A4F6326C159D84B8003C709D /* message_icon_unlock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "message_icon_unlock@2x.png"; path = "../../../../../VEMsg/vemsger/VEMsg/images/history/message/message_icon_unlock@2x.png"; sourceTree = "<group>"; };
 		A4F632A2159DD22E003C709D /* vwRecordController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = vwRecordController.xib; sourceTree = "<group>"; };
+		A4F632A4159DDC79003C709D /* vwRecordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vwRecordController.h; sourceTree = "<group>"; };
+		A4F632A5159DDC79003C709D /* vwRecordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vwRecordController.m; sourceTree = "<group>"; };
 		E11501A30F8AB60C00E492FD /* MoreOptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreOptionViewController.h; sourceTree = "<group>"; };
 		E11501A40F8AB60C00E492FD /* MoreOptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreOptionViewController.m; sourceTree = "<group>"; };
 		E11501A60F8AB6C600E492FD /* MoreOptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreOptionView.xib; sourceTree = "<group>"; };
@@ -966,6 +969,8 @@
 				4F3EA8A4149C2A31006944DD /* ContactsViewController.m */,
 				4F3EA8B0149DF334006944DD /* NavContactsViewController.h */,
 				4F3EA8B1149DF334006944DD /* NavContactsViewController.m */,
+				A4F632A4159DDC79003C709D /* vwRecordController.h */,
+				A4F632A5159DDC79003C709D /* vwRecordController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -2025,6 +2030,7 @@
 				4F8FA98C148B039E00490C8A /* OverlayViewController.m in Sources */,
 				4F3EA8A6149C2A31006944DD /* ContactsViewController.m in Sources */,
 				4F3EA8B3149DF334006944DD /* NavContactsViewController.m in Sources */,
+				A4F632A6159DDC79003C709D /* vwRecordController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
