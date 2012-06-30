@@ -362,6 +362,8 @@
 		A4F632A3159DD22F003C709D /* vwRecordController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4F632A2159DD22E003C709D /* vwRecordController.xib */; };
 		A4F632A6159DDC79003C709D /* vwRecordController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F632A5159DDC79003C709D /* vwRecordController.m */; };
 		A4F632DF159E5760003C709D /* vwSettingsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4F632DE159E5760003C709D /* vwSettingsController.xib */; };
+		A4F63303159EA5DF003C709D /* vwSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F63302159EA5DF003C709D /* vwSettingsController.m */; };
+		A4F63306159EA64E003C709D /* vwSettingsEraseController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F63305159EA64E003C709D /* vwSettingsEraseController.m */; };
 		E11501A50F8AB60C00E492FD /* MoreOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E11501A40F8AB60C00E492FD /* MoreOptionViewController.m */; };
 		E11501A70F8AB6C600E492FD /* MoreOptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E11501A60F8AB6C600E492FD /* MoreOptionView.xib */; };
 		E124FF800F82CC6B008BC374 /* UICustomTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E124FF7F0F82CC6B008BC374 /* UICustomTabViewController.m */; };
@@ -877,6 +879,10 @@
 		A4F632A4159DDC79003C709D /* vwRecordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vwRecordController.h; sourceTree = "<group>"; };
 		A4F632A5159DDC79003C709D /* vwRecordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vwRecordController.m; sourceTree = "<group>"; };
 		A4F632DE159E5760003C709D /* vwSettingsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = vwSettingsController.xib; sourceTree = "<group>"; };
+		A4F63301159EA5DF003C709D /* vwSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vwSettingsController.h; sourceTree = "<group>"; };
+		A4F63302159EA5DF003C709D /* vwSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vwSettingsController.m; sourceTree = "<group>"; };
+		A4F63304159EA64E003C709D /* vwSettingsEraseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vwSettingsEraseController.h; sourceTree = "<group>"; };
+		A4F63305159EA64E003C709D /* vwSettingsEraseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vwSettingsEraseController.m; sourceTree = "<group>"; };
 		E11501A30F8AB60C00E492FD /* MoreOptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreOptionViewController.h; sourceTree = "<group>"; };
 		E11501A40F8AB60C00E492FD /* MoreOptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreOptionViewController.m; sourceTree = "<group>"; };
 		E11501A60F8AB6C600E492FD /* MoreOptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreOptionView.xib; sourceTree = "<group>"; };
@@ -973,6 +979,10 @@
 				4F3EA8B1149DF334006944DD /* NavContactsViewController.m */,
 				A4F632A4159DDC79003C709D /* vwRecordController.h */,
 				A4F632A5159DDC79003C709D /* vwRecordController.m */,
+				A4F63301159EA5DF003C709D /* vwSettingsController.h */,
+				A4F63302159EA5DF003C709D /* vwSettingsController.m */,
+				A4F63304159EA64E003C709D /* vwSettingsEraseController.h */,
+				A4F63305159EA64E003C709D /* vwSettingsEraseController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -2035,6 +2045,8 @@
 				4F3EA8A6149C2A31006944DD /* ContactsViewController.m in Sources */,
 				4F3EA8B3149DF334006944DD /* NavContactsViewController.m in Sources */,
 				A4F632A6159DDC79003C709D /* vwRecordController.m in Sources */,
+				A4F63303159EA5DF003C709D /* vwSettingsController.m in Sources */,
+				A4F63306159EA64E003C709D /* vwSettingsEraseController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
