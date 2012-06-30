@@ -361,6 +361,7 @@
 		A4F632A1159D84B8003C709D /* message_icon_unlock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F6326C159D84B8003C709D /* message_icon_unlock@2x.png */; };
 		A4F632A3159DD22F003C709D /* vwRecordController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4F632A2159DD22E003C709D /* vwRecordController.xib */; };
 		A4F632A6159DDC79003C709D /* vwRecordController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F632A5159DDC79003C709D /* vwRecordController.m */; };
+		A4F632DF159E5760003C709D /* vwSettingsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4F632DE159E5760003C709D /* vwSettingsController.xib */; };
 		E11501A50F8AB60C00E492FD /* MoreOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E11501A40F8AB60C00E492FD /* MoreOptionViewController.m */; };
 		E11501A70F8AB6C600E492FD /* MoreOptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E11501A60F8AB6C600E492FD /* MoreOptionView.xib */; };
 		E124FF800F82CC6B008BC374 /* UICustomTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E124FF7F0F82CC6B008BC374 /* UICustomTabViewController.m */; };
@@ -875,6 +876,7 @@
 		A4F632A2159DD22E003C709D /* vwRecordController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = vwRecordController.xib; sourceTree = "<group>"; };
 		A4F632A4159DDC79003C709D /* vwRecordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vwRecordController.h; sourceTree = "<group>"; };
 		A4F632A5159DDC79003C709D /* vwRecordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vwRecordController.m; sourceTree = "<group>"; };
+		A4F632DE159E5760003C709D /* vwSettingsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = vwSettingsController.xib; sourceTree = "<group>"; };
 		E11501A30F8AB60C00E492FD /* MoreOptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreOptionViewController.h; sourceTree = "<group>"; };
 		E11501A40F8AB60C00E492FD /* MoreOptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreOptionViewController.m; sourceTree = "<group>"; };
 		E11501A60F8AB6C600E492FD /* MoreOptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreOptionView.xib; sourceTree = "<group>"; };
@@ -1050,6 +1052,7 @@
 				4F2045F81417D2360002AC6A /* chatmodel.xcdatamodeld */,
 				4F238A82146AC80C0047EE1B /* Dialog.xcdatamodeld */,
 				A4F632A2159DD22E003C709D /* vwRecordController.xib */,
+				A4F632DE159E5760003C709D /* vwSettingsController.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1969,6 +1972,7 @@
 				A4F632A0159D84B8003C709D /* message_icon_unlock.png in Resources */,
 				A4F632A1159D84B8003C709D /* message_icon_unlock@2x.png in Resources */,
 				A4F632A3159DD22F003C709D /* vwRecordController.xib in Resources */,
+				A4F632DF159E5760003C709D /* vwSettingsController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2071,9 +2075,9 @@
 					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/NavTab-gdtjeaqbeqdwteddvgyoehnyltcn/Build/Products/Debug-iphoneos\"",
 				);
 				PRODUCT_NAME = NavTab;
-				PROVISIONING_PROFILE = "CFB911B4-F48C-4E77-9772-7ECD41363B0A";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "CFB911B4-F48C-4E77-9772-7ECD41363B0A";
-				SDKROOT = iphoneos4.3;
+				PROVISIONING_PROFILE = "4EEC8960-E342-4135-9FDF-EA0248041B22";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4EEC8960-E342-4135-9FDF-EA0248041B22";
+				SDKROOT = iphoneos5.1;
 			};
 			name = Debug;
 		};
@@ -2101,9 +2105,9 @@
 					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/NavTab-gdtjeaqbeqdwteddvgyoehnyltcn/Build/Products/Debug-iphoneos\"",
 				);
 				PRODUCT_NAME = NavTab;
-				PROVISIONING_PROFILE = "CFB911B4-F48C-4E77-9772-7ECD41363B0A";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "CFB911B4-F48C-4E77-9772-7ECD41363B0A";
-				SDKROOT = iphoneos4.3;
+				PROVISIONING_PROFILE = "4EEC8960-E342-4135-9FDF-EA0248041B22";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4EEC8960-E342-4135-9FDF-EA0248041B22";
+				SDKROOT = iphoneos5.1;
 			};
 			name = Release;
 		};
@@ -2146,8 +2150,8 @@
 					"-all_load",
 				);
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "4013EB65-2C95-4C03-B1CD-49E71DCA01E3";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4013EB65-2C95-4C03-B1CD-49E71DCA01E3";
+				PROVISIONING_PROFILE = "4EEC8960-E342-4135-9FDF-EA0248041B22";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4EEC8960-E342-4135-9FDF-EA0248041B22";
 				SDKROOT = iphoneos4.3;
 			};
 			name = Release;
