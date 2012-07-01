@@ -364,6 +364,11 @@
 		A4F632DF159E5760003C709D /* vwSettingsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4F632DE159E5760003C709D /* vwSettingsController.xib */; };
 		A4F63303159EA5DF003C709D /* vwSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F63302159EA5DF003C709D /* vwSettingsController.m */; };
 		A4F63306159EA64E003C709D /* vwSettingsEraseController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F63305159EA64E003C709D /* vwSettingsEraseController.m */; };
+		A4F6331E159F5587003C709D /* vwSettingsEraseController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4F6331D159F5587003C709D /* vwSettingsEraseController.xib */; };
+		A4F6335215A0543A003C709D /* vwSettingsLangController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4F6335115A0543A003C709D /* vwSettingsLangController.xib */; };
+		A4F6335515A0577A003C709D /* vwSettingsLangController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F6335415A0577A003C709D /* vwSettingsLangController.m */; };
+		A4F6335815A05C56003C709D /* vwSettingsPasswordController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F6335715A05C55003C709D /* vwSettingsPasswordController.m */; };
+		A4F6335A15A05CD7003C709D /* vwSettingsPasswordController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4F6335915A05CD7003C709D /* vwSettingsPasswordController.xib */; };
 		E11501A50F8AB60C00E492FD /* MoreOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E11501A40F8AB60C00E492FD /* MoreOptionViewController.m */; };
 		E11501A70F8AB6C600E492FD /* MoreOptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E11501A60F8AB6C600E492FD /* MoreOptionView.xib */; };
 		E124FF800F82CC6B008BC374 /* UICustomTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E124FF7F0F82CC6B008BC374 /* UICustomTabViewController.m */; };
@@ -883,6 +888,13 @@
 		A4F63302159EA5DF003C709D /* vwSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vwSettingsController.m; sourceTree = "<group>"; };
 		A4F63304159EA64E003C709D /* vwSettingsEraseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vwSettingsEraseController.h; sourceTree = "<group>"; };
 		A4F63305159EA64E003C709D /* vwSettingsEraseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vwSettingsEraseController.m; sourceTree = "<group>"; };
+		A4F6331D159F5587003C709D /* vwSettingsEraseController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = vwSettingsEraseController.xib; sourceTree = "<group>"; };
+		A4F6335115A0543A003C709D /* vwSettingsLangController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = vwSettingsLangController.xib; sourceTree = "<group>"; };
+		A4F6335315A0577A003C709D /* vwSettingsLangController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vwSettingsLangController.h; sourceTree = "<group>"; };
+		A4F6335415A0577A003C709D /* vwSettingsLangController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vwSettingsLangController.m; sourceTree = "<group>"; };
+		A4F6335615A05C55003C709D /* vwSettingsPasswordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vwSettingsPasswordController.h; path = ../vwSettingsPasswordController.h; sourceTree = "<group>"; };
+		A4F6335715A05C55003C709D /* vwSettingsPasswordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = vwSettingsPasswordController.m; path = ../vwSettingsPasswordController.m; sourceTree = "<group>"; };
+		A4F6335915A05CD7003C709D /* vwSettingsPasswordController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = vwSettingsPasswordController.xib; sourceTree = "<group>"; };
 		E11501A30F8AB60C00E492FD /* MoreOptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreOptionViewController.h; sourceTree = "<group>"; };
 		E11501A40F8AB60C00E492FD /* MoreOptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreOptionViewController.m; sourceTree = "<group>"; };
 		E11501A60F8AB6C600E492FD /* MoreOptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreOptionView.xib; sourceTree = "<group>"; };
@@ -983,6 +995,10 @@
 				A4F63302159EA5DF003C709D /* vwSettingsController.m */,
 				A4F63304159EA64E003C709D /* vwSettingsEraseController.h */,
 				A4F63305159EA64E003C709D /* vwSettingsEraseController.m */,
+				A4F6335315A0577A003C709D /* vwSettingsLangController.h */,
+				A4F6335415A0577A003C709D /* vwSettingsLangController.m */,
+				A4F6335615A05C55003C709D /* vwSettingsPasswordController.h */,
+				A4F6335715A05C55003C709D /* vwSettingsPasswordController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1063,6 +1079,9 @@
 				4F238A82146AC80C0047EE1B /* Dialog.xcdatamodeld */,
 				A4F632A2159DD22E003C709D /* vwRecordController.xib */,
 				A4F632DE159E5760003C709D /* vwSettingsController.xib */,
+				A4F6331D159F5587003C709D /* vwSettingsEraseController.xib */,
+				A4F6335115A0543A003C709D /* vwSettingsLangController.xib */,
+				A4F6335915A05CD7003C709D /* vwSettingsPasswordController.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1983,6 +2002,9 @@
 				A4F632A1159D84B8003C709D /* message_icon_unlock@2x.png in Resources */,
 				A4F632A3159DD22F003C709D /* vwRecordController.xib in Resources */,
 				A4F632DF159E5760003C709D /* vwSettingsController.xib in Resources */,
+				A4F6331E159F5587003C709D /* vwSettingsEraseController.xib in Resources */,
+				A4F6335215A0543A003C709D /* vwSettingsLangController.xib in Resources */,
+				A4F6335A15A05CD7003C709D /* vwSettingsPasswordController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2047,6 +2069,8 @@
 				A4F632A6159DDC79003C709D /* vwRecordController.m in Sources */,
 				A4F63303159EA5DF003C709D /* vwSettingsController.m in Sources */,
 				A4F63306159EA64E003C709D /* vwSettingsEraseController.m in Sources */,
+				A4F6335515A0577A003C709D /* vwSettingsLangController.m in Sources */,
+				A4F6335815A05C56003C709D /* vwSettingsPasswordController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

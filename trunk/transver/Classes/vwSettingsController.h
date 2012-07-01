@@ -15,4 +15,6 @@
 }
 @property (nonatomic, retain) UIButton *uibtEraseHist;
 - (IBAction)setEraseHistPeriod:(id)sender;
+- (IBAction)setLangPeriod:(id)sender;
+- (IBAction)setPasswordPeriod:(id)sender;
 @end

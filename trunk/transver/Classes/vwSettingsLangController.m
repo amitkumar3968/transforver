@@ -6,13 +6,12 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "vwSettingsEraseController.h"
+#import "vwSettingsLangController.h"
 
 
 
 
-@implementation vwSettingsEraseController
-@synthesize uitvEraseHistPeriod;
+@implementation vwSettingsLangController
 @synthesize dicEraseHistOptions;
 @synthesize uibtCancel;
 @synthesize uibtSave;
