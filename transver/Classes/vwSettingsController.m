@@ -8,6 +8,8 @@
 
 #import "vwSettingsController.h"
 #import "vwSettingsEraseController.h"
+#import "vwSettingsLangController.h"
+#import "vwSettingsPasswordController.h"
 
 @implementation vwSettingsController
 @synthesize uibtEraseHist;
@@ -17,6 +19,30 @@
     CGRect rectEraseRect = CGRectMake(0, 0, 200,180);
     vwSettingsEraseController *eraseView = [[vwSettingsEraseController alloc] initWithNibName:@"vwSettingsEraseController" bundle:[NSBundle mainBundle]];
     [self presentModalViewController:eraseView animated:NO];
+    /*eraseView.uitvEraseHistPeriod.delegate=self;
+     eraseView.view.frame=rectEraseRect;
+     [eraseView.view setBackgroundColor:[UIColor clearColor]];
+     eraseView.view.autoresizingMask=UIViewAutoresizingFlexibleHeight;
+     [self.view.window addSubview:eraseView.view];*/
+}
+
+- (IBAction)setLang:(id)sender
+{
+    CGRect rectEraseRect = CGRectMake(0, 0, 200,180);
+    vwSettingsLangController *langView = [[vwSettingsLangController alloc] initWithNibName:@"vwSettingsLangController" bundle:[NSBundle mainBundle]];
+    [self presentModalViewController:langView animated:NO];
+    /*eraseView.uitvEraseHistPeriod.delegate=self;
+     eraseView.view.frame=rectEraseRect;
+     [eraseView.view setBackgroundColor:[UIColor clearColor]];
+     eraseView.view.autoresizingMask=UIViewAutoresizingFlexibleHeight;
+     [self.view.window addSubview:eraseView.view];*/
+}
+
+- (IBAction)setPassword:(id)sender
+{
+    //CGRect rectPasswordRect = CGRectMake(0, 0, 200,180);
+    vwSettingsPasswordController *passwordView = [[vwSettingsPasswordController alloc] initWithNibName:@"vwSettingsPasswordController" bundle:[NSBundle mainBundle]];
+    [self presentModalViewController:passwordView animated:NO];
     /*eraseView.uitvEraseHistPeriod.delegate=self;
      eraseView.view.frame=rectEraseRect;
      [eraseView.view setBackgroundColor:[UIColor clearColor]];

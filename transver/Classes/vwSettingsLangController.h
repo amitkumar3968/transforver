@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface vwSettingsEraseController : UIViewController
-<UITableViewDelegate, UITableViewDataSource>
+@interface vwSettingsLangController : UIViewController
 {
-    IBOutlet UITableView* uitvEraseHistPeriod;
     NSDictionary* dicEraseHistChkions;
     IBOutlet UIButton* uibtCancel;
     IBOutlet UIButton* uibtSave;
@@ -32,7 +30,6 @@
     IBOutlet UIImageView* uiivChk7;
     IBOutlet UIImageView* uiivChk8;     
 }
-@property (nonatomic, retain) UITableView* uitvEraseHistPeriod;
 @property (nonatomic, retain) NSDictionary* dicEraseHistOptions;
 @property (nonatomic, retain) UIButton* uibtCancel;
 @property (nonatomic, retain) UIButton* uibtSave;
