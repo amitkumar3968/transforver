@@ -16,6 +16,7 @@
 #import "MessageTableViewCell.h"
 #import <RestKit/RestKit.h>
 #import <RestKit/CoreData/CoreData.h>
+#import "AudioRecorder.h"
 
 @class Contact;
 
@@ -30,6 +31,8 @@
     NSString *m_DstName;
     NSMutableDictionary *m_DicMessages;
     RKRequestQueue *m_Quest;
+    
+    AudioRecorder *audioRecorder;
 }
 
 @property (nonatomic, retain) RKRequestQueue *m_Quest;
@@ -45,6 +48,9 @@
 @property (nonatomic, retain) NSMutableArray *m_Messages;
 @property (nonatomic, retain) NSMutableDictionary *m_DicMessages;
 
+@property (nonatomic,retain)  AudioRecorder *audioRecorder;
+
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;
 - (void) fetchMessages:(int) uid DstID:(int)dstid Messages:(NSMutableDictionary *)srcMessages;
 - (NSArray*) sendMessages:(NSString *) message;
@@ -54,4 +60,7 @@
 - (void)downloadToFile:(NSString *)filename;
 - (void) playSound:(NSString *) filename;
 - (void)queueRequests:(NSString *)filename;
+- (IBAction)startRecording:(id)sender;
+- (IBAction)stopRecording:(id)sender;
+
 @end

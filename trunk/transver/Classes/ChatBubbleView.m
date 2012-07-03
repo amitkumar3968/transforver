@@ -117,7 +117,9 @@
     
     CGRect viewFrame = self.frame;
     CGFloat deltaHeight = CGRectGetHeight(viewFrame) - viewHeight;
-    viewFrame.origin.y += deltaHeight;
+    //viewFrame.origin.y += deltaHeight;
+    viewFrame.origin.y = 200;
+
     viewFrame.size.height = viewHeight;
     
     //Inform the delegate if we are resizing
@@ -209,12 +211,12 @@
 }
 
 
-- (void)recordButtonTapped {
+- (void)recButtonTapped {
     NSLog(@"Record");
 	[audioRecorder startRecording];
 }
 
-- (void)recordButtonTouchUp {
+- (void)recButtonTouchUp {
 	[audioRecorder stopRecording];
 	[audioRecorder release];
     NSLog(@"Record stop");
@@ -226,6 +228,7 @@
     vView.delegate = self;
 	[self.view addSubview:vView.view];
     self.m_vocView = vView;
+    //self.superview.tabBarController.selectedIndex = 0;
     
     
     [vView release];
