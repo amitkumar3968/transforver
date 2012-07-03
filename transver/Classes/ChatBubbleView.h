@@ -30,8 +30,8 @@
 @property (nonatomic,retain)  VocViewController *m_vocView;
 
 - (IBAction)sendButtonTapped;
-- (IBAction)recordButtonTapped;
-- (IBAction)recordButtonTouchUp;
+- (IBAction)recButtonTapped;
+- (IBAction)recButtonTouchUp;
 
 @end
 

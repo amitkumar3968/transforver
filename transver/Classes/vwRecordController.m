@@ -218,9 +218,10 @@ numberOfRowsInComponent:(NSInteger) component
 
 -(IBAction)pausePlayer:(id)sender
 {
+    [player pause];
     uisliderTime.value=player.currentTime;
     NSLog([[NSString alloc] initWithFormat:@"%f", player.currentTime]);
-    [player pause];
+
 }
 
 -(IBAction)stopPlayer:(id)sender
@@ -228,7 +229,9 @@ numberOfRowsInComponent:(NSInteger) component
     //if (player.playing)
     {
         [player stop];
+        [player setCurrentTime:0];
         uisliderTime.value=0;
+        uilbTimeElapse.text=@"0:00";
         [timer invalidate];
         timer=nil;
         playerPlaying=FALSE;

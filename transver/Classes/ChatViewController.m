@@ -53,8 +53,21 @@
 @synthesize m_DstName;
 @synthesize m_DicMessages;
 @synthesize m_Quest;
+@synthesize audioRecorder;
+
 
 NSString *downloadfilename;
+
+- (IBAction)startRecording:(id)sender
+{
+    [audioRecorder startRecording];
+}
+- (IBAction)stopRecording:(id)sender
+{
+    [audioRecorder stopRecording];
+	[audioRecorder release];
+    self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:1];
+}
 - (void)dealloc
 {
     //[__fetchedResultsController release];
@@ -148,6 +161,8 @@ NSString *downloadfilename;
     if ([messages count] > 1) {
         [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[messages count]-2 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
     }*/
+    
+    audioRecorder = [[[AudioRecorder	alloc] init] retain];
 }
 
 - (id) initWithRelation: (int) srcid DstID:(int) dstid {

@@ -23,7 +23,7 @@
 	
 	//[navController pushViewController:tabController animated:FALSE];
     [globalSettings initWithObjects:@"language" forKeys:1];
-	tabController.selectedIndex = 2;
+	tabController.selectedIndex = 0;
 	[window addSubview:[tabController view]];
 
 	// Configure and show the window
