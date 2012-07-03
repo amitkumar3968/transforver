@@ -30,6 +30,7 @@
 	IBOutlet UIButton *stopButton;          //stop button to start song from starting 
 	double increaseSound;                      //to hold the value of the slider
  	NSTimer *timer;	
+    BOOL playerPlaying;
     
     //Ray added for AudioRecorder
     

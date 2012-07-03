@@ -184,7 +184,6 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
-						<bool key="IBUIOn">YES</bool>
 					</object>
 					<object class="IBUIButton" id="248566233">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -236,15 +235,20 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
+						<string key="IBUINormalTitle">Rec</string>
 						<reference key="IBUIHighlightedTitleColor" ref="678041181"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
+							<int key="NSColorSpace">3</int>
+							<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="951573043"/>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">record_btn_redrec_unslect@2x.png</string>
+							<string key="NSResourceName">history_icon_unrecord.png</string>
+						</object>
+						<object class="NSCustomResource" key="IBUINormalBackgroundImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">record_btn_redrec_rest@2x.png</string>
 						</object>
 						<reference key="IBUIFontDescription" ref="76797074"/>
 						<reference key="IBUIFont" ref="520174208"/>
@@ -623,14 +627,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">uiswAutoDel</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="622466927"/>
-					</object>
-					<int key="connectionID">35</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">uisliderTime</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="1071397133"/>
@@ -654,6 +650,41 @@
 					<int key="connectionID">38</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">uiswAutoDel</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="622466927"/>
+					</object>
+					<int key="connectionID">49</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">showPicker</string>
+						<reference key="source" ref="248566233"/>
+						<reference key="destination" ref="975951072"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">45</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">hidePicker</string>
+						<reference key="source" ref="552793509"/>
+						<reference key="destination" ref="975951072"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">47</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">vocodeTapped:</string>
+						<reference key="source" ref="552793509"/>
+						<reference key="destination" ref="975951072"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">48</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">updateSliderValue:</string>
 						<reference key="source" ref="1071397133"/>
@@ -661,6 +692,24 @@
 						<int key="IBEventType">13</int>
 					</object>
 					<int key="connectionID">40</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">stopPlayer:</string>
+						<reference key="source" ref="944740366"/>
+						<reference key="destination" ref="975951072"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">43</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">pausePlayer:</string>
+						<reference key="source" ref="188077710"/>
+						<reference key="destination" ref="975951072"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">44</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -886,10 +935,121 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">42</int>
+			<int key="maxID">49</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<object class="IBPartialClassDescription">
+					<string key="className">VocViewController</string>
+					<string key="superclassName">UIViewController</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="pausePlayer:">id</string>
+						<string key="playPlayer:">id</string>
+						<string key="playorig_playback:">id</string>
+						<string key="playtrans_playback:">id</string>
+						<string key="quit_playback:">id</string>
+						<string key="sendexit_playback:">id</string>
+						<string key="sound:">id</string>
+						<string key="stopPlayer:">id</string>
+						<string key="textFieldFinished:">id</string>
+						<string key="timerPosition:">id</string>
+						<string key="vocodeTapped:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="pausePlayer:">
+							<string key="name">pausePlayer:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="playPlayer:">
+							<string key="name">playPlayer:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="playorig_playback:">
+							<string key="name">playorig_playback:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="playtrans_playback:">
+							<string key="name">playtrans_playback:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="quit_playback:">
+							<string key="name">quit_playback:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="sendexit_playback:">
+							<string key="name">sendexit_playback:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="sound:">
+							<string key="name">sound:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="stopPlayer:">
+							<string key="name">stopPlayer:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="textFieldFinished:">
+							<string key="name">textFieldFinished:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="timerPosition:">
+							<string key="name">timerPosition:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="vocodeTapped:">
+							<string key="name">vocodeTapped:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="encrypt">UISwitch</string>
+						<string key="password">UITextField</string>
+						<string key="pauseButton">UIButton</string>
+						<string key="playButton">UIButton</string>
+						<string key="slider">UISlider</string>
+						<string key="stopButton">UIButton</string>
+						<string key="timeSlider">UISlider</string>
+						<string key="voice_opt">UIPickerView</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="encrypt">
+							<string key="name">encrypt</string>
+							<string key="candidateClassName">UISwitch</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="password">
+							<string key="name">password</string>
+							<string key="candidateClassName">UITextField</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="pauseButton">
+							<string key="name">pauseButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="playButton">
+							<string key="name">playButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="slider">
+							<string key="name">slider</string>
+							<string key="candidateClassName">UISlider</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="stopButton">
+							<string key="name">stopButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="timeSlider">
+							<string key="name">timeSlider</string>
+							<string key="candidateClassName">UISlider</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="voice_opt">
+							<string key="name">voice_opt</string>
+							<string key="candidateClassName">UIPickerView</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/VocViewController.h</string>
+					</object>
+				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">vwRecordController</string>
 					<string key="superclassName">UIViewController</string>
@@ -1026,13 +1186,14 @@
 			<string key="common_bg_setting1@2x.png">{588, 88}</string>
 			<string key="common_bg_setting2@2x.png">{588, 88}</string>
 			<string key="common_bg_setting3@2x.png">{588, 88}</string>
+			<string key="history_icon_unrecord.png">{29, 29}</string>
 			<string key="player_btn_pause_unslected@2x.png">{186, 90}</string>
 			<string key="player_btn_play_slected@2x.png">{192, 90}</string>
 			<string key="player_btn_stop_unslected@2x.png">{193, 90}</string>
 			<string key="record_bg_sideheader1@2x.png">{132, 88}</string>
 			<string key="record_bg_sideheader2@2x.png">{132, 88}</string>
 			<string key="record_btn_header_rest@2x.png">{368, 88}</string>
-			<string key="record_btn_redrec_unslect@2x.png">{186, 90}</string>
+			<string key="record_btn_redrec_rest@2x.png">{186, 90}</string>
 			<string key="record_btn_sendndelete_slected.png">{160, 49}</string>
 			<string key="record_btn_sound_unslect@2x.png">{346, 90}</string>
 		</dictionary>
