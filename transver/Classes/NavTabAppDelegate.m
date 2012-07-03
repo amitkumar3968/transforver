@@ -15,12 +15,14 @@
 @synthesize window;
 @synthesize navigationController;
 @synthesize tabController;
+@synthesize globalSettings;
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
 	//navController = [[UINavigationController alloc] init];
 	//TableViewController *tabView = [[TableViewController alloc] init];
 	
 	//[navController pushViewController:tabController animated:FALSE];
+    [globalSettings initWithObjects:@"language" forKeys:1];
 	tabController.selectedIndex = 2;
 	[window addSubview:[tabController view]];
 

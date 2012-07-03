@@ -92,14 +92,25 @@ numberOfRowsInComponent:(NSInteger) component
 
 
 
--(void) playerSetup{
-    NSString *myMusic = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"out"];
+-(void) playerSetup
+{
+    NSString *myMusic;
+    if (done_vocode==1)
+    {    
+        myMusic = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"out"];
+    }
+    else {
+        myMusic = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"recording"];
+    }
 	NSString *stringEscapedMyMusic = [myMusic stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+
     player = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:stringEscapedMyMusic] error:NULL];
 	player.numberOfLoops = 0;
 	player.volume = 1;
 	uisliderTime.maximumValue = player.duration;
     uilbTimeTotal.text= [[NSString alloc] initWithFormat:@"%i:%02i", (int)(uisliderTime.maximumValue)/60, (int)uisliderTime.maximumValue%60];
+    //[myMusic release];
+    //[stringEscapedMyMusic release];
 }
 
 
@@ -171,8 +182,8 @@ numberOfRowsInComponent:(NSInteger) component
     [self customizeAppearance]; 
     [Util copyFileWithFilename:@"Lion.aif"];
     [Util copyFileWithFilename:@"Piano.aif"];
-    [self playerSetup];
     [super viewDidLoad];
+    done_vocode=0;
     //[self initRecorderSetup];
 	//timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(timeLoader) userInfo:nil repeats:YES];    
 	// Do any additional setup after loading the view, typically from a nib.
@@ -181,9 +192,9 @@ numberOfRowsInComponent:(NSInteger) component
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    [self playerSetup];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    done_vocode=0;
 }
 
 
@@ -196,12 +207,13 @@ numberOfRowsInComponent:(NSInteger) component
 -(IBAction)playPlayer:(id)sender
 {   
     //[[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+    [self playerSetup];
     if (uisliderTime.value==0)
     {
         timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(timerFired:) userInfo:nil repeats:true];
     }
     player.currentTime=uisliderTime.value;
-	[player playAtTime:MIN((uisliderTime.value)-.5,0)];
+	[player playAtTime:MAX((uisliderTime.value)-.5,0)];
 }
 
 -(IBAction)pausePlayer:(id)sender
@@ -213,9 +225,14 @@ numberOfRowsInComponent:(NSInteger) component
 
 -(IBAction)stopPlayer:(id)sender
 {
-	[player stop];
-    uisliderTime.value=0;
-    [timer invalidate];
+    //if (player.playing)
+    {
+        [player stop];
+        uisliderTime.value=0;
+        [timer invalidate];
+        timer=nil;
+        playerPlaying=FALSE;
+    }
 }
 
 -(void)timerFired:(id)sender{
@@ -224,12 +241,18 @@ numberOfRowsInComponent:(NSInteger) component
         uilbTimeElapse.text=[[NSString alloc] initWithFormat:@"%i:%.02i", (int)player.currentTime/60,(int)player.currentTime%60];
     }
     
-    else
-    {
-        if(player.currentTime==player.duration){
+    /*else
+    {   
+        if (timer.isValid)
+        {    
+            [player stop];
+            NSLog(@"player stop; timer invalidate");
+            [timer invalidate];
             uisliderTime.value=0;
+            timer=nil;
         }
     }
+     */
 }
 
 //====================================

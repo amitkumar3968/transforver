@@ -54,12 +54,9 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
-- (IBAction)changeSelection:(id)sender
+- (void)activateCheckAtIdx:(int)idx
 {
-    UIImageView* uiivSender=(UIImageView*)sender;
-    [self disableAllChks];
-    NSLog(@"%d", uiivSender.tag);
-    switch (uiivSender.tag) {
+    switch (idx) {
         case 1:
             uiivChk1.hidden=NO;
             break;
@@ -88,6 +85,13 @@
             break;
     }
     
+}
+- (IBAction)changeSelection:(id)sender
+{
+    UIImageView* uiivSender=(UIImageView*)sender;
+    [self disableAllChks];
+    NSLog(@"%d", uiivSender.tag);
+    [self activateCheckAtIdx:uiivSender.tag];    
     
 }
 
@@ -106,7 +110,7 @@
     NSArray* temp= [[NSArray alloc] initWithObjects:@"Never", @"Every 3 months", @"Every 1 month", @"Every 1 week", @"Every 1 day", @"Every 1 hour", @"Every 5 mins", @"Every time", nil];
     NSDictionary* dicEraseHistOptions=[[NSDictionary alloc] initWithObjectsAndKeys:temp, @"a" , nil];
     [self disableAllChks];
-    uiivChk7.hidden=NO;
+    //[self activateCheckAtIdx:
 	// Do any additional setup after loading the view.
     
 }
