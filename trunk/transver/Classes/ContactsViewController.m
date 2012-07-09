@@ -7,12 +7,13 @@
 //
 
 #import "ContactsViewController.h"
+#import "ContactTableViewCell.h"
 #import <AddressBookUI/AddressBookUI.h>
 
 
 @implementation ContactsViewController
 
-@synthesize listContent, filteredListContent, sectionedListContent, savedSearchTerm, savedScopeButtonIndex, searchWasActive;
+@synthesize listContent, filteredListContent, sectionedListContent, savedSearchTerm, savedScopeButtonIndex, searchWasActive, delegate;
 
 - (void)setListContent:(NSMutableArray *)inListContent
 {
@@ -47,6 +48,7 @@
         [firstName release];
         [lastName release];
     }
+
 
     
     NSInteger section = 0;
@@ -113,7 +115,14 @@
         [firstName release];
         [lastName release];
     }
-	
+#if 1
+    if( addressesCount == 0)
+    {
+        NSString *contactFirstLast = [NSString stringWithFormat: @"Ray"];
+        
+        [listContent addObject:contactFirstLast];
+    }
+#endif	
 	// create a filtered list that will contain products for the search results table.
 	self.filteredListContent = [NSMutableArray arrayWithCapacity:[self.listContent count]];
 	
@@ -184,14 +193,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return [listContent count];
 }
@@ -200,7 +207,7 @@
 {
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    ContactTableViewCell *cell = (ContactTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
@@ -210,6 +217,7 @@
     
     return cell;
 }
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -254,6 +262,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(SwitchTab:)]) 
+    {
+        [self.delegate SwitchTab:@"0912555345"];
+    }
+    //[((UITabBarController *)self.parentViewController.parentViewController).selectedViewController viewDidAppear:YES];
     // Navigation logic may go here. Create and push another view controller.
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];

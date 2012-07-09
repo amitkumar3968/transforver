@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
+@protocol ContactsViewControllerDelegate;
 
 @interface ContactsViewController : UITableViewController <UISearchDisplayDelegate, UISearchBarDelegate>
 {
@@ -28,5 +30,10 @@
 @property (nonatomic, copy) NSString *savedSearchTerm;
 @property (nonatomic) NSInteger savedScopeButtonIndex;
 @property (nonatomic) BOOL searchWasActive;
+@property (nonatomic, assign) id <ContactsViewControllerDelegate> delegate;
+@end
 
+@protocol ContactsViewControllerDelegate <NSObject>
+@optional
+- (void) SwitchTab:(NSString *) number;
 @end

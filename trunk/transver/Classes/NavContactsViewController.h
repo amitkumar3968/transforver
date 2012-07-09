@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ContactsViewController.h"
 
 
-@interface NavContactsViewController : UIViewController {
+@interface NavContactsViewController : UIViewController <ContactsViewControllerDelegate>{
     UINavigationController *navigationController;
 }
 
-
+- (void) buttonPushed;
+- (void) SwitchTab:(NSString *) number;
 @property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
+@property (nonatomic, retain) IBOutlet ContactsViewController *contactsController;
 @end
