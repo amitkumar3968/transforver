@@ -152,7 +152,6 @@ NSString *downloadfilename;
     //client.requestQueue.delegate = self;
     //client.requestQueue.showsNetworkActivityIndicatorWhenBusy = YES;
     
-    myTimer = [NSTimer scheduledTimerWithTimeInterval:30 target:self selector:@selector(ScanMessages) userInfo:nil repeats:YES];
     //self.navigationController.navigationBar.delegate = self;
     //Set the title
     //self.navigationItem.title = @"Countries";
@@ -211,6 +210,8 @@ NSString *downloadfilename;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    myTimer = [NSTimer scheduledTimerWithTimeInterval:30 target:self selector:@selector(ScanMessages) userInfo:nil repeats:YES];
+    
     /*
      Check whether the section info array has been created, and if so whether the section count still matches the current section count. In general, you need to keep the section info synchronized with the rows and section. If you support editing in the table view, you need to appropriately update the section info during editing operations.
      */
