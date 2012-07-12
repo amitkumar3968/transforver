@@ -104,11 +104,14 @@
     
     tableViewNavigationBar = [[UINavigationBar alloc] initWithFrame: CGRectMake(0.0f, 0.0f, 320.0f, 44.0f)];
     
-	UIButton *imageButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+	UIButton *imageButton = [UIButton buttonWithType:UIButtonTypeCustom];
     imageButton.frame = CGRectMake(20.0, 5.0, 70.0, 30.0);
     [imageButton setTitle:@"ALL" forState:UIControlStateNormal];
+    [imageButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_unslected.png"] forState:UIControlStateNormal];
+    [imageButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_slected.png"] forState:UIControlStateSelected];
 	[imageButton addTarget:self action:@selector(buttonPushed:)
 		  forControlEvents:UIControlEventTouchUpInside];
+    
     UIButton *filterButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     filterButton.frame = CGRectMake(90.0, 5.0, 90.0, 30.0);
     [filterButton setTitle:@"Messenger" forState:UIControlStateNormal];

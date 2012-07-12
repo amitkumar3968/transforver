@@ -1475,11 +1475,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Classes/MyContactsView.m"
-         timestampString = "345284154.32681"
+         timestampString = "363717726.983698"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "333"
-         endingLineNumber = "333"
+         startingLineNumber = "336"
+         endingLineNumber = "336"
          landmarkName = "-searchTableView"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1489,11 +1489,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Classes/MyContactsView.m"
-         timestampString = "345284571.121868"
+         timestampString = "363717726.983698"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "374"
-         endingLineNumber = "374"
+         startingLineNumber = "377"
+         endingLineNumber = "377"
          landmarkName = "-searchDisplayController:shouldReloadTableForSearchString:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1517,11 +1517,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Classes/NavContactsViewController.m"
-         timestampString = "346378422.658905"
+         timestampString = "363801107.674892"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "44"
-         endingLineNumber = "44"
+         startingLineNumber = "46"
+         endingLineNumber = "46"
          landmarkName = "@implementation NavContactsViewController"
          landmarkType = "3">
       </FileBreakpoint>
