@@ -14,7 +14,7 @@
     UINavigationController *navigationController;
 }
 
-- (void) buttonPushed;
+- (void) buttonPushed:(id)sender;
 - (void) SwitchTab:(NSString *) number;
 @property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
 @property (nonatomic, retain) IBOutlet ContactsViewController *contactsController;
