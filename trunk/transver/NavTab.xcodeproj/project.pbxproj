@@ -359,6 +359,8 @@
 		A45FEFCE15A3166F00CF3D72 /* common_icon_set_slected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A45FEF9515A3166F00CF3D72 /* common_icon_set_slected@2x.png */; };
 		A45FEFCF15A3166F00CF3D72 /* record_bg_header.png in Resources */ = {isa = PBXBuildFile; fileRef = A45FEF9615A3166F00CF3D72 /* record_bg_header.png */; };
 		A45FEFD015A3166F00CF3D72 /* record_bg_header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A45FEF9715A3166F00CF3D72 /* record_bg_header@2x.png */; };
+		A45FEFFF15AB18E000CF3D72 /* vwAboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = A45FEFFE15AB18E000CF3D72 /* vwAboutController.m */; };
+		A45FF00115AB191300CF3D72 /* vwAboutController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A45FF00015AB191300CF3D72 /* vwAboutController.xib */; };
 		A4F632A3159DD22F003C709D /* vwRecordController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4F632A2159DD22E003C709D /* vwRecordController.xib */; };
 		A4F632A6159DDC79003C709D /* vwRecordController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F632A5159DDC79003C709D /* vwRecordController.m */; };
 		A4F632DF159E5760003C709D /* vwSettingsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4F632DE159E5760003C709D /* vwSettingsController.xib */; };
@@ -880,6 +882,9 @@
 		A45FEF9515A3166F00CF3D72 /* common_icon_set_slected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "common_icon_set_slected@2x.png"; path = "common/common_icon_set_slected@2x.png"; sourceTree = "<group>"; };
 		A45FEF9615A3166F00CF3D72 /* record_bg_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = record_bg_header.png; path = common/record_bg_header.png; sourceTree = "<group>"; };
 		A45FEF9715A3166F00CF3D72 /* record_bg_header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "record_bg_header@2x.png"; path = "common/record_bg_header@2x.png"; sourceTree = "<group>"; };
+		A45FEFFD15AB18E000CF3D72 /* vwAboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vwAboutController.h; sourceTree = "<group>"; };
+		A45FEFFE15AB18E000CF3D72 /* vwAboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vwAboutController.m; sourceTree = "<group>"; };
+		A45FF00015AB191300CF3D72 /* vwAboutController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = vwAboutController.xib; sourceTree = "<group>"; };
 		A4F632A2159DD22E003C709D /* vwRecordController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = vwRecordController.xib; sourceTree = "<group>"; };
 		A4F632A4159DDC79003C709D /* vwRecordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vwRecordController.h; sourceTree = "<group>"; };
 		A4F632A5159DDC79003C709D /* vwRecordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vwRecordController.m; sourceTree = "<group>"; };
@@ -989,6 +994,8 @@
 				4F3EA8A4149C2A31006944DD /* ContactsViewController.m */,
 				4F3EA8B0149DF334006944DD /* NavContactsViewController.h */,
 				4F3EA8B1149DF334006944DD /* NavContactsViewController.m */,
+				A45FEFFD15AB18E000CF3D72 /* vwAboutController.h */,
+				A45FEFFE15AB18E000CF3D72 /* vwAboutController.m */,
 				A4F632A4159DDC79003C709D /* vwRecordController.h */,
 				A4F632A5159DDC79003C709D /* vwRecordController.m */,
 				A4F63301159EA5DF003C709D /* vwSettingsController.h */,
@@ -1074,6 +1081,7 @@
 				2899E55F0DE3E45000AC0155 /* RootViewController.xib */,
 				4F1BC6CB14658806004F02C1 /* VocViewController.xib */,
 				4F1BC6B714658122004F02C1 /* VocoderViewController.xib */,
+				A45FF00015AB191300CF3D72 /* vwAboutController.xib */,
 				A4F632A2159DD22E003C709D /* vwRecordController.xib */,
 				A4F632DE159E5760003C709D /* vwSettingsController.xib */,
 				A4F6331D159F5587003C709D /* vwSettingsEraseController.xib */,
@@ -2005,6 +2013,7 @@
 				A45FEFCE15A3166F00CF3D72 /* common_icon_set_slected@2x.png in Resources */,
 				A45FEFCF15A3166F00CF3D72 /* record_bg_header.png in Resources */,
 				A45FEFD015A3166F00CF3D72 /* record_bg_header@2x.png in Resources */,
+				A45FF00115AB191300CF3D72 /* vwAboutController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2071,6 +2080,7 @@
 				A4F63306159EA64E003C709D /* vwSettingsEraseController.m in Sources */,
 				A4F6335515A0577A003C709D /* vwSettingsLangController.m in Sources */,
 				A4F6335815A05C56003C709D /* vwSettingsPasswordController.m in Sources */,
+				A45FEFFF15AB18E000CF3D72 /* vwAboutController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
