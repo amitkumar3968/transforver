@@ -58,6 +58,16 @@
 
 NSString *downloadfilename;
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.title = NSLocalizedString(@"Contacts", @"Contacts");
+        self.tabBarItem.image = [UIImage imageNamed:@"search"];
+    }
+    return self;
+}
+
 - (IBAction)startRecording:(id)sender
 {
     [audioRecorder startRecording];
@@ -165,6 +175,13 @@ NSString *downloadfilename;
 }
 
 - (id) initWithRelation: (int) srcid DstID:(int) dstid {
+    //[self initWithNibName:@"vwChatViewController" bundle:nil];
+    [super initWithNibName:@"vwChatViewController" bundle:Nil];
+    if (self) {
+        self.title = NSLocalizedString(@"Contacts", @"Contacts");
+        self.tabBarItem.image = [UIImage imageNamed:@"search"];
+    }
+    return self;
     NSLog(@"initWithDstName");
     //m_DicMessages = [[NSMutableDictionary alloc] init ];
     if( m_DicMessages == nil)
@@ -210,6 +227,7 @@ NSString *downloadfilename;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    self.title = NSLocalizedString(@"Contacts", @"Contacts");
     myTimer = [NSTimer scheduledTimerWithTimeInterval:30 target:self selector:@selector(ScanMessages) userInfo:nil repeats:YES];
     
     /*

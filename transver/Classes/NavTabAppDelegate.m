@@ -8,6 +8,11 @@
 
 #import "NavTabAppDelegate.h"
 //#import "RootViewController.h"
+#import "ChatViewController.h"
+#import "vwRecordController.h"
+#import "NavContactsViewController.h"
+#import "vwSettingsController.h"
+#import "vwAboutController.h"
 
 
 @implementation NavTabAppDelegate
@@ -23,7 +28,22 @@
 	
 	//[navController pushViewController:tabController animated:FALSE];
     [globalSettings initWithObjects:@"language" forKeys:1];
-	tabController.selectedIndex = 0;
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    UIViewController *vcRecord, *vcContact, *vcHistory, *vcSettings, *vcAbout;
+    
+    vcContact = [[ChatViewController alloc] initWithNibName:@"ChatViewController" bundle:nil];
+    vcRecord = [[vwRecordController alloc] initWithNibName:@"vwRecordController" bundle:nil]; 
+    vcHistory = [[NavContactsViewController alloc] initWithNibName:@"NavContactsViewController" bundle:nil];    
+    vcSettings = [[vwSettingsController alloc] initWithNibName:@"vwSettingsController" bundle:nil];
+    vcAbout = [[vwAboutController alloc] initWithNibName:@"vwAboutController" bundle:nil];
+    
+    self.tabController = [[UITabBarController alloc] init];
+    self.tabController.viewControllers = [NSArray arrayWithObjects:  vcHistory, vcRecord, vcContact,vcSettings, vcAbout, nil];
+    self.window.rootViewController = self.tabController;
+    [self.window makeKeyAndVisible];
+    return YES;
+    tabController.selectedIndex = 0;
 	[window addSubview:[tabController view]];
 
 	// Configure and show the window
