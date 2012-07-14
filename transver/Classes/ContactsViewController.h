@@ -21,6 +21,7 @@
     NSString		*savedSearchTerm;
     NSInteger		savedScopeButtonIndex;
     BOOL			searchWasActive;
+    UISearchBar* searchBar;
 }
 
 @property (nonatomic, retain) NSMutableArray *listContent;
@@ -31,6 +32,8 @@
 @property (nonatomic) NSInteger savedScopeButtonIndex;
 @property (nonatomic) BOOL searchWasActive;
 @property (nonatomic, assign) id <ContactsViewControllerDelegate> delegate;
+@property (strong,nonatomic) IBOutlet UISearchBar *searchBar;
+
 @end
 
 @protocol ContactsViewControllerDelegate <NSObject>

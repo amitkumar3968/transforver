@@ -136,7 +136,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "167"
          endingLineNumber = "167"
-         landmarkName = "-initWithRelation:DstID:"
+         landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -150,7 +150,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "676"
          endingLineNumber = "676"
-         landmarkName = "-dismissKeyboardIfNeeded"
+         landmarkName = "-tableView:didSelectRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -164,20 +164,6 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "981"
          endingLineNumber = "981"
-         landmarkName = "-controller:didChangeSection:atIndex:forChangeType:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "Classes/ChatViewController.m"
-         timestampString = "363716639.877625"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "871"
-         endingLineNumber = "871"
          landmarkName = "@implementation ChatViewController"
          landmarkType = "3">
       </FileBreakpoint>
@@ -190,9 +176,23 @@
          timestampString = "363716639.877625"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "871"
+         endingLineNumber = "871"
+         landmarkName = "-playSound:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "Classes/ChatViewController.m"
+         timestampString = "363716639.877625"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
          startingLineNumber = "267"
          endingLineNumber = "267"
-         landmarkName = "-viewWillDisappear:"
+         landmarkName = "-tableView:viewForHeaderInSection:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -206,7 +206,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "286"
          endingLineNumber = "286"
-         landmarkName = "-viewDidDisappear:"
+         landmarkName = "-viewWillDisappear:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -220,7 +220,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "285"
          endingLineNumber = "285"
-         landmarkName = "-viewDidDisappear:"
+         landmarkName = "-viewWillDisappear:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -262,7 +262,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "851"
          endingLineNumber = "851"
-         landmarkName = "-playSound:"
+         landmarkName = "-connectionDidFinishLoading:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -276,7 +276,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "852"
          endingLineNumber = "852"
-         landmarkName = "-playSound:"
+         landmarkName = "-connectionDidFinishLoading:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -290,7 +290,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "855"
          endingLineNumber = "855"
-         landmarkName = "-playSound:"
+         landmarkName = "-connectionDidFinishLoading:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -374,7 +374,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "685"
          endingLineNumber = "685"
-         landmarkName = "-registerForKeyboardNotifications"
+         landmarkName = "-tableView:didSelectRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -388,7 +388,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "987"
          endingLineNumber = "987"
-         landmarkName = "-controller:didChangeObject:atIndexPath:forChangeType:newIndexPath:"
+         landmarkName = "-controllerWillChangeContent:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -416,7 +416,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "703"
          endingLineNumber = "703"
-         landmarkName = "-keyboardWillShow:"
+         landmarkName = "-registerForKeyboardNotifications"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -430,7 +430,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "216"
          endingLineNumber = "216"
-         landmarkName = "-viewWillAppear:"
+         landmarkName = "-viewDidUnload"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -472,7 +472,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "288"
          endingLineNumber = "288"
-         landmarkName = "-viewDidDisappear:"
+         landmarkName = "-viewWillDisappear:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -500,7 +500,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "289"
          endingLineNumber = "289"
-         landmarkName = "-viewDidDisappear:"
+         landmarkName = "-viewWillDisappear:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -668,7 +668,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "996"
          endingLineNumber = "996"
-         landmarkName = "-controller:didChangeObject:atIndexPath:forChangeType:newIndexPath:"
+         landmarkName = "-controller:didChangeSection:atIndex:forChangeType:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -682,7 +682,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "219"
          endingLineNumber = "219"
-         landmarkName = "-viewWillAppear:"
+         landmarkName = "-viewDidUnload"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -836,7 +836,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "333"
          endingLineNumber = "333"
-         landmarkName = "-tableView:cellForRowAtIndexPath:"
+         landmarkName = "-tableView:numberOfRowsInSection:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -920,7 +920,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "320"
          endingLineNumber = "320"
-         landmarkName = "-tableView:cellForRowAtIndexPath:"
+         landmarkName = "-numberOfSectionsInTableView:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -934,7 +934,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "319"
          endingLineNumber = "319"
-         landmarkName = "-tableView:cellForRowAtIndexPath:"
+         landmarkName = "-numberOfSectionsInTableView:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -990,7 +990,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "634"
          endingLineNumber = "634"
-         landmarkName = "-tableView:didSelectRowAtIndexPath:"
+         landmarkName = "-tableView:heightForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1032,7 +1032,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "292"
          endingLineNumber = "292"
-         landmarkName = "-shouldAutorotateToInterfaceOrientation:"
+         landmarkName = "-viewWillDisappear:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1046,7 +1046,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "295"
          endingLineNumber = "295"
-         landmarkName = "-shouldAutorotateToInterfaceOrientation:"
+         landmarkName = "-viewWillDisappear:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1186,8 +1186,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "819"
          endingLineNumber = "819"
-         landmarkName = "-connection:didReceiveData:"
-         landmarkType = "5">
+         landmarkName = "@implementation ChatViewController"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -1214,7 +1214,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "825"
          endingLineNumber = "825"
-         landmarkName = "-connectionDidFinishLoading:"
+         landmarkName = "-connection:didFailWithError:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1228,7 +1228,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "830"
          endingLineNumber = "830"
-         landmarkName = "-connectionDidFinishLoading:"
+         landmarkName = "-connection:didReceiveResponse:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1242,7 +1242,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "834"
          endingLineNumber = "834"
-         landmarkName = "-connectionDidFinishLoading:"
+         landmarkName = "-connection:didReceiveData:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1284,7 +1284,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "635"
          endingLineNumber = "635"
-         landmarkName = "-tableView:didSelectRowAtIndexPath:"
+         landmarkName = "-tableView:heightForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1298,7 +1298,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "803"
          endingLineNumber = "803"
-         landmarkName = "-connection:didFailWithError:"
+         landmarkName = "-downloadToFile:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1354,7 +1354,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "356"
          endingLineNumber = "356"
-         landmarkName = "-fetchMessages:DstID:Messages:"
+         landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1503,11 +1503,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Classes/ContactsViewController.m"
-         timestampString = "346347483.050969"
+         timestampString = "363803744.07075"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "195"
-         endingLineNumber = "195"
+         startingLineNumber = "196"
+         endingLineNumber = "196"
          landmarkName = "-numberOfSectionsInTableView:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1517,13 +1517,26 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Classes/NavContactsViewController.m"
-         timestampString = "363801107.674892"
+         timestampString = "363802387.411509"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "46"
-         endingLineNumber = "46"
-         landmarkName = "@implementation NavContactsViewController"
-         landmarkType = "3">
+         startingLineNumber = "53"
+         endingLineNumber = "53"
+         landmarkName = "-buttonPushed:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Classes/vwAboutController.m"
+         timestampString = "363947201.108321"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "35"
+         endingLineNumber = "35"
+         landmarkName = "-viewDidLoad"
+         landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

@@ -17,7 +17,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"History", @"History");
+        self.title = NSLocalizedString(@"Contacts", @"Contacts");
         //self.tabBarItem.image = [UIImage imageNamed:@"search"];
     }
     return self;
@@ -41,7 +41,14 @@
 - (void) buttonPushed:(id)sender
 {
     UIButton *imageButton = (UIButton *)sender;
-    [imageButton setSelected:YES];
+    if( imageButton == allButton) {
+        [imageButton setSelected:YES];
+        [filterButton setSelected:NO];
+    }
+    else {
+        [imageButton setSelected:YES];
+        [allButton setSelected:NO];
+    }
     //[((UITabBarController *) self.parentViewController) setSelectedIndex:2];
 }
 
@@ -55,16 +62,16 @@
     [super viewDidLoad];
     //tableViewNavigationBar = [[UINavigationBar alloc] initWithFrame: CGRectMake(0.0f, 0.0f, 320.0f, 44.0f)];
     
-	UIButton *imageButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    imageButton.frame = CGRectMake(21.0, 0.0, 138.0, 44.0);
-    [imageButton setTitle:@"ALL" forState:UIControlStateNormal];
-    [imageButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_unslected.png"] forState:UIControlStateNormal];
-    [imageButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_unslected.png"] forState:UIControlStateHighlighted];
-    [imageButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_slected.png"] forState:UIControlStateSelected];
-    [imageButton setSelected:YES];
-	[imageButton addTarget:self action:@selector(buttonPushed:)
+	allButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    allButton.frame = CGRectMake(21.0, 0.0, 138.0, 44.0);
+    [allButton setTitle:@"ALL" forState:UIControlStateNormal];
+    [allButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_unslected.png"] forState:UIControlStateNormal];
+    [allButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_unslected.png"] forState:UIControlStateHighlighted];
+    [allButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_slected.png"] forState:UIControlStateSelected];
+    [allButton setSelected:YES];
+	[allButton addTarget:self action:@selector(buttonPushed:)
 		  forControlEvents:UIControlEventTouchUpInside];
-    UIButton *filterButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    filterButton = [UIButton buttonWithType:UIButtonTypeCustom];
     filterButton.frame = CGRectMake(161.0, 0.0, 138.0, 44.0);
     [filterButton setTitle:@"Messenger" forState:UIControlStateNormal];
     [filterButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_unslected.png"] forState:UIControlStateNormal];
@@ -79,7 +86,7 @@
     m_view.backgroundColor = [UIColor blackColor];
     m_view.alpha = 1;
     m_view.tag = 1;
-    [m_view addSubview:imageButton];
+    [m_view addSubview:allButton];
     [m_view addSubview:filterButton];
     
     //searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0.0f, 44.0f, 320.0f, 44.0f)];

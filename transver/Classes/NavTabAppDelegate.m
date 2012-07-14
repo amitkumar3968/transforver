@@ -32,14 +32,14 @@
     // Override point for customization after application launch.
     UIViewController *vcRecord, *vcContact, *vcHistory, *vcSettings, *vcAbout;
     
-    vcContact = [[ChatViewController alloc] initWithNibName:@"ChatViewController" bundle:nil];
+    vcContact = [[NavContactsViewController alloc] initWithNibName:@"NavContactsViewController" bundle:nil];
     vcRecord = [[vwRecordController alloc] initWithNibName:@"vwRecordController" bundle:nil]; 
-    vcHistory = [[NavContactsViewController alloc] initWithNibName:@"NavContactsViewController" bundle:nil];    
+    vcHistory = [[ChatViewController alloc] initWithNibName:@"ChatViewController" bundle:nil];    
     vcSettings = [[vwSettingsController alloc] initWithNibName:@"vwSettingsController" bundle:nil];
     vcAbout = [[vwAboutController alloc] initWithNibName:@"vwAboutController" bundle:nil];
     
     self.tabController = [[UITabBarController alloc] init];
-    self.tabController.viewControllers = [NSArray arrayWithObjects:  vcHistory, vcRecord, vcContact,vcSettings, vcAbout, nil];
+    self.tabController.viewControllers = [NSArray arrayWithObjects:   vcRecord, vcContact, vcHistory, vcSettings, vcAbout, nil];
     self.window.rootViewController = self.tabController;
     [self.window makeKeyAndVisible];
     return YES;

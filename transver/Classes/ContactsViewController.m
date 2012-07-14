@@ -13,7 +13,7 @@
 
 @implementation ContactsViewController
 
-@synthesize listContent, filteredListContent, sectionedListContent, savedSearchTerm, savedScopeButtonIndex, searchWasActive, delegate;
+@synthesize listContent, filteredListContent, sectionedListContent, savedSearchTerm, savedScopeButtonIndex, searchWasActive, delegate, searchBar;
 
 - (void)setListContent:(NSMutableArray *)inListContent
 {
@@ -88,6 +88,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [searchBar setBackgroundImage:[UIImage imageNamed:@"contacts_bg_search.png"]];
     listContent = [[NSMutableArray alloc] init];
     
     ABAddressBookRef addressBook = ABAddressBookCreate();
