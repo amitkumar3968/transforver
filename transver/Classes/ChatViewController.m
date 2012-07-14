@@ -178,7 +178,7 @@ NSString *downloadfilename;
     //[self initWithNibName:@"vwChatViewController" bundle:nil];
     [super initWithNibName:@"vwChatViewController" bundle:Nil];
     if (self) {
-        self.title = NSLocalizedString(@"Contacts", @"Contacts");
+        self.title = NSLocalizedString(@"History", @"History");
         self.tabBarItem.image = [UIImage imageNamed:@"search"];
     }
     return self;
@@ -227,7 +227,7 @@ NSString *downloadfilename;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.title = NSLocalizedString(@"Contacts", @"Contacts");
+    self.title = NSLocalizedString(@"History", @"History");
     myTimer = [NSTimer scheduledTimerWithTimeInterval:30 target:self selector:@selector(ScanMessages) userInfo:nil repeats:YES];
     
     /*
