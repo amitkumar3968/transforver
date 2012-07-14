@@ -12,6 +12,7 @@
 
 @interface NavContactsViewController : UIViewController <ContactsViewControllerDelegate>{
     UINavigationController *navigationController;
+    UIButton *allButton, *filterButton;
 }
 
 - (void) buttonPushed:(id)sender;

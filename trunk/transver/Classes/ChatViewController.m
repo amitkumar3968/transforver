@@ -62,7 +62,7 @@ NSString *downloadfilename;
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"Contacts", @"Contacts");
+        self.title = NSLocalizedString(@"History", @"History");
         self.tabBarItem.image = [UIImage imageNamed:@"search"];
     }
     return self;
