@@ -15,6 +15,7 @@
 			<string>IBUIButton</string>
 			<string>IBUITableView</string>
 			<string>IBUIView</string>
+			<string>IBUIImageView</string>
 			<string>IBProxyObject</string>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
@@ -46,7 +47,6 @@
 						<string key="NSFrameSize">{320, 347}</string>
 						<reference key="NSSuperview" ref="575012087"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor" id="231974905">
 							<int key="NSColorSpace">3</int>
@@ -65,7 +65,7 @@
 					<object class="IBUIButton" id="403221212">
 						<reference key="NSNextResponder" ref="575012087"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 350}, {29, 29}}</string>
+						<string key="NSFrame">{{20, 347}, {29, 29}}</string>
 						<reference key="NSSuperview" ref="575012087"/>
 						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -78,7 +78,7 @@
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
-						<object class="NSColor" key="IBUINormalTitleShadowColor" id="427733525">
+						<object class="NSColor" key="IBUINormalTitleShadowColor">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MC41AA</bytes>
 						</object>
@@ -86,92 +86,25 @@
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">history_icon_unrecord@2x.png</string>
 						</object>
-						<object class="IBUIFontDescription" key="IBUIFontDescription" id="723012606">
+						<object class="IBUIFontDescription" key="IBUIFontDescription">
 							<int key="type">2</int>
 							<double key="pointSize">15</double>
 						</object>
-						<object class="NSFont" key="IBUIFont" id="921982005">
+						<object class="NSFont" key="IBUIFont">
 							<string key="NSName">Helvetica-Bold</string>
 							<double key="NSSize">15</double>
 							<int key="NSfFlags">16</int>
 						</object>
 					</object>
-					<object class="IBUIButton" id="25558642">
+					<object class="IBUIImageView" id="878440989">
 						<reference key="NSNextResponder" ref="575012087"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{217, 380}, {73, 36}}</string>
+						<string key="NSFrame">{{0, 347}, {320, 69}}</string>
 						<reference key="NSSuperview" ref="575012087"/>
 						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<int key="IBUIContentHorizontalAlignment">0</int>
-						<int key="IBUIContentVerticalAlignment">0</int>
-						<string key="IBUINormalTitle">Send</string>
-						<reference key="IBUIHighlightedTitleColor" ref="231974905"/>
-						<object class="NSColor" key="IBUINormalTitleColor">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
-						</object>
-						<reference key="IBUINormalTitleShadowColor" ref="427733525"/>
-						<object class="NSCustomResource" key="IBUINormalBackgroundImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">history_btn_send.png</string>
-						</object>
-						<reference key="IBUIFontDescription" ref="723012606"/>
-						<reference key="IBUIFont" ref="921982005"/>
-					</object>
-					<object class="IBUIButton" id="972566794">
-						<reference key="NSNextResponder" ref="575012087"/>
-						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{118, 379}, {72, 37}}</string>
-						<reference key="NSSuperview" ref="575012087"/>
-						<reference key="NSWindow"/>
-						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<bool key="IBUIOpaque">NO</bool>
-						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<int key="IBUIContentHorizontalAlignment">0</int>
-						<int key="IBUIContentVerticalAlignment">0</int>
-						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">Option</string>
-						<reference key="IBUIHighlightedTitleColor" ref="231974905"/>
-						<object class="NSColor" key="IBUINormalTitleColor">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC45MzAxNDI0MTg5IDAuODE2NzY2ODY5NCAxAA</bytes>
-						</object>
-						<reference key="IBUINormalTitleShadowColor" ref="427733525"/>
-						<object class="NSCustomResource" key="IBUINormalBackgroundImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">history_btn_setncel_pressed.png</string>
-						</object>
-						<reference key="IBUIFontDescription" ref="723012606"/>
-						<reference key="IBUIFont" ref="921982005"/>
-					</object>
-					<object class="IBUIButton" id="541680274">
-						<reference key="NSNextResponder" ref="575012087"/>
-						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{8, 379}, {72, 37}}</string>
-						<reference key="NSSuperview" ref="575012087"/>
-						<reference key="NSWindow"/>
-						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<bool key="IBUIOpaque">NO</bool>
-						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<int key="IBUIContentHorizontalAlignment">0</int>
-						<int key="IBUIContentVerticalAlignment">0</int>
-						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">Cancel</string>
-						<reference key="IBUIHighlightedTitleColor" ref="231974905"/>
-						<object class="NSColor" key="IBUINormalTitleColor">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
-						</object>
-						<reference key="IBUINormalTitleShadowColor" ref="427733525"/>
-						<object class="NSCustomResource" key="IBUINormalBackgroundImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">history_btn_setncel_rest.png</string>
-						</object>
-						<reference key="IBUIFontDescription" ref="723012606"/>
-						<reference key="IBUIFont" ref="921982005"/>
 					</object>
 				</object>
 				<string key="NSFrame">{{0, 64}, {320, 416}}</string>
@@ -247,10 +180,8 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="753686960"/>
-							<reference ref="541680274"/>
-							<reference ref="972566794"/>
-							<reference ref="25558642"/>
 							<reference ref="403221212"/>
+							<reference ref="878440989"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -265,18 +196,8 @@
 						<reference key="parent" ref="575012087"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">53</int>
-						<reference key="object" ref="25558642"/>
-						<reference key="parent" ref="575012087"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">54</int>
-						<reference key="object" ref="972566794"/>
-						<reference key="parent" ref="575012087"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">55</int>
-						<reference key="object" ref="541680274"/>
+						<int key="objectID">56</int>
+						<reference key="object" ref="878440989"/>
 						<reference key="parent" ref="575012087"/>
 					</object>
 				</object>
@@ -292,17 +213,13 @@
 					<string>16.IBPluginDependency</string>
 					<string>42.IBPluginDependency</string>
 					<string>51.IBPluginDependency</string>
-					<string>53.IBPluginDependency</string>
-					<string>54.IBPluginDependency</string>
-					<string>55.IBPluginDependency</string>
+					<string>56.IBPluginDependency</string>
 				</object>
 				<object class="NSArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>ChatViewController</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>UIResponder</string>
-					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -322,7 +239,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">55</int>
+			<int key="maxID">56</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -500,21 +417,8 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<bool key="EncodedWithXMLCoder">YES</bool>
-			<object class="NSArray" key="dict.sortedKeys">
-				<bool key="EncodedWithXMLCoder">YES</bool>
-				<string>history_btn_send.png</string>
-				<string>history_btn_setncel_pressed.png</string>
-				<string>history_btn_setncel_rest.png</string>
-				<string>history_icon_unrecord@2x.png</string>
-			</object>
-			<object class="NSArray" key="dict.values">
-				<bool key="EncodedWithXMLCoder">YES</bool>
-				<string>{53, 29}</string>
-				<string>{92, 35}</string>
-				<string>{92, 35}</string>
-				<string>{58, 58}</string>
-			</object>
+			<string key="NS.key.0">history_icon_unrecord@2x.png</string>
+			<string key="NS.object.0">{58, 58}</string>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">1181</string>
 	</data>
