@@ -117,8 +117,6 @@
     m_AccountID = [[NSMutableArray alloc] init];
     if( m_userid != -1)
     {
-        
-
         NSArray *array = [self fetchRelationships:m_userid];//[[NSArray alloc] initWithObjects:@"find friends",@"Jerry", @"Raymond", @"John", nil];
         self.accounts = array;
         //[array release];

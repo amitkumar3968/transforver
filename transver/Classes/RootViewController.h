@@ -30,7 +30,7 @@ int m_userid;
 
 - (void) showMenu:(id) sender;
 - (void) buttonPushed:(id)sender;
-- (int) loginServer;
+- (int)  loginServer;
 - (void) playSound;
 - (void) uploadFile;
 - (NSArray*) fetchRelationships:(int) m_userid;
@@ -41,8 +41,7 @@ int m_userid;
 - (bool) checkUserInfoExist;
 - (void) delUserInfo;
 - (void) AddUserMenu:(id) sender;
-- (void
-   ) addRelationships:(int) uid phonenumber:(NSString *) phone;
+- (void) addRelationships:(int) uid phonenumber:(NSString *) phone;
 
 @property (nonatomic, retain) NSMutableArray *m_AccountID;
 @property (nonatomic, retain) NSArray *accounts;
@@ -56,7 +55,4 @@ int m_userid;
 
 @end
 
-@interface NSURLRequest (DummyInterface)
-+ (BOOL)allowsAnyHTTPSCertificateForHost:(NSString*)host;
-+ (void)setAllowsAnyHTTPSCertificate:(BOOL)allow forHost:(NSString*)host;
-@end
+

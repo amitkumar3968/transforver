@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import "UICustomTabViewController.h"
 
 @protocol ContactsViewControllerDelegate;
 
@@ -21,13 +22,19 @@
     NSString		*savedSearchTerm;
     NSInteger		savedScopeButtonIndex;
     BOOL			searchWasActive;
-    UISearchBar* searchBar;
+    UISearchBar*    searchBar;
+    UICustomTabViewController *tabViewController;
+    int             m_ShowMenu;
+    NSMutableArray  *m_AccountID;
+    NSArray         *accounts;
 }
 
 @property (nonatomic, retain) NSMutableArray *listContent;
 @property (nonatomic, retain) NSMutableArray *filteredListContent;
+@property (nonatomic, retain) NSMutableArray *m_AccountID;
+@property (nonatomic, retain) NSMutableArray *accounts;
 @property (nonatomic, retain, readonly) NSArray *sectionedListContent;
-
+@property (nonatomic, retain) UICustomTabViewController *tabViewController;
 @property (nonatomic, copy) NSString *savedSearchTerm;
 @property (nonatomic) NSInteger savedScopeButtonIndex;
 @property (nonatomic) BOOL searchWasActive;

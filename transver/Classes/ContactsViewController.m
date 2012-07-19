@@ -9,11 +9,12 @@
 #import "ContactsViewController.h"
 #import "ContactTableViewCell.h"
 #import <AddressBookUI/AddressBookUI.h>
+#import "AddUserViewController.h"
 
-
+int m_userid;
 @implementation ContactsViewController
 
-@synthesize listContent, filteredListContent, sectionedListContent, savedSearchTerm, savedScopeButtonIndex, searchWasActive, delegate, searchBar;
+@synthesize listContent, filteredListContent, sectionedListContent, savedSearchTerm, savedScopeButtonIndex, searchWasActive, delegate, searchBar, tabViewController, m_AccountID;
 
 - (void)setListContent:(NSMutableArray *)inListContent
 {
@@ -81,6 +82,69 @@
     [super didReceiveMemoryWarning];
     
     // Release any cached data, images, etc that aren't in use.
+}
+
+- (void) getLogin
+{
+    m_ShowMenu = 0;
+	UICustomTabViewController *tvController = [[UICustomTabViewController alloc] initWithNibName:@"TabViewController" bundle:nil];
+	self.tabViewController = tvController;
+    [tvController release];
+    //[self.view addSubview:tabViewController.view];
+    m_userid = -1;
+    //self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+	//self.tableView.rowHeight = 100;
+	//self.tableView.backgroundColor = [UIColor clearColor];
+    if( ![self checkUserInfoExist])
+    {
+        AddUserViewController *addUserView = [[AddUserViewController alloc] initWithNibName:@"AddUserViewController" bundle:nil];
+        addUserView.title = @"Add Phone Number";
+        addUserView.delegate = self;
+        [self.navigationController pushViewController:addUserView animated:YES];
+        //[self saveParameter];
+    }else
+    {
+        [self getParameter];
+        m_userid = [self loginServer];
+    }
+    
+    
+    
+	
+    NSLog(@"USER_ID:%d", m_userid);
+	//self.title = @"Accounts";
+	
+	UIBarButtonItem *leftButton = 
+	[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(AddUserMenu:)];
+	
+	self.navigationItem.leftBarButtonItem = leftButton;
+	[leftButton release];
+	
+	UIImage *image = [UIImage imageNamed:@"phone.png"];
+	CGRect frame = CGRectMake(0, 0, image.size.width, image.size.height);
+	UIButton* button = [[UIButton alloc] initWithFrame:frame];
+	[button setBackgroundImage:image forState:UIControlStateNormal];
+	[button addTarget:self action:@selector(showMenu:) forControlEvents:UIControlEventTouchUpInside];
+	[button setShowsTouchWhenHighlighted:YES];
+	
+	
+	
+	UIBarButtonItem *rightButton = 
+	[[UIBarButtonItem alloc] initWithCustomView:button];
+	
+	self.navigationItem.rightBarButtonItem = rightButton;
+	[rightButton release];
+	[button release];
+	
+	
+    m_AccountID = [[NSMutableArray alloc] init];
+    if( m_userid != -1)
+    {
+        NSArray *array = [self fetchRelationships:m_userid];//[[NSArray alloc] initWithObjects:@"find friends",@"Jerry", @"Raymond", @"John", nil];
+        self.accounts = array;
+        //[array release];
+        NSLog(@"%d", [array retainCount]);
+    }
 }
 
 #pragma mark - View lifecycle
