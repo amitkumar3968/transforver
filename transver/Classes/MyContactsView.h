@@ -18,6 +18,7 @@
     UINavigationBar *tableViewNavigationBar;
     
     IBOutlet UISearchBar *searchBar;
+    UIButton *allButton, *filterButton;
 	BOOL searching;
 	BOOL letUserSelectRow;
     

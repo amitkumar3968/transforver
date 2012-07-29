@@ -17,7 +17,7 @@
     id <AddUserViewDelegate> delegate;
 }
 
-- (void) save:(id)sender;
+- (IBAction) save:(id)sender;
 @property (nonatomic, retain) UITextField *name;
 @property (nonatomic, assign) id <AddUserViewDelegate> delegate;
 

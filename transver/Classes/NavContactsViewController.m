@@ -7,7 +7,8 @@
 //
 
 #import "NavContactsViewController.h"
-
+#import "AddUserViewController.h"
+#import "Util.h"
 
 @implementation NavContactsViewController
 
@@ -61,7 +62,7 @@
 {
     [super viewDidLoad];
     //tableViewNavigationBar = [[UINavigationBar alloc] initWithFrame: CGRectMake(0.0f, 0.0f, 320.0f, 44.0f)];
-    
+    /*
 	allButton = [UIButton buttonWithType:UIButtonTypeCustom];
     allButton.frame = CGRectMake(21.0, 0.0, 138.0, 44.0);
     [allButton setTitle:@"ALL" forState:UIControlStateNormal];
@@ -108,10 +109,13 @@
     [self.navigationController.navigationBar addSubview:m_leftsideview];
     [self.navigationController.navigationBar addSubview:m_rightsideview];
     [m_view release];
+    */
     self.contactsController.delegate = self;
 	//[super.tableView addSubview:tableViewNavigationBar];
     [self.view addSubview:navigationController.view];
     // Do any additional setup after loading the view from its nib.
+    
+        
 }
 
 - (void)viewDidUnload
@@ -126,5 +130,7 @@
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
+
 
 @end
