@@ -7,18 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
-    static NSDictionary *globalSettings;
+#import "AddUserViewController.h"
 
-@interface NavTabAppDelegate : NSObject <UIApplicationDelegate> {
+
+@interface NavTabAppDelegate : NSObject <UIApplicationDelegate,AddUserViewDelegate> {
     
     UIWindow *window;
     UINavigationController *navigationController;
     UINavigationController *navController;
     UITabBarController *tabController;
+    NSDictionary *globalSettings;
+    NSArray *accounts;
 }
 @property (nonatomic, retain) NSDictionary *globalSettings;
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
 @property (nonatomic, retain) IBOutlet UITabBarController *tabController;
+@property (nonatomic, retain) NSArray *accounts;
+- (void) savePhoneNumber: (NSString *)phonenumber;
 @end
 

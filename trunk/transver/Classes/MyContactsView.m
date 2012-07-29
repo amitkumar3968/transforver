@@ -102,8 +102,8 @@
 {
     [super viewDidAppear:animated];
     
-    tableViewNavigationBar = [[UINavigationBar alloc] initWithFrame: CGRectMake(0.0f, 0.0f, 320.0f, 44.0f)];
-    
+    //tableViewNavigationBar = [[UINavigationBar alloc] initWithFrame: CGRectMake(0.0f, 0.0f, 320.0f, 44.0f)];
+    /*
 	UIButton *imageButton = [UIButton buttonWithType:UIButtonTypeCustom];
     imageButton.frame = CGRectMake(20.0, 5.0, 70.0, 30.0);
     [imageButton setTitle:@"ALL" forState:UIControlStateNormal];
@@ -136,11 +136,58 @@
     
     self.navigationItem.titleView = m_view;
     [m_view release];
+    */
+    allButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    allButton.frame = CGRectMake(21.0, 0.0, 138.0, 44.0);
+    [allButton setTitle:@"ALL" forState:UIControlStateNormal];
+    [allButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_unslected.png"] forState:UIControlStateNormal];
+    [allButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_unslected.png"] forState:UIControlStateHighlighted];
+    [allButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_slected.png"] forState:UIControlStateSelected];
+    [allButton setSelected:YES];
+	[allButton addTarget:self action:@selector(buttonPushed:)
+        forControlEvents:UIControlEventTouchUpInside];
+    filterButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    filterButton.frame = CGRectMake(161.0, 0.0, 138.0, 44.0);
+    [filterButton setTitle:@"Messenger" forState:UIControlStateNormal];
+    [filterButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_unslected.png"] forState:UIControlStateNormal];
+    [filterButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_slected.png"] forState:UIControlStateSelected];
+    [filterButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_slected.png"] forState:UIControlStateSelected];
+	[filterButton addTarget:self action:@selector(buttonPushed:)
+           forControlEvents:UIControlEventTouchUpInside];
+    //[imageButton setImage:[UIImage imageNamed:@"phone.png"] forState:UIControlStateNormal];
+    CGRect transparentViewFrame = CGRectMake(0.0, 0.0f, 320.0f, 44.0f);
     
-	[super.tableView addSubview:tableViewNavigationBar];
+    UIView *m_view = [[UIView alloc] initWithFrame:transparentViewFrame];
+    m_view.backgroundColor = [UIColor blackColor];
+    m_view.alpha = 1;
+    m_view.tag = 1;
+    [m_view addSubview:allButton];
+    [m_view addSubview:filterButton];
+    
+    //searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0.0f, 44.0f, 320.0f, 44.0f)];
+    //[searchBar setFrame:CGRectMake(0.0f, 44.0f, 320.0f, 44.0f)];
+    //[self.tableView setFrame:CGRectMake(0.0f, 88.0f, 320.0f, 44.0f)];
+    //[m_view addSubview:search];
+    
+	//[tableViewNavigationBar addSubview:m_view];
+    //[tableViewNavigationBar addSubview:searchBar];
+    CGRect leftsidebar = CGRectMake(1.0, 0.0f, 19.0f, 44.0f);
+    UIImageView *m_leftsideview = [[UIImageView alloc] initWithFrame:leftsidebar];
+    [m_leftsideview setImage:[UIImage imageNamed:@"contacts_bg_sideheader.png"]];
+    CGRect rightsidebar = CGRectMake(300.0, 0.0f, 19.0f, 44.0f);
+    UIImageView *m_rightsideview = [[UIImageView alloc] initWithFrame:rightsidebar];
+    [m_rightsideview setImage:[UIImage imageNamed:@"contacts_bg_sideheader.png"]];
+    
+    [self.navigationController.navigationBar setBackgroundColor:[UIColor blackColor]];
+    [self.navigationController.navigationBar addSubview:m_view];
+    [self.navigationController.navigationBar addSubview:m_leftsideview];
+    [self.navigationController.navigationBar addSubview:m_rightsideview];
+    [m_view release];
+    
+	//[super.tableView addSubview:tableViewNavigationBar];
     //[super.tableView addSubview:searchBar];
-    
-    [tableViewNavigationBar release];
+    //self.tableView.tableHeaderView = nil;
+    //[tableViewNavigationBar release];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -185,7 +232,7 @@
     // Configure the cell...
     if( [indexPath row] == 0)
     {
-        [searchBar setFrame:CGRectMake(0.0f, 0.0f, 320.0f, 44.0f)];
+        [searchBar setFrame:CGRectMake(0.0f, -44.0f, 320.0f, 44.0f)];
         [cell addSubview:searchBar];
         searchBar.delegate = self;
         return cell;

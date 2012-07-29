@@ -38,7 +38,7 @@
 
 #pragma mark - View lifecycle
 
-- (void) save:(id)sender
+- (IBAction) save:(id)sender
 {
 	NSLog(@"save number!");
     if( [name.text isEqualToString:@""])
