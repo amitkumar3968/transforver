@@ -8,12 +8,14 @@
 
 #import "MyContactsView.h"
 #import "OverlayViewController.h"
+#import "ChatViewController.h"
+#import "DialogViewController.h"
 
 
 @implementation MyContactsView
 
 @synthesize tableViewNavigationBar;
-@synthesize listOfItems;
+@synthesize listOfItems, filteredListContent, savedSearchTerm, savedScopeButtonIndex, searchWasActive, searchBar;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -45,10 +47,10 @@
     listOfItems = [[NSMutableArray alloc] init];
 
    
-    self.tableView.tableHeaderView = searchBar;
+    //self.tableView.tableHeaderView = searchBar;
     //searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
     
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    //self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
     NSMutableArray *list = [[NSMutableArray alloc] init];
     NSMutableArray *imageList = [[NSMutableArray alloc] init];
@@ -74,7 +76,28 @@
         [firstName release];
         [lastName release];
     }
-    
+#if 1
+    if( addressesCount == 0)
+    {
+        NSString *contactFirstLast = [NSString stringWithFormat: @"Ray"];
+        
+        [listOfItems addObject:contactFirstLast];
+    }
+#endif	
+	// create a filtered list that will contain products for the search results table.
+	self.filteredListContent = [NSMutableArray arrayWithCapacity:[self.listOfItems count]];
+	
+	// restore search settings if they were saved in didReceiveMemoryWarning.
+    if (self.savedSearchTerm)
+	{
+        [self.searchDisplayController setActive:self.searchWasActive];
+        [self.searchDisplayController.searchBar setSelectedScopeButtonIndex:self.savedScopeButtonIndex];
+        [self.searchDisplayController.searchBar setText:savedSearchTerm];
+        
+        self.savedSearchTerm = nil;
+    }
+	
+	[self.tableView reloadData];
     //NSArray ImageArray = [[NSArray arrayWithArray:imageList] retain];
     //NSArray ContentArray = [[NSArray arrayWithArray:list] retain];
     // Uncomment the following line to preserve selection between presentations.
@@ -144,7 +167,7 @@
     [allButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_unslected.png"] forState:UIControlStateHighlighted];
     [allButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_slected.png"] forState:UIControlStateSelected];
     [allButton setSelected:YES];
-	[allButton addTarget:self action:@selector(buttonPushed:)
+	[allButton addTarget:self action:@selector(allbuttonPushed:)
         forControlEvents:UIControlEventTouchUpInside];
     filterButton = [UIButton buttonWithType:UIButtonTypeCustom];
     filterButton.frame = CGRectMake(161.0, 0.0, 138.0, 44.0);
@@ -152,7 +175,7 @@
     [filterButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_unslected.png"] forState:UIControlStateNormal];
     [filterButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_slected.png"] forState:UIControlStateSelected];
     [filterButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_slected.png"] forState:UIControlStateSelected];
-	[filterButton addTarget:self action:@selector(buttonPushed:)
+	[filterButton addTarget:self action:@selector(filterbuttonPushed:)
            forControlEvents:UIControlEventTouchUpInside];
     //[imageButton setImage:[UIImage imageNamed:@"phone.png"] forState:UIControlStateNormal];
     CGRect transparentViewFrame = CGRectMake(0.0, 0.0f, 320.0f, 44.0f);
@@ -184,10 +207,65 @@
     [self.navigationController.navigationBar addSubview:m_rightsideview];
     [m_view release];
     
+    
+    searchBar.delegate = self;
 	//[super.tableView addSubview:tableViewNavigationBar];
     //[super.tableView addSubview:searchBar];
-    //self.tableView.tableHeaderView = nil;
+    //self.tableView.tableHeaderView.hidden = true;
     //[tableViewNavigationBar release];
+}
+
+- (void) allbuttonPushed: (id) sender{
+    UIButton *imageButton = (UIButton *)sender;
+    if( imageButton == allButton) {
+        [imageButton setSelected:YES];
+        [filterButton setSelected:NO];
+    }
+    else {
+        [imageButton setSelected:YES];
+        [allButton setSelected:NO];
+    }
+    ABAddressBookRef addressBook = ABAddressBookCreate();
+    
+    NSArray *addresses = (NSArray *) ABAddressBookCopyArrayOfAllPeople(addressBook);
+    NSInteger addressesCount = [addresses count];
+    
+    for (int i = 0; i < addressesCount; i++) {
+        ABRecordRef record = [addresses objectAtIndex:i];
+        NSString *firstName = (NSString *)ABRecordCopyValue(record, kABPersonFirstNameProperty);
+        NSString *lastName = (NSString *)ABRecordCopyValue(record, kABPersonLastNameProperty);
+        UIImageView *contactImage = (UIImageView *)ABPersonCopyImageData(record);
+        NSString *contactFirstLast = [NSString stringWithFormat: @"%@ %@", firstName, lastName];
+        
+        [listOfItems addObject:contactFirstLast];
+        
+        //Here I think something goes wrong, but I don't know what
+        // If I comment out this line, the application works, but now pictures is showing.
+        //[imageList addObject:contactImage];
+        
+        [firstName release];
+        [lastName release];
+    }
+#if 1
+    if( addressesCount == 0)
+    {
+        NSString *contactFirstLast = [NSString stringWithFormat: @"Ray"];
+        
+        [listOfItems addObject:contactFirstLast];
+    }
+#endif	
+}
+- (void) filterbuttonPushed: (id) sender{
+    UIButton *imageButton = (UIButton *)sender;
+    if( imageButton == allButton) {
+        [imageButton setSelected:YES];
+        [filterButton setSelected:NO];
+    }
+    else {
+        [imageButton setSelected:YES];
+        [allButton setSelected:NO];
+    }
+    [listOfItems removeAllObjects];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -217,7 +295,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [listOfItems count]+1;
+    return [listOfItems count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -230,16 +308,32 @@
     }
     
     // Configure the cell...
+    /*
     if( [indexPath row] == 0)
     {
         [searchBar setFrame:CGRectMake(0.0f, -44.0f, 320.0f, 44.0f)];
         [cell addSubview:searchBar];
+        
         searchBar.delegate = self;
+        CGRect cellFrame = [cell frame];
+        
+        cellFrame.size.height = 0;
+        [cell setFrame:cellFrame];
         return cell;
-    }
-    cell.textLabel.text = [listOfItems objectAtIndex:([indexPath row]-1)];
+    }*/
+    NSLog(@"%d", [indexPath row]);
+    cell.textLabel.text = [listOfItems objectAtIndex:([indexPath row])];
     return cell;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+    NSLog(@"%f %d", cell.frame.size.height, [indexPath row]);
+    return cell.frame.size.height;
+}
+
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -284,14 +378,43 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+    NSInteger row = [indexPath row];/*
+    if ( row == 0 )
+    {//to add the contact list
+        ABPeoplePickerNavigationController *myPicker = [[ABPeoplePickerNavigationController alloc] init];
+        [myPicker setPeoplePickerDelegate:(id<ABPeoplePickerNavigationControllerDelegate>)self];
+        //myPicker.peoplePickerDelegate = self;   
+        // 只show e-mail
+        //myPicker.displayedProperties = [NSArray arrayWithObject:[NSNumber numberWithInt:kABPersonEmailProperty]]; 
+        //ABPersonViewController* ppnc = [[ABPersonViewController alloc] init];
+        [self.navigationController presentModalViewController:myPicker animated:YES];   
+        //[myPicker release];
+        [myPicker release];
+        
+        //[self.tabViewController setTitle:[accounts objectAtIndex:indexPath.row]];
+        //[self.navigationController pushViewController:self.tabViewController animated:YES];
+    }else*/
+    {
+        //[self.tabViewController setTitle:[accounts objectAtIndex:indexPath.row]];
+        //[self.navigationController pushViewController:self.tabViewController animated:YES];
+        //Show the message chat view
+        //ChatViewController *chat = [[ChatViewController alloc] initWithNibName:@"ChatViewController" bundle:nil];
+        ChatViewController *chat = [[ChatViewController alloc] initWithRelation:g_UserID DstID:[[g_AccountID objectAtIndex:row] integerValue]];
+        chat.m_DstName = [g_AccountID objectAtIndex:indexPath.row];
+        //ChatViewController *chat = [[ChatViewController alloc] initWithRelation:1 DstID:2];
+        
+        //[chat setContact:contact];
+        UINavigationController *navCtlr = [[UINavigationController alloc] initWithRootViewController:chat];
+        navCtlr.navigationBar.barStyle = UIBarStyleDefault;
+        
+        [g_RootController presentModalViewController:navCtlr animated:YES];
+        [navCtlr release];
+        //((UITabBarController *)g_RootController).tabBar.hidden = YES;
+        //self.navigationController.navigationBar.delegate = self;
+        
+        [chat release];
+        
+    }
 }
 
 // Creates and returns a person object.
@@ -309,6 +432,18 @@
 
 #pragma mark -
 #pragma mark Search Bar 
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)theSearchBar
+{
+    [theSearchBar resignFirstResponder];
+    [ovController.view removeFromSuperview];
+	[ovController release];
+	ovController = nil;
+	
+	[self.tableView reloadData];
+    //theSearchBar.hidden = YES;
+}
+
 
 - (void) searchBarTextDidBeginEditing:(UISearchBar *)theSearchBar {
 	
@@ -340,9 +475,10 @@
 	self.tableView.scrollEnabled = NO;
 	
 	//Add the done button.
+    /*
 	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] 
 											   initWithBarButtonSystemItem:UIBarButtonSystemItemDone 
-											   target:self action:@selector(doneSearching_Clicked:)] autorelease];
+											   target:self action:@selector(doneSearching_Clicked:)] autorelease];*/
 }
 
 - (void)searchBar:(UISearchBar *)theSearchBar textDidChange:(NSString *)searchText {
@@ -381,9 +517,10 @@
 	NSMutableArray *searchArray = [[NSMutableArray alloc] init];
 	
 	for (NSDictionary *dictionary in listOfItems)
-	{
+	{/*
 		NSArray *array = [dictionary objectForKey:@"Countries"];
-		[searchArray addObjectsFromArray:array];
+		[searchArray addObjectsFromArray:array];*/
+        
 	}
 	
 	for (NSString *sTemp in searchArray)
@@ -424,12 +561,18 @@
     [self filterContentForSearchText:searchString scope:
      [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
     
+    // Return YES to cause the search result table view to be reloaded.
+    return YES;
 }
+
+
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption
 {
     [self filterContentForSearchText:[self.searchDisplayController.searchBar text] scope:
      [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
     
+    // Return YES to cause the search result table view to be reloaded.
+    return YES;
 }
 
 @end

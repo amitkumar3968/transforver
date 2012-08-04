@@ -60,7 +60,7 @@
         [Util getParameter];
         g_UserID = [Util loginServer];
     }
-
+    g_RootController = self.window.rootViewController;
     return;
     tabController.selectedIndex = 0;
 	[window addSubview:[tabController view]];
@@ -95,7 +95,7 @@
         [Util saveParameter];
         g_UserID = [Util loginServer];
         NSArray *array = [Util fetchRelationships:g_UserID];//[[NSArray alloc] initWithObjects:@"find friends",@"Jerry", @"Raymond", @"John", nil];
-        self.accounts = array;
+        g_AccountID = [array mutableCopy];
         //[array release];
     }else
     {
