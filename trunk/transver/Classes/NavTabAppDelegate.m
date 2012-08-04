@@ -59,6 +59,8 @@
     {
         [Util getParameter];
         g_UserID = [Util loginServer];
+        NSArray *array = [Util fetchRelationships:g_UserID];
+        g_AccountName = [array mutableCopy];
     }
     g_RootController = self.window.rootViewController;
     return;

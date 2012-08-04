@@ -13,6 +13,7 @@
 NSString *g_PhoneNumber;
 NSString *g_UserName;
 NSMutableArray *g_AccountID;
+NSMutableArray *g_AccountName;
 int g_UserID;
 UIViewController *g_RootController;
 @interface Util : NSObject {

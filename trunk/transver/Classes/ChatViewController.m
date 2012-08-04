@@ -160,7 +160,7 @@ NSString *downloadfilename;
 	self.navigationItem.rightBarButtonItem = rightBtnItem;
     [rightBtnItem release];
 	
-	UIBarButtonItem *leftBtnItem = [[UIBarButtonItem alloc] initWithTitle:@"Chat" style:UIBarButtonItemStyleBordered target:self action:@selector(backBtnCtrl:)];
+	UIBarButtonItem *leftBtnItem = [[UIBarButtonItem alloc] initWithTitle:@"Chat" style:UIBarButtonItemStyleBordered target:self action:@selector(BackBtnCtrl:)];
 	self.navigationItem.leftBarButtonItem = leftBtnItem;
 	[leftBtnItem release];
     //[_listOfItems addObject:countriesToLiveInDict];
@@ -188,6 +188,10 @@ NSString *downloadfilename;
 
 - (void)EditBtnCtrl:(id)sender {
 	
+}
+
+- (void)BackBtnCtrl:(id)sender {
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 - (id) initWithRelation: (int) srcid DstID:(int) dstid {
@@ -243,7 +247,7 @@ NSString *downloadfilename;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.title = NSLocalizedString(@"History", @"History");
+    self.title = self.m_DstName;//NSLocalizedString(@"History", @"History");
     myTimer = [NSTimer scheduledTimerWithTimeInterval:30 target:self selector:@selector(ScanMessages) userInfo:nil repeats:YES];
     
     /*

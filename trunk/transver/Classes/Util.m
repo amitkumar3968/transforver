@@ -15,6 +15,7 @@
 + (void) initSetting {
     g_PhoneNumber = [[NSString alloc] init];
     g_AccountID = [[NSMutableArray alloc] init];
+    g_AccountName = [[NSMutableArray alloc] init];
 }
 
 + (NSString*) getDocumentPath {
@@ -106,7 +107,7 @@
 		array = [responseString JSONValue];
 		[responseString release];
 	}
-    [ret addObject:@"get friends"];
+    //[ret addObject:@"get friends"];
     for (NSDictionary *dic in array) {
         if( [dic objectForKey:@"USER_NAME"] == [NSNull null])
             [ret addObject: @"NO NAME"];

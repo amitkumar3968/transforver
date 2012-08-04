@@ -63,4 +63,5 @@
 - (IBAction)startRecording:(id)sender;
 - (IBAction)stopRecording:(id)sender;
 - (void)EditBtnCtrl:(id)sender;
+- (void)BackBtnCtrl:(id)sender;
 @end
