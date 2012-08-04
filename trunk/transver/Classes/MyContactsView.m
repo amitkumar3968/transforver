@@ -9,7 +9,6 @@
 #import "MyContactsView.h"
 #import "OverlayViewController.h"
 #import "ChatViewController.h"
-#import "DialogViewController.h"
 
 
 @implementation MyContactsView

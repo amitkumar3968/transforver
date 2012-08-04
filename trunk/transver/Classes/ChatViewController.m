@@ -201,7 +201,6 @@ NSString *downloadfilename;
         self.title = NSLocalizedString(@"History", @"History");
         self.tabBarItem.image = [UIImage imageNamed:@"search"];
     }
-    return self;
     NSLog(@"initWithDstName");
     //m_DicMessages = [[NSMutableDictionary alloc] init ];
     if( m_DicMessages == nil)
@@ -223,7 +222,7 @@ NSString *downloadfilename;
 }
 
 - (void) ScanMessages {
-    NSLog(@"Scan Messages!!");
+    NSLog(@"Scan Messages!!src:%d dst:%d", m_srcid, m_dstid);
     [self fetchMessages:m_srcid DstID:m_dstid Messages:m_DicMessages];
     //NSMutableArray *countriesLivedInArray = m_Messages;
     //NSDictionary *countriesLivedInDict = [NSDictionary dictionaryWithObject:countriesLivedInArray forKey:@"Messages"];

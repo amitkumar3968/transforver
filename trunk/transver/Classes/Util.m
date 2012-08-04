@@ -113,7 +113,7 @@
             [ret addObject: @"NO NAME"];
         else
             [ret addObject: [dic objectForKey:@"USER_NAME"]];
-        NSLog(@"%@",[dic objectForKey:@"RELATION_SLAVEID"]);
+        NSLog(@"slave id:%@",[dic objectForKey:@"RELATION_SLAVEID"]);
         [g_AccountID addObject: [dic objectForKey:@"RELATION_SLAVEID"]];
     }
     //[ret addObject:nil];
