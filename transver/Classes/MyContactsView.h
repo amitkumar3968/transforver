@@ -23,11 +23,22 @@
 	BOOL letUserSelectRow;
     
     OverlayViewController *ovController;
+    NSMutableArray *filteredListContent;
+    NSString *savedSearchTerm;
+    NSInteger savedScopeButtonIndex;
+    BOOL searchWasActive;
 }
 
 - (ABRecordRef)personObject;
 - (void) searchTableView;
 - (void) doneSearching_Clicked:(id)sender;
+- (void) allbuttonPushed: (id) sender;
+- (void) filterbuttonPushed: (id) sender;
 @property (nonatomic, retain) UINavigationBar *tableViewNavigationBar;
 @property (nonatomic, retain) NSMutableArray *listOfItems;
+@property (nonatomic, retain) NSMutableArray *filteredListContent;
+@property (nonatomic, copy) NSString *savedSearchTerm;
+@property (nonatomic) NSInteger savedScopeButtonIndex;
+@property (nonatomic) BOOL searchWasActive;
+@property (strong,nonatomic) IBOutlet UISearchBar *searchBar;
 @end

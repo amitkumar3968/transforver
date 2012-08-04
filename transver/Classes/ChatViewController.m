@@ -151,6 +151,18 @@ NSString *downloadfilename;
         [sectionInfo release];
         //[_listOfItems addObject:countriesLivedInDict];
     }
+    UIToolbar *customToolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 120, 44.01)];
+	customToolBar.barStyle = UIBarStyleDefault;
+	
+	
+	UIBarButtonItem *rightBtnItem = [[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStyleBordered target:self action:@selector(EditBtnCtrl:)];
+	
+	self.navigationItem.rightBarButtonItem = rightBtnItem;
+    [rightBtnItem release];
+	
+	UIBarButtonItem *leftBtnItem = [[UIBarButtonItem alloc] initWithTitle:@"Chat" style:UIBarButtonItemStyleBordered target:self action:@selector(backBtnCtrl:)];
+	self.navigationItem.leftBarButtonItem = leftBtnItem;
+	[leftBtnItem release];
     //[_listOfItems addObject:countriesToLiveInDict];
     //NSDate *today = [NSDate date];
     //NSDateFormatter *format = [[NSDateFormatter alloc] init];
@@ -174,9 +186,13 @@ NSString *downloadfilename;
     audioRecorder = [[[AudioRecorder	alloc] init] retain];
 }
 
+- (void)EditBtnCtrl:(id)sender {
+	
+}
+
 - (id) initWithRelation: (int) srcid DstID:(int) dstid {
     //[self initWithNibName:@"vwChatViewController" bundle:nil];
-    [super initWithNibName:@"vwChatViewController" bundle:Nil];
+    [super initWithNibName:@"ChatViewController" bundle:Nil];
     if (self) {
         self.title = NSLocalizedString(@"History", @"History");
         self.tabBarItem.image = [UIImage imageNamed:@"search"];

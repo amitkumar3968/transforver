@@ -95,7 +95,7 @@ int m_userid;
     //self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 	//self.tableView.rowHeight = 100;
 	//self.tableView.backgroundColor = [UIColor clearColor];
-    if( ![self checkUserInfoExist])
+    if( ![Util checkUserInfoExist])
     {
         AddUserViewController *addUserView = [[AddUserViewController alloc] initWithNibName:@"AddUserViewController" bundle:nil];
         addUserView.title = @"Add Phone Number";
@@ -104,8 +104,8 @@ int m_userid;
         //[self saveParameter];
     }else
     {
-        [self getParameter];
-        m_userid = [self loginServer];
+        [Util getParameter];
+        m_userid = [Util loginServer];
     }
     
     
