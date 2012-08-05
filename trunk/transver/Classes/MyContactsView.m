@@ -400,9 +400,9 @@
         //ChatViewController *chat = [[ChatViewController alloc] initWithNibName:@"ChatViewController" bundle:nil];
         ChatViewController *chat = [[ChatViewController alloc] initWithRelation:g_UserID DstID:[[g_AccountID objectAtIndex:row] integerValue]];
         chat.m_DstName = [g_AccountName objectAtIndex:indexPath.row];
-        chat.m_dstid = (int)[g_AccountID objectAtIndex:indexPath.row];
+        chat.m_dstid = [[g_AccountID objectAtIndex:indexPath.row] intValue];
         //ChatViewController *chat = [[ChatViewController alloc] initWithRelation:1 DstID:2];
-        
+        NSLog(@"m_dstid:%d", [[g_AccountID objectAtIndex:indexPath.row] intValue]);
         //[chat setContact:contact];
         UINavigationController *navCtlr = [[UINavigationController alloc] initWithRootViewController:chat];
         navCtlr.navigationBar.barStyle = UIBarStyleDefault;

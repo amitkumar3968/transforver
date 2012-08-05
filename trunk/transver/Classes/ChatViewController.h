@@ -20,7 +20,7 @@
 
 @class Contact;
 
-@interface ChatViewController : UIViewController <ChatBubbleViewDelegate, UINavigationBarDelegate, SectionHeaderViewDelegate, RKRequestQueueDelegate, RKRequestDelegate > {
+@interface ChatViewController : UIViewController <ChatBubbleViewDelegate, UINavigationBarDelegate, SectionHeaderViewDelegate, RKRequestQueueDelegate, RKRequestDelegate, UITableViewDataSource > {
     NSMutableArray *listOfItems;
     NSTimer *myTimer;
     NSInteger openSectionIndex;
@@ -31,8 +31,14 @@
     NSString *m_DstName;
     NSMutableDictionary *m_DicMessages;
     RKRequestQueue *m_Quest;
-    
     AudioRecorder *audioRecorder;
+    IBOutlet UIButton *BtnRecord;
+    IBOutlet UIButton *BtnSendText;
+    IBOutlet UIButton *BtnSendRecord;
+    IBOutlet UIButton *BtnOption;
+    IBOutlet UIButton *BtnCancel;
+    IBOutlet UITextField *txtMessage;
+    IBOutlet UITableView *tableView;
 }
 
 @property (nonatomic, retain) RKRequestQueue *m_Quest;

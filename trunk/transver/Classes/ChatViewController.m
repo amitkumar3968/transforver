@@ -115,6 +115,8 @@ NSString *downloadfilename;
     m_Messages = [[NSMutableArray alloc] init];
     
     self.title = m_DstName;
+    UIImage *bgimage = [UIImage imageNamed:@"common_bg_header.png"];
+    [self.navigationController.navigationBar setBackgroundImage:bgimage forBarMetrics:UIBarMetricsDefault];
     //self.tableView.allowsSelection = NO;
     //Position the bubbleView on the bottom
     [self.view addSubview:self.bubbleView];
@@ -137,7 +139,7 @@ NSString *downloadfilename;
     
     //NSMutableArray *countriesLivedInArray = m_Messages;
     //NSDictionary *countriesLivedInDict = [NSDictionary dictionaryWithObject:countriesLivedInArray forKey:@"Messages"];
-    
+    //self.tableView.dataSource = self;
     sectionInfoArray = [[NSMutableArray alloc] init];
     NSArray *keys = [m_DicMessages allKeys];
     int count = [keys count];
@@ -247,7 +249,7 @@ NSString *downloadfilename;
 {
     [super viewWillAppear:animated];
     self.title = self.m_DstName;//NSLocalizedString(@"History", @"History");
-    myTimer = [NSTimer scheduledTimerWithTimeInterval:30 target:self selector:@selector(ScanMessages) userInfo:nil repeats:YES];
+    myTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(ScanMessages) userInfo:nil repeats:YES];
     
     /*
      Check whether the section info array has been created, and if so whether the section count still matches the current section count. In general, you need to keep the section info synchronized with the rows and section. If you support editing in the table view, you need to appropriately update the section info during editing operations.
@@ -568,7 +570,7 @@ NSString *downloadfilename;
     //NSString *myImagePath =  [[NSBundle mainBundle] pathForResource:@"userWaldo" ofType:@"png"];
     UIImage *userImg = [UIImage imageNamed:@"userWaldo.png"];
     if (showImage) {
-        //[cell setImage:userImg];
+        //	[cell setImage:userImg];
     } else {
         [cell setImage:nil];
     }
@@ -585,10 +587,12 @@ NSString *downloadfilename;
         [cell setMessageAlignment:kMessageAlignmentRight];
         frame = CGRectMake(85.0, 15.0, 150.0, 5.0);
     }
-    [message release];
+    NSLog(@"%d", [message retainCount]);
+    //[message release];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     [cell setNeedsDisplay];
     
+    //set for voice file
     NSRange aRange = [cellValue rangeOfString:@"aif"];
     if (aRange.location ==NSNotFound  ) {
     } else {
