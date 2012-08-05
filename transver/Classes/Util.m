@@ -114,6 +114,8 @@
         else
             [ret addObject: [dic objectForKey:@"USER_NAME"]];
         NSLog(@"slave id:%@",[dic objectForKey:@"RELATION_SLAVEID"]);
+        if( g_AccountID == nil)
+            g_AccountID = [[NSMutableArray alloc] init];
         [g_AccountID addObject: [dic objectForKey:@"RELATION_SLAVEID"]];
     }
     //[ret addObject:nil];

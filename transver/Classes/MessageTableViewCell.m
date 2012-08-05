@@ -36,6 +36,8 @@
 	CGContextSaveGState(c);
     UIColor *bgColor;
     CGRect backRect;
+    //hank draw the bubble image file
+    UIImage *userImg = [UIImage imageNamed:@"userWaldo.png"];
     if (messageAlignment == kMessageAlignmentLeft) {
         bgColor = [UIColor whiteColor];
         backRect = CGRectMake(rect.origin.x+20, rect.origin.y , rect.size.width-20, rect.size.height);
