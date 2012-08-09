@@ -18,17 +18,19 @@
 #define kBubbleWidth        44.0
 #define kSeparationWidth     10.0
 
+
 @implementation ContactTableViewCell
 
-@synthesize thumbnailView=_thumbnailView;
-@synthesize statusView=_statusView;
-@synthesize chatsView=_chatsView;
-@synthesize chatsLabel=_chatsLabel;
-@synthesize firstNameLabel=_firstNameLabel;
-@synthesize lastNameLabel=_lastNameLabel;
-@synthesize subtextLabel=_subtextLabel;
+@synthesize uibtContactAdd;
+@synthesize uibtContactDel;
+@synthesize thumbnailView;
+@synthesize statusView;
+@synthesize chatsView;
+@synthesize chatsLabel;
+@synthesize firstNameLabel;
+@synthesize lastNameLabel;
+@synthesize subtextLabel;
 @synthesize contact=_contact;
-
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -36,12 +38,44 @@
         // Initialization code
         [self initialSetup];
     }
+    
+    self.thumbnailView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow-right.png"]];
+    self.thumbnailView.contentMode = UIViewContentModeScaleAspectFit;
+    [self.thumbnailView setFrame:CGRectMake(5, 12, 20, 20)];
+    self.lastNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 12, 80, 20)];
+    self.firstNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(80, 12, 80, 20)];
+    uibtContactAdd = [UIButton buttonWithType:UIButtonTypeRoundedRect] ;        
+    uibtContactAdd.frame = CGRectMake(240, 12, 50, 24);
+    [uibtContactAdd setTitle:@"ADD" forState:UIControlStateNormal];
+    [uibtContactAdd setTitleColor: [UIColor blackColor] forState: UIControlStateNormal];
+    [uibtContactAdd addTarget:self action:@selector(pressAddButton) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:uibtContactAdd];
+    uibtContactDel = [UIButton buttonWithType:UIButtonTypeRoundedRect] ;        
+    uibtContactDel.frame = CGRectMake(240, 12, 50, 24);
+    [uibtContactDel setTitle:@"DEL" forState:UIControlStateNormal];
+    [uibtContactDel setTitleColor: [UIColor blackColor] forState: UIControlStateNormal];
+    [self addSubview:uibtContactDel];
+    [uibtContactDel setHidden:true];
+
+    [self addSubview:thumbnailView];
+    [self addSubview:firstNameLabel];
+    [self addSubview:lastNameLabel];
+    [self addSubview:uibtContactAdd];
+    [self addSubview:uibtContactDel];
     return self;
 }
 
-- (void)initialSetup {
+- (void)pressAddButton
+{
+    [contactTableViewCellDelegate addPhoneNoToVEM];
+}
+
+- (void)initialSetup 
+{
     //Customize the thumbnail view
-    [self.thumbnailView.layer setBorderColor:[UIColor colorWithHue:0.1278 saturation:0.07 brightness:0.96 alpha:1.0].CGColor];
+    
+
+    /*[self.thumbnailView.layer setBorderColor:[UIColor colorWithHue:0.1278 saturation:0.07 brightness:0.06 alpha:1.0].CGColor];
     [self.thumbnailView.layer setBorderWidth:kThumbnailFrameWidth];
     CGRect shadowRect = CGRectMake(0.0, 0.0, self.thumbnailView.frame.size.width, self.thumbnailView.frame.size.height);
     UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:shadowRect];
@@ -50,9 +84,10 @@
     [self.thumbnailView.layer setShadowOffset:CGSizeMake(-1.0, 1.0)];
     [self.thumbnailView.layer setShadowRadius:1.0];
     [self.thumbnailView.layer setShadowOpacity:0.2];
+    [self addSubview:self.thumbnailView];*/
     
     //Customize the chat label
-    [self.chatsLabel setTextColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"redTextColor"]]];
+    [self.chatsLabel setTextColor:[UIColor blueColor]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -63,19 +98,19 @@
 }
 
 - (void)layoutSubviews {
-    [super layoutSubviews];
-    
+       [super layoutSubviews];
+ 
     //Make the first name label fit only the necessary space
-    NSString *firstName = _firstNameLabel.text;
-    CGSize firstNameSize = [firstName sizeWithFont:_firstNameLabel.font];
-    CGRect firstNameFrame = _firstNameLabel.frame;
+    /*NSString *firstName = [[NSString alloc] initWithFormat:@""];
+    CGSize firstNameSize = [firstName sizeWithFont:firstNameLabel.font];
+    CGRect firstNameFrame = firstNameLabel.frame;
     firstNameFrame.size.width = firstNameSize.width;
-    [_firstNameLabel setFrame:firstNameFrame];
+    [firstNameLabel setFrame:firstNameFrame];
     
     //Make the last name start right after the first name
-    NSString *lastName = _lastNameLabel.text;
-    CGSize lastNameSize = [lastName sizeWithFont:_lastNameLabel.font];
-    CGRect lastNameFrame = _lastNameLabel.frame;
+    NSString *lastName = [[NSString alloc] initWithFormat:@""];
+    CGSize lastNameSize = [lastName sizeWithFont:lastNameLabel.font];
+    CGRect lastNameFrame = lastNameLabel.frame;
     lastNameFrame.origin.x = CGRectGetMaxX(firstNameFrame) + kSeparationWidth;
     lastNameFrame.size.width = lastNameSize.width;
     //We might go over the bubble, so check
@@ -83,8 +118,8 @@
     if (CGRectGetMaxX(lastNameFrame) > lastNameMaxX) {
         lastNameFrame.size.width = lastNameMaxX - CGRectGetMinX(lastNameFrame);
     }
-    [_lastNameLabel setFrame:lastNameFrame];
-    
+    [lastNameLabel setFrame:lastNameFrame];
+ */   
     
 }
 
