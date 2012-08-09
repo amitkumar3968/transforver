@@ -36,10 +36,18 @@
 	CGContextSaveGState(c);
     UIColor *bgColor;
     CGRect backRect;
+    CGFloat effectiveOriginY;
+    CGRect LeftbottomRect, LefttopRect, LeftmiddleRect;
+    CGRect MiddlebottomRect, MiddletopRect, MiddlemiddleRect;
+    CGRect RightbottomRect, RighttopRect, RightmiddleRect;
     //hank draw the bubble image file
-    UIImage *userImg = [UIImage imageNamed:@"userWaldo.png"];
+    UIImage *LeftbottomImg, *LefttopImg, *LeftmiddleImg;
+    UIImage *MiddlebottomImg, *MiddletopImg, *MiddlemiddleImg;
+    UIImage *RightbottomImg, *RighttopImg, *RightmiddleImg;
+    
+    
     if (messageAlignment == kMessageAlignmentLeft) {
-        bgColor = [UIColor whiteColor];
+        bgColor = [UIColor blackColor];
         backRect = CGRectMake(rect.origin.x+20, rect.origin.y , rect.size.width-20, rect.size.height);
     } else {
         bgColor = [UIColor colorWithHue:215.0/360.0 saturation:0.05 brightness:1.0 alpha:1.0];
@@ -48,12 +56,55 @@
     [bgColor setFill];
     CGContextFillRect(c, rect);
     CGContextRestoreGState(c);
+    int middleHeight = 15;
+    int middleWidth = 200;
+    if (messageAlignment == kMessageAlignmentLeft) {
+        
+        LefttopImg = [UIImage imageNamed:@"message_div_dialogea_1.png"];
+        LefttopRect = CGRectMake(rect.origin.x, rect.origin.y , LefttopImg.size.width, LefttopImg.size.height);
+        LeftmiddleImg = [UIImage imageNamed:@"message_div_dialogea_4.png"];
+        LeftmiddleRect = CGRectMake(rect.origin.x, rect.origin.y+LefttopImg.size.height , LeftmiddleImg.size.width, middleHeight);
+        LeftbottomImg = [UIImage imageNamed:@"message_div_dialogea_7.png"];
+        LeftbottomRect = CGRectMake(rect.origin.x, rect.origin.y+middleHeight+LefttopImg.size.height , LeftbottomImg.size.width, LeftbottomImg.size.height);
+        
+        //right
+        
+        RighttopImg = [UIImage imageNamed:@"message_div_dialogea_3.png"];
+        RighttopRect = CGRectMake(rect.origin.x+middleWidth+LefttopImg.size.width, rect.origin.y , RighttopImg.size.width, RighttopImg.size.height);
+        RightmiddleImg = [UIImage imageNamed:@"message_div_dialogea_6.png"];
+        RightmiddleRect = CGRectMake(rect.origin.x+middleWidth+LefttopImg.size.width, rect.origin.y+RighttopImg.size.height , RightmiddleImg.size.width, middleHeight);
+        RightbottomImg = [UIImage imageNamed:@"message_div_dialogea_9.png"];
+        RightbottomRect = CGRectMake(rect.origin.x+middleWidth+LefttopImg.size.width, rect.origin.y+middleHeight+RighttopImg.size.height , RightbottomImg.size.width, RightbottomImg.size.height);
+        //middle
+        
+        MiddletopImg = [UIImage imageNamed:@"message_div_dialogea_2.png"];
+        MiddletopRect = CGRectMake(rect.origin.x+LefttopImg.size.width, rect.origin.y , middleWidth, LefttopImg.size.height);
+        MiddlemiddleImg = [UIImage imageNamed:@"message_div_dialogea_5.png"];
+        MiddlemiddleRect = CGRectMake(rect.origin.x+LefttopImg.size.width, rect.origin.y+LefttopImg.size.height , middleWidth, middleHeight);
+        MiddlebottomImg = [UIImage imageNamed:@"message_div_dialogea_8.png"];
+        MiddlebottomRect = CGRectMake(rect.origin.x+LefttopImg.size.width, rect.origin.y+middleHeight+LefttopImg.size.height , middleWidth, LeftbottomImg.size.height);
+    } else {
+        LeftbottomImg = [UIImage imageNamed:@"message_div_dialogeb_7.png"];
+        LeftbottomRect = CGRectMake(rect.origin.x, rect.origin.y , LeftbottomImg.size.width, LeftbottomImg.size.height);
+    }
+    [LeftbottomImg drawInRect:LeftbottomRect];
+    [LefttopImg drawInRect:LefttopRect];
+    [LeftmiddleImg drawInRect:LeftmiddleRect];
     
-    [backgroundImg drawInRect:backRect];
+    //right
+    [RightbottomImg drawInRect:RightbottomRect];
+    [RighttopImg drawInRect:RighttopRect];
+    [RightmiddleImg drawInRect:RightmiddleRect];
     
+    //middle
+    [MiddlebottomImg drawInRect:MiddlebottomRect];
+    [MiddletopImg drawInRect:MiddletopRect];
+    [MiddlemiddleImg drawInRect:MiddlemiddleRect];
+    //[backgroundImg drawInRect:backRect];
+    //[leftbottomImg drawInRect:backRect];
     //We want to draw the image (if any)
     if (image) {
-        CGFloat effectiveOriginY;
+        
         //messageAlignment = kMessageAlignmentRight;
         if (messageAlignment == kMessageAlignmentLeft) {
             effectiveOriginY = kMessageSideSeparation;
@@ -71,7 +122,6 @@
     
     //Draw the text
     
-    CGFloat effectiveOriginY;
     UITextAlignment alignment;
     if (messageAlignment == kMessageAlignmentLeft) {
         effectiveOriginY = kMessageSideSeparation*2 + kMessageImageWidth;

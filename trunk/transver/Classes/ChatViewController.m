@@ -570,7 +570,7 @@ NSString *downloadfilename;
     //NSString *myImagePath =  [[NSBundle mainBundle] pathForResource:@"userWaldo" ofType:@"png"];
     UIImage *userImg = [UIImage imageNamed:@"userWaldo.png"];
     if (showImage) {
-        //	[cell setImage:userImg];
+        //[cell setImage:userImg];
     } else {
         [cell setImage:nil];
     }
