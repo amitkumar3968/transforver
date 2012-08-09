@@ -9,6 +9,7 @@
 #import "MyContactsView.h"
 #import "OverlayViewController.h"
 #import "ChatViewController.h"
+#import "ContactTableViewCell.h"
 
 
 @implementation MyContactsView
@@ -96,7 +97,8 @@
         self.savedSearchTerm = nil;
     }
 	
-	[self.tableView reloadData];
+	//[self.tableView reloadData];
+    //[self.tableView reloadData];
     //NSArray ImageArray = [[NSArray arrayWithArray:imageList] retain];
     //NSArray ContentArray = [[NSArray arrayWithArray:list] retain];
     // Uncomment the following line to preserve selection between presentations.
@@ -301,11 +303,12 @@
 {
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    ContactTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[ContactTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
-    
+    cell.lastNameLabel.text = [listOfItems objectAtIndex:([indexPath row])];
+    //cell.firstNameLabel.text = [listOfItems objectAtIndex:([indexPath row])];
     // Configure the cell...
     /*
     if( [indexPath row] == 0)
@@ -321,7 +324,8 @@
         return cell;
     }*/
     NSLog(@"%d", [indexPath row]);
-    cell.textLabel.text = [listOfItems objectAtIndex:([indexPath row])];
+    //cell.textLabel.text = [listOfItems objectAtIndex:([indexPath row])];
+    //cell.textLabel.text = [[NSString alloc] initWithFormat:@"test"]; 
     return cell;
 }
 

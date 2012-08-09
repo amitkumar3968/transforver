@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @class Contact;
-
+@protocol ContactTableViewCellDelegate;
 @interface ContactTableViewCell : UITableViewCell {
-    
+    UIButton *uibtContactAdd;
+    UIButton *uibtContactDel;
+    id <ContactTableViewCellDelegate> contactTableViewCellDelegate;
 }
-
+@property (nonatomic, retain) UIButton *uibtContactAdd;
+@property (nonatomic, retain) UIButton *uibtContactDel;
 @property (nonatomic, retain) Contact *contact;
 @property (nonatomic, retain) IBOutlet UIImageView *thumbnailView;
 @property (nonatomic, retain) IBOutlet UIImageView *statusView;
