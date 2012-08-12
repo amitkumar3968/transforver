@@ -14,7 +14,7 @@
 int m_userid;
 @implementation ContactsViewController
 
-@synthesize listContent, filteredListContent, sectionedListContent, savedSearchTerm, savedScopeButtonIndex, searchWasActive, delegate, searchBar, tabViewController, m_AccountID;
+@synthesize listContent, filteredListContent, sectionedListContent, savedSearchTerm, savedScopeButtonIndex, searchWasActive, delegate, searchBar, tabViewController, m_AccountID, accounts;
 
 - (void)setListContent:(NSMutableArray *)inListContent
 {

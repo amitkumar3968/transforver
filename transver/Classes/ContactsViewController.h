@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "UICustomTabViewController.h"
+#import "AddUserViewController.h"
 
 @protocol ContactsViewControllerDelegate;
 
-@interface ContactsViewController : UITableViewController <UISearchDisplayDelegate, UISearchBarDelegate>
+@interface ContactsViewController : UITableViewController <UISearchDisplayDelegate, UISearchBarDelegate, AddUserViewDelegate>
 {
 	NSMutableArray			*listContent;			// The master content.
 	NSMutableArray	*filteredListContent;	// The content filtered as a result of a search.
@@ -32,7 +33,7 @@
 @property (nonatomic, retain) NSMutableArray *listContent;
 @property (nonatomic, retain) NSMutableArray *filteredListContent;
 @property (nonatomic, retain) NSMutableArray *m_AccountID;
-@property (nonatomic, retain) NSMutableArray *accounts;
+@property (nonatomic, retain) NSArray *accounts;
 @property (nonatomic, retain, readonly) NSArray *sectionedListContent;
 @property (nonatomic, retain) UICustomTabViewController *tabViewController;
 @property (nonatomic, copy) NSString *savedSearchTerm;
