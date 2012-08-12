@@ -338,6 +338,7 @@ NSString *downloadfilename;
 
 // Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    NSLog(@"%d", [m_DicMessages count]);
     return [m_DicMessages count];//[_listOfItems count];
 }
 
@@ -752,11 +753,51 @@ NSString *downloadfilename;
                      }
                      completion:^(BOOL finished){
                          //Scroll to the bottom
+                         
                          NSUInteger num = [self.tableView numberOfRowsInSection:0];
-                         if (num>0) {
+                         if (num>0 && [self.tableView numberOfSections]) {
                              [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:num-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
                          }
+                         
                      }];
+}
+#define kOFFSET_FOR_KEYBOARD 220.0
+
+-(void) textFieldDidBeginEditing:(UITextField *)textField {
+	CGRect rect = self.view.frame;
+    if (1)
+    {
+        // 1. move the view's origin up so that the text field that will be hidden come above the keyboard 
+        // 2. increase the size of the view so that the area behind the keyboard is covered up.
+        rect.origin.y -= kOFFSET_FOR_KEYBOARD;
+        rect.size.height += kOFFSET_FOR_KEYBOARD;
+    }
+
+	self.view.frame = rect;
+    
+    [UIView commitAnimations];
+
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+	[tableView setContentOffset:CGPointMake(tableView.contentOffset.x, 0) animated:NO];
+    CGRect rect = self.view.frame;
+    if (1)
+    {
+        // 1. move the view's origin up so that the text field that will be hidden come above the keyboard 
+        // 2. increase the size of the view so that the area behind the keyboard is covered up.
+        rect.origin.y += kOFFSET_FOR_KEYBOARD;
+        //rect.size.height -= kOFFSET_FOR_KEYBOARD;
+    }
+    
+	self.view.frame = rect;
+    
+    [UIView commitAnimations];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
 }
 
 - (void)keyboardWillHide:(NSNotification*)aNotification {
@@ -1061,10 +1102,6 @@ NSURLConnection* connection;
 }
 
 
--(void)textFieldDidEndEditing:(UITextField *)textField {
-	NSLog(@"prepare to hide keyboard");
-	//scrollView.frame = CGRectMake(0,44,320,416); //original setup
-}
 
 #pragma mark Section header delegate
 
