@@ -13,7 +13,7 @@
 #import "NavContactsViewController.h"
 #import "vwSettingsController.h"
 #import "vwAboutController.h"
-
+#import "vwHistoryController.h"
 
 @implementation NavTabAppDelegate
 
@@ -39,7 +39,7 @@
     
     vcContact = [[NavContactsViewController alloc] initWithNibName:@"NavContactsViewController" bundle:nil];
     vcRecord = [[vwRecordController alloc] initWithNibName:@"vwRecordController" bundle:nil]; 
-    vcHistory = [[ChatViewController alloc] initWithNibName:@"ChatViewController" bundle:nil];    
+    vcHistory = [[vwHistoryController alloc] initWithNibName:@"vwHistoryController" bundle:nil];    
     vcSettings = [[vwSettingsController alloc] initWithNibName:@"vwSettingsController" bundle:nil];
     vcAbout = [[vwAboutController alloc] initWithNibName:@"vwAboutController" bundle:nil];
     

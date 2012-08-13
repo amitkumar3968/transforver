@@ -101,6 +101,8 @@
 		4F9BB0BC13F2E932004179FC /* 111.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4F9BB0BB13F2E931004179FC /* 111.caf */; };
 		4F9BB0C013F2E9BE004179FC /* mysoundcompressed.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4F9BB0BF13F2E9BE004179FC /* mysoundcompressed.caf */; };
 		4F9BB0CB13F2EA73004179FC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9BB0CA13F2EA73004179FC /* AudioToolbox.framework */; };
+		4F9EEA4615D9753E007BD311 /* vwHistoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9EEA4415D9753E007BD311 /* vwHistoryController.m */; };
+		4F9EEA4715D9753E007BD311 /* vwHistoryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F9EEA4515D9753E007BD311 /* vwHistoryController.xib */; };
 		4FA83DCD140C685100B63437 /* btnSend.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FA83DCC140C685100B63437 /* btnSend.png */; };
 		4FE62B36146C31FF00B46F7C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FE62B35146C31FF00B46F7C /* CFNetwork.framework */; };
 		4FE62B3A146C322900B46F7C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FE62B39146C322900B46F7C /* MobileCoreServices.framework */; };
@@ -608,6 +610,9 @@
 		4F9BB0BB13F2E931004179FC /* 111.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = 111.caf; path = ../111.caf; sourceTree = "<group>"; };
 		4F9BB0BF13F2E9BE004179FC /* mysoundcompressed.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = mysoundcompressed.caf; path = ../mysoundcompressed.caf; sourceTree = "<group>"; };
 		4F9BB0CA13F2EA73004179FC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		4F9EEA4315D9753E007BD311 /* vwHistoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vwHistoryController.h; path = ../vwHistoryController.h; sourceTree = "<group>"; };
+		4F9EEA4415D9753E007BD311 /* vwHistoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = vwHistoryController.m; path = ../vwHistoryController.m; sourceTree = "<group>"; };
+		4F9EEA4515D9753E007BD311 /* vwHistoryController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = vwHistoryController.xib; sourceTree = "<group>"; };
 		4FA83DCC140C685100B63437 /* btnSend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnSend.png; sourceTree = "<group>"; };
 		4FE62B35146C31FF00B46F7C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
 		4FE62B37146C321200B46F7C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
@@ -998,6 +1003,8 @@
 				A45FEFFE15AB18E000CF3D72 /* vwAboutController.m */,
 				A4F632A4159DDC79003C709D /* vwRecordController.h */,
 				A4F632A5159DDC79003C709D /* vwRecordController.m */,
+				4F9EEA4315D9753E007BD311 /* vwHistoryController.h */,
+				4F9EEA4415D9753E007BD311 /* vwHistoryController.m */,
 				A4F63301159EA5DF003C709D /* vwSettingsController.h */,
 				A4F63302159EA5DF003C709D /* vwSettingsController.m */,
 				A4F63304159EA64E003C709D /* vwSettingsEraseController.h */,
@@ -1083,6 +1090,7 @@
 				4F1BC6B714658122004F02C1 /* VocoderViewController.xib */,
 				A45FF00015AB191300CF3D72 /* vwAboutController.xib */,
 				A4F632A2159DD22E003C709D /* vwRecordController.xib */,
+				4F9EEA4515D9753E007BD311 /* vwHistoryController.xib */,
 				A4F632DE159E5760003C709D /* vwSettingsController.xib */,
 				A4F6331D159F5587003C709D /* vwSettingsEraseController.xib */,
 				A4F6335115A0543A003C709D /* vwSettingsLangController.xib */,
@@ -2014,6 +2022,7 @@
 				A45FEFCF15A3166F00CF3D72 /* record_bg_header.png in Resources */,
 				A45FEFD015A3166F00CF3D72 /* record_bg_header@2x.png in Resources */,
 				A45FF00115AB191300CF3D72 /* vwAboutController.xib in Resources */,
+				4F9EEA4715D9753E007BD311 /* vwHistoryController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2081,6 +2090,7 @@
 				A4F6335515A0577A003C709D /* vwSettingsLangController.m in Sources */,
 				A4F6335815A05C56003C709D /* vwSettingsPasswordController.m in Sources */,
 				A45FEFFF15AB18E000CF3D72 /* vwAboutController.m in Sources */,
+				4F9EEA4615D9753E007BD311 /* vwHistoryController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
