@@ -528,7 +528,7 @@ NSString *downloadfilename;
     //NSArray *array = [dictionary objectForKey:@"Messages"];
     //NSArray *elementArr = [array objectAtIndex:indexPath.row];
     NSString *cellValue;
-    if( tmpDialog.m_Dialog_Type == 1)
+    if( tmpDialog.m_Dialog_Type == 1)//voice
     {
         if( [tmpDialog.m_Dialog_Encrypt length]!= 0)
             cellValue = tmpDialog.m_Dialog_Encrypt;
@@ -581,12 +581,15 @@ NSString *downloadfilename;
     //Also, if fromUser is us (currentUser) we align it to the left, right otherwise
     CGRect frame;
     NSLog(@"srcUser: %d", message.srcUser);
+    CGRect btnViewFrame;
     if (message.srcUser == m_srcid) {
         [cell setMessageAlignment:kMessageAlignmentLeft];
         frame = CGRectMake(85.0, 15.0, 150.0, 5.0);
+        btnViewFrame = CGRectMake(20.0, 25.0, 44.0, 44.0);
     } else {
         [cell setMessageAlignment:kMessageAlignmentRight];
         frame = CGRectMake(85.0, 15.0, 150.0, 5.0);
+        btnViewFrame = CGRectMake(110.0, 25.0, 44.0, 44.0);
     }
     NSLog(@"%d", [message retainCount]);
     //[message release];
@@ -598,9 +601,10 @@ NSString *downloadfilename;
     if (aRange.location ==NSNotFound  ) {
     } else {
         NSLog(@" %@ %d ",cellValue, aRange.location);
-        CGRect btnViewFrame = CGRectMake(55.0, 25.0,16.0,16.0);
+        
+        
         UIButton *settingBtn = [[UIButton alloc] initWithFrame:btnViewFrame];
-        UIImage *snap_picture = [UIImage imageNamed:@"arrow-right.png"];
+        UIImage *snap_picture = [UIImage imageNamed:@"message_btn_play.png"];
         [settingBtn setBackgroundImage:snap_picture forState:UIControlStateNormal];
         //[settingBtn addTarget:self action:@selector(playVoice:) forControlEvents:UIControlEventTouchUpInside];
         settingBtn.tag = 2;
@@ -632,7 +636,7 @@ NSString *downloadfilename;
     return sect.header;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (CGFloat)tableView:(UITableView *)tbView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     //return 20;
     //NSDictionary *dictionary = [_listOfItems objectAtIndex:indexPath.section];
     //NSArray *array = [dictionary objectForKey:@"Messages"];
@@ -651,18 +655,25 @@ NSString *downloadfilename;
     }
 
     NSLog(@"index path %d",indexPath.row);
-    NSString *cellValue = tmpDialog.m_Dialog_Message;
-    //Message *message = [_listOfItems objectAtIndex:indexPath.section];
-    
-    CGRect textRect = CGRectMake(0.0, 0.0, tableView.frame.size.width - kMessageSideSeparation*2 - kMessageImageWidth - kMessageBigSeparation, kMaxHeight);
-    UIFont *font = [UIFont systemFontOfSize:16.0];
-    CGSize textSize = [cellValue sizeWithFont:font constrainedToSize:textRect.size lineBreakMode:UILineBreakModeWordWrap];
-    
-    CGFloat effectiveHeight = textSize.height + kMessageTopSeparation*2;
-    //Check the minimum
-    if (effectiveHeight < tableView.rowHeight) {
-        effectiveHeight = tableView.rowHeight;
+    CGFloat effectiveHeight;
+    if( tmpDialog.m_Dialog_Type == 1)
+    {//voice
+        effectiveHeight = 90;
+    }else {
+        NSString *cellValue = tmpDialog.m_Dialog_Message;
+        //Message *message = [_listOfItems objectAtIndex:indexPath.section];
+        
+        CGRect textRect = CGRectMake(0.0, 0.0, tbView.frame.size.width - kMessageSideSeparation*2 - kMessageImageWidth - kMessageBigSeparation, kMaxHeight);
+        UIFont *font = [UIFont systemFontOfSize:16.0];
+        CGSize textSize = [cellValue sizeWithFont:font constrainedToSize:textRect.size lineBreakMode:UILineBreakModeWordWrap];
+        
+        effectiveHeight = textSize.height + kMessageTopSeparation*2;
+        //Check the minimum
+        if (effectiveHeight < tbView.rowHeight) {
+            effectiveHeight = tbView.rowHeight;
+        }
     }
+    
     
     return effectiveHeight;
 }
@@ -687,7 +698,7 @@ NSString *downloadfilename;
         index++;
     }
     NSString *cellValue;
-    if( tmpDialog.m_Dialog_Type == 1)
+    if( tmpDialog.m_Dialog_Type == 1)//audio file
     {
         if( [tmpDialog.m_Dialog_Encrypt length]!= 0)
             cellValue = [NSString stringWithFormat:@"%@", tmpDialog.m_Dialog_Encrypt];
@@ -1069,25 +1080,25 @@ NSURLConnection* connection;
        atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
       newIndexPath:(NSIndexPath *)newIndexPath
 {
-    UITableView *tableView = self.tableView;
+    UITableView *tbView = self.tableView;
     switch(type)
     {
             
         case NSFetchedResultsChangeInsert:
-            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [tbView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
             
         case NSFetchedResultsChangeDelete:
-            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [tbView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
             
         case NSFetchedResultsChangeUpdate:
-            [self configureCell:(MessageTableViewCell*)[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            [self configureCell:(MessageTableViewCell*)[tbView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
             break;
             
         case NSFetchedResultsChangeMove:
-            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]withRowAnimation:UITableViewRowAnimationFade];
+            [tbView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [tbView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]withRowAnimation:UITableViewRowAnimationFade];
             break;
     }
 }
