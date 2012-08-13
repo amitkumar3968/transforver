@@ -50,14 +50,15 @@
         bgColor = [UIColor blackColor];
         backRect = CGRectMake(rect.origin.x+20, rect.origin.y , rect.size.width-20, rect.size.height);
     } else {
-        bgColor = [UIColor colorWithHue:215.0/360.0 saturation:0.05 brightness:1.0 alpha:1.0];
+        bgColor = [UIColor blackColor];
         backRect = CGRectMake(rect.origin.x, rect.origin.y , rect.size.width-20, rect.size.height);
     }
     [bgColor setFill];
     CGContextFillRect(c, rect);
     CGContextRestoreGState(c);
     int middleHeight = 15;
-    int middleWidth = 200;
+    int middleWidth = 250;
+    int xoffset = 40;
     if (messageAlignment == kMessageAlignmentLeft) {
         
         LefttopImg = [UIImage imageNamed:@"message_div_dialogea_1.png"];
@@ -84,8 +85,29 @@
         MiddlebottomImg = [UIImage imageNamed:@"message_div_dialogea_8.png"];
         MiddlebottomRect = CGRectMake(rect.origin.x+LefttopImg.size.width, rect.origin.y+middleHeight+LefttopImg.size.height , middleWidth, LeftbottomImg.size.height);
     } else {
+        LefttopImg = [UIImage imageNamed:@"message_div_dialogeb_1.png"];
+        LefttopRect = CGRectMake(rect.origin.x+xoffset, rect.origin.y , LefttopImg.size.width, LefttopImg.size.height);
+        LeftmiddleImg = [UIImage imageNamed:@"message_div_dialogeb_4.png"];
+        LeftmiddleRect = CGRectMake(rect.origin.x+xoffset, rect.origin.y+LefttopImg.size.height , LeftmiddleImg.size.width, middleHeight);
         LeftbottomImg = [UIImage imageNamed:@"message_div_dialogeb_7.png"];
-        LeftbottomRect = CGRectMake(rect.origin.x, rect.origin.y , LeftbottomImg.size.width, LeftbottomImg.size.height);
+        LeftbottomRect = CGRectMake(rect.origin.x+xoffset, rect.origin.y+middleHeight+LefttopImg.size.height , LeftbottomImg.size.width, LeftbottomImg.size.height);
+        
+        //right
+        
+        RighttopImg = [UIImage imageNamed:@"message_div_dialogeb_3.png"];
+        RighttopRect = CGRectMake(rect.origin.x+middleWidth+LefttopImg.size.width+xoffset, rect.origin.y , RighttopImg.size.width, RighttopImg.size.height);
+        RightmiddleImg = [UIImage imageNamed:@"message_div_dialogeb_6.png"];
+        RightmiddleRect = CGRectMake(rect.origin.x+middleWidth+LefttopImg.size.width+xoffset, rect.origin.y+RighttopImg.size.height , RightmiddleImg.size.width, middleHeight);
+        RightbottomImg = [UIImage imageNamed:@"message_div_dialogeb_9.png"];
+        RightbottomRect = CGRectMake(rect.origin.x+middleWidth+LefttopImg.size.width+xoffset, rect.origin.y+middleHeight+RighttopImg.size.height , RightbottomImg.size.width, RightbottomImg.size.height);
+        //middle
+        
+        MiddletopImg = [UIImage imageNamed:@"message_div_dialogeb_2.png"];
+        MiddletopRect = CGRectMake(rect.origin.x+LefttopImg.size.width+xoffset, rect.origin.y , middleWidth, LefttopImg.size.height);
+        MiddlemiddleImg = [UIImage imageNamed:@"message_div_dialogeb_5.png"];
+        MiddlemiddleRect = CGRectMake(rect.origin.x+LefttopImg.size.width+xoffset, rect.origin.y+LefttopImg.size.height , middleWidth, middleHeight);
+        MiddlebottomImg = [UIImage imageNamed:@"message_div_dialogeb_8.png"];
+        MiddlebottomRect = CGRectMake(rect.origin.x+LefttopImg.size.width+xoffset, rect.origin.y+middleHeight+LefttopImg.size.height , middleWidth, LeftbottomImg.size.height);
     }
     [LeftbottomImg drawInRect:LeftbottomRect];
     [LefttopImg drawInRect:LefttopRect];
