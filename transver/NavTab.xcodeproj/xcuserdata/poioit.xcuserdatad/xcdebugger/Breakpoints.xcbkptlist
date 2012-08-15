@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Classes/ChatViewController.m"
-         timestampString = "366572113.434715"
+         timestampString = "366707529.895692"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "969"
-         endingLineNumber = "969"
+         startingLineNumber = "981"
+         endingLineNumber = "981"
          landmarkName = "-chatBubbleView:willResizeToHeight:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Classes/ChatViewController.m"
-         timestampString = "366572113.434715"
+         timestampString = "366707529.895692"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "981"
-         endingLineNumber = "981"
+         startingLineNumber = "993"
+         endingLineNumber = "993"
          landmarkName = "-chatBubbleView:willSendText:"
          landmarkType = "5">
       </FileBreakpoint>
