@@ -30,7 +30,8 @@
 
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
-    
+    NSLog(@"drawRect %f", rect.size.height);
+    int rectheight = rect.size.height;
     //Paint the background
     CGContextRef c = UIGraphicsGetCurrentContext();	
 	CGContextSaveGState(c);
@@ -60,6 +61,10 @@
     int middleWidth = 200;
     int xoffset = 90;
     int yoffset = 10;
+    NSRange aRange = [text rangeOfString:@"aif"];
+    if (aRange.location ==NSNotFound) {
+        middleHeight = rectheight-42;
+    }
     if (messageAlignment == kMessageAlignmentLeft) {
         
         LefttopImg = [UIImage imageNamed:@"message_div_dialogea_1.png"];
@@ -156,8 +161,8 @@
     CGRect textRect = CGRectMake(effectiveOriginY, kMessageTopSeparation, rect.size.width - kMessageSideSeparation*2 - kMessageImageWidth - kMessageBigSeparation, kMaxHeight);
     CGSize textSize = [text sizeWithFont:font constrainedToSize:textRect.size lineBreakMode:UILineBreakModeWordWrap];
     textRect.size.height = textSize.height;
-    
-    NSRange aRange = [text rangeOfString:@"aif"];
+    NSLog(@"%@", text);
+    aRange = [text rangeOfString:@"aif"];
     if (aRange.location ==NSNotFound) {
         NSLog(@"string not found");
         [text drawInRect:textRect withFont:font lineBreakMode:UILineBreakModeWordWrap alignment:alignment];
@@ -167,14 +172,17 @@
     //Draw the date
     CGRect dateRect;
     if (messageAlignment == kMessageAlignmentLeft) {
-        dateRect = CGRectMake(230.0, 60.0, 60.0, 50.0);
+        dateRect = CGRectMake(230.0, rectheight-20.0, 60.0, 50.0);
         alignment = UITextAlignmentLeft;
     } else {
-        dateRect = CGRectMake(30.0, 60.0, 60.0, 50.0);
+        dateRect = CGRectMake(30.0, rectheight-20.0, 60.0, 50.0);
         alignment = UITextAlignmentRight;
     }
     font = [UIFont systemFontOfSize:12.0];
-    [[UIColor redColor] set];
+    [[UIColor colorWithRed:83/255.0
+                     green:126/255.0
+                      blue:240/255.0
+                     alpha:1.0] set];
     [m_date drawInRect:dateRect withFont:font lineBreakMode:UILineBreakModeWordWrap alignment:alignment];
 }
 

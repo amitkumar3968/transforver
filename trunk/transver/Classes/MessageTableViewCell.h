@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #define kMessageSideSeparation      10.0
-#define kMessageTopSeparation      5.0
+#define kMessageTopSeparation      10.0
 #define kMessageImageWidth      30.0
 #define kMessageBigSeparation   70.0
 #define kMaxHeight              9999.0

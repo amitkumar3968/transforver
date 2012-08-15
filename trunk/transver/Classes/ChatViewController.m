@@ -543,7 +543,7 @@ NSString *downloadfilename;
     [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     
     NSDate *date = [dateFormat dateFromString:tmpDialog.m_Created_Time];
-    [dateFormat setDateFormat:@"a h:mm "];
+    [dateFormat setDateFormat:@"h:mm a"];
     NSString *str = [dateFormat stringFromDate:date]; 
     [dateFormat release];
     
@@ -582,14 +582,17 @@ NSString *downloadfilename;
     CGRect frame;
     NSLog(@"srcUser: %d", message.srcUser);
     CGRect btnViewFrame;
+    CGRect btnLockFrame;
     if (message.srcUser == m_srcid) {
         [cell setMessageAlignment:kMessageAlignmentLeft];
         frame = CGRectMake(85.0, 15.0, 150.0, 5.0);
         btnViewFrame = CGRectMake(20.0, 25.0, 44.0, 44.0);
+        btnLockFrame = CGRectMake(80.0, 25.0, 12.0, 17.0);
     } else {
         [cell setMessageAlignment:kMessageAlignmentRight];
         frame = CGRectMake(85.0, 15.0, 150.0, 5.0);
         btnViewFrame = CGRectMake(110.0, 25.0, 44.0, 44.0);
+        btnLockFrame = CGRectMake(170.0, 25.0, 12.0, 17.0);
     }
     NSLog(@"%d", [message retainCount]);
     //[message release];
@@ -608,9 +611,18 @@ NSString *downloadfilename;
         [settingBtn setBackgroundImage:snap_picture forState:UIControlStateNormal];
         //[settingBtn addTarget:self action:@selector(playVoice:) forControlEvents:UIControlEventTouchUpInside];
         settingBtn.tag = 2;
-        [settingBtn setEnabled:NO];
+        [settingBtn setEnabled:YES];
         [cell addSubview:settingBtn];
         [settingBtn release];
+        
+        UIButton *lockBtn = [[UIButton alloc] initWithFrame:btnLockFrame];
+        UIImage *lock_picture = [UIImage imageNamed:@"message_icon_lock.png"];
+        [lockBtn setBackgroundImage:lock_picture forState:UIControlStateNormal];
+        //[settingBtn addTarget:self action:@selector(playVoice:) forControlEvents:UIControlEventTouchUpInside];
+        lockBtn.tag = 3;
+        [lockBtn setEnabled:YES];
+        [cell addSubview:lockBtn];
+        [lockBtn release];
         
         
         UISlider *slider = [[UISlider alloc] initWithFrame:frame];
@@ -658,7 +670,7 @@ NSString *downloadfilename;
     CGFloat effectiveHeight;
     if( tmpDialog.m_Dialog_Type == 1)
     {//voice
-        effectiveHeight = 90;
+        effectiveHeight = 85;
     }else {
         NSString *cellValue = tmpDialog.m_Dialog_Message;
         //Message *message = [_listOfItems objectAtIndex:indexPath.section];
