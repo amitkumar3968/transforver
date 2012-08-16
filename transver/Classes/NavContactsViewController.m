@@ -19,7 +19,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = NSLocalizedString(@"Contacts", @"Contacts");
-        //self.tabBarItem.image = [UIImage imageNamed:@"search"];
+        self.tabBarItem.image = [UIImage imageNamed:@"common_icon_con_rest.png"];
     }
     return self;
 }
