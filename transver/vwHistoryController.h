@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface vwHistoryController : UIViewController <UINavigationBarDelegate>
+@interface vwHistoryController : UIViewController <UINavigationBarDelegate, UITableViewDelegate, UITableViewDataSource>
+{
+    IBOutlet UITableView *m_historyTableView;
+}
 
+@property (nonatomic, retain) IBOutlet UITableView *m_historyTableView;
 @end

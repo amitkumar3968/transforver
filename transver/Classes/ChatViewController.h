@@ -49,6 +49,7 @@
 @property (nonatomic, assign) NSInteger openSectionIndex;
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) IBOutlet ChatBubbleView *bubbleView;
+@property (nonatomic, retain) IBOutlet UITextField *txtMessage;
 @property (nonatomic, retain) Contact *contact;
 @property (nonatomic, retain) NSMutableArray *listOfItems;
 @property (nonatomic, retain) NSMutableArray *m_Messages;
@@ -70,4 +71,5 @@
 - (IBAction)stopRecording:(id)sender;
 - (void)EditBtnCtrl:(id)sender;
 - (void)BackBtnCtrl:(id)sender;
+- (IBAction)btnSendMessage:(id)sender;
 @end

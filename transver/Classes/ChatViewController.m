@@ -54,7 +54,7 @@
 @synthesize m_DicMessages;
 @synthesize m_Quest;
 @synthesize audioRecorder;
-
+@synthesize txtMessage;
 
 NSString *downloadfilename;
 
@@ -72,12 +72,26 @@ NSString *downloadfilename;
 {
     [audioRecorder startRecording];
 }
+
 - (IBAction)stopRecording:(id)sender
 {
     [audioRecorder stopRecording];
 	[audioRecorder release];
     self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:1];
+    [self dismissModalViewControllerAnimated:NO];
+    
 }
+
+- (IBAction)btnSendMessage:(id)sender
+{
+    NSLog(@"btnSendMessage %@!", self.txtMessage.text);
+    [self sendMessages:self.txtMessage.text];
+    //[self textFieldDidEndEditing:(UITextField *)txtMessage];
+    [self ScanMessages];
+    [txtMessage resignFirstResponder];
+    txtMessage.text = @"";
+}
+
 - (void)dealloc
 {
     //[__fetchedResultsController release];
