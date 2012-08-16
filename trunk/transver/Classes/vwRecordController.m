@@ -119,7 +119,7 @@ numberOfRowsInComponent:(NSInteger) component
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = NSLocalizedString(@"Record", @"Record");
-        //self.tabBarItem.image = [UIImage imageNamed:@"Record"];
+        self.tabBarItem.image = [UIImage imageNamed:@"common_icon_rec_rest.png"];
     }
     return self;
 }

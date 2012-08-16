@@ -55,7 +55,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = NSLocalizedString(@"Settings", @"Settings");
-        self.tabBarItem.image = [UIImage imageNamed:@"settings.jpg"];
+        self.tabBarItem.image = [UIImage imageNamed:@"common_icon_set_rest.png"];
     }
     return self;
 }
