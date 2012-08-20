@@ -597,16 +597,19 @@ NSString *downloadfilename;
     NSLog(@"srcUser: %d", message.srcUser);
     CGRect btnViewFrame;
     CGRect btnLockFrame;
+    CGRect btnDeleteFrame;
     if (message.srcUser == m_srcid) {
         [cell setMessageAlignment:kMessageAlignmentLeft];
         frame = CGRectMake(85.0, 15.0, 150.0, 5.0);
         btnViewFrame = CGRectMake(20.0, 25.0, 44.0, 44.0);
         btnLockFrame = CGRectMake(80.0, 25.0, 12.0, 17.0);
+        btnDeleteFrame = CGRectMake(160.0, 50.0, 52.0, 22.0);
     } else {
         [cell setMessageAlignment:kMessageAlignmentRight];
         frame = CGRectMake(85.0, 15.0, 150.0, 5.0);
         btnViewFrame = CGRectMake(110.0, 25.0, 44.0, 44.0);
         btnLockFrame = CGRectMake(170.0, 25.0, 12.0, 17.0);
+        btnDeleteFrame = CGRectMake(250.0, 50.0, 52.0, 22.0);
     }
     NSLog(@"%d", [message retainCount]);
     //[message release];
@@ -637,6 +640,15 @@ NSString *downloadfilename;
         [lockBtn setEnabled:YES];
         [cell addSubview:lockBtn];
         [lockBtn release];
+        
+        UIButton *deleteBtn = [[UIButton alloc] initWithFrame:btnLockFrame];
+        UIImage *delete_picture = [UIImage imageNamed:@"message_icon_delete.png"];
+        [deleteBtn setBackgroundImage:delete_picture forState:UIControlStateNormal];
+        //[settingBtn addTarget:self action:@selector(playVoice:) forControlEvents:UIControlEventTouchUpInside];
+        lockBtn.tag = 4;
+        [lockBtn setEnabled:YES];
+        [cell addSubview:deleteBtn];
+        [deleteBtn release];
         
         
         UISlider *slider = [[UISlider alloc] initWithFrame:frame];
