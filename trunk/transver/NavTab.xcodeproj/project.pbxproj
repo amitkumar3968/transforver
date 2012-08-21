@@ -17,6 +17,8 @@
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
 		4F01F16715E296B90016717D /* HistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F01F16515E296B80016717D /* HistoryTableViewCell.m */; };
 		4F01F16815E296B90016717D /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F01F16615E296B90016717D /* HistoryTableViewCell.xib */; };
+		4F01F18515E4072A0016717D /* VEM@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F01F18415E4072A0016717D /* VEM@2X.png */; };
+		4F01F18915E407720016717D /* VEM.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F01F18815E407720016717D /* VEM.png */; };
 		4F03B2951401315600FEC9D4 /* DBHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F03B2941401315600FEC9D4 /* DBHandler.m */; };
 		4F03B2C61401D05100FEC9D4 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F03B2C51401D05100FEC9D4 /* ChatViewController.m */; };
 		4F03B2C81401D0F700FEC9D4 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F03B2C71401D0F600FEC9D4 /* CoreData.framework */; };
@@ -488,6 +490,8 @@
 		4F01F16415E296B80016717D /* HistoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryTableViewCell.h; sourceTree = "<group>"; };
 		4F01F16515E296B80016717D /* HistoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTableViewCell.m; sourceTree = "<group>"; };
 		4F01F16615E296B90016717D /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
+		4F01F18415E4072A0016717D /* VEM@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VEM@2X.png"; sourceTree = "<group>"; };
+		4F01F18815E407720016717D /* VEM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VEM.png; sourceTree = "<group>"; };
 		4F03B2931401315600FEC9D4 /* DBHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBHandler.h; sourceTree = "<group>"; };
 		4F03B2941401315600FEC9D4 /* DBHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBHandler.m; sourceTree = "<group>"; };
 		4F03B2C41401D05100FEC9D4 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
@@ -1033,6 +1037,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				4F01F18815E407720016717D /* VEM.png */,
+				4F01F18415E4072A0016717D /* VEM@2X.png */,
 				4F2B30881470B25F0033E43E /* libRestKitXMLParserLibxml.a */,
 				4F2B307E1470B2180033E43E /* libRestKitCoreData.a */,
 				4F2B307F1470B2180033E43E /* libRestKitJSONParserJSONKit.a */,
@@ -2032,6 +2038,8 @@
 				A45FF00115AB191300CF3D72 /* vwAboutController.xib in Resources */,
 				4F9EEA4715D9753E007BD311 /* vwHistoryController.xib in Resources */,
 				4F01F16815E296B90016717D /* HistoryTableViewCell.xib in Resources */,
+				4F01F18515E4072A0016717D /* VEM@2X.png in Resources */,
+				4F01F18915E407720016717D /* VEM.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
