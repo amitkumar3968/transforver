@@ -11,7 +11,9 @@
 @interface vwHistoryController : UIViewController <UINavigationBarDelegate, UITableViewDelegate, UITableViewDataSource>
 {
     IBOutlet UITableView *m_historyTableView;
+    NSMutableArray *m_HistoryDialog;
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *m_historyTableView;
+@property (nonatomic, retain) NSMutableArray *m_HistoryDialog;
 @end
