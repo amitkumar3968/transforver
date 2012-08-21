@@ -15,6 +15,7 @@ NSString *g_UserName;
 NSMutableArray *g_AccountID;
 NSMutableArray *g_AccountName;
 int g_UserID;
+UITabBarController *g_tabController;
 UIViewController *g_RootController;
 @interface Util : NSObject {
     
