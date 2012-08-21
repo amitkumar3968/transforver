@@ -20,7 +20,7 @@
 @synthesize window;
 @synthesize navigationController;
 @synthesize tabController;
-@synthesize globalSettings;
+@synthesize globalSettings, accounts;
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
 	//navController = [[UINavigationController alloc] init];
@@ -47,6 +47,7 @@
     //self.tabController.tabBar.selectedImageTintColor = [UIColor yellowColor];
     self.tabController.viewControllers = [NSArray arrayWithObjects:vcRecord, vcContact, vcHistory, vcSettings, vcAbout, nil];
     self.window.rootViewController = self.tabController;
+    g_tabController = self.tabController;
     [self.window makeKeyAndVisible];
     if( ![Util checkUserInfoExist])
     {

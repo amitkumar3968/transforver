@@ -77,7 +77,7 @@ NSString *downloadfilename;
 {
     [audioRecorder stopRecording];
 	[audioRecorder release];
-    self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:1];
+    g_tabController.selectedViewController = [g_tabController.viewControllers objectAtIndex:0];
     [self dismissModalViewControllerAnimated:NO];
     
 }
