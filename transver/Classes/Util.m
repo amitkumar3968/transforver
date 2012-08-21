@@ -127,6 +127,37 @@
 	return retArr;
 }
 
++ (NSArray*) fetchHistory:(int) uid {
+    NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/getHistory.php?masterID=%d", uid];
+    NSData *data = [DBHandler sendReqToUrl:urlString postString:nil];
+	NSArray *array = nil;
+    NSMutableArray *ret = [[NSMutableArray alloc] init ];
+	
+	if(data)
+	{
+		NSString *responseString = [[NSString alloc] initWithData:data
+                                                         encoding:NSUTF8StringEncoding];
+		array = [responseString JSONValue];
+		[responseString release];
+	}
+    return array;
+    //[ret addObject:@"get friends"];
+    for (NSDictionary *dic in array) {
+        if( [dic objectForKey:@"USER_NAME"] == [NSNull null])
+            [ret addObject: @"NO NAME"];
+        else
+            [ret addObject: [dic objectForKey:@"USER_NAME"]];
+        NSLog(@"DEST id:%@",[dic objectForKey:@"DIALOG_DESTINATIONID"]);
+    }
+    //[ret addObject:nil];
+    NSArray *retArr = [[NSArray alloc ]initWithArray:ret];
+    [ret release];
+    //NSLog(@"1:%d",[retArr retainCount]);
+    [retArr autorelease];
+    //NSLog(@"2:%d",[retArr retainCount]);
+	return retArr;
+}
+
 + (void) delUserInfo {
 	[Util removeFile:@"user.status"];
 }

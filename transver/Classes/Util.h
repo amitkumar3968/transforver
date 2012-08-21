@@ -29,6 +29,7 @@ UIViewController *g_RootController;
 + (int)  loginServer;
 + (void) uploadFile;
 + (NSArray*) fetchRelationships:(int) m_userid;
++ (NSArray*) fetchHistory:(int) m_userid;
 
 + (void) getParameter;
 + (void) saveParameter;

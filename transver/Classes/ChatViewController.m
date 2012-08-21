@@ -362,6 +362,20 @@ NSString *downloadfilename;
     //Number of rows it should expect should be based on the section
     //[m_DicMessages ob
     //NSDictionary *dictionary = [_listOfItems objectAtIndex:section];
+    if( [sectionInfoArray count] == 0)
+    {
+        NSArray *keys = [m_DicMessages allKeys];
+        int count = [keys count];
+        for (int i = 0; i < count; i++)
+        {
+            id key = [keys objectAtIndex: i];
+            SectionInfo *sectionInfo = [[SectionInfo alloc] init];			
+            sectionInfo.open = NO;
+            sectionInfo.header = key;
+            [self.sectionInfoArray addObject:sectionInfo];
+            [sectionInfo release];
+        }
+    }
     SectionInfo *tmpSect = [sectionInfoArray objectAtIndex:section];
     NSDictionary *dic = [m_DicMessages objectForKey:tmpSect.header];
     

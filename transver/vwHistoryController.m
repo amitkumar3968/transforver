@@ -9,6 +9,7 @@
 #import "vwHistoryController.h"
 #import "HistoryTableViewCell.h"
 #import "ChatViewController.h"
+#import "Util.h"
 
 @interface vwHistoryController ()
 
@@ -16,7 +17,7 @@
 
 @implementation vwHistoryController
 
-@synthesize m_historyTableView;
+@synthesize m_historyTableView, m_HistoryDialog;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -24,6 +25,7 @@
     if (self) {
         self.title = NSLocalizedString(@"History", @"History");
         self.tabBarItem.image = [UIImage imageNamed:@"common_icon_his_rest.png"];
+        m_HistoryDialog = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -31,6 +33,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSArray *array = [Util fetchHistory:g_UserID];
+    m_HistoryDialog = [array mutableCopy];
 }
 
 - (void)viewDidUnload
@@ -54,7 +58,7 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return [m_HistoryDialog count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -64,6 +68,27 @@
     if (cell == nil) {
         cell = [[[HistoryTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
+    NSDictionary *dic = [m_HistoryDialog objectAtIndex:[indexPath row]];
+    if( [dic objectForKey:@"USER_NAME"] == [NSNull null])
+        ((HistoryTableViewCell *)cell).m_DestName = @"NO NAME";
+    else
+        ((HistoryTableViewCell *)cell).m_DestName = [dic objectForKey:@"USER_NAME"];
+    if( [dic objectForKey:@"DIALOG_MESSAGE"] == [NSNull null])
+        ((HistoryTableViewCell *)cell).m_DestMsg = @"";
+    else
+        ((HistoryTableViewCell *)cell).m_DestMsg = [dic objectForKey:@"DIALOG_MESSAGE"];
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSLog(@"%@", [dic objectForKey:@"DIALOG_CREATEDTIME"]);
+     NSDate *tmpDate = [format dateFromString:[dic objectForKey:@"DIALOG_CREATEDTIME"]];
+    [format setDateFormat:@"yyyy-MM-dd"];
+    if( [dic objectForKey:@"DIALOG_CREATEDTIME"] == [NSNull null])
+        ((HistoryTableViewCell *)cell).m_DestDate = @"";
+    else
+        ((HistoryTableViewCell *)cell).m_DestDate = [format stringFromDate:tmpDate];
+    NSLog(@"DEST id:%@",[dic objectForKey:@"DIALOG_DESTINATIONID"]);
+    
+    
     NSLog(@"%d", [indexPath row]);
     return cell;
 }
@@ -72,24 +97,24 @@
     return 63.0;
 }
 
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger row = [indexPath row];
     {
-        //[self.tabViewController setTitle:[accounts objectAtIndex:indexPath.row]];
-        //[self.navigationController pushViewController:self.tabViewController animated:YES];
-        //Show the message chat view
-        //ChatViewController *chat = [[ChatViewController alloc] initWithNibName:@"ChatViewController" bundle:nil];
-        ChatViewController *chat = [[ChatViewController alloc] initWithRelation:g_UserID DstID:[[g_AccountID objectAtIndex:row] integerValue]];
-        chat.m_DstName = [g_AccountName objectAtIndex:indexPath.row];
-        chat.m_dstid = [[g_AccountID objectAtIndex:indexPath.row] intValue];
+        NSDictionary *dic = [m_HistoryDialog objectAtIndex:row];
+        NSLog(@"%@", [dic objectForKey:@"USER_NAME"]);
+        
+        ChatViewController *chat = [[ChatViewController alloc] initWithRelation:g_UserID DstID:[[dic objectForKey:@"DIALOG_DESTINATIONID"] integerValue]];
+        chat.m_DstName = ([dic objectForKey:@"USER_NAME"] == [NSNull null])?@"NO NAME":[dic objectForKey:@"USER_NAME"];
+        chat.m_dstid = [[dic objectForKey:@"DIALOG_DESTINATIONID"] intValue];
         //ChatViewController *chat = [[ChatViewController alloc] initWithRelation:1 DstID:2];
-        NSLog(@"m_dstid:%d", [[g_AccountID objectAtIndex:indexPath.row] intValue]);
+        NSLog(@"m_dstid:%d", [[dic objectForKey:@"DIALOG_DESTINATIONID"] intValue]);
         //[chat setContact:contact];
         UINavigationController *navCtlr = [[UINavigationController alloc] initWithRootViewController:chat];
         navCtlr.navigationBar.barStyle = UIBarStyleDefault;
         
-        [g_RootController presentModalViewController:navCtlr animated:YES];
+        [g_RootController presentModalViewController:navCtlr animated:NO];
         [navCtlr release];
         //((UITabBarController *)g_RootController).tabBar.hidden = YES;
         //self.navigationController.navigationBar.delegate = self;
