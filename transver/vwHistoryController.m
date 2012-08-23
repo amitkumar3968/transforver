@@ -26,6 +26,7 @@
         self.title = NSLocalizedString(@"History", @"History");
         self.tabBarItem.image = [UIImage imageNamed:@"common_icon_his_rest.png"];
         m_HistoryDialog = [[NSMutableArray alloc] init];
+        
     }
     return self;
 }

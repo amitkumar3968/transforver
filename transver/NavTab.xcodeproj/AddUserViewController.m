@@ -49,6 +49,7 @@
     if (self.delegate && [self.delegate respondsToSelector:@selector(savePhoneNumber:)]) 
     {
         [self.delegate savePhoneNumber:name.text];
+        [self dismissModalViewControllerAnimated:YES];
     }
     //[self.navigationController popViewControllerAnimated:YES];
 }
