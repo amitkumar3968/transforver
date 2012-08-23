@@ -13,12 +13,12 @@
 #import "AddUserViewController.h"
 
 
-int m_userid;
+int m_userid=20;
 
 @implementation MyContactsView
 
 @synthesize tableViewNavigationBar;
-@synthesize listOfItems, filteredListContent, savedSearchTerm, savedScopeButtonIndex, searchWasActive, searchBar, listOfPhones;
+@synthesize listOfItems, filteredListContent, savedSearchTerm, savedScopeButtonIndex, searchWasActive, searchBar, listOfPhones, VEMContactID, VEMContactName;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -101,6 +101,11 @@ int m_userid;
 
     }
 #endif	
+    
+    //retrieve VEM contact list
+    [self getRelationships:m_userid];
+    
+    
 	// create a filtered list that will contain products for the search results table.
 	self.filteredListContent = [NSMutableArray arrayWithCapacity:[self.listOfItems count]];
 	
@@ -286,6 +291,8 @@ int m_userid;
         [allButton setSelected:NO];
     }
     [listOfItems removeAllObjects];
+    listOfItems = VEMContactName;
+    [self viewDidLoad];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -315,7 +322,7 @@ int m_userid;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [listOfItems count];
+    return [VEMContactName count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -326,7 +333,7 @@ int m_userid;
     if (cell == nil) {
         cell = [[[ContactTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
-    cell.lastNameLabel.text = [listOfItems objectAtIndex:([indexPath row])];
+    cell.lastNameLabel.text = [VEMContactName objectAtIndex:([indexPath row])];
     //cell.firstNameLabel.text = [listOfItems objectAtIndex:([indexPath row])];
     // Configure the cell...
     /*
@@ -342,7 +349,7 @@ int m_userid;
         [cell setFrame:cellFrame];
         return cell;
     }*/
-    NSLog(@"%d", [indexPath row]);
+    NSLog(@"%@", cell.lastNameLabel.text);
     cell.uibtContactAdd.tag = [indexPath row];
     [cell.uibtContactAdd addTarget:self action:@selector(addPerson:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -360,10 +367,39 @@ int m_userid;
 
 - (void)addPerson:(UIButton *)sender
 {
-    m_userid=20;
+    m_userid=16;
     NSLog(@"list of phones: %d", [listOfPhones count]);
     NSString *phoneWithoutSeperates = [[listOfPhones objectAtIndex:sender.tag] stringByReplacingOccurrencesOfString:@"-" withString:@""];
     [self addRelationships:m_userid phonenumber:phoneWithoutSeperates];
+    [self getRelationships:20];
+}
+
+- (void) getRelationships: (int) uid
+{
+    NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/getRelationships.php?masterID=%d", uid];
+    
+    NSData *data = [DBHandler sendReqToUrl:urlString postString:nil];
+	NSArray *array = nil;
+    VEMContactName = [[NSMutableArray alloc] init ];
+    VEMContactID = [[NSMutableArray alloc] init ];
+    //NSMutableArray *ret = [[NSMutableArray alloc] init ];
+	
+	if(data)
+	{
+		NSString *responseString = [[NSString alloc] initWithData:data
+                                                         encoding:NSUTF8StringEncoding];
+		array = [responseString JSONValue];
+        
+        for (NSDictionary *dic in array)
+        {
+            NSString *name = [dic objectForKey:@"USER_NAME"];
+            NSString *usr_id = [dic objectForKey:@"USER_ID"];
+            [VEMContactName addObject:name];
+            [VEMContactID addObject:usr_id];
+        }
+        
+		[responseString release];
+	}
 }
 
 - (void) addRelationships:(int) uid phonenumber:(NSString *) phone{
