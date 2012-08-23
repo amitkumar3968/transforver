@@ -540,6 +540,7 @@ NSString *downloadfilename;
     
     //ChatMeUser *currentUser = [[ChatMeService sharedChatMeService] currentUser];
     //NSDictionary *dictionary = [_listOfItems objectAtIndex:indexPath.section];
+    
     SectionInfo *sect =[sectionInfoArray objectAtIndex:indexPath.section];
     NSDictionary *dictionary = [m_DicMessages objectForKey:sect.header];
     NSEnumerator *enumerator = [dictionary keyEnumerator];
@@ -612,18 +613,30 @@ NSString *downloadfilename;
     CGRect btnViewFrame;
     CGRect btnLockFrame;
     CGRect btnDeleteFrame;
+    CGRect btnDecryptFrame;
+    CGRect lblVEFrame;
+    CGRect lblTimerFrame;
+    CGRect lblDeleteFrame;
     if (message.srcUser == m_srcid) {
         [cell setMessageAlignment:kMessageAlignmentLeft];
         frame = CGRectMake(85.0, 15.0, 150.0, 5.0);
         btnViewFrame = CGRectMake(20.0, 25.0, 44.0, 44.0);
         btnLockFrame = CGRectMake(80.0, 25.0, 12.0, 17.0);
+        lblVEFrame = CGRectMake(100.0, 25.0, 120.0, 20.0);
+        lblTimerFrame = CGRectMake(80.0, 50.0, 100.0, 20.0);
+        lblDeleteFrame = CGRectMake(164.0, 50.0, 48.0, 20.0);
         btnDeleteFrame = CGRectMake(160.0, 50.0, 52.0, 22.0);
+        btnDecryptFrame = CGRectMake(133.0, 50.0, 17.0, 18.0);
     } else {
         [cell setMessageAlignment:kMessageAlignmentRight];
         frame = CGRectMake(85.0, 15.0, 150.0, 5.0);
         btnViewFrame = CGRectMake(110.0, 25.0, 44.0, 44.0);
         btnLockFrame = CGRectMake(170.0, 25.0, 12.0, 17.0);
+        lblVEFrame = CGRectMake(190.0, 25.0, 120.0, 20.0);
+        lblTimerFrame = CGRectMake(170.0, 50.0, 100.0, 20.0);
+        lblDeleteFrame = CGRectMake(254.0, 50.0, 48.0, 20.0);
         btnDeleteFrame = CGRectMake(250.0, 50.0, 52.0, 22.0);
+        btnDecryptFrame = CGRectMake(223.0, 50.0, 17.0, 18.0);
     }
     NSLog(@"%d", [message retainCount]);
     //[message release];
@@ -634,8 +647,9 @@ NSString *downloadfilename;
     NSRange aRange = [cellValue rangeOfString:@"aif"];
     if (aRange.location ==NSNotFound  ) {
     } else {
-        NSLog(@" %@ %d ",cellValue, aRange.location);
+        NSLog(@"cell %@ %d ",cellValue, aRange.location);
         
+
         
         UIButton *settingBtn = [[UIButton alloc] initWithFrame:btnViewFrame];
         UIImage *snap_picture = [UIImage imageNamed:@"message_btn_play.png"];
@@ -655,7 +669,7 @@ NSString *downloadfilename;
         [cell addSubview:lockBtn];
         [lockBtn release];
         
-        UIButton *deleteBtn = [[UIButton alloc] initWithFrame:btnLockFrame];
+        UIButton *deleteBtn = [[UIButton alloc] initWithFrame:btnDeleteFrame];
         UIImage *delete_picture = [UIImage imageNamed:@"message_icon_delete.png"];
         [deleteBtn setBackgroundImage:delete_picture forState:UIControlStateNormal];
         //[settingBtn addTarget:self action:@selector(playVoice:) forControlEvents:UIControlEventTouchUpInside];
@@ -664,6 +678,38 @@ NSString *downloadfilename;
         [cell addSubview:deleteBtn];
         [deleteBtn release];
         
+        UIButton *decryptBtn = [[UIButton alloc] initWithFrame:btnDecryptFrame];
+        UIImage *decrypt_picture = [UIImage imageNamed:@"message_icon_autodelete.png"];
+        [decryptBtn setBackgroundImage:decrypt_picture forState:UIControlStateNormal];
+        //[settingBtn addTarget:self action:@selector(playVoice:) forControlEvents:UIControlEventTouchUpInside];
+        decryptBtn.tag = 5;
+        [decryptBtn setEnabled:YES];
+        [cell addSubview:decryptBtn];
+        [decryptBtn release];
+        
+        UILabel *VEStateLabel = [[UILabel alloc] initWithFrame:lblVEFrame];
+        VEStateLabel.text = @"VE Protected";
+        VEStateLabel.backgroundColor = [UIColor clearColor];
+        VEStateLabel.tag = 6;
+        [cell addSubview:VEStateLabel];
+        [VEStateLabel release];
+        
+        UILabel *TimerLabel = [[UILabel alloc] initWithFrame:lblTimerFrame];
+        TimerLabel.text = @"00:30";
+        TimerLabel.textColor = [UIColor redColor];
+        TimerLabel.backgroundColor = [UIColor clearColor];
+        TimerLabel.tag = 7;
+        [cell addSubview:TimerLabel];
+        [TimerLabel release];
+        
+        UILabel *DeleteLabel = [[UILabel alloc] initWithFrame:lblDeleteFrame];
+        DeleteLabel.text = @"Delete";
+        DeleteLabel.textColor = [UIColor whiteColor];
+        DeleteLabel.backgroundColor = [UIColor clearColor];
+        [DeleteLabel setFont: [UIFont fontWithName:@"Arial" size:14.0f]];
+        DeleteLabel.tag = 8;
+        [cell addSubview:DeleteLabel];
+        [DeleteLabel release];
         
         UISlider *slider = [[UISlider alloc] initWithFrame:frame];
         //[slider addTarget:self action:@selector(sliderAction:) forControlEvents:UIControlEventValueChanged];
