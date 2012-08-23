@@ -57,6 +57,8 @@
        inComponent:(NSInteger) component
 {
     carrierOptIndex=row;
+    [pickerView removeFromSuperview];
+
 }
 
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
@@ -74,7 +76,7 @@ numberOfRowsInComponent:(NSInteger) component
 
 -(IBAction) showPicker{
     if (uipkVocodeOpt.superview==nil){
-        CGRect rectVocodeRect = CGRectMake(0, 260, 200,180);
+        CGRect rectVocodeRect = CGRectMake(100, 260, 200,180);
         uipkVocodeOpt.delegate=self;
         uipkVocodeOpt.frame=rectVocodeRect;
         uipkVocodeOpt.showsSelectionIndicator=true;
