@@ -14,6 +14,7 @@
 
 @interface MyContactsView : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate >{
     NSMutableArray *listOfItems;
+    NSMutableArray *listOfPhones;
 	NSMutableArray *copyListOfItems;
     UINavigationBar *tableViewNavigationBar;
     
@@ -41,4 +42,5 @@
 @property (nonatomic) NSInteger savedScopeButtonIndex;
 @property (nonatomic) BOOL searchWasActive;
 @property (strong,nonatomic) IBOutlet UISearchBar *searchBar;
+@property (nonatomic, retain)     NSMutableArray *listOfPhones;
 @end

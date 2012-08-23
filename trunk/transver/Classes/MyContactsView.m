@@ -10,12 +10,15 @@
 #import "OverlayViewController.h"
 #import "ChatViewController.h"
 #import "ContactTableViewCell.h"
+#import "AddUserViewController.h"
 
+
+int m_userid;
 
 @implementation MyContactsView
 
 @synthesize tableViewNavigationBar;
-@synthesize listOfItems, filteredListContent, savedSearchTerm, savedScopeButtonIndex, searchWasActive, searchBar;
+@synthesize listOfItems, filteredListContent, savedSearchTerm, savedScopeButtonIndex, searchWasActive, searchBar, listOfPhones;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -45,6 +48,7 @@
 {
     [super viewDidLoad];
     listOfItems = [[NSMutableArray alloc] init];
+    listOfPhones = [[NSMutableArray alloc] init];
 
    
     //self.tableView.tableHeaderView = searchBar;
@@ -66,7 +70,18 @@
         NSString *lastName = (NSString *)ABRecordCopyValue(record, kABPersonLastNameProperty);
         UIImageView *contactImage = (UIImageView *)ABPersonCopyImageData(record);
         NSString *contactFirstLast = [NSString stringWithFormat: @"%@ %@", firstName, lastName];
-        
+        ABMultiValueRef phoneNumbers = (NSString *)ABRecordCopyValue(record, kABPersonPhoneProperty);
+        NSString* mobileNumber;
+        NSString* mobileLabel;
+        for (CFIndex i = 0; i < ABMultiValueGetCount(phoneNumbers); i++) {
+            mobileLabel = ABMultiValueCopyLabelAtIndex(phoneNumbers, i);
+            if ([mobileLabel isEqualToString:@"_$!<Mobile>!$_"]) {
+                mobileNumber = ABMultiValueCopyValueAtIndex(phoneNumbers,i);
+                break;
+            }
+        }
+
+        [listOfPhones addObject:mobileNumber];
         [listOfItems addObject:contactFirstLast];
         
         //Here I think something goes wrong, but I don't know what
@@ -82,6 +97,8 @@
         NSString *contactFirstLast = [NSString stringWithFormat: @"Ray"];
         
         [listOfItems addObject:contactFirstLast];
+        [listOfItems addObject:contactFirstLast];
+
     }
 #endif	
 	// create a filtered list that will contain products for the search results table.
@@ -237,8 +254,10 @@
         NSString *lastName = (NSString *)ABRecordCopyValue(record, kABPersonLastNameProperty);
         UIImageView *contactImage = (UIImageView *)ABPersonCopyImageData(record);
         NSString *contactFirstLast = [NSString stringWithFormat: @"%@ %@", firstName, lastName];
+        NSString *contactPhoneNo = (NSString *)ABRecordCopyValue(record, kABPersonPhoneMobileLabel);
         
         [listOfItems addObject:contactFirstLast];
+        [listOfPhones addObject:contactPhoneNo];
         
         //Here I think something goes wrong, but I don't know what
         // If I comment out this line, the application works, but now pictures is showing.
@@ -324,6 +343,9 @@
         return cell;
     }*/
     NSLog(@"%d", [indexPath row]);
+    cell.uibtContactAdd.tag = [indexPath row];
+    [cell.uibtContactAdd addTarget:self action:@selector(addPerson:) forControlEvents:UIControlEventTouchUpInside];
+    
     //cell.textLabel.text = [listOfItems objectAtIndex:([indexPath row])];
     //cell.textLabel.text = [[NSString alloc] initWithFormat:@"test"]; 
     return cell;
@@ -336,8 +358,30 @@
     return cell.frame.size.height;
 }
 
+- (void)addPerson:(UIButton *)sender
+{
+    m_userid=20;
+    NSLog(@"list of phones: %d", [listOfPhones count]);
+    NSString *phoneWithoutSeperates = [[listOfPhones objectAtIndex:sender.tag] stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    [self addRelationships:m_userid phonenumber:phoneWithoutSeperates];
+}
 
-
+- (void) addRelationships:(int) uid phonenumber:(NSString *) phone{
+    NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/addRelationships.php?srcID=%d&dstPhone=%@", uid, phone];
+    
+    NSData *data = [DBHandler sendReqToUrl:urlString postString:nil];
+	NSArray *array = nil;
+    //NSMutableArray *ret = [[NSMutableArray alloc] init ];
+	
+	if(data)
+	{
+		NSString *responseString = [[NSString alloc] initWithData:data
+                                                         encoding:NSUTF8StringEncoding];
+		array = [responseString JSONValue];
+		[responseString release];
+	}
+    
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
