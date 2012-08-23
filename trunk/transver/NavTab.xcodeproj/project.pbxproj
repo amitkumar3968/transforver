@@ -490,7 +490,7 @@
 		4F01F16415E296B80016717D /* HistoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryTableViewCell.h; sourceTree = "<group>"; };
 		4F01F16515E296B80016717D /* HistoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTableViewCell.m; sourceTree = "<group>"; };
 		4F01F16615E296B90016717D /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
-		4F01F18415E4072A0016717D /* VEM2X.png */ = {isa = PBXFileReference; path = VEM2X.png; sourceTree = "<group>"; };
+		4F01F18415E4072A0016717D /* VEM2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VEM2X.png; sourceTree = "<group>"; };
 		4F01F18815E407720016717D /* VEM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VEM.png; sourceTree = "<group>"; };
 		4F03B2931401315600FEC9D4 /* DBHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBHandler.h; sourceTree = "<group>"; };
 		4F03B2941401315600FEC9D4 /* DBHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBHandler.m; sourceTree = "<group>"; };
