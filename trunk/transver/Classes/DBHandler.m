@@ -37,7 +37,7 @@
 {
 	NSURL *url = [NSURL URLWithString:urlString];
 	NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url  
-															  cachePolicy:NSURLRequestReturnCacheDataElseLoad
+															  cachePolicy:NSURLRequestReloadIgnoringCacheData
 														  timeoutInterval:30];
 	if(body == nil)
     {
@@ -101,7 +101,7 @@
 {	
 	NSURL *url = [NSURL URLWithString:urlString];
 	NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url  
-															  cachePolicy:NSURLRequestReturnCacheDataElseLoad
+															  cachePolicy:NSURLRequestReloadIgnoringCacheData
 														  timeoutInterval:30];
 	if(postString == nil)
     {
@@ -119,8 +119,8 @@
 	NSData *responseData = [NSURLConnection sendSynchronousRequest:urlRequest
 												 returningResponse:&urlResponse
 															 error:&error];
-	//NSLog(@"%s", [responseData bytes]);
-	//NSLog(@"%p", error);
+	NSLog(@"%s", [responseData bytes]);
+    
 	//NSString *responseString = [[NSString alloc] initWithData:responseData
 	//										encoding:NSUTF8StringEncoding];
 	//NSLog(@"%@", responseString);

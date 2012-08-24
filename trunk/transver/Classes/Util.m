@@ -128,7 +128,8 @@
 }
 
 + (NSArray*) fetchHistory:(int) uid {
-    NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/getHistory.php?masterID=%d", uid];
+    NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/getHistory.php?masterID=%d", uid
+                           ];
     NSData *data = [DBHandler sendReqToUrl:urlString postString:nil];
 	NSArray *array = nil;
     NSMutableArray *ret = [[NSMutableArray alloc] init ];

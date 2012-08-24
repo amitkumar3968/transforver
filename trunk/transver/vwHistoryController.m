@@ -34,10 +34,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:NO];
     NSArray *array = [Util fetchHistory:g_UserID];
     m_HistoryDialog = [array mutableCopy];
 }
-
 - (void)viewDidUnload
 {
     [super viewDidUnload];
