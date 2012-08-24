@@ -2151,7 +2151,7 @@
 				PRODUCT_NAME = NavTab;
 				PROVISIONING_PROFILE = "F9739DED-941F-4FF0-ABE0-1EBC54E10C46";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F9739DED-941F-4FF0-ABE0-1EBC54E10C46";
-				SDKROOT = iphoneos5.1;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -2181,7 +2181,7 @@
 				PRODUCT_NAME = NavTab;
 				PROVISIONING_PROFILE = "F9739DED-941F-4FF0-ABE0-1EBC54E10C46";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F9739DED-941F-4FF0-ABE0-1EBC54E10C46";
-				SDKROOT = iphoneos5.1;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};
@@ -2190,7 +2190,8 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = "";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yijen Lin (9744LY792J)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ray Yu (55P7VD7797)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ray Yu (55P7VD7797)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -2203,7 +2204,9 @@
 					"-all_load",
 				);
 				PREBINDING = NO;
-				SDKROOT = iphonesimulator4.0;
+				PROVISIONING_PROFILE = "F9739DED-941F-4FF0-ABE0-1EBC54E10C46";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F9739DED-941F-4FF0-ABE0-1EBC54E10C46";
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -2211,8 +2214,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yijen Lin (9744LY792J)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yijen Lin (9744LY792J)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ray Yu (55P7VD7797)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ray Yu (55P7VD7797)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -2226,7 +2229,7 @@
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = "F9739DED-941F-4FF0-ABE0-1EBC54E10C46";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F9739DED-941F-4FF0-ABE0-1EBC54E10C46";
-				SDKROOT = iphoneos4.3;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};
