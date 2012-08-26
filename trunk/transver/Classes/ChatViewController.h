@@ -33,6 +33,7 @@
     RKRequestQueue *m_Quest;
     AudioRecorder *audioRecorder;
     int currentPasswordIndex;
+    int currentPasswordSection;
     IBOutlet UIButton *BtnRecord;
     IBOutlet UIButton *BtnSendText;
     IBOutlet UIButton *BtnSendRecord;

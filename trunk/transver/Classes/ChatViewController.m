@@ -178,7 +178,7 @@ NSString *downloadfilename;
 	
 	UIBarButtonItem *leftBtnItem = [[UIBarButtonItem alloc] initWithTitle:@"Chat" style:UIBarButtonItemStyleBordered target:self action:@selector(BackBtnCtrl:)];
 	self.navigationItem.leftBarButtonItem = leftBtnItem;
-    currentPasswordIndex = -1;
+    currentPasswordIndex = currentPasswordSection = -1;
 	[leftBtnItem release];
     //[_listOfItems addObject:countriesToLiveInDict];
     //NSDate *today = [NSDate date];
@@ -367,7 +367,7 @@ NSString *downloadfilename;
     {
         NSArray *keys = [m_DicMessages allKeys];
         int count = [keys count];
-        for (int i = 0; i < count; i++)
+        for (int i = count-1; i >= 0; i--)
         {
             id key = [keys objectAtIndex: i];
             SectionInfo *sectionInfo = [[SectionInfo alloc] init];			
@@ -703,6 +703,9 @@ NSString *downloadfilename;
         [decryptBtn setBackgroundImage:decrypt_picture forState:UIControlStateNormal];
         [decryptBtn addTarget:self action:@selector(decrypt:) forControlEvents:UIControlEventTouchUpInside];
         decryptBtn.tag = [indexPath row];
+        decryptBtn.titleLabel.text = [NSString stringWithFormat:@"%d:%d", indexPath.section, indexPath.row];
+        decryptBtn.titleLabel.hidden = YES;
+
         [decryptBtn setEnabled:YES];
         [cell addSubview:decryptBtn];
         [decryptBtn release];
@@ -752,9 +755,9 @@ NSString *downloadfilename;
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{ 
     NSLog(@"Entered: %@",[[alertView textFieldAtIndex:0] text]);
-    if( currentPasswordIndex != -1)
+    if( currentPasswordIndex != -1 && currentPasswordSection != -1)
     {
-        SectionInfo *sect =[sectionInfoArray objectAtIndex:currentPasswordIndex];
+        SectionInfo *sect =[sectionInfoArray objectAtIndex:currentPasswordSection];
         NSDictionary *dictionary = [m_DicMessages objectForKey:sect.header];
         NSEnumerator *enumerator = [dictionary keyEnumerator];
         id key;
@@ -781,7 +784,10 @@ NSString *downloadfilename;
 - (void) decrypt:(id) sender
 {
     NSLog(@"%d", ((UIButton *)sender).tag);
-    currentPasswordIndex = ((UIButton *)sender).tag;
+    UIButton *tmpBtn = sender;
+    NSArray * tmpArray = [tmpBtn.titleLabel.text componentsSeparatedByString:@":"];
+    currentPasswordIndex = [[tmpArray objectAtIndex:1] intValue];
+    currentPasswordSection = [[tmpArray objectAtIndex:0] intValue];
     UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"VEM" message:@"Please input password!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
     [alert show];
