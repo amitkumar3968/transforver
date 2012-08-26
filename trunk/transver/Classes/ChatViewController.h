@@ -20,7 +20,7 @@
 
 @class Contact;
 
-@interface ChatViewController : UIViewController <ChatBubbleViewDelegate, UINavigationBarDelegate, SectionHeaderViewDelegate, RKRequestQueueDelegate, RKRequestDelegate, UITableViewDataSource > {
+@interface ChatViewController : UIViewController <ChatBubbleViewDelegate, UINavigationBarDelegate, SectionHeaderViewDelegate, RKRequestQueueDelegate, RKRequestDelegate, UITableViewDataSource, UIAlertViewDelegate > {
     NSMutableArray *listOfItems;
     NSTimer *myTimer;
     NSInteger openSectionIndex;
@@ -72,4 +72,5 @@
 - (void)EditBtnCtrl:(id)sender;
 - (void)BackBtnCtrl:(id)sender;
 - (IBAction)btnSendMessage:(id)sender;
+- (void) decrypt:(id) sender;
 @end
