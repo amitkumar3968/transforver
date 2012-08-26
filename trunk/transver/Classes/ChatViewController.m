@@ -157,7 +157,7 @@ NSString *downloadfilename;
     sectionInfoArray = [[NSMutableArray alloc] init];
     NSArray *keys = [m_DicMessages allKeys];
     int count = [keys count];
-    for (int i = 0; i < count; i++)
+    for (int i = count-1; i >= 0; i--)
     {
         id key = [keys objectAtIndex: i];
         SectionInfo *sectionInfo = [[SectionInfo alloc] init];			
@@ -178,6 +178,7 @@ NSString *downloadfilename;
 	
 	UIBarButtonItem *leftBtnItem = [[UIBarButtonItem alloc] initWithTitle:@"Chat" style:UIBarButtonItemStyleBordered target:self action:@selector(BackBtnCtrl:)];
 	self.navigationItem.leftBarButtonItem = leftBtnItem;
+    currentPasswordIndex = -1;
 	[leftBtnItem release];
     //[_listOfItems addObject:countriesToLiveInDict];
     //NSDate *today = [NSDate date];
@@ -421,13 +422,18 @@ NSString *downloadfilename;
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     [format setDateFormat:@"yyyy-MM-dd"];
     
-    NSString *todayString = [format stringFromDate:today];
-    
     NSDateComponents *dayComponent = [[[NSDateComponents alloc] init] autorelease];
-    dayComponent.day = 1;
+    dayComponent.day = -7;
     
     NSCalendar *theCalendar = [NSCalendar currentCalendar];
     NSDate *dateToBeIncremented = [theCalendar dateByAddingComponents:dayComponent toDate:today options:0];
+    NSString *todayString = [format stringFromDate:dateToBeIncremented];//[format stringFromDate:today];
+    
+    dayComponent = [[[NSDateComponents alloc] init] autorelease];
+    dayComponent.day = 1;
+    
+    theCalendar = [NSCalendar currentCalendar];
+    dateToBeIncremented = [theCalendar dateByAddingComponents:dayComponent toDate:today options:0];
     NSString *tomorrowString = [format stringFromDate:dateToBeIncremented];
     NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/getMessages.php"];
     NSString *postString = [NSString stringWithFormat:@"srcID=%d&dstID=%d&fromdate=%@&todate=%@",srcid,dstid,todayString,tomorrowString];
@@ -471,11 +477,14 @@ NSString *downloadfilename;
                 element.m_Created_Time = [dic objectForKey:@"DIALOG_CREATEDTIME"];
                 element.m_Dialog_SourceID = [[dic objectForKey:@"DIALOG_SOURCEID"] intValue];
                 element.m_Dialog_DstID = [[dic objectForKey:@"DIALOG_DESTINATIONID"] intValue];
+                element.m_Dialog_Read = [[dic objectForKey:@"DIALOG_DST_READ"] intValue];
+                element.m_Dialog_Password = [dic objectForKey:@"IALOG_VOICE_PASS"];
                 if( element.m_Dialog_Type == 1)
                     [self queueRequests:element.m_Dialog_Voice];
+                /*
                 else
                     [self queueRequests:element.m_Dialog_Encrypt];
-
+                 */
                 [tmpDic setObject:element forKey:[dic objectForKey:@"DIALOG_ID"]];
                 [element release];
             }
@@ -491,11 +500,14 @@ NSString *downloadfilename;
             element.m_Created_Time = [dic objectForKey:@"DIALOG_CREATEDTIME"];
             element.m_Dialog_SourceID = [[dic objectForKey:@"DIALOG_SOURCEID"] intValue];
             element.m_Dialog_DstID = [[dic objectForKey:@"DIALOG_DESTINATIONID"] intValue];
-                
+            element.m_Dialog_Password = [dic objectForKey:@"IALOG_VOICE_PASS"];
+            element.m_Dialog_Read = [[dic objectForKey:@"DIALOG_DST_READ"] intValue];
             if( element.m_Dialog_Type == 1)
                 [self queueRequests:element.m_Dialog_Voice];
+            /*
             else
                 [self queueRequests:element.m_Dialog_Encrypt];
+             */
             [tmpDic setObject:element forKey:[dic objectForKey:@"DIALOG_ID"]];
             [element release];
             [srcMessages setObject:tmpDic forKey:tmpDate];
@@ -646,10 +658,18 @@ NSString *downloadfilename;
     //set for voice file
     NSRange aRange = [cellValue rangeOfString:@"aif"];
     if (aRange.location ==NSNotFound  ) {
+        if( [[cell subviews] count] > 0)
+        {
+            NSLog(@"message: %d %@",[[cell subviews] count], message.text);
+            if ([cell.contentView subviews]){
+                for (UIView *subview in [cell subviews]) {
+                    [subview removeFromSuperview];
+                }
+            }
+        }
+        NSLog(@"remove message: %d %@",[[cell subviews] count], message.text);
     } else {
-        NSLog(@"cell %@ %d ",cellValue, aRange.location);
-        
-
+        NSLog(@"cell %d %d %d",[[cell subviews] count], aRange.location, indexPath.row);
         
         UIButton *settingBtn = [[UIButton alloc] initWithFrame:btnViewFrame];
         UIImage *snap_picture = [UIImage imageNamed:@"message_btn_play.png"];
@@ -695,7 +715,7 @@ NSString *downloadfilename;
         [VEStateLabel release];
         
         UILabel *TimerLabel = [[UILabel alloc] initWithFrame:lblTimerFrame];
-        TimerLabel.text = @"00:30";
+        TimerLabel.text = [NSString stringWithFormat:@"00:30"];//@"00:30";
         TimerLabel.textColor = [UIColor redColor];
         TimerLabel.backgroundColor = [UIColor clearColor];
         //TimerLabel.tag = 7;
@@ -732,11 +752,36 @@ NSString *downloadfilename;
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{ 
     NSLog(@"Entered: %@",[[alertView textFieldAtIndex:0] text]);
+    if( currentPasswordIndex != -1)
+    {
+        SectionInfo *sect =[sectionInfoArray objectAtIndex:currentPasswordIndex];
+        NSDictionary *dictionary = [m_DicMessages objectForKey:sect.header];
+        NSEnumerator *enumerator = [dictionary keyEnumerator];
+        id key;
+        int index = 0;
+        Dialog *tmpDialog, *prevDialog;
+        while ((key = [enumerator nextObject])) {
+            tmpDialog = [dictionary objectForKey:key];
+            if( index == currentPasswordIndex)
+                break;
+            index++;
+            prevDialog = [dictionary objectForKey:key];
+        }
+        NSLog(@"password%@", tmpDialog.m_Dialog_Password);
+        if( [tmpDialog.m_Dialog_Password isEqualToString:[[alertView textFieldAtIndex:0] text]])
+        {
+            //to download decrypt file
+            NSLog(@"download decrypt file");
+            [self downloadToFile:tmpDialog.m_Dialog_Encrypt];
+        }
+    }
+
 }
 
 - (void) decrypt:(id) sender
 {
     NSLog(@"%d", ((UIButton *)sender).tag);
+    currentPasswordIndex = ((UIButton *)sender).tag;
     UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"VEM" message:@"Please input password!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
     [alert show];
@@ -1243,7 +1288,7 @@ NSURLConnection* connection;
      */
     //NSDictionary *dictionary = [_listOfItems objectAtIndex:sectionOpened];
     //NSArray *array = [dictionary objectForKey:@"Messages"];
-    NSLog(@"%@", [sectionInfoArray objectAtIndex:sectionOpened]);
+    NSLog(@"sectionOpened:%@", [sectionInfoArray objectAtIndex:sectionOpened]);
     NSDictionary *dictionary = [m_DicMessages objectForKey:sectionInfo.header ];
     NSEnumerator *enumerator = [m_DicMessages keyEnumerator];
     id key;
@@ -1265,9 +1310,11 @@ NSURLConnection* connection;
     /*
      Create an array containing the index paths of the rows to delete: These correspond to the rows for each quotation in the previously-open section, if there was one.
      */
+    
     NSMutableArray *indexPathsToDelete = [[NSMutableArray alloc] init];
     
     NSInteger previousOpenSectionIndex = self.openSectionIndex;
+    /*
     if (previousOpenSectionIndex != NSNotFound && previousOpenSectionIndex != sectionOpened) {
 		
 		SectionInfo *previousOpenSection = [self.sectionInfoArray objectAtIndex:previousOpenSectionIndex];
@@ -1277,7 +1324,7 @@ NSURLConnection* connection;
         for (NSInteger i = 0; i < countOfRowsToDelete; i++) {
             [indexPathsToDelete addObject:[NSIndexPath indexPathForRow:i inSection:previousOpenSectionIndex]];
         }
-    }
+    }*/
     
     // Style the animation so that there's a smooth flow in either direction.
     UITableViewRowAnimation insertAnimation;

@@ -11,6 +11,6 @@
 
 @implementation Dialog
 
-@synthesize m_Dialog_ID, m_Dialog_Type, m_Created_Time, m_Dialog_DstID, m_Dialog_SourceID, m_Dialog_Voice, m_Dialog_Encrypt, m_Dialog_Message;
+@synthesize m_Dialog_ID, m_Dialog_Type, m_Created_Time, m_Dialog_DstID, m_Dialog_SourceID, m_Dialog_Voice, m_Dialog_Encrypt, m_Dialog_Message, m_Dialog_Password, m_Dialog_Read;
 
 @end

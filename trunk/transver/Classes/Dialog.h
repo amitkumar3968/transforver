@@ -15,8 +15,10 @@
     NSString *m_Dialog_Message;
     NSString *m_Dialog_Voice;
     NSString *m_Dialog_Encrypt;
+    NSString *m_Dialog_Password;
     int m_Dialog_SourceID;
     int m_Dialog_DstID;
+    int m_Dialog_Read;
     NSString *m_Created_Time;
 }
 
@@ -25,9 +27,11 @@
 @property (nonatomic, assign) int m_Dialog_Type;
 @property (nonatomic, assign) int m_Dialog_SourceID;
 @property (nonatomic, assign) int m_Dialog_DstID;
+@property (nonatomic, assign) int m_Dialog_Read;
 @property (nonatomic, retain) NSString *m_Dialog_Message;
 @property (nonatomic, retain) NSString *m_Dialog_Voice;
 @property (nonatomic, retain) NSString *m_Dialog_Encrypt;
+@property (nonatomic, retain) NSString *m_Dialog_Password;
 @property (nonatomic, retain) NSString *m_Created_Time;
 
 @end

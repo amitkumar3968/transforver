@@ -32,6 +32,7 @@
     NSMutableDictionary *m_DicMessages;
     RKRequestQueue *m_Quest;
     AudioRecorder *audioRecorder;
+    int currentPasswordIndex;
     IBOutlet UIButton *BtnRecord;
     IBOutlet UIButton *BtnSendText;
     IBOutlet UIButton *BtnSendRecord;
