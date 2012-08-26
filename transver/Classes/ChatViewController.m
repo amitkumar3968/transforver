@@ -654,8 +654,8 @@ NSString *downloadfilename;
         UIButton *settingBtn = [[UIButton alloc] initWithFrame:btnViewFrame];
         UIImage *snap_picture = [UIImage imageNamed:@"message_btn_play.png"];
         [settingBtn setBackgroundImage:snap_picture forState:UIControlStateNormal];
-        //[settingBtn addTarget:self action:@selector(playVoice:) forControlEvents:UIControlEventTouchUpInside];
-        settingBtn.tag = 2;
+        [settingBtn addTarget:self action:@selector(playVoice:) forControlEvents:UIControlEventTouchUpInside];
+        //settingBtn.tag = 2;
         [settingBtn setEnabled:YES];
         [cell addSubview:settingBtn];
         [settingBtn release];
@@ -664,7 +664,7 @@ NSString *downloadfilename;
         UIImage *lock_picture = [UIImage imageNamed:@"message_icon_lock.png"];
         [lockBtn setBackgroundImage:lock_picture forState:UIControlStateNormal];
         //[settingBtn addTarget:self action:@selector(playVoice:) forControlEvents:UIControlEventTouchUpInside];
-        lockBtn.tag = 3;
+        //lockBtn.tag = 3;
         [lockBtn setEnabled:YES];
         [cell addSubview:lockBtn];
         [lockBtn release];
@@ -672,8 +672,8 @@ NSString *downloadfilename;
         UIButton *deleteBtn = [[UIButton alloc] initWithFrame:btnDeleteFrame];
         UIImage *delete_picture = [UIImage imageNamed:@"message_icon_delete.png"];
         [deleteBtn setBackgroundImage:delete_picture forState:UIControlStateNormal];
-        //[settingBtn addTarget:self action:@selector(playVoice:) forControlEvents:UIControlEventTouchUpInside];
-        lockBtn.tag = 4;
+        //[deleteBtn addTarget:self action:@selector(decrypt:) forControlEvents:UIControlEventTouchUpInside];
+        //lockBtn.tag = 4;
         [lockBtn setEnabled:YES];
         [cell addSubview:deleteBtn];
         [deleteBtn release];
@@ -681,8 +681,8 @@ NSString *downloadfilename;
         UIButton *decryptBtn = [[UIButton alloc] initWithFrame:btnDecryptFrame];
         UIImage *decrypt_picture = [UIImage imageNamed:@"message_icon_autodelete.png"];
         [decryptBtn setBackgroundImage:decrypt_picture forState:UIControlStateNormal];
-        //[settingBtn addTarget:self action:@selector(playVoice:) forControlEvents:UIControlEventTouchUpInside];
-        decryptBtn.tag = 5;
+        [decryptBtn addTarget:self action:@selector(decrypt:) forControlEvents:UIControlEventTouchUpInside];
+        decryptBtn.tag = [indexPath row];
         [decryptBtn setEnabled:YES];
         [cell addSubview:decryptBtn];
         [decryptBtn release];
@@ -690,7 +690,7 @@ NSString *downloadfilename;
         UILabel *VEStateLabel = [[UILabel alloc] initWithFrame:lblVEFrame];
         VEStateLabel.text = @"VE Protected";
         VEStateLabel.backgroundColor = [UIColor clearColor];
-        VEStateLabel.tag = 6;
+        //VEStateLabel.tag = 6;
         [cell addSubview:VEStateLabel];
         [VEStateLabel release];
         
@@ -698,7 +698,7 @@ NSString *downloadfilename;
         TimerLabel.text = @"00:30";
         TimerLabel.textColor = [UIColor redColor];
         TimerLabel.backgroundColor = [UIColor clearColor];
-        TimerLabel.tag = 7;
+        //TimerLabel.tag = 7;
         [cell addSubview:TimerLabel];
         [TimerLabel release];
         
@@ -707,7 +707,7 @@ NSString *downloadfilename;
         DeleteLabel.textColor = [UIColor whiteColor];
         DeleteLabel.backgroundColor = [UIColor clearColor];
         [DeleteLabel setFont: [UIFont fontWithName:@"Arial" size:14.0f]];
-        DeleteLabel.tag = 8;
+        //DeleteLabel.tag = 8;
         [cell addSubview:DeleteLabel];
         [DeleteLabel release];
         
@@ -725,7 +725,23 @@ NSString *downloadfilename;
     
 }
 
+- (void) playVoice:(id) sender
+{
+    
+}
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{ 
+    NSLog(@"Entered: %@",[[alertView textFieldAtIndex:0] text]);
+}
+
+- (void) decrypt:(id) sender
+{
+    NSLog(@"%d", ((UIButton *)sender).tag);
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"VEM" message:@"Please input password!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [alert show];
+    [alert release];
+}
 
 #pragma mark - Table view delegate
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
