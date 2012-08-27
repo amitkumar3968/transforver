@@ -676,12 +676,14 @@ NSString *downloadfilename;
         [settingBtn setBackgroundImage:snap_picture forState:UIControlStateNormal];
         [settingBtn addTarget:self action:@selector(playVoice:) forControlEvents:UIControlEventTouchUpInside];
         //settingBtn.tag = 2;
+        settingBtn.titleLabel.text = [NSString stringWithFormat:@"%d:%d", indexPath.section, indexPath.row];
+        settingBtn.titleLabel.hidden = YES;
         [settingBtn setEnabled:YES];
         [cell addSubview:settingBtn];
         [settingBtn release];
         
         UIButton *lockBtn = [[UIButton alloc] initWithFrame:btnLockFrame];
-        UIImage *lock_picture = [UIImage imageNamed:@"message_icon_lock.png"];
+        UIImage *lock_picture = [tmpDialog.m_Dialog_Encrypt length]!=0?[UIImage imageNamed:@"message_icon_lock.png"]:[UIImage imageNamed:@"message_icon_unlock.png"];
         [lockBtn setBackgroundImage:lock_picture forState:UIControlStateNormal];
         //[settingBtn addTarget:self action:@selector(playVoice:) forControlEvents:UIControlEventTouchUpInside];
         //lockBtn.tag = 3;
@@ -713,7 +715,7 @@ NSString *downloadfilename;
         [decryptBtn release];
         
         UILabel *VEStateLabel = [[UILabel alloc] initWithFrame:lblVEFrame];
-        VEStateLabel.text = @"VE Protected";
+        VEStateLabel.text = [tmpDialog.m_Dialog_Encrypt length]!=0?@"VE Protected":@"VE Ready";
         VEStateLabel.backgroundColor = [UIColor clearColor];
         //VEStateLabel.tag = 6;
         [cell addSubview:VEStateLabel];
@@ -779,7 +781,33 @@ NSString *downloadfilename;
 
 - (void) playVoice:(id) sender
 {
-    
+    NSLog(@"%d", ((UIButton *)sender).tag);
+    UIButton *tmpBtn = sender;
+    NSArray * tmpArray = [tmpBtn.titleLabel.text componentsSeparatedByString:@":"];
+    SectionInfo *sect =[sectionInfoArray objectAtIndex:[[tmpArray objectAtIndex:0] intValue]];
+    NSMutableDictionary *dictionary = [m_DicMessages objectForKey:sect.header];
+    NSEnumerator *enumerator = [dictionary keyEnumerator];
+    id key;
+    int index = 0;
+    Dialog *tmpDialog, *prevDialog;
+    while ((key = [enumerator nextObject])) {
+        tmpDialog = [dictionary objectForKey:key];
+        if( index == [[tmpArray objectAtIndex:1] intValue])
+        {
+            break;
+        }
+        index++;
+        prevDialog = [dictionary objectForKey:key];
+    }
+    NSString *filepath;
+    if( tmpDialog.m_Dialog_Type == 1)//audio file
+    {
+        if( [tmpDialog.m_Dialog_Encrypt length]!= 0)
+            filepath = [NSString stringWithFormat:@"%@", tmpDialog.m_Dialog_Encrypt];
+        else
+            filepath = [NSString stringWithFormat:@"%@", tmpDialog.m_Dialog_Voice];
+    }
+    [self playSound:filepath];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{ 
