@@ -936,6 +936,7 @@ NSString *downloadfilename;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"selected row:%d",indexPath.row);
+    return;
     //UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     //NSDictionary *dictionary = [_listOfItems objectAtIndex:indexPath.section];
     //NSArray *array = [dictionary objectForKey:@"Messages"];
