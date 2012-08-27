@@ -479,12 +479,18 @@ NSString *downloadfilename;
                 element.m_Dialog_DstID = [[dic objectForKey:@"DIALOG_DESTINATIONID"] intValue];
                 element.m_Dialog_Read = [[dic objectForKey:@"DIALOG_DST_READ"] intValue];
                 element.m_Dialog_Password = [dic objectForKey:@"DIALOG_VOICE_PASS"];
+                /*
                 if( element.m_Dialog_Type == 1)
                     [self queueRequests:element.m_Dialog_Voice];
-                /*
                 else
                     [self queueRequests:element.m_Dialog_Encrypt];
                  */
+                NSFileManager *fileManager = [NSFileManager defaultManager];
+                if( element.m_Dialog_Type == 1 && ![element.m_Dialog_Encrypt isEqualToString:@""] && 
+                   [fileManager fileExistsAtPath:[NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], element.m_Dialog_Encrypt]])
+                {
+                    [self queueRequests:element.m_Dialog_Encrypt];
+                }
                 [tmpDic setObject:element forKey:[dic objectForKey:@"DIALOG_ID"]];
                 [element release];
             }
@@ -502,12 +508,18 @@ NSString *downloadfilename;
             element.m_Dialog_DstID = [[dic objectForKey:@"DIALOG_DESTINATIONID"] intValue];
             element.m_Dialog_Password = [dic objectForKey:@"DIALOG_VOICE_PASS"];
             element.m_Dialog_Read = [[dic objectForKey:@"DIALOG_DST_READ"] intValue];
+            /*
             if( element.m_Dialog_Type == 1)
                 [self queueRequests:element.m_Dialog_Voice];
-            /*
             else
                 [self queueRequests:element.m_Dialog_Encrypt];
              */
+            NSFileManager *fileManager = [NSFileManager defaultManager];
+            if( element.m_Dialog_Type == 1 && ![element.m_Dialog_Encrypt isEqualToString:@""] && 
+               [fileManager fileExistsAtPath:[NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], element.m_Dialog_Encrypt]])
+            {
+                [self queueRequests:element.m_Dialog_Encrypt];
+            }
             [tmpDic setObject:element forKey:[dic objectForKey:@"DIALOG_ID"]];
             [element release];
             [srcMessages setObject:tmpDic forKey:tmpDate];
