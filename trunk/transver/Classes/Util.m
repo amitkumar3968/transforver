@@ -93,6 +93,23 @@
     
 }
 
++ (void) delMessages:(int) dialod_id {
+    NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/delMessage.php?DialogID=%d", dialod_id];
+    
+    NSData *data = [DBHandler sendReqToUrl:urlString postString:nil];
+	NSArray *array = nil;
+    //NSMutableArray *ret = [[NSMutableArray alloc] init ];
+	
+	if(data)
+	{
+		NSString *responseString = [[NSString alloc] initWithData:data
+                                                         encoding:NSUTF8StringEncoding];
+		array = [responseString JSONValue];
+		[responseString release];
+	}
+    
+}
+
 + (NSArray*) fetchRelationships:(int) uid {
     NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/getRelationships.php?masterID=%d", uid];
     //NSString *urlString = @"http://www.entalkie.url.tw/getRelationships.php?masterID=1";

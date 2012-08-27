@@ -692,8 +692,10 @@ NSString *downloadfilename;
         UIButton *deleteBtn = [[UIButton alloc] initWithFrame:btnDeleteFrame];
         UIImage *delete_picture = [UIImage imageNamed:@"message_icon_delete.png"];
         [deleteBtn setBackgroundImage:delete_picture forState:UIControlStateNormal];
-        //[deleteBtn addTarget:self action:@selector(decrypt:) forControlEvents:UIControlEventTouchUpInside];
+        [deleteBtn addTarget:self action:@selector(deleteVoice:) forControlEvents:UIControlEventTouchUpInside];
         //lockBtn.tag = 4;
+        deleteBtn.titleLabel.text = [NSString stringWithFormat:@"%d:%d", indexPath.section, indexPath.row];
+        deleteBtn.titleLabel.hidden = YES;
         [lockBtn setEnabled:YES];
         [cell addSubview:deleteBtn];
         [deleteBtn release];
@@ -748,6 +750,33 @@ NSString *downloadfilename;
     
 }
 
+- (void) deleteVoice:(id) sender
+{
+    NSLog(@"%d", ((UIButton *)sender).tag);
+    UIButton *tmpBtn = sender;
+    NSArray * tmpArray = [tmpBtn.titleLabel.text componentsSeparatedByString:@":"];
+    SectionInfo *sect =[sectionInfoArray objectAtIndex:[[tmpArray objectAtIndex:0] intValue]];
+    NSMutableDictionary *dictionary = [m_DicMessages objectForKey:sect.header];
+    NSEnumerator *enumerator = [dictionary keyEnumerator];
+    id key;
+    int index = 0;
+    Dialog *tmpDialog, *prevDialog;
+    int dialog_id;
+    while ((key = [enumerator nextObject])) {
+        tmpDialog = [dictionary objectForKey:key];
+        if( index == [[tmpArray objectAtIndex:1] intValue])
+        {
+            dialog_id = tmpDialog.m_Dialog_ID;
+            [dictionary removeObjectForKey:key];
+            break;
+        }
+        index++;
+        prevDialog = [dictionary objectForKey:key];
+    }
+    NSLog(@"delete ID:%d", dialog_id);
+    [Util delMessages:dialog_id];
+}
+
 - (void) playVoice:(id) sender
 {
     
@@ -770,7 +799,7 @@ NSString *downloadfilename;
             index++;
             prevDialog = [dictionary objectForKey:key];
         }
-        NSLog(@"password%@", tmpDialog.m_Dialog_Password);
+        NSLog(@"password:%@", tmpDialog.m_Dialog_Password);
         if( [tmpDialog.m_Dialog_Password isEqualToString:[[alertView textFieldAtIndex:0] text]])
         {
             //to download decrypt file
