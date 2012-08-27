@@ -478,7 +478,7 @@ NSString *downloadfilename;
                 element.m_Dialog_SourceID = [[dic objectForKey:@"DIALOG_SOURCEID"] intValue];
                 element.m_Dialog_DstID = [[dic objectForKey:@"DIALOG_DESTINATIONID"] intValue];
                 element.m_Dialog_Read = [[dic objectForKey:@"DIALOG_DST_READ"] intValue];
-                element.m_Dialog_Password = [dic objectForKey:@"IALOG_VOICE_PASS"];
+                element.m_Dialog_Password = [dic objectForKey:@"DIALOG_VOICE_PASS"];
                 if( element.m_Dialog_Type == 1)
                     [self queueRequests:element.m_Dialog_Voice];
                 /*
@@ -500,7 +500,7 @@ NSString *downloadfilename;
             element.m_Created_Time = [dic objectForKey:@"DIALOG_CREATEDTIME"];
             element.m_Dialog_SourceID = [[dic objectForKey:@"DIALOG_SOURCEID"] intValue];
             element.m_Dialog_DstID = [[dic objectForKey:@"DIALOG_DESTINATIONID"] intValue];
-            element.m_Dialog_Password = [dic objectForKey:@"IALOG_VOICE_PASS"];
+            element.m_Dialog_Password = [dic objectForKey:@"DIALOG_VOICE_PASS"];
             element.m_Dialog_Read = [[dic objectForKey:@"DIALOG_DST_READ"] intValue];
             if( element.m_Dialog_Type == 1)
                 [self queueRequests:element.m_Dialog_Voice];
