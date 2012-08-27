@@ -670,7 +670,15 @@ NSString *downloadfilename;
         NSLog(@"remove message: %d %@",[[cell subviews] count], message.text);
     } else {
         NSLog(@"cell %d %d %d",[[cell subviews] count], aRange.location, indexPath.row);
-        
+        if( [[cell subviews] count] > 0)
+        {
+            NSLog(@"message: %d %@",[[cell subviews] count], message.text);
+            if ([cell.contentView subviews]){
+                for (UIView *subview in [cell subviews]) {
+                    [subview removeFromSuperview];
+                }
+            }
+        }
         UIButton *settingBtn = [[UIButton alloc] initWithFrame:btnViewFrame];
         UIImage *snap_picture = [UIImage imageNamed:@"message_btn_play.png"];
         [settingBtn setBackgroundImage:snap_picture forState:UIControlStateNormal];
