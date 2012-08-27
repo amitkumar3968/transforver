@@ -42,8 +42,9 @@
     self.thumbnailView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow-right.png"]];
     self.thumbnailView.contentMode = UIViewContentModeScaleAspectFit;
     [self.thumbnailView setFrame:CGRectMake(5, 12, 20, 20)];
-    self.lastNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 12, 80, 20)];
-    self.firstNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(80, 12, 80, 20)];
+    self.lastNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 12, 160, 20)];
+    self.firstNameLabel.hidden = true;
+    self.firstNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(80, 12, 160, 20)];
     uibtContactAdd = [UIButton buttonWithType:UIButtonTypeRoundedRect] ;        
     uibtContactAdd.frame = CGRectMake(240, 12, 50, 24);
     [uibtContactAdd setTitle:@"ADD" forState:UIControlStateNormal];
