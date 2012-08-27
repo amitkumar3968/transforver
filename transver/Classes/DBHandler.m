@@ -12,7 +12,6 @@
 
 @implementation DBHandler
 
-
 +(void)loadUrl:(NSString*)urlStr webView:(UIWebView*)webView
 {
     NSURL *url = [[NSURL alloc] initWithString:urlStr];

@@ -11,11 +11,11 @@
 #import "ChatViewController.h"
 #import "ContactTableViewCell.h"
 #import "AddUserViewController.h"
-
-
-int m_userid=20;
+#import "Util.h"
 
 @implementation MyContactsView
+
+int m_id = 27;
 
 @synthesize tableViewNavigationBar;
 @synthesize listOfItems, filteredListContent, savedSearchTerm, savedScopeButtonIndex, searchWasActive, searchBar, listOfPhones, VEMContactID, VEMContactName;
@@ -103,7 +103,7 @@ int m_userid=20;
 #endif	
     
     //retrieve VEM contact list
-    [self getRelationships:m_userid];
+    [self getRelationships:m_id ];
     
     
 	// create a filtered list that will contain products for the search results table.
@@ -134,7 +134,6 @@ int m_userid=20;
 {
     [super viewDidUnload];
     searchBar = nil;
-    [listOfItems release];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
@@ -184,7 +183,7 @@ int m_userid=20;
     [m_view release];
     */
     allButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    allButton.frame = CGRectMake(21.0, 0.0, 138.0, 44.0);
+    allButton.frame = CGRectMake(21.0, 40.0, 138.0, 44.0);
     [allButton setTitle:@"ALL" forState:UIControlStateNormal];
     [allButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_unslected.png"] forState:UIControlStateNormal];
     [allButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_unslected.png"] forState:UIControlStateHighlighted];
@@ -193,7 +192,7 @@ int m_userid=20;
 	[allButton addTarget:self action:@selector(allbuttonPushed:)
         forControlEvents:UIControlEventTouchUpInside];
     filterButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    filterButton.frame = CGRectMake(161.0, 0.0, 138.0, 44.0);
+    filterButton.frame = CGRectMake(161.0, 40.0, 138.0, 44.0);
     [filterButton setTitle:@"Messenger" forState:UIControlStateNormal];
     [filterButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_unslected.png"] forState:UIControlStateNormal];
     [filterButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_slected.png"] forState:UIControlStateSelected];
@@ -207,6 +206,7 @@ int m_userid=20;
     m_view.backgroundColor = [UIColor blackColor];
     m_view.alpha = 1;
     m_view.tag = 1;
+    
     [m_view addSubview:allButton];
     [m_view addSubview:filterButton];
     
@@ -225,9 +225,9 @@ int m_userid=20;
     [m_rightsideview setImage:[UIImage imageNamed:@"contacts_bg_sideheader.png"]];
     
     [self.navigationController.navigationBar setBackgroundColor:[UIColor blackColor]];
-    [self.navigationController.navigationBar addSubview:m_view];
     [self.navigationController.navigationBar addSubview:m_leftsideview];
     [self.navigationController.navigationBar addSubview:m_rightsideview];
+    [self.navigationController.navigationBar addSubview:m_view];
     [m_view release];
     
     
@@ -248,37 +248,7 @@ int m_userid=20;
         [imageButton setSelected:YES];
         [allButton setSelected:NO];
     }
-    ABAddressBookRef addressBook = ABAddressBookCreate();
-    
-    NSArray *addresses = (NSArray *) ABAddressBookCopyArrayOfAllPeople(addressBook);
-    NSInteger addressesCount = [addresses count];
-    
-    for (int i = 0; i < addressesCount; i++) {
-        ABRecordRef record = [addresses objectAtIndex:i];
-        NSString *firstName = (NSString *)ABRecordCopyValue(record, kABPersonFirstNameProperty);
-        NSString *lastName = (NSString *)ABRecordCopyValue(record, kABPersonLastNameProperty);
-        UIImageView *contactImage = (UIImageView *)ABPersonCopyImageData(record);
-        NSString *contactFirstLast = [NSString stringWithFormat: @"%@ %@", firstName, lastName];
-        NSString *contactPhoneNo = (NSString *)ABRecordCopyValue(record, kABPersonPhoneMobileLabel);
-        
-        [listOfItems addObject:contactFirstLast];
-        [listOfPhones addObject:contactPhoneNo];
-        
-        //Here I think something goes wrong, but I don't know what
-        // If I comment out this line, the application works, but now pictures is showing.
-        //[imageList addObject:contactImage];
-        
-        [firstName release];
-        [lastName release];
-    }
-#if 1
-    if( addressesCount == 0)
-    {
-        NSString *contactFirstLast = [NSString stringWithFormat: @"Ray"];
-        
-        [listOfItems addObject:contactFirstLast];
-    }
-#endif	
+    [self.tableView reloadData];
 }
 - (void) filterbuttonPushed: (id) sender{
     UIButton *imageButton = (UIButton *)sender;
@@ -290,9 +260,7 @@ int m_userid=20;
         [imageButton setSelected:YES];
         [allButton setSelected:NO];
     }
-    [listOfItems removeAllObjects];
-    listOfItems = VEMContactName;
-    [self viewDidLoad];
+    [self.tableView reloadData];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -322,7 +290,12 @@ int m_userid=20;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [VEMContactName count];
+    if ([filterButton isSelected]) {
+        return [VEMContactName count];
+    }
+    else {
+        return [listOfItems count];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -333,7 +306,15 @@ int m_userid=20;
     if (cell == nil) {
         cell = [[[ContactTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
-    cell.lastNameLabel.text = [VEMContactName objectAtIndex:([indexPath row])];
+    
+    //create cell from address book or from VEM server contacts, based on whether filter button is pressed
+    if ([filterButton isSelected]) {
+        cell.lastNameLabel.text = [VEMContactName objectAtIndex:([indexPath row])];
+    }
+    else {
+        cell.lastNameLabel.text = [listOfItems objectAtIndex:([indexPath row])];
+    }
+    //cell.lastNameLabel.text = [VEMContactName objectAtIndex:([indexPath row])];
     //cell.firstNameLabel.text = [listOfItems objectAtIndex:([indexPath row])];
     // Configure the cell...
     /*
@@ -367,16 +348,16 @@ int m_userid=20;
 
 - (void)addPerson:(UIButton *)sender
 {
-    m_userid=16;
     NSLog(@"list of phones: %d", [listOfPhones count]);
     NSString *phoneWithoutSeperates = [[listOfPhones objectAtIndex:sender.tag] stringByReplacingOccurrencesOfString:@"-" withString:@""];
-    [self addRelationships:m_userid phonenumber:phoneWithoutSeperates];
-    [self getRelationships:20];
+    [self addRelationships:m_id  phonenumber:phoneWithoutSeperates];
+    [self getRelationships:m_id ];
 }
 
 - (void) getRelationships: (int) uid
 {
     NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/getRelationships.php?masterID=%d", uid];
+    NSLog(@"%@", urlString);
     
     NSData *data = [DBHandler sendReqToUrl:urlString postString:nil];
 	NSArray *array = nil;
@@ -484,7 +465,7 @@ int m_userid=20;
         //ChatViewController *chat = [[ChatViewController alloc] initWithNibName:@"ChatViewController" bundle:nil];
         if( [g_AccountName count] > indexPath.row)
         {
-            ChatViewController *chat = [[ChatViewController alloc] initWithRelation:g_UserID DstID:[[g_AccountID objectAtIndex:row] integerValue]];
+            ChatViewController *chat = [[ChatViewController alloc] initWithRelation:m_id  DstID:[[g_AccountID objectAtIndex:row] integerValue]];
         
             chat.m_DstName = [g_AccountName objectAtIndex:indexPath.row];
             chat.m_dstid = [[g_AccountID objectAtIndex:indexPath.row] intValue];

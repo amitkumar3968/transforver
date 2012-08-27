@@ -12,7 +12,7 @@
 
 @class OverlayViewController;
 
-@interface MyContactsView : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate >{
+@interface MyContactsView : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>{
     NSMutableArray *listOfItems;
     NSMutableArray *listOfPhones;
 	NSMutableArray *copyListOfItems;
