@@ -683,7 +683,13 @@ NSString *downloadfilename;
         [settingBtn release];
         
         UIButton *lockBtn = [[UIButton alloc] initWithFrame:btnLockFrame];
-        UIImage *lock_picture = [tmpDialog.m_Dialog_Encrypt length]!=0?[UIImage imageNamed:@"message_icon_lock.png"]:[UIImage imageNamed:@"message_icon_unlock.png"];
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        int decrypted = 0;
+        if ([fileManager fileExistsAtPath:[NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], tmpDialog.m_Dialog_Voice]] ) 
+        {
+            decrypted = 1;
+        }
+        UIImage *lock_picture = ([tmpDialog.m_Dialog_Encrypt length]!=0&&decrypted==0)?[UIImage imageNamed:@"message_icon_lock.png"]:[UIImage imageNamed:@"message_icon_unlock.png"];
         [lockBtn setBackgroundImage:lock_picture forState:UIControlStateNormal];
         //[settingBtn addTarget:self action:@selector(playVoice:) forControlEvents:UIControlEventTouchUpInside];
         //lockBtn.tag = 3;
@@ -715,7 +721,7 @@ NSString *downloadfilename;
         [decryptBtn release];
         
         UILabel *VEStateLabel = [[UILabel alloc] initWithFrame:lblVEFrame];
-        VEStateLabel.text = [tmpDialog.m_Dialog_Encrypt length]!=0?@"VE Protected":@"VE Ready";
+        VEStateLabel.text = ([tmpDialog.m_Dialog_Encrypt length]!=0&&decrypted==0)?@"VE Protected":@"VE Ready";
         VEStateLabel.backgroundColor = [UIColor clearColor];
         //VEStateLabel.tag = 6;
         [cell addSubview:VEStateLabel];
@@ -800,14 +806,21 @@ NSString *downloadfilename;
         prevDialog = [dictionary objectForKey:key];
     }
     NSString *filepath;
+    int decrypted = 0;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if ([fileManager fileExistsAtPath:[NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], tmpDialog.m_Dialog_Voice]] ) 
+    {
+        decrypted = 1;
+    }
     if( tmpDialog.m_Dialog_Type == 1)//audio file
     {
-        if( [tmpDialog.m_Dialog_Encrypt length]!= 0)
+        if( [tmpDialog.m_Dialog_Encrypt length]!= 0 && decrypted==0)
             filepath = [NSString stringWithFormat:@"%@", tmpDialog.m_Dialog_Encrypt];
         else
             filepath = [NSString stringWithFormat:@"%@", tmpDialog.m_Dialog_Voice];
+        [self playSound:filepath];
     }
-    [self playSound:filepath];
+    
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{ 
