@@ -853,7 +853,7 @@ NSString *downloadfilename;
         {
             //to download decrypt file
             NSLog(@"download decrypt file");
-            [self queueRequests:tmpDialog.m_Dialog_Encrypt];
+            [self queueRequests:tmpDialog.m_Dialog_Voice];
         }
     }
 
