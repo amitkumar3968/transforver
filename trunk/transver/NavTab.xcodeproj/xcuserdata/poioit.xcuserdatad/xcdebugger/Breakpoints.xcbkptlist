@@ -8,25 +8,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Classes/ChatViewController.m"
-         timestampString = "367780870.166877"
+         timestampString = "367864036.140906"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "943"
-         endingLineNumber = "943"
-         landmarkName = "-tableView:didSelectRowAtIndexPath:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Classes/ChatViewController.m"
-         timestampString = "367780888.681156"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "944"
-         endingLineNumber = "944"
-         landmarkName = "-tableView:didSelectRowAtIndexPath:"
+         startingLineNumber = "927"
+         endingLineNumber = "927"
+         landmarkName = "-numberOfSectionsInTableView:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

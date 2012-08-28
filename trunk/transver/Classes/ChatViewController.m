@@ -155,6 +155,8 @@ NSString *downloadfilename;
     //NSDictionary *countriesLivedInDict = [NSDictionary dictionaryWithObject:countriesLivedInArray forKey:@"Messages"];
     //self.tableView.dataSource = self;
     sectionInfoArray = [[NSMutableArray alloc] init];
+    [self setHeaderView];
+    /*
     NSArray *keys = [m_DicMessages allKeys];
     int count = [keys count];
     for (int i = count-1; i >= 0; i--)
@@ -166,7 +168,7 @@ NSString *downloadfilename;
         [self.sectionInfoArray addObject:sectionInfo];
         [sectionInfo release];
         //[_listOfItems addObject:countriesLivedInDict];
-    }
+    }*/
     UIToolbar *customToolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 120, 44.01)];
 	customToolBar.barStyle = UIBarStyleDefault;
 	
@@ -350,10 +352,45 @@ NSString *downloadfilename;
 }
 
 #pragma mark - Table view data source
-
+- (void) setHeaderView
+{
+    NSArray *timeArray =
+    [[self.m_DicMessages allKeys]
+     sortedArrayUsingComparator:^(id a, id b)
+     {
+         // Time order: newest first, oldest last
+         return [a compare:b];
+     }];
+    
+    int count = [timeArray count];
+    for (int i = 0; i < count; i++)
+    {
+        id key = [timeArray objectAtIndex: i];
+        
+        int key_exist = 0;
+        for( int k=0; k<[sectionInfoArray count]; k++)
+        {
+            SectionInfo *sectionInfo = [self.sectionInfoArray objectAtIndex:k];
+            if( [sectionInfo.header isEqualToString:key] )
+            {
+                key_exist = 1;
+            }
+        }
+        if( key_exist == 0)
+        {
+            SectionInfo *sectionInfo = [[SectionInfo alloc] init];			
+            sectionInfo.open = NO;
+            sectionInfo.header = key;
+            [self.sectionInfoArray addObject:sectionInfo];
+            [sectionInfo release];
+        }
+    }
+}
 // Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    NSLog(@"%d", [m_DicMessages count]);
+    NSLog(@"sections:%d", [m_DicMessages count]);
+    [self setHeaderView];
+    [self.tableView flashScrollIndicators];
     return [m_DicMessages count];//[_listOfItems count];
 }
 
@@ -936,6 +973,7 @@ NSString *downloadfilename;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"selected row:%d",indexPath.row);
+    //just return no need any reation
     return;
     //UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     //NSDictionary *dictionary = [_listOfItems objectAtIndex:indexPath.section];
