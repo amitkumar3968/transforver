@@ -28,6 +28,8 @@
 	IBOutlet UIButton *playButton;           //Play button to start song
 	IBOutlet UIButton *pauseButton;        //Pause button to pause song 
 	IBOutlet UIButton *stopButton;          //stop button to start song from starting 
+    IBOutlet UIButton *btnSend;
+    IBOutlet UIButton *btnDelete;
 	double increaseSound;                      //to hold the value of the slider
  	NSTimer *timer;	
     BOOL playerPlaying;
@@ -47,6 +49,8 @@
 @property (nonatomic, retain) UISwitch *uiswPassLock;
 @property (nonatomic, retain) UISwitch *uiswAutoDel;
 @property (nonatomic, retain) UISegmentedControl *switchView;
+@property (nonatomic, retain) IBOutlet UIButton *btnSend;
+@property (nonatomic, retain) IBOutlet UIButton *btnDelete;
 @property(retain,nonatomic)AVAudioPlayer *player;
 @property (nonatomic, retain) UIPickerView *uipkVocodeOpt;
 @property (nonatomic, retain) NSArray* arrVocCarrierOpts;
