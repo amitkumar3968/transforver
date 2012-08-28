@@ -39,9 +39,6 @@
         [self initialSetup];
     }
     
-    self.thumbnailView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow-right.png"]];
-    self.thumbnailView.contentMode = UIViewContentModeScaleAspectFit;
-    [self.thumbnailView setFrame:CGRectMake(5, 12, 20, 20)];
     self.lastNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 12, 160, 20)];
     self.firstNameLabel.hidden = true;
     self.firstNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(80, 12, 160, 20)];
