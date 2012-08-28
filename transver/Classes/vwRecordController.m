@@ -21,6 +21,8 @@
 @synthesize uipkVocodeOpt;
 @synthesize arrVocCarrierOpts;
 @synthesize carrierOptIndex;
+@synthesize btnSend;
+@synthesize btnDelete;
 
 - (IBAction)vocodeTapped :(id)sender{
     
@@ -159,6 +161,21 @@ numberOfRowsInComponent:(NSInteger) component
     [uisliderTime setThumbImage:thumbImage forState:UIControlStateHighlighted];
     [uisliderTime setThumbImage:thumbImage forState:UIControlStateNormal];
     
+    btnSend = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btnSend setFrame:CGRectMake(158.0, 0.0, 152.0, 44.0)];
+    [btnSend setBackgroundImage:[UIImage imageNamed:@"record_btn_sendndelete_slected.png"] forState:UIControlStateNormal];
+    btnSend.titleLabel.text=@"Send";
+    btnDelete = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btnDelete setFrame:CGRectMake(0.0, 0.0, 152.0, 44.0)];
+    [btnDelete setBackgroundImage:[UIImage imageNamed:@"record_btn_sendndelete_slected.png"] forState:UIControlStateNormal];
+    btnDelete.titleLabel.text=@"Delete";
+    UIView *baseView = [[UIView alloc] initWithFrame:CGRectMake(0, 416, 320, 44)];
+    baseView.backgroundColor=[UIColor clearColor];
+    [baseView addSubview:btnSend];
+    [baseView addSubview:btnDelete];
+    [self.tabBarController.view addSubview:baseView];
+
+    
     //[uiswEncrypt setOnTintColor:[UIColor colorWithRed:210.0/255.0 green:210.0/255.0 blue:82.0/255.0 alpha:1.0]];
     //[uiswPassLock setOnTintColor:[UIColor colorWithRed:210.0/255.0 green:210.0/255.0 blue:82.0/255.0 alpha:1.0]];
     //[uiswAutoDel setOnTintColor:[UIColor colorWithRed:210.0/255.0 green:210.0/255.0 blue:82.0/255.0 alpha:1.0]];    
@@ -186,6 +203,7 @@ numberOfRowsInComponent:(NSInteger) component
     [Util copyFileWithFilename:@"Piano.aif"];
     [super viewDidLoad];
     done_vocode=0;
+    self.tabBarController.tabBar.hidden=TRUE;
     //[self initRecorderSetup];
 	//timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(timeLoader) userInfo:nil repeats:YES];    
 	// Do any additional setup after loading the view, typically from a nib.
