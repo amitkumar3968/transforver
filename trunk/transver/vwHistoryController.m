@@ -36,11 +36,18 @@
     [super viewDidLoad];
 }
 
+- (void) ScanHistory
+{
+    NSArray *array = [Util fetchHistory:g_UserID];
+    m_HistoryDialog = [array mutableCopy];
+}
+
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:NO];
     NSArray *array = [Util fetchHistory:g_UserID];
     m_HistoryDialog = [array mutableCopy];
+    myTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(ScanHistory) userInfo:nil repeats:YES];
 }
 - (void)viewDidUnload
 {
