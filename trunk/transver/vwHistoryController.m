@@ -40,6 +40,7 @@
 {
     NSArray *array = [Util fetchHistory:g_UserID];
     m_HistoryDialog = [array mutableCopy];
+    [self.m_historyTableView reloadInputViews];
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -47,7 +48,7 @@
     [super viewWillAppear:NO];
     NSArray *array = [Util fetchHistory:g_UserID];
     m_HistoryDialog = [array mutableCopy];
-    myTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(ScanHistory) userInfo:nil repeats:YES];
+    myTimer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(ScanHistory) userInfo:nil repeats:YES];
 }
 - (void)viewDidUnload
 {
@@ -119,7 +120,7 @@
         
         ChatViewController *chat = [[ChatViewController alloc] initWithRelation:g_UserID DstID:[[dic objectForKey:@"DIALOG_DESTINATIONID"] integerValue]];
         chat.m_DstName = ([dic objectForKey:@"USER_NAME"] == [NSNull null])?@"NO NAME":[dic objectForKey:@"USER_NAME"];
-        chat.m_dstid = [[dic objectForKey:@"DIALOG_DESTINATIONID"] intValue];
+        chat.m_dstid = ([[dic objectForKey:@"DIALOG_DESTINATIONID"] intValue]==g_UserID)?[[dic objectForKey:@"DIALOG_SOURCEID"] intValue]:[[dic objectForKey:@"DIALOG_DESTINATIONID"] intValue];
         //ChatViewController *chat = [[ChatViewController alloc] initWithRelation:1 DstID:2];
         NSLog(@"m_dstid:%d", [[dic objectForKey:@"DIALOG_DESTINATIONID"] intValue]);
         //[chat setContact:contact];
