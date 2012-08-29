@@ -17,6 +17,7 @@
 #import "Common.h"
 #import "Dialog.h"
 #import "OrderedDictionary.h"
+#import "vwRecordController.h"
 
 /*
 #import "Contact.h"
@@ -77,6 +78,7 @@ NSString *downloadfilename;
 {
     [audioRecorder stopRecording];
 	[audioRecorder release];
+    destID=self.m_dstid;
     g_tabController.selectedViewController = [g_tabController.viewControllers objectAtIndex:0];
     [self dismissModalViewControllerAnimated:NO];
     

@@ -47,7 +47,7 @@
     
 	//============================   
     id <RecorderSendDelegate> delegate;
-
+    NSString *destName;
 }
 @property (nonatomic, retain) UILabel *uilbTimeTotal;
 @property (nonatomic, retain) UISlider *uisliderTime;
@@ -63,6 +63,7 @@
 @property (nonatomic, retain) NSArray* arrVocCarrierOpts;
 @property NSInteger carrierOptIndex;
 @property (nonatomic, assign) id<RecorderSendDelegate> delegate;
+@property (nonatomic, retain) NSString *destName;
 
 
 -(IBAction)playPlayer:(id)sender;
