@@ -66,7 +66,7 @@
     }
     g_RootController = self.window.rootViewController;
     return;
-    tabController.selectedIndex = 0;
+    tabController.selectedIndex = 2;
 	[window addSubview:[tabController view]];
 
 	// Configure and show the window

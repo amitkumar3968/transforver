@@ -13,6 +13,8 @@
 #import "Util.h"
 #include "dovocode.h"
 
+@protocol RecorderSendDelegate;
+
 @interface vwRecordController : UIViewController
 {
     IBOutlet UILabel *uilbTimeElapse;
@@ -30,6 +32,7 @@
 	IBOutlet UIButton *stopButton;          //stop button to start song from starting 
     IBOutlet UIButton *btnSend;
     IBOutlet UIButton *btnDelete;
+    UIView *confirmView;
 	double increaseSound;                      //to hold the value of the slider
  	NSTimer *timer;	
     BOOL playerPlaying;
@@ -41,7 +44,10 @@
     NSArray* arrVocCarrierOpts;
     NSInteger carrierOptIndex;
     NSInteger done_vocode;
-	//============================    
+    
+	//============================   
+    id <RecorderSendDelegate> delegate;
+
 }
 @property (nonatomic, retain) UILabel *uilbTimeTotal;
 @property (nonatomic, retain) UISlider *uisliderTime;
@@ -51,10 +57,13 @@
 @property (nonatomic, retain) UISegmentedControl *switchView;
 @property (nonatomic, retain) IBOutlet UIButton *btnSend;
 @property (nonatomic, retain) IBOutlet UIButton *btnDelete;
+@property (nonatomic, retain) UIView *confirmView;
 @property(retain,nonatomic)AVAudioPlayer *player;
 @property (nonatomic, retain) UIPickerView *uipkVocodeOpt;
 @property (nonatomic, retain) NSArray* arrVocCarrierOpts;
 @property NSInteger carrierOptIndex;
+@property (nonatomic, assign) id<RecorderSendDelegate> delegate;
+
 
 -(IBAction)playPlayer:(id)sender;
 -(IBAction)pausePlayer:(id)sender;
@@ -70,4 +79,11 @@
 -(void) playerSetup;
 -(IBAction) showPicker;
 -(IBAction) hidePicker;
+@end
+
+
+@protocol RecorderSendDelegate <NSObject>
+@optional
+- (void)sendVoice:(NSString *)origfilename vocode:(NSString *)vocodefilename pass:(NSString *)password;
+
 @end
