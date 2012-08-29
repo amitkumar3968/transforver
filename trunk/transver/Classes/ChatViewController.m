@@ -132,7 +132,7 @@ NSString *downloadfilename;
     
     self.title = m_DstName;
     UIImage *bgimage = [UIImage imageNamed:@"common_bg_header.png"];
-    [self.navigationController.navigationBar setBackgroundImage:bgimage forBarMetrics:UIBarMetricsDefault];
+    //[self.navigationController.navigationBar setBackgroundImage:bgimage forBarMetrics:UIBarMetricsDefault];
     //self.tableView.allowsSelection = NO;
     //Position the bubbleView on the bottom
     [self.view addSubview:self.bubbleView];
