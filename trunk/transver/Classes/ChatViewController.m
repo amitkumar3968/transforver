@@ -526,7 +526,7 @@ NSString *downloadfilename;
                  */
                 NSFileManager *fileManager = [NSFileManager defaultManager];
                 if( element.m_Dialog_Type == 1 && ![element.m_Dialog_Encrypt isEqualToString:@""] && 
-                   [fileManager fileExistsAtPath:[NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], element.m_Dialog_Encrypt]])
+                   ![fileManager fileExistsAtPath:[NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], element.m_Dialog_Encrypt]])
                 {
                     [self queueRequests:element.m_Dialog_Encrypt];
                 }
@@ -555,7 +555,7 @@ NSString *downloadfilename;
              */
             NSFileManager *fileManager = [NSFileManager defaultManager];
             if( element.m_Dialog_Type == 1 && ![element.m_Dialog_Encrypt isEqualToString:@""] && 
-               [fileManager fileExistsAtPath:[NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], element.m_Dialog_Encrypt]])
+               ![fileManager fileExistsAtPath:[NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], element.m_Dialog_Encrypt]])
             {
                 [self queueRequests:element.m_Dialog_Encrypt];
             }
