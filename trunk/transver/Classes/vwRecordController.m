@@ -8,6 +8,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import "vwRecordController.h"
+#import "VocViewController.h"
 
 @implementation vwRecordController
 
@@ -23,6 +24,8 @@
 @synthesize carrierOptIndex;
 @synthesize btnSend;
 @synthesize btnDelete;
+@synthesize confirmView;
+@synthesize delegate;
 
 - (IBAction)vocodeTapped :(id)sender{
     
@@ -45,8 +48,132 @@
 	}	
 	dovocode(encrypt_para, output_filepath, meta_filepath, modulator_filepath, carrier_filepath);
 	done_vocode=1;
+    btnSend = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btnSend setFrame:CGRectMake(160.0, 0.0, 159.0, 44.0)];
+    [btnSend setBackgroundImage:[UIImage imageNamed:@"record_btn_sendndelete_slected.png"] forState:UIControlStateNormal];
+    [btnSend setTitle:@"Send" forState:UIControlStateNormal];
+    [btnSend addTarget:self action:@selector(sendPressed) forControlEvents:UIControlEventTouchUpInside];
+    btnDelete = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btnDelete setFrame:CGRectMake(0.0, 0.0, 159.0, 44.0)];
+    [btnDelete setBackgroundImage:[UIImage imageNamed:@"record_btn_sendndelete_slected.png"] forState:UIControlStateNormal];
+    [btnDelete setTitle:@"Delete" forState:UIControlStateNormal];
+    confirmView = [[UIView alloc] initWithFrame:CGRectMake(0, 436, 320, 44)];
+    confirmView.backgroundColor=[UIColor clearColor];
+    [confirmView addSubview:btnSend];
+    [confirmView addSubview:btnDelete];
+    [self.tabBarController.view addSubview:confirmView];
+    self.tabBarController.tabBar.hidden=TRUE;
 	///[self uploadFile:recording_filepath];
 }
+
+- (void) sendPressed
+{
+	//rename and upload original audio
+	NSMutableString *randomFilename = [self genRandStringLength:23];
+	NSString *originalFilename = [NSString stringWithFormat:@"%@%@", randomFilename, @"recording.aif"];
+	NSString *originalFilepath = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], originalFilename];
+	NSString *targetPath= [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], @"recording.aif"];
+	NSFileManager * fileManager =  [NSFileManager defaultManager];
+	[fileManager moveItemAtPath:targetPath
+						 toPath:originalFilepath error:nil];
+    if( [fileManager fileExistsAtPath:originalFilepath])
+        [self uploadFile:originalFilepath];
+    else
+    {
+        NSLog(@"NO orig file");
+    }
+	
+	//rename and upload vocoded audio
+	randomFilename = [self genRandStringLength:23];
+	NSString *vocodedFilename = [NSString stringWithFormat:@"%@%@", randomFilename, @"out.aif"];
+	NSString *vocodedFilepath = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], vocodedFilename];
+	targetPath= [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], @"out.aif"];
+	[fileManager moveItemAtPath:targetPath
+						 toPath:vocodedFilepath error:nil];	
+    if( [fileManager fileExistsAtPath:vocodedFilepath])
+        [self uploadFile:vocodedFilepath];
+    else
+    {
+        NSLog(@"NO vocode file");
+        vocodedFilename = @"";
+    }
+	
+	//rename 
+	
+    //time_t unixTime = [[NSDate date] timeIntervalSince1970];
+    //NSLog(@"%@",dateString);
+    if (self.delegate && [self.delegate respondsToSelector:@selector(sendVoice:vocode:pass:)]) 
+    {
+        [self.delegate sendVoice:originalFilename vocode:vocodedFilename pass:@"1234"];
+    }
+	[confirmView removeFromSuperview];
+    self.tabBarController.tabBar.hidden=FALSE;
+}
+
+-(NSMutableString *) genRandStringLength: (int) len
+{
+	NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    NSMutableString *randomString = [NSMutableString stringWithCapacity: len];
+	
+    for (int i=0; i<len; i++) {
+		[randomString appendFormat: @"%c", [letters characterAtIndex: arc4random()%[letters length]] ];
+	}
+	return randomString;
+}
+
+- (void) uploadFile:(NSString *)fileName {
+	/*
+	 turning the image into a NSData object
+	 getting the image back out of the UIImageView
+	 setting the quality to 90
+	 */
+	UIImageView *image = [[UIImageView alloc] initWithFrame:
+                          CGRectMake(100.0, 100.0, 57.0, 57.0)];
+	image.image = 
+	[UIImage imageNamed:@"phone.png"];
+	//NSData *imageData = UIImageJPEGRepresentation(image.image, 90);
+	//NSString* str =  [[NSBundle mainBundle] pathForResource:@"mysoundcompressed" ofType:@"caf"];
+	//NSString *filePath = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], fileName]; 
+	NSData *wavData = [NSData dataWithContentsOfFile:fileName];
+	// setting up the URL to post to
+	NSString *urlString = @"http://www.entalkie.url.tw/upload.php";
+	
+	// setting up the request object now
+	NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
+	[request setURL:[NSURL URLWithString:urlString]];
+	[request setHTTPMethod:@"POST"];
+	
+	/*
+	 add some header info now
+	 we always need a boundary when we post a file
+	 also we need to set the content type
+	 
+	 You might want to generate a random boundary.. this is just the same
+	 as my output from wireshark on a valid html post
+	 */
+	NSString *boundary = [NSString stringWithString:@"---------------------------14737809831466499882746641449"];
+	NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@",boundary];
+	[request addValue:contentType forHTTPHeaderField: @"Content-Type"];
+	
+	/*
+	 now lets create the body of the post
+	 */
+	NSMutableData *body = [NSMutableData data];
+	[body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"userfile\"; filename=\"%@\"\r\n",fileName] dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[[NSString stringWithString:@"Content-Type: application/octet-stream\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[NSData dataWithData:wavData]];
+	[body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+	// setting the body of the post to the reqeust
+	[request setHTTPBody:body];
+	
+	// now lets make the connection to the web
+	NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+	NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+	
+	NSLog(@"upload file %@",returnString);
+}
+
 
 -(NSString *) pickerView: (UIPickerView *) pickerView 
              titleForRow: (NSInteger)row 
@@ -160,22 +287,7 @@ numberOfRowsInComponent:(NSInteger) component
     [uisliderTime setMaximumTrackImage:maxImage forState:UIControlStateNormal];
     [uisliderTime setThumbImage:thumbImage forState:UIControlStateHighlighted];
     [uisliderTime setThumbImage:thumbImage forState:UIControlStateNormal];
-    
-    btnSend = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btnSend setFrame:CGRectMake(158.0, 0.0, 152.0, 44.0)];
-    [btnSend setBackgroundImage:[UIImage imageNamed:@"record_btn_sendndelete_slected.png"] forState:UIControlStateNormal];
-    btnSend.titleLabel.text=@"Send";
-    btnDelete = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btnDelete setFrame:CGRectMake(0.0, 0.0, 152.0, 44.0)];
-    [btnDelete setBackgroundImage:[UIImage imageNamed:@"record_btn_sendndelete_slected.png"] forState:UIControlStateNormal];
-    btnDelete.titleLabel.text=@"Delete";
-    UIView *baseView = [[UIView alloc] initWithFrame:CGRectMake(0, 416, 320, 44)];
-    baseView.backgroundColor=[UIColor clearColor];
-    [baseView addSubview:btnSend];
-    [baseView addSubview:btnDelete];
-    [self.tabBarController.view addSubview:baseView];
-
-    
+        
     //[uiswEncrypt setOnTintColor:[UIColor colorWithRed:210.0/255.0 green:210.0/255.0 blue:82.0/255.0 alpha:1.0]];
     //[uiswPassLock setOnTintColor:[UIColor colorWithRed:210.0/255.0 green:210.0/255.0 blue:82.0/255.0 alpha:1.0]];
     //[uiswAutoDel setOnTintColor:[UIColor colorWithRed:210.0/255.0 green:210.0/255.0 blue:82.0/255.0 alpha:1.0]];    
@@ -203,7 +315,7 @@ numberOfRowsInComponent:(NSInteger) component
     [Util copyFileWithFilename:@"Piano.aif"];
     [super viewDidLoad];
     done_vocode=0;
-    self.tabBarController.tabBar.hidden=TRUE;
+    //
     //[self initRecorderSetup];
 	//timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(timeLoader) userInfo:nil repeats:YES];    
 	// Do any additional setup after loading the view, typically from a nib.
