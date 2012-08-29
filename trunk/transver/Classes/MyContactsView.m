@@ -102,7 +102,8 @@ NSMutableArray *imageList;
         
         [listOfItems addObject:contactFirstLast];
         [listOfItems addObject:contactFirstLast];
-
+        [imageList addObject:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"common_icon_con_rest@2x.png"]]];
+        [imageList addObject:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"common_icon_con_rest@2x.png"]]];
     }
 #endif	
     
