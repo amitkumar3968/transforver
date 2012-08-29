@@ -478,7 +478,6 @@ NSMutableArray *imageList;
         if( [g_AccountName count] > indexPath.row)
         {
             ChatViewController *chat = [[ChatViewController alloc] initWithRelation:g_UserID  DstID:[[g_AccountID objectAtIndex:row] integerValue]];
-        
             chat.m_DstName = [g_AccountName objectAtIndex:indexPath.row];
             chat.m_dstid = [[g_AccountID objectAtIndex:indexPath.row] intValue];
             //ChatViewController *chat = [[ChatViewController alloc] initWithRelation:1 DstID:2];

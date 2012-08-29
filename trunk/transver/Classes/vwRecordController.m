@@ -9,6 +9,7 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import "vwRecordController.h"
 #import "VocViewController.h"
+#import "Util.h"
 
 @implementation vwRecordController
 
@@ -26,6 +27,8 @@
 @synthesize btnDelete;
 @synthesize confirmView;
 @synthesize delegate;
+@synthesize destName;
+
 
 - (IBAction)vocodeTapped :(id)sender{
     
@@ -101,11 +104,8 @@
 	//rename 
 	
     //time_t unixTime = [[NSDate date] timeIntervalSince1970];
-    //NSLog(@"%@",dateString);
-    if (self.delegate && [self.delegate respondsToSelector:@selector(sendVoice:vocode:pass:)]) 
-    {
-        [self.delegate sendVoice:originalFilename vocode:vocodedFilename pass:@"1234"];
-    }
+
+    [self sendVoice:originalFilename vocode:vocodedFilename pass:@"1234"];
 	[confirmView removeFromSuperview];
     self.tabBarController.tabBar.hidden=FALSE;
 }
@@ -121,6 +121,23 @@
 	return randomString;
 }
 
+
+- (void) sendVoice:(NSString *)origfilename vocode:(NSString *)vocodefilename pass:(NSString *)password{
+    NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/sendMessages.php"];
+    NSString *postString = [NSString stringWithFormat:@"srcID=%d&dstID=%d&type=1&orig=%@&vocode=%@&password=%@",g_UserID, destID,origfilename,vocodefilename,password];
+    //NSString *urlString = @"http://www.entalkie.url.tw/getRelationships.php?masterID=1";
+    NSData *data = [DBHandler sendReqToUrl:urlString postString:postString];
+    NSArray *array = nil;
+    //NSMutableArray *ret = [[NSMutableArray alloc] init ];
+    
+    if(data)
+    {
+        NSString *responseString = [[NSString alloc] initWithData:data
+                                                         encoding:NSUTF8StringEncoding];
+        array = [responseString JSONValue];
+        [responseString release];
+    }
+}
 - (void) uploadFile:(NSString *)fileName {
 	/*
 	 turning the image into a NSData object
