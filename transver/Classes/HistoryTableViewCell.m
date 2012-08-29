@@ -44,7 +44,7 @@
     
     //Draw the name
     NSString *txtName = m_DestName;
-    CGRect textRect = CGRectMake(80, 5, 80, 60);
+    CGRect textRect = CGRectMake(80, 5, 180, 60);
     CGSize textSize = [txtName sizeWithFont:font constrainedToSize:textRect.size];
     textRect.size.height = textSize.height;
     NSLog(@"%@", txtName);
