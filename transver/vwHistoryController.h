@@ -12,6 +12,7 @@
 {
     IBOutlet UITableView *m_historyTableView;
     NSMutableArray *m_HistoryDialog;
+    NSTimer *myTimer;
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *m_historyTableView;
