@@ -74,7 +74,7 @@
     for (int i=0; i< [m_HistoryDialog count]; i++) 
     {
         NSDictionary *dic = [m_HistoryDialog objectAtIndex:i];
-        NSLog(@"SOURCE id:%@ DEST id:%@",[[dic objectForKey:@"DIALOG_SOURCEID"] intValue],[dic objectForKey:@"DIALOG_DESTINATIONID"]);
+        NSLog(@"SOURCE id:%@ DEST id:%@",[dic objectForKey:@"DIALOG_SOURCEID"] ,[dic objectForKey:@"DIALOG_DESTINATIONID"]);
         if( [[dic objectForKey:@"DIALOG_DESTINATIONID"] intValue]==g_UserID)
         {
                
