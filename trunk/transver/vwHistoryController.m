@@ -26,7 +26,7 @@
         self.title = NSLocalizedString(@"History", @"History");
         self.tabBarItem.image = [UIImage imageNamed:@"common_icon_his_rest.png"];
         m_HistoryDialog = [[NSMutableArray alloc] init];
-        
+        m_RelationKey = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
@@ -77,10 +77,14 @@
         NSLog(@"SOURCE id:%@ DEST id:%@",[dic objectForKey:@"DIALOG_SOURCEID"] ,[dic objectForKey:@"DIALOG_DESTINATIONID"]);
         if( [[dic objectForKey:@"DIALOG_DESTINATIONID"] intValue]==g_UserID)
         {
-               
+            if( ![dic objectForKey:[dic objectForKey:@"DIALOG_SOURCEID"]] )
+                [m_RelationKey setObject:[dic objectForKey:@"DIALOG_SOURCEID"] forKey:[dic objectForKey:@"DIALOG_SOURCEID"]];
+        }else {
+            if( ![dic objectForKey:[dic objectForKey:@"DIALOG_DESTINATIONID"]] )
+                [m_RelationKey setObject:[dic objectForKey:@"DIALOG_DESTINATIONID"] forKey:[dic objectForKey:@"DIALOG_DESTINATIONID"]];
         }
     }
-    return [m_HistoryDialog count];
+    return [m_RelationKey count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -91,6 +95,22 @@
         cell = [[[HistoryTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     NSDictionary *dic = [m_HistoryDialog objectAtIndex:[indexPath row]];
+    for (int i=0; i< [m_HistoryDialog count]; i++) 
+    {
+        if( i == [indexPath row])
+            continue;
+        NSDictionary *tmpdic = [m_HistoryDialog objectAtIndex:i];
+        NSLog(@"SOURCE id:%@ DEST id:%@",[tmpdic objectForKey:@"DIALOG_SOURCEID"] ,[tmpdic objectForKey:@"DIALOG_DESTINATIONID"]);
+        if( [[tmpdic objectForKey:@"DIALOG_SOURCEID"] intValue]==[[dic objectForKey:@"DIALOG_DESTINATIONID"] intValue])
+        {
+            NSDateFormatter *format = [[NSDateFormatter alloc] init];
+            [format setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+            NSDate *Date1 = [format dateFromString:[dic objectForKey:@"DIALOG_CREATEDTIME"]];
+            NSDate *Date2 = [format dateFromString:[tmpdic objectForKey:@"DIALOG_CREATEDTIME"]];
+            if( [Date2 compare:Date1] )
+                dic = [m_HistoryDialog objectAtIndex:i];
+        }
+    }
     if( [dic objectForKey:@"USER_NAME"] == [NSNull null])
         ((HistoryTableViewCell *)cell).m_DestName = @"NO NAME";
     else
