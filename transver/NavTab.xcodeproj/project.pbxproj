@@ -2149,8 +2149,8 @@
 					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/NavTab-gdtjeaqbeqdwteddvgyoehnyltcn/Build/Products/Debug-iphoneos\"",
 				);
 				PRODUCT_NAME = NavTab;
-				PROVISIONING_PROFILE = "F9739DED-941F-4FF0-ABE0-1EBC54E10C46";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F9739DED-941F-4FF0-ABE0-1EBC54E10C46";
+				PROVISIONING_PROFILE = "D6B25D69-A246-4DEB-B5F1-160212E57CEF";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D6B25D69-A246-4DEB-B5F1-160212E57CEF";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -2179,8 +2179,8 @@
 					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/NavTab-gdtjeaqbeqdwteddvgyoehnyltcn/Build/Products/Debug-iphoneos\"",
 				);
 				PRODUCT_NAME = NavTab;
-				PROVISIONING_PROFILE = "F9739DED-941F-4FF0-ABE0-1EBC54E10C46";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F9739DED-941F-4FF0-ABE0-1EBC54E10C46";
+				PROVISIONING_PROFILE = "D6B25D69-A246-4DEB-B5F1-160212E57CEF";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D6B25D69-A246-4DEB-B5F1-160212E57CEF";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
@@ -2204,8 +2204,8 @@
 					"-all_load",
 				);
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "F9739DED-941F-4FF0-ABE0-1EBC54E10C46";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F9739DED-941F-4FF0-ABE0-1EBC54E10C46";
+				PROVISIONING_PROFILE = "D6B25D69-A246-4DEB-B5F1-160212E57CEF";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D6B25D69-A246-4DEB-B5F1-160212E57CEF";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -2227,8 +2227,8 @@
 					"-all_load",
 				);
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "F9739DED-941F-4FF0-ABE0-1EBC54E10C46";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F9739DED-941F-4FF0-ABE0-1EBC54E10C46";
+				PROVISIONING_PROFILE = "D6B25D69-A246-4DEB-B5F1-160212E57CEF";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D6B25D69-A246-4DEB-B5F1-160212E57CEF";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
