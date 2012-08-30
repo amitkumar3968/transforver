@@ -188,7 +188,7 @@ NSMutableArray *imageList;
     [m_view release];
     */
     allButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    allButton.frame = CGRectMake(21.0, 20.0, 138.0, 44.0);
+    allButton.frame = CGRectMake(21.0, 0.0, 138.0, 44.0);
     [allButton setTitle:@"ALL" forState:UIControlStateNormal];
     [allButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_unslected.png"] forState:UIControlStateNormal];
     [allButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_unslected.png"] forState:UIControlStateHighlighted];
@@ -197,7 +197,7 @@ NSMutableArray *imageList;
 	[allButton addTarget:self action:@selector(allbuttonPushed:)
         forControlEvents:UIControlEventTouchUpInside];
     filterButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    filterButton.frame = CGRectMake(161.0, 20.0, 138.0, 44.0);
+    filterButton.frame = CGRectMake(161.0, 0.0, 138.0, 44.0);
     [filterButton setTitle:@"Messenger" forState:UIControlStateNormal];
     [filterButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_unslected.png"] forState:UIControlStateNormal];
     [filterButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_slected.png"] forState:UIControlStateSelected];
