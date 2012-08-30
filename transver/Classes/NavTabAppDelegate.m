@@ -64,6 +64,7 @@
         NSArray *array = [Util fetchRelationships:g_UserID];
         g_AccountName = [array mutableCopy];
     }
+    g_UserID = 20;
     g_RootController = self.window.rootViewController;
     return;
     tabController.selectedIndex = 2;
