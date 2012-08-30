@@ -268,6 +268,7 @@ NSString *downloadfilename;
 {
     [super viewWillAppear:animated];
     self.title = self.m_DstName;//NSLocalizedString(@"History", @"History");
+    [self ScanMessages];
     myTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(ScanMessages) userInfo:nil repeats:YES];
     
     /*
