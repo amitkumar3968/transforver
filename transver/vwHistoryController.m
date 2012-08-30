@@ -17,7 +17,7 @@
 
 @implementation vwHistoryController
 
-@synthesize m_historyTableView, m_HistoryDialog;
+@synthesize m_historyTableView, m_HistoryDialog, m_RelationKey;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -71,6 +71,15 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    for (int i=0; i< [m_HistoryDialog count]; i++) 
+    {
+        NSDictionary *dic = [m_HistoryDialog objectAtIndex:i];
+        NSLog(@"SOURCE id:%@ DEST id:%@",[[dic objectForKey:@"DIALOG_SOURCEID"] intValue],[dic objectForKey:@"DIALOG_DESTINATIONID"]);
+        if( [[dic objectForKey:@"DIALOG_DESTINATIONID"] intValue]==g_UserID)
+        {
+               
+        }
+    }
     return [m_HistoryDialog count];
 }
 

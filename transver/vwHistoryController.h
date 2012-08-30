@@ -13,8 +13,10 @@
     IBOutlet UITableView *m_historyTableView;
     NSMutableArray *m_HistoryDialog;
     NSTimer *myTimer;
+    NSMutableDictionary *m_RelationKey;
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *m_historyTableView;
 @property (nonatomic, retain) NSMutableArray *m_HistoryDialog;
+@property (nonatomic, retain) NSMutableDictionary *m_RelationKey;
 @end
