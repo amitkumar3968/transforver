@@ -463,7 +463,7 @@ NSString *downloadfilename;
     [format setDateFormat:@"yyyy-MM-dd"];
     
     NSDateComponents *dayComponent = [[[NSDateComponents alloc] init] autorelease];
-    dayComponent.day = -180;//half years
+    dayComponent.day = -1000;//half years
     
     NSCalendar *theCalendar = [NSCalendar currentCalendar];
     NSDate *dateToBeIncremented = [theCalendar dateByAddingComponents:dayComponent toDate:today options:0];
