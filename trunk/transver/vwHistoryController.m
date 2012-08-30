@@ -145,6 +145,22 @@
     NSInteger row = [indexPath row];
     {
         NSDictionary *dic = [m_HistoryDialog objectAtIndex:row];
+        for (int i=0; i< [m_HistoryDialog count]; i++) 
+        {
+            if( i == [indexPath row])
+                continue;
+            NSDictionary *tmpdic = [m_HistoryDialog objectAtIndex:i];
+            NSLog(@"SOURCE id:%@ DEST id:%@",[tmpdic objectForKey:@"DIALOG_SOURCEID"] ,[tmpdic objectForKey:@"DIALOG_DESTINATIONID"]);
+            if( [[tmpdic objectForKey:@"DIALOG_SOURCEID"] intValue]==[[dic objectForKey:@"DIALOG_DESTINATIONID"] intValue])
+            {
+                NSDateFormatter *format = [[NSDateFormatter alloc] init];
+                [format setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+                NSDate *Date1 = [format dateFromString:[dic objectForKey:@"DIALOG_CREATEDTIME"]];
+                NSDate *Date2 = [format dateFromString:[tmpdic objectForKey:@"DIALOG_CREATEDTIME"]];
+                if( [Date2 compare:Date1]>0 )
+                    dic = [m_HistoryDialog objectAtIndex:i];
+            }
+        }
         NSLog(@"%@", [dic objectForKey:@"USER_NAME"]);
         
         ChatViewController *chat = [[ChatViewController alloc] initWithRelation:g_UserID DstID:[[dic objectForKey:@"DIALOG_DESTINATIONID"] integerValue]];
