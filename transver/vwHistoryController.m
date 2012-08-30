@@ -107,7 +107,7 @@
             [format setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
             NSDate *Date1 = [format dateFromString:[dic objectForKey:@"DIALOG_CREATEDTIME"]];
             NSDate *Date2 = [format dateFromString:[tmpdic objectForKey:@"DIALOG_CREATEDTIME"]];
-            if( [Date2 compare:Date1] )
+            if( [Date2 compare:Date1]>0 )
                 dic = [m_HistoryDialog objectAtIndex:i];
         }
     }
