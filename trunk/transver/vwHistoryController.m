@@ -40,7 +40,7 @@
 {
     NSArray *array = [Util fetchHistory:g_UserID];
     m_HistoryDialog = [array mutableCopy];
-    [self.m_historyTableView reloadInputViews];
+    [self.m_historyTableView reloadData];
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -122,7 +122,7 @@
         chat.m_DstName = ([dic objectForKey:@"USER_NAME"] == [NSNull null])?@"NO NAME":[dic objectForKey:@"USER_NAME"];
         chat.m_dstid = ([[dic objectForKey:@"DIALOG_DESTINATIONID"] intValue]==g_UserID)?[[dic objectForKey:@"DIALOG_SOURCEID"] intValue]:[[dic objectForKey:@"DIALOG_DESTINATIONID"] intValue];
         //ChatViewController *chat = [[ChatViewController alloc] initWithRelation:1 DstID:2];
-        NSLog(@"m_dstid:%d", [[dic objectForKey:@"DIALOG_DESTINATIONID"] intValue]);
+        NSLog(@"m_dstid:%d %d", chat.m_dstid, [[dic objectForKey:@"DIALOG_DESTINATIONID"] intValue]);
         //[chat setContact:contact];
         UINavigationController *navCtlr = [[UINavigationController alloc] initWithRootViewController:chat];
         navCtlr.navigationBar.barStyle = UIBarStyleDefault;
