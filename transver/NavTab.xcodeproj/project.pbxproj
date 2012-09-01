@@ -367,6 +367,8 @@
 		A45FEFD015A3166F00CF3D72 /* record_bg_header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A45FEF9715A3166F00CF3D72 /* record_bg_header@2x.png */; };
 		A45FEFFF15AB18E000CF3D72 /* vwAboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = A45FEFFE15AB18E000CF3D72 /* vwAboutController.m */; };
 		A45FF00115AB191300CF3D72 /* vwAboutController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A45FF00015AB191300CF3D72 /* vwAboutController.xib */; };
+		A462AAF315EFB93B00A6A833 /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A462AAEF15EFB93B00A6A833 /* CAStreamBasicDescription.cpp */; };
+		A462AAF415EFB93B00A6A833 /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A462AAF115EFB93B00A6A833 /* CAXException.cpp */; };
 		A4F632A3159DD22F003C709D /* vwRecordController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4F632A2159DD22E003C709D /* vwRecordController.xib */; };
 		A4F632A6159DDC79003C709D /* vwRecordController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F632A5159DDC79003C709D /* vwRecordController.m */; };
 		A4F632DF159E5760003C709D /* vwSettingsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4F632DE159E5760003C709D /* vwSettingsController.xib */; };
@@ -899,6 +901,12 @@
 		A45FEFFD15AB18E000CF3D72 /* vwAboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vwAboutController.h; sourceTree = "<group>"; };
 		A45FEFFE15AB18E000CF3D72 /* vwAboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vwAboutController.m; sourceTree = "<group>"; };
 		A45FF00015AB191300CF3D72 /* vwAboutController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = vwAboutController.xib; sourceTree = "<group>"; };
+		A462AAED15EFB93B00A6A833 /* CADebugMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CADebugMacros.h; path = iPublicUtility/CADebugMacros.h; sourceTree = "<group>"; };
+		A462AAEE15EFB93B00A6A833 /* CAMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAMath.h; path = iPublicUtility/CAMath.h; sourceTree = "<group>"; };
+		A462AAEF15EFB93B00A6A833 /* CAStreamBasicDescription.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CAStreamBasicDescription.cpp; path = iPublicUtility/CAStreamBasicDescription.cpp; sourceTree = "<group>"; };
+		A462AAF015EFB93B00A6A833 /* CAStreamBasicDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAStreamBasicDescription.h; path = iPublicUtility/CAStreamBasicDescription.h; sourceTree = "<group>"; };
+		A462AAF115EFB93B00A6A833 /* CAXException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CAXException.cpp; path = iPublicUtility/CAXException.cpp; sourceTree = "<group>"; };
+		A462AAF215EFB93B00A6A833 /* CAXException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAXException.h; path = iPublicUtility/CAXException.h; sourceTree = "<group>"; };
 		A4F632A2159DD22E003C709D /* vwRecordController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = vwRecordController.xib; sourceTree = "<group>"; };
 		A4F632A4159DDC79003C709D /* vwRecordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vwRecordController.h; sourceTree = "<group>"; };
 		A4F632A5159DDC79003C709D /* vwRecordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vwRecordController.m; sourceTree = "<group>"; };
@@ -1173,6 +1181,12 @@
 		4F03B2D21401D42300FEC9D4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A462AAED15EFB93B00A6A833 /* CADebugMacros.h */,
+				A462AAEE15EFB93B00A6A833 /* CAMath.h */,
+				A462AAEF15EFB93B00A6A833 /* CAStreamBasicDescription.cpp */,
+				A462AAF015EFB93B00A6A833 /* CAStreamBasicDescription.h */,
+				A462AAF115EFB93B00A6A833 /* CAXException.cpp */,
+				A462AAF215EFB93B00A6A833 /* CAXException.h */,
 				4F93E2451478262200333F51 /* OrderedDictionary.h */,
 				4F93E2461478262200333F51 /* OrderedDictionary.m */,
 				4F74C55714231D9400B97CC3 /* Reachability.h */,
@@ -2109,6 +2123,8 @@
 				A45FEFFF15AB18E000CF3D72 /* vwAboutController.m in Sources */,
 				4F9EEA4615D9753E007BD311 /* vwHistoryController.m in Sources */,
 				4F01F16715E296B90016717D /* HistoryTableViewCell.m in Sources */,
+				A462AAF315EFB93B00A6A833 /* CAStreamBasicDescription.cpp in Sources */,
+				A462AAF415EFB93B00A6A833 /* CAXException.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2140,6 +2156,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = NavTab_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -2170,6 +2187,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = NavTab_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -2196,7 +2214,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				"HEADER_SEARCH_PATHS[arch=*]" = "\"$(SOURCE_ROOT)/RestKit/Build\"";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				"LIBRARY_SEARCH_PATHS[arch=*]" = "\"$(SOURCE_ROOT)/RestKit/Build/$(BUILD_STYLE)-$(PLATFORM_NAME)\"";
 				ONLY_ACTIVE_ARCH = YES;
 				"OTHER_LDFLAGS[arch=*]" = (
@@ -2220,7 +2238,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				"HEADER_SEARCH_PATHS[arch=*]" = "\"$(SOURCE_ROOT)/RestKit/Build\"";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				"LIBRARY_SEARCH_PATHS[arch=*]" = "\"$(SOURCE_ROOT)/RestKit/Build/$(BUILD_STYLE)-$(PLATFORM_NAME)\"";
 				"OTHER_LDFLAGS[arch=*]" = (
 					"-ObjC",
