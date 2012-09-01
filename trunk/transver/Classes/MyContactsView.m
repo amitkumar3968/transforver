@@ -316,7 +316,11 @@ NSMutableArray *imageList;
     if ([filterButton isSelected]) {
         cell.lastNameLabel.text = [VEMContactName objectAtIndex:([indexPath row])];
         cell.thumbnailView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"common_icon_con_rest@2x.png"]];
+        cell.uibtContactDel.tag = [indexPath row];
+        [cell.uibtContactDel addTarget:self action:@selector(delPerson:) forControlEvents:UIControlEventTouchUpInside];   
         cell.thumbnailView.contentMode = UIViewContentModeScaleAspectFit;
+        cell.uibtContactAdd.hidden=TRUE;
+        cell.uibtContactDel.hidden=FALSE;
         [cell.thumbnailView setFrame:CGRectMake(5, 10, 30, 30)];
         [cell.contentView addSubview:cell.thumbnailView];
     }
@@ -325,7 +329,13 @@ NSMutableArray *imageList;
         cell.thumbnailView = [imageList objectAtIndex:[indexPath row]];
         cell.thumbnailView.contentMode = UIViewContentModeScaleAspectFit;
         [cell.thumbnailView setFrame:CGRectMake(5, 10, 30, 30)];
+        cell.uibtContactAdd.tag = [indexPath row];
+        [cell.uibtContactAdd addTarget:self action:@selector(addPerson:) forControlEvents:UIControlEventTouchUpInside];
+        cell.uibtContactAdd.hidden=FALSE;
+        cell.uibtContactDel.hidden=TRUE;
         [cell.contentView addSubview:cell.thumbnailView];
+        [self findFriend:[listOfItems objectAtIndex:([indexPath row])]];
+        
     }
     //cell.lastNameLabel.text = [VEMContactName objectAtIndex:([indexPath row])];
     //cell.firstNameLabel.text = [listOfItems objectAtIndex:([indexPath row])];
@@ -344,8 +354,6 @@ NSMutableArray *imageList;
         return cell;
     }*/
     NSLog(@"%@", cell.lastNameLabel.text);
-    cell.uibtContactAdd.tag = [indexPath row];
-    [cell.uibtContactAdd addTarget:self action:@selector(addPerson:) forControlEvents:UIControlEventTouchUpInside];
     
     //cell.textLabel.text = [listOfItems objectAtIndex:([indexPath row])];
     //cell.textLabel.text = [[NSString alloc] initWithFormat:@"test"]; 
@@ -367,6 +375,44 @@ NSMutableArray *imageList;
     [self getRelationships:g_UserID ];
 }
 
+- (void)delPerson:(UIButton *)sender
+{
+    NSLog(@"list of phones: %d", [listOfPhones count]);
+    NSString *phoneWithoutSeperates = [[listOfPhones objectAtIndex:sender.tag] stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    [self delRelationships:g_UserID  phonenumber:phoneWithoutSeperates];
+    [self getRelationships:g_UserID ];
+    [self.tableView reloadData];
+}
+
+- (int) findRelationship:(NSString *) phone
+{
+    NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/findFriend.php?friendPhone=%@", phone];
+    NSLog(@"%@", urlString);
+    
+    NSData *data = [DBHandler sendReqToUrl:urlString postString:nil];
+	NSArray *array = nil;
+    VEMContactName = [[NSMutableArray alloc] init ];
+    VEMContactID = [[NSMutableArray alloc] init ];
+    //NSMutableArray *ret = [[NSMutableArray alloc] init ];
+	
+	if(data)
+	{
+		NSString *responseString = [[NSString alloc] initWithData:data
+                                                         encoding:NSUTF8StringEncoding];
+		array = [responseString JSONValue];
+        
+        for (NSDictionary *dic in array)
+        {
+            NSString *name = [dic objectForKey:@"USER_NAME"];
+            NSString *usr_id = [dic objectForKey:@"USER_ID"];
+            [VEMContactName addObject:name];
+            [VEMContactID addObject:usr_id];
+        }
+        
+		[responseString release];
+	}
+
+}
 - (void) getRelationships: (int) uid
 {
     NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/getRelationships.php?masterID=%d", uid];
@@ -410,7 +456,39 @@ NSMutableArray *imageList;
 		array = [responseString JSONValue];
 		[responseString release];
 	}
+}
+
+- (BOOL)findFriend:(NSString *)phone
+{
+    NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/findFriend.php?friendPhone=%@", phone];
     
+    NSData *data = [DBHandler sendReqToUrl:urlString postString:nil];
+	NSArray *array = nil;
+    //NSMutableArray *ret = [[NSMutableArray alloc] init ];
+	
+	if(data)
+	{
+		NSString *responseString = [[NSString alloc] initWithData:data
+                                                         encoding:NSUTF8StringEncoding];
+		array = [responseString JSONValue];
+		[responseString release];
+	}
+}
+
+- (void) delRelationships:(int) uid phonenumber:(NSString *) phone{
+    NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/delRelationships.php?srcID=%d&friendPhone=%@", uid, phone];
+    
+    NSData *data = [DBHandler sendReqToUrl:urlString postString:nil];
+	NSArray *array = nil;
+    //NSMutableArray *ret = [[NSMutableArray alloc] init ];
+	
+	if(data)
+	{
+		NSString *responseString = [[NSString alloc] initWithData:data
+                                                         encoding:NSUTF8StringEncoding];
+		array = [responseString JSONValue];
+		[responseString release];
+	}
 }
 /*
 // Override to support conditional editing of the table view.
