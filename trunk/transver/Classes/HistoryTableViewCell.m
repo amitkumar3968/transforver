@@ -14,7 +14,7 @@
 
 @implementation HistoryTableViewCell
 
-@synthesize thumbnailView, arrowView, m_DestName, m_DestMsg, m_DestDate;
+@synthesize thumbnailView, arrowView, m_DestName, m_DestMsg, m_DestDate, index;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

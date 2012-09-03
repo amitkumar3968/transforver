@@ -13,6 +13,7 @@
     NSString *m_DestName;
     NSString *m_DestMsg;
     NSString *m_DestDate;
+    int index;
 }
 
 @property (nonatomic, retain) IBOutlet UIImageView *thumbnailView;
@@ -20,4 +21,5 @@
 @property (nonatomic, retain) NSString *m_DestName;
 @property (nonatomic, retain) NSString *m_DestMsg;
 @property (nonatomic, retain) NSString *m_DestDate;
+@property (nonatomic, assign) int index;
 @end
