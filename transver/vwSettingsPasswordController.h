@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+#define PROGRAM_PASSWORD @"vwSettingsPasswordController.programPassword"
+#define PASSWORD @"vwSettingsPasswordController.password"
+
 @interface vwSettingsPasswordController : UIViewController
-{
-    IBOutlet UITextField *uitxPassword;
-}
-@property (atomic, retain) UITextField *uitxPassword;
+@property (atomic, retain) IBOutlet UISwitch* uiswProgramPassword;
+@property (atomic, retain) IBOutlet UITextField *uitxPassword;
 
 - (IBAction)resignTextField:(id)sender;
 - (IBAction)cancelSetting:(id)sender;

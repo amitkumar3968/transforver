@@ -11,8 +11,10 @@
 #import "vwSettingsLangController.h"
 #import "vwSettingsPasswordController.h"
 
-@implementation vwSettingsController
-@synthesize uibtEraseHist;
+@implementation vwSettingsController;
+@synthesize uilbAuthentication;
+@synthesize uiswSaveVEMPassword;
+@synthesize uilbEveryXMins;
 
 - (IBAction)setEraseHistPeriod:(id)sender
 {
@@ -74,7 +76,6 @@
 {
     [super viewDidLoad];
     [self.view exchangeSubviewAtIndex:1 withSubviewAtIndex:0];  //make the title label on top of the head bar
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewDidUnload
@@ -88,6 +89,71 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    // Do any additional setup after loading the view from its nib.
+    
+    // Load Setting and Show in View
+    NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    // Load Authentication Setting
+    [uilbAuthentication setText:[userDefaults boolForKey:PROGRAM_PASSWORD]? @"Enable"
+                         : @"Disable"];
+    
+    // Load Save VEM Password
+    [uiswSaveVEMPassword setOn:[userDefaults boolForKey:SAVE_VEM_PASSWORD]];
+    
+    // Load Erase Setting
+    int option = [userDefaults integerForKey:ERASE_HISTORY_OPTION];
+    NSString* everyXMinsString;
+    switch (option) {
+        case 0:// use default value
+            everyXMinsString = @"Every 5 mins";
+            break;
+        case 1:
+            everyXMinsString = @"Never";
+            break;
+        case 2:
+            everyXMinsString = @"Every 3 months";
+            break;
+        case 3:
+            everyXMinsString = @"Every month";
+            break;
+        case 4:
+            everyXMinsString = @"Every week";
+            break;
+        case 5:
+            everyXMinsString = @"Every day";
+            break;
+        case 6:
+            everyXMinsString = @"Every hour";
+            break;
+        case 7:
+            everyXMinsString = @"Every 5 mins";
+            break;
+        case 8:
+            everyXMinsString = @"Every time";
+            break;
+    }
+    [uilbEveryXMins setText:everyXMinsString];
+}
+
+- (IBAction)changeVEMPasswordState:(id)sender
+{
+    NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
+    BOOL ifSaveVEMPassword = uiswSaveVEMPassword.isOn;
+    
+    if ( ifSaveVEMPassword ) {
+        // TODO do something when save VEM Password be click
+    } else {
+        // TODO do something when save VEM Password be cancel
+    }
+    
+    [userDefaults setBool:ifSaveVEMPassword forKey:SAVE_VEM_PASSWORD];
+    
+    [userDefaults synchronize];
 }
 
 @end
