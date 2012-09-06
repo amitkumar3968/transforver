@@ -8,50 +8,32 @@
 
 #import <UIKit/UIKit.h>
 
+// TODO load this integer value when application build.
+#define ERASE_HISTORY_OPTION @"vwSettingsEraseController.eraseHistoryOption"
+
 @interface vwSettingsEraseController : UIViewController
-<UITableViewDelegate, UITableViewDataSource>
 {
-    IBOutlet UITableView* uitvEraseHistPeriod;
-    NSDictionary* dicEraseHistChkions;
-    IBOutlet UIButton* uibtCancel;
-    IBOutlet UIButton* uibtSave;
-    IBOutlet UIButton* uibtOpt1;
-    IBOutlet UIButton* uibtOpt2;
-    IBOutlet UIButton* uibtOpt3;
-    IBOutlet UIButton* uibtOpt4;
-    IBOutlet UIButton* uibtOpt5;
-    IBOutlet UIButton* uibtOpt6;
-    IBOutlet UIButton* uibtOpt7;
-    IBOutlet UIButton* uibtOpt8;
-    IBOutlet UIImageView* uiivChk1;
-    IBOutlet UIImageView* uiivChk2;
-    IBOutlet UIImageView* uiivChk3;
-    IBOutlet UIImageView* uiivChk4;
-    IBOutlet UIImageView* uiivChk5;
-    IBOutlet UIImageView* uiivChk6;
-    IBOutlet UIImageView* uiivChk7;
-    IBOutlet UIImageView* uiivChk8;     
+    int currentSelectOption;
 }
-@property (nonatomic, retain) UITableView* uitvEraseHistPeriod;
-@property (nonatomic, retain) NSDictionary* dicEraseHistOptions;
-@property (nonatomic, retain) UIButton* uibtCancel;
-@property (nonatomic, retain) UIButton* uibtSave;
-@property (nonatomic, retain) UIButton* uibtOpt1;
-@property (nonatomic, retain) UIButton* uibtOpt2;
-@property (nonatomic, retain) UIButton* uibtOpt3;
-@property (nonatomic, retain) UIButton* uibtOpt4;
-@property (nonatomic, retain) UIButton* uibtOpt5;
-@property (nonatomic, retain) UIButton* uibtOpt6;
-@property (nonatomic, retain) UIButton* uibtOpt7;
-@property (nonatomic, retain) UIButton* uibtOpt8;
-@property (nonatomic, retain) UIImageView* uiivChk1;
-@property (nonatomic, retain) UIImageView* uiivChk2;
-@property (nonatomic, retain) UIImageView* uiivChk3;
-@property (nonatomic, retain) UIImageView* uiivChk4;
-@property (nonatomic, retain) UIImageView* uiivChk5;
-@property (nonatomic, retain) UIImageView* uiivChk6;
-@property (nonatomic, retain) UIImageView* uiivChk7;
-@property (nonatomic, retain) UIImageView* uiivChk8; 
+
+@property (nonatomic, retain) IBOutlet UIButton* uibtCancel;
+@property (nonatomic, retain) IBOutlet UIButton* uibtSave;
+@property (nonatomic, retain) IBOutlet UIButton* uibtOpt1;
+@property (nonatomic, retain) IBOutlet UIButton* uibtOpt2;
+@property (nonatomic, retain) IBOutlet UIButton* uibtOpt3;
+@property (nonatomic, retain) IBOutlet UIButton* uibtOpt4;
+@property (nonatomic, retain) IBOutlet UIButton* uibtOpt5;
+@property (nonatomic, retain) IBOutlet UIButton* uibtOpt6;
+@property (nonatomic, retain) IBOutlet UIButton* uibtOpt7;
+@property (nonatomic, retain) IBOutlet UIButton* uibtOpt8;
+@property (nonatomic, retain) IBOutlet UIImageView* uiivChk1;
+@property (nonatomic, retain) IBOutlet UIImageView* uiivChk2;
+@property (nonatomic, retain) IBOutlet UIImageView* uiivChk3;
+@property (nonatomic, retain) IBOutlet UIImageView* uiivChk4;
+@property (nonatomic, retain) IBOutlet UIImageView* uiivChk5;
+@property (nonatomic, retain) IBOutlet UIImageView* uiivChk6;
+@property (nonatomic, retain) IBOutlet UIImageView* uiivChk7;
+@property (nonatomic, retain) IBOutlet UIImageView* uiivChk8; 
 - (IBAction)cancelSetting:(id)sender;
 - (IBAction)saveSetting:(id)sender;
 - (IBAction)changeSelection:(id)sender;

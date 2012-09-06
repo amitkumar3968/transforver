@@ -8,12 +8,8 @@
 
 #import "vwSettingsEraseController.h"
 
-
-
-
 @implementation vwSettingsEraseController
-@synthesize uitvEraseHistPeriod;
-@synthesize dicEraseHistOptions;
+
 @synthesize uibtCancel;
 @synthesize uibtSave;
 @synthesize uibtOpt1;
@@ -52,15 +48,74 @@
 
 - (IBAction)saveSetting:(id)sender
 {
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:currentSelectOption forKey:ERASE_HISTORY_OPTION];
+    [defaults synchronize];
     [self dismissModalViewControllerAnimated:YES];
 }
 
 - (IBAction)changeSelection:(id)sender
 {
     UIImageView* uiivSender=(UIImageView*)sender;
+    int selectedOpt = uiivSender.tag;
+    currentSelectOption = selectedOpt;
     [self disableAllChks];
-    NSLog(@"%d", uiivSender.tag);
-    switch (uiivSender.tag) {
+    NSLog(@"%d", selectedOpt);
+    switch (selectedOpt) {
+        case 1:
+            uiivChk1.hidden=NO;
+            break;
+        case 2:
+            uiivChk2.hidden=NO;
+            break;
+        case 3:
+            uiivChk3.hidden=NO;
+            break;
+        case 4:
+            uiivChk4.hidden=NO;
+            break;
+        case 5:
+            uiivChk5.hidden=NO;
+            break;
+        case 6:
+            uiivChk6.hidden=NO;
+            break;
+        case 7:
+            uiivChk7.hidden=NO;
+            break;
+        case 8:
+            uiivChk8.hidden=NO;
+            break;
+        default:
+            break;
+    }
+}
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // 全cancel
+    [self disableAllChks];
+    
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    currentSelectOption = [defaults integerForKey:ERASE_HISTORY_OPTION];
+
+    if ( currentSelectOption == 0) { // do not save in standardUserDefaults
+        currentSelectOption = 7; // default setting.
+    }
+    
+    NSLog(@"Now Option: %d", currentSelectOption);
+
+    switch (currentSelectOption) {
         case 1:
             uiivChk1.hidden=NO;
             break;
@@ -89,27 +144,6 @@
             break;
     }
     
-    
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    NSArray* temp= [[NSArray alloc] initWithObjects:@"Never", @"Every 3 months", @"Every 1 month", @"Every 1 week", @"Every 1 day", @"Every 1 hour", @"Every 5 mins", @"Every time", nil];
-    NSDictionary* dicEraseHistOptions=[[NSDictionary alloc] initWithObjectsAndKeys:temp, @"a" , nil];
-    [self disableAllChks];
-    uiivChk7.hidden=NO;
-	// Do any additional setup after loading the view.
-    
 }
 
 - (void)viewDidUnload
@@ -125,29 +159,6 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
-}
-
-- (NSString *)tableView:(UITableView *)tableView
-titleForHeaderInSection:(NSInteger)section
-{
-    return @"abc";
-}
-
-- (UITableViewCell *)tableView:(UITableView *)uitvEraseHistPeriod cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSArray *listData=[self.dicEraseHistOptions objectForKey:[self.dicEraseHistOptions allKeys]];
-    NSString *strID=[[NSString alloc] initWithFormat:@"simpleID"];
-    UITableViewCell* cell = [uitvEraseHistPeriod dequeueReusableCellWithIdentifier: strID];
-    if(cell == nil) {
-        cell = [[UITableViewCell alloc]
-                initWithStyle:UITableViewCellStyleDefault
-                reuseIdentifier:strID];
-    }
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return dicEraseHistOptions.count;
 }
 
 @end

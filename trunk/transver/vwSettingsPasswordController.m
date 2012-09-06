@@ -13,8 +13,9 @@
 @end
 
 @implementation vwSettingsPasswordController
-
+@synthesize uiswProgramPassword;
 @synthesize uitxPassword;
+
 - (IBAction)cancelSetting:(id)sender
 {
     [self dismissModalViewControllerAnimated:YES];
@@ -23,12 +24,18 @@
 - (IBAction)saveSetting:(id)sender
 {
     [self dismissModalViewControllerAnimated:YES];
+    
+    // save setting.
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:uiswProgramPassword.isOn forKey:PROGRAM_PASSWORD];
+    [defaults setObject:uitxPassword.text forKey:PASSWORD];
+    [defaults synchronize];
 }
 
 - (IBAction)resignTextField:(id)sender
 {
-    [uitxPassword setText:@"**********"];
-    [self resignFirstResponder];
+//    [uitxPassword setText:@"**********"];
+//    [self resignFirstResponder];
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,7 +49,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+	// Load setting and set on view.
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    [uiswProgramPassword setOn:[defaults boolForKey:PROGRAM_PASSWORD]];
+    [uitxPassword setText:[defaults objectForKey:PASSWORD]];
 }
 
 - (void)viewDidUnload

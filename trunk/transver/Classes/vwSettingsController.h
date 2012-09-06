@@ -8,13 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+#define SAVE_VEM_PASSWORD @"vwSettingsController.saveVEMPassword"
+
 @interface vwSettingsController : UIViewController
-{
-    IBOutlet UIButton *uibtEraseHist;
-    
-}
-@property (nonatomic, retain) UIButton *uibtEraseHist;
+@property (nonatomic, retain) IBOutlet UILabel* uilbAuthentication;
+@property (nonatomic, retain) IBOutlet UISwitch *uiswSaveVEMPassword;
+@property (nonatomic, retain) IBOutlet UILabel* uilbEveryXMins;
+
 - (IBAction)setEraseHistPeriod:(id)sender;
+- (IBAction)changeVEMPasswordState:(id)sender;
 - (IBAction)setLangPeriod:(id)sender;
 - (IBAction)setPasswordPeriod:(id)sender;
 @end
