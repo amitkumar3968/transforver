@@ -71,18 +71,25 @@ NSMutableArray *imageList;
         UIImageView *contactImage = (UIImageView *)ABPersonCopyImageData(record);
         NSString *contactFirstLast = [NSString stringWithFormat: @"%@ %@", firstName, lastName];
         ABMultiValueRef phoneNumbers = (NSString *)ABRecordCopyValue(record, kABPersonPhoneProperty);
-        NSString* mobileNumber;
+        NSString* mobileNumber=nil;
         NSString* mobileLabel;
         for (CFIndex i = 0; i < ABMultiValueGetCount(phoneNumbers); i++) {
             mobileLabel = ABMultiValueCopyLabelAtIndex(phoneNumbers, i);
             if ([mobileLabel isEqualToString:@"_$!<Mobile>!$_"]) {
-                mobileNumber = ABMultiValueCopyValueAtIndex(phoneNumbers,i);
+                mobileNumber = (NSString *) ABMultiValueCopyValueAtIndex(phoneNumbers, i);
+                break;
+            }
+            if ([mobileLabel isEqualToString:@"iPhone"]) {
+                mobileNumber = (NSString *) ABMultiValueCopyValueAtIndex(phoneNumbers,i);
                 break;
             }
         }
 
-        [listOfPhones addObject:mobileNumber];
-        [listOfItems addObject:contactFirstLast];
+        if (mobileNumber!=nil)
+        {
+            [listOfPhones addObject:mobileNumber];
+            [listOfItems addObject:contactFirstLast];
+        }
         
         //Here I think something goes wrong, but I don't know what
         // If I comment out this line, the application works, but now pictures is showing.
