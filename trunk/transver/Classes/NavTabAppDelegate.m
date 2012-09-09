@@ -30,8 +30,25 @@
 	//self.tableView.rowHeight = 100;
 	//self.tableView.backgroundColor = [UIColor clearColor];
     
-
-	//[navController pushViewController:tabController animated:FALSE];
+    if( ![Util checkUserInfoExist])
+    {
+        AddUserViewController *addUserView = [[AddUserViewController alloc] initWithNibName:@"AddUserViewController" bundle:nil];
+        addUserView.title = @"Add Phone Number";
+        addUserView.delegate = self;
+        [self.window.rootViewController presentModalViewController:addUserView animated:NO];
+        //[self.navigationController pushViewController:addUserView animated:YES];
+        //[self saveParameter];
+    }else
+    {
+        [Util getParameter];
+        g_UserID = [Util loginServer];
+        NSArray *array = [Util fetchRelationships:g_UserID];
+        g_AccountName = [array mutableCopy];
+    }
+    //g_UserID = 20;
+    [Util getRelationships:g_UserID];
+    
+    //[navController pushViewController:tabController animated:FALSE];
     [globalSettings initWithObjects:[NSArray arrayWithObjects:@"language", nil] forKeys:[NSArray arrayWithObjects:@"1", nil]];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
@@ -49,22 +66,6 @@
     self.window.rootViewController = self.tabController;
     g_tabController = self.tabController;
     [self.window makeKeyAndVisible];
-    if( ![Util checkUserInfoExist])
-    {
-        AddUserViewController *addUserView = [[AddUserViewController alloc] initWithNibName:@"AddUserViewController" bundle:nil];
-        addUserView.title = @"Add Phone Number";
-        addUserView.delegate = self;
-        [self.window.rootViewController presentModalViewController:addUserView animated:NO];
-        //[self.navigationController pushViewController:addUserView animated:YES];
-        //[self saveParameter];
-    }else
-    {
-        [Util getParameter];
-        g_UserID = [Util loginServer];
-        NSArray *array = [Util fetchRelationships:g_UserID];
-        g_AccountName = [array mutableCopy];
-    }
-    //g_UserID = 20;
     g_RootController = self.window.rootViewController;
     return;
     tabController.selectedIndex = 2;

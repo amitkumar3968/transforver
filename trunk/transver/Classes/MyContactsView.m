@@ -24,6 +24,7 @@ NSMutableArray *imageList;
 {
     self = [super initWithStyle:style];
     if (self) {
+        //retrieve VEM contact list
         // Custom initialization
     }
     return self;
@@ -48,9 +49,7 @@ NSMutableArray *imageList;
 {
     [super viewDidLoad];
     listOfItems = [[NSMutableArray alloc] init];
-    listOfPhones = [[NSMutableArray alloc] init];
-
-   
+    listOfPhones = [[NSMutableArray alloc] init];   
     //self.tableView.tableHeaderView = searchBar;
     //searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
     
@@ -113,10 +112,6 @@ NSMutableArray *imageList;
         [imageList addObject:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"common_icon_con_rest@2x.png"]]];
     }
 #endif	
-    
-    //retrieve VEM contact list
-    [self getRelationships:g_UserID ];
-    
     
 	// create a filtered list that will contain products for the search results table.
 	self.filteredListContent = [NSMutableArray arrayWithCapacity:[self.listOfItems count]];
@@ -271,6 +266,7 @@ NSMutableArray *imageList;
     else {
         [imageButton setSelected:YES];
         [allButton setSelected:NO];
+        [self getRelationships:g_UserID ];
     }
     [self.tableView reloadData];
 }
@@ -384,9 +380,8 @@ NSMutableArray *imageList;
 
 - (void)delPerson:(UIButton *)sender
 {
-    NSLog(@"list of phones: %d", [listOfPhones count]);
-    NSString *phoneWithoutSeperates = [[listOfPhones objectAtIndex:sender.tag] stringByReplacingOccurrencesOfString:@"-" withString:@""];
-    [self delRelationships:g_UserID  phonenumber:phoneWithoutSeperates];
+    NSString *relSlaveID = [VEMContactID objectAtIndex:sender.tag];
+    [self delRelationships:g_UserID  slaveID:relSlaveID];
     [self getRelationships:g_UserID ];
     [self.tableView reloadData];
 }
@@ -450,7 +445,7 @@ NSMutableArray *imageList;
 }
 
 - (void) addRelationships:(int) uid phonenumber:(NSString *) phone{
-    NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/addRelationships.php?srcID=%d&dstPhone=%@", uid, phone];
+    NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/addRelationships.php?srcID=%d&dstPhone=%@", g_UserID, phone];
     
     NSData *data = [DBHandler sendReqToUrl:urlString postString:nil];
 	NSArray *array = nil;
@@ -482,8 +477,8 @@ NSMutableArray *imageList;
 	}
 }
 
-- (void) delRelationships:(int) uid phonenumber:(NSString *) phone{
-    NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/delRelationships.php?srcID=%d&friendPhone=%@", uid, phone];
+- (void) delRelationships:(int) uid slaveID:(NSString *) relSlaveID{
+    NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/delRelationships.php?srcID=%d&slaveID=%@", uid, relSlaveID];
     
     NSData *data = [DBHandler sendReqToUrl:urlString postString:nil];
 	NSArray *array = nil;

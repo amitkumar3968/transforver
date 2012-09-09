@@ -76,6 +76,35 @@
 	return reach;
 }
 
++ (void) getRelationships:(int) uid
+{
+    NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/getRelationships.php?masterID=%d", uid];
+    NSLog(@"%@", urlString);
+    
+    NSData *data = [DBHandler sendReqToUrl:urlString postString:nil];
+	NSArray *array = nil;
+    g_AccountName = [[NSMutableArray alloc] init ];
+    g_AccountID= [[NSMutableArray alloc] init ];
+    //NSMutableArray *ret = [[NSMutableArray alloc] init ];
+	
+	if(data)
+	{
+		NSString *responseString = [[NSString alloc] initWithData:data
+                                                         encoding:NSUTF8StringEncoding];
+		array = [responseString JSONValue];
+        
+        for (NSDictionary *dic in array)
+        {
+            NSString *name = [dic objectForKey:@"USER_NAME"];
+            NSString *usr_id = [dic objectForKey:@"USER_ID"];
+            [g_AccountName addObject:name];
+            [g_AccountID addObject:usr_id];
+        }
+		[responseString release];
+	}
+}
+
+
 + (void) addRelationships:(int) uid phonenumber:(NSString *) phone{
     NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/addRelationships.php?srcID=%d&dstPhone=%@", uid, phone];
     

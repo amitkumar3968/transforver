@@ -10,6 +10,7 @@
 #import "vwSettingsEraseController.h"
 #import "vwSettingsLangController.h"
 #import "vwSettingsPasswordController.h"
+#import "Util.h"
 
 @implementation vwSettingsController;
 @synthesize uilbAuthentication;
@@ -61,6 +62,7 @@
         self.title = NSLocalizedString(@"Settings", @"Settings");
         self.tabBarItem.image = [UIImage imageNamed:@"common_icon_set_rest.png"];
     }
+    NSLog(@" %d VEM Users.", [g_AccountName count]);
     return self;
 }
 
