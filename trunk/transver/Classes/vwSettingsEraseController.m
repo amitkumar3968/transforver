@@ -51,7 +51,8 @@
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     [defaults setInteger:currentSelectOption forKey:ERASE_HISTORY_OPTION];
     [defaults synchronize];
-    [self dismissModalViewControllerAnimated:YES];
+
+    [self dismissViewControllerAnimated:YES completion:^(void){}];
 }
 
 - (IBAction)changeSelection:(id)sender

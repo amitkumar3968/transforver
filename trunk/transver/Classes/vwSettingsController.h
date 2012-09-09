@@ -12,11 +12,10 @@
 
 @interface vwSettingsController : UIViewController
 @property (nonatomic, retain) IBOutlet UILabel* uilbAuthentication;
-@property (nonatomic, retain) IBOutlet UISwitch *uiswSaveVEMPassword;
+@property (nonatomic, retain) IBOutlet UISwitch*uiswSaveVEMPassword;
 @property (nonatomic, retain) IBOutlet UILabel* uilbEveryXMins;
+@property (nonatomic, retain) IBOutlet UILabel* uilbLanguage;
 
 - (IBAction)setEraseHistPeriod:(id)sender;
 - (IBAction)changeVEMPasswordState:(id)sender;
-- (IBAction)setLangPeriod:(id)sender;
-- (IBAction)setPasswordPeriod:(id)sender;
 @end

@@ -2,20 +2,20 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1296</int>
-		<string key="IBDocument.SystemVersion">11D50d</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2182</string>
-		<string key="IBDocument.AppKitVersion">1138.32</string>
-		<string key="IBDocument.HIToolboxVersion">568.00</string>
+		<string key="IBDocument.SystemVersion">11E53</string>
+		<string key="IBDocument.InterfaceBuilderVersion">2549</string>
+		<string key="IBDocument.AppKitVersion">1138.47</string>
+		<string key="IBDocument.HIToolboxVersion">569.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">1181</string>
+			<string key="NS.object.0">1498</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
+			<string>IBProxyObject</string>
 			<string>IBUIButton</string>
 			<string>IBUIImageView</string>
-			<string>IBUIView</string>
 			<string>IBUILabel</string>
-			<string>IBProxyObject</string>
+			<string>IBUIView</string>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -624,7 +624,6 @@
 						<string key="NSFrame">{{267, 386}, {19, 17}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -663,70 +662,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">uibtOpt1</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="840852824"/>
-					</object>
-					<int key="connectionID">33</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">uibtOpt2</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="448532616"/>
-					</object>
-					<int key="connectionID">34</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">uibtOpt3</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="491062184"/>
-					</object>
-					<int key="connectionID">35</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">uibtOpt4</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="128184358"/>
-					</object>
-					<int key="connectionID">36</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">uibtOpt5</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="258173183"/>
-					</object>
-					<int key="connectionID">37</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">uibtOpt6</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="988662317"/>
-					</object>
-					<int key="connectionID">38</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">uibtOpt7</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="855222809"/>
-					</object>
-					<int key="connectionID">39</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">uibtOpt8</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="168736561"/>
-					</object>
-					<int key="connectionID">40</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">uibtSave</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="52516648"/>
@@ -735,157 +670,221 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">uiivChk1</string>
+						<string key="label">uibtChineseS</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="840852824"/>
+					</object>
+					<int key="connectionID">60</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">uibtChineseT</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="448532616"/>
+					</object>
+					<int key="connectionID">61</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">uibtEnglish</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="491062184"/>
+					</object>
+					<int key="connectionID">62</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">uibtItalian</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="128184358"/>
+					</object>
+					<int key="connectionID">63</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">uibtFrench</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="258173183"/>
+					</object>
+					<int key="connectionID">64</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">uibtJapanese</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="988662317"/>
+					</object>
+					<int key="connectionID">65</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">uibtKorean</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="855222809"/>
+					</object>
+					<int key="connectionID">66</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">uibtGerman</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="168736561"/>
+					</object>
+					<int key="connectionID">67</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">uiivChineseS</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="491514687"/>
 					</object>
-					<int key="connectionID">42</int>
+					<int key="connectionID">68</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">uiivChk2</string>
+						<string key="label">uiivChineseT</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="643292164"/>
 					</object>
-					<int key="connectionID">43</int>
+					<int key="connectionID">69</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">uiivChk3</string>
+						<string key="label">uiivEnglish</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="684686889"/>
 					</object>
-					<int key="connectionID">44</int>
+					<int key="connectionID">70</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">uiivChk4</string>
+						<string key="label">uiivItalian</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="763809762"/>
 					</object>
-					<int key="connectionID">45</int>
+					<int key="connectionID">71</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">uiivChk5</string>
+						<string key="label">uiivFrench</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="799543885"/>
 					</object>
-					<int key="connectionID">46</int>
+					<int key="connectionID">72</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">uiivChk6</string>
+						<string key="label">uiivJapanese</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="104565378"/>
 					</object>
-					<int key="connectionID">47</int>
+					<int key="connectionID">73</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">uiivChk7</string>
+						<string key="label">uiivKorean</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="223686765"/>
 					</object>
-					<int key="connectionID">48</int>
+					<int key="connectionID">74</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">uiivChk8</string>
+						<string key="label">uiivGerman</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="260602997"/>
 					</object>
-					<int key="connectionID">49</int>
+					<int key="connectionID">75</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">cancelSetting:</string>
 						<reference key="source" ref="1069328421"/>
-						<reference key="destination" ref="975951072"/>
+						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">58</int>
+					<int key="connectionID">84</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">saveSetting:</string>
 						<reference key="source" ref="52516648"/>
-						<reference key="destination" ref="975951072"/>
+						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">59</int>
+					<int key="connectionID">85</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">changeSelection:</string>
 						<reference key="source" ref="840852824"/>
-						<reference key="destination" ref="975951072"/>
+						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">50</int>
+					<int key="connectionID">76</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">changeSelection:</string>
 						<reference key="source" ref="448532616"/>
-						<reference key="destination" ref="975951072"/>
+						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">51</int>
+					<int key="connectionID">77</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">changeSelection:</string>
 						<reference key="source" ref="491062184"/>
-						<reference key="destination" ref="975951072"/>
+						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">52</int>
+					<int key="connectionID">78</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">changeSelection:</string>
 						<reference key="source" ref="128184358"/>
-						<reference key="destination" ref="975951072"/>
+						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">53</int>
+					<int key="connectionID">79</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">changeSelection:</string>
 						<reference key="source" ref="258173183"/>
-						<reference key="destination" ref="975951072"/>
+						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">54</int>
+					<int key="connectionID">80</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">changeSelection:</string>
 						<reference key="source" ref="988662317"/>
-						<reference key="destination" ref="975951072"/>
+						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">55</int>
+					<int key="connectionID">81</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">changeSelection:</string>
 						<reference key="source" ref="855222809"/>
-						<reference key="destination" ref="975951072"/>
+						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">56</int>
+					<int key="connectionID">82</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">changeSelection:</string>
 						<reference key="source" ref="168736561"/>
-						<reference key="destination" ref="975951072"/>
+						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">57</int>
+					<int key="connectionID">83</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1123,136 +1122,10 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">59</int>
+			<int key="maxID">85</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
-				<object class="IBPartialClassDescription">
-					<string key="className">vwSettingsEraseController</string>
-					<string key="superclassName">UIViewController</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="cancelSetting:">id</string>
-						<string key="changeSelection:">id</string>
-						<string key="saveSetting:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="cancelSetting:">
-							<string key="name">cancelSetting:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="changeSelection:">
-							<string key="name">changeSelection:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="saveSetting:">
-							<string key="name">saveSetting:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="uibtCancel">UIButton</string>
-						<string key="uibtOpt1">UIButton</string>
-						<string key="uibtOpt2">UIButton</string>
-						<string key="uibtOpt3">UIButton</string>
-						<string key="uibtOpt4">UIButton</string>
-						<string key="uibtOpt5">UIButton</string>
-						<string key="uibtOpt6">UIButton</string>
-						<string key="uibtOpt7">UIButton</string>
-						<string key="uibtOpt8">UIButton</string>
-						<string key="uibtSave">UIButton</string>
-						<string key="uiivChk1">UIImageView</string>
-						<string key="uiivChk2">UIImageView</string>
-						<string key="uiivChk3">UIImageView</string>
-						<string key="uiivChk4">UIImageView</string>
-						<string key="uiivChk5">UIImageView</string>
-						<string key="uiivChk6">UIImageView</string>
-						<string key="uiivChk7">UIImageView</string>
-						<string key="uiivChk8">UIImageView</string>
-						<string key="uitvEraseHistPeriod">UITableView</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="uibtCancel">
-							<string key="name">uibtCancel</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="uibtOpt1">
-							<string key="name">uibtOpt1</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="uibtOpt2">
-							<string key="name">uibtOpt2</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="uibtOpt3">
-							<string key="name">uibtOpt3</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="uibtOpt4">
-							<string key="name">uibtOpt4</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="uibtOpt5">
-							<string key="name">uibtOpt5</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="uibtOpt6">
-							<string key="name">uibtOpt6</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="uibtOpt7">
-							<string key="name">uibtOpt7</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="uibtOpt8">
-							<string key="name">uibtOpt8</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="uibtSave">
-							<string key="name">uibtSave</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="uiivChk1">
-							<string key="name">uiivChk1</string>
-							<string key="candidateClassName">UIImageView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="uiivChk2">
-							<string key="name">uiivChk2</string>
-							<string key="candidateClassName">UIImageView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="uiivChk3">
-							<string key="name">uiivChk3</string>
-							<string key="candidateClassName">UIImageView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="uiivChk4">
-							<string key="name">uiivChk4</string>
-							<string key="candidateClassName">UIImageView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="uiivChk5">
-							<string key="name">uiivChk5</string>
-							<string key="candidateClassName">UIImageView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="uiivChk6">
-							<string key="name">uiivChk6</string>
-							<string key="candidateClassName">UIImageView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="uiivChk7">
-							<string key="name">uiivChk7</string>
-							<string key="candidateClassName">UIImageView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="uiivChk8">
-							<string key="name">uiivChk8</string>
-							<string key="candidateClassName">UIImageView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="uitvEraseHistPeriod">
-							<string key="name">uitvEraseHistPeriod</string>
-							<string key="candidateClassName">UITableView</string>
-						</object>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/vwSettingsEraseController.h</string>
-					</object>
-				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">vwSettingsLangController</string>
 					<string key="superclassName">UIViewController</string>
@@ -1277,6 +1150,14 @@
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="uibtCancel">UIButton</string>
+						<string key="uibtChineseS">UIButton</string>
+						<string key="uibtChineseT">UIButton</string>
+						<string key="uibtEnglish">UIButton</string>
+						<string key="uibtFrench">UIButton</string>
+						<string key="uibtGerman">UIButton</string>
+						<string key="uibtItalian">UIButton</string>
+						<string key="uibtJapanese">UIButton</string>
+						<string key="uibtKorean">UIButton</string>
 						<string key="uibtOpt1">UIButton</string>
 						<string key="uibtOpt2">UIButton</string>
 						<string key="uibtOpt3">UIButton</string>
@@ -1286,6 +1167,8 @@
 						<string key="uibtOpt7">UIButton</string>
 						<string key="uibtOpt8">UIButton</string>
 						<string key="uibtSave">UIButton</string>
+						<string key="uiivChineseS">UIImageView</string>
+						<string key="uiivChineseT">UIImageView</string>
 						<string key="uiivChk1">UIImageView</string>
 						<string key="uiivChk2">UIImageView</string>
 						<string key="uiivChk3">UIImageView</string>
@@ -1294,10 +1177,48 @@
 						<string key="uiivChk6">UIImageView</string>
 						<string key="uiivChk7">UIImageView</string>
 						<string key="uiivChk8">UIImageView</string>
+						<string key="uiivEnglish">UIImageView</string>
+						<string key="uiivFrench">UIImageView</string>
+						<string key="uiivGerman">UIImageView</string>
+						<string key="uiivItalian">UIImageView</string>
+						<string key="uiivJapanese">UIImageView</string>
+						<string key="uiivKorean">UIImageView</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="uibtCancel">
 							<string key="name">uibtCancel</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="uibtChineseS">
+							<string key="name">uibtChineseS</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="uibtChineseT">
+							<string key="name">uibtChineseT</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="uibtEnglish">
+							<string key="name">uibtEnglish</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="uibtFrench">
+							<string key="name">uibtFrench</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="uibtGerman">
+							<string key="name">uibtGerman</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="uibtItalian">
+							<string key="name">uibtItalian</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="uibtJapanese">
+							<string key="name">uibtJapanese</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="uibtKorean">
+							<string key="name">uibtKorean</string>
 							<string key="candidateClassName">UIButton</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="uibtOpt1">
@@ -1336,6 +1257,14 @@
 							<string key="name">uibtSave</string>
 							<string key="candidateClassName">UIButton</string>
 						</object>
+						<object class="IBToOneOutletInfo" key="uiivChineseS">
+							<string key="name">uiivChineseS</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="uiivChineseT">
+							<string key="name">uiivChineseT</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="uiivChk1">
 							<string key="name">uiivChk1</string>
 							<string key="candidateClassName">UIImageView</string>
@@ -1366,6 +1295,30 @@
 						</object>
 						<object class="IBToOneOutletInfo" key="uiivChk8">
 							<string key="name">uiivChk8</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="uiivEnglish">
+							<string key="name">uiivEnglish</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="uiivFrench">
+							<string key="name">uiivFrench</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="uiivGerman">
+							<string key="name">uiivGerman</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="uiivItalian">
+							<string key="name">uiivItalian</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="uiivJapanese">
+							<string key="name">uiivJapanese</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="uiivKorean">
+							<string key="name">uiivKorean</string>
 							<string key="candidateClassName">UIImageView</string>
 						</object>
 					</dictionary>
@@ -1392,6 +1345,6 @@
 			<string key="record_btn_header_rest@2x.png">{368, 88}</string>
 			<string key="setting_icon_slected@2x.png">{38, 34}</string>
 		</dictionary>
-		<string key="IBCocoaTouchPluginVersion">1181</string>
+		<string key="IBCocoaTouchPluginVersion">1498</string>
 	</data>
 </archive>

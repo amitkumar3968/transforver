@@ -8,47 +8,29 @@
 
 #import <UIKit/UIKit.h>
 
+#define SELECTED_LANGUAGE @"vwSettingsLangController.selectedLanguage"
+
 @interface vwSettingsLangController : UIViewController
-{
-    NSDictionary* dicEraseHistChkions;
-    IBOutlet UIButton* uibtCancel;
-    IBOutlet UIButton* uibtSave;
-    IBOutlet UIButton* uibtOpt1;
-    IBOutlet UIButton* uibtOpt2;
-    IBOutlet UIButton* uibtOpt3;
-    IBOutlet UIButton* uibtOpt4;
-    IBOutlet UIButton* uibtOpt5;
-    IBOutlet UIButton* uibtOpt6;
-    IBOutlet UIButton* uibtOpt7;
-    IBOutlet UIButton* uibtOpt8;
-    IBOutlet UIImageView* uiivChk1;
-    IBOutlet UIImageView* uiivChk2;
-    IBOutlet UIImageView* uiivChk3;
-    IBOutlet UIImageView* uiivChk4;
-    IBOutlet UIImageView* uiivChk5;
-    IBOutlet UIImageView* uiivChk6;
-    IBOutlet UIImageView* uiivChk7;
-    IBOutlet UIImageView* uiivChk8;     
-}
-@property (nonatomic, retain) NSDictionary* dicEraseHistOptions;
-@property (nonatomic, retain) UIButton* uibtCancel;
-@property (nonatomic, retain) UIButton* uibtSave;
-@property (nonatomic, retain) UIButton* uibtOpt1;
-@property (nonatomic, retain) UIButton* uibtOpt2;
-@property (nonatomic, retain) UIButton* uibtOpt3;
-@property (nonatomic, retain) UIButton* uibtOpt4;
-@property (nonatomic, retain) UIButton* uibtOpt5;
-@property (nonatomic, retain) UIButton* uibtOpt6;
-@property (nonatomic, retain) UIButton* uibtOpt7;
-@property (nonatomic, retain) UIButton* uibtOpt8;
-@property (nonatomic, retain) UIImageView* uiivChk1;
-@property (nonatomic, retain) UIImageView* uiivChk2;
-@property (nonatomic, retain) UIImageView* uiivChk3;
-@property (nonatomic, retain) UIImageView* uiivChk4;
-@property (nonatomic, retain) UIImageView* uiivChk5;
-@property (nonatomic, retain) UIImageView* uiivChk6;
-@property (nonatomic, retain) UIImageView* uiivChk7;
-@property (nonatomic, retain) UIImageView* uiivChk8; 
+
+@property (nonatomic, retain) IBOutlet UIButton* uibtCancel;
+@property (nonatomic, retain) IBOutlet UIButton* uibtSave;
+
+@property (nonatomic, retain) IBOutlet UIButton* uibtChineseS;
+@property (nonatomic, retain) IBOutlet UIButton* uibtChineseT;
+@property (nonatomic, retain) IBOutlet UIButton* uibtEnglish;
+@property (nonatomic, retain) IBOutlet UIButton* uibtItalian;
+@property (nonatomic, retain) IBOutlet UIButton* uibtFrench;
+@property (nonatomic, retain) IBOutlet UIButton* uibtJapanese;
+@property (nonatomic, retain) IBOutlet UIButton* uibtKorean;
+@property (nonatomic, retain) IBOutlet UIButton* uibtGerman;
+@property (nonatomic, retain) IBOutlet UIImageView* uiivChineseS;
+@property (nonatomic, retain) IBOutlet UIImageView* uiivChineseT;
+@property (nonatomic, retain) IBOutlet UIImageView* uiivEnglish;
+@property (nonatomic, retain) IBOutlet UIImageView* uiivItalian;
+@property (nonatomic, retain) IBOutlet UIImageView* uiivFrench;
+@property (nonatomic, retain) IBOutlet UIImageView* uiivJapanese;
+@property (nonatomic, retain) IBOutlet UIImageView* uiivKorean;
+@property (nonatomic, retain) IBOutlet UIImageView* uiivGerman;
 - (IBAction)cancelSetting:(id)sender;
 - (IBAction)saveSetting:(id)sender;
 - (IBAction)changeSelection:(id)sender;

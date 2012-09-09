@@ -481,7 +481,7 @@
 					<object class="IBUILabel" id="1050070219">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{220, 296}, {58, 35}}</string>
+						<string key="NSFrame">{{125, 296}, {153, 35}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="161550822"/>
@@ -499,6 +499,7 @@
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">0</int>
 						<float key="IBUIMinimumFontSize">10</float>
+						<int key="IBUITextAlignment">2</int>
 						<reference key="IBUIFontDescription" ref="444561421"/>
 						<reference key="IBUIFont" ref="448591226"/>
 					</object>
@@ -651,14 +652,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">uibtEraseHist</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="946877521"/>
-					</object>
-					<int key="connectionID">43</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">uilbEveryXMins</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="314480461"/>
@@ -682,6 +675,14 @@
 					<int key="connectionID">47</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">uilbLanguage</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="1050070219"/>
+					</object>
+					<int key="connectionID">52</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">changeVEMPasswordState:</string>
 						<reference key="source" ref="70096681"/>
@@ -694,10 +695,10 @@
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">setPassword:</string>
 						<reference key="source" ref="1007100416"/>
-						<reference key="destination" ref="975951072"/>
+						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">42</int>
+					<int key="connectionID">50</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -712,10 +713,10 @@
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">setLang:</string>
 						<reference key="source" ref="161550822"/>
-						<reference key="destination" ref="975951072"/>
+						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">40</int>
+					<int key="connectionID">51</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -951,7 +952,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">48</int>
+			<int key="maxID">52</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -993,22 +994,22 @@
 						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="uibtEraseHist">UIButton</string>
 						<string key="uilbAuthentication">UILabel</string>
 						<string key="uilbEveryXMins">UILabel</string>
+						<string key="uilbLanguage">UILabel</string>
 						<string key="uiswSaveVEMPassword">UISwitch</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="uibtEraseHist">
-							<string key="name">uibtEraseHist</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
 						<object class="IBToOneOutletInfo" key="uilbAuthentication">
 							<string key="name">uilbAuthentication</string>
 							<string key="candidateClassName">UILabel</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="uilbEveryXMins">
 							<string key="name">uilbEveryXMins</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="uilbLanguage">
+							<string key="name">uilbLanguage</string>
 							<string key="candidateClassName">UILabel</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="uiswSaveVEMPassword">

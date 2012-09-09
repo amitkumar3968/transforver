@@ -8,78 +8,89 @@
 
 #import "vwSettingsLangController.h"
 
+@implementation vwSettingsLangController {
+    NSString* selectedLanguage_temp;
+}
 
-
-
-@implementation vwSettingsLangController
-@synthesize dicEraseHistOptions;
 @synthesize uibtCancel;
 @synthesize uibtSave;
-@synthesize uibtOpt1;
-@synthesize uibtOpt2;
-@synthesize uibtOpt3;
-@synthesize uibtOpt4;
-@synthesize uibtOpt5;
-@synthesize uibtOpt6;
-@synthesize uibtOpt7;
-@synthesize uibtOpt8;
-@synthesize uiivChk1;
-@synthesize uiivChk2;
-@synthesize uiivChk3;
-@synthesize uiivChk4;
-@synthesize uiivChk5;
-@synthesize uiivChk6;
-@synthesize uiivChk7;
-@synthesize uiivChk8;
+@synthesize uibtChineseS;
+@synthesize uibtChineseT;
+@synthesize uibtEnglish;
+@synthesize uibtItalian;
+@synthesize uibtFrench;
+@synthesize uibtJapanese;
+@synthesize uibtKorean;
+@synthesize uibtGerman;
+@synthesize uiivChineseS;
+@synthesize uiivChineseT;
+@synthesize uiivEnglish;
+@synthesize uiivItalian;
+@synthesize uiivFrench;
+@synthesize uiivJapanese;
+@synthesize uiivKorean;
+@synthesize uiivGerman;
 
 - (void)disableAllChks
 {
-    uiivChk1.hidden=YES;
-    uiivChk2.hidden=YES;
-    uiivChk3.hidden=YES;
-    uiivChk4.hidden=YES;
-    uiivChk5.hidden=YES;
-    uiivChk6.hidden=YES;
-    uiivChk7.hidden=YES;
-    uiivChk8.hidden=YES;
+    uiivChineseS.hidden=YES;
+    uiivChineseT.hidden=YES;
+    uiivEnglish.hidden=YES;
+    uiivItalian.hidden=YES;
+    uiivFrench.hidden=YES;
+    uiivJapanese.hidden=YES;
+    uiivKorean.hidden=YES;
+    uiivGerman.hidden=YES;
 }
 
 - (IBAction)cancelSetting:(id)sender
 {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:^(void){}];
 }
 
 - (IBAction)saveSetting:(id)sender
 {
-    [self dismissModalViewControllerAnimated:YES];
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    [userDefault setObject:selectedLanguage_temp forKey:SELECTED_LANGUAGE];
+    [userDefault synchronize];
+    
+    [self dismissViewControllerAnimated:YES completion:^(void){}];
 }
 
-- (void)activateCheckAtIdx:(int)idx
+- (void)activateCheckAtIdx:(int)index
 {
-    switch (idx) {
+    switch (index) {
         case 1:
-            uiivChk1.hidden=NO;
+            uiivChineseS.hidden=NO;
+            selectedLanguage_temp = @"ChineseSimple";
             break;
         case 2:
-            uiivChk2.hidden=NO;
+            uiivChineseT.hidden=NO;
+            selectedLanguage_temp = @"ChineseTraditional";
             break;
         case 3:
-            uiivChk3.hidden=NO;
+            uiivEnglish.hidden=NO;
+            selectedLanguage_temp = @"English";
             break;
         case 4:
-            uiivChk4.hidden=NO;
+            uiivItalian.hidden=NO;
+            selectedLanguage_temp = @"Italian";
             break;
         case 5:
-            uiivChk5.hidden=NO;
+            uiivFrench.hidden=NO;
+            selectedLanguage_temp = @"French";
             break;
         case 6:
-            uiivChk6.hidden=NO;
+            uiivJapanese.hidden=NO;
+            selectedLanguage_temp = @"Japanese";
             break;
         case 7:
-            uiivChk7.hidden=NO;
+            uiivKorean.hidden=NO;
+            selectedLanguage_temp = @"Korean";
             break;
         case 8:
-            uiivChk8.hidden=NO;
+            uiivGerman.hidden=NO;
+            selectedLanguage_temp = @"German";
             break;
         default:
             break;
@@ -107,50 +118,45 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSArray* temp= [[NSArray alloc] initWithObjects:@"Never", @"Every 3 months", @"Every 1 month", @"Every 1 week", @"Every 1 day", @"Every 1 hour", @"Every 5 mins", @"Every time", nil];
-    NSDictionary* dicEraseHistOptions=[[NSDictionary alloc] initWithObjectsAndKeys:temp, @"a" , nil];
     [self disableAllChks];
-    //[self activateCheckAtIdx:
-	// Do any additional setup after loading the view.
     
+    NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
+    selectedLanguage_temp = [userDefaults stringForKey:SELECTED_LANGUAGE];
+    if ( selectedLanguage_temp == nil) { // default value
+        selectedLanguage_temp = @"English";
+    }
+    
+    if ( [selectedLanguage_temp isEqualToString:@"ChineseSimple"]) {
+        [self activateCheckAtIdx:1];
+    } else if ( [selectedLanguage_temp isEqualToString:@"ChineseTraditional"] ) {
+        [self activateCheckAtIdx:2];
+    } else if ( [selectedLanguage_temp isEqualToString:@"English"] ) {
+        [self activateCheckAtIdx:3];
+    } else if ( [selectedLanguage_temp isEqualToString:@"Italian"] ) {
+        [self activateCheckAtIdx:4];
+    } else if ( [selectedLanguage_temp isEqualToString:@"French"] ) {
+        [self activateCheckAtIdx:5];
+    } else if ( [selectedLanguage_temp isEqualToString:@"Japanese"] ) {
+        [self activateCheckAtIdx:6];
+    } else if ( [selectedLanguage_temp isEqualToString:@"Korean"] ) {
+        [self activateCheckAtIdx:7];
+    } else if ( [selectedLanguage_temp isEqualToString:@"German"] ) {
+        [self activateCheckAtIdx:8];
+    } else { // default value
+        [self activateCheckAtIdx:3];
+    }
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
+    [selectedLanguage_temp release];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
-}
-
-- (NSString *)tableView:(UITableView *)tableView
-titleForHeaderInSection:(NSInteger)section
-{
-    return @"abc";
-}
-
-- (UITableViewCell *)tableView:(UITableView *)uitvEraseHistPeriod cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSArray *listData=[self.dicEraseHistOptions objectForKey:[self.dicEraseHistOptions allKeys]];
-    NSString *strID=[[NSString alloc] initWithFormat:@"simpleID"];
-    UITableViewCell* cell = [uitvEraseHistPeriod dequeueReusableCellWithIdentifier: strID];
-    if(cell == nil) {
-        cell = [[UITableViewCell alloc]
-                initWithStyle:UITableViewCellStyleDefault
-                reuseIdentifier:strID];
-    }
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return dicEraseHistOptions.count;
 }
 
 @end

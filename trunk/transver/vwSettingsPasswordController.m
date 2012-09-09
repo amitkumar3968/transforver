@@ -18,18 +18,17 @@
 
 - (IBAction)cancelSetting:(id)sender
 {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:^(void){}];
 }
 
 - (IBAction)saveSetting:(id)sender
 {
-    [self dismissModalViewControllerAnimated:YES];
-    
-    // save setting.
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     [defaults setBool:uiswProgramPassword.isOn forKey:PROGRAM_PASSWORD];
     [defaults setObject:uitxPassword.text forKey:PASSWORD];
     [defaults synchronize];
+    
+    [self dismissViewControllerAnimated:YES completion:^(void){}];
 }
 
 - (IBAction)resignTextField:(id)sender
