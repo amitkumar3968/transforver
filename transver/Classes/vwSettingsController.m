@@ -13,6 +13,7 @@
 #import "Util.h"
 
 @implementation vwSettingsController;
+@synthesize uilbUsersNumber;
 @synthesize uilbAuthentication;
 @synthesize uiswSaveVEMPassword;
 @synthesize uilbEveryXMins;
@@ -100,6 +101,7 @@
     // Do any additional setup after loading the view from its nib.
     
     // Load User Number of Contact
+    [uilbUsersNumber setText:[NSString stringWithFormat:@"%d Users",[g_AccountID count]]];
     
     // Load Setting and Show in View
     NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
