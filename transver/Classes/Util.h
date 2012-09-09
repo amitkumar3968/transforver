@@ -38,6 +38,7 @@ UIViewController *g_RootController;
 + (bool) checkUserInfoExist;
 + (void) delUserInfo;
 + (void) addRelationships:(int) uid phonenumber:(NSString *) phone;
++ (void) getRelationships:(int) uid;
 + (void) delMessages:(int) dialod_id;
 @end
 

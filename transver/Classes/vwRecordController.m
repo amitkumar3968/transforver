@@ -10,6 +10,7 @@
 #import "vwRecordController.h"
 #import "VocViewController.h"
 #import "Util.h"
+#import "MyContactsView.h"
 
 @implementation vwRecordController
 
@@ -31,7 +32,6 @@
 
 
 - (IBAction)vocodeTapped :(id)sender{
-    
 	NSString *carrierFilename=[NSString stringWithFormat:@"%@.aif",[arrVocCarrierOpts objectAtIndex:carrierOptIndex]];
 	[Util copyFileWithFilename:carrierFilename];
 	NSString *audioFile = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"recording"];
