@@ -16,9 +16,9 @@
 @synthesize uilbUsersNumber;
 @synthesize uibtAuthentication;
 @synthesize uiswSaveVEMPassword;
-@synthesize uilbEveryXMins;
+@synthesize uibtEveryXMins;
 @synthesize uilbFreeStorageSize;
-@synthesize uilbLanguage;
+@synthesize uibtLanguage;
 
 - (IBAction)setEraseHistPeriod:(id)sender
 {
@@ -144,7 +144,7 @@
             everyXMinsString = @"Every time";
             break;
     }
-    [uilbEveryXMins setText:everyXMinsString];
+    [uibtEveryXMins setTitle:everyXMinsString forState:UIControlStateNormal];
     
     // Load(get) Free Storage Size
     [uilbFreeStorageSize setText:[self getMPSize]];
@@ -163,7 +163,7 @@
     } else if ( [language_temp isEqualToString:@"ChineseSimple"] ) { // fix text to show
         language_temp = @"Chinese Simp";
     }
-    [uilbLanguage setText:language_temp];
+    [uibtLanguage setTitle:language_temp forState:UIControlStateNormal];
 }
 
 - (IBAction)changeVEMPasswordState:(id)sender
