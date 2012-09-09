@@ -17,6 +17,7 @@
 @property (nonatomic, retain) IBOutlet UILabel* uilbFreeStorageSize;
 @property (nonatomic, retain) IBOutlet UILabel* uilbLanguage;
 
+- (IBAction)cleaAllHistory:(id)sender;
 - (IBAction)setEraseHistPeriod:(id)sender;
 - (IBAction)changeVEMPasswordState:(id)sender;
 @end
