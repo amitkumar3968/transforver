@@ -11,6 +11,7 @@
 #define SAVE_VEM_PASSWORD @"vwSettingsController.saveVEMPassword"
 
 @interface vwSettingsController : UIViewController
+@property (nonatomic, retain) IBOutlet UILabel* uilbUsersNumber;
 @property (nonatomic, retain) IBOutlet UILabel* uilbAuthentication;
 @property (nonatomic, retain) IBOutlet UISwitch*uiswSaveVEMPassword;
 @property (nonatomic, retain) IBOutlet UILabel* uilbEveryXMins;
