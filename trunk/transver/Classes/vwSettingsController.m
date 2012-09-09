@@ -15,6 +15,7 @@
 @synthesize uilbAuthentication;
 @synthesize uiswSaveVEMPassword;
 @synthesize uilbEveryXMins;
+@synthesize uilbFreeStorageSize;
 @synthesize uilbLanguage;
 
 - (IBAction)setEraseHistPeriod:(id)sender
@@ -140,6 +141,14 @@
     }
     [uilbEveryXMins setText:everyXMinsString];
     
+    // Load(get) Free Storage Size
+    [uilbFreeStorageSize setText:[self getMPSize]];
+//    NSError* error = [[NSError alloc] init];
+//    NSDictionary* dic = [NSFileManager attributesOfItemAtPath:@"/" error:error];
+//    NSString* size = [dic objectForKey:@"fileSize"];
+//    [uilbFreeStorageSize setText:size];
+    
+    
     // Load Language Setting
     NSString* language_temp = [userDefaults objectForKey:SELECTED_LANGUAGE];
     if ( language_temp == nil ) { // default value
@@ -166,6 +175,58 @@
     [userDefaults setBool:ifSaveVEMPassword forKey:SAVE_VEM_PASSWORD];
     
     [userDefaults synchronize];
+}
+
+-(uint64_t)getFreeDiskspace {
+    uint64_t totalSpace = 0.0f;
+    uint64_t totalFreeSpace = 0.0f;
+    NSError *error = nil;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSDictionary *dictionary = [[NSFileManager defaultManager] attributesOfFileSystemForPath:[paths lastObject] error: &error];
+    
+    if (dictionary) {
+        NSNumber *fileSystemSizeInBytes = [dictionary objectForKey: NSFileSystemSize];
+        NSNumber *freeFileSystemSizeInBytes = [dictionary objectForKey:NSFileSystemFreeSize];
+        totalSpace = [fileSystemSizeInBytes floatValue];
+        totalFreeSpace = [freeFileSystemSizeInBytes floatValue];
+        NSLog(@"Memory Capacity of %llu MiB with %llu MiB Free memory available.", ((totalSpace/1024ll)/1024ll), ((totalFreeSpace/1024ll)/1024ll));
+    } else {
+        NSLog(@"Error Obtaining System Memory Info: Domain = %@, Code = %d", [error domain], [error code]);
+    }  
+    
+    return totalFreeSpace;
+}
+
+-(NSString *)getMPSize
+{
+    int size = [self getFreeDiskspace];
+    NSLog(@"Size %d", size);
+    double d_size = size;
+    if ( d_size < 1024 ) {
+        return [NSString stringWithFormat:@"0 KB"];
+    }
+    
+    d_size /= 1024;
+    if ( d_size <1024 ) {
+        return [NSString stringWithFormat:@"%.2f KB", d_size];
+    }
+    
+    d_size /= 1024;
+    if ( d_size <1024 ) {
+        return [NSString stringWithFormat:@"%.2f MB", d_size];
+    }
+    
+    d_size /= 1024;
+    if ( d_size < 1024 ) {
+        return [NSString stringWithFormat:@"%.2f GB", d_size];
+    }
+    
+    d_size /= 1024;
+    if ( d_size < 1024 ) {
+        return [NSString stringWithFormat:@"%.2f TB", d_size];
+    }
+    
+    return [NSString stringWithFormat:@"Error"];
 }
 
 @end
