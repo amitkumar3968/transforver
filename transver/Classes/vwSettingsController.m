@@ -14,7 +14,7 @@
 
 @implementation vwSettingsController;
 @synthesize uilbUsersNumber;
-@synthesize uilbAuthentication;
+@synthesize uibtAuthentication;
 @synthesize uiswSaveVEMPassword;
 @synthesize uilbEveryXMins;
 @synthesize uilbFreeStorageSize;
@@ -107,8 +107,7 @@
     NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
     
     // Load Authentication Setting
-    [uilbAuthentication setText:[userDefaults boolForKey:PROGRAM_PASSWORD]? @"Enable"
-                         : @"Disable"];
+    [uibtAuthentication setTitle:[userDefaults boolForKey:PROGRAM_PASSWORD]? @"Enable":@"Disable" forState:UIControlStateNormal];
     
     // Load Save VEM Password
     [uiswSaveVEMPassword setOn:[userDefaults boolForKey:SAVE_VEM_PASSWORD]];

@@ -12,7 +12,7 @@
 
 @interface vwSettingsController : UIViewController
 @property (nonatomic, retain) IBOutlet UILabel* uilbUsersNumber;
-@property (nonatomic, retain) IBOutlet UILabel* uilbAuthentication;
+@property (nonatomic, retain) IBOutlet UIButton* uibtAuthentication;
 @property (nonatomic, retain) IBOutlet UISwitch*uiswSaveVEMPassword;
 @property (nonatomic, retain) IBOutlet UILabel* uilbEveryXMins;
 @property (nonatomic, retain) IBOutlet UILabel* uilbFreeStorageSize;
