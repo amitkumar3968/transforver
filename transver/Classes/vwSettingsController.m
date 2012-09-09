@@ -97,6 +97,8 @@
 {
     // Do any additional setup after loading the view from its nib.
     
+    // Load User Number of Contact
+    
     // Load Setting and Show in View
     NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
     
@@ -227,6 +229,10 @@
     }
     
     return [NSString stringWithFormat:@"Error"];
+}
+
+- (IBAction)cleaAllHistory:(id)sender {
+    // TODO clean all voice recorder history
 }
 
 @end
