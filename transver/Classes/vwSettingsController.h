@@ -14,9 +14,9 @@
 @property (nonatomic, retain) IBOutlet UILabel* uilbUsersNumber;
 @property (nonatomic, retain) IBOutlet UIButton* uibtAuthentication;
 @property (nonatomic, retain) IBOutlet UISwitch*uiswSaveVEMPassword;
-@property (nonatomic, retain) IBOutlet UILabel* uilbEveryXMins;
+@property (nonatomic, retain) IBOutlet UIButton* uibtEveryXMins;
 @property (nonatomic, retain) IBOutlet UILabel* uilbFreeStorageSize;
-@property (nonatomic, retain) IBOutlet UILabel* uilbLanguage;
+@property (nonatomic, retain) IBOutlet UIButton* uibtLanguage;
 
 - (IBAction)cleaAllHistory:(id)sender;
 - (IBAction)setEraseHistPeriod:(id)sender;
