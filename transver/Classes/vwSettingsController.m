@@ -15,10 +15,11 @@
 @synthesize uilbAuthentication;
 @synthesize uiswSaveVEMPassword;
 @synthesize uilbEveryXMins;
+@synthesize uilbLanguage;
 
 - (IBAction)setEraseHistPeriod:(id)sender
 {
-    CGRect rectEraseRect = CGRectMake(0, 0, 200,180);
+//    CGRect rectEraseRect = CGRectMake(0, 0, 200,180);
     vwSettingsEraseController *eraseView = [[vwSettingsEraseController alloc] initWithNibName:@"vwSettingsEraseController" bundle:[NSBundle mainBundle]];
     [self presentModalViewController:eraseView animated:NO];
     /*eraseView.uitvEraseHistPeriod.delegate=self;
@@ -30,7 +31,7 @@
 
 - (IBAction)setLang:(id)sender
 {
-    CGRect rectEraseRect = CGRectMake(0, 0, 200,180);
+//    CGRect rectEraseRect = CGRectMake(0, 0, 200,180);
     vwSettingsLangController *langView = [[vwSettingsLangController alloc] initWithNibName:@"vwSettingsLangController" bundle:[NSBundle mainBundle]];
     [self presentModalViewController:langView animated:NO];
     /*eraseView.uitvEraseHistPeriod.delegate=self;
@@ -138,6 +139,17 @@
             break;
     }
     [uilbEveryXMins setText:everyXMinsString];
+    
+    // Load Language Setting
+    NSString* language_temp = [userDefaults objectForKey:SELECTED_LANGUAGE];
+    if ( language_temp == nil ) { // default value
+        language_temp = @"English";
+    } else if ( [language_temp isEqualToString:@"ChineseTraditional"] ) { // fix text to show
+        language_temp = @"Chinsese Trad";
+    } else if ( [language_temp isEqualToString:@"ChineseSimple"] ) { // fix text to show
+        language_temp = @"Chinese Simp";
+    }
+    [uilbLanguage setText:language_temp];
 }
 
 - (IBAction)changeVEMPasswordState:(id)sender
