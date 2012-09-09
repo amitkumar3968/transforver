@@ -683,6 +683,14 @@
 					<int key="connectionID">52</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">uilbFreeStorageSize</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="976717865"/>
+					</object>
+					<int key="connectionID">54</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">changeVEMPasswordState:</string>
 						<reference key="source" ref="70096681"/>
@@ -952,7 +960,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">52</int>
+			<int key="maxID">54</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -963,9 +971,7 @@
 						<string key="changeVEMPasswordState:">id</string>
 						<string key="setEraseHistPeriod:">id</string>
 						<string key="setLang:">id</string>
-						<string key="setLangPeriod:">id</string>
 						<string key="setPassword:">id</string>
-						<string key="setPasswordPeriod:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="changeVEMPasswordState:">
@@ -980,22 +986,15 @@
 							<string key="name">setLang:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="setLangPeriod:">
-							<string key="name">setLangPeriod:</string>
-							<string key="candidateClassName">id</string>
-						</object>
 						<object class="IBActionInfo" key="setPassword:">
 							<string key="name">setPassword:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="setPasswordPeriod:">
-							<string key="name">setPasswordPeriod:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="uilbAuthentication">UILabel</string>
 						<string key="uilbEveryXMins">UILabel</string>
+						<string key="uilbFreeStorageSize">UILabel</string>
 						<string key="uilbLanguage">UILabel</string>
 						<string key="uiswSaveVEMPassword">UISwitch</string>
 					</dictionary>
@@ -1006,6 +1005,10 @@
 						</object>
 						<object class="IBToOneOutletInfo" key="uilbEveryXMins">
 							<string key="name">uilbEveryXMins</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="uilbFreeStorageSize">
+							<string key="name">uilbFreeStorageSize</string>
 							<string key="candidateClassName">UILabel</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="uilbLanguage">
