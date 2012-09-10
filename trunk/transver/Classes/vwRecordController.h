@@ -12,10 +12,11 @@
 #import "AudioRecorder.h"
 #import "Util.h"
 #include "dovocode.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @protocol RecorderSendDelegate;
 
-@interface vwRecordController : UIViewController
+@interface vwRecordController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource>
 {
     IBOutlet UILabel *uilbTimeElapse;
     IBOutlet UILabel *uilbTimeTotal;
@@ -48,6 +49,7 @@
 	//============================   
     id <RecorderSendDelegate> delegate;
     NSString *destName;
+    
 }
 @property (nonatomic, retain) UILabel *uilbTimeTotal;
 @property (nonatomic, retain) UISlider *uisliderTime;
@@ -65,13 +67,14 @@
 @property (nonatomic, assign) id<RecorderSendDelegate> delegate;
 @property (nonatomic, retain) NSString *destName;
 
+@property (nonatomic, retain) IBOutlet UIButton* uibtSendToWho;
+@property (nonatomic, strong) UIPickerView* selecteTargetPicker;
 
 -(IBAction)playPlayer:(id)sender;
 -(IBAction)pausePlayer:(id)sender;
 -(IBAction)stopPlayer:(id)sender;
 -(IBAction)sliderValueChanged:(id)sender;
 //-(IBAction)sound:(id)sender;
-
 
 -(IBAction) updateSliderValue:(id)sender;
 -(IBAction) recordButtonTapped :(id)sender;
@@ -80,6 +83,9 @@
 -(void) playerSetup;
 -(IBAction) showPicker;
 -(IBAction) hidePicker;
+
+-(IBAction) showSendToWhoPicker:(id)sender;
+
 @end
 
 

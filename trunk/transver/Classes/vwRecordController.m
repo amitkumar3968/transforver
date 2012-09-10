@@ -12,7 +12,7 @@
 #import "Util.h"
 #import "MyContactsView.h"
 
-@implementation vwRecordController
+@implementation vwRecordController;
 
 @synthesize uilbTimeTotal;
 @synthesize uisliderTime;
@@ -30,6 +30,8 @@
 @synthesize delegate;
 @synthesize destName;
 
+@synthesize uibtSendToWho;
+@synthesize selecteTargetPicker;
 
 - (IBAction)vocodeTapped :(id)sender{
 	NSString *carrierFilename=[NSString stringWithFormat:@"%@.aif",[arrVocCarrierOpts objectAtIndex:carrierOptIndex]];
@@ -194,26 +196,48 @@
 
 -(NSString *) pickerView: (UIPickerView *) pickerView 
              titleForRow: (NSInteger)row 
-            forComponent:(NSInteger)component
+            forComponent: (NSInteger)component
 {
-    return [[self arrVocCarrierOpts] objectAtIndex:row];
+    if ( pickerView == uipkVocodeOpt) {
+        return [[self arrVocCarrierOpts] objectAtIndex:row];
+    } else if ( pickerView == selecteTargetPicker) {
+        return [g_AccountName objectAtIndex:row];
+    }
+    return @"";
 }
 -(void) pickerView: (UIPickerView *) pickerView
       didSelectRow:(NSInteger) row
        inComponent:(NSInteger) component
 {
-    carrierOptIndex=row;
+    if ( pickerView == uipkVocodeOpt ) {
+        carrierOptIndex=row;
+    } else if ( pickerView == selecteTargetPicker ) {
+        destID = [[g_AccountID objectAtIndex:row] integerValue];
+        destName = [g_AccountName objectAtIndex:row];
+        NSString* sendToWhoString = [NSString stringWithFormat:@"Send To: %@", destName];
+        [uibtSendToWho setTitle:sendToWhoString forState:UIControlStateNormal];
+    }
     [pickerView removeFromSuperview];
-
 }
 
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    if ( pickerView == uipkVocodeOpt ) {
+        return 1;
+    } else if ( pickerView == selecteTargetPicker ){
+        return 1;
+    }
     return 1;
 }
+
 -(NSInteger)pickerView:(UIPickerView*) pickerView 
 numberOfRowsInComponent:(NSInteger) component
 {
-    return [arrVocCarrierOpts count];
+    if ( pickerView == uipkVocodeOpt ) {
+        return [arrVocCarrierOpts count];
+    } else if ( pickerView == selecteTargetPicker ) {
+        return [g_AccountID count];
+    }
+    return 0;
 }
 
 -(void) initVars{
@@ -238,8 +262,13 @@ numberOfRowsInComponent:(NSInteger) component
  
  }*/
 
-
-
+-(IBAction)showSendToWhoPicker:(id)sender {
+    if ( selecteTargetPicker.superview == nil) {
+        [self.view addSubview:selecteTargetPicker];
+    } else {
+        [selecteTargetPicker removeFromSuperview];
+    }
+}
 
 
 
@@ -313,6 +342,14 @@ numberOfRowsInComponent:(NSInteger) component
     [Util copyFileWithFilename:@"Piano.aif"];
     [super viewDidLoad];
     done_vocode=0;
+    
+    destID = -1;
+    destName = nil;
+    
+    self.selecteTargetPicker = [[UIPickerView alloc] init];
+    self.selecteTargetPicker.delegate = self;
+    self.selecteTargetPicker.frame = CGRectMake(60, 50, 200,300);
+    
     //
     //[self initRecorderSetup];
 	//timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(timeLoader) userInfo:nil repeats:YES];    
@@ -325,6 +362,8 @@ numberOfRowsInComponent:(NSInteger) component
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
     done_vocode=0;
+    
+    [self.selecteTargetPicker release];
 }
 
 
