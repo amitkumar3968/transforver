@@ -28,10 +28,6 @@
     NSString *savedSearchTerm;
     NSInteger savedScopeButtonIndex;
     BOOL searchWasActive;
-    
-    // List of items for VEM contacts
-    NSMutableArray *VEMContactName;
-    NSMutableArray *VEMContactID;
 }
 
 - (ABRecordRef)personObject;
@@ -47,6 +43,4 @@
 @property (nonatomic) BOOL searchWasActive;
 @property (strong,nonatomic) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, retain)     NSMutableArray *listOfPhones;
-@property (nonatomic, retain) NSMutableArray *VEMContactName;
-@property (nonatomic, retain) NSMutableArray *VEMContactID;
 @end
