@@ -84,7 +84,7 @@
 						<string key="NSFrameSize">{66, 49}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="981249748"/>
+						<reference key="NSNextKeyView" ref="758507759"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -247,7 +247,7 @@
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<string key="IBUINormalTitle">Rec</string>
 						<reference key="IBUIHighlightedTitleColor" ref="678041181"/>
-						<object class="NSColor" key="IBUINormalTitleColor" id="428558575">
+						<object class="NSColor" key="IBUINormalTitleColor" id="643149437">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
 						</object>
@@ -491,7 +491,7 @@
 						<string key="NSFrame">{{18, 48}, {290, 34}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="984284935"/>
+						<reference key="NSNextKeyView" ref="742298806"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -564,13 +564,13 @@
 						<reference key="IBUIFontDescription" ref="76797074"/>
 						<reference key="IBUIFont" ref="660873201"/>
 					</object>
-					<object class="IBUIButton" id="984284935">
+					<object class="IBUIButton" id="758507759">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{68, 0}, {184, 49}}</string>
+						<string key="NSFrame">{{68, 0}, {184, 46}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="742298806"/>
+						<reference key="NSNextKeyView" ref="981249748"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -584,7 +584,7 @@
 						<int key="IBUILineBreakMode">4</int>
 						<string key="IBUINormalTitle">Send To: ABC</string>
 						<reference key="IBUIHighlightedTitleColor" ref="678041181"/>
-						<reference key="IBUINormalTitleColor" ref="428558575"/>
+						<reference key="IBUINormalTitleColor" ref="643149437"/>
 						<reference key="IBUINormalTitleShadowColor" ref="951573043"/>
 						<object class="NSCustomResource" key="IBUINormalBackgroundImage">
 							<string key="NSClassName">NSImage</string>
@@ -675,7 +675,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">uibtSendToWho</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="984284935"/>
+						<reference key="destination" ref="758507759"/>
 					</object>
 					<int key="connectionID">53</int>
 				</object>
@@ -754,7 +754,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">showSendToWhoPicker:</string>
-						<reference key="source" ref="984284935"/>
+						<reference key="source" ref="758507759"/>
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
@@ -808,7 +808,7 @@
 							<reference ref="1053944821"/>
 							<reference ref="49818651"/>
 							<reference ref="193575036"/>
-							<reference ref="984284935"/>
+							<reference ref="758507759"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -934,7 +934,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">52</int>
-						<reference key="object" ref="984284935"/>
+						<reference key="object" ref="758507759"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</array>
@@ -1109,6 +1109,7 @@
 						<string key="sliderValueChanged:">id</string>
 						<string key="stopPlayer:">id</string>
 						<string key="updateSliderValue:">id</string>
+						<string key="vocodeTapped:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="hidePicker">
@@ -1149,6 +1150,10 @@
 						</object>
 						<object class="IBActionInfo" key="updateSliderValue:">
 							<string key="name">updateSliderValue:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="vocodeTapped:">
+							<string key="name">vocodeTapped:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>
