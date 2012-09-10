@@ -345,6 +345,7 @@ numberOfRowsInComponent:(NSInteger) component
     
     destID = -1;
     destName = nil;
+    [self.uibtSendToWho setTitle:@"Select Receiver" forState:UIControlStateNormal];
     
     self.selecteTargetPicker = [[UIPickerView alloc] init];
     self.selecteTargetPicker.delegate = self;
