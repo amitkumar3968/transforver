@@ -18,7 +18,7 @@
 NSMutableArray *imageList;
 
 @synthesize tableViewNavigationBar;
-@synthesize listOfItems, filteredListContent, savedSearchTerm, savedScopeButtonIndex, searchWasActive, searchBar, listOfPhones, VEMContactID, VEMContactName;
+@synthesize listOfItems, filteredListContent, savedSearchTerm, savedScopeButtonIndex, searchWasActive, searchBar, listOfPhones;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -299,7 +299,7 @@ NSMutableArray *imageList;
 {
     // Return the number of rows in the section.
     if ([filterButton isSelected]) {
-        return [VEMContactName count];
+        return [g_AccountName count];
     }
     else {
         return [listOfItems count];
@@ -317,7 +317,7 @@ NSMutableArray *imageList;
     
     //create cell from address book or from VEM server contacts, based on whether filter button is pressed
     if ([filterButton isSelected]) {
-        cell.lastNameLabel.text = [VEMContactName objectAtIndex:([indexPath row])];
+        cell.lastNameLabel.text = [g_AccountName objectAtIndex:([indexPath row])];
         cell.thumbnailView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"common_icon_con_rest@2x.png"]];
         cell.uibtContactDel.tag = [indexPath row];
         [cell.uibtContactDel addTarget:self action:@selector(delPerson:) forControlEvents:UIControlEventTouchUpInside];   
@@ -380,7 +380,7 @@ NSMutableArray *imageList;
 
 - (void)delPerson:(UIButton *)sender
 {
-    NSString *relSlaveID = [VEMContactID objectAtIndex:sender.tag];
+    NSString *relSlaveID = [g_AccountID objectAtIndex:sender.tag];
     [self delRelationships:g_UserID  slaveID:relSlaveID];
     [self getRelationships:g_UserID ];
     [self.tableView reloadData];
@@ -393,8 +393,8 @@ NSMutableArray *imageList;
     
     NSData *data = [DBHandler sendReqToUrl:urlString postString:nil];
 	NSArray *array = nil;
-    VEMContactName = [[NSMutableArray alloc] init ];
-    VEMContactID = [[NSMutableArray alloc] init ];
+    g_AccountName = [[NSMutableArray alloc] init ];
+    g_AccountID = [[NSMutableArray alloc] init ];
     //NSMutableArray *ret = [[NSMutableArray alloc] init ];
 	
 	if(data)
@@ -407,8 +407,8 @@ NSMutableArray *imageList;
         {
             NSString *name = [dic objectForKey:@"USER_NAME"];
             NSString *usr_id = [dic objectForKey:@"USER_ID"];
-            [VEMContactName addObject:name];
-            [VEMContactID addObject:usr_id];
+            [g_AccountName addObject:name];
+            [g_AccountID addObject:usr_id];
         }
         
 		[responseString release];
@@ -422,8 +422,8 @@ NSMutableArray *imageList;
     
     NSData *data = [DBHandler sendReqToUrl:urlString postString:nil];
 	NSArray *array = nil;
-    VEMContactName = [[NSMutableArray alloc] init ];
-    VEMContactID = [[NSMutableArray alloc] init ];
+    g_AccountName = [[NSMutableArray alloc] init ];
+    g_AccountID = [[NSMutableArray alloc] init ];
     //NSMutableArray *ret = [[NSMutableArray alloc] init ];
 	
 	if(data)
@@ -436,8 +436,8 @@ NSMutableArray *imageList;
         {
             NSString *name = [dic objectForKey:@"USER_NAME"];
             NSString *usr_id = [dic objectForKey:@"USER_ID"];
-            [VEMContactName addObject:name];
-            [VEMContactID addObject:usr_id];
+            [g_AccountName addObject:name];
+            [g_AccountID addObject:usr_id];
         }
         
 		[responseString release];
