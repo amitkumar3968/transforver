@@ -12,6 +12,10 @@
 #import "AudioRecorder.h"
 #import "Util.h"
 
+#define MUSIC_FILE_NAME @"recording.aif"
+#define MUSIC_LION @"Lion.aif"
+#define MUSIC_PIANO @"piano.aif"
+
 @protocol VocSendVoiceDelegate;
 
 @interface VocViewController : UIViewController 
