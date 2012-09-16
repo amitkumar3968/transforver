@@ -310,7 +310,7 @@ numberOfRowsInComponent:(NSInteger) component
     UIImage *maxImage = [UIImage imageNamed:@"record_bg_recordline.png"];
     UIImage *imgSWThumb = [UIImage imageNamed:@"encode_btn_swift.png"];
     
-    uisliderTime.maximumValue=200;
+//    uisliderTime.maximumValue=0;
     [uisliderTime setMaximumTrackImage:maxImage forState:UIControlStateNormal];
     [uisliderTime setThumbImage:thumbImage forState:UIControlStateHighlighted];
     [uisliderTime setThumbImage:thumbImage forState:UIControlStateNormal];
@@ -429,25 +429,110 @@ numberOfRowsInComponent:(NSInteger) component
     //[stringEscapedMyMusic release];
 }
 
--(IBAction) updateSliderValue:(id)sender{
-    uisliderTime.value=player.currentTime;
-    uilbTimeElapse.text= [[NSString alloc] initWithFormat:@"%i:%02i", (int)(uisliderTime.value)/60, (int)uisliderTime.value%60];
+-(void) updateSliderValue:(id)sender{
+    
+    if ( self.player == nil ) { // is stop
+
+    } else if ( [self.player isPlaying] ) { // is playing
+        NSLog(@"Player Time: %f", player.currentTime);
+        uisliderTime.value=player.currentTime;
+        uilbTimeElapse.text= [[NSString alloc] initWithFormat:@"%02i:%02i", (int)(uisliderTime.value)/60, (int)uisliderTime.value%60];
+    } else { // is pause
+        if ( self.player.currentTime == 0) { // natual stop
+            [timer invalidate]; // if have bug, command this line
+            self.player = nil;
+            uilbTimeElapse.text = [NSString stringWithFormat:@"00:00"];
+            uisliderTime.value = 0;
+        } else {
+            // do nothing
+        }
+    }
+    
+//    if ( [self.player isPlaying] ) {
+//        NSLog(@"Player Time: %f", player.currentTime);
+//        uisliderTime.value=player.currentTime;
+//        uilbTimeElapse.text= [[NSString alloc] initWithFormat:@"%i:%02i", (int)(uisliderTime.value)/60, (int)uisliderTime.value%60];
+//
+//    } else {
+//        // do nothing
+//    }
 }
 
 -(IBAction)playPlayer:(id)sender
-{   
-
+{
+    if ( self.player == nil ) { // is stop
+        [self playerSetup];
+        [self.player play];
+        timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateSliderValue:) userInfo:nil repeats:YES];
+    } else if ( [self.player isPlaying] ) { // is playing
+        // do nothing.
+    } else { // is pause
+        [self.player play];
+    }
+    
+//    if ( [self.player isPlaying] ) { // playing
+//        // do nothing.
+//    } else if ( self.player == nil) { // stop
+//        [self playerSetup];
+//        [self.player play];
+//        timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateSliderValue:) userInfo:nil repeats:YES];
+//    } else { // pause
+//        [self.player play];
+//        uisliderTime.value = player.currentTime;
+//        timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateSliderValue:) userInfo:nil repeats:YES];
+//    }
 }
 
 -(IBAction)pausePlayer:(id)sender
 {
+    if ( self.player == nil ) { // is stop
+        // do nothing
+    } else if ( [self.player isPlaying] ) { // is playing
+        [self.player pause];
+    } else { // is pause
+        // do nothing
+    }
 
     
+    
+//    [self.player pause];
+//    [timer invalidate];
+//    timer = nil;
 }
 
 -(IBAction)stopPlayer:(id)sender
 {
- 
+    if ( self.player == nil ) { // is stop
+        // do nothing
+    } else if ( [self.player isPlaying] ) { // is playing
+        [timer invalidate];
+        [self.player stop];
+        // if release?
+        self.player = nil;
+        uilbTimeElapse.text = [NSString stringWithFormat:@"00:00"];
+        uisliderTime.value = 0;
+    } else { // is pause
+        [timer invalidate];
+        [self.player stop];
+        // if release?
+        self.player = nil;
+        uilbTimeElapse.text = [NSString stringWithFormat:@"00:00"];
+        uisliderTime.value = 0;
+    }
+    
+    
+//    [self.player release];
+//    uisliderTime.value = 0;
+//    uilbTimeElapse.text = [NSString stringWithFormat:@"00:00"];
+//    [timer invalidate];
+//    timer = nil;
+}
+
+-(IBAction)sliderValueChanged:(id)sender
+{
+    // change player time to uisliderTime.value
+    if ( player != nil) player.currentTime = uisliderTime.value;
+    uilbTimeElapse.text = [NSString stringWithFormat:@"%02d:%02d", (int)uisliderTime.value/60, (int)uisliderTime.value%60];
 }
 
 @end

@@ -76,7 +76,7 @@
 -(IBAction)sliderValueChanged:(id)sender;
 //-(IBAction)sound:(id)sender;
 
--(IBAction) updateSliderValue:(id)sender;
+-(void) updateSliderValue:(id)sender;
 -(IBAction) recordButtonTapped :(id)sender;
 -(IBAction) recordButtonTouchUp:(id)sender;
 -(void) initRecorderSetup;
