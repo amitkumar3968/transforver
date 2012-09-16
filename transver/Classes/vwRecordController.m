@@ -433,12 +433,12 @@ numberOfRowsInComponent:(NSInteger) component
     
     if ( self.player == nil ) { // is stop
 
-    } else if ( [self.player isPlaying] ) { // is playing
+    } else if ( [self.player isPlaying] ) { // playing
         NSLog(@"Player Time: %f", player.currentTime);
         uisliderTime.value=player.currentTime;
         uilbTimeElapse.text= [[NSString alloc] initWithFormat:@"%02i:%02i", (int)(uisliderTime.value)/60, (int)uisliderTime.value%60];
     } else { // is pause
-        if ( self.player.currentTime == 0) { // natual stop
+        if ( self.player.currentTime == 0) { // player play end than natual stop
             [timer invalidate]; // if have bug, command this line
             self.player = nil;
             uilbTimeElapse.text = [NSString stringWithFormat:@"00:00"];
@@ -447,15 +447,6 @@ numberOfRowsInComponent:(NSInteger) component
             // do nothing
         }
     }
-    
-//    if ( [self.player isPlaying] ) {
-//        NSLog(@"Player Time: %f", player.currentTime);
-//        uisliderTime.value=player.currentTime;
-//        uilbTimeElapse.text= [[NSString alloc] initWithFormat:@"%i:%02i", (int)(uisliderTime.value)/60, (int)uisliderTime.value%60];
-//
-//    } else {
-//        // do nothing
-//    }
 }
 
 -(IBAction)playPlayer:(id)sender
@@ -469,18 +460,6 @@ numberOfRowsInComponent:(NSInteger) component
     } else { // is pause
         [self.player play];
     }
-    
-//    if ( [self.player isPlaying] ) { // playing
-//        // do nothing.
-//    } else if ( self.player == nil) { // stop
-//        [self playerSetup];
-//        [self.player play];
-//        timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateSliderValue:) userInfo:nil repeats:YES];
-//    } else { // pause
-//        [self.player play];
-//        uisliderTime.value = player.currentTime;
-//        timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateSliderValue:) userInfo:nil repeats:YES];
-//    }
 }
 
 -(IBAction)pausePlayer:(id)sender
@@ -492,12 +471,6 @@ numberOfRowsInComponent:(NSInteger) component
     } else { // is pause
         // do nothing
     }
-
-    
-    
-//    [self.player pause];
-//    [timer invalidate];
-//    timer = nil;
 }
 
 -(IBAction)stopPlayer:(id)sender
@@ -519,13 +492,6 @@ numberOfRowsInComponent:(NSInteger) component
         uilbTimeElapse.text = [NSString stringWithFormat:@"00:00"];
         uisliderTime.value = 0;
     }
-    
-    
-//    [self.player release];
-//    uisliderTime.value = 0;
-//    uilbTimeElapse.text = [NSString stringWithFormat:@"00:00"];
-//    [timer invalidate];
-//    timer = nil;
 }
 
 -(IBAction)sliderValueChanged:(id)sender
