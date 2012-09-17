@@ -63,7 +63,6 @@
 		4F3EA8B4149DF334006944DD /* NavContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F3EA8B2149DF334006944DD /* NavContactsViewController.xib */; };
 		4F5E380013FC93130025B24A /* ChatBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5E37FF13FC93130025B24A /* ChatBubbleView.m */; };
 		4F5E385313FC98080025B24A /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F5E385213FC98080025B24A /* Icon.png */; };
-		4F6898FC14696275007927E3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F6898FB14696275007927E3 /* AVFoundation.framework */; };
 		4F7169B41472A38E00E01990 /* Dialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7169B31472A38E00E01990 /* Dialog.m */; };
 		4F724C8D13F6D91700A6F871 /* phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F724C8C13F6D91700A6F871 /* phone.png */; };
 		4F724C8F13F6D93800A6F871 /* 123.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F724C8E13F6D93800A6F871 /* 123.wav */; };
@@ -370,7 +369,7 @@
 		A462AAF315EFB93B00A6A833 /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A462AAEF15EFB93B00A6A833 /* CAStreamBasicDescription.cpp */; };
 		A462AAF415EFB93B00A6A833 /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A462AAF115EFB93B00A6A833 /* CAXException.cpp */; };
 		A4F632A3159DD22F003C709D /* vwRecordController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4F632A2159DD22E003C709D /* vwRecordController.xib */; };
-		A4F632A6159DDC79003C709D /* vwRecordController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F632A5159DDC79003C709D /* vwRecordController.m */; };
+		A4F632A6159DDC79003C709D /* vwRecordController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A4F632A5159DDC79003C709D /* vwRecordController.mm */; };
 		A4F632DF159E5760003C709D /* vwSettingsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4F632DE159E5760003C709D /* vwSettingsController.xib */; };
 		A4F63303159EA5DF003C709D /* vwSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F63302159EA5DF003C709D /* vwSettingsController.m */; };
 		A4F63306159EA64E003C709D /* vwSettingsEraseController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F63305159EA64E003C709D /* vwSettingsEraseController.m */; };
@@ -387,6 +386,8 @@
 		E176A12C0F8811A200EEE756 /* FavoritesTabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E176A12B0F8811A200EEE756 /* FavoritesTabView.xib */; };
 		E176A2260F893F7D00EEE756 /* MoreTabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E176A2250F893F7C00EEE756 /* MoreTabView.xib */; };
 		E176A2290F893FC200EEE756 /* MoreTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E176A2280F893FC200EEE756 /* MoreTabViewController.m */; };
+		ED55DB321607273200BBCA5B /* ExtAudioFileConvert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED55DB311607273200BBCA5B /* ExtAudioFileConvert.cpp */; };
+		ED55DB3D16073BB500BBCA5B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED55DB3C16073BB500BBCA5B /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -909,7 +910,7 @@
 		A462AAF215EFB93B00A6A833 /* CAXException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAXException.h; path = iPublicUtility/CAXException.h; sourceTree = "<group>"; };
 		A4F632A2159DD22E003C709D /* vwRecordController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = vwRecordController.xib; sourceTree = "<group>"; };
 		A4F632A4159DDC79003C709D /* vwRecordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vwRecordController.h; sourceTree = "<group>"; };
-		A4F632A5159DDC79003C709D /* vwRecordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vwRecordController.m; sourceTree = "<group>"; };
+		A4F632A5159DDC79003C709D /* vwRecordController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = vwRecordController.mm; sourceTree = "<group>"; };
 		A4F632DE159E5760003C709D /* vwSettingsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = vwSettingsController.xib; sourceTree = "<group>"; };
 		A4F63301159EA5DF003C709D /* vwSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vwSettingsController.h; sourceTree = "<group>"; };
 		A4F63302159EA5DF003C709D /* vwSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vwSettingsController.m; sourceTree = "<group>"; };
@@ -934,6 +935,14 @@
 		E176A2250F893F7C00EEE756 /* MoreTabView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreTabView.xib; sourceTree = "<group>"; };
 		E176A2270F893FC200EEE756 /* MoreTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreTabViewController.h; sourceTree = "<group>"; };
 		E176A2280F893FC200EEE756 /* MoreTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreTabViewController.m; sourceTree = "<group>"; };
+		ED55DB311607273200BBCA5B /* ExtAudioFileConvert.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExtAudioFileConvert.cpp; sourceTree = "<group>"; };
+		ED55DB341607284600BBCA5B /* CAMath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMath.h; sourceTree = "<group>"; };
+		ED55DB351607284600BBCA5B /* CAXException.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAXException.h; sourceTree = "<group>"; };
+		ED55DB361607284600BBCA5B /* CADebugMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CADebugMacros.h; sourceTree = "<group>"; };
+		ED55DB371607284600BBCA5B /* CAStreamBasicDescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAStreamBasicDescription.h; sourceTree = "<group>"; };
+		ED55DB381607284600BBCA5B /* CAStreamBasicDescription.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CAStreamBasicDescription.cpp; sourceTree = "<group>"; };
+		ED55DB391607284600BBCA5B /* CAXException.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CAXException.cpp; sourceTree = "<group>"; };
+		ED55DB3C16073BB500BBCA5B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -941,6 +950,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED55DB3D16073BB500BBCA5B /* AVFoundation.framework in Frameworks */,
 				4F2B30831470B2180033E43E /* libRestKitCoreData.a in Frameworks */,
 				4F2B30841470B2180033E43E /* libRestKitJSONParserJSONKit.a in Frameworks */,
 				4F2B30851470B2180033E43E /* libRestKitNetwork.a in Frameworks */,
@@ -950,7 +960,6 @@
 				4FE62B3A146C322900B46F7C /* MobileCoreServices.framework in Frameworks */,
 				4F74C55B1423973900B97CC3 /* SystemConfiguration.framework in Frameworks */,
 				4F03B2C81401D0F700FEC9D4 /* CoreData.framework in Frameworks */,
-				4F6898FC14696275007927E3 /* AVFoundation.framework in Frameworks */,
 				4F08E1ED14353CC4008DACEE /* QuartzCore.framework in Frameworks */,
 				4F724CB713F774C500A6F871 /* AddressBookUI.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
@@ -1019,7 +1028,7 @@
 				A45FEFFD15AB18E000CF3D72 /* vwAboutController.h */,
 				A45FEFFE15AB18E000CF3D72 /* vwAboutController.m */,
 				A4F632A4159DDC79003C709D /* vwRecordController.h */,
-				A4F632A5159DDC79003C709D /* vwRecordController.m */,
+				A4F632A5159DDC79003C709D /* vwRecordController.mm */,
 				4F9EEA4315D9753E007BD311 /* vwHistoryController.h */,
 				4F9EEA4415D9753E007BD311 /* vwHistoryController.m */,
 				A4F63301159EA5DF003C709D /* vwSettingsController.h */,
@@ -1045,6 +1054,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				ED55DB311607273200BBCA5B /* ExtAudioFileConvert.cpp */,
 				4F01F18815E407720016717D /* VEM.png */,
 				4F01F18415E4072A0016717D /* VEM2X.png */,
 				4F2B30881470B25F0033E43E /* libRestKitXMLParserLibxml.a */,
@@ -1124,6 +1134,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ED55DB3C16073BB500BBCA5B /* AVFoundation.framework */,
 				4F03B2C71401D0F600FEC9D4 /* CoreData.framework */,
 				4F724CB613F774C400A6F871 /* AddressBookUI.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
@@ -1138,6 +1149,7 @@
 		4F03B2961401339500FEC9D4 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				ED55DB331607282B00BBCA5B /* VocodeLib */,
 				4F03B297140133B000FEC9D4 /* JSON */,
 			);
 			name = Lib;
@@ -1307,15 +1319,15 @@
 				7E68D6F81456388000DB3684 /* conv.h */,
 				7E44A0521402C27300B5A7DC /* vocode.m */,
 				7E44A0481402BE4700B5A7DC /* dovocode.m */,
+				7EEF89A81402695D005D93F7 /* dovocode.h */,
 				7EEF89A21402695D005D93F7 /* aiff.c */,
 				7EEF89A31402695D005D93F7 /* aiff.h */,
 				7EEF89A41402695D005D93F7 /* AudioRecorder.h */,
 				7EEF89A51402695D005D93F7 /* AudioRecorder.m */,
 				7EEF89A61402695D005D93F7 /* config.h */,
-				7EEF89A81402695D005D93F7 /* dovocode.h */,
 				7EEF89A91402695D005D93F7 /* error.c */,
-				7EEF89AA1402695D005D93F7 /* error.h */,
 				7EEF89AB1402695D005D93F7 /* extended.c */,
+				7EEF89AA1402695D005D93F7 /* error.h */,
 				7EEF89AC1402695D005D93F7 /* extended.h */,
 				7EEF89AD1402695D005D93F7 /* fft.h */,
 				7EEF89AE1402695D005D93F7 /* fftaux.c */,
@@ -1612,6 +1624,19 @@
 				A45FEE2115A315AD00CF3D72 /* message_icon_unlock@2x.png */,
 			);
 			name = img_history_message;
+			sourceTree = "<group>";
+		};
+		ED55DB331607282B00BBCA5B /* VocodeLib */ = {
+			isa = PBXGroup;
+			children = (
+				ED55DB341607284600BBCA5B /* CAMath.h */,
+				ED55DB351607284600BBCA5B /* CAXException.h */,
+				ED55DB361607284600BBCA5B /* CADebugMacros.h */,
+				ED55DB371607284600BBCA5B /* CAStreamBasicDescription.h */,
+				ED55DB381607284600BBCA5B /* CAStreamBasicDescription.cpp */,
+				ED55DB391607284600BBCA5B /* CAXException.cpp */,
+			);
+			name = VocodeLib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2115,7 +2140,7 @@
 				4F8FA98C148B039E00490C8A /* OverlayViewController.m in Sources */,
 				4F3EA8A6149C2A31006944DD /* ContactsViewController.m in Sources */,
 				4F3EA8B3149DF334006944DD /* NavContactsViewController.m in Sources */,
-				A4F632A6159DDC79003C709D /* vwRecordController.m in Sources */,
+				A4F632A6159DDC79003C709D /* vwRecordController.mm in Sources */,
 				A4F63303159EA5DF003C709D /* vwSettingsController.m in Sources */,
 				A4F63306159EA64E003C709D /* vwSettingsEraseController.m in Sources */,
 				A4F6335515A0577A003C709D /* vwSettingsLangController.m in Sources */,
@@ -2125,6 +2150,7 @@
 				4F01F16715E296B90016717D /* HistoryTableViewCell.m in Sources */,
 				A462AAF315EFB93B00A6A833 /* CAStreamBasicDescription.cpp in Sources */,
 				A462AAF415EFB93B00A6A833 /* CAXException.cpp in Sources */,
+				ED55DB321607273200BBCA5B /* ExtAudioFileConvert.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

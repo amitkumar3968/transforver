@@ -17,6 +17,7 @@
 #include "error.h"
 #include "vocode.h"
 #include "fft.h"
+#include "dovocode.h"
 
 #define COPYRIGHT \
 "Zerius Vocoder 1.3 Copyright (C) 1996-1999, 2002 Emanuel Borsboom\n" \
