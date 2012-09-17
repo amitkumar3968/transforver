@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -111,7 +111,6 @@
 		4FE62B3A146C322900B46F7C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FE62B39146C322900B46F7C /* MobileCoreServices.framework */; };
 		7E449FFF1402B4D500B5A7DC /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E449FFE1402B4D500B5A7DC /* Util.m */; };
 		7E44A0011402B5D400B5A7DC /* Lion.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7E44A0001402B5D400B5A7DC /* Lion.aif */; };
-		7E44A0491402BE4700B5A7DC /* dovocode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E44A0481402BE4700B5A7DC /* dovocode.m */; };
 		7E44A0531402C27300B5A7DC /* vocode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E44A0521402C27300B5A7DC /* vocode.m */; };
 		7E68D6F91456388100DB3684 /* conv.c in Sources */ = {isa = PBXBuildFile; fileRef = 7E68D6F71456388000DB3684 /* conv.c */; };
 		7EEF89B71402695D005D93F7 /* aiff.c in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF89A21402695D005D93F7 /* aiff.c */; };
@@ -369,7 +368,6 @@
 		A462AAF315EFB93B00A6A833 /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A462AAEF15EFB93B00A6A833 /* CAStreamBasicDescription.cpp */; };
 		A462AAF415EFB93B00A6A833 /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A462AAF115EFB93B00A6A833 /* CAXException.cpp */; };
 		A4F632A3159DD22F003C709D /* vwRecordController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4F632A2159DD22E003C709D /* vwRecordController.xib */; };
-		A4F632A6159DDC79003C709D /* vwRecordController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A4F632A5159DDC79003C709D /* vwRecordController.mm */; };
 		A4F632DF159E5760003C709D /* vwSettingsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4F632DE159E5760003C709D /* vwSettingsController.xib */; };
 		A4F63303159EA5DF003C709D /* vwSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F63302159EA5DF003C709D /* vwSettingsController.m */; };
 		A4F63306159EA64E003C709D /* vwSettingsEraseController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F63305159EA64E003C709D /* vwSettingsEraseController.m */; };
@@ -386,8 +384,11 @@
 		E176A12C0F8811A200EEE756 /* FavoritesTabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E176A12B0F8811A200EEE756 /* FavoritesTabView.xib */; };
 		E176A2260F893F7D00EEE756 /* MoreTabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E176A2250F893F7C00EEE756 /* MoreTabView.xib */; };
 		E176A2290F893FC200EEE756 /* MoreTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E176A2280F893FC200EEE756 /* MoreTabViewController.m */; };
+		ED49BED0160771F6007EA4F6 /* VoiceConverterModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED49BECF160771F6007EA4F6 /* VoiceConverterModel.mm */; };
+		ED49BED216077EFF007EA4F6 /* vwRecordController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED49BED116077EFF007EA4F6 /* vwRecordController.m */; };
 		ED55DB321607273200BBCA5B /* ExtAudioFileConvert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED55DB311607273200BBCA5B /* ExtAudioFileConvert.cpp */; };
 		ED55DB3D16073BB500BBCA5B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED55DB3C16073BB500BBCA5B /* AVFoundation.framework */; };
+		EDE60AB51607655E0072F019 /* dovocode.c in Sources */ = {isa = PBXBuildFile; fileRef = EDE60AB41607655E0072F019 /* dovocode.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -633,7 +634,6 @@
 		7E449FFD1402B4D500B5A7DC /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		7E449FFE1402B4D500B5A7DC /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		7E44A0001402B5D400B5A7DC /* Lion.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lion.aif; sourceTree = SOURCE_ROOT; };
-		7E44A0481402BE4700B5A7DC /* dovocode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dovocode.m; sourceTree = "<group>"; };
 		7E44A0521402C27300B5A7DC /* vocode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vocode.m; sourceTree = "<group>"; };
 		7E68D6F71456388000DB3684 /* conv.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = conv.c; sourceTree = "<group>"; };
 		7E68D6F81456388000DB3684 /* conv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = conv.h; sourceTree = "<group>"; };
@@ -910,7 +910,6 @@
 		A462AAF215EFB93B00A6A833 /* CAXException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAXException.h; path = iPublicUtility/CAXException.h; sourceTree = "<group>"; };
 		A4F632A2159DD22E003C709D /* vwRecordController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = vwRecordController.xib; sourceTree = "<group>"; };
 		A4F632A4159DDC79003C709D /* vwRecordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vwRecordController.h; sourceTree = "<group>"; };
-		A4F632A5159DDC79003C709D /* vwRecordController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = vwRecordController.mm; sourceTree = "<group>"; };
 		A4F632DE159E5760003C709D /* vwSettingsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = vwSettingsController.xib; sourceTree = "<group>"; };
 		A4F63301159EA5DF003C709D /* vwSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vwSettingsController.h; sourceTree = "<group>"; };
 		A4F63302159EA5DF003C709D /* vwSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vwSettingsController.m; sourceTree = "<group>"; };
@@ -935,6 +934,9 @@
 		E176A2250F893F7C00EEE756 /* MoreTabView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreTabView.xib; sourceTree = "<group>"; };
 		E176A2270F893FC200EEE756 /* MoreTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreTabViewController.h; sourceTree = "<group>"; };
 		E176A2280F893FC200EEE756 /* MoreTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreTabViewController.m; sourceTree = "<group>"; };
+		ED49BECC1607701A007EA4F6 /* VoiceConverterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoiceConverterModel.h; sourceTree = "<group>"; };
+		ED49BECF160771F6007EA4F6 /* VoiceConverterModel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VoiceConverterModel.mm; sourceTree = "<group>"; };
+		ED49BED116077EFF007EA4F6 /* vwRecordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vwRecordController.m; sourceTree = "<group>"; };
 		ED55DB311607273200BBCA5B /* ExtAudioFileConvert.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExtAudioFileConvert.cpp; sourceTree = "<group>"; };
 		ED55DB341607284600BBCA5B /* CAMath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMath.h; sourceTree = "<group>"; };
 		ED55DB351607284600BBCA5B /* CAXException.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAXException.h; sourceTree = "<group>"; };
@@ -943,6 +945,7 @@
 		ED55DB381607284600BBCA5B /* CAStreamBasicDescription.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CAStreamBasicDescription.cpp; sourceTree = "<group>"; };
 		ED55DB391607284600BBCA5B /* CAXException.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CAXException.cpp; sourceTree = "<group>"; };
 		ED55DB3C16073BB500BBCA5B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		EDE60AB41607655E0072F019 /* dovocode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = dovocode.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1028,7 +1031,7 @@
 				A45FEFFD15AB18E000CF3D72 /* vwAboutController.h */,
 				A45FEFFE15AB18E000CF3D72 /* vwAboutController.m */,
 				A4F632A4159DDC79003C709D /* vwRecordController.h */,
-				A4F632A5159DDC79003C709D /* vwRecordController.mm */,
+				ED49BED116077EFF007EA4F6 /* vwRecordController.m */,
 				4F9EEA4315D9753E007BD311 /* vwHistoryController.h */,
 				4F9EEA4415D9753E007BD311 /* vwHistoryController.m */,
 				A4F63301159EA5DF003C709D /* vwSettingsController.h */,
@@ -1039,6 +1042,8 @@
 				A4F6335415A0577A003C709D /* vwSettingsLangController.m */,
 				A4F6335615A05C55003C709D /* vwSettingsPasswordController.h */,
 				A4F6335715A05C55003C709D /* vwSettingsPasswordController.m */,
+				ED49BECC1607701A007EA4F6 /* VoiceConverterModel.h */,
+				ED49BECF160771F6007EA4F6 /* VoiceConverterModel.mm */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1318,7 +1323,7 @@
 				7E68D6F71456388000DB3684 /* conv.c */,
 				7E68D6F81456388000DB3684 /* conv.h */,
 				7E44A0521402C27300B5A7DC /* vocode.m */,
-				7E44A0481402BE4700B5A7DC /* dovocode.m */,
+				EDE60AB41607655E0072F019 /* dovocode.c */,
 				7EEF89A81402695D005D93F7 /* dovocode.h */,
 				7EEF89A21402695D005D93F7 /* aiff.c */,
 				7EEF89A31402695D005D93F7 /* aiff.h */,
@@ -1631,10 +1636,10 @@
 			children = (
 				ED55DB341607284600BBCA5B /* CAMath.h */,
 				ED55DB351607284600BBCA5B /* CAXException.h */,
+				ED55DB391607284600BBCA5B /* CAXException.cpp */,
 				ED55DB361607284600BBCA5B /* CADebugMacros.h */,
 				ED55DB371607284600BBCA5B /* CAStreamBasicDescription.h */,
 				ED55DB381607284600BBCA5B /* CAStreamBasicDescription.cpp */,
-				ED55DB391607284600BBCA5B /* CAXException.cpp */,
 			);
 			name = VocodeLib;
 			sourceTree = "<group>";
@@ -1665,8 +1670,11 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "NavTab" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -2119,7 +2127,6 @@
 				4F03B2F61402917F00FEC9D4 /* NSObject+SBJSON.m in Sources */,
 				4F03B2F71402917F00FEC9D4 /* NSString+SBJSON.m in Sources */,
 				7E449FFF1402B4D500B5A7DC /* Util.m in Sources */,
-				7E44A0491402BE4700B5A7DC /* dovocode.m in Sources */,
 				7E44A0531402C27300B5A7DC /* vocode.m in Sources */,
 				4F2045F71417C7100002AC6A /* Contact.m in Sources */,
 				4F2045FA1417D2360002AC6A /* chatmodel.xcdatamodeld in Sources */,
@@ -2140,7 +2147,6 @@
 				4F8FA98C148B039E00490C8A /* OverlayViewController.m in Sources */,
 				4F3EA8A6149C2A31006944DD /* ContactsViewController.m in Sources */,
 				4F3EA8B3149DF334006944DD /* NavContactsViewController.m in Sources */,
-				A4F632A6159DDC79003C709D /* vwRecordController.mm in Sources */,
 				A4F63303159EA5DF003C709D /* vwSettingsController.m in Sources */,
 				A4F63306159EA64E003C709D /* vwSettingsEraseController.m in Sources */,
 				A4F6335515A0577A003C709D /* vwSettingsLangController.m in Sources */,
@@ -2151,6 +2157,9 @@
 				A462AAF315EFB93B00A6A833 /* CAStreamBasicDescription.cpp in Sources */,
 				A462AAF415EFB93B00A6A833 /* CAXException.cpp in Sources */,
 				ED55DB321607273200BBCA5B /* ExtAudioFileConvert.cpp in Sources */,
+				EDE60AB51607655E0072F019 /* dovocode.c in Sources */,
+				ED49BED0160771F6007EA4F6 /* VoiceConverterModel.mm in Sources */,
+				ED49BED216077EFF007EA4F6 /* vwRecordController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2247,7 +2256,6 @@
 					"-ObjC",
 					"-all_load",
 				);
-				PREBINDING = NO;
 				PROVISIONING_PROFILE = "D6B25D69-A246-4DEB-B5F1-160212E57CEF";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D6B25D69-A246-4DEB-B5F1-160212E57CEF";
 				SDKROOT = iphoneos;
@@ -2270,7 +2278,6 @@
 					"-ObjC",
 					"-all_load",
 				);
-				PREBINDING = NO;
 				PROVISIONING_PROFILE = "D6B25D69-A246-4DEB-B5F1-160212E57CEF";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D6B25D69-A246-4DEB-B5F1-160212E57CEF";
 				SDKROOT = iphoneos;

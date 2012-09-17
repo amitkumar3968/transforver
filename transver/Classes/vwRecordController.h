@@ -9,15 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h> //right click on framework and add AVFoundation
 #import <AudioToolbox/AudioToolbox.h> //right click on framework and add AudioToolbox
+#import <MediaPlayer/MediaPlayer.h>
 #import "AudioRecorder.h"
 #import "Util.h"
+#import "VocViewController.h"
+#import "MyContactsView.h"
+#import "VoiceConverterModel.h"
+
 #include "dovocode.h"
-#import <MediaPlayer/MediaPlayer.h>
-
-#include "CAXException.h"
-#include "CAStreamBasicDescription.h"
-
-#define VOCODER_SAMPLE_RATE 22050.0
 
 #define RECORDING_FILE_AIF @"recording.aif"
 #define RECORDING_FILE_M4A @"recording.m4a"

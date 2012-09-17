@@ -1,4 +1,4 @@
-/*	Copyright © 2007 Apple Inc. All Rights Reserved.
+/*	Copyright ï¿½ 2007 Apple Inc. All Rights Reserved.
 	
 	Disclaimer: IMPORTANT:  This Apple software is supplied to you by 
 			Apple Inc. ("Apple") in consideration of your agreement to the
@@ -53,7 +53,8 @@
 #include <string.h>
 
 // An extended exception class that includes the name of the failed operation
-class CAXException {
+class CAXException
+{
 public:
 	CAXException(const char *operation, OSStatus err) :
 		mError(err)
