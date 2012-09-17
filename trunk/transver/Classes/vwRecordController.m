@@ -5,12 +5,7 @@
 //  Created by sir 余 on 12/5/10.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
-#import <AVFoundation/AVFoundation.h>
-#import <AudioToolbox/AudioToolbox.h>
 #import "vwRecordController.h"
-#import "VocViewController.h"
-#import "Util.h"
-#import "MyContactsView.h"
 
 @implementation vwRecordController;
 
@@ -33,9 +28,6 @@
 @synthesize uibtSendToWho;
 @synthesize selecteTargetPicker;
 
-extern OSStatus DoConvertFile(CFURLRef sourceURL, CFURLRef destinationURL, OSType outputFormat, Float64 outputSampleRate);
-
-
 - (IBAction)vocodeTapped :(id)sender{
 	NSString *carrierFilename=[NSString stringWithFormat:@"%@.aif",[arrVocCarrierOpts objectAtIndex:carrierOptIndex]];
 	[Util copyFileWithFilename:carrierFilename];
@@ -46,7 +38,7 @@ extern OSStatus DoConvertFile(CFURLRef sourceURL, CFURLRef destinationURL, OSTyp
 	audioFile = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], VOCODE_FILE_AIF];
 	const char *output_filepath=[audioFile UTF8String];
 	audioFile = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"meta"];
-	const char *meta_filepath=[audioFile UTF8String];
+    const char *meta_filepath=[audioFile UTF8String];
 	int encrypt_para;
 	if (uiswEncrypt.on==YES){
 		encrypt_para=1;
@@ -80,19 +72,20 @@ extern OSStatus DoConvertFile(CFURLRef sourceURL, CFURLRef destinationURL, OSTyp
     NSString* processingVocodeFileName = VOCODE_FILE_AIF;
     
     // converter the file: recording.aif & out.aif(if exist)
+    /*  // convert code
     if( IsAACHardwareEncoderAvailable ) {
-        if ( [self convertAifFile:RECORDING_FILE_AIF toM4aFile:RECORDING_FILE_M4A] ) {
+        if ( [VoiceConverterModel convertAifFile:RECORDING_FILE_AIF toM4aFile:RECORDING_FILE_M4A] ) {
             processingRecordingFileName = RECORDING_FILE_M4A;
         }
         
         NSString* vocodeFilePath = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], VOCODE_FILE_AIF];
         if ( [[NSFileManager defaultManager] fileExistsAtPath:vocodeFilePath] ) { // if have vocode file
-            if ( [self convertAifFile:VOCODE_FILE_AIF toM4aFile:VOCODE_FILE_M4A] ) {
+            if ( [VoiceConverterModel convertAifFile:VOCODE_FILE_AIF toM4aFile:VOCODE_FILE_M4A] ) {
                 processingVocodeFileName = VOCODE_FILE_M4A;
             }
         }
     }
-    
+    */
 	//rename and upload original audio
 	NSMutableString *randomFilename = [self genRandStringLength:23];
 	NSString *originalFilename = [NSString stringWithFormat:@"%@%@", randomFilename, processingRecordingFileName];
@@ -387,12 +380,6 @@ numberOfRowsInComponent:(NSInteger) component
     [self.selecteTargetPicker release];
 }
 
-
-
-
-
-//====================================
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -424,8 +411,6 @@ numberOfRowsInComponent:(NSInteger) component
         return YES;
     }
 }
-//==========
-
 
 // Audio Player Implementation
 -(void) playerSetup
@@ -544,38 +529,6 @@ static Boolean IsAACHardwareEncoderAvailable(void)
     }
     
     return isAvailable;
-}
-
-#pragma mark- ExtAudioFile
-
-- (BOOL)convertAifFile:(NSString*)sourceFileName toM4aFile:(NSString*)destinationFileName {
-    
-    NSString* sourceFilePath = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], sourceFileName];
-    
-    NSString* destinationFilePath = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], destinationFileName];
-    
-    CFURLRef sourceURL = CFURLCreateWithFileSystemPath(kCFAllocatorDefault, (CFStringRef)sourceFileName, kCFURLPOSIXPathStyle, false);
-    
-    CFURLRef destinationURL = CFURLCreateWithFileSystemPath(kCFAllocatorDefault, (CFStringRef)destinationFileName, kCFURLPOSIXPathStyle, false);
-    
-    OSStatus error = DoConvertFile(sourceURL, destinationURL, kAudioFormatMPEG4AAC, VOCODER_SAMPLE_RATE);
-    
-//    [self.activityIndicator stopAnimating];
-    
-    if (error) {
-        // delete output file if it exists since an error was returned during the conversion process
-        if ([[NSFileManager defaultManager] fileExistsAtPath:destinationFilePath]) {
-            [[NSFileManager defaultManager] removeItemAtPath:destinationFilePath error:nil];
-        }
-        
-        printf("DoConvertFile failed! %ld\n", error);
-//        [self performSelectorOnMainThread:(@selector(updateUI)) withObject:nil waitUntilDone:NO];
-        return NO;
-    } else {
-//        [self performSelectorOnMainThread:(@selector(playAudio)) withObject:nil waitUntilDone:NO];
-        [[NSFileManager defaultManager] removeItemAtPath:sourceFilePath error:nil];
-        return YES;
-    }
 }
 
 @end

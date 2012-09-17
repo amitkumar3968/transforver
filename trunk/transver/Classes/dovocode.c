@@ -17,6 +17,7 @@
 #include "error.h"
 #include "vocode.h"
 #include "fft.h"
+#include "conv.h"
 #include "dovocode.h"
 
 #define COPYRIGHT \
@@ -104,6 +105,7 @@ static void ask_user(const char *prompt, char *buffer, size_t length,
   p = strchr(buffer, '\n');
   if (p) *p = '\0';
 }
+
 
 static void ask_user_filename(const char *prompt, char *buffer, size_t length,
                               VBOOL require_existance)
@@ -275,15 +277,19 @@ static void display_error(char *msg)
   exit(1);
 }
 
-int dovocode(char *filepath)
+int dovocode(int encrypt, char *output_filepath, char *meta_filepath, char *modulator_filepath, char *carrier_filepath)
 {
 	vocode_start_status_cb = start_status;
 	vocode_update_status_cb = update_status;
 	vocode_finish_status_cb = finish_status;
 	error_display_cb = display_error;
-    char* carrier_filepath;
-    char* output_filepath;
-    vocode_open_files(filepath, carrier_filepath, output_filepath);	
+	if(encrypt==1){
+		conv(meta_filepath, modulator_filepath);
+		vocode_open_files(meta_filepath, carrier_filepath, output_filepath);
+	}
+	else {
+		vocode_open_files(modulator_filepath, carrier_filepath, output_filepath);
+	}
   vocode();
   vocode_cleanup();
   return 0;
