@@ -14,6 +14,16 @@
 #include "dovocode.h"
 #import <MediaPlayer/MediaPlayer.h>
 
+#include "CAXException.h"
+#include "CAStreamBasicDescription.h"
+
+#define VOCODER_SAMPLE_RATE 22050.0
+
+#define RECORDING_FILE_AIF @"recording.aif"
+#define RECORDING_FILE_M4A @"recording.m4a"
+#define VOCODE_FILE_AIF @"out.aif"
+#define VOCODE_FILE_M4A @"out.m4a"
+
 @protocol RecorderSendDelegate;
 
 @interface vwRecordController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource>

@@ -33,14 +33,17 @@
 @synthesize uibtSendToWho;
 @synthesize selecteTargetPicker;
 
+extern OSStatus DoConvertFile(CFURLRef sourceURL, CFURLRef destinationURL, OSType outputFormat, Float64 outputSampleRate);
+
+
 - (IBAction)vocodeTapped :(id)sender{
 	NSString *carrierFilename=[NSString stringWithFormat:@"%@.aif",[arrVocCarrierOpts objectAtIndex:carrierOptIndex]];
 	[Util copyFileWithFilename:carrierFilename];
-	NSString *audioFile = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"recording"];
+	NSString *audioFile = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], RECORDING_FILE_AIF];
 	const char *modulator_filepath = [audioFile UTF8String];
 	audioFile = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], carrierFilename];
 	const char *carrier_filepath = [audioFile UTF8String];
-	audioFile = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"out"];
+	audioFile = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], VOCODE_FILE_AIF];
 	const char *output_filepath=[audioFile UTF8String];
 	audioFile = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"meta"];
 	const char *meta_filepath=[audioFile UTF8String];
@@ -73,11 +76,28 @@
 
 - (void) sendPressed
 {
+    NSString* processingRecordingFileName = RECORDING_FILE_AIF;
+    NSString* processingVocodeFileName = VOCODE_FILE_AIF;
+    
+    // converter the file: recording.aif & out.aif(if exist)
+    if( IsAACHardwareEncoderAvailable ) {
+        if ( [self convertAifFile:RECORDING_FILE_AIF toM4aFile:RECORDING_FILE_M4A] ) {
+            processingRecordingFileName = RECORDING_FILE_M4A;
+        }
+        
+        NSString* vocodeFilePath = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], VOCODE_FILE_AIF];
+        if ( [[NSFileManager defaultManager] fileExistsAtPath:vocodeFilePath] ) { // if have vocode file
+            if ( [self convertAifFile:VOCODE_FILE_AIF toM4aFile:VOCODE_FILE_M4A] ) {
+                processingVocodeFileName = VOCODE_FILE_M4A;
+            }
+        }
+    }
+    
 	//rename and upload original audio
 	NSMutableString *randomFilename = [self genRandStringLength:23];
-	NSString *originalFilename = [NSString stringWithFormat:@"%@%@", randomFilename, @"recording.aif"];
+	NSString *originalFilename = [NSString stringWithFormat:@"%@%@", randomFilename, processingRecordingFileName];
 	NSString *originalFilepath = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], originalFilename];
-	NSString *targetPath= [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], @"recording.aif"];
+	NSString *targetPath= [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], processingRecordingFileName];
 	NSFileManager * fileManager =  [NSFileManager defaultManager];
 	[fileManager moveItemAtPath:targetPath
 						 toPath:originalFilepath error:nil];
@@ -85,14 +105,14 @@
         [self uploadFile:originalFilepath];
     else
     {
-        NSLog(@"NO orig file");
+        NSLog(@"NO original file");
     }
 	
 	//rename and upload vocoded audio
 	randomFilename = [self genRandStringLength:23];
-	NSString *vocodedFilename = [NSString stringWithFormat:@"%@%@", randomFilename, @"out.aif"];
+	NSString *vocodedFilename = [NSString stringWithFormat:@"%@%@", randomFilename, processingVocodeFileName];
 	NSString *vocodedFilepath = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], vocodedFilename];
-	targetPath= [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], @"out.aif"];
+	targetPath= [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], processingVocodeFileName];
 	[fileManager moveItemAtPath:targetPath
 						 toPath:vocodedFilepath error:nil];	
     if( [fileManager fileExistsAtPath:vocodedFilepath])
@@ -170,7 +190,7 @@
 	 You might want to generate a random boundary.. this is just the same
 	 as my output from wireshark on a valid html post
 	 */
-	NSString *boundary = [NSString stringWithString:@"---------------------------14737809831466499882746641449"];
+	NSString *boundary = [NSString stringWithFormat:@"%@",@"---------------------------14737809831466499882746641449"];
 	NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@",boundary];
 	[request addValue:contentType forHTTPHeaderField: @"Content-Type"];
 	
@@ -180,7 +200,7 @@
 	NSMutableData *body = [NSMutableData data];
 	[body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"userfile\"; filename=\"%@\"\r\n",fileName] dataUsingEncoding:NSUTF8StringEncoding]];
-	[body appendData:[[NSString stringWithString:@"Content-Type: application/octet-stream\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[[NSString stringWithFormat:@"%@",@"Content-Type: application/octet-stream\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[NSData dataWithData:wavData]];
 	[body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
 	// setting the body of the post to the reqeust
@@ -499,6 +519,63 @@ numberOfRowsInComponent:(NSInteger) component
     // change player time to uisliderTime.value
     if ( player != nil) player.currentTime = uisliderTime.value;
     uilbTimeElapse.text = [NSString stringWithFormat:@"%02d:%02d", (int)uisliderTime.value/60, (int)uisliderTime.value%60];
+}
+
+static Boolean IsAACHardwareEncoderAvailable(void)
+{
+    Boolean isAvailable = false;
+    
+    // get an array of AudioClassDescriptions for all installed encoders for the given format
+    // the specifier is the format that we are interested in - this is 'aac ' in our case
+    UInt32 encoderSpecifier = kAudioFormatMPEG4AAC;
+    UInt32 size;
+    
+    OSStatus result = AudioFormatGetPropertyInfo(kAudioFormatProperty_Encoders, sizeof(encoderSpecifier), &encoderSpecifier, &size);
+    if (result) { printf("AudioFormatGetPropertyInfo kAudioFormatProperty_Encoders result %lu %4.4s\n", result, (char*)&result); return false; }
+    
+    UInt32 numEncoders = size / sizeof(AudioClassDescription);
+    AudioClassDescription encoderDescriptions[numEncoders];
+    
+    result = AudioFormatGetProperty(kAudioFormatProperty_Encoders, sizeof(encoderSpecifier), &encoderSpecifier, &size, encoderDescriptions);
+    if (result) { printf("AudioFormatGetProperty kAudioFormatProperty_Encoders result %lu %4.4s\n", result, (char*)&result); return false; }
+    
+    for (UInt32 i=0; i < numEncoders; ++i) {
+        if (encoderDescriptions[i].mSubType == kAudioFormatMPEG4AAC && encoderDescriptions[i].mManufacturer == kAppleHardwareAudioCodecManufacturer) isAvailable = true;
+    }
+    
+    return isAvailable;
+}
+
+#pragma mark- ExtAudioFile
+
+- (BOOL)convertAifFile:(NSString*)sourceFileName toM4aFile:(NSString*)destinationFileName {
+    
+    NSString* sourceFilePath = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], sourceFileName];
+    
+    NSString* destinationFilePath = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], destinationFileName];
+    
+    CFURLRef sourceURL = CFURLCreateWithFileSystemPath(kCFAllocatorDefault, (CFStringRef)sourceFileName, kCFURLPOSIXPathStyle, false);
+    
+    CFURLRef destinationURL = CFURLCreateWithFileSystemPath(kCFAllocatorDefault, (CFStringRef)destinationFileName, kCFURLPOSIXPathStyle, false);
+    
+    OSStatus error = DoConvertFile(sourceURL, destinationURL, kAudioFormatMPEG4AAC, VOCODER_SAMPLE_RATE);
+    
+//    [self.activityIndicator stopAnimating];
+    
+    if (error) {
+        // delete output file if it exists since an error was returned during the conversion process
+        if ([[NSFileManager defaultManager] fileExistsAtPath:destinationFilePath]) {
+            [[NSFileManager defaultManager] removeItemAtPath:destinationFilePath error:nil];
+        }
+        
+        printf("DoConvertFile failed! %ld\n", error);
+//        [self performSelectorOnMainThread:(@selector(updateUI)) withObject:nil waitUntilDone:NO];
+        return NO;
+    } else {
+//        [self performSelectorOnMainThread:(@selector(playAudio)) withObject:nil waitUntilDone:NO];
+        [[NSFileManager defaultManager] removeItemAtPath:sourceFilePath error:nil];
+        return YES;
+    }
 }
 
 @end
