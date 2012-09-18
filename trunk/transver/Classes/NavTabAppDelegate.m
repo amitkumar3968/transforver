@@ -30,15 +30,7 @@
 	//self.tableView.rowHeight = 100;
 	//self.tableView.backgroundColor = [UIColor clearColor];
     
-    if( ![Util checkUserInfoExist])
-    {
-        AddUserViewController *addUserView = [[AddUserViewController alloc] initWithNibName:@"AddUserViewController" bundle:nil];
-        addUserView.title = @"Add Phone Number";
-        addUserView.delegate = self;
-        [self.window.rootViewController presentModalViewController:addUserView animated:NO];
-        //[self.navigationController pushViewController:addUserView animated:YES];
-        //[self saveParameter];
-    }else
+    if([Util checkUserInfoExist])
     {
         [Util getParameter];
         g_UserID = [Util loginServer];
@@ -67,14 +59,17 @@
     g_tabController = self.tabController;
     [self.window makeKeyAndVisible];
     g_RootController = self.window.rootViewController;
-    return;
-    tabController.selectedIndex = 2;
-	[window addSubview:[tabController view]];
-
-	// Configure and show the window
-	//[window addSubview:[tabController view]];
-	[window makeKeyAndVisible];
     
+    if([Util checkUserInfoExist]){
+        tabController.selectedIndex = 0;
+        [window addSubview:[tabController view]];
+    }
+    else {
+        AddUserViewController *addUserView = [[AddUserViewController alloc] initWithNibName:@"AddUserViewController" bundle:nil];
+        addUserView.title = @"Add Phone Number";
+        addUserView.delegate = self;
+        [self.window.rootViewController presentModalViewController:addUserView animated:NO];
+    } 
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
