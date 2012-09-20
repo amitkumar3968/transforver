@@ -59,6 +59,7 @@
     id <RecorderSendDelegate> delegate;
     NSString *destName;
     
+    //============================
 }
 @property (nonatomic, retain) UILabel *uilbTimeTotal;
 @property (nonatomic, retain) UISlider *uisliderTime;
@@ -79,6 +80,9 @@
 @property (nonatomic, retain) IBOutlet UIButton* uibtSendToWho;
 @property (nonatomic, strong) UIPickerView* selecteTargetPicker;
 
+@property (nonatomic, retain) IBOutlet UIButton *uibtRecord;
+@property (nonatomic, retain) AudioRecorder *recorder;
+
 -(IBAction)playPlayer:(id)sender;
 -(IBAction)pausePlayer:(id)sender;
 -(IBAction)stopPlayer:(id)sender;
@@ -87,14 +91,13 @@
 
 -(void) updateSliderValue:(id)sender;
 -(IBAction) recordButtonTapped :(id)sender;
--(IBAction) recordButtonTouchUp:(id)sender;
 -(void) initRecorderSetup;
 -(void) playerSetup;
 -(IBAction) showPicker;
 -(IBAction) hidePicker;
 
 -(IBAction) showSendToWhoPicker:(id)sender;
-
+-(IBAction) deletePressed;
 @end
 
 

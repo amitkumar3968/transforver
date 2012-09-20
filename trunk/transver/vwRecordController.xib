@@ -2,22 +2,22 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1296</int>
-		<string key="IBDocument.SystemVersion">11E53</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2549</string>
-		<string key="IBDocument.AppKitVersion">1138.47</string>
-		<string key="IBDocument.HIToolboxVersion">569.00</string>
+		<string key="IBDocument.SystemVersion">11D50d</string>
+		<string key="IBDocument.InterfaceBuilderVersion">2182</string>
+		<string key="IBDocument.AppKitVersion">1138.32</string>
+		<string key="IBDocument.HIToolboxVersion">568.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">1498</string>
+			<string key="NS.object.0">1181</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
-			<string>IBProxyObject</string>
-			<string>IBUIButton</string>
+			<string>IBUIView</string>
 			<string>IBUIImageView</string>
 			<string>IBUILabel</string>
-			<string>IBUISlider</string>
+			<string>IBProxyObject</string>
 			<string>IBUISwitch</string>
-			<string>IBUIView</string>
+			<string>IBUISlider</string>
+			<string>IBUIButton</string>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -45,7 +45,6 @@
 						<string key="NSFrame">{{158, 416}, {162, 44}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -291,10 +290,6 @@
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">history_icon_unrecord.png</string>
-						</object>
-						<object class="NSCustomResource" key="IBUINormalBackgroundImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">record_btn_redrec_rest@2x.png</string>
 						</object>
 						<reference key="IBUIFontDescription" ref="76797074"/>
 						<reference key="IBUIFont" ref="660873201"/>
@@ -579,7 +574,7 @@
 					<object class="IBUIButton" id="1053944821">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{254, 241}, {41, 37}}</string>
+						<string key="NSFrame">{{259, 246}, {29, 27}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="602768023"/>
@@ -598,6 +593,10 @@
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="951573043"/>
+						<object class="NSCustomResource" key="IBUINormalImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">dovocode_icon@2x.png</string>
+						</object>
 						<reference key="IBUIFontDescription" ref="76797074"/>
 						<reference key="IBUIFont" ref="660873201"/>
 					</object>
@@ -681,6 +680,14 @@
 					<int key="connectionID">53</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">uibtRecord</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="552793509"/>
+					</object>
+					<int key="connectionID">60</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">showPicker</string>
 						<reference key="source" ref="248566233"/>
@@ -691,12 +698,12 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">hidePicker</string>
+						<string key="label">recordButtonTapped:</string>
 						<reference key="source" ref="552793509"/>
-						<reference key="destination" ref="975951072"/>
+						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">47</int>
+					<int key="connectionID">61</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -733,6 +740,15 @@
 						<int key="IBEventType">7</int>
 					</object>
 					<int key="connectionID">39</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">deletePressed</string>
+						<reference key="source" ref="49818651"/>
+						<reference key="destination" ref="975951072"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">62</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -972,7 +988,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">59</int>
+			<int key="maxID">62</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -980,18 +996,21 @@
 					<string key="className">vwRecordController</string>
 					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="deletePressed">id</string>
 						<string key="hidePicker">id</string>
 						<string key="pausePlayer:">id</string>
 						<string key="playPlayer:">id</string>
 						<string key="recordButtonTapped:">id</string>
-						<string key="recordButtonTouchUp:">id</string>
 						<string key="showPicker">id</string>
 						<string key="showSendToWhoPicker:">id</string>
 						<string key="sliderValueChanged:">id</string>
 						<string key="stopPlayer:">id</string>
-						<string key="vocodeTapped:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="deletePressed">
+							<string key="name">deletePressed</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBActionInfo" key="hidePicker">
 							<string key="name">hidePicker</string>
 							<string key="candidateClassName">id</string>
@@ -1006,10 +1025,6 @@
 						</object>
 						<object class="IBActionInfo" key="recordButtonTapped:">
 							<string key="name">recordButtonTapped:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="recordButtonTouchUp:">
-							<string key="name">recordButtonTouchUp:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="showPicker">
@@ -1028,10 +1043,6 @@
 							<string key="name">stopPlayer:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="vocodeTapped:">
-							<string key="name">vocodeTapped:</string>
-							<string key="candidateClassName">id</string>
-						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="btnDelete">UIButton</string>
@@ -1041,6 +1052,7 @@
 						<string key="slider">UISlider</string>
 						<string key="stopButton">UIButton</string>
 						<string key="timeSlider">UISlider</string>
+						<string key="uibtRecord">UIButton</string>
 						<string key="uibtSendToWho">UIButton</string>
 						<string key="uilbTimeElapse">UILabel</string>
 						<string key="uilbTimeTotal">UILabel</string>
@@ -1078,6 +1090,10 @@
 						<object class="IBToOneOutletInfo" key="timeSlider">
 							<string key="name">timeSlider</string>
 							<string key="candidateClassName">UISlider</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="uibtRecord">
+							<string key="name">uibtRecord</string>
+							<string key="candidateClassName">UIButton</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="uibtSendToWho">
 							<string key="name">uibtSendToWho</string>
@@ -1132,6 +1148,7 @@
 			<string key="common_bg_setting1@2x.png">{588, 88}</string>
 			<string key="common_bg_setting2@2x.png">{588, 88}</string>
 			<string key="common_bg_setting3@2x.png">{588, 88}</string>
+			<string key="dovocode_icon@2x.png">{59, 53}</string>
 			<string key="history_icon_unrecord.png">{29, 29}</string>
 			<string key="player_btn_pause_unslected@2x.png">{186, 90}</string>
 			<string key="player_btn_play_slected@2x.png">{192, 90}</string>
@@ -1139,10 +1156,9 @@
 			<string key="record_bg_sideheader1@2x.png">{132, 88}</string>
 			<string key="record_bg_sideheader2@2x.png">{132, 88}</string>
 			<string key="record_btn_header_rest@2x.png">{368, 88}</string>
-			<string key="record_btn_redrec_rest@2x.png">{186, 90}</string>
 			<string key="record_btn_sendndelete_slected.png">{160, 49}</string>
 			<string key="record_btn_sound_unslect@2x.png">{346, 90}</string>
 		</dictionary>
-		<string key="IBCocoaTouchPluginVersion">1498</string>
+		<string key="IBCocoaTouchPluginVersion">1181</string>
 	</data>
 </archive>

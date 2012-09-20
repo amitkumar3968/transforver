@@ -316,6 +316,12 @@ NSMutableArray *imageList;
     }
     
     //create cell from address book or from VEM server contacts, based on whether filter button is pressed
+        //set button appearance
+    [cell.uibtContactAdd setBackgroundImage:[UIImage imageNamed:@"history_btn_setncel_pressed@2x.png"] forState:UIControlStateNormal];
+    [cell.uibtContactAdd setBackgroundImage:[UIImage imageNamed:@"history_btn_setncel_rest@2x.png"] forState:UIControlStateSelected];
+    [cell.uibtContactDel setBackgroundImage:[UIImage imageNamed:@"history_btn_setncel_pressed@2x.png"] forState:UIControlStateNormal];
+    [cell.uibtContactDel setBackgroundImage:[UIImage imageNamed:@"history_btn_setncel_rest@2x.png"] forState:UIControlStateSelected];
+    
     if ([filterButton isSelected]) {
         cell.lastNameLabel.text = [g_AccountName objectAtIndex:([indexPath row])];
         cell.thumbnailView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"common_icon_con_rest@2x.png"]];

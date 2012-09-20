@@ -121,6 +121,8 @@
 		7EEF89BD1402695D005D93F7 /* fftn.c in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF89AF1402695D005D93F7 /* fftn.c */; };
 		7EEF89BE1402695D005D93F7 /* riff.c in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF89B01402695D005D93F7 /* riff.c */; };
 		7EEF89C01402695D005D93F7 /* wave.c in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF89B51402695D005D93F7 /* wave.c */; };
+		A4307025160B59EE00CFD593 /* Piano.aif in Resources */ = {isa = PBXBuildFile; fileRef = A4307024160B59EE00CFD593 /* Piano.aif */; };
+		A4307027160B6D1700CFD593 /* dovocode_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4307026160B6D1700CFD593 /* dovocode_icon@2x.png */; };
 		A45FEE2215A315AD00CF3D72 /* message_bg_time1.png in Resources */ = {isa = PBXBuildFile; fileRef = A45FEDED15A315AD00CF3D72 /* message_bg_time1.png */; };
 		A45FEE2315A315AD00CF3D72 /* message_bg_time1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A45FEDEE15A315AD00CF3D72 /* message_bg_time1@2x.png */; };
 		A45FEE2415A315AD00CF3D72 /* message_bg_time2.png in Resources */ = {isa = PBXBuildFile; fileRef = A45FEDEF15A315AD00CF3D72 /* message_bg_time2.png */; };
@@ -657,6 +659,8 @@
 		7EEF89B51402695D005D93F7 /* wave.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wave.c; sourceTree = "<group>"; };
 		7EEF89B61402695D005D93F7 /* wave.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wave.h; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4307024160B59EE00CFD593 /* Piano.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Piano.aif; sourceTree = SOURCE_ROOT; };
+		A4307026160B6D1700CFD593 /* dovocode_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dovocode_icon@2x.png"; path = "record/dovocode_icon@2x.png"; sourceTree = "<group>"; };
 		A45FEDED15A315AD00CF3D72 /* message_bg_time1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = message_bg_time1.png; path = history/message/message_bg_time1.png; sourceTree = "<group>"; };
 		A45FEDEE15A315AD00CF3D72 /* message_bg_time1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "message_bg_time1@2x.png"; path = "history/message/message_bg_time1@2x.png"; sourceTree = "<group>"; };
 		A45FEDEF15A315AD00CF3D72 /* message_bg_time2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = message_bg_time2.png; path = history/message/message_bg_time2.png; sourceTree = "<group>"; };
@@ -1309,6 +1313,7 @@
 		4F724C9913F75F7800A6F871 /* sounds */ = {
 			isa = PBXGroup;
 			children = (
+				A4307024160B59EE00CFD593 /* Piano.aif */,
 				7E44A0001402B5D400B5A7DC /* Lion.aif */,
 				4F9BB0BF13F2E9BE004179FC /* mysoundcompressed.caf */,
 				4F9BB0BB13F2E931004179FC /* 111.caf */,
@@ -1414,6 +1419,7 @@
 		A4F6312B159D83DE003C709D /* img_record */ = {
 			isa = PBXGroup;
 			children = (
+				A4307026160B6D1700CFD593 /* dovocode_icon@2x.png */,
 				A45FEED915A3164700CF3D72 /* encrypt_bg_swiftoff.png */,
 				A45FEEDA15A3164700CF3D72 /* encrypt_bg_swiftoff@2x.png */,
 				A45FEEDB15A3164700CF3D72 /* encrypt_bg_swifton.png */,
@@ -2087,6 +2093,8 @@
 				4F01F16815E296B90016717D /* HistoryTableViewCell.xib in Resources */,
 				4F01F18515E4072A0016717D /* VEM2X.png in Resources */,
 				4F01F18915E407720016717D /* VEM.png in Resources */,
+				A4307025160B59EE00CFD593 /* Piano.aif in Resources */,
+				A4307027160B6D1700CFD593 /* dovocode_icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
