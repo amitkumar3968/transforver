@@ -14,11 +14,13 @@
 @interface AddUserViewController : UIViewController {
     
     IBOutlet UITextField *name;
+    IBOutlet UITextField *phoneNum;
     id <AddUserViewDelegate> delegate;
 }
 
 - (IBAction) save:(id)sender;
 @property (nonatomic, retain) UITextField *name;
+@property (nonatomic, retain) UITextField *phoneNum;
 @property (nonatomic, assign) id <AddUserViewDelegate> delegate;
 
 @end
@@ -26,7 +28,7 @@
 @protocol AddUserViewDelegate <NSObject>
 @optional
 
-- (void) savePhoneNumber:(NSString *)phonenumber;
+- (void) savePhoneNumber:(NSString *)phonenumber nickName:(NSString *)name;
 
 @end
 
