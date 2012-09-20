@@ -84,6 +84,34 @@ NSString *downloadfilename;
     
 }
 
+- (IBAction) recordButtonTapped
+{
+    if (!BtnRecord.selected){
+        if (audioRecorder==nil)
+            audioRecorder = [[AudioRecorder alloc] init];
+        [audioRecorder startRecording];
+        [BtnRecord setSelected:YES];
+        UIImage *recordLight = [UIImage imageNamed:@"record_icon_record@2x.png"];
+        UIImage *smallRecLiht = [Util imageWithImage:recordLight scaledToSize:CGSizeMake(recordLight.size.width/2, recordLight.size.height/2)];
+        [BtnRecord setImage:smallRecLiht forState:UIControlStateNormal];
+    }
+    else {
+        if (audioRecorder!=nil){
+            [audioRecorder stopRecording];
+            audioRecorder=nil;
+        }
+        [BtnRecord setSelected:NO];        
+        UIImage *recordLight = [UIImage imageNamed:@"record_icon_unrecord@2x.png"];
+        UIImage *smallRecLiht = [Util imageWithImage:recordLight scaledToSize:CGSizeMake(recordLight.size.width/2, recordLight.size.height/2)];
+        [BtnRecord setImage:smallRecLiht forState:UIControlStateNormal];
+        destID=self.m_dstid;
+        g_tabController.selectedViewController = [g_tabController.viewControllers objectAtIndex:0];
+        [self dismissModalViewControllerAnimated:NO];
+    }
+}
+
+
+
 - (IBAction)btnSendMessage:(id)sender
 {
     NSLog(@"btnSendMessage %@!", self.txtMessage.text);

@@ -71,6 +71,7 @@
 - (void)queueRequests:(NSString *)filename;
 - (IBAction)startRecording:(id)sender;
 - (IBAction)stopRecording:(id)sender;
+- (IBAction)recordButtonTapped;
 - (void)EditBtnCtrl:(id)sender;
 - (void)BackBtnCtrl:(id)sender;
 - (IBAction)btnSendMessage:(id)sender;
