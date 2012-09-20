@@ -28,6 +28,9 @@
 @synthesize uibtSendToWho;
 @synthesize selecteTargetPicker;
 
+@synthesize uibtRecord;
+@synthesize recorder;
+
 - (IBAction)vocodeTapped :(id)sender{
 	NSString *carrierFilename=[NSString stringWithFormat:@"%@.aif",[arrVocCarrierOpts objectAtIndex:carrierOptIndex]];
 	[Util copyFileWithFilename:carrierFilename];
@@ -57,6 +60,7 @@
     [btnDelete setFrame:CGRectMake(0.0, 0.0, 159.0, 44.0)];
     [btnDelete setBackgroundImage:[UIImage imageNamed:@"record_btn_sendndelete_slected.png"] forState:UIControlStateNormal];
     [btnDelete setTitle:@"Delete" forState:UIControlStateNormal];
+    [btnDelete addTarget:self action:@selector(deletePressed) forControlEvents:UIControlEventTouchUpInside];
     confirmView = [[UIView alloc] initWithFrame:CGRectMake(0, 436, 320, 44)];
     confirmView.backgroundColor=[UIColor clearColor];
     [confirmView addSubview:btnSend];
@@ -64,6 +68,12 @@
     [self.tabBarController.view addSubview:confirmView];
     self.tabBarController.tabBar.hidden=TRUE;
 	///[self uploadFile:recording_filepath];
+}
+
+- (IBAction) deletePressed
+{
+    [confirmView removeFromSuperview];
+    self.tabBarController.tabBar.hidden=FALSE;
 }
 
 - (void) sendPressed
@@ -283,7 +293,33 @@ numberOfRowsInComponent:(NSInteger) component
     }
 }
 
-
+- (void) recordButtonTapped:(id)sender
+{
+    UIButton *recButton = (UIButton*) sender;
+    if (!recButton.selected){
+        if (recorder==nil)
+            recorder = [[AudioRecorder alloc] init];
+        [recorder startRecording];
+        [uibtRecord setSelected:YES];
+        [uibtRecord setBackgroundImage:[UIImage imageNamed:@"record_btn_redrec_rest@2x.png"] forState:UIControlStateNormal];
+        UIImage *recordLight = [UIImage imageNamed:@"record_icon_record@2x.png"];
+        UIImage *smallRecLiht = [Util imageWithImage:recordLight scaledToSize:CGSizeMake(recordLight.size.width/2, recordLight.size.height/2)];
+        [uibtRecord setImage:smallRecLiht forState:UIControlStateNormal];
+    }
+    else {
+        if (recorder!=nil){
+            [recorder stopRecording];
+            recorder=nil;
+        }
+        [uibtRecord setSelected:NO];
+        [uibtRecord setBackgroundImage:[UIImage imageNamed:@"record_btn_redrec_pressed@2x.png"] forState:UIControlStateNormal];
+        
+        UIImage *recordLight = [UIImage imageNamed:@"record_icon_unrecord@2x.png"];
+        UIImage *smallRecLiht = [Util imageWithImage:recordLight scaledToSize:CGSizeMake(recordLight.size.width/2, recordLight.size.height/2)];
+        [uibtRecord setImage:smallRecLiht forState:UIControlStateNormal];
+        done_vocode=0;
+    }
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -355,7 +391,6 @@ numberOfRowsInComponent:(NSInteger) component
     [Util copyFileWithFilename:@"Piano.aif"];
     [super viewDidLoad];
     done_vocode=0;
-    
     destID = -1;
     destName = nil;
     [self.uibtSendToWho setTitle:@"Select Receiver" forState:UIControlStateNormal];
@@ -364,8 +399,10 @@ numberOfRowsInComponent:(NSInteger) component
     self.selecteTargetPicker.delegate = self;
     self.selecteTargetPicker.frame = CGRectMake(60, 50, 200,300);
     
+    [uibtRecord setBackgroundImage:[UIImage imageNamed:@"record_btn_redrec_rest@2x.png"] forState:UIControlStateSelected];
+    [uibtRecord setBackgroundImage:[UIImage imageNamed:@"record_btn_redrec_pressed@2x.png"] forState:UIControlStateNormal];
+    
     //
-    //[self initRecorderSetup];
 	//timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(timeLoader) userInfo:nil repeats:YES];    
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -383,6 +420,7 @@ numberOfRowsInComponent:(NSInteger) component
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    recorder = [[AudioRecorder alloc] init];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -395,6 +433,16 @@ numberOfRowsInComponent:(NSInteger) component
 - (void)viewWillDisappear:(BOOL)animated
 {
 	[super viewWillDisappear:animated];
+    if (recorder!=nil){
+        [recorder stopRecording];
+        recorder=nil;
+         [uibtRecord setSelected:NO];
+        [uibtRecord setBackgroundImage:[UIImage imageNamed:@"record_btn_redrec_pressed@2x.png"] forState:UIControlStateNormal];
+        UIImage *recordLight = [UIImage imageNamed:@"record_icon_unrecord@2x.png"];
+        UIImage *smallRecLiht = [Util imageWithImage:recordLight scaledToSize:CGSizeMake(recordLight.size.width/2, recordLight.size.height/2)];
+        [uibtRecord setImage:smallRecLiht forState:UIControlStateNormal];
+    }
+    [recorder release];
 }
 
 - (void)viewDidDisappear:(BOOL)animated

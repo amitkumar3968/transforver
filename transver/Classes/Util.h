@@ -40,6 +40,8 @@ UIViewController *g_RootController;
 + (void) addRelationships:(int) uid phonenumber:(NSString *) phone;
 + (void) getRelationships:(int) uid;
 + (void) delMessages:(int) dialod_id;
+
++ (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize;
 @end
 
 @interface NSURLRequest (DummyInterface)
