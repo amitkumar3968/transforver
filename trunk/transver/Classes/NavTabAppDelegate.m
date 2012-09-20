@@ -51,10 +51,10 @@
     vcHistory = [[vwHistoryController alloc] initWithNibName:@"vwHistoryController" bundle:nil];    
     vcSettings = [[vwSettingsController alloc] initWithNibName:@"vwSettingsController" bundle:nil];
     vcAbout = [[vwAboutController alloc] initWithNibName:@"vwAboutController" bundle:nil];
-    
+    UINavigationController *hisNavCtlr = [[UINavigationController alloc] initWithRootViewController:vcHistory];
     self.tabController = [[UITabBarController alloc] init];
     //self.tabController.tabBar.selectedImageTintColor = [UIColor yellowColor];
-    self.tabController.viewControllers = [NSArray arrayWithObjects:vcRecord, vcContact, vcHistory, vcSettings, vcAbout, nil];
+    self.tabController.viewControllers = [NSArray arrayWithObjects:vcRecord, vcContact, hisNavCtlr, vcSettings, vcAbout, nil];
     self.window.rootViewController = self.tabController;
     g_tabController = self.tabController;
     [self.window makeKeyAndVisible];
@@ -88,10 +88,11 @@
 }
 #pragma mark AddUserViewDelegate methods
 
-- (void) savePhoneNumber:(NSString *)phonenumber{
+- (void) savePhoneNumber:(NSString *)phonenumber nickName:(NSString *)name{
     NSLog(@"save phone: %@", phonenumber);
     if( g_UserID == -1)
     {
+        g_UserName=name;
         g_PhoneNumber = phonenumber;
         [Util saveParameter];
         g_UserID = [Util loginServer];

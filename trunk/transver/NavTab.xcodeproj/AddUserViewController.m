@@ -12,6 +12,7 @@
 @implementation AddUserViewController
 
 @synthesize name;
+@synthesize phoneNum;
 @synthesize delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -41,14 +42,15 @@
 - (IBAction) save:(id)sender
 {
 	NSLog(@"save number!");
+    NSString *nickname;
     if( [name.text isEqualToString:@""])
     {
         NSLog(@"wrong number!");
         return;
     }
-    if (self.delegate && [self.delegate respondsToSelector:@selector(savePhoneNumber:)]) 
+    if (self.delegate) 
     {
-        [self.delegate savePhoneNumber:name.text];
+        [self.delegate savePhoneNumber:phoneNum.text nickName:name.text];
         [self dismissModalViewControllerAnimated:YES];
     }
     //[self.navigationController popViewControllerAnimated:YES];
@@ -57,7 +59,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    name.keyboardType = UIKeyboardTypeDecimalPad;
+    name.keyboardType = UIKeyboardTypeNamePhonePad;
+    phoneNum.keyboardType = UIKeyboardTypeNumberPad;
     UIBarButtonItem *rightButton = 
 	[[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStyleDone target:self action:@selector(save:)];
 	

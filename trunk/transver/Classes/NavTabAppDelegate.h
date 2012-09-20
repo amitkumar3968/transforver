@@ -24,6 +24,6 @@
 @property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
 @property (nonatomic, retain) IBOutlet UITabBarController *tabController;
 @property (nonatomic, retain) NSArray *accounts;
-- (void) savePhoneNumber: (NSString *)phonenumber;
+- (void) savePhoneNumber: (NSString *)phonenumber nickName:(NSString *)name;
 @end
 
