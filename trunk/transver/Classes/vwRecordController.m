@@ -30,8 +30,14 @@
 
 @synthesize uibtRecord;
 @synthesize recorder;
+@synthesize progressView;
+
+- (void) threadStartAnimating:(id)data {
+    [progressView startAnimating];
+}
 
 - (IBAction)vocodeTapped :(id)sender{
+    [NSThread detachNewThreadSelector:@selector(threadStartAnimating:) toTarget:self withObject:nil];
 	NSString *carrierFilename=[NSString stringWithFormat:@"%@.aif",[arrVocCarrierOpts objectAtIndex:carrierOptIndex]];
 	[Util copyFileWithFilename:carrierFilename];
 	NSString *audioFile = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], RECORDING_FILE_AIF];
@@ -68,6 +74,7 @@
     [self.tabBarController.view addSubview:confirmView];
     self.tabBarController.tabBar.hidden=TRUE;
 	///[self uploadFile:recording_filepath];
+    [progressView stopAnimating];
 }
 
 - (IBAction) deletePressed
@@ -78,6 +85,7 @@
 
 - (void) sendPressed
 {
+    [NSThread detachNewThreadSelector:@selector(threadStartAnimating:) toTarget:self withObject:nil];
     NSString* processingRecordingFileName = RECORDING_FILE_AIF;
     NSString* processingVocodeFileName = VOCODE_FILE_AIF;
     
@@ -133,6 +141,7 @@
     [self sendVoice:originalFilename vocode:vocodedFilename pass:@"1234"];
 	[confirmView removeFromSuperview];
     self.tabBarController.tabBar.hidden=FALSE;
+    [progressView stopAnimating];
 }
 
 -(NSMutableString *) genRandStringLength: (int) len
@@ -421,6 +430,7 @@ numberOfRowsInComponent:(NSInteger) component
 {
     [super viewWillAppear:animated];
     recorder = [[AudioRecorder alloc] init];
+    [progressView stopAnimating];
 }
 
 - (void)viewDidAppear:(BOOL)animated

@@ -58,7 +58,6 @@
 	//============================   
     id <RecorderSendDelegate> delegate;
     NSString *destName;
-    
     //============================
 }
 @property (nonatomic, retain) UILabel *uilbTimeTotal;
@@ -82,6 +81,8 @@
 
 @property (nonatomic, retain) IBOutlet UIButton *uibtRecord;
 @property (nonatomic, retain) AudioRecorder *recorder;
+@property (nonatomic, retain) IBOutlet  UIActivityIndicatorView *progressView;
+
 
 -(IBAction)playPlayer:(id)sender;
 -(IBAction)pausePlayer:(id)sender;
