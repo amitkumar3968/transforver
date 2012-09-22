@@ -183,9 +183,9 @@ int m_userid;
 #if 1
     if( addressesCount == 0)
     {
-        NSString *contactFirstLast = [NSString stringWithFormat: @"Ray"];
+        //NSString *contactFirstLast = [NSString stringWithFormat: @"Ray"];
         
-        [listContent addObject:contactFirstLast];
+        //[listContent addObject:contactFirstLast];
     }
 #endif	
 	// create a filtered list that will contain products for the search results table.

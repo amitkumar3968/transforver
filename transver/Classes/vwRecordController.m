@@ -31,8 +31,13 @@
 @synthesize uibtRecord;
 @synthesize recorder;
 @synthesize progressView;
+@synthesize coverView;
 
 - (void) threadStartAnimating:(id)data {
+    coverView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+    [coverView setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:.5]];
+    [coverView addSubview:progressView];
+    [self.view   addSubview:coverView];
     [progressView startAnimating];
 }
 
@@ -75,6 +80,7 @@
     self.tabBarController.tabBar.hidden=TRUE;
 	///[self uploadFile:recording_filepath];
     [progressView stopAnimating];
+    [coverView removeFromSuperview];
 }
 
 - (IBAction) deletePressed
@@ -142,6 +148,7 @@
 	[confirmView removeFromSuperview];
     self.tabBarController.tabBar.hidden=FALSE;
     [progressView stopAnimating];
+    [coverView removeFromSuperview];
 }
 
 -(NSMutableString *) genRandStringLength: (int) len
