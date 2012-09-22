@@ -17,13 +17,16 @@ extern OSStatus DoConvertFile(CFURLRef sourceURL, CFURLRef destinationURL, OSTyp
 
 + (BOOL) convertAifFile:(NSString *) sourceFileName
               toM4aFile:(NSString *) destinationFileName {
+    
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    
     NSString* sourceFilePath = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], sourceFileName];
     
     NSString* destinationFilePath = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], destinationFileName];
     
-    CFURLRef sourceURL = CFURLCreateWithFileSystemPath(kCFAllocatorDefault, (CFStringRef)sourceFileName, kCFURLPOSIXPathStyle, false);
+    CFURLRef sourceURL = CFURLCreateWithFileSystemPath(kCFAllocatorDefault, (CFStringRef)sourceFilePath, kCFURLPOSIXPathStyle, false);
     
-    CFURLRef destinationURL = CFURLCreateWithFileSystemPath(kCFAllocatorDefault, (CFStringRef)destinationFileName, kCFURLPOSIXPathStyle, false);
+    CFURLRef destinationURL = CFURLCreateWithFileSystemPath(kCFAllocatorDefault, (CFStringRef)destinationFilePath, kCFURLPOSIXPathStyle, false);
     
     OSStatus error = DoConvertFile(sourceURL, destinationURL, kAudioFormatMPEG4AAC, VOCODER_SAMPLE_RATE);
     
@@ -36,14 +39,15 @@ extern OSStatus DoConvertFile(CFURLRef sourceURL, CFURLRef destinationURL, OSTyp
         }
         
         printf("DoConvertFile failed! %ld\n", error);
-        //        [self performSelectorOnMainThread:(@selector(updateUI)) withObject:nil waitUntilDone:NO];
+        [self performSelectorOnMainThread:(@selector(updateUI)) withObject:nil waitUntilDone:NO];
         return NO;
     } else {
-        //        [self performSelectorOnMainThread:(@selector(playAudio)) withObject:nil waitUntilDone:NO];
+        [self performSelectorOnMainThread:(@selector(playAudio)) withObject:nil waitUntilDone:NO];
         [[NSFileManager defaultManager] removeItemAtPath:sourceFilePath error:nil];
         return YES;
     }
     
+    [pool release];
 }
 
 @end

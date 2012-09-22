@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Util.h"
 
-#define VOCODER_SAMPLE_RATE 22050.0
+#define VOCODER_SAMPLE_RATE 19200
 
 @interface VoiceConverterModel : NSObject
 
