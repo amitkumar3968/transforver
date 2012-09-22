@@ -388,7 +388,7 @@
 		E176A2290F893FC200EEE756 /* MoreTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E176A2280F893FC200EEE756 /* MoreTabViewController.m */; };
 		ED49BED0160771F6007EA4F6 /* VoiceConverterModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED49BECF160771F6007EA4F6 /* VoiceConverterModel.mm */; };
 		ED49BED216077EFF007EA4F6 /* vwRecordController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED49BED116077EFF007EA4F6 /* vwRecordController.m */; };
-		ED55DB321607273200BBCA5B /* ExtAudioFileConvert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED55DB311607273200BBCA5B /* ExtAudioFileConvert.cpp */; };
+		ED55DB321607273200BBCA5B /* ExtAudioFileConvert.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED55DB311607273200BBCA5B /* ExtAudioFileConvert.mm */; };
 		ED55DB3D16073BB500BBCA5B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED55DB3C16073BB500BBCA5B /* AVFoundation.framework */; };
 		EDE60AB51607655E0072F019 /* dovocode.c in Sources */ = {isa = PBXBuildFile; fileRef = EDE60AB41607655E0072F019 /* dovocode.c */; };
 /* End PBXBuildFile section */
@@ -941,7 +941,7 @@
 		ED49BECC1607701A007EA4F6 /* VoiceConverterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoiceConverterModel.h; sourceTree = "<group>"; };
 		ED49BECF160771F6007EA4F6 /* VoiceConverterModel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VoiceConverterModel.mm; sourceTree = "<group>"; };
 		ED49BED116077EFF007EA4F6 /* vwRecordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vwRecordController.m; sourceTree = "<group>"; };
-		ED55DB311607273200BBCA5B /* ExtAudioFileConvert.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExtAudioFileConvert.cpp; sourceTree = "<group>"; };
+		ED55DB311607273200BBCA5B /* ExtAudioFileConvert.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ExtAudioFileConvert.mm; sourceTree = "<group>"; };
 		ED55DB341607284600BBCA5B /* CAMath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMath.h; sourceTree = "<group>"; };
 		ED55DB351607284600BBCA5B /* CAXException.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAXException.h; sourceTree = "<group>"; };
 		ED55DB361607284600BBCA5B /* CADebugMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CADebugMacros.h; sourceTree = "<group>"; };
@@ -1063,7 +1063,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				ED55DB311607273200BBCA5B /* ExtAudioFileConvert.cpp */,
+				ED55DB311607273200BBCA5B /* ExtAudioFileConvert.mm */,
 				4F01F18815E407720016717D /* VEM.png */,
 				4F01F18415E4072A0016717D /* VEM2X.png */,
 				4F2B30881470B25F0033E43E /* libRestKitXMLParserLibxml.a */,
@@ -2164,7 +2164,7 @@
 				4F01F16715E296B90016717D /* HistoryTableViewCell.m in Sources */,
 				A462AAF315EFB93B00A6A833 /* CAStreamBasicDescription.cpp in Sources */,
 				A462AAF415EFB93B00A6A833 /* CAXException.cpp in Sources */,
-				ED55DB321607273200BBCA5B /* ExtAudioFileConvert.cpp in Sources */,
+				ED55DB321607273200BBCA5B /* ExtAudioFileConvert.mm in Sources */,
 				EDE60AB51607655E0072F019 /* dovocode.c in Sources */,
 				ED49BED0160771F6007EA4F6 /* VoiceConverterModel.mm in Sources */,
 				ED49BED216077EFF007EA4F6 /* vwRecordController.m in Sources */,
@@ -2257,7 +2257,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				"HEADER_SEARCH_PATHS[arch=*]" = "\"$(SOURCE_ROOT)/RestKit/Build\"";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				"LIBRARY_SEARCH_PATHS[arch=*]" = "\"$(SOURCE_ROOT)/RestKit/Build/$(BUILD_STYLE)-$(PLATFORM_NAME)\"";
 				ONLY_ACTIVE_ARCH = YES;
 				"OTHER_LDFLAGS[arch=*]" = (
@@ -2266,7 +2266,7 @@
 				);
 				PROVISIONING_PROFILE = "D6B25D69-A246-4DEB-B5F1-160212E57CEF";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D6B25D69-A246-4DEB-B5F1-160212E57CEF";
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos6.0;
 			};
 			name = Debug;
 		};
@@ -2280,15 +2280,16 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				"HEADER_SEARCH_PATHS[arch=*]" = "\"$(SOURCE_ROOT)/RestKit/Build\"";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				"LIBRARY_SEARCH_PATHS[arch=*]" = "\"$(SOURCE_ROOT)/RestKit/Build/$(BUILD_STYLE)-$(PLATFORM_NAME)\"";
+				ONLY_ACTIVE_ARCH = YES;
 				"OTHER_LDFLAGS[arch=*]" = (
 					"-ObjC",
 					"-all_load",
 				);
 				PROVISIONING_PROFILE = "D6B25D69-A246-4DEB-B5F1-160212E57CEF";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D6B25D69-A246-4DEB-B5F1-160212E57CEF";
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos6.0;
 			};
 			name = Release;
 		};

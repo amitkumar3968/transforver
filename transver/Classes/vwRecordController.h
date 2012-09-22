@@ -19,9 +19,9 @@
 #include "dovocode.h"
 
 #define RECORDING_FILE_AIF @"recording.aif"
-#define RECORDING_FILE_M4A @"recording.m4a"
+#define RECORDING_FILE_M4A @"recording.caf"
 #define VOCODE_FILE_AIF @"out.aif"
-#define VOCODE_FILE_M4A @"out.m4a"
+#define VOCODE_FILE_M4A @"out.caf"
 
 @protocol RecorderSendDelegate;
 

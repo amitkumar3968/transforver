@@ -67,6 +67,7 @@
     [btnSend setBackgroundImage:[UIImage imageNamed:@"record_btn_sendndelete_slected.png"] forState:UIControlStateNormal];
     [btnSend setTitle:@"Send" forState:UIControlStateNormal];
     [btnSend addTarget:self action:@selector(sendPressed) forControlEvents:UIControlEventTouchUpInside];
+    
     btnDelete = [UIButton buttonWithType:UIButtonTypeCustom];
     [btnDelete setFrame:CGRectMake(0.0, 0.0, 159.0, 44.0)];
     [btnDelete setBackgroundImage:[UIImage imageNamed:@"record_btn_sendndelete_slected.png"] forState:UIControlStateNormal];
@@ -89,17 +90,35 @@
     self.tabBarController.tabBar.hidden=FALSE;
 }
 
-- (void) sendPressed
+- (IBAction) sendPressed
 {
-    [NSThread detachNewThreadSelector:@selector(threadStartAnimating:) toTarget:self withObject:nil];
+//    [NSThread detachNewThreadSelector:@selector(threadStartAnimating:) toTarget:self withObject:nil];
+    
+    [self performSelectorInBackground:@selector(converAndSendMessage) withObject:nil];
+}
+
+
+-(void) converAndSendMessage
+{
     NSString* processingRecordingFileName = RECORDING_FILE_AIF;
     NSString* processingVocodeFileName = VOCODE_FILE_AIF;
+ 
+    // if no such recording.aif file, do not convert and upload file.
+    if (![[NSFileManager defaultManager] isExecutableFileAtPath:[NSString stringWithFormat: [Util getDocumentPath], RECORDING_FILE_AIF]]) {
+        return;
+    }
     
     // converter the file: recording.aif & out.aif(if exist)
-    /*  // convert code
+    // convert code
     if( IsAACHardwareEncoderAvailable ) {
         if ( [VoiceConverterModel convertAifFile:RECORDING_FILE_AIF toM4aFile:RECORDING_FILE_M4A] ) {
             processingRecordingFileName = RECORDING_FILE_M4A;
+//            NSString* file = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], RECORDING_FILE_M4A];
+//            if ([[NSFileManager defaultManager] fileExistsAtPath:file]) {
+//                NSLog(@"Have File ", RECORDING_FILE_M4A);
+//            } else {
+//                NSLog(@"DO NOt Have file ", RECORDING_FILE_M4A);
+//            }
         }
         
         NSString* vocodeFilePath = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], VOCODE_FILE_AIF];
@@ -109,7 +128,8 @@
             }
         }
     }
-    */
+    
+    
 	//rename and upload original audio
 	NSMutableString *randomFilename = [self genRandStringLength:23];
 	NSString *originalFilename = [NSString stringWithFormat:@"%@%@", randomFilename, processingRecordingFileName];
@@ -131,7 +151,7 @@
 	NSString *vocodedFilepath = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], vocodedFilename];
 	targetPath= [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], processingVocodeFileName];
 	[fileManager moveItemAtPath:targetPath
-						 toPath:vocodedFilepath error:nil];	
+						 toPath:vocodedFilepath error:nil];
     if( [fileManager fileExistsAtPath:vocodedFilepath])
         [self uploadFile:vocodedFilepath];
     else
@@ -140,10 +160,10 @@
         vocodedFilename = @"";
     }
 	
-	//rename 
+	//rename
 	
     //time_t unixTime = [[NSDate date] timeIntervalSince1970];
-
+    
     [self sendVoice:originalFilename vocode:vocodedFilename pass:@"1234"];
 	[confirmView removeFromSuperview];
     self.tabBarController.tabBar.hidden=FALSE;
