@@ -37,7 +37,7 @@
     coverView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
     [coverView setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:.5]];
     [coverView addSubview:progressView];
-    [self.view   addSubview:coverView];
+    [self.view addSubview:coverView];
     [progressView startAnimating];
 }
 
@@ -256,7 +256,7 @@
         NSString* sendToWhoString = [NSString stringWithFormat:@"Send To: %@", destName];
         [uibtSendToWho setTitle:sendToWhoString forState:UIControlStateNormal];
     }
-    [pickerView removeFromSuperview];
+    [coverView removeFromSuperview];
 }
 
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
@@ -284,18 +284,18 @@ numberOfRowsInComponent:(NSInteger) component
 }
 
 -(IBAction) showPicker{
-    if (uipkVocodeOpt.superview==nil){
         CGRect rectVocodeRect = CGRectMake(100, 260, 200,180);
         uipkVocodeOpt.delegate=self;
         uipkVocodeOpt.frame=rectVocodeRect;
         uipkVocodeOpt.showsSelectionIndicator=true;
         [uipkVocodeOpt setBackgroundColor:[UIColor clearColor]];
         uipkVocodeOpt.autoresizingMask=UIViewAutoresizingFlexibleHeight;
-        [self.view.window addSubview:uipkVocodeOpt];
-    }
+        coverView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+        [coverView addSubview:uipkVocodeOpt];
+        [self.view.window addSubview:coverView];
 }
 -(IBAction) hidePicker{
-    [uipkVocodeOpt removeFromSuperview];
+    [coverView removeFromSuperview];
 }
 /*-(void) hidePicker:(UIPickerView*) uipkVocodeOpt{
  
@@ -303,7 +303,10 @@ numberOfRowsInComponent:(NSInteger) component
 
 -(IBAction)showSendToWhoPicker:(id)sender {
     if ( selecteTargetPicker.superview == nil) {
-        [self.view addSubview:selecteTargetPicker];
+        coverView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+        [coverView setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:.5]];
+        [coverView addSubview:selecteTargetPicker];
+        [self.view addSubview:coverView];
     } else {
         [selecteTargetPicker removeFromSuperview];
     }
