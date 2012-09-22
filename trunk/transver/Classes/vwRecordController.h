@@ -82,6 +82,7 @@
 @property (nonatomic, retain) IBOutlet UIButton *uibtRecord;
 @property (nonatomic, retain) AudioRecorder *recorder;
 @property (nonatomic, retain) IBOutlet  UIActivityIndicatorView *progressView;
+@property (nonatomic, retain) UIView *coverView;
 
 
 -(IBAction)playPlayer:(id)sender;

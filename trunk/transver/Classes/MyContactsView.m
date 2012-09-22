@@ -88,6 +88,7 @@ NSMutableArray *imageList;
         {
             [listOfPhones addObject:mobileNumber];
             [listOfItems addObject:contactFirstLast];
+            NSLog(@"%@",contactFirstLast);
         }
         
         //Here I think something goes wrong, but I don't know what
@@ -104,12 +105,12 @@ NSMutableArray *imageList;
 #if 1
     if( addressesCount == 0)
     {
-        NSString *contactFirstLast = [NSString stringWithFormat: @"Ray"];
+       // NSString *contactFirstLast = [NSString stringWithFormat: @"Ray"];
         
-        [listOfItems addObject:contactFirstLast];
-        [listOfItems addObject:contactFirstLast];
-        [imageList addObject:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"common_icon_con_rest@2x.png"]]];
-        [imageList addObject:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"common_icon_con_rest@2x.png"]]];
+        //[listOfItems addObject:contactFirstLast];
+        //[listOfItems addObject:contactFirstLast];
+        //[imageList addObject:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"common_icon_con_rest@2x.png"]]];
+        //[imageList addObject:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"common_icon_con_rest@2x.png"]]];
     }
 #endif	
     
