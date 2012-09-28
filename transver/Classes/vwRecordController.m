@@ -92,9 +92,10 @@
 
 - (IBAction) sendPressed
 {
-//    [NSThread detachNewThreadSelector:@selector(threadStartAnimating:) toTarget:self withObject:nil];
+    [NSThread detachNewThreadSelector:@selector(threadStartAnimating:) toTarget:self withObject:nil];
     
-    [self performSelectorInBackground:@selector(converAndSendMessage) withObject:nil];
+//    [self performSelectorInBackground:@selector(converAndSendMessage) withObject:nil];
+    [self converAndSendMessage];
 }
 
 
