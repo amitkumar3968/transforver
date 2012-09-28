@@ -236,7 +236,7 @@ OSStatus DoConvertFile(CFURLRef sourceURL, CFURLRef destinationURL, OSType outpu
     OSStatus        error = noErr;
     
     // in this sample we should never be on the main thread here
-    assert(![NSThread isMainThread]);
+//    assert(![NSThread isMainThread]);
     
     ThreadStateInitalize();
     

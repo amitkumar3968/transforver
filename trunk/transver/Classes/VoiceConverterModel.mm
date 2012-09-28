@@ -28,7 +28,8 @@ extern OSStatus DoConvertFile(CFURLRef sourceURL, CFURLRef destinationURL, OSTyp
     
     CFURLRef destinationURL = CFURLCreateWithFileSystemPath(kCFAllocatorDefault, (CFStringRef)destinationFilePath, kCFURLPOSIXPathStyle, false);
     
-    OSStatus error = DoConvertFile(sourceURL, destinationURL, kAudioFormatMPEG4AAC, VOCODER_SAMPLE_RATE);
+    // althought the console show  property not supported, the file will still be convert to caf
+    OSStatus error = DoConvertFile(sourceURL, destinationURL, kAudioFormatiLBC, VOCODER_SAMPLE_RATE);
     
     //    [self.activityIndicator stopAnimating];
     
@@ -39,10 +40,10 @@ extern OSStatus DoConvertFile(CFURLRef sourceURL, CFURLRef destinationURL, OSTyp
         }
         
         printf("DoConvertFile failed! %ld\n", error);
-        [self performSelectorOnMainThread:(@selector(updateUI)) withObject:nil waitUntilDone:NO];
+//        [self performSelectorOnMainThread:(@selector(updateUI)) withObject:nil waitUntilDone:NO];
         return NO;
     } else {
-        [self performSelectorOnMainThread:(@selector(playAudio)) withObject:nil waitUntilDone:NO];
+//        [self performSelectorOnMainThread:(@selector(playAudio)) withObject:nil waitUntilDone:NO];
         [[NSFileManager defaultManager] removeItemAtPath:sourceFilePath error:nil];
         return YES;
     }
