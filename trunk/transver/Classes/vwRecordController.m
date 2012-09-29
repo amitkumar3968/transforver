@@ -130,7 +130,6 @@
         }
     }
     
-    
 	//rename and upload original audio
 	NSMutableString *randomFilename = [self genRandStringLength:23];
 	NSString *originalFilename = [NSString stringWithFormat:@"%@%@", randomFilename, processingRecordingFileName];
@@ -312,10 +311,13 @@ numberOfRowsInComponent:(NSInteger) component
         [uipkVocodeOpt setBackgroundColor:[UIColor clearColor]];
         uipkVocodeOpt.autoresizingMask=UIViewAutoresizingFlexibleHeight;
         coverView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+        [coverView setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.5f]];
         [coverView addSubview:uipkVocodeOpt];
+        [coverView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                action:@selector(hidePicker:)]];
         [self.view.window addSubview:coverView];
 }
--(IBAction) hidePicker{
+-(void) hidePicker:(UITapGestureRecognizer *) rocognizer{
     [coverView removeFromSuperview];
 }
 /*-(void) hidePicker:(UIPickerView*) uipkVocodeOpt{
@@ -323,14 +325,24 @@ numberOfRowsInComponent:(NSInteger) component
  }*/
 
 -(IBAction)showSendToWhoPicker:(id)sender {
-    if ( selecteTargetPicker.superview == nil) {
+    if ( selecteTargetPicker.superview == nil) { // picker not in view now.
+        // TODO change 320&480 to window parameter
         coverView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
         [coverView setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:.5]];
         [coverView addSubview:selecteTargetPicker];
+        [coverView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                             action:@selector(hideSendToWhoPicker:)]];
+        NSLog(@"aaa");
         [self.view addSubview:coverView];
     } else {
         [selecteTargetPicker removeFromSuperview];
     }
+}
+
+-(void)hideSendToWhoPicker:(UITapGestureRecognizer *)recognizer {
+    NSLog(@"bbb");
+    [self.selecteTargetPicker removeFromSuperview];
+    [self.coverView removeFromSuperview];
 }
 
 - (void) recordButtonTapped:(id)sender
