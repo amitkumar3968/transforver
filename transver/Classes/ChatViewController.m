@@ -730,13 +730,14 @@ NSString *downloadfilename;
         btnDeleteFrame = CGRectMake(250.0, 50.0, 52.0, 22.0);
         btnDecryptFrame = CGRectMake(223.0, 50.0, 17.0, 18.0);
     }
+    
     NSLog(@"%d", [message retainCount]);
     //[message release];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     [cell setNeedsDisplay];
     
     //set for voice file
-    NSRange aRange = [cellValue rangeOfString:@"aif"];
+    NSRange aRange = [cellValue rangeOfString:@"caf"];
     if (aRange.location ==NSNotFound  ) {
         if( [[cell subviews] count] > 0)
         {

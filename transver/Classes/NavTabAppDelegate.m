@@ -93,7 +93,7 @@
     if( g_UserID == -1)
     {
         g_UserName=name;
-        g_PhoneNumber = phonenumber;
+        g_UserNumber = phonenumber;
         [Util saveParameter];
         g_UserID = [Util loginServer];
         NSArray *array = [Util fetchRelationships:g_UserID];//[[NSArray alloc] initWithObjects:@"find friends",@"Jerry", @"Raymond", @"John", nil];

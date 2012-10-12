@@ -35,6 +35,7 @@
 - (void) doneSearching_Clicked:(id)sender;
 - (void) allbuttonPushed: (id) sender;
 - (void) filterbuttonPushed: (id) sender;
+- (BOOL)isExistedUser: (NSString *)strPhone;
 @property (nonatomic, retain) UINavigationBar *tableViewNavigationBar;
 @property (nonatomic, retain) NSMutableArray *listOfItems;
 @property (nonatomic, retain) NSMutableArray *filteredListContent;
