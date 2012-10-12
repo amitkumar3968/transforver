@@ -10,8 +10,9 @@
 #import "DBHandler.h"
 #import "JSON.h"
 
-NSString *g_PhoneNumber;
+NSString *g_UserNumber;
 NSString *g_UserName;
+NSMutableArray *g_AccountPhone;
 NSMutableArray *g_AccountID;
 NSMutableArray *g_AccountName;
 int g_UserID;

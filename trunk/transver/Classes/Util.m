@@ -13,7 +13,8 @@
 
 
 + (void) initSetting {
-    g_PhoneNumber = [[NSString alloc] init];
+    g_UserNumber = [[NSString alloc] init];
+    g_AccountPhone = [[NSMutableArray alloc] init];
     g_AccountID = [[NSMutableArray alloc] init];
     g_AccountName = [[NSMutableArray alloc] init];
 }
@@ -85,6 +86,7 @@
 	NSArray *array = nil;
     g_AccountName = [[NSMutableArray alloc] init ];
     g_AccountID= [[NSMutableArray alloc] init ];
+    g_AccountPhone = [[NSMutableArray alloc] init ];
     //NSMutableArray *ret = [[NSMutableArray alloc] init ];
 	
 	if(data)
@@ -97,8 +99,10 @@
         {
             NSString *name = [dic objectForKey:@"USER_NAME"];
             NSString *usr_id = [dic objectForKey:@"USER_ID"];
+            NSString *usr_phone = [dic objectForKey:@"USER_PHONE"];
             [g_AccountName addObject:name];
             [g_AccountID addObject:usr_id];
+            [g_AccountPhone addObject:usr_phone];
         }
 		[responseString release];
 	}
@@ -227,7 +231,7 @@
 	//[self delEventInfo];
 	
 	
-	NSArray *plumberArr = [[NSArray alloc] initWithObjects: [NSString stringWithFormat:@"%@",  g_PhoneNumber ],
+	NSArray *plumberArr = [[NSArray alloc] initWithObjects: [NSString stringWithFormat:@"%@",  g_UserNumber ],
 						   [NSString stringWithFormat:@"%@",  g_UserName ],
                            nil];
 	
@@ -244,7 +248,7 @@
     
     NSArray *plumberArr = [[NSArray alloc] initWithContentsOfFile:[documentPath stringByAppendingPathComponent:@"user.status"]];
     
-    g_PhoneNumber = [plumberArr objectAtIndex:0];
+    g_UserNumber = [plumberArr objectAtIndex:0];
     g_UserName = [plumberArr objectAtIndex:1];
 }
 
@@ -305,7 +309,7 @@
 	UIDevice *myDevice = [UIDevice currentDevice];
 	NSString *deviceUDID = [myDevice uniqueIdentifier];
 	//NSString *post =[[NSString alloc] initWithFormat:@"userName=%@&userPhone=%@&deviceID=",@"hank",[[NSUserDefaults standardUserDefaults] stringForKey:@"SBFormattedPhoneNumber"]];
-	NSString *post =[[NSString alloc] initWithFormat:@"userPhone=%@&userName=%@&deviceID=",g_PhoneNumber,g_UserName];
+	NSString *post =[[NSString alloc] initWithFormat:@"userPhone=%@&userName=%@&deviceID=",g_UserNumber,g_UserName];
 	post = [post stringByAppendingFormat:@"%@",deviceUDID];
     //post = [post stringByAppendingFormat:[[NSUserDefaults standardUserDefaults] stringForKey:@"SBFormattedPhoneNumber"],deviceUDID];
 	NSURL *url=[NSURL URLWithString:@"http://www.entalkie.url.tw/login.php"];

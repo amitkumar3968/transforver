@@ -256,6 +256,7 @@ NSMutableArray *imageList;
         [imageButton setSelected:YES];
         [allButton setSelected:NO];
     }
+    [Util getRelationships:g_UserID];
     [self.tableView reloadData];
 }
 - (void) filterbuttonPushed: (id) sender{
@@ -341,7 +342,17 @@ NSMutableArray *imageList;
         [cell.thumbnailView setFrame:CGRectMake(5, 10, 30, 30)];
         cell.uibtContactAdd.tag = [indexPath row];
         [cell.uibtContactAdd addTarget:self action:@selector(addPerson:) forControlEvents:UIControlEventTouchUpInside];
-        cell.uibtContactAdd.hidden=FALSE;
+
+        //check condition for add button
+        NSString *strPhone = [listOfPhones objectAtIndex:[indexPath row]];
+        strPhone = [strPhone stringByReplacingOccurrencesOfString:@"-" withString:@""];
+        BOOL isExistedUserFlag = [self isExistedUser:strPhone];
+        if (isExistedUserFlag) {
+            cell.uibtContactAdd.hidden=TRUE;
+        }
+        else {
+            cell.uibtContactAdd.hidden=FALSE;
+        }
         cell.uibtContactDel.hidden=TRUE;
         [cell.contentView addSubview:cell.thumbnailView];
         [self findFriend:[listOfItems objectAtIndex:([indexPath row])]];
@@ -370,6 +381,18 @@ NSMutableArray *imageList;
     return cell;
 }
 
+- (BOOL)isExistedUser: (NSString *)strPhone
+{
+    for (int i=0; i<g_AccountPhone.count; i++)
+    {
+        if ([strPhone isEqualToString:[g_AccountPhone objectAtIndex:i]]){
+            return YES;
+        }
+    }
+    return NO;
+}
+
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
@@ -382,7 +405,7 @@ NSMutableArray *imageList;
     NSLog(@"list of phones: %d", [listOfPhones count]);
     NSString *phoneWithoutSeperates = [[listOfPhones objectAtIndex:sender.tag] stringByReplacingOccurrencesOfString:@"-" withString:@""];
     [self addRelationships:g_UserID  phonenumber:phoneWithoutSeperates];
-    [self getRelationships:g_UserID ];
+
 }
 
 - (void)delPerson:(UIButton *)sender
@@ -429,6 +452,7 @@ NSMutableArray *imageList;
     
     NSData *data = [DBHandler sendReqToUrl:urlString postString:nil];
 	NSArray *array = nil;
+    g_AccountPhone = [[NSMutableArray alloc] init ];
     g_AccountName = [[NSMutableArray alloc] init ];
     g_AccountID = [[NSMutableArray alloc] init ];
     //NSMutableArray *ret = [[NSMutableArray alloc] init ];
@@ -454,17 +478,21 @@ NSMutableArray *imageList;
 - (void) addRelationships:(int) uid phonenumber:(NSString *) phone{
     NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/addRelationships.php?srcID=%d&dstPhone=%@", g_UserID, phone];
     
-    NSData *data = [DBHandler sendReqToUrl:urlString postString:nil];
-	NSArray *array = nil;
-    //NSMutableArray *ret = [[NSMutableArray alloc] init ];
-	
-	if(data)
-	{
-		NSString *responseString = [[NSString alloc] initWithData:data
-                                                         encoding:NSUTF8StringEncoding];
-		array = [responseString JSONValue];
-		[responseString release];
-	}
+    if (![self isExistedUser:phone]) {
+        NSData *data = [DBHandler sendReqToUrl:urlString postString:nil];
+        NSArray *array = nil;
+        //NSMutableArray *ret = [[NSMutableArray alloc] init ];
+        
+        if(data)
+        {
+            NSString *responseString = [[NSString alloc] initWithData:data
+                                                             encoding:NSUTF8StringEncoding];
+            array = [responseString JSONValue];
+            [responseString release];
+        }
+    }
+    [Util getRelationships:g_UserID];
+    [self.tableView reloadData];
 }
 
 - (BOOL)findFriend:(NSString *)phone

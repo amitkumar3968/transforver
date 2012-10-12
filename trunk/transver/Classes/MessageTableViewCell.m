@@ -61,7 +61,7 @@
     int middleWidth = 200;
     int xoffset = 90;
     int yoffset = 10;
-    NSRange aRange = [text rangeOfString:@"aif"];
+    NSRange aRange = [text rangeOfString:@"caf"];
     if (aRange.location ==NSNotFound) {
         middleHeight = rectheight-42;
     }
@@ -162,7 +162,7 @@
     CGSize textSize = [text sizeWithFont:font constrainedToSize:textRect.size lineBreakMode:UILineBreakModeWordWrap];
     textRect.size.height = textSize.height;
     NSLog(@"%@", text);
-    aRange = [text rangeOfString:@"aif"];
+    aRange = [text rangeOfString:@"caf"];
     if (aRange.location ==NSNotFound) {
         NSLog(@"string not found");
         [text drawInRect:textRect withFont:font lineBreakMode:UILineBreakModeWordWrap alignment:alignment];
