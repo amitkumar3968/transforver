@@ -25,6 +25,7 @@
 
 @protocol RecorderSendDelegate;
 
+
 @interface vwRecordController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource>
 {
     IBOutlet UILabel *uilbTimeElapse;
@@ -46,6 +47,7 @@
 	double increaseSound;                      //to hold the value of the slider
  	NSTimer *timer;	
     BOOL playerPlaying;
+    float recSeconds;
     
     //Ray added for AudioRecorder
     
@@ -79,10 +81,17 @@
 @property (nonatomic, retain) IBOutlet UIButton* uibtSendToWho;
 @property (nonatomic, strong) UIPickerView* selecteTargetPicker;
 
+@property (nonatomic, retain) NSTimer *recTimer;
 @property (nonatomic, retain) IBOutlet UIButton *uibtRecord;
 @property (nonatomic, retain) AudioRecorder *recorder;
 @property (nonatomic, retain) IBOutlet  UIActivityIndicatorView *progressView;
+@property (nonatomic, retain) UIView *recordingBar;
+@property (nonatomic, retain) UILabel *uilbRecSec;
 @property (nonatomic, retain) UIView *coverView;
+
+@property (nonatomic, retain) NSString *vocodedFilepath;
+@property (nonatomic, retain) NSString *originalFilepath;
+
 
 
 -(IBAction)playPlayer:(id)sender;
@@ -94,12 +103,16 @@
 -(void) updateSliderValue:(id)sender;
 -(IBAction) recordButtonTapped :(id)sender;
 -(void) initRecorderSetup;
+-(void) updateRecordingState:(NSTimer *)recTimer;
+
 -(void) playerSetup;
 -(IBAction) showPicker;
 -(IBAction) hidePicker;
 
 -(IBAction) showSendToWhoPicker:(id)sender;
 -(IBAction) deletePressed;
+
+
 @end
 
 
@@ -108,3 +121,4 @@
 - (void)sendVoice:(NSString *)origfilename vocode:(NSString *)vocodefilename pass:(NSString *)password;
 
 @end
+

@@ -67,6 +67,11 @@ NSMutableArray *imageList;
         ABRecordRef record = [addresses objectAtIndex:i];
         NSString *firstName = (NSString *)ABRecordCopyValue(record, kABPersonFirstNameProperty);
         NSString *lastName = (NSString *)ABRecordCopyValue(record, kABPersonLastNameProperty);
+        if (firstName==nil)
+            firstName=@"";
+        if (lastName==nil) {
+            lastName=@"";
+        }
         UIImageView *contactImage = (UIImageView *)ABPersonCopyImageData(record);
         NSString *contactFirstLast = [NSString stringWithFormat: @"%@ %@", firstName, lastName];
         ABMultiValueRef phoneNumbers = (NSString *)ABRecordCopyValue(record, kABPersonPhoneProperty);

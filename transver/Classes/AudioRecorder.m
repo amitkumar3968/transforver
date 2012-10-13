@@ -223,7 +223,6 @@ void AudioOutputCallback(
             status = AudioQueueStart(recordState.queue, NULL);
             if(status == 0)
             {
-				NSLog(@"Vocoder Finished !!");
                 //labelStatus.text = @"Recording";
             }
         }

@@ -17,7 +17,7 @@
 
 @implementation vwHistoryController
 
-@synthesize m_historyTableView, m_HistoryDialog, m_RelationKey, m_AlreadyAdd, m_ShowHistoryList;
+@synthesize m_historyTableView, m_HistoryDialog, m_RelationKey, m_AlreadyAdd, m_ShowHistoryList, navBar;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -25,7 +25,12 @@
     if (self) {
         self.title = NSLocalizedString(@"History", @"History");
         self.tabBarItem.image = [UIImage imageNamed:@"common_icon_his_rest.png"];
-        m_HistoryDialog = [[NSMutableArray alloc] init];
+        
+        UIImage *origImg =     [[UIImage imageNamed:@"common_bg_header@2x.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:0.0f];
+        UIImage *headerImg= [[UIImage alloc] initWithCGImage:origImg scale:.5f orientation:UIImageOrientationUp];
+        
+        //[self.navBar setBackgroundImage:headerImg forBarMetrics:UIBarMetricsDefault];        m_HistoryDialog = [[NSMutableArray alloc] init];
+        
         m_RelationKey = [[NSMutableDictionary alloc] init];
         m_AlreadyAdd = [[NSMutableDictionary alloc] init];
         m_ShowHistoryList = [[NSMutableArray alloc] init];
@@ -262,6 +267,10 @@
         //[chat setContact:contact];
         UINavigationController *navCtlr = [[UINavigationController alloc] initWithRootViewController:chat];
         navCtlr.navigationBar.barStyle = UIBarStyleDefault;
+        UIImage *origImg =     [[UIImage imageNamed:@"common_bg_header@2x.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:0.0f];
+        UIImage *headerImg= [[UIImage alloc] initWithCGImage:origImg scale:.5f orientation:UIImageOrientationUp];
+
+        //[navCtlr.navigationBar setBackgroundImage:headerImg forBarMetrics:UIBarMetricsDefault];
         
         [g_RootController presentModalViewController:navCtlr animated:NO];
         [navCtlr release];

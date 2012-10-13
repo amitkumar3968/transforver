@@ -35,6 +35,7 @@ typedef struct
 	RecordState recordState;
     PlayState playState;
     CFURLRef fileURL;
+    NSTimer *timer;
 }
 - (BOOL)getFilename:(char*)buffer maxLenth:(int)maxBufferLength;
 - (void)setupAudioFormat:(AudioStreamBasicDescription*)format;
