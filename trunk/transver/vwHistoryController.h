@@ -23,4 +23,6 @@
 @property (nonatomic, retain) NSMutableDictionary *m_RelationKey;
 @property (nonatomic, retain) NSMutableDictionary *m_AlreadyAdd;
 @property (nonatomic, retain) NSMutableArray *m_ShowHistoryList;
+@property (nonatomic, retain) IBOutlet UINavigationBar *navBar;
+
 @end

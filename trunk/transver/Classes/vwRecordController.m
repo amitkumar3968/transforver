@@ -6,6 +6,8 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 #import "vwRecordController.h"
+#define MAX_RECORD_SECONDS 10
+
 
 @implementation vwRecordController;
 
@@ -28,10 +30,17 @@
 @synthesize uibtSendToWho;
 @synthesize selecteTargetPicker;
 
+@synthesize recTimer;
 @synthesize uibtRecord;
 @synthesize recorder;
 @synthesize progressView;
 @synthesize coverView;
+@synthesize uilbRecSec;
+@synthesize recordingBar;
+@synthesize vocodedFilepath;
+@synthesize originalFilepath;
+
+
 
 - (void) threadStartAnimating:(id)data {
     coverView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
@@ -45,57 +54,78 @@
     [NSThread detachNewThreadSelector:@selector(threadStartAnimating:) toTarget:self withObject:nil];
 	NSString *carrierFilename=[NSString stringWithFormat:@"%@.aif",[arrVocCarrierOpts objectAtIndex:carrierOptIndex]];
 	[Util copyFileWithFilename:carrierFilename];
-	NSString *audioFile = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], RECORDING_FILE_AIF];
-	const char *modulator_filepath = [audioFile UTF8String];
-	audioFile = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], carrierFilename];
-	const char *carrier_filepath = [audioFile UTF8String];
-	audioFile = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], VOCODE_FILE_AIF];
-	const char *output_filepath=[audioFile UTF8String];
-	audioFile = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"meta"];
-    const char *meta_filepath=[audioFile UTF8String];
-	int encrypt_para;
-	if (uiswEncrypt.on==YES){
-		encrypt_para=1;
-	}
-	else {
-		encrypt_para=0;
-	}	
-	dovocode(encrypt_para, output_filepath, meta_filepath, modulator_filepath, carrier_filepath);
-	done_vocode=1;
-    btnSend = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btnSend setFrame:CGRectMake(160.0, 0.0, 159.0, 44.0)];
-    [btnSend setBackgroundImage:[UIImage imageNamed:@"record_btn_sendndelete_slected.png"] forState:UIControlStateNormal];
-    [btnSend setTitle:@"Send" forState:UIControlStateNormal];
-    [btnSend addTarget:self action:@selector(sendPressed) forControlEvents:UIControlEventTouchUpInside];
     
-    btnDelete = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btnDelete setFrame:CGRectMake(0.0, 0.0, 159.0, 44.0)];
-    [btnDelete setBackgroundImage:[UIImage imageNamed:@"record_btn_sendndelete_slected.png"] forState:UIControlStateNormal];
-    [btnDelete setTitle:@"Delete" forState:UIControlStateNormal];
-    [btnDelete addTarget:self action:@selector(deletePressed) forControlEvents:UIControlEventTouchUpInside];
-    confirmView = [[UIView alloc] initWithFrame:CGRectMake(0, 436, 320, 44)];
-    confirmView.backgroundColor=[UIColor clearColor];
-    [confirmView addSubview:btnSend];
-    [confirmView addSubview:btnDelete];
-    [self.tabBarController.view addSubview:confirmView];
-    self.tabBarController.tabBar.hidden=TRUE;
-	///[self uploadFile:recording_filepath];
+	NSString *audioFile = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], RECORDING_FILE_AIF];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:audioFile])
+    {
+        const char *modulator_filepath = [audioFile UTF8String];
+        audioFile = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], carrierFilename];
+        const char *carrier_filepath = [audioFile UTF8String];
+        audioFile = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], VOCODE_FILE_AIF];
+        const char *output_filepath=[audioFile UTF8String];
+        audioFile = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"meta"];
+        const char *meta_filepath=[audioFile UTF8String];
+        int encrypt_para;
+        if (uiswEncrypt.on==YES){
+            encrypt_para=1;
+        }
+        else {
+            encrypt_para=0;
+        }	
+        dovocode(encrypt_para, output_filepath, meta_filepath, modulator_filepath, carrier_filepath);
+        done_vocode=1;
+        btnSend = [UIButton buttonWithType:UIButtonTypeCustom];
+        [btnSend setFrame:CGRectMake(160.0, 0.0, 159.0, 44.0)];
+        [btnSend setBackgroundImage:[UIImage imageNamed:@"record_btn_sendndelete_slected.png"] forState:UIControlStateNormal];
+        [btnSend setTitle:@"Send" forState:UIControlStateNormal];
+        [btnSend addTarget:self action:@selector(sendPressed) forControlEvents:UIControlEventTouchUpInside];
+        
+        btnDelete = [UIButton buttonWithType:UIButtonTypeCustom];
+        [btnDelete setFrame:CGRectMake(0.0, 0.0, 159.0, 44.0)];
+        [btnDelete setBackgroundImage:[UIImage imageNamed:@"record_btn_sendndelete_slected.png"] forState:UIControlStateNormal];
+        [btnDelete setTitle:@"Delete" forState:UIControlStateNormal];
+        [btnDelete addTarget:self action:@selector(deletePressed) forControlEvents:UIControlEventTouchUpInside];
+        confirmView = [[UIView alloc] initWithFrame:CGRectMake(0, 436, 320, 44)];
+        confirmView.backgroundColor=[UIColor clearColor];
+        [confirmView addSubview:btnSend];
+        [confirmView addSubview:btnDelete];
+        [self.tabBarController.view addSubview:confirmView];
+        self.tabBarController.tabBar.hidden=TRUE;
+        ///[self uploadFile:recording_filepath];
+    }
+    else {
+        UIAlertView *recordingFirst = [[UIAlertView alloc] initWithTitle:@"Recording First" message:@"You must record something before encryption" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [recordingFirst show];
+    }
     [progressView stopAnimating];
     [coverView removeFromSuperview];
 }
 
 - (IBAction) deletePressed
 {
+    NSFileManager *fileManager = [[NSFileManager alloc] init];
+    NSError *err;
+    /*
+    if( [fileManager fileExistsAtPath:vocodedFilepath])
+        [fileManager removeItemAtPath:vocodedFilepath error:&err];
+    if ([fileManager fileExistsAtPath:originalFilepath]) {
+        [fileManager removeItemAtPath:originalFilepath error:&err];
+    } 
+     */
     [confirmView removeFromSuperview];
     self.tabBarController.tabBar.hidden=FALSE;
 }
 
 - (IBAction) sendPressed
 {
-    [NSThread detachNewThreadSelector:@selector(threadStartAnimating:) toTarget:self withObject:nil];
-    
-//    [self performSelectorInBackground:@selector(converAndSendMessage) withObject:nil];
-    [self converAndSendMessage];
+    if (destID<=0) {
+        UIAlertView *alertSetReceiver = [[UIAlertView alloc] initWithTitle:@"Set Receiver" message:@"You need to select one receiver before sending message" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alertSetReceiver show];
+    }
+    else {
+        [NSThread detachNewThreadSelector:@selector(threadStartAnimating:) toTarget:self withObject:nil];
+        [self converAndSendMessage];
+    }
 }
 
 
@@ -133,7 +163,7 @@
 	//rename and upload original audio
 	NSMutableString *randomFilename = [self genRandStringLength:23];
 	NSString *originalFilename = [NSString stringWithFormat:@"%@%@", randomFilename, processingRecordingFileName];
-	NSString *originalFilepath = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], originalFilename];
+	originalFilepath = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], originalFilename];
 	NSString *targetPath= [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], processingRecordingFileName];
 	NSFileManager * fileManager =  [NSFileManager defaultManager];
 	[fileManager moveItemAtPath:targetPath
@@ -148,7 +178,7 @@
 	//rename and upload vocoded audio
 	randomFilename = [self genRandStringLength:23];
 	NSString *vocodedFilename = [NSString stringWithFormat:@"%@%@", randomFilename, processingVocodeFileName];
-	NSString *vocodedFilepath = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], vocodedFilename];
+	vocodedFilepath = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], vocodedFilename];
 	targetPath= [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], processingVocodeFileName];
 	[fileManager moveItemAtPath:targetPath
 						 toPath:vocodedFilepath error:nil];
@@ -348,28 +378,57 @@ numberOfRowsInComponent:(NSInteger) component
 - (void) recordButtonTapped:(id)sender
 {
     UIButton *recButton = (UIButton*) sender;
-    if (!recButton.selected){
-        if (recorder==nil)
-            recorder = [[AudioRecorder alloc] init];
-        [recorder startRecording];
-        [uibtRecord setSelected:YES];
-        [uibtRecord setBackgroundImage:[UIImage imageNamed:@"record_btn_redrec_rest@2x.png"] forState:UIControlStateNormal];
-        UIImage *recordLight = [UIImage imageNamed:@"record_icon_record@2x.png"];
-        UIImage *smallRecLiht = [Util imageWithImage:recordLight scaledToSize:CGSizeMake(recordLight.size.width/2, recordLight.size.height/2)];
-        [uibtRecord setImage:smallRecLiht forState:UIControlStateNormal];
+    if (player.isPlaying){
+        //do nothing
     }
     else {
-        if (recorder!=nil){
-            [recorder stopRecording];
-            recorder=nil;
+        if (!recButton.selected){
+            if (recorder==nil)
+                recorder = [[AudioRecorder alloc] init];
+            [recorder startRecording];
+            [uibtRecord setSelected:YES];
+            [uibtRecord setBackgroundImage:[UIImage imageNamed:@"record_btn_redrec_rest@2x.png"] forState:UIControlStateNormal];
+            UIImage *recordLight = [UIImage imageNamed:@"record_icon_record@2x.png"];
+            UIImage *smallRecLiht = [Util imageWithImage:recordLight scaledToSize:CGSizeMake(recordLight.size.width/2, recordLight.size.height/2)];
+            [uibtRecord setImage:smallRecLiht forState:UIControlStateNormal];
+            recTimer = [NSTimer scheduledTimerWithTimeInterval:.1f target:self selector:@selector(updateRecordingState:) userInfo:nil repeats:YES];
+            recordingBar= [[UIView alloc] initWithFrame:CGRectMake(0, 48, 320, 30)];
+            recordingBar.backgroundColor=[UIColor redColor];
+            uilbRecSec =  [[UILabel alloc] initWithFrame: CGRectMake(30, 0, 180, 30)];
+            uilbRecSec.backgroundColor = [UIColor clearColor];
+            uilbRecSec.textColor = [UIColor yellowColor];
+            uilbRecSec.text = @"Recording: Start !";
+            [recordingBar addSubview:uilbRecSec];
+            [self.view addSubview:recordingBar];
         }
-        [uibtRecord setSelected:NO];
-        [uibtRecord setBackgroundImage:[UIImage imageNamed:@"record_btn_redrec_pressed@2x.png"] forState:UIControlStateNormal];
-        
-        UIImage *recordLight = [UIImage imageNamed:@"record_icon_unrecord@2x.png"];
-        UIImage *smallRecLiht = [Util imageWithImage:recordLight scaledToSize:CGSizeMake(recordLight.size.width/2, recordLight.size.height/2)];
-        [uibtRecord setImage:smallRecLiht forState:UIControlStateNormal];
-        done_vocode=0;
+        else {
+            if (recorder!=nil){
+                [recorder stopRecording];
+                recorder=nil;
+            }
+            if ([recTimer isValid]) {
+                [recTimer invalidate];
+                recTimer=nil;
+            }
+            [uibtRecord setSelected:NO];
+            [uibtRecord setBackgroundImage:[UIImage imageNamed:@"record_btn_redrec_pressed@2x.png"] forState:UIControlStateNormal];
+            
+            UIImage *recordLight = [UIImage imageNamed:@"record_icon_unrecord@2x.png"];
+            UIImage *smallRecLiht = [Util imageWithImage:recordLight scaledToSize:CGSizeMake(recordLight.size.width/2, recordLight.size.height/2)];
+            [uibtRecord setImage:smallRecLiht forState:UIControlStateNormal];
+            done_vocode=0;
+            [recordingBar removeFromSuperview];
+        }
+
+    }
+}
+
+-(void) updateRecordingState:(NSTimer *)recTimer
+{
+    recSeconds += .1;
+    uilbRecSec.text= [[NSString alloc] initWithFormat:@"Recording:  %02i:%02i", (int)(recSeconds)/60, (int)recSeconds%60];
+    if (recSeconds>MAX_RECORD_SECONDS){
+        [self recordButtonTapped:uibtRecord];
     }
 }
 
@@ -453,7 +512,8 @@ numberOfRowsInComponent:(NSInteger) component
     
     [uibtRecord setBackgroundImage:[UIImage imageNamed:@"record_btn_redrec_rest@2x.png"] forState:UIControlStateSelected];
     [uibtRecord setBackgroundImage:[UIImage imageNamed:@"record_btn_redrec_pressed@2x.png"] forState:UIControlStateNormal];
-    
+    NSString *orignialFilepath= @"";
+    NSString *vocodedFilepath=@"";
     //
 	//timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(timeLoader) userInfo:nil repeats:YES];    
 	// Do any additional setup after loading the view, typically from a nib.
@@ -471,6 +531,9 @@ numberOfRowsInComponent:(NSInteger) component
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    if (destName!=nil) {
+        uibtSendToWho.titleLabel.text = [[NSString alloc] initWithFormat:@"Send to:%@", destName];
+    }
     [super viewWillAppear:animated];
     recorder = [[AudioRecorder alloc] init];
     [progressView stopAnimating];
@@ -542,7 +605,8 @@ numberOfRowsInComponent:(NSInteger) component
     } else if ( [self.player isPlaying] ) { // playing
         NSLog(@"Player Time: %f", player.currentTime);
         uisliderTime.value=player.currentTime;
-        uilbTimeElapse.text= [[NSString alloc] initWithFormat:@"%02i:%02i", (int)(uisliderTime.value)/60, (int)uisliderTime.value%60];
+
+        
     } else { // is pause
         if ( self.player.currentTime == 0) { // player play end than natual stop
             [timer invalidate]; // if have bug, command this line
@@ -557,14 +621,20 @@ numberOfRowsInComponent:(NSInteger) component
 
 -(IBAction)playPlayer:(id)sender
 {
-    if ( self.player == nil ) { // is stop
-        [self playerSetup];
-        [self.player play];
-        timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateSliderValue:) userInfo:nil repeats:YES];
-    } else if ( [self.player isPlaying] ) { // is playing
-        // do nothing.
-    } else { // is pause
-        [self.player play];
+    if (uibtRecord.selected==YES)
+    {
+        //Do nothing 
+    }
+    else {
+        if ( self.player == nil ) { // is stop
+            [self playerSetup];
+            [self.player play];
+            timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateSliderValue:) userInfo:nil repeats:YES];
+        } else if ( [self.player isPlaying] ) { // is playing
+            // do nothing.
+        } else { // is pause
+            [self.player play];
+        }
     }
 }
 

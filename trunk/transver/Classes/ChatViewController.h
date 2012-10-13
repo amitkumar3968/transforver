@@ -17,6 +17,7 @@
 #import <RestKit/RestKit.h>
 #import <RestKit/CoreData/CoreData.h>
 #import "AudioRecorder.h"
+#import "vwRecordController.h"
 
 @class Contact;
 

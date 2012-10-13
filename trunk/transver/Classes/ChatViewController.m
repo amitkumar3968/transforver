@@ -79,7 +79,9 @@ NSString *downloadfilename;
     [audioRecorder stopRecording];
 	[audioRecorder release];
     destID=self.m_dstid;
-    g_tabController.selectedViewController = [g_tabController.viewControllers objectAtIndex:0];
+    vwRecordController *recCtlr = [g_tabController.viewControllers objectAtIndex:0];
+    recCtlr.destName = m_DstName;
+    g_tabController.selectedViewController = recCtlr;
     [self dismissModalViewControllerAnimated:NO];
     
 }
@@ -105,7 +107,9 @@ NSString *downloadfilename;
         UIImage *smallRecLiht = [Util imageWithImage:recordLight scaledToSize:CGSizeMake(recordLight.size.width/2, recordLight.size.height/2)];
         [BtnRecord setImage:smallRecLiht forState:UIControlStateNormal];
         destID=self.m_dstid;
-        g_tabController.selectedViewController = [g_tabController.viewControllers objectAtIndex:0];
+        vwRecordController *recCtlr = [g_tabController.viewControllers objectAtIndex:0];
+        recCtlr.destName = m_DstName;
+        g_tabController.selectedViewController = recCtlr;
         [self dismissModalViewControllerAnimated:NO];
     }
 }
