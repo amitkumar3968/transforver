@@ -96,17 +96,19 @@ NSMutableArray *imageList;
             NSLog(@"%@",contactFirstLast);
         }
         
-        //Here I think something goes wrong, but I don't know what
+        // Comment this line so always use build-in imgage; Here I think something goes wrong, but I don't know what
         // If I comment out this line, the application works, but now pictures is showing.
+        /*
         if (contactImage==nil)
         [imageList addObject:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"common_icon_con_rest@2x.png"]]];
         else {
             [imageList addObject:contactImage];
-        }
+        }*/
         
         [firstName release];
         [lastName release];
     }
+    NSLog(@"End of fetching contacts.");
 #if 1
     if( addressesCount == 0)
     {
@@ -341,8 +343,9 @@ NSMutableArray *imageList;
         [cell.contentView addSubview:cell.thumbnailView];
     }
     else {
+        cell.firstNameLabel.hidden=TRUE;
         cell.lastNameLabel.text = [listOfItems objectAtIndex:([indexPath row])];
-        cell.thumbnailView = [imageList objectAtIndex:[indexPath row]];
+        cell.thumbnailView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"common_icon_con_rest@2x.png"]];
         cell.thumbnailView.contentMode = UIViewContentModeScaleAspectFit;
         [cell.thumbnailView setFrame:CGRectMake(5, 10, 30, 30)];
         cell.uibtContactAdd.tag = [indexPath row];
@@ -360,7 +363,8 @@ NSMutableArray *imageList;
         }
         cell.uibtContactDel.hidden=TRUE;
         [cell.contentView addSubview:cell.thumbnailView];
-        [self findFriend:[listOfItems objectAtIndex:([indexPath row])]];
+        //todo : figure out is this line necessary
+        //[self findFriend:[listOfItems objectAtIndex:([indexPath row])]];
         
     }
     //cell.lastNameLabel.text = [VEMContactName objectAtIndex:([indexPath row])];
@@ -379,8 +383,9 @@ NSMutableArray *imageList;
         [cell setFrame:cellFrame];
         return cell;
     }*/
-    NSLog(@"%@", cell.lastNameLabel.text);
-    
+    if ([indexPath row]>=157){
+        NSLog(@"%@", cell.lastNameLabel.text);
+    }
     //cell.textLabel.text = [listOfItems objectAtIndex:([indexPath row])];
     //cell.textLabel.text = [[NSString alloc] initWithFormat:@"test"]; 
     return cell;

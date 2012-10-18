@@ -26,7 +26,7 @@
 @protocol RecorderSendDelegate;
 
 
-@interface vwRecordController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource>
+@interface vwRecordController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate>
 {
     IBOutlet UILabel *uilbTimeElapse;
     IBOutlet UILabel *uilbTimeTotal;
@@ -92,6 +92,7 @@
 @property (nonatomic, retain) NSString *vocodedFilepath;
 @property (nonatomic, retain) NSString *originalFilepath;
 
+@property (nonatomic, retain) IBOutlet  UITextField *txfPass;
 
 
 -(IBAction)playPlayer:(id)sender;
@@ -99,6 +100,7 @@
 -(IBAction)stopPlayer:(id)sender;
 -(IBAction)sliderValueChanged:(id)sender;
 //-(IBAction)sound:(id)sender;
+-(IBAction) passwordCheck :(id)sender;
 
 -(void) updateSliderValue:(id)sender;
 -(IBAction) recordButtonTapped :(id)sender;

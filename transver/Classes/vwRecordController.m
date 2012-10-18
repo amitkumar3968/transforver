@@ -7,6 +7,7 @@
 //
 #import "vwRecordController.h"
 #define MAX_RECORD_SECONDS 10
+#define MAX_PASSWORD_LENGTH 5
 
 
 @implementation vwRecordController;
@@ -39,8 +40,22 @@
 @synthesize recordingBar;
 @synthesize vocodedFilepath;
 @synthesize originalFilepath;
+@synthesize txfPass;
 
-
+// Check password text field
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    if (textField.text.length >= MAX_PASSWORD_LENGTH && range.length == 0)
+    {
+        return NO; // return NO to not change text
+    }
+    else  if([string isEqualToString:@"\n"]) {
+        [textField resignFirstResponder];
+        return NO;
+    }
+    else
+    {return YES;}
+}
 
 - (void) threadStartAnimating:(id)data {
     coverView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
@@ -66,7 +81,7 @@
         audioFile = [NSString stringWithFormat:@"%@/%@.aif", [Util getDocumentPath], @"meta"];
         const char *meta_filepath=[audioFile UTF8String];
         int encrypt_para;
-        if (uiswEncrypt.on==YES){
+        if (uiswPassLock.on==YES){
             encrypt_para=1;
         }
         else {
@@ -115,6 +130,8 @@
     [confirmView removeFromSuperview];
     self.tabBarController.tabBar.hidden=FALSE;
 }
+
+
 
 - (IBAction) sendPressed
 {
@@ -193,8 +210,12 @@
 	//rename
 	
     //time_t unixTime = [[NSDate date] timeIntervalSince1970];
-    
-    [self sendVoice:originalFilename vocode:vocodedFilename pass:@"1234"];
+    if (uiswPassLock) {
+        [self sendVoice:originalFilename vocode:vocodedFilename pass:txfPass.text];
+    }
+    else{
+        [self sendVoice:originalFilename vocode:vocodedFilename pass:@""];
+    }
 	[confirmView removeFromSuperview];
     self.tabBarController.tabBar.hidden=FALSE;
     [progressView stopAnimating];
@@ -409,6 +430,7 @@ numberOfRowsInComponent:(NSInteger) component
             if ([recTimer isValid]) {
                 [recTimer invalidate];
                 recTimer=nil;
+                recSeconds=0;
             }
             [uibtRecord setSelected:NO];
             [uibtRecord setBackgroundImage:[UIImage imageNamed:@"record_btn_redrec_pressed@2x.png"] forState:UIControlStateNormal];
@@ -591,7 +613,20 @@ numberOfRowsInComponent:(NSInteger) component
     
     player = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:stringEscapedMyMusic] error:NULL];
 	player.numberOfLoops = 0;
-	player.volume = 1;
+    
+    //balance volume
+    if (done_vocode==1)
+    {
+        if (uiswPassLock.on==YES){
+            player.volume=.4;
+        }
+        else {
+            player.volume=1;
+        }
+    }
+    else {
+        player.volume=0.8;
+    }
 	uisliderTime.maximumValue = player.duration;
     uilbTimeTotal.text= [[NSString alloc] initWithFormat:@"%i:%02i", (int)(uisliderTime.maximumValue)/60, (int)uisliderTime.maximumValue%60];
     //[myMusic release];

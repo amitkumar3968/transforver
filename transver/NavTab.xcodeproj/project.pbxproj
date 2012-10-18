@@ -121,6 +121,7 @@
 		7EEF89BD1402695D005D93F7 /* fftn.c in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF89AF1402695D005D93F7 /* fftn.c */; };
 		7EEF89BE1402695D005D93F7 /* riff.c in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF89B01402695D005D93F7 /* riff.c */; };
 		7EEF89C01402695D005D93F7 /* wave.c in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF89B51402695D005D93F7 /* wave.c */; };
+		A41DD9C5162FBF13001BFECC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A41DD9C4162FBF13001BFECC /* Default.png */; };
 		A4307025160B59EE00CFD593 /* Piano.aif in Resources */ = {isa = PBXBuildFile; fileRef = A4307024160B59EE00CFD593 /* Piano.aif */; };
 		A4307027160B6D1700CFD593 /* dovocode_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4307026160B6D1700CFD593 /* dovocode_icon@2x.png */; };
 		A45FEE2215A315AD00CF3D72 /* message_bg_time1.png in Resources */ = {isa = PBXBuildFile; fileRef = A45FEDED15A315AD00CF3D72 /* message_bg_time1.png */; };
@@ -659,6 +660,7 @@
 		7EEF89B51402695D005D93F7 /* wave.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wave.c; sourceTree = "<group>"; };
 		7EEF89B61402695D005D93F7 /* wave.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wave.h; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A41DD9C4162FBF13001BFECC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		A4307024160B59EE00CFD593 /* Piano.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Piano.aif; sourceTree = SOURCE_ROOT; };
 		A4307026160B6D1700CFD593 /* dovocode_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dovocode_icon@2x.png"; path = "record/dovocode_icon@2x.png"; sourceTree = "<group>"; };
 		A45FEDED15A315AD00CF3D72 /* message_bg_time1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = message_bg_time1.png; path = history/message/message_bg_time1.png; sourceTree = "<group>"; };
@@ -1271,6 +1273,7 @@
 		4F724C9813F75F1D00A6F871 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				A41DD9C4162FBF13001BFECC /* Default.png */,
 				A4F63237159D849E003C709D /* img_history_message */,
 				A4F6312E159D8436003C709D /* img_history */,
 				A4F6312D159D842E003C709D /* img_contact */,
@@ -2095,6 +2098,7 @@
 				4F01F18915E407720016717D /* VEM.png in Resources */,
 				A4307025160B59EE00CFD593 /* Piano.aif in Resources */,
 				A4307027160B6D1700CFD593 /* dovocode_icon@2x.png in Resources */,
+				A41DD9C5162FBF13001BFECC /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
