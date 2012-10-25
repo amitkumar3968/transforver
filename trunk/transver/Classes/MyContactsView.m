@@ -5,7 +5,7 @@
 //  Created by hank chen on 11/29/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
-
+#import <AddressBookUI/AddressBookUI.h>
 #import "MyContactsView.h"
 #import "OverlayViewController.h"
 #import "ChatViewController.h"
@@ -43,24 +43,9 @@ NSMutableArray *imageList;
     // Release any cached data, images, etc that aren't in use.
 }
 
-#pragma mark - View lifecycle
-
-- (void)viewDidLoad
+-(void) addContactToAddressBook:(ABAddressBookRef)addressesBookRef
 {
-    [super viewDidLoad];
-    listOfItems = [[NSMutableArray alloc] init];
-    listOfPhones = [[NSMutableArray alloc] init];   
-    //self.tableView.tableHeaderView = searchBar;
-    //searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
-    
-    //self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    
-    NSMutableArray *list = [[NSMutableArray alloc] init];
-    imageList = [[NSMutableArray alloc] init];
-    
-    ABAddressBookRef addressBook = ABAddressBookCreate();
-    
-    NSArray *addresses = (NSArray *) ABAddressBookCopyArrayOfAllPeople(addressBook);
+    NSArray *addresses = (NSArray *) ABAddressBookCopyArrayOfAllPeople(addressesBookRef);
     NSInteger addressesCount = [addresses count];
     
     for (int i = 0; i < addressesCount; i++) {
@@ -88,7 +73,7 @@ NSMutableArray *imageList;
                 break;
             }
         }
-
+        
         if (mobileNumber!=nil)
         {
             [listOfPhones addObject:mobileNumber];
@@ -99,27 +84,48 @@ NSMutableArray *imageList;
         // Comment this line so always use build-in imgage; Here I think something goes wrong, but I don't know what
         // If I comment out this line, the application works, but now pictures is showing.
         /*
-        if (contactImage==nil)
-        [imageList addObject:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"common_icon_con_rest@2x.png"]]];
-        else {
-            [imageList addObject:contactImage];
-        }*/
+         if (contactImage==nil)
+         [imageList addObject:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"common_icon_con_rest@2x.png"]]];
+         else {
+         [imageList addObject:contactImage];
+         }*/
         
         [firstName release];
         [lastName release];
     }
     NSLog(@"End of fetching contacts.");
-#if 1
-    if( addressesCount == 0)
-    {
-       // NSString *contactFirstLast = [NSString stringWithFormat: @"Ray"];
-        
-        //[listOfItems addObject:contactFirstLast];
-        //[listOfItems addObject:contactFirstLast];
-        //[imageList addObject:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"common_icon_con_rest@2x.png"]]];
-        //[imageList addObject:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"common_icon_con_rest@2x.png"]]];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    listOfItems = [[NSMutableArray alloc] init];
+    listOfPhones = [[NSMutableArray alloc] init];   
+    //self.tableView.tableHeaderView = searchBar;
+    //searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
+    
+    //self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    
+    NSMutableArray *list = [[NSMutableArray alloc] init];
+    imageList = [[NSMutableArray alloc] init];
+    
+    ABAddressBookRef addressBookRef = ABAddressBookCreate();
+    NSArray *addresses;
+    
+    if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusNotDetermined) {
+        ABAddressBookRequestAccessWithCompletion(addressBookRef, ^(bool granted, CFErrorRef error) {
+            // First time access has been granted, add the contact
+            [self addContactToAddressBook: addressBookRef];
+        });
     }
-#endif	
+    else if(ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
+        // The user has previously given access, add the contact
+        [self addContactToAddressBook: addressBookRef];
+    }
+    else{
+        //do nothging
+    }
+
     
 	// create a filtered list that will contain products for the search results table.
 	self.filteredListContent = [NSMutableArray arrayWithCapacity:[self.listOfItems count]];
