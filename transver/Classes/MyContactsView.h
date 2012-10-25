@@ -36,6 +36,7 @@
 - (void) allbuttonPushed: (id) sender;
 - (void) filterbuttonPushed: (id) sender;
 - (BOOL)isExistedUser: (NSString *)strPhone;
+-(void) addContactToAddressBook:(ABAddressBookRef)addressesBookRef;
 @property (nonatomic, retain) UINavigationBar *tableViewNavigationBar;
 @property (nonatomic, retain) NSMutableArray *listOfItems;
 @property (nonatomic, retain) NSMutableArray *filteredListContent;
