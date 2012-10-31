@@ -52,6 +52,13 @@
     vcSettings = [[vwSettingsController alloc] initWithNibName:@"vwSettingsController" bundle:nil];
     vcAbout = [[vwAboutController alloc] initWithNibName:@"vwAboutController" bundle:nil];
     UINavigationController *hisNavCtlr = [[UINavigationController alloc] initWithRootViewController:vcHistory];
+    UIImage *origImg =     [[UIImage imageNamed:@"common_bg_header.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:0.0f];
+    UIGraphicsBeginImageContext( CGSizeMake(320, 44) );
+    [origImg drawInRect:CGRectMake(0,0,320,44)];
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    [hisNavCtlr.navigationBar setBackgroundImage:origImg forBarMetrics:UIBarMetricsDefault];
     self.tabController = [[UITabBarController alloc] init];
     //self.tabController.tabBar.selectedImageTintColor = [UIColor yellowColor];
     self.tabController.viewControllers = [NSArray arrayWithObjects:vcRecord, vcContact, hisNavCtlr, vcSettings, vcAbout, nil];
