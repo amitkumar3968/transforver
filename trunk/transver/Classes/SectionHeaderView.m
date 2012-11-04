@@ -81,11 +81,12 @@
         section = sectionNumber;
         CGRect titleLabelFrame = self.bounds;
         titleLabelFrame.origin.x += 35.0;
+        titleLabelFrame.origin.y = -3.0;
         titleLabelFrame.size.width -= 35.0;
-        CGRectInset(titleLabelFrame, 0.0, 5.0);
+        CGRectInset(titleLabelFrame, 0.0, 2.0);
         titleLabel = [[UILabel alloc] initWithFrame:titleLabelFrame];
         titleLabel.text = title;
-        titleLabel.font = [UIFont boldSystemFontOfSize:17.0];
+        titleLabel.font = [UIFont boldSystemFontOfSize:14.0];
         titleLabel.textColor = [UIColor whiteColor];
         titleLabel.backgroundColor = [UIColor clearColor];
         [self addSubview:titleLabel];

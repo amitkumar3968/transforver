@@ -32,7 +32,7 @@
 @interface ChatViewController (Private) 
 
 #define DEFAULT_ROW_HEIGHT 78
-#define HEADER_HEIGHT 20
+#define HEADER_HEIGHT 30
 //- (void)configureCell:(MessageTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 - (void)dismissKeyboardIfNeeded;
 - (void)registerForKeyboardNotifications;
@@ -208,11 +208,13 @@ NSString *downloadfilename;
 	
 	
 	UIBarButtonItem *rightBtnItem = [[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStyleBordered target:self action:@selector(EditBtnCtrl:)];
-	
+	rightBtnItem.tintColor = [UIColor colorWithRed:54.0/255.0 green:100.0/255.0 blue:139.0/255.0 alpha:1.0];
 	self.navigationItem.rightBarButtonItem = rightBtnItem;
     [rightBtnItem release];
 	
 	UIBarButtonItem *leftBtnItem = [[UIBarButtonItem alloc] initWithTitle:@"Chat" style:UIBarButtonItemStyleBordered target:self action:@selector(BackBtnCtrl:)];
+    leftBtnItem.tintColor = [UIColor colorWithRed:54.0/255.0 green:100.0/255.0 blue:139.0/255.0 alpha:1.0];
+    //leftBtnItem.image = [UIImage imageNamed:@"history_bg_popup.png"];
 	self.navigationItem.leftBarButtonItem = leftBtnItem;
     currentPasswordIndex = currentPasswordSection = -1;
 	[leftBtnItem release];
@@ -237,6 +239,10 @@ NSString *downloadfilename;
     }*/
     
     audioRecorder = [[[AudioRecorder	alloc] init] retain];
+    SectionInfo *sectionInfo = [self.sectionInfoArray objectAtIndex:[sectionInfoArray count]-1];
+    [self sectionHeaderView:sectionInfo.headerView sectionOpened:[sectionInfoArray count]-1];
+    
+
 }
 
 - (void)EditBtnCtrl:(id)sender {
@@ -343,6 +349,8 @@ NSString *downloadfilename;
     if (!sectionInfo.headerView) {
 		//NSString *playName = sectionInfo.play.name;
         sectionInfo.headerView = [[[SectionHeaderView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.tableView.bounds.size.width, HEADER_HEIGHT) title:sectionInfo.header section:section delegate:self] autorelease];
+        if( [sectionInfoArray count]-1 == section)
+            sectionInfo.headerView.disclosureButton.selected = YES;
     }
     
     return sectionInfo.headerView;
@@ -409,6 +417,13 @@ NSString *downloadfilename;
             if( [sectionInfo.header isEqualToString:key] )
             {
                 key_exist = 1;
+                /*
+                if( i == 0)
+                {
+                    [self sectionHeaderView:sectionInfo.headerView sectionOpened:0];
+                    //[sectionInfo.headerView toggleOpenWithUserAction:YES];
+                    //sectionInfo.open = YES;
+                }*/
             }
         }
         if( key_exist == 0)
@@ -442,7 +457,7 @@ NSString *downloadfilename;
         for (int i = count-1; i >= 0; i--)
         {
             id key = [keys objectAtIndex: i];
-            SectionInfo *sectionInfo = [[SectionInfo alloc] init];			
+            SectionInfo *sectionInfo = [[SectionInfo alloc] init];
             sectionInfo.open = NO;
             sectionInfo.header = key;
             [self.sectionInfoArray addObject:sectionInfo];
