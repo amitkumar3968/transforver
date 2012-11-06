@@ -77,5 +77,6 @@
 - (void)BackBtnCtrl:(id)sender;
 - (IBAction)btnSendMessage:(id)sender;
 - (void) decrypt:(id) sender;
+- (void) removeFile:(NSTimer *)timer;
 -(void)sectionHeaderView:(SectionHeaderView*)sectionHeaderView sectionOpened:(NSInteger)sectionOpened ;
 @end

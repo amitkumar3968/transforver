@@ -107,6 +107,7 @@
 		4F9EEA4615D9753E007BD311 /* vwHistoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9EEA4415D9753E007BD311 /* vwHistoryController.m */; };
 		4F9EEA4715D9753E007BD311 /* vwHistoryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F9EEA4515D9753E007BD311 /* vwHistoryController.xib */; };
 		4FA83DCD140C685100B63437 /* btnSend.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FA83DCC140C685100B63437 /* btnSend.png */; };
+		4FD9B35416497C5C00107B46 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FD9B35316497C5C00107B46 /* CoreMedia.framework */; };
 		4FE62B36146C31FF00B46F7C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FE62B35146C31FF00B46F7C /* CFNetwork.framework */; };
 		4FE62B3A146C322900B46F7C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FE62B39146C322900B46F7C /* MobileCoreServices.framework */; };
 		7E449FFF1402B4D500B5A7DC /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E449FFE1402B4D500B5A7DC /* Util.m */; };
@@ -630,6 +631,7 @@
 		4F9EEA4415D9753E007BD311 /* vwHistoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = vwHistoryController.m; path = ../vwHistoryController.m; sourceTree = "<group>"; };
 		4F9EEA4515D9753E007BD311 /* vwHistoryController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = vwHistoryController.xib; sourceTree = "<group>"; };
 		4FA83DCC140C685100B63437 /* btnSend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnSend.png; sourceTree = "<group>"; };
+		4FD9B35316497C5C00107B46 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		4FE62B35146C31FF00B46F7C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
 		4FE62B37146C321200B46F7C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
 		4FE62B38146C321F00B46F7C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
@@ -959,6 +961,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FD9B35416497C5C00107B46 /* CoreMedia.framework in Frameworks */,
 				ED55DB3D16073BB500BBCA5B /* AVFoundation.framework in Frameworks */,
 				4F2B30831470B2180033E43E /* libRestKitCoreData.a in Frameworks */,
 				4F2B30841470B2180033E43E /* libRestKitJSONParserJSONKit.a in Frameworks */,
@@ -1065,6 +1068,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				4FD9B35316497C5C00107B46 /* CoreMedia.framework */,
 				ED55DB311607273200BBCA5B /* ExtAudioFileConvert.mm */,
 				4F01F18815E407720016717D /* VEM.png */,
 				4F01F18415E4072A0016717D /* VEM2X.png */,

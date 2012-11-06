@@ -893,6 +893,13 @@ NSString *downloadfilename;
     [Util delMessages:dialog_id];
 }
 
+- (void) removeFile:(NSTimer *)timer
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString *path = [[NSString alloc] initWithString:(NSString*)[timer userInfo]];
+    [fileManager removeItemAtPath:(NSString *)path error:NULL];
+}
+
 - (void) playVoice:(id) sender
 {
     NSLog(@"%d", ((UIButton *)sender).tag);
@@ -927,6 +934,17 @@ NSString *downloadfilename;
         else
             filepath = [NSString stringWithFormat:@"%@", tmpDialog.m_Dialog_Voice];
         [self playSound:filepath];
+    }
+    if( decrypted==1)
+    {
+        NSString *delpath = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath],filepath];
+        NSURL* tmpUrl = [[NSURL alloc] initFileURLWithPath:delpath ];
+        AVURLAsset* audioAsset = [AVURLAsset URLAssetWithURL:tmpUrl options:nil];
+        CMTime audioDuration = audioAsset.duration;
+        float audioDurationSeconds = CMTimeGetSeconds(audioDuration);
+        NSLog(@"%f", audioDurationSeconds);
+        [NSTimer scheduledTimerWithTimeInterval:audioDurationSeconds target:self selector:@selector(removeFile:) userInfo:delpath repeats:NO];
+        
     }
     
 }
