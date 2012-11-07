@@ -41,6 +41,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [Util showAlertView:@"Loading"];
 }
 
 - (void) SortHistory {
@@ -84,6 +85,7 @@
         [m_ShowHistoryList addObject:[[NSNumber alloc] initWithInt:result]];
     }
     NSLog(@"%d %@", [m_ShowHistoryList count], m_ShowHistoryList);
+    [Util dissmissAlertView];
 
 }
 

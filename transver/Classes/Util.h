@@ -22,7 +22,8 @@ UIViewController *g_RootController;
 @interface Util : NSObject {
     
 }
-
++ (void)showAlertView:(NSString *) msg;
++ (void)dissmissAlertView;
 + (NSString*) getDocumentPath;
 + (void) copyFile;
 + (void) copyFileWithFilename:(NSString *) fileName;

@@ -11,7 +11,41 @@
 
 @implementation Util
 
-
+static UIAlertView *g_AlertView = nil;
+#define loadingtimeout 50.0
++ (void)showAlertView:(NSString *) msg{
+	//NSLog(@"$$$$$$$$$$ showAlertView");
+    if( g_AlertView == nil)
+    {
+        g_AlertView = [[UIAlertView alloc]
+                       initWithTitle:(msg==nil?@"Loading":msg) message:nil
+                       delegate:self cancelButtonTitle:nil
+                       otherButtonTitles: nil];
+    }
+	if([g_AlertView isVisible])
+        return;
+    
+    [g_AlertView show];
+    // Create and add the activity indicator
+    UIActivityIndicatorView *aiv = [[UIActivityIndicatorView alloc]
+                                    initWithActivityIndicatorStyle:
+                                    UIActivityIndicatorViewStyleWhiteLarge];
+    aiv.center = CGPointMake(g_AlertView.bounds.size.width / 2.0f,
+                             g_AlertView.bounds.size.height - 40.0f);
+    [aiv startAnimating];
+    [g_AlertView addSubview:aiv];
+    [NSTimer scheduledTimerWithTimeInterval:loadingtimeout target: self
+                                   selector:@selector(dissmissAlertView)
+                                   userInfo:nil
+                                    repeats:NO];
+    
+}
++ (void)dissmissAlertView {
+	//NSLog(@"$$$$$$$$$$ dissmissAlertView");
+    if( g_AlertView == nil || ![g_AlertView isVisible])
+        return;
+    [g_AlertView dismissWithClickedButtonIndex:0 animated:YES];
+}
 + (void) initSetting {
     g_UserNumber = [[NSString alloc] init];
     g_AccountPhone = [[NSMutableArray alloc] init];
