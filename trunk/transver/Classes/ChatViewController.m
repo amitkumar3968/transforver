@@ -18,6 +18,7 @@
 #import "Dialog.h"
 #import "OrderedDictionary.h"
 #import "vwRecordController.h"
+#import "Util.h"
 
 /*
 #import "Contact.h"
@@ -151,6 +152,7 @@ NSString *downloadfilename;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [Util showAlertView:@"loading"];
     if( m_DicMessages == nil)
         m_DicMessages = [[NSMutableDictionary alloc] init];
     if( m_Quest == nil)
@@ -242,7 +244,7 @@ NSString *downloadfilename;
     SectionInfo *sectionInfo = [self.sectionInfoArray objectAtIndex:[sectionInfoArray count]-1];
     [self sectionHeaderView:sectionInfo.headerView sectionOpened:[sectionInfoArray count]-1];
     
-
+    
 }
 
 - (void)EditBtnCtrl:(id)sender {
@@ -288,6 +290,7 @@ NSString *downloadfilename;
     //[_listOfItems replaceObjectAtIndex:0 withObject:countriesLivedInDict];
     //[_listOfItems addObject:countriesLivedInDict];
     [self.tableView reloadData];
+    [Util dissmissAlertView];
 }
 
 - (void)viewDidUnload
@@ -1683,4 +1686,5 @@ NSURLConnection* connection;
         NSLog(@"Got a JSON response back!");
     }
 }
+
 @end
