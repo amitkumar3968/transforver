@@ -104,6 +104,12 @@
 
 }
 
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [myTimer invalidate];
+}
+
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:NO];
