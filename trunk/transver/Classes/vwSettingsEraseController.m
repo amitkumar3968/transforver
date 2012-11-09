@@ -7,6 +7,7 @@
 //
 
 #import "vwSettingsEraseController.h"
+#import "Localization.h"
 
 @implementation vwSettingsEraseController
 
@@ -28,6 +29,7 @@
 @synthesize uiivChk6;
 @synthesize uiivChk7;
 @synthesize uiivChk8;
+@synthesize uibtSettingEraseCancel, uibtSettingEraseSave, uilbSettingErase1Day, uilbSettingErase1Hour, uilbSettingErase1Month, uilbSettingErase1Week, uilbSettingErase3Months, uilbSettingErase5Mins, uilbSettingEraseEveryTime, uilbSettingEraseNever, uilbSettingEraseTitle;
 
 - (void)disableAllChks
 {
@@ -145,6 +147,23 @@
             break;
     }
     
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    //vwSettingsEraseHistory
+    uilbSettingErase1Day.text =  LOC_TXT_SETTING_ERASEHIST_1DAY;
+    uilbSettingErase1Hour.text =  LOC_TXT_SETTING_ERASEHIST_1HOUR;
+    uilbSettingErase1Month.text =  LOC_TXT_SETTING_ERASEHIST_1MONTH;
+    uilbSettingErase1Week.text =  LOC_TXT_SETTING_ERASEHIST_1WEEK;
+    uilbSettingErase3Months.text = LOC_TXT_SETTING_ERASEHIST_3MONTHS;
+    uilbSettingErase5Mins.text =  LOC_TXT_SETTING_ERASEHIST_5MINS;
+    uilbSettingEraseEveryTime.text =  LOC_TXT_SETTING_ERASEHIST_EVERYTIME;
+    uilbSettingEraseNever.text =  LOC_TXT_SETTING_ERASEHIST_NEVER;
+    uilbSettingEraseTitle.text =  LOC_TXT_SETTING_ERASEHIST_TITLE;
+    uibtCancel.titleLabel.text = LOC_TXT_BUTTON_CANCEL;
+    uibtSave.titleLabel.text = LOC_TXT_BUTTON_SAVE;
+    [super viewWillAppear:YES];
 }
 
 - (void)viewDidUnload

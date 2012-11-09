@@ -7,6 +7,7 @@
 //
 
 #import "vwSettingsPasswordController.h"
+#import "Localization.h"
 
 @interface vwSettingsPasswordController ()
 
@@ -15,6 +16,9 @@
 @implementation vwSettingsPasswordController
 @synthesize uiswProgramPassword;
 @synthesize uitxPassword;
+@synthesize uilbPassword;
+@synthesize uilbProgramAuth;
+@synthesize uibtCancel, uibtSave;
 
 - (IBAction)cancelSetting:(id)sender
 {
@@ -53,6 +57,17 @@
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     [uiswProgramPassword setOn:[defaults boolForKey:PROGRAM_PASSWORD]];
     [uitxPassword setText:[defaults objectForKey:PASSWORD]];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    //localize appearance
+    uibtCancel.titleLabel.text = LOC_TXT_BUTTON_CANCEL;
+    uibtSave.titleLabel.text = LOC_TXT_BUTTON_SAVE;
+    uilbProgramAuth.text = LOC_TXT_SETTING_AUTH_PASS_SWITCH; // uilbProgramAuth;
+    uilbPassword.text = LOC_TXT_SETTING_AUTH_PASS; //uilbPassword;
+    
+    [super viewWillAppear:YES];
 }
 
 - (void)viewDidUnload

@@ -17,6 +17,14 @@
 @property (nonatomic, retain) IBOutlet UIButton* uibtEveryXMins;
 @property (nonatomic, retain) IBOutlet UILabel* uilbFreeStorageSize;
 @property (nonatomic, retain) IBOutlet UIButton* uibtLanguage;
+@property (nonatomic, retain) IBOutlet UILabel* uilbLocTxtSettingTitle;
+@property (nonatomic, retain) IBOutlet UILabel* uilbLocTxtSettingSyncContacts;
+@property (nonatomic, retain) IBOutlet UILabel* uilbLocTxtSettingAuch;
+@property (nonatomic, retain) IBOutlet UILabel* uilbLocTxtSettingSavePass;
+@property (nonatomic, retain) IBOutlet UILabel* uilbLocTxtSettingEraseHist;
+@property (nonatomic, retain) IBOutlet UILabel* uilbLocTxtSettingStorage;
+@property (nonatomic, retain) IBOutlet UILabel* uilbLocTxtSettingLanguage;
+@property (nonatomic, retain) IBOutlet UIButton* uibtClearAllHistory;
 
 - (IBAction)cleaAllHistory:(id)sender;
 - (IBAction)setEraseHistPeriod:(id)sender;

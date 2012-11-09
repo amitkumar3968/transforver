@@ -31,6 +31,19 @@
 @property (nonatomic, retain) IBOutlet UIImageView* uiivJapanese;
 @property (nonatomic, retain) IBOutlet UIImageView* uiivKorean;
 @property (nonatomic, retain) IBOutlet UIImageView* uiivGerman;
+@property (nonatomic, retain) IBOutlet UIButton* uibtLangCancel;
+@property (nonatomic, retain) IBOutlet UIButton* uibtLangSave;
+@property (nonatomic, retain) IBOutlet UILabel* uilbLangChSimp;
+@property (nonatomic, retain) IBOutlet UILabel* uilbLangChTrad;
+@property (nonatomic, retain) IBOutlet UILabel* uilbLangEng;
+@property (nonatomic, retain) IBOutlet UILabel* uilbLangItalian;
+@property (nonatomic, retain) IBOutlet UILabel* uilbLangFrech;
+@property (nonatomic, retain) IBOutlet UILabel* uilbLangJapansed;
+@property (nonatomic, retain) IBOutlet UILabel* uilbLangKorean;
+@property (nonatomic, retain) IBOutlet UILabel* uilbLangGerman;
+
+
+
 - (IBAction)cancelSetting:(id)sender;
 - (IBAction)saveSetting:(id)sender;
 - (IBAction)changeSelection:(id)sender;
