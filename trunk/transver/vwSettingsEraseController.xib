@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1536</int>
-		<string key="IBDocument.SystemVersion">12B19</string>
+		<string key="IBDocument.SystemVersion">12C60</string>
 		<string key="IBDocument.InterfaceBuilderVersion">2843</string>
-		<string key="IBDocument.AppKitVersion">1187</string>
-		<string key="IBDocument.HIToolboxVersion">624.00</string>
+		<string key="IBDocument.AppKitVersion">1187.34</string>
+		<string key="IBDocument.HIToolboxVersion">625.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			<string key="NS.object.0">1929</string>
@@ -385,7 +385,7 @@
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<string key="IBUIText">Every months</string>
+						<string key="IBUIText">Every month</string>
 						<object class="NSColor" key="IBUITextColor">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MC42ODU3ODkyMzM2AA</bytes>
@@ -768,6 +768,94 @@
 					<int key="connectionID">86</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">uibtSettingEraseCancel</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="806303272"/>
+					</object>
+					<int key="connectionID">88</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">uibtSettingEraseSave</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="1043367334"/>
+					</object>
+					<int key="connectionID">89</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">uilbSettingErase1Day</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="72790497"/>
+					</object>
+					<int key="connectionID">90</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">uilbSettingErase1Hour</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="526184079"/>
+					</object>
+					<int key="connectionID">91</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">uilbSettingErase1Month</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="1050136740"/>
+					</object>
+					<int key="connectionID">92</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">uilbSettingErase1Week</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="174155867"/>
+					</object>
+					<int key="connectionID">93</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">uilbSettingErase3Months</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="983751396"/>
+					</object>
+					<int key="connectionID">94</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">uilbSettingErase5Mins</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="170516147"/>
+					</object>
+					<int key="connectionID">95</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">uilbSettingEraseEveryTime</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="7759368"/>
+					</object>
+					<int key="connectionID">96</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">uilbSettingEraseNever</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="279627364"/>
+					</object>
+					<int key="connectionID">97</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">uilbSettingEraseTitle</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="895392364"/>
+					</object>
+					<int key="connectionID">98</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">cancelSetting:</string>
 						<reference key="source" ref="806303272"/>
@@ -1093,20 +1181,24 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">86</int>
+			<int key="maxID">98</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
+		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
+			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaTouchPlugin.iPhoneOS</string>
+			<real value="1536" key="NS.object.0"/>
+		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="common_bg_setting1@2x.png">{588, 88}</string>
-			<string key="common_bg_setting2@2x.png">{588, 88}</string>
-			<string key="common_bg_setting3@2x.png">{588, 88}</string>
-			<string key="common_btn_header01_rest@2x.png">{104, 60}</string>
-			<string key="record_btn_header_rest@2x.png">{368, 88}</string>
-			<string key="setting_icon_slected@2x.png">{38, 34}</string>
+			<string key="common_bg_setting1@2x.png">{16, 16}</string>
+			<string key="common_bg_setting2@2x.png">{16, 16}</string>
+			<string key="common_bg_setting3@2x.png">{16, 16}</string>
+			<string key="common_btn_header01_rest@2x.png">{16, 16}</string>
+			<string key="record_btn_header_rest@2x.png">{16, 16}</string>
+			<string key="setting_icon_slected@2x.png">{16, 16}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1929</string>
 	</data>
