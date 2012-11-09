@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1536</int>
-		<string key="IBDocument.SystemVersion">12B19</string>
+		<string key="IBDocument.SystemVersion">12C60</string>
 		<string key="IBDocument.InterfaceBuilderVersion">2843</string>
-		<string key="IBDocument.AppKitVersion">1187</string>
-		<string key="IBDocument.HIToolboxVersion">624.00</string>
+		<string key="IBDocument.AppKitVersion">1187.34</string>
+		<string key="IBDocument.HIToolboxVersion">625.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			<string key="NS.object.0">1929</string>
@@ -46,6 +46,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{158, 416}, {162, 44}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -711,6 +712,38 @@
 					<int key="connectionID">67</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">uilbAutoDel</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="157957908"/>
+					</object>
+					<int key="connectionID">73</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">uilbPassLock</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="385005406"/>
+					</object>
+					<int key="connectionID">74</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">uilbPassword</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="406428138"/>
+					</object>
+					<int key="connectionID">75</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">uilbSelectEncryType</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="154592156"/>
+					</object>
+					<int key="connectionID">76</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">showPicker</string>
 						<reference key="source" ref="248566233"/>
@@ -1026,7 +1059,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">68</int>
+			<int key="maxID">76</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
@@ -1034,20 +1067,20 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="common_bg_containedge@2x.png">{640, 734}</string>
-			<string key="common_bg_setting1@2x.png">{588, 88}</string>
-			<string key="common_bg_setting2@2x.png">{588, 88}</string>
-			<string key="common_bg_setting3@2x.png">{588, 88}</string>
-			<string key="dovocode_icon@2x.png">{59, 53}</string>
-			<string key="history_icon_unrecord.png">{29, 29}</string>
-			<string key="player_btn_pause_slected@2x.png">{186, 90}</string>
-			<string key="player_btn_play_slected@2x.png">{192, 90}</string>
-			<string key="player_btn_stop_slected@2x.png">{192, 90}</string>
-			<string key="record_bg_sideheader1@2x.png">{132, 88}</string>
-			<string key="record_bg_sideheader2@2x.png">{132, 88}</string>
-			<string key="record_btn_header_rest@2x.png">{368, 88}</string>
-			<string key="record_btn_sendndelete_slected.png">{160, 49}</string>
-			<string key="record_btn_sound_unslect@2x.png">{346, 90}</string>
+			<string key="common_bg_containedge@2x.png">{16, 16}</string>
+			<string key="common_bg_setting1@2x.png">{16, 16}</string>
+			<string key="common_bg_setting2@2x.png">{16, 16}</string>
+			<string key="common_bg_setting3@2x.png">{16, 16}</string>
+			<string key="dovocode_icon@2x.png">{16, 16}</string>
+			<string key="history_icon_unrecord.png">{16, 16}</string>
+			<string key="player_btn_pause_slected@2x.png">{16, 16}</string>
+			<string key="player_btn_play_slected@2x.png">{16, 16}</string>
+			<string key="player_btn_stop_slected@2x.png">{16, 16}</string>
+			<string key="record_bg_sideheader1@2x.png">{16, 16}</string>
+			<string key="record_bg_sideheader2@2x.png">{16, 16}</string>
+			<string key="record_btn_header_rest@2x.png">{16, 16}</string>
+			<string key="record_btn_sendndelete_slected.png">{16, 16}</string>
+			<string key="record_btn_sound_unslect@2x.png">{16, 16}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1929</string>
 	</data>

@@ -94,6 +94,11 @@
 
 @property (nonatomic, retain) IBOutlet  UITextField *txfPass;
 
+@property (nonatomic, retain) IBOutlet UILabel *uilbSelectEncryType;
+@property (nonatomic, retain) IBOutlet UILabel *uilbPassLock;
+@property (nonatomic, retain) IBOutlet UILabel *uilbPassword;
+@property (nonatomic, retain) IBOutlet UILabel *uilbAutoDel;
+
 
 -(IBAction)playPlayer:(id)sender;
 -(IBAction)pausePlayer:(id)sender;

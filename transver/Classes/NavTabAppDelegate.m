@@ -14,6 +14,7 @@
 #import "vwSettingsController.h"
 #import "vwAboutController.h"
 #import "vwHistoryController.h"
+#import "Localization.h"
 
 @implementation NavTabAppDelegate
 
@@ -29,6 +30,7 @@
     //self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 	//self.tableView.rowHeight = 100;
 	//self.tableView.backgroundColor = [UIColor clearColor];
+    [Localization prepareLocalizedStrings];
     
     if([Util checkUserInfoExist])
     {

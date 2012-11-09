@@ -6,6 +6,7 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 #import "vwRecordController.h"
+#import "Localization.h"
 #define MAX_RECORD_SECONDS 10
 #define MAX_PASSWORD_LENGTH 5
 
@@ -41,6 +42,7 @@
 @synthesize vocodedFilepath;
 @synthesize originalFilepath;
 @synthesize txfPass;
+@synthesize uilbAutoDel, uilbPassLock, uilbPassword, uilbSelectEncryType;
 
 // Check password text field
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
@@ -556,6 +558,14 @@ numberOfRowsInComponent:(NSInteger) component
     if (destName!=nil) {
         uibtSendToWho.titleLabel.text = [[NSString alloc] initWithFormat:@"Send to:%@", destName];
     }
+    //localized appearance
+    uilbAutoDel.text = LOC_TXT_RECORD_AUTO_DEL;
+    uilbPassLock.text = LOC_TXT_RECORD_PASS_LOCK;
+    uilbPassword.text = LOC_TXT_RECORD_PASSWORD;
+    uilbSelectEncryType.text = LOC_TXT_RECORD_ENCRYPTION_TYPE;
+    uibtRecord.titleLabel.text = LOC_TXT_RECORD_REC_BUTTON_TITLE;
+    uibtSendToWho.titleLabel.text = LOC_TXT_RECORD_RECEIVER_BUTTON_TITLE;
+    
     [super viewWillAppear:animated];
     recorder = [[AudioRecorder alloc] init];
     [progressView stopAnimating];

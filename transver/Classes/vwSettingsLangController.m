@@ -7,6 +7,7 @@
 //
 
 #import "vwSettingsLangController.h"
+#import "Localization.h"
 
 @implementation vwSettingsLangController {
     NSString* selectedLanguage_temp;
@@ -30,6 +31,7 @@
 @synthesize uiivJapanese;
 @synthesize uiivKorean;
 @synthesize uiivGerman;
+@synthesize uibtLangCancel, uibtLangSave, uilbLangChSimp, uilbLangChTrad, uilbLangEng,uilbLangFrech, uilbLangGerman, uilbLangItalian, uilbLangJapansed, uilbLangKorean;
 
 - (void)disableAllChks
 {
@@ -145,6 +147,23 @@
     } else { // default value
         [self activateCheckAtIdx:3];
     }
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    //localization appearance
+    uibtLangCancel.titleLabel.text = LOC_TXT_BUTTON_CANCEL;
+    uibtLangSave.titleLabel.text = LOC_TXT_BUTTON_SAVE;
+    uilbLangChSimp.text = LOC_TXT_SETTING_LANG_CH_SIMP;
+    uilbLangChTrad.text = LOC_TXT_SETTING_LANG_CH_TRAD;
+    uilbLangEng.text = LOC_TXT_SETTING_LANG_ENG;
+    uilbLangFrech.text = LOC_TXT_SETTING_LANG_FRENCH;
+    uilbLangGerman.text = LOC_TXT_SETTING_LANG_GERMAN;
+    uilbLangItalian.text = LOC_TXT_SETTING_LANG_ITALIAN;
+    uilbLangJapansed.text = LOC_TXT_SETTING_LANG_JAPANESE;
+    uilbLangKorean.text = LOC_TXT_SETTING_LANG_KOREA;
+    
+    [super viewWillAppear:YES];
 }
 
 - (void)viewDidUnload

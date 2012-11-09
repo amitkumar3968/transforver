@@ -11,6 +11,7 @@
 #import "vwSettingsLangController.h"
 #import "vwSettingsPasswordController.h"
 #import "Util.h"
+#import "Localization.h"
 
 @implementation vwSettingsController;
 @synthesize uilbUsersNumber;
@@ -19,6 +20,7 @@
 @synthesize uibtEveryXMins;
 @synthesize uilbFreeStorageSize;
 @synthesize uibtLanguage;
+@synthesize uibtClearAllHistory, uilbLocTxtSettingAuch, uilbLocTxtSettingEraseHist, uilbLocTxtSettingLanguage, uilbLocTxtSettingSavePass, uilbLocTxtSettingStorage, uilbLocTxtSettingSyncContacts, uilbLocTxtSettingTitle;
 
 - (IBAction)setEraseHistPeriod:(id)sender
 {
@@ -62,6 +64,7 @@
     if (self) {
         self.title = NSLocalizedString(@"Settings", @"Settings");
         self.tabBarItem.image = [UIImage imageNamed:@"common_icon_set_rest.png"];
+        
     }
     NSLog(@" %d VEM Users.", [g_AccountName count]);
     return self;
@@ -99,6 +102,16 @@
 - (void) viewWillAppear:(BOOL)animated
 {
     // Do any additional setup after loading the view from its nib.
+    
+    //localization appearance
+    uilbLocTxtSettingSyncContacts.text = LOC_TXT_SETTING_SYNC_CONTACTS;
+    uilbLocTxtSettingTitle.text =  LOC_TXT_SETTING_TITLE;
+    uilbLocTxtSettingAuch.text =  LOC_TXT_SETTING_AUTH;
+    uilbLocTxtSettingSavePass.text = LOC_TXT_SETTING_SAVE_PASS;
+    uilbLocTxtSettingEraseHist.text = LOC_TXT_SETTING_ERASE_HIST;
+    uilbLocTxtSettingStorage.text = LOC_TXT_SETTING_STORAGE;
+    uilbLocTxtSettingLanguage.text = LOC_TXT_SETTING_LANG;
+    uibtClearAllHistory.titleLabel.text = LOC_TXT_SETTING_CLEAR_ALL_HIST;
     
     // Load User Number of Contact
     [uilbUsersNumber setText:[NSString stringWithFormat:@"%d Users",[g_AccountID count]]];

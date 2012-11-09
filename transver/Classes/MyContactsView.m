@@ -12,6 +12,7 @@
 #import "ContactTableViewCell.h"
 #import "AddUserViewController.h"
 #import "Util.h"
+#import "Localization.h"
 
 @implementation MyContactsView
 
@@ -111,19 +112,25 @@ NSMutableArray *imageList;
     
     ABAddressBookRef addressBookRef = ABAddressBookCreate();
     NSArray *addresses;
-    
-    if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusNotDetermined) {
-        ABAddressBookRequestAccessWithCompletion(addressBookRef, ^(bool granted, CFErrorRef error) {
-            // First time access has been granted, add the contact
+    if (ABAddressBookRequestAccessWithCompletion != NULL) //check authentication only in ios6
+    {
+        if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusNotDetermined) {
+            ABAddressBookRequestAccessWithCompletion(addressBookRef, ^(bool granted, CFErrorRef error) {
+                // First time access has been granted, add the contact
+                [self addContactToAddressBook: addressBookRef];
+            });
+        }
+        else if(ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
+            // The user has previously given access, add the contact
             [self addContactToAddressBook: addressBookRef];
-        });
+        }
+        else{
+            //do nothging
+        }
     }
-    else if(ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
-        // The user has previously given access, add the contact
+    else
+    {
         [self addContactToAddressBook: addressBookRef];
-    }
-    else{
-        //do nothging
     }
 
     
@@ -161,7 +168,12 @@ NSMutableArray *imageList;
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    //localize appearance
+    allButton.titleLabel.text = LOC_TXT_CONTACT_ALLBUTTON; // allButton.titleText;
+    filterButton.titleLabel.text = LOC_TXT_CONTACT_VEMBUTTON; //filterButton.titleText;
     [super viewWillAppear:animated];
+
+
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -586,27 +598,10 @@ NSMutableArray *imageList;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSInteger row = [indexPath row];/*
-    if ( row == 0 )
-    {//to add the contact list
-        ABPeoplePickerNavigationController *myPicker = [[ABPeoplePickerNavigationController alloc] init];
-        [myPicker setPeoplePickerDelegate:(id<ABPeoplePickerNavigationControllerDelegate>)self];
-        //myPicker.peoplePickerDelegate = self;   
-        // 只show e-mail
-        //myPicker.displayedProperties = [NSArray arrayWithObject:[NSNumber numberWithInt:kABPersonEmailProperty]]; 
-        //ABPersonViewController* ppnc = [[ABPersonViewController alloc] init];
-        [self.navigationController presentModalViewController:myPicker animated:YES];   
-        //[myPicker release];
-        [myPicker release];
-        
-        //[self.tabViewController setTitle:[accounts objectAtIndex:indexPath.row]];
-        //[self.navigationController pushViewController:self.tabViewController animated:YES];
-    }else*/
-    {
-        //[self.tabViewController setTitle:[accounts objectAtIndex:indexPath.row]];
-        //[self.navigationController pushViewController:self.tabViewController animated:YES];
-        //Show the message chat view
-        //ChatViewController *chat = [[ChatViewController alloc] initWithNibName:@"ChatViewController" bundle:nil];
+    //todo: if in phone contact list, do nothing when cell is selected
+    NSInteger row = [indexPath row];
+
+    if (filterButton.selected) {
         if( [g_AccountName count] > indexPath.row)
         {
             ChatViewController *chat = [[ChatViewController alloc] initWithRelation:g_UserID  DstID:[[g_AccountID objectAtIndex:row] integerValue]];
@@ -617,15 +612,18 @@ NSMutableArray *imageList;
             //[chat setContact:contact];
             UINavigationController *navCtlr = [[UINavigationController alloc] initWithRootViewController:chat];
             navCtlr.navigationBar.barStyle = UIBarStyleDefault;
-        
+            
             [g_RootController presentModalViewController:navCtlr animated:YES];
             [navCtlr release];
             //((UITabBarController *)g_RootController).tabBar.hidden = YES;
             //self.navigationController.navigationBar.delegate = self;
-        
+            
             [chat release];
         }
-        
+    }
+    else
+    {
+        //do nothing
     }
 }
 
