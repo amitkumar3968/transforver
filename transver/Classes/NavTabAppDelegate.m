@@ -100,7 +100,7 @@
 - (void) savePhoneNumber:(NSString *)phonenumber nickName:(NSString *)name{
     NSLog(@"save phone: %@", phonenumber);
     if( g_UserID == -1)
-    {
+    {   
         g_UserName=name;
         g_UserNumber = phonenumber;
         [Util saveParameter];

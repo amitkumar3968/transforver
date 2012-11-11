@@ -85,7 +85,7 @@
         [m_ShowHistoryList addObject:[[NSNumber alloc] initWithInt:result]];
     }
     NSLog(@"%d %@", [m_ShowHistoryList count], m_ShowHistoryList);
-    [Util dissmissAlertView];
+    
 
 }
 
@@ -110,14 +110,35 @@
     [myTimer invalidate];
 }
 
+- (void) updateTable
+{
+    
+    myTimer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(ScanHistory) userInfo:nil repeats:YES];
+    
+}
+
+- (void) updateHistory
+{
+    NSArray *array = [Util fetchHistory:g_UserID];
+    m_HistoryDialog = [array mutableCopy];
+    [self SortHistory];
+    [self.m_historyTableView reloadData];
+    [Util dissmissAlertView];
+    [self performSelectorOnMainThread:@selector(updateTable) withObject:nil waitUntilDone:NO];
+    
+}
+
 - (void) viewWillAppear:(BOOL)animated
 {
     [Util showAlertView:@"Loading"];
     [super viewWillAppear:NO];
+    [self performSelectorInBackground:@selector(updateHistory) withObject:NULL];
+    
+    /*
     NSArray *array = [Util fetchHistory:g_UserID];
     m_HistoryDialog = [array mutableCopy];
     [self SortHistory];
-    myTimer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(ScanHistory) userInfo:nil repeats:YES];
+    myTimer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(ScanHistory) userInfo:nil repeats:YES];*/
 }
 - (void)viewDidUnload
 {
