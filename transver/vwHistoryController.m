@@ -41,7 +41,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [Util showAlertView:@"Loading"];
+    
 }
 
 - (void) SortHistory {
@@ -112,6 +112,7 @@
 
 - (void) viewWillAppear:(BOOL)animated
 {
+    [Util showAlertView:@"Loading"];
     [super viewWillAppear:NO];
     NSArray *array = [Util fetchHistory:g_UserID];
     m_HistoryDialog = [array mutableCopy];

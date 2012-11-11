@@ -6,6 +6,7 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 #import "vwRecordController.h"
+#import "Toast+UIView.h"
 #import "Localization.h"
 #define MAX_RECORD_SECONDS 10
 #define MAX_PASSWORD_LENGTH 5
@@ -188,7 +189,22 @@
 	[fileManager moveItemAtPath:targetPath
 						 toPath:originalFilepath error:nil];
     if( [fileManager fileExistsAtPath:originalFilepath])
-        [self uploadFile:originalFilepath];
+    {
+        int error = [self uploadFile:originalFilepath];
+        if( error )
+        {
+            [self.view makeToast:@"Fail!!"
+                        duration:5.0
+                        position:@"center"
+                           title:@"UPLOAD FILE"];
+        }else
+        {
+            [self.view makeToast:@"Success!!"
+                        duration:5.0
+                        position:@"center"
+                           title:@"UPLOAD FILE"];
+        }
+    }
     else
     {
         NSLog(@"NO original file");
@@ -202,7 +218,22 @@
 	[fileManager moveItemAtPath:targetPath
 						 toPath:vocodedFilepath error:nil];
     if( [fileManager fileExistsAtPath:vocodedFilepath])
-        [self uploadFile:vocodedFilepath];
+    {
+        int error = [self uploadFile:vocodedFilepath];
+        if( error )
+        {
+            [self.view makeToast:@"Fail!!"
+                    duration:5.0
+                    position:@"center"
+                       title:@"UPLOAD FILE"];
+        }else
+        {
+            [self.view makeToast:@"Success!!"
+                    duration:5.0
+                    position:@"center"
+                       title:@"UPLOAD FILE"];
+        }
+    }
     else
     {
         NSLog(@"NO vocode file");
@@ -252,7 +283,7 @@
         [responseString release];
     }
 }
-- (void) uploadFile:(NSString *)fileName {
+- (int) uploadFile:(NSString *)fileName {
 	/*
 	 turning the image into a NSData object
 	 getting the image back out of the UIImageView
@@ -299,10 +330,21 @@
 	[request setHTTPBody:body];
 	
 	// now lets make the connection to the web
-	NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    NSError        *error = nil;
+    NSURLResponse  *response = nil;
+	NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    if( error )
+    {
+        NSLog(@"%@", error);
+        return -1;
+    }else
+    {
+        NSLog(@"success");
+    }
 	NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
 	
 	NSLog(@"upload file %@",returnString);
+    return 0;
 }
 
 
