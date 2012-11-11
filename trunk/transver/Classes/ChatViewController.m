@@ -33,7 +33,7 @@
 @interface ChatViewController (Private) 
 
 #define DEFAULT_ROW_HEIGHT 78
-#define HEADER_HEIGHT 30
+#define HEADER_HEIGHT 32
 //- (void)configureCell:(MessageTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 - (void)dismissKeyboardIfNeeded;
 - (void)registerForKeyboardNotifications;
