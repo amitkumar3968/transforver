@@ -19,7 +19,7 @@
 NSMutableArray *imageList;
 
 @synthesize tableViewNavigationBar;
-@synthesize listOfItems, filteredListContent, savedSearchTerm, savedScopeButtonIndex, searchWasActive, searchBar, listOfPhones;
+@synthesize listOfItems, filteredListContent, savedSearchTerm, savedScopeButtonIndex, searchWasActive, searchBar, listOfPhones, m_view;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -101,7 +101,54 @@ NSMutableArray *imageList;
 {
     [super viewDidLoad];
     listOfItems = [[NSMutableArray alloc] init];
-    listOfPhones = [[NSMutableArray alloc] init];   
+    listOfPhones = [[NSMutableArray alloc] init];
+    
+    //Setup Contacts and VEM Buttons on top
+    allButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    allButton.frame = CGRectMake(21.0, 0.0, 138.0, 44.0);
+    [allButton setTitle:@"ALL" forState:UIControlStateNormal];
+    [allButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_unslected.png"] forState:UIControlStateNormal];
+    [allButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_unslected.png"] forState:UIControlStateHighlighted];
+    [allButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_slected.png"] forState:UIControlStateSelected];
+    [allButton setSelected:NO];
+	[allButton addTarget:self action:@selector(allbuttonPushed:)
+        forControlEvents:UIControlEventTouchUpInside];
+    filterButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    filterButton.frame = CGRectMake(161.0, 0.0, 138.0, 44.0);
+    [filterButton setTitle:@"Messenger" forState:UIControlStateNormal];
+    [filterButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_unslected.png"] forState:UIControlStateNormal];
+    [filterButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_slected.png"] forState:UIControlStateSelected];
+    [filterButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_slected.png"] forState:UIControlStateSelected];
+	[filterButton addTarget:self action:@selector(filterbuttonPushed:)
+           forControlEvents:UIControlEventTouchUpInside];
+    [filterButton setSelected:YES];
+    //[imageButton setImage:[UIImage imageNamed:@"phone.png"] forState:UIControlStateNormal];
+    CGRect transparentViewFrame = CGRectMake(0.0, 0.0f, 320.0f, 44.0f);
+    
+    m_view = [[UIView alloc] initWithFrame:transparentViewFrame];
+    m_view.backgroundColor = [UIColor blackColor];
+    m_view.alpha = 1;
+    m_view.tag = 1;
+    
+    [m_view addSubview:allButton];
+    [m_view addSubview:filterButton];
+    
+    CGRect leftsidebar = CGRectMake(1.0, 0.0f, 19.0f, 44.0f);
+    UIImageView *m_leftsideview = [[UIImageView alloc] initWithFrame:leftsidebar];
+    [m_leftsideview setImage:[UIImage imageNamed:@"contacts_bg_sideheader.png"]];
+    CGRect rightsidebar = CGRectMake(300.0, 0.0f, 19.0f, 44.0f);
+    UIImageView *m_rightsideview = [[UIImageView alloc] initWithFrame:rightsidebar];
+    [m_rightsideview setImage:[UIImage imageNamed:@"contacts_bg_sideheader.png"]];
+    
+    [self.navigationController.navigationBar setBackgroundColor:[UIColor blackColor]];
+    [self.navigationController.navigationBar addSubview:m_leftsideview];
+    [self.navigationController.navigationBar addSubview:m_rightsideview];
+    [self.navigationController.navigationBar addSubview:m_view];
+    [m_view release];
+    
+    
+    searchBar.delegate = self;
+    
     //self.tableView.tableHeaderView = searchBar;
     //searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
     
@@ -169,107 +216,17 @@ NSMutableArray *imageList;
 - (void)viewWillAppear:(BOOL)animated
 {
     //localize appearance
+    [Util showAlertView:@"Loading"];
     allButton.titleLabel.text = LOC_TXT_CONTACT_ALLBUTTON; // allButton.titleText;
     filterButton.titleLabel.text = LOC_TXT_CONTACT_VEMBUTTON; //filterButton.titleText;
-    [super viewWillAppear:animated];
-
-
+    [super viewWillAppear:NO];
 }
 
-- (void)viewDidAppear:(BOOL)animated
+-(void)viewDidAppear:(BOOL)animated
 {
-    [super viewDidAppear:animated];
-    
-    //tableViewNavigationBar = [[UINavigationBar alloc] initWithFrame: CGRectMake(0.0f, 0.0f, 320.0f, 44.0f)];
-    /*
-	UIButton *imageButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    imageButton.frame = CGRectMake(20.0, 5.0, 70.0, 30.0);
-    [imageButton setTitle:@"ALL" forState:UIControlStateNormal];
-    [imageButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_unslected.png"] forState:UIControlStateNormal];
-    [imageButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_slected.png"] forState:UIControlStateSelected];
-	[imageButton addTarget:self action:@selector(buttonPushed:)
-		  forControlEvents:UIControlEventTouchUpInside];
-    
-    UIButton *filterButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    filterButton.frame = CGRectMake(90.0, 5.0, 90.0, 30.0);
-    [filterButton setTitle:@"Messenger" forState:UIControlStateNormal];
-	[filterButton addTarget:self action:@selector(buttonPushed:)
-           forControlEvents:UIControlEventTouchUpInside];
-    //[imageButton setImage:[UIImage imageNamed:@"phone.png"] forState:UIControlStateNormal];
-    CGRect transparentViewFrame = CGRectMake(50.0f, 0.0f, 320.0f, 44.0f);
-    UIView *m_view = [[UIView alloc] initWithFrame:transparentViewFrame];
-    //m_view.backgroundColor = [UIColor orangeColor];
-    m_view.alpha = 1;
-    m_view.tag = 1;
-    [m_view addSubview:imageButton];
-    [m_view addSubview:filterButton];
-    
-    //searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0.0f, 44.0f, 320.0f, 44.0f)];
-    //[searchBar setFrame:CGRectMake(0.0f, 44.0f, 320.0f, 44.0f)];
-    //[self.tableView setFrame:CGRectMake(0.0f, 88.0f, 320.0f, 44.0f)];
-    //[m_view addSubview:search];
-    
-	[tableViewNavigationBar addSubview:m_view];
-    //[tableViewNavigationBar addSubview:searchBar];
-    
-    self.navigationItem.titleView = m_view;
-    [m_view release];
-    */
-    allButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    allButton.frame = CGRectMake(21.0, 0.0, 138.0, 44.0);
-    [allButton setTitle:@"ALL" forState:UIControlStateNormal];
-    [allButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_unslected.png"] forState:UIControlStateNormal];
-    [allButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_unslected.png"] forState:UIControlStateHighlighted];
-    [allButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_slected.png"] forState:UIControlStateSelected];
-    [allButton setSelected:YES];
-	[allButton addTarget:self action:@selector(allbuttonPushed:)
-        forControlEvents:UIControlEventTouchUpInside];
-    filterButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    filterButton.frame = CGRectMake(161.0, 0.0, 138.0, 44.0);
-    [filterButton setTitle:@"Messenger" forState:UIControlStateNormal];
-    [filterButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_unslected.png"] forState:UIControlStateNormal];
-    [filterButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_slected.png"] forState:UIControlStateSelected];
-    [filterButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_slected.png"] forState:UIControlStateSelected];
-	[filterButton addTarget:self action:@selector(filterbuttonPushed:)
-           forControlEvents:UIControlEventTouchUpInside];
-    //[imageButton setImage:[UIImage imageNamed:@"phone.png"] forState:UIControlStateNormal];
-    CGRect transparentViewFrame = CGRectMake(0.0, 0.0f, 320.0f, 44.0f);
-    
-    UIView *m_view = [[UIView alloc] initWithFrame:transparentViewFrame];
-    m_view.backgroundColor = [UIColor blackColor];
-    m_view.alpha = 1;
-    m_view.tag = 1;
-    
-    [m_view addSubview:allButton];
-    [m_view addSubview:filterButton];
-    
-    //searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0.0f, 44.0f, 320.0f, 44.0f)];
-    //[searchBar setFrame:CGRectMake(0.0f, 44.0f, 320.0f, 44.0f)];
-    //[self.tableView setFrame:CGRectMake(0.0f, 88.0f, 320.0f, 44.0f)];
-    //[m_view addSubview:search];
-    
-	//[tableViewNavigationBar addSubview:m_view];
-    //[tableViewNavigationBar addSubview:searchBar];
-    CGRect leftsidebar = CGRectMake(1.0, 0.0f, 19.0f, 44.0f);
-    UIImageView *m_leftsideview = [[UIImageView alloc] initWithFrame:leftsidebar];
-    [m_leftsideview setImage:[UIImage imageNamed:@"contacts_bg_sideheader.png"]];
-    CGRect rightsidebar = CGRectMake(300.0, 0.0f, 19.0f, 44.0f);
-    UIImageView *m_rightsideview = [[UIImageView alloc] initWithFrame:rightsidebar];
-    [m_rightsideview setImage:[UIImage imageNamed:@"contacts_bg_sideheader.png"]];
-    
-    [self.navigationController.navigationBar setBackgroundColor:[UIColor blackColor]];
-    [self.navigationController.navigationBar addSubview:m_leftsideview];
-    [self.navigationController.navigationBar addSubview:m_rightsideview];
-    [self.navigationController.navigationBar addSubview:m_view];
-    [m_view release];
-    
-    
-    searchBar.delegate = self;
-	//[super.tableView addSubview:tableViewNavigationBar];
-    //[super.tableView addSubview:searchBar];
-    //self.tableView.tableHeaderView.hidden = true;
-    //[tableViewNavigationBar release];
+    [Util dissmissAlertView];
 }
+
 
 - (void) allbuttonPushed: (id) sender{
     UIButton *imageButton = (UIButton *)sender;
@@ -282,7 +239,9 @@ NSMutableArray *imageList;
         [allButton setSelected:NO];
     }
     [Util getRelationships:g_UserID];
+    [Util showAlertView:@"Loading"];
     [self.tableView reloadData];
+    [Util dissmissAlertView];
 }
 - (void) filterbuttonPushed: (id) sender{
     UIButton *imageButton = (UIButton *)sender;
@@ -295,7 +254,9 @@ NSMutableArray *imageList;
         [allButton setSelected:NO];
         [self getRelationships:g_UserID ];
     }
+    [Util showAlertView:@"Loading"];
     [self.tableView reloadData];
+    [Util dissmissAlertView];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
