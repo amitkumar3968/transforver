@@ -241,8 +241,14 @@ NSString *downloadfilename;
     }*/
     
     audioRecorder = [[[AudioRecorder	alloc] init] retain];
-    SectionInfo *sectionInfo = [self.sectionInfoArray objectAtIndex:[sectionInfoArray count]-1];
-    [self sectionHeaderView:sectionInfo.headerView sectionOpened:[sectionInfoArray count]-1];
+    if ([sectionInfoArray count]>=1) {
+        SectionInfo *sectionInfo = [self.sectionInfoArray objectAtIndex:[sectionInfoArray count]-1];
+        [self sectionHeaderView:sectionInfo.headerView sectionOpened:[sectionInfoArray count]-1];
+    }
+    else
+    {
+        //do nothing
+    }
     
     
 }
