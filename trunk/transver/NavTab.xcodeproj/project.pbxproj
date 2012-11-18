@@ -638,7 +638,6 @@
 		4FE62B37146C321200B46F7C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
 		4FE62B38146C321F00B46F7C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		4FE62B39146C322900B46F7C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
-		4FFD8DE7164F4ED800DB8953 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		7E449FFD1402B4D500B5A7DC /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		7E449FFE1402B4D500B5A7DC /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		7E44A0001402B5D400B5A7DC /* Lion.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lion.aif; sourceTree = SOURCE_ROOT; };
@@ -671,6 +670,7 @@
 		A44C610B164C611A004B62E0 /* Localization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Localization.h; sourceTree = "<group>"; };
 		A44C610C164C611A004B62E0 /* Localization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Localization.m; sourceTree = "<group>"; };
 		A44C610F164C614F004B62E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A44C6111164C637E004B62E0 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		A45FEDED15A315AD00CF3D72 /* message_bg_time1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = message_bg_time1.png; path = history/message/message_bg_time1.png; sourceTree = "<group>"; };
 		A45FEDEE15A315AD00CF3D72 /* message_bg_time1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "message_bg_time1@2x.png"; path = "history/message/message_bg_time1@2x.png"; sourceTree = "<group>"; };
 		A45FEDEF15A315AD00CF3D72 /* message_bg_time2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = message_bg_time2.png; path = history/message/message_bg_time2.png; sourceTree = "<group>"; };
@@ -1706,7 +1706,6 @@
 				German,
 				en,
 				"zh-Hant",
-				"zh-Hans",
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
@@ -2207,7 +2206,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				A44C610F164C614F004B62E0 /* en */,
-				4FFD8DE7164F4ED800DB8953 /* zh-Hans */,
+				A44C6111164C637E004B62E0 /* zh-Hant */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -2232,7 +2231,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = NavTab_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -2242,8 +2241,8 @@
 					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/NavTab-gdtjeaqbeqdwteddvgyoehnyltcn/Build/Products/Debug-iphoneos\"",
 				);
 				PRODUCT_NAME = NavTab;
-				PROVISIONING_PROFILE = "E55007E7-BD62-4BC5-80A0-22424EEE2793";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E55007E7-BD62-4BC5-80A0-22424EEE2793";
+				PROVISIONING_PROFILE = "D6B25D69-A246-4DEB-B5F1-160212E57CEF";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D6B25D69-A246-4DEB-B5F1-160212E57CEF";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2264,7 +2263,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = NavTab_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -2274,8 +2273,8 @@
 					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/NavTab-gdtjeaqbeqdwteddvgyoehnyltcn/Build/Products/Debug-iphoneos\"",
 				);
 				PRODUCT_NAME = NavTab;
-				PROVISIONING_PROFILE = "E55007E7-BD62-4BC5-80A0-22424EEE2793";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E55007E7-BD62-4BC5-80A0-22424EEE2793";
+				PROVISIONING_PROFILE = "D6B25D69-A246-4DEB-B5F1-160212E57CEF";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D6B25D69-A246-4DEB-B5F1-160212E57CEF";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2292,7 +2291,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				"HEADER_SEARCH_PATHS[arch=*]" = "\"$(SOURCE_ROOT)/RestKit/Build\"";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				"LIBRARY_SEARCH_PATHS[arch=*]" = "\"$(SOURCE_ROOT)/RestKit/Build/$(BUILD_STYLE)-$(PLATFORM_NAME)\"";
 				ONLY_ACTIVE_ARCH = YES;
 				"OTHER_LDFLAGS[arch=*]" = (
@@ -2315,7 +2314,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				"HEADER_SEARCH_PATHS[arch=*]" = "\"$(SOURCE_ROOT)/RestKit/Build\"";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				"LIBRARY_SEARCH_PATHS[arch=*]" = "\"$(SOURCE_ROOT)/RestKit/Build/$(BUILD_STYLE)-$(PLATFORM_NAME)\"";
 				ONLY_ACTIVE_ARCH = YES;
 				"OTHER_LDFLAGS[arch=*]" = (

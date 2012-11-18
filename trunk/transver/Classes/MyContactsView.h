@@ -45,4 +45,5 @@
 @property (nonatomic) BOOL searchWasActive;
 @property (strong,nonatomic) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, retain)     NSMutableArray *listOfPhones;
+@property (nonatomic, retain) UIView *m_view;
 @end

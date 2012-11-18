@@ -1067,20 +1067,20 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="common_bg_containedge@2x.png">{16, 16}</string>
-			<string key="common_bg_setting1@2x.png">{16, 16}</string>
-			<string key="common_bg_setting2@2x.png">{16, 16}</string>
-			<string key="common_bg_setting3@2x.png">{16, 16}</string>
-			<string key="dovocode_icon@2x.png">{16, 16}</string>
-			<string key="history_icon_unrecord.png">{16, 16}</string>
-			<string key="player_btn_pause_slected@2x.png">{16, 16}</string>
-			<string key="player_btn_play_slected@2x.png">{16, 16}</string>
-			<string key="player_btn_stop_slected@2x.png">{16, 16}</string>
-			<string key="record_bg_sideheader1@2x.png">{16, 16}</string>
-			<string key="record_bg_sideheader2@2x.png">{16, 16}</string>
-			<string key="record_btn_header_rest@2x.png">{16, 16}</string>
-			<string key="record_btn_sendndelete_slected.png">{16, 16}</string>
-			<string key="record_btn_sound_unslect@2x.png">{16, 16}</string>
+			<string key="common_bg_containedge@2x.png">{640, 734}</string>
+			<string key="common_bg_setting1@2x.png">{588, 88}</string>
+			<string key="common_bg_setting2@2x.png">{588, 88}</string>
+			<string key="common_bg_setting3@2x.png">{588, 88}</string>
+			<string key="dovocode_icon@2x.png">{59, 53}</string>
+			<string key="history_icon_unrecord.png">{29, 29}</string>
+			<string key="player_btn_pause_slected@2x.png">{186, 90}</string>
+			<string key="player_btn_play_slected@2x.png">{192, 90}</string>
+			<string key="player_btn_stop_slected@2x.png">{192, 90}</string>
+			<string key="record_bg_sideheader1@2x.png">{132, 88}</string>
+			<string key="record_bg_sideheader2@2x.png">{132, 88}</string>
+			<string key="record_btn_header_rest@2x.png">{368, 88}</string>
+			<string key="record_btn_sendndelete_slected.png">{160, 49}</string>
+			<string key="record_btn_sound_unslect@2x.png">{346, 90}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1929</string>
 	</data>
