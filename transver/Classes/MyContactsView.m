@@ -79,8 +79,15 @@ NSMutableArray *imageList;
         {
             [listOfPhones addObject:mobileNumber];
             [listOfItems addObject:contactFirstLast];
-            NSLog(@"%@",contactFirstLast);
         }
+        
+#if 1
+        else
+        {
+            [listOfPhones addObject:@"0933333333"];
+            [listOfItems addObject:@"0933333333"];
+        }
+#endif
         
         // Comment this line so always use build-in imgage; Here I think something goes wrong, but I don't know what
         // If I comment out this line, the application works, but now pictures is showing.
@@ -154,37 +161,14 @@ NSMutableArray *imageList;
     
     //self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
-    NSMutableArray *list = [[NSMutableArray alloc] init];
-    imageList = [[NSMutableArray alloc] init];
-    
-    ABAddressBookRef addressBookRef = ABAddressBookCreate();
-    NSArray *addresses;
-    if (ABAddressBookRequestAccessWithCompletion != NULL) //check authentication only in ios6
-    {
-        if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusNotDetermined) {
-            ABAddressBookRequestAccessWithCompletion(addressBookRef, ^(bool granted, CFErrorRef error) {
-                // First time access has been granted, add the contact
-                [self addContactToAddressBook: addressBookRef];
-            });
-        }
-        else if(ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
-            // The user has previously given access, add the contact
-            [self addContactToAddressBook: addressBookRef];
-        }
-        else{
-            //do nothging
-        }
-    }
-    else
-    {
-        [self addContactToAddressBook: addressBookRef];
-    }
+
 
     
 	// create a filtered list that will contain products for the search results table.
-	self.filteredListContent = [NSMutableArray arrayWithCapacity:[self.listOfItems count]];
+	//self.filteredListContent = [NSMutableArray arrayWithCapacity:[self.listOfItems count]];
 	
 	// restore search settings if they were saved in didReceiveMemoryWarning.
+    /*
     if (self.savedSearchTerm)
 	{
         [self.searchDisplayController setActive:self.searchWasActive];
@@ -193,6 +177,7 @@ NSMutableArray *imageList;
         
         self.savedSearchTerm = nil;
     }
+     */
 	
 	//[self.tableView reloadData];
     //[self.tableView reloadData];
@@ -216,20 +201,24 @@ NSMutableArray *imageList;
 - (void)viewWillAppear:(BOOL)animated
 {
     //localize appearance
+    initTable = YES;
     [Util showAlertView:@"Loading"];
     allButton.titleLabel.text = LOC_TXT_CONTACT_ALLBUTTON; // allButton.titleText;
     filterButton.titleLabel.text = LOC_TXT_CONTACT_VEMBUTTON; //filterButton.titleText;
     [super viewWillAppear:NO];
+    [self performSelectorInBackground:@selector(updateContact) withObject:NULL];
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    [Util dissmissAlertView];
+    // reload table and prepare data here
+
 }
 
 
 - (void) allbuttonPushed: (id) sender{
     UIButton *imageButton = (UIButton *)sender;
+    [Util showAlertView:@"Loading"];
     if( imageButton == allButton) {
         [imageButton setSelected:YES];
         [filterButton setSelected:NO];
@@ -238,13 +227,12 @@ NSMutableArray *imageList;
         [imageButton setSelected:YES];
         [allButton setSelected:NO];
     }
-    [Util getRelationships:g_UserID];
-    [Util showAlertView:@"Loading"];
-    [self.tableView reloadData];
-    [Util dissmissAlertView];
+    [self performSelectorInBackground:@selector(updateContact) withObject:NULL];
+
 }
 - (void) filterbuttonPushed: (id) sender{
     UIButton *imageButton = (UIButton *)sender;
+    [Util showAlertView:@"Loading"];
     if( imageButton == allButton) {
         [imageButton setSelected:YES];
         [filterButton setSelected:NO];
@@ -254,7 +242,41 @@ NSMutableArray *imageList;
         [allButton setSelected:NO];
         [self getRelationships:g_UserID ];
     }
-    [Util showAlertView:@"Loading"];
+    [self performSelectorInBackground:@selector(updateContact) withObject:NULL];
+}
+
+- (void)updateContact
+{
+    [self getRelationships:g_UserID ];
+
+    if (initTable) {
+        NSMutableArray *list = [[NSMutableArray alloc] init];
+        imageList = [[NSMutableArray alloc] init];
+        
+        ABAddressBookRef addressBookRef = ABAddressBookCreate();
+        NSArray *addresses;
+        if (ABAddressBookRequestAccessWithCompletion != NULL) //check authentication only in ios6
+        {
+            if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusNotDetermined) {
+                ABAddressBookRequestAccessWithCompletion(addressBookRef, ^(bool granted, CFErrorRef error) {
+                    // First time access has been granted, add the contact
+                    [self addContactToAddressBook: addressBookRef];
+                });
+            }
+            else if(ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
+                // The user has previously given access, add the contact
+                [self addContactToAddressBook: addressBookRef];
+            }
+            else{
+                //do nothging
+            }
+        }
+        else
+        {
+            [self addContactToAddressBook: addressBookRef];
+        }
+    }
+    initTable=NO;
     [self.tableView reloadData];
     [Util dissmissAlertView];
 }
@@ -286,11 +308,16 @@ NSMutableArray *imageList;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    if ([filterButton isSelected]) {
-        return [g_AccountName count];
-    }
-    else {
-        return [listOfItems count];
+    if (initTable)
+        return 0;
+    else
+    {
+        if ([filterButton isSelected]) {
+            return [g_AccountName count];
+        }
+        else {
+            return [listOfItems count];
+        }
     }
 }
 
@@ -562,6 +589,9 @@ NSMutableArray *imageList;
     //todo: if in phone contact list, do nothing when cell is selected
     NSInteger row = [indexPath row];
 
+    // check if user selected a VEM contact, and make sure the number of accounts larger than the number of index
+    //than retrieve all messages related to that person
+    
     if (filterButton.selected) {
         if( [g_AccountName count] > indexPath.row)
         {
@@ -573,7 +603,6 @@ NSMutableArray *imageList;
             //[chat setContact:contact];
             UINavigationController *navCtlr = [[UINavigationController alloc] initWithRootViewController:chat];
             navCtlr.navigationBar.barStyle = UIBarStyleDefault;
-            
             [g_RootController presentModalViewController:navCtlr animated:YES];
             [navCtlr release];
             //((UITabBarController *)g_RootController).tabBar.hidden = YES;

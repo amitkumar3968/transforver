@@ -28,6 +28,7 @@
     NSString *savedSearchTerm;
     NSInteger savedScopeButtonIndex;
     BOOL searchWasActive;
+    BOOL initTable;
 }
 
 - (ABRecordRef)personObject;
