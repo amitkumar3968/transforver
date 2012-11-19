@@ -283,7 +283,6 @@ NSString *downloadfilename;
     [RKClient setSharedClient:client];
     m_srcid = srcid;
     m_dstid = dstid;
-    [self fetchMessages:srcid DstID:dstid Messages:m_DicMessages];
     return self;
     
 }
@@ -315,7 +314,8 @@ NSString *downloadfilename;
 {
     [super viewWillAppear:animated];
     self.title = self.m_DstName;//NSLocalizedString(@"History", @"History");
-    [self ScanMessages];
+    [Util showAlertView:@"Loading"];
+    [self performSelectorInBackground:@selector(ScanMessages) withObject:nil];
     myTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(ScanMessages) userInfo:nil repeats:YES];
     
     /*
