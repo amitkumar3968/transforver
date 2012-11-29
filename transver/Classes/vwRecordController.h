@@ -81,6 +81,7 @@
 @property (nonatomic, retain) NSString *destName;
 
 @property (nonatomic, retain) IBOutlet UIButton* uibtSendToWho;
+@property (nonatomic, retain) IBOutlet UIButton* vocodeOptionReady;
 @property (nonatomic, strong) UIPickerView* selecteTargetPicker;
 
 @property (nonatomic, retain) NSTimer *recTimer;

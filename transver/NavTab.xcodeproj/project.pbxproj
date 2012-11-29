@@ -373,6 +373,8 @@
 		A45FF00115AB191300CF3D72 /* vwAboutController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A45FF00015AB191300CF3D72 /* vwAboutController.xib */; };
 		A462AAF315EFB93B00A6A833 /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A462AAEF15EFB93B00A6A833 /* CAStreamBasicDescription.cpp */; };
 		A462AAF415EFB93B00A6A833 /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A462AAF115EFB93B00A6A833 /* CAXException.cpp */; };
+		A497E19A16671A1600FDA4AE /* player_btn_play_blank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A497E19916671A1600FDA4AE /* player_btn_play_blank@2x.png */; };
+		A497E19C16671ADA00FDA4AE /* dovocode_icon_blank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A497E19B16671ADA00FDA4AE /* dovocode_icon_blank@2x.png */; };
 		A4F632A3159DD22F003C709D /* vwRecordController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4F632A2159DD22E003C709D /* vwRecordController.xib */; };
 		A4F632DF159E5760003C709D /* vwSettingsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4F632DE159E5760003C709D /* vwSettingsController.xib */; };
 		A4F63303159EA5DF003C709D /* vwSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F63302159EA5DF003C709D /* vwSettingsController.m */; };
@@ -922,6 +924,8 @@
 		A462AAF015EFB93B00A6A833 /* CAStreamBasicDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAStreamBasicDescription.h; path = iPublicUtility/CAStreamBasicDescription.h; sourceTree = "<group>"; };
 		A462AAF115EFB93B00A6A833 /* CAXException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CAXException.cpp; path = iPublicUtility/CAXException.cpp; sourceTree = "<group>"; };
 		A462AAF215EFB93B00A6A833 /* CAXException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAXException.h; path = iPublicUtility/CAXException.h; sourceTree = "<group>"; };
+		A497E19916671A1600FDA4AE /* player_btn_play_blank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "player_btn_play_blank@2x.png"; path = "record/player_btn_play_blank@2x.png"; sourceTree = "<group>"; };
+		A497E19B16671ADA00FDA4AE /* dovocode_icon_blank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dovocode_icon_blank@2x.png"; path = "record/dovocode_icon_blank@2x.png"; sourceTree = "<group>"; };
 		A4F632A2159DD22E003C709D /* vwRecordController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = vwRecordController.xib; sourceTree = "<group>"; };
 		A4F632A4159DDC79003C709D /* vwRecordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vwRecordController.h; sourceTree = "<group>"; };
 		A4F632DE159E5760003C709D /* vwSettingsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = vwSettingsController.xib; sourceTree = "<group>"; };
@@ -1435,6 +1439,8 @@
 		A4F6312B159D83DE003C709D /* img_record */ = {
 			isa = PBXGroup;
 			children = (
+				A497E19B16671ADA00FDA4AE /* dovocode_icon_blank@2x.png */,
+				A497E19916671A1600FDA4AE /* player_btn_play_blank@2x.png */,
 				A4307026160B6D1700CFD593 /* dovocode_icon@2x.png */,
 				A45FEED915A3164700CF3D72 /* encrypt_bg_swiftoff.png */,
 				A45FEEDA15A3164700CF3D72 /* encrypt_bg_swiftoff@2x.png */,
@@ -2114,6 +2120,8 @@
 				A4307027160B6D1700CFD593 /* dovocode_icon@2x.png in Resources */,
 				A41DD9C5162FBF13001BFECC /* Default.png in Resources */,
 				A44C6110164C614F004B62E0 /* Localizable.strings in Resources */,
+				A497E19A16671A1600FDA4AE /* player_btn_play_blank@2x.png in Resources */,
+				A497E19C16671ADA00FDA4AE /* dovocode_icon_blank@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
