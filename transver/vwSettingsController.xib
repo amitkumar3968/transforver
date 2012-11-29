@@ -972,14 +972,14 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="common_bg_containedge@2x.png">{16, 16}</string>
-			<string key="common_bg_header.png">{16, 16}</string>
-			<string key="common_bg_setting1@2x.png">{16, 16}</string>
-			<string key="common_bg_setting2@2x.png">{16, 16}</string>
-			<string key="common_bg_setting3@2x.png">{16, 16}</string>
-			<string key="common_bg_setting4@2x.png">{16, 16}</string>
-			<string key="common_btn_nextpage@2x.png">{16, 16}</string>
-			<string key="setting_btn_cleanall_rest@2x.png">{16, 16}</string>
+			<string key="common_bg_containedge@2x.png">{640, 734}</string>
+			<string key="common_bg_header.png">{320, 44}</string>
+			<string key="common_bg_setting1@2x.png">{588, 88}</string>
+			<string key="common_bg_setting2@2x.png">{588, 88}</string>
+			<string key="common_bg_setting3@2x.png">{588, 88}</string>
+			<string key="common_bg_setting4@2x.png">{588, 88}</string>
+			<string key="common_btn_nextpage@2x.png">{18, 26}</string>
+			<string key="setting_btn_cleanall_rest@2x.png">{572, 90}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1929</string>
 	</data>
