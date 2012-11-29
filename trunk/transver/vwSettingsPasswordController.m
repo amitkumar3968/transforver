@@ -8,6 +8,7 @@
 
 #import "vwSettingsPasswordController.h"
 #import "Localization.h"
+#import "Util.h"
 
 @interface vwSettingsPasswordController ()
 
@@ -28,7 +29,7 @@
 - (IBAction)saveSetting:(id)sender
 {
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setBool:uiswProgramPassword.isOn forKey:PROGRAM_PASSWORD];
+    [defaults setBool:uiswProgramPassword.on forKey:PROGRAM_PASSWORD];
     [defaults setObject:uitxPassword.text forKey:PASSWORD];
     [defaults synchronize];
     
@@ -66,8 +67,23 @@
     uibtSave.titleLabel.text = LOC_TXT_BUTTON_SAVE;
     uilbProgramAuth.text = LOC_TXT_SETTING_AUTH_PASS_SWITCH; // uilbProgramAuth;
     uilbPassword.text = LOC_TXT_SETTING_AUTH_PASS; //uilbPassword;
-    
     [super viewWillAppear:YES];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:YES];
+}
+
+-(void)presentKB:(id)sender
+{
+    if (uiswProgramPassword.on)
+    {
+        [uitxPassword becomeFirstResponder];
+    }else
+    {
+        //do nothing
+    }
 }
 
 - (void)viewDidUnload

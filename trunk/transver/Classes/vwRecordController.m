@@ -8,9 +8,7 @@
 #import "vwRecordController.h"
 #import "Toast+UIView.h"
 #import "Localization.h"
-#define MAX_RECORD_SECONDS 10
-#define MAX_PASSWORD_LENGTH 5
-
+#define AUTH_ALERT_TAG 1
 
 @implementation vwRecordController;
 
@@ -44,6 +42,7 @@
 @synthesize originalFilepath;
 @synthesize txfPass;
 @synthesize uilbAutoDel, uilbPassLock, uilbPassword, uilbSelectEncryType;
+@synthesize passInput;
 
 // Check password text field
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
@@ -583,6 +582,41 @@ numberOfRowsInComponent:(NSInteger) component
     //
 	//timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(timeLoader) userInfo:nil repeats:YES];    
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    //show alertview for login
+    if ([[g_Settings valueForKey:PROGRAM_PASSWORD] boolValue]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Enter VEM Password" message:@"this gets covered!"
+                                                       delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:@"OK!", nil];
+        alert.tag = AUTH_ALERT_TAG;
+        passInput = [[UITextField alloc] initWithFrame:CGRectMake(12, 45, 260, 25)];
+        [passInput setBackgroundColor:[UIColor whiteColor]];
+        [alert addSubview:passInput];
+        [alert show];
+    }
+}
+
+-(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    //u need to change 0 to other value(,1,2,3) if u have more buttons.then u can check which button was pressed.
+    if (alertView.tag==AUTH_ALERT_TAG) {
+        if ( buttonIndex == 1&&[passInput.text isEqualToString:[g_Settings valueForKey:PASSWORD]]) {
+            // do nothing so start using VEM
+        }
+        else
+        {
+            //show alertview for login
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Enter VEM Password" message:@"this gets covered!"
+                                                           delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:@"OK!", nil];
+            passInput = [[UITextField alloc] initWithFrame:CGRectMake(12, 45, 260, 25)];
+            [passInput setBackgroundColor:[UIColor whiteColor]];
+            [alert addSubview:passInput];
+            [alert show];
+        }
+    }
+    else
+    {
+        //not authentication alert, DO nothing
+    }
 }
 
 - (void)viewDidUnload
@@ -597,9 +631,6 @@ numberOfRowsInComponent:(NSInteger) component
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    if (destName!=nil) {
-        uibtSendToWho.titleLabel.text = [[NSString alloc] initWithFormat:@"Send to:%@", destName];
-    }
     //localized appearance
     uilbAutoDel.text = LOC_TXT_RECORD_AUTO_DEL;
     uilbPassLock.text = LOC_TXT_RECORD_PASS_LOCK;
@@ -608,6 +639,9 @@ numberOfRowsInComponent:(NSInteger) component
     uibtRecord.titleLabel.text = LOC_TXT_RECORD_REC_BUTTON_TITLE;
     uibtSendToWho.titleLabel.text = LOC_TXT_RECORD_RECEIVER_BUTTON_TITLE;
     
+    if (self.destName!=nil) {
+        uibtSendToWho.titleLabel.text = [[NSString alloc] initWithFormat:@"Send to:%@", self.destName];
+    }    
     [super viewWillAppear:animated];
     recorder = [[AudioRecorder alloc] init];
     [progressView stopAnimating];

@@ -41,8 +41,7 @@
 @end
 
 @implementation ChatViewController
-
-//@synthesize fetchedResultsController=__fetchedResultsController;
+NSDate* startTime;
 @synthesize tableView=_tableView;
 @synthesize bubbleView=_bubbleView;
 @synthesize contact=_contact;
@@ -57,6 +56,9 @@
 @synthesize m_Quest;
 @synthesize audioRecorder;
 @synthesize txtMessage;
+@synthesize recordingBar;
+@synthesize recTimer;
+@synthesize uilbRecSec;
 
 NSString *downloadfilename;
 
@@ -70,23 +72,6 @@ NSString *downloadfilename;
     return self;
 }
 
-- (IBAction)startRecording:(id)sender
-{
-    [audioRecorder startRecording];
-}
-
-- (IBAction)stopRecording:(id)sender
-{
-    [audioRecorder stopRecording];
-	[audioRecorder release];
-    destID=self.m_dstid;
-    vwRecordController *recCtlr = [g_tabController.viewControllers objectAtIndex:0];
-    recCtlr.destName = m_DstName;
-    g_tabController.selectedViewController = recCtlr;
-    [self dismissModalViewControllerAnimated:NO];
-    
-}
-
 - (IBAction) recordButtonTapped
 {
     if (!BtnRecord.selected){
@@ -97,6 +82,16 @@ NSString *downloadfilename;
         UIImage *recordLight = [UIImage imageNamed:@"record_icon_record@2x.png"];
         UIImage *smallRecLiht = [Util imageWithImage:recordLight scaledToSize:CGSizeMake(recordLight.size.width/2, recordLight.size.height/2)];
         [BtnRecord setImage:smallRecLiht forState:UIControlStateNormal];
+        recTimer = [NSTimer scheduledTimerWithTimeInterval:.05f target:self selector:@selector(updateRecordingState:) userInfo:nil repeats:YES];
+        recordingBar= [[UIView alloc] initWithFrame:CGRectMake(0, 48, 320, 30)];
+        recordingBar.backgroundColor=[UIColor redColor];
+        uilbRecSec =  [[UILabel alloc] initWithFrame: CGRectMake(30, 0, 180, 30)];
+        uilbRecSec.backgroundColor = [UIColor clearColor];
+        uilbRecSec.textColor = [UIColor yellowColor];
+        uilbRecSec.text = @"Recording: Start !";
+        [recordingBar addSubview:uilbRecSec];
+        [self.view addSubview:recordingBar];
+        startTime = [[NSDate date] retain];
     }
     else {
         if (audioRecorder!=nil){
@@ -112,9 +107,24 @@ NSString *downloadfilename;
         recCtlr.destName = m_DstName;
         g_tabController.selectedViewController = recCtlr;
         [self dismissModalViewControllerAnimated:NO];
+        
+        if ([recTimer isValid]) {
+            [recTimer invalidate];
+            recTimer=nil;
+            recSeconds=0;
+        }
     }
+
 }
 
+-(void) updateRecordingState:(NSTimer *)recTimer
+{
+    NSTimeInterval recSeconds = fabs([startTime timeIntervalSinceNow]);
+    uilbRecSec.text= [[NSString alloc] initWithFormat:@"Recording:  %02i:%02i", (int)(recSeconds)/60, (int)recSeconds%60];
+    if (recSeconds>MAX_RECORD_SECONDS){
+        [self recordButtonTapped];
+    }
+}
 
 
 - (IBAction)btnSendMessage:(id)sender

@@ -46,8 +46,6 @@
     {
 		[urlRequest setHTTPMethod: @"POST" ];
 		[urlRequest setHTTPBody:body];
-		
-		
     }
 	
 	NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@",
@@ -60,10 +58,6 @@
 												 returningResponse:&urlResponse
 															 error:&error];
 	NSLog(@"%s", [responseData bytes]);
-	//NSLog(@"%p", error);
-	//NSString *responseString = [[NSString alloc] initWithData:responseData
-	//										encoding:NSUTF8StringEncoding];
-	//NSLog(@"%@", responseString);
 	return [responseData copy];
 }
 

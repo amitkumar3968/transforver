@@ -13,6 +13,12 @@
 
 static UIAlertView *g_AlertView = nil;
 #define loadingtimeout 50.0
+
++ (void)getSetting
+{
+    g_Settings = [NSUserDefaults standardUserDefaults];
+}
+
 + (void)showAlertView:(NSString *) msg{
 	//NSLog(@"$$$$$$$$$$ showAlertView");
     if( g_AlertView == nil)
@@ -381,6 +387,16 @@ static UIAlertView *g_AlertView = nil;
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();    
     UIGraphicsEndImageContext();
     return newImage;
+}
+
++ (void)checkEraseHistory
+{
+    
+}
+
++(void)eraseHistory
+{
+    
 }
 
 @end

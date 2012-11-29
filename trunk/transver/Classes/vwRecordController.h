@@ -18,6 +18,8 @@
 
 #include "dovocode.h"
 
+#define MAX_RECORD_SECONDS 60
+#define MAX_PASSWORD_LENGTH 5
 #define RECORDING_FILE_AIF @"recording.aif"
 #define RECORDING_FILE_M4A @"recording.caf"
 #define VOCODE_FILE_AIF @"out.aif"
@@ -98,7 +100,7 @@
 @property (nonatomic, retain) IBOutlet UILabel *uilbPassLock;
 @property (nonatomic, retain) IBOutlet UILabel *uilbPassword;
 @property (nonatomic, retain) IBOutlet UILabel *uilbAutoDel;
-
+@property (nonatomic, retain) UITextField *passInput;
 
 -(IBAction)playPlayer:(id)sender;
 -(IBAction)pausePlayer:(id)sender;

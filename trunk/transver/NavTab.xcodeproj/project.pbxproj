@@ -61,7 +61,6 @@
 		4F3EA8A7149C2A31006944DD /* ContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F3EA8A5149C2A31006944DD /* ContactsViewController.xib */; };
 		4F3EA8B3149DF334006944DD /* NavContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3EA8B1149DF334006944DD /* NavContactsViewController.m */; };
 		4F3EA8B4149DF334006944DD /* NavContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F3EA8B2149DF334006944DD /* NavContactsViewController.xib */; };
-		4F5E380013FC93130025B24A /* ChatBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5E37FF13FC93130025B24A /* ChatBubbleView.m */; };
 		4F5E385313FC98080025B24A /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F5E385213FC98080025B24A /* Icon.png */; };
 		4F7169B41472A38E00E01990 /* Dialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7169B31472A38E00E01990 /* Dialog.m */; };
 		4F724C8D13F6D91700A6F871 /* phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F724C8C13F6D91700A6F871 /* phone.png */; };
@@ -125,6 +124,7 @@
 		A41DD9C5162FBF13001BFECC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A41DD9C4162FBF13001BFECC /* Default.png */; };
 		A4307025160B59EE00CFD593 /* Piano.aif in Resources */ = {isa = PBXBuildFile; fileRef = A4307024160B59EE00CFD593 /* Piano.aif */; };
 		A4307027160B6D1700CFD593 /* dovocode_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4307026160B6D1700CFD593 /* dovocode_icon@2x.png */; };
+		A44035AA166685680017FC6C /* ChatBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A44035A9166685670017FC6C /* ChatBubbleView.m */; };
 		A44C610D164C611A004B62E0 /* Localization.m in Sources */ = {isa = PBXBuildFile; fileRef = A44C610C164C611A004B62E0 /* Localization.m */; };
 		A44C6110164C614F004B62E0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A44C610E164C614F004B62E0 /* Localizable.strings */; };
 		A45FEE2215A315AD00CF3D72 /* message_bg_time1.png in Resources */ = {isa = PBXBuildFile; fileRef = A45FEDED15A315AD00CF3D72 /* message_bg_time1.png */; };
@@ -577,8 +577,6 @@
 		4F3EA8B0149DF334006944DD /* NavContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavContactsViewController.h; sourceTree = "<group>"; };
 		4F3EA8B1149DF334006944DD /* NavContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavContactsViewController.m; sourceTree = "<group>"; };
 		4F3EA8B2149DF334006944DD /* NavContactsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NavContactsViewController.xib; path = Classes/NavContactsViewController.xib; sourceTree = "<group>"; };
-		4F5E37FE13FC93130025B24A /* ChatBubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatBubbleView.h; sourceTree = "<group>"; };
-		4F5E37FF13FC93130025B24A /* ChatBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatBubbleView.m; sourceTree = "<group>"; };
 		4F5E385213FC98080025B24A /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		4F6898FB14696275007927E3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		4F7169B21472A38E00E01990 /* Dialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dialog.h; sourceTree = "<group>"; };
@@ -667,6 +665,8 @@
 		A41DD9C4162FBF13001BFECC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		A4307024160B59EE00CFD593 /* Piano.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Piano.aif; sourceTree = SOURCE_ROOT; };
 		A4307026160B6D1700CFD593 /* dovocode_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dovocode_icon@2x.png"; path = "record/dovocode_icon@2x.png"; sourceTree = "<group>"; };
+		A44035A8166685670017FC6C /* ChatBubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatBubbleView.h; sourceTree = "<group>"; };
+		A44035A9166685670017FC6C /* ChatBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatBubbleView.m; sourceTree = "<group>"; };
 		A44C610B164C611A004B62E0 /* Localization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Localization.h; sourceTree = "<group>"; };
 		A44C610C164C611A004B62E0 /* Localization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Localization.m; sourceTree = "<group>"; };
 		A44C610F164C614F004B62E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -1034,9 +1034,9 @@
 				4F7169B21472A38E00E01990 /* Dialog.h */,
 				4F03B2C41401D05100FEC9D4 /* ChatViewController.h */,
 				4F03B2C51401D05100FEC9D4 /* ChatViewController.m */,
+				A44035A8166685670017FC6C /* ChatBubbleView.h */,
+				A44035A9166685670017FC6C /* ChatBubbleView.m */,
 				4F7169B31472A38E00E01990 /* Dialog.m */,
-				4F5E37FE13FC93130025B24A /* ChatBubbleView.h */,
-				4F5E37FF13FC93130025B24A /* ChatBubbleView.m */,
 				4F3443031487E89500AF6FC7 /* MyContactsView.h */,
 				4F3443041487E89500AF6FC7 /* MyContactsView.m */,
 				4F3EA8A3149C2A30006944DD /* ContactsViewController.h */,
@@ -2131,7 +2131,6 @@
 				E176A1290F88116D00EEE756 /* FavoritesTabViewController.m in Sources */,
 				E176A2290F893FC200EEE756 /* MoreTabViewController.m in Sources */,
 				E11501A50F8AB60C00E492FD /* MoreOptionViewController.m in Sources */,
-				4F5E380013FC93130025B24A /* ChatBubbleView.m in Sources */,
 				4F03B2951401315600FEC9D4 /* DBHandler.m in Sources */,
 				4F03B2C61401D05100FEC9D4 /* ChatViewController.m in Sources */,
 				4F03B2CF1401D34100FEC9D4 /* ContactTableViewCell.m in Sources */,
@@ -2188,6 +2187,7 @@
 				ED49BED0160771F6007EA4F6 /* VoiceConverterModel.mm in Sources */,
 				ED49BED216077EFF007EA4F6 /* vwRecordController.m in Sources */,
 				A44C610D164C611A004B62E0 /* Localization.m in Sources */,
+				A44035AA166685680017FC6C /* ChatBubbleView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

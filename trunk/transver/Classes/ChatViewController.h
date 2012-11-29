@@ -42,6 +42,7 @@
     IBOutlet UIButton *BtnCancel;
     IBOutlet UITextField *txtMessage;
     IBOutlet UITableView *tableView;
+    float recSeconds;
 }
 
 @property (nonatomic, retain) RKRequestQueue *m_Quest;
@@ -59,6 +60,12 @@
 @property (nonatomic, retain) NSMutableDictionary *m_DicMessages;
 
 @property (nonatomic,retain)  AudioRecorder *audioRecorder;
+@property (nonatomic,retain)  UIView *recordingBar;
+@property (nonatomic,retain)  NSTimer *recTimer;
+@property (nonatomic,retain)  UILabel* uilbRecSec;
+
+
+
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;

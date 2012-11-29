@@ -10,6 +10,11 @@
 #import "DBHandler.h"
 #import "JSON.h"
 
+
+#define PROGRAM_PASSWORD @"vwSettingsPasswordController.programPassword"
+#define PASSWORD @"vwSettingsPasswordController.password"
+
+
 NSString *g_UserNumber;
 NSString *g_UserName;
 NSMutableArray *g_AccountPhone;
@@ -19,6 +24,7 @@ int g_UserID;
 int destID;
 UITabBarController *g_tabController;
 UIViewController *g_RootController;
+NSUserDefaults *g_Settings;
 
 
 @interface Util : NSObject {
@@ -44,6 +50,9 @@ UIViewController *g_RootController;
 + (void) addRelationships:(int) uid phonenumber:(NSString *) phone;
 + (void) getRelationships:(int) uid;
 + (void) delMessages:(int) dialod_id;
++ (void)getSetting;
++ (void) eraseHistory;
++ (void) checkEraseHistory;
 
 + (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize;
 @end

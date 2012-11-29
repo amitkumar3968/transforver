@@ -389,9 +389,6 @@ NSMutableArray *imageList;
         [cell setFrame:cellFrame];
         return cell;
     }*/
-    if ([indexPath row]>=157){
-        NSLog(@"%@", cell.lastNameLabel.text);
-    }
     //cell.textLabel.text = [listOfItems objectAtIndex:([indexPath row])];
     //cell.textLabel.text = [[NSString alloc] initWithFormat:@"test"]; 
     return cell;
