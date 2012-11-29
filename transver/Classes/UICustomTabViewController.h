@@ -10,7 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <CoreAudio/CoreAudioTypes.h> 
 #import "AudioRecorder.h"
-#import "ChatBubbleView.h"
+//#import "ChatBubbleView.h"
 #import "Util.h"
 
 @interface UICustomTabViewController : UIViewController <UITabBarDelegate> {
@@ -31,7 +31,7 @@
 @property (nonatomic, retain) NSArray *viewControllers;
 @property (nonatomic, retain) NSString *localFilePath;
 @property (nonatomic, retain) NSFileHandle *audioFile;
-@property (nonatomic, retain) IBOutlet ChatBubbleView *bubbleView;
+//@property (nonatomic, retain) IBOutlet ChatBubbleView *bubbleView;
 @property (nonatomic, retain) IBOutlet UITabBar *tabBar;
 @property (nonatomic, retain) IBOutlet UITabBarItem *favouritesTabBarItem;
 @property (nonatomic, retain) IBOutlet UITabBarItem *moreTabBarItem;

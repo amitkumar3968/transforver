@@ -59,7 +59,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    name.keyboardType = UIKeyboardTypeNamePhonePad;
+    name.keyboardType = UIKeyboardTypeAlphabet;
     phoneNum.keyboardType = UIKeyboardTypeNumberPad;
     UIBarButtonItem *rightButton = 
 	[[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStyleDone target:self action:@selector(save:)];

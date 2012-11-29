@@ -31,6 +31,7 @@
 	//self.tableView.rowHeight = 100;
 	//self.tableView.backgroundColor = [UIColor clearColor];
     [Localization prepareLocalizedStrings];
+    [Util getSetting];
     
     if([Util checkUserInfoExist])
     {
