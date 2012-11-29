@@ -248,7 +248,7 @@ NSMutableArray *imageList;
 - (void)updateContact
 {
     [self getRelationships:g_UserID ];
-
+    
     if (initTable) {
         NSMutableArray *list = [[NSMutableArray alloc] init];
         imageList = [[NSMutableArray alloc] init];

@@ -99,7 +99,10 @@
         [disclosureButton setImage:[UIImage imageNamed:@"carat-open.png"] forState:UIControlStateSelected];
         [disclosureButton addTarget:self action:@selector(toggleOpen:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:disclosureButton];
-        
+        if (sectionNumber==0)
+        {
+            [self toggleOpenWithUserAction:YES];
+        }
         // Set the colors for the gradient layer.
         static NSMutableArray *colors = nil;
         if (colors == nil) {

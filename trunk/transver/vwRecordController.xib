@@ -558,7 +558,7 @@
 						<reference key="IBUINormalTitleShadowColor" ref="951573043"/>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">dovocode_icon@2x.png</string>
+							<string key="NSResourceName">dovocode_icon_blank@2x.png</string>
 						</object>
 						<reference key="IBUIFontDescription" ref="76797074"/>
 						<reference key="IBUIFont" ref="660873201"/>
@@ -741,6 +741,14 @@
 						<reference key="destination" ref="154592156"/>
 					</object>
 					<int key="connectionID">76</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">vocodeOptionReady</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="1053944821"/>
+					</object>
+					<int key="connectionID">77</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -1058,7 +1066,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">76</int>
+			<int key="maxID">77</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
@@ -1070,7 +1078,7 @@
 			<string key="common_bg_setting1@2x.png">{588, 88}</string>
 			<string key="common_bg_setting2@2x.png">{588, 88}</string>
 			<string key="common_bg_setting3@2x.png">{588, 88}</string>
-			<string key="dovocode_icon@2x.png">{59, 53}</string>
+			<string key="dovocode_icon_blank@2x.png">{59, 53}</string>
 			<string key="history_icon_unrecord.png">{29, 29}</string>
 			<string key="player_btn_pause_slected@2x.png">{186, 90}</string>
 			<string key="player_btn_play_slected@2x.png">{192, 90}</string>

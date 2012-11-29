@@ -130,7 +130,12 @@ NSString *downloadfilename;
 - (IBAction)btnSendMessage:(id)sender
 {
     NSLog(@"btnSendMessage %@!", self.txtMessage.text);
-    [self sendMessages:self.txtMessage.text];
+    if (self.txtMessage.text.length >0) {
+        [self sendMessages:self.txtMessage.text];
+    }
+    else{
+        //do nothing
+    }
     //[self textFieldDidEndEditing:(UITextField *)txtMessage];
     [self ScanMessages];
     [txtMessage resignFirstResponder];
@@ -421,7 +426,7 @@ NSString *downloadfilename;
      sortedArrayUsingComparator:^(id a, id b)
      {
          // Time order: newest first, oldest last
-         return [a compare:b];
+         return [b compare:a];
      }];
     
     int count = [timeArray count];

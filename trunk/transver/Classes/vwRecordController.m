@@ -43,6 +43,7 @@
 @synthesize txfPass;
 @synthesize uilbAutoDel, uilbPassLock, uilbPassword, uilbSelectEncryType;
 @synthesize passInput;
+@synthesize vocodeOptionReady;
 
 // Check password text field
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
@@ -189,6 +190,8 @@
 						 toPath:originalFilepath error:nil];
     if( [fileManager fileExistsAtPath:originalFilepath])
     {
+        //todo: file existence check
+        /*
         int error = [self uploadFile:originalFilepath];
         if( error )
         {
@@ -203,6 +206,7 @@
                         position:@"center"
                            title:@"UPLOAD FILE"];
         }
+        */
     }
     else
     {
@@ -218,6 +222,8 @@
 						 toPath:vocodedFilepath error:nil];
     if( [fileManager fileExistsAtPath:vocodedFilepath])
     {
+        //Todo: file existence check
+        /*
         int error = [self uploadFile:vocodedFilepath];
         if( error )
         {
@@ -232,6 +238,7 @@
                     position:@"center"
                        title:@"UPLOAD FILE"];
         }
+         */
     }
     else
     {
@@ -274,12 +281,18 @@
     NSArray *array = nil;
     //NSMutableArray *ret = [[NSMutableArray alloc] init ];
     
-    if(data)
+    if(data!=Nil)
     {
         NSString *responseString = [[NSString alloc] initWithData:data
                                                          encoding:NSUTF8StringEncoding];
         array = [responseString JSONValue];
         [responseString release];
+        UIAlertView *transmissionSuccessAlert = [[UIAlertView alloc] initWithTitle:@"Transmissoin Succeeded!" message:@"" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [transmissionSuccessAlert show];
+    }
+    else{
+        UIAlertView *transmissionFailAlert = [[UIAlertView alloc] initWithTitle:@"Transmissoin Failed, Try Again !" message:@"" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [transmissionFailAlert show];
     }
 }
 - (int) uploadFile:(NSString *)fileName {
@@ -364,6 +377,7 @@
 {
     if ( pickerView == uipkVocodeOpt ) {
         carrierOptIndex=row;
+        [vocodeOptionReady setImage:[UIImage imageNamed:@"dovocode_icon@2x.png"] forState:UIControlStateNormal];
     } else if ( pickerView == selecteTargetPicker ) {
         destID = [[g_AccountID objectAtIndex:row] integerValue];
         destName = [g_AccountName objectAtIndex:row];
@@ -398,14 +412,14 @@ numberOfRowsInComponent:(NSInteger) component
 }
 
 -(IBAction) showPicker{
-        CGRect rectVocodeRect = CGRectMake(100, 260, 200,180);
+        CGRect rectVocodeRect = CGRectMake(50, 260, 200,180);
         uipkVocodeOpt.delegate=self;
         uipkVocodeOpt.frame=rectVocodeRect;
         uipkVocodeOpt.showsSelectionIndicator=true;
         [uipkVocodeOpt setBackgroundColor:[UIColor clearColor]];
         uipkVocodeOpt.autoresizingMask=UIViewAutoresizingFlexibleHeight;
         coverView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
-        [coverView setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.5f]];
+        [coverView setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.3f]];
         [coverView addSubview:uipkVocodeOpt];
         [coverView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                 action:@selector(hidePicker:)]];
@@ -638,7 +652,7 @@ numberOfRowsInComponent:(NSInteger) component
     uilbSelectEncryType.text = LOC_TXT_RECORD_ENCRYPTION_TYPE;
     uibtRecord.titleLabel.text = LOC_TXT_RECORD_REC_BUTTON_TITLE;
     uibtSendToWho.titleLabel.text = LOC_TXT_RECORD_RECEIVER_BUTTON_TITLE;
-    
+    [vocodeOptionReady setImage:[UIImage imageNamed:@"dovocode_icon_blank@2x.png"] forState:UIControlStateNormal];
     if (self.destName!=nil) {
         uibtSendToWho.titleLabel.text = [[NSString alloc] initWithFormat:@"Send to:%@", self.destName];
     }    
