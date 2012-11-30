@@ -249,6 +249,7 @@
 
 - (IBAction)cleaAllHistory:(id)sender {
     // TODO clean all voice recorder history
+    [Util eraseHistory];
 }
 
 @end

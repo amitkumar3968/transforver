@@ -42,7 +42,6 @@
     }
     //g_UserID = 20;
     [Util getRelationships:g_UserID];
-    [Util eraseHistory];
     
     //[navController pushViewController:tabController animated:FALSE];
     [globalSettings initWithObjects:[NSArray arrayWithObjects:@"language", nil] forKeys:[NSArray arrayWithObjects:@"1", nil]];
