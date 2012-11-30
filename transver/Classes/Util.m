@@ -396,7 +396,28 @@ static UIAlertView *g_AlertView = nil;
 
 +(void)eraseHistory
 {
+    NSString *post =[[NSString alloc] initWithFormat:@"user_id=%d",-1];
+	NSURL *url=[NSURL URLWithString:@"http://www.entalkie.url.tw/delAllMessageOfUser.php"];
+	
+	NSLog(@"%@",post);
+	NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+	
+	NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+	
+	NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
+	[request setURL:url];
+	[request setHTTPMethod:@"POST"];
+	[request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+	[request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+	[request setHTTPBody:postData];
     
+    [NSURLRequest setAllowsAnyHTTPSCertificate:YES forHost:[url host]];
+	
+	NSError *error;
+	NSURLResponse *response;
+	NSData *urlData=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+	
+	NSString *data=[[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
 }
 
 @end

@@ -102,6 +102,7 @@
 @property (nonatomic, retain) IBOutlet UILabel *uilbPassword;
 @property (nonatomic, retain) IBOutlet UILabel *uilbAutoDel;
 @property (nonatomic, retain) UITextField *passInput;
+@property (nonatomic, retain) UIAlertView* authAlert;
 
 -(IBAction)playPlayer:(id)sender;
 -(IBAction)pausePlayer:(id)sender;
