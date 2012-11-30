@@ -44,17 +44,18 @@
 @synthesize uilbAutoDel, uilbPassLock, uilbPassword, uilbSelectEncryType;
 @synthesize passInput;
 @synthesize vocodeOptionReady;
+@synthesize authAlert;
 
 // Check password text field
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
+    if([string isEqualToString:@"\n"]) {
+        [textField resignFirstResponder];
+        return NO;
+    }
     if (textField.text.length >= MAX_PASSWORD_LENGTH && range.length == 0)
     {
         return NO; // return NO to not change text
-    }
-    else  if([string isEqualToString:@"\n"]) {
-        [textField resignFirstResponder];
-        return NO;
     }
     else
     {return YES;}
@@ -255,7 +256,6 @@
     else{
         [self sendVoice:originalFilename vocode:vocodedFilename pass:@""];
     }
-	[confirmView removeFromSuperview];
     self.tabBarController.tabBar.hidden=FALSE;
     [progressView stopAnimating];
     [coverView removeFromSuperview];
@@ -293,6 +293,9 @@
     else{
         UIAlertView *transmissionFailAlert = [[UIAlertView alloc] initWithTitle:@"Transmissoin Failed, Try Again !" message:@"" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [transmissionFailAlert show];
+    }
+    if (confirmView!=Nil) {
+        [confirmView removeFromSuperview];
     }
 }
 - (int) uploadFile:(NSString *)fileName {
@@ -433,7 +436,7 @@ numberOfRowsInComponent:(NSInteger) component
  }*/
 
 -(IBAction)showSendToWhoPicker:(id)sender {
-    if ( selecteTargetPicker.superview == nil) { // picker not in view now.
+    if ( selecteTargetPicker.superview == nil&&[g_AccountID count]>0) { // picker not in view now.
         // TODO change 320&480 to window parameter
         coverView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
         [coverView setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:.5]];
@@ -596,16 +599,16 @@ numberOfRowsInComponent:(NSInteger) component
     //
 	//timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(timeLoader) userInfo:nil repeats:YES];    
 	// Do any additional setup after loading the view, typically from a nib.
-    
+    BOOL authPass = FALSE;
     //show alertview for login
     if ([[g_Settings valueForKey:PROGRAM_PASSWORD] boolValue]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Enter VEM Password" message:@"this gets covered!"
+        authAlert = [[UIAlertView alloc] initWithTitle:@"Enter VEM Password" message:@"this gets covered!"
                                                        delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:@"OK!", nil];
-        alert.tag = AUTH_ALERT_TAG;
+        authAlert.tag = AUTH_ALERT_TAG;
         passInput = [[UITextField alloc] initWithFrame:CGRectMake(12, 45, 260, 25)];
         [passInput setBackgroundColor:[UIColor whiteColor]];
-        [alert addSubview:passInput];
-        [alert show];
+        [authAlert addSubview:passInput];
+        [authAlert show];
     }
 }
 
@@ -618,13 +621,13 @@ numberOfRowsInComponent:(NSInteger) component
         }
         else
         {
-            //show alertview for login
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Enter VEM Password" message:@"this gets covered!"
-                                                           delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:@"OK!", nil];
+            authAlert = [[UIAlertView alloc] initWithTitle:@"Enter VEM Password" message:@"this gets covered!"
+                                                  delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:@"OK!", nil];
+            authAlert.tag = AUTH_ALERT_TAG;
             passInput = [[UITextField alloc] initWithFrame:CGRectMake(12, 45, 260, 25)];
             [passInput setBackgroundColor:[UIColor whiteColor]];
-            [alert addSubview:passInput];
-            [alert show];
+            [authAlert addSubview:passInput];
+            [authAlert show];
         }
     }
     else

@@ -81,7 +81,7 @@ NSMutableArray *imageList;
             [listOfItems addObject:contactFirstLast];
         }
         
-#if 1
+#if 0
         else
         {
             [listOfPhones addObject:@"0933333333"];
@@ -107,6 +107,8 @@ NSMutableArray *imageList;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    initTable = YES;  // flag for fetching contact only once
+    
     listOfItems = [[NSMutableArray alloc] init];
     listOfPhones = [[NSMutableArray alloc] init];
     
@@ -201,7 +203,6 @@ NSMutableArray *imageList;
 - (void)viewWillAppear:(BOOL)animated
 {
     //localize appearance
-    initTable = YES;
     [Util showAlertView:@"Loading"];
     allButton.titleLabel.text = LOC_TXT_CONTACT_ALLBUTTON; // allButton.titleText;
     filterButton.titleLabel.text = LOC_TXT_CONTACT_VEMBUTTON; //filterButton.titleText;
@@ -240,15 +241,13 @@ NSMutableArray *imageList;
     else {
         [imageButton setSelected:YES];
         [allButton setSelected:NO];
-        [self getRelationships:g_UserID ];
+        [Util getRelationships:g_UserID ];
     }
     [self performSelectorInBackground:@selector(updateContact) withObject:NULL];
 }
 
 - (void)updateContact
 {
-    [self getRelationships:g_UserID ];
-    
     if (initTable) {
         NSMutableArray *list = [[NSMutableArray alloc] init];
         imageList = [[NSMutableArray alloc] init];
@@ -277,6 +276,7 @@ NSMutableArray *imageList;
         }
     }
     initTable=NO;
+     
     [self.tableView reloadData];
     [Util dissmissAlertView];
 }
@@ -418,14 +418,17 @@ NSMutableArray *imageList;
     NSLog(@"list of phones: %d", [listOfPhones count]);
     NSString *phoneWithoutSeperates = [[listOfPhones objectAtIndex:sender.tag] stringByReplacingOccurrencesOfString:@"-" withString:@""];
     [self addRelationships:g_UserID  phonenumber:phoneWithoutSeperates];
-
+    [Util getRelationships:g_UserID ];
+    [self updateContact];
+    [self.tableView reloadData];
 }
 
 - (void)delPerson:(UIButton *)sender
 {
     NSString *relSlaveID = [g_AccountID objectAtIndex:sender.tag];
     [self delRelationships:g_UserID  slaveID:relSlaveID];
-    [self getRelationships:g_UserID ];
+    [Util getRelationships:g_UserID ];
+    [self updateContact];
     [self.tableView reloadData];
 }
 
