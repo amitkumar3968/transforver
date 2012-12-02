@@ -422,4 +422,32 @@ static UIAlertView *g_AlertView = nil;
     [self dissmissAlertView];
 }
 
++(void)clearHistory:(int)delete_mode
+{
+    [self showAlertView:@"Erasing History"];
+    NSString *post =[[NSString alloc] initWithFormat:@"user_id=%d&delete_mode=%d",g_UserID, delete_mode];
+	NSURL *url=[NSURL URLWithString:@"http://www.entalkie.url.tw/clearMessageOfUser.php"];
+	
+	NSLog(@"%@",post);
+	NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+	
+	NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+	
+	NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
+	[request setURL:url];
+	[request setHTTPMethod:@"POST"];
+	[request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+	[request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+	[request setHTTPBody:postData];
+    
+    [NSURLRequest setAllowsAnyHTTPSCertificate:YES forHost:[url host]];
+	
+	NSError *error;
+	NSURLResponse *response;
+	NSData *urlData=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+	
+	NSString *data=[[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
+    [self dissmissAlertView];
+}
+
 @end
