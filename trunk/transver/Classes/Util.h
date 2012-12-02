@@ -50,8 +50,9 @@ NSUserDefaults *g_Settings;
 + (void) addRelationships:(int) uid phonenumber:(NSString *) phone;
 + (void) getRelationships:(int) uid;
 + (void) delMessages:(int) dialod_id;
-+ (void)getSetting;
++ (void) getSetting;
 + (void) eraseHistory;
++ (void) clearHistory:(int)delete_mode;
 + (void) checkEraseHistory;
 
 + (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize;
