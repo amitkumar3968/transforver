@@ -589,6 +589,7 @@ NSString *downloadfilename;
                 element.m_Dialog_SourceID = [[dic objectForKey:@"DIALOG_SOURCEID"] intValue];
                 element.m_Dialog_DstID = [[dic objectForKey:@"DIALOG_DESTINATIONID"] intValue];
                 element.m_Dialog_Read = [[dic objectForKey:@"DIALOG_DST_READ"] intValue];
+                element.m_Dialog_Autodelete = [[dic objectForKey:@"DIALOG_AUTO_DELETED"] intValue];
                 element.m_Dialog_Password = [dic objectForKey:@"DIALOG_VOICE_PASS"];
                 /*
                 if( element.m_Dialog_Type == 1)
@@ -619,6 +620,7 @@ NSString *downloadfilename;
             element.m_Dialog_DstID = [[dic objectForKey:@"DIALOG_DESTINATIONID"] intValue];
             element.m_Dialog_Password = [dic objectForKey:@"DIALOG_VOICE_PASS"];
             element.m_Dialog_Read = [[dic objectForKey:@"DIALOG_DST_READ"] intValue];
+            element.m_Dialog_Autodelete = [[dic objectForKey:@"DIALOG_AUTO_DELETED"] intValue];
             /*
             if( element.m_Dialog_Type == 1)
                 [self queueRequests:element.m_Dialog_Voice];
@@ -968,6 +970,11 @@ NSString *downloadfilename;
         float audioDurationSeconds = CMTimeGetSeconds(audioDuration);
         NSLog(@"%f", audioDurationSeconds);
         [NSTimer scheduledTimerWithTimeInterval:audioDurationSeconds target:self selector:@selector(removeFile:) userInfo:delpath repeats:NO];
+        if( tmpDialog.m_Dialog_Autodelete == 1)
+        {//auto delete the server file
+            NSLog(@"delete ID:%d", tmpDialog.m_Dialog_ID);
+            [Util delMessages:tmpDialog.m_Dialog_ID];
+        }
         
     }
     
