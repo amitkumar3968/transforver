@@ -19,6 +19,7 @@
     int m_Dialog_SourceID;
     int m_Dialog_DstID;
     int m_Dialog_Read;
+    int m_Dialog_Autodelete;
     NSString *m_Created_Time;
 }
 
@@ -28,6 +29,7 @@
 @property (nonatomic, assign) int m_Dialog_SourceID;
 @property (nonatomic, assign) int m_Dialog_DstID;
 @property (nonatomic, assign) int m_Dialog_Read;
+@property (nonatomic, assign) int m_Dialog_Autodelete;
 @property (nonatomic, retain) NSString *m_Dialog_Message;
 @property (nonatomic, retain) NSString *m_Dialog_Voice;
 @property (nonatomic, retain) NSString *m_Dialog_Encrypt;
