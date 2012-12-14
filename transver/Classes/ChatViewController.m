@@ -547,7 +547,7 @@ NSString *downloadfilename;
     dateToBeIncremented = [theCalendar dateByAddingComponents:dayComponent toDate:today options:0];
     NSString *tomorrowString = [format stringFromDate:dateToBeIncremented];
     NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/getMessages.php"];
-    NSString *postString = [NSString stringWithFormat:@"srcID=%d&dstID=%d&fromdate=%@&todate=%@",srcid,dstid,todayString,tomorrowString];
+    NSString *postString = [NSString stringWithFormat:@"userID=%d&srcID=%d&dstID=%d&fromdate=%@&todate=%@",g_UserID, srcid,dstid,todayString,tomorrowString];
     //NSString *urlString = @"http://www.entalkie.url.tw/getRelationships.php?masterID=1";
     NSData *data = [DBHandler sendReqToUrl:urlString postString:postString];
     NSArray *array = nil;
