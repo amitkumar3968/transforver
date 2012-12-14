@@ -426,7 +426,7 @@ static UIAlertView *g_AlertView = nil;
 {
     [self showAlertView:@"Erasing History"];
     NSString *post =[[NSString alloc] initWithFormat:@"user_id=%d&delete_mode=%d",g_UserID, delete_mode];
-	NSURL *url=[NSURL URLWithString:@"http://www.entalkie.url.tw/clearMessageOfUser.php"];
+	NSURL *url=[NSURL URLWithString:@"http://www.entalkie.url.tw/delAllMessageOfUser.php"];
 	
 	NSLog(@"%@",post);
 	NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
