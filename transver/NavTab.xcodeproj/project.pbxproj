@@ -55,9 +55,7 @@
 		4F2B30861470B2180033E43E /* libRestKitObjectMapping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2B30811470B2180033E43E /* libRestKitObjectMapping.a */; };
 		4F2B30871470B2180033E43E /* libRestKitSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2B30821470B2180033E43E /* libRestKitSupport.a */; };
 		4F3443051487E89500AF6FC7 /* MyContactsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3443041487E89500AF6FC7 /* MyContactsView.m */; };
-		4F3443071487E8E400AF6FC7 /* MyContactsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F3443061487E8E400AF6FC7 /* MyContactsView.xib */; };
 		4F38BB1A145B80F300671269 /* userWaldo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F38BB19145B80F300671269 /* userWaldo.png */; };
-		4F3EA8A6149C2A31006944DD /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3EA8A4149C2A31006944DD /* ContactsViewController.m */; };
 		4F3EA8A7149C2A31006944DD /* ContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F3EA8A5149C2A31006944DD /* ContactsViewController.xib */; };
 		4F3EA8B3149DF334006944DD /* NavContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3EA8B1149DF334006944DD /* NavContactsViewController.m */; };
 		4F3EA8B4149DF334006944DD /* NavContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F3EA8B2149DF334006944DD /* NavContactsViewController.xib */; };
@@ -375,6 +373,8 @@
 		A462AAF415EFB93B00A6A833 /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A462AAF115EFB93B00A6A833 /* CAXException.cpp */; };
 		A497E19A16671A1600FDA4AE /* player_btn_play_blank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A497E19916671A1600FDA4AE /* player_btn_play_blank@2x.png */; };
 		A497E19C16671ADA00FDA4AE /* dovocode_icon_blank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A497E19B16671ADA00FDA4AE /* dovocode_icon_blank@2x.png */; };
+		A4E5956D1681B18600851A41 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4E5956C1681B18600851A41 /* CoreTelephony.framework */; };
+		A4E595C716831E0400851A41 /* MyContactsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4E595C616831E0400851A41 /* MyContactsView.xib */; };
 		A4F632A3159DD22F003C709D /* vwRecordController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4F632A2159DD22E003C709D /* vwRecordController.xib */; };
 		A4F632DF159E5760003C709D /* vwSettingsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4F632DE159E5760003C709D /* vwSettingsController.xib */; };
 		A4F63303159EA5DF003C709D /* vwSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F63302159EA5DF003C709D /* vwSettingsController.m */; };
@@ -385,12 +385,9 @@
 		A4F6335815A05C56003C709D /* vwSettingsPasswordController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F6335715A05C55003C709D /* vwSettingsPasswordController.m */; };
 		A4F6335A15A05CD7003C709D /* vwSettingsPasswordController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4F6335915A05CD7003C709D /* vwSettingsPasswordController.xib */; };
 		E11501A50F8AB60C00E492FD /* MoreOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E11501A40F8AB60C00E492FD /* MoreOptionViewController.m */; };
-		E11501A70F8AB6C600E492FD /* MoreOptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E11501A60F8AB6C600E492FD /* MoreOptionView.xib */; };
 		E124FF800F82CC6B008BC374 /* UICustomTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E124FF7F0F82CC6B008BC374 /* UICustomTabViewController.m */; };
-		E124FF820F82CD8F008BC374 /* TabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E124FF810F82CD8F008BC374 /* TabViewController.xib */; };
 		E176A1290F88116D00EEE756 /* FavoritesTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E176A1280F88116D00EEE756 /* FavoritesTabViewController.m */; };
 		E176A12C0F8811A200EEE756 /* FavoritesTabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E176A12B0F8811A200EEE756 /* FavoritesTabView.xib */; };
-		E176A2260F893F7D00EEE756 /* MoreTabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E176A2250F893F7C00EEE756 /* MoreTabView.xib */; };
 		E176A2290F893FC200EEE756 /* MoreTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E176A2280F893FC200EEE756 /* MoreTabViewController.m */; };
 		ED49BED0160771F6007EA4F6 /* VoiceConverterModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED49BECF160771F6007EA4F6 /* VoiceConverterModel.mm */; };
 		ED49BED216077EFF007EA4F6 /* vwRecordController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED49BED116077EFF007EA4F6 /* vwRecordController.m */; };
@@ -571,10 +568,7 @@
 		4F2B30881470B25F0033E43E /* libRestKitXMLParserLibxml.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; name = libRestKitXMLParserLibxml.a; path = "/Users/poioit/Library/Developer/Xcode/DerivedData/NavTab-gdtjeaqbeqdwteddvgyoehnyltcn/Build/Products/Debug-iphoneos/libRestKitXMLParserLibxml.a"; sourceTree = "<absolute>"; };
 		4F3443031487E89500AF6FC7 /* MyContactsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyContactsView.h; sourceTree = "<group>"; };
 		4F3443041487E89500AF6FC7 /* MyContactsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyContactsView.m; sourceTree = "<group>"; };
-		4F3443061487E8E400AF6FC7 /* MyContactsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MyContactsView.xib; path = Classes/MyContactsView.xib; sourceTree = "<group>"; };
 		4F38BB19145B80F300671269 /* userWaldo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userWaldo.png; sourceTree = "<group>"; };
-		4F3EA8A3149C2A30006944DD /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
-		4F3EA8A4149C2A31006944DD /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
 		4F3EA8A5149C2A31006944DD /* ContactsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContactsViewController.xib; path = Classes/ContactsViewController.xib; sourceTree = "<group>"; };
 		4F3EA8B0149DF334006944DD /* NavContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavContactsViewController.h; sourceTree = "<group>"; };
 		4F3EA8B1149DF334006944DD /* NavContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavContactsViewController.m; sourceTree = "<group>"; };
@@ -926,6 +920,8 @@
 		A462AAF215EFB93B00A6A833 /* CAXException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAXException.h; path = iPublicUtility/CAXException.h; sourceTree = "<group>"; };
 		A497E19916671A1600FDA4AE /* player_btn_play_blank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "player_btn_play_blank@2x.png"; path = "record/player_btn_play_blank@2x.png"; sourceTree = "<group>"; };
 		A497E19B16671ADA00FDA4AE /* dovocode_icon_blank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dovocode_icon_blank@2x.png"; path = "record/dovocode_icon_blank@2x.png"; sourceTree = "<group>"; };
+		A4E5956C1681B18600851A41 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		A4E595C616831E0400851A41 /* MyContactsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MyContactsView.xib; path = Classes/MyContactsView.xib; sourceTree = "<group>"; };
 		A4F632A2159DD22E003C709D /* vwRecordController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = vwRecordController.xib; sourceTree = "<group>"; };
 		A4F632A4159DDC79003C709D /* vwRecordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vwRecordController.h; sourceTree = "<group>"; };
 		A4F632DE159E5760003C709D /* vwSettingsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = vwSettingsController.xib; sourceTree = "<group>"; };
@@ -942,14 +938,11 @@
 		A4F6335915A05CD7003C709D /* vwSettingsPasswordController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = vwSettingsPasswordController.xib; sourceTree = "<group>"; };
 		E11501A30F8AB60C00E492FD /* MoreOptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreOptionViewController.h; sourceTree = "<group>"; };
 		E11501A40F8AB60C00E492FD /* MoreOptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreOptionViewController.m; sourceTree = "<group>"; };
-		E11501A60F8AB6C600E492FD /* MoreOptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreOptionView.xib; sourceTree = "<group>"; };
 		E124FF7E0F82CC6B008BC374 /* UICustomTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICustomTabViewController.h; sourceTree = "<group>"; };
 		E124FF7F0F82CC6B008BC374 /* UICustomTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICustomTabViewController.m; sourceTree = "<group>"; };
-		E124FF810F82CD8F008BC374 /* TabViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabViewController.xib; sourceTree = "<group>"; };
 		E176A1270F88116D00EEE756 /* FavoritesTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesTabViewController.h; sourceTree = "<group>"; };
 		E176A1280F88116D00EEE756 /* FavoritesTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesTabViewController.m; sourceTree = "<group>"; };
 		E176A12B0F8811A200EEE756 /* FavoritesTabView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesTabView.xib; sourceTree = "<group>"; };
-		E176A2250F893F7C00EEE756 /* MoreTabView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreTabView.xib; sourceTree = "<group>"; };
 		E176A2270F893FC200EEE756 /* MoreTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreTabViewController.h; sourceTree = "<group>"; };
 		E176A2280F893FC200EEE756 /* MoreTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreTabViewController.m; sourceTree = "<group>"; };
 		ED49BECC1607701A007EA4F6 /* VoiceConverterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoiceConverterModel.h; sourceTree = "<group>"; };
@@ -971,6 +964,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4E5956D1681B18600851A41 /* CoreTelephony.framework in Frameworks */,
 				4FD9B35416497C5C00107B46 /* CoreMedia.framework in Frameworks */,
 				ED55DB3D16073BB500BBCA5B /* AVFoundation.framework in Frameworks */,
 				4F2B30831470B2180033E43E /* libRestKitCoreData.a in Frameworks */,
@@ -1043,8 +1037,6 @@
 				4F7169B31472A38E00E01990 /* Dialog.m */,
 				4F3443031487E89500AF6FC7 /* MyContactsView.h */,
 				4F3443041487E89500AF6FC7 /* MyContactsView.m */,
-				4F3EA8A3149C2A30006944DD /* ContactsViewController.h */,
-				4F3EA8A4149C2A31006944DD /* ContactsViewController.m */,
 				4F3EA8B0149DF334006944DD /* NavContactsViewController.h */,
 				4F3EA8B1149DF334006944DD /* NavContactsViewController.m */,
 				A45FEFFD15AB18E000CF3D72 /* vwAboutController.h */,
@@ -1078,6 +1070,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				A4E5956C1681B18600851A41 /* CoreTelephony.framework */,
 				4FD9B35316497C5C00107B46 /* CoreMedia.framework */,
 				ED55DB311607273200BBCA5B /* ExtAudioFileConvert.mm */,
 				4F01F18815E407720016717D /* VEM.png */,
@@ -1128,18 +1121,15 @@
 				4F724C9913F75F7800A6F871 /* sounds */,
 				4F724C9813F75F1D00A6F871 /* images */,
 				4F76F5FA145EFB90003E944B /* AddUserViewController.xib */,
+				4F3EA8B2149DF334006944DD /* NavContactsViewController.xib */,
+				A4E595C616831E0400851A41 /* MyContactsView.xib */,
 				4F3EA8A5149C2A31006944DD /* ContactsViewController.xib */,
 				4F2045F21417C0540002AC6A /* ChatViewController.xib */,
 				E176A12B0F8811A200EEE756 /* FavoritesTabView.xib */,
 				4F76F619145F073F003E944B /* MenuViewController.xib */,
-				4F3443061487E8E400AF6FC7 /* MyContactsView.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
-				E176A2250F893F7C00EEE756 /* MoreTabView.xib */,
-				E11501A60F8AB6C600E492FD /* MoreOptionView.xib */,
-				4F3EA8B2149DF334006944DD /* NavContactsViewController.xib */,
 				4F8FA98D148B03B600490C8A /* OverlayView.xib */,
 				4F93189114822B6A00A6D1FD /* PersonViewController.xib */,
-				E124FF810F82CD8F008BC374 /* TabViewController.xib */,
 				2899E55F0DE3E45000AC0155 /* RootViewController.xib */,
 				4F1BC6CB14658806004F02C1 /* VocViewController.xib */,
 				4F1BC6B714658122004F02C1 /* VocoderViewController.xib */,
@@ -1816,10 +1806,7 @@
 			files = (
 				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
 				2899E5600DE3E45000AC0155 /* RootViewController.xib in Resources */,
-				E124FF820F82CD8F008BC374 /* TabViewController.xib in Resources */,
 				E176A12C0F8811A200EEE756 /* FavoritesTabView.xib in Resources */,
-				E176A2260F893F7D00EEE756 /* MoreTabView.xib in Resources */,
-				E11501A70F8AB6C600E492FD /* MoreOptionView.xib in Resources */,
 				4F9BB0BC13F2E932004179FC /* 111.caf in Resources */,
 				4F9BB0C013F2E9BE004179FC /* mysoundcompressed.caf in Resources */,
 				4F724C8D13F6D91700A6F871 /* phone.png in Resources */,
@@ -1860,7 +1847,6 @@
 				4F1BC6D614682449004F02C1 /* user.png in Resources */,
 				4F238A811469AEBA0047EE1B /* arrow-right.png in Resources */,
 				4F93189314822B6A00A6D1FD /* PersonViewController.xib in Resources */,
-				4F3443071487E8E400AF6FC7 /* MyContactsView.xib in Resources */,
 				4F8FA98E148B03B600490C8A /* OverlayView.xib in Resources */,
 				4F3EA8A7149C2A31006944DD /* ContactsViewController.xib in Resources */,
 				4F3EA8B4149DF334006944DD /* NavContactsViewController.xib in Resources */,
@@ -2122,6 +2108,7 @@
 				A44C6110164C614F004B62E0 /* Localizable.strings in Resources */,
 				A497E19A16671A1600FDA4AE /* player_btn_play_blank@2x.png in Resources */,
 				A497E19C16671ADA00FDA4AE /* dovocode_icon_blank@2x.png in Resources */,
+				A4E595C716831E0400851A41 /* MyContactsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2179,7 +2166,6 @@
 				4F93189214822B6A00A6D1FD /* PersonViewController.m in Sources */,
 				4F3443051487E89500AF6FC7 /* MyContactsView.m in Sources */,
 				4F8FA98C148B039E00490C8A /* OverlayViewController.m in Sources */,
-				4F3EA8A6149C2A31006944DD /* ContactsViewController.m in Sources */,
 				4F3EA8B3149DF334006944DD /* NavContactsViewController.m in Sources */,
 				A4F63303159EA5DF003C709D /* vwSettingsController.m in Sources */,
 				A4F63306159EA64E003C709D /* vwSettingsEraseController.m in Sources */,

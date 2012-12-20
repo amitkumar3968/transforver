@@ -14,6 +14,16 @@
 static UIAlertView *g_AlertView = nil;
 #define loadingtimeout 50.0
 
+
++(NSString*)getCountryCode
+{
+    g_CountryCodeMap = [[NSMutableDictionary alloc] init];
+    [g_CountryCodeMap setValue:@"886" forKey:@"TW"];
+    NSLocale *locale = [NSLocale currentLocale];
+    NSString *countryCode = [locale objectForKey: NSLocaleCountryCode];
+    return [g_CountryCodeMap valueForKey:countryCode];
+}
+
 + (void)getSetting
 {
     g_Settings = [NSUserDefaults standardUserDefaults];
@@ -85,8 +95,6 @@ static UIAlertView *g_AlertView = nil;
 							  error:nil];
 		//firstStart = YES;//only check UserData.sqlite
 	}
-
-
 }
 
 + (void) copyFileWithFilename:(NSString *) fileName{
@@ -389,14 +397,18 @@ static UIAlertView *g_AlertView = nil;
     return newImage;
 }
 
+// check planed erase history date, erase history if necessary
 + (void)checkEraseHistory
 {
-    
+    NSDate *nextDeleteDate = [g_Settings objectForKey:@"NextEraseDate"];
+    NSDate *now = [NSDate dateWithTimeIntervalSinceNow:0];
+    if (now >nextDeleteDate) {
+        [self eraseHistory];
+    }
 }
 
 +(void)eraseHistory
 {
-    [self showAlertView:@"Erasing History"];
     NSString *post =[[NSString alloc] initWithFormat:@"user_id=%d",g_UserID];
 	NSURL *url=[NSURL URLWithString:@"http://www.entalkie.url.tw/delAllMessageOfUser.php"];
 	
@@ -419,7 +431,6 @@ static UIAlertView *g_AlertView = nil;
 	NSData *urlData=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
 	
 	NSString *data=[[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
-    [self dissmissAlertView];
 }
 
 +(void)clearHistory:(int)delete_mode

@@ -30,8 +30,9 @@
     //self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 	//self.tableView.rowHeight = 100;
 	//self.tableView.backgroundColor = [UIColor clearColor];
-    [Localization prepareLocalizedStrings];
     [Util getSetting];
+    [Localization prepareLocalizedStrings];
+    [Util getCountryCode];
     
     if([Util checkUserInfoExist])
     {
@@ -103,6 +104,10 @@
     if( g_UserID == -1)
     {   
         g_UserName=name;
+        NSString* countryCode = [Util getCountryCode];
+        phonenumber = [phonenumber substringFromIndex:1];
+        phonenumber = [[NSString alloc] initWithFormat:@"%@-%@", countryCode, phonenumber];
+        NSLog(@"phone num:%@", phonenumber);
         g_UserNumber = phonenumber;
         [Util saveParameter];
         g_UserID = [Util loginServer];

@@ -48,6 +48,7 @@ NSMutableArray *imageList;
 {
     NSArray *addresses = (NSArray *) ABAddressBookCopyArrayOfAllPeople(addressesBookRef);
     NSInteger addressesCount = [addresses count];
+
     
     for (int i = 0; i < addressesCount; i++) {
         ABRecordRef record = [addresses objectAtIndex:i];
@@ -133,6 +134,7 @@ NSMutableArray *imageList;
     [filterButton setSelected:YES];
     //[imageButton setImage:[UIImage imageNamed:@"phone.png"] forState:UIControlStateNormal];
     CGRect transparentViewFrame = CGRectMake(0.0, 0.0f, 320.0f, 44.0f);
+    [self.tableView setFrame:CGRectMake(0.0f, 88.0f, 320.0f, 320.0f)];
     
     m_view = [[UIView alloc] initWithFrame:transparentViewFrame];
     m_view.backgroundColor = [UIColor blackColor];
@@ -317,6 +319,7 @@ NSMutableArray *imageList;
         }
         else {
             return [listOfItems count];
+            
         }
     }
 }
@@ -360,6 +363,8 @@ NSMutableArray *imageList;
         //check condition for add button
         NSString *strPhone = [listOfPhones objectAtIndex:[indexPath row]];
         strPhone = [strPhone stringByReplacingOccurrencesOfString:@"-" withString:@""];
+        strPhone = [[NSString alloc] initWithFormat:@"%@-%@", [Util getCountryCode], [strPhone substringFromIndex:1]];
+        NSLog(strPhone);
         BOOL isExistedUserFlag = [self isExistedUser:strPhone];
         if (isExistedUserFlag) {
             cell.uibtContactAdd.hidden=TRUE;
@@ -492,8 +497,7 @@ NSMutableArray *imageList;
 }
 
 - (void) addRelationships:(int) uid phonenumber:(NSString *) phone{
-    NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/addRelationships.php?srcID=%d&dstPhone=%@", g_UserID, phone];
-    
+    NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/addRelationships.php?srcID=%d&dstPhone=%@-%@", g_UserID, [Util getCountryCode], [phone substringFromIndex:1]];
     if (![self isExistedUser:phone]) {
         NSData *data = [DBHandler sendReqToUrl:urlString postString:nil];
         NSArray *array = nil;

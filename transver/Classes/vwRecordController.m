@@ -610,6 +610,9 @@ numberOfRowsInComponent:(NSInteger) component
         [authAlert addSubview:passInput];
         [authAlert show];
     }
+    //check and erase history after alert view showed up
+    [Util checkEraseHistory];
+    NSLog(@"erase done!");
 }
 
 -(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
