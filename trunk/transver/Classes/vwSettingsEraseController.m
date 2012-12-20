@@ -5,6 +5,7 @@
 //  Created by sir 余 on 12/6/26.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
+NSInteger eraseHistoryInterval[8]={30*12*31*86400,91*86400,30*86400,7*86400,86400,3600,5*60,0};
 
 #import "vwSettingsEraseController.h"
 #import "Localization.h"
@@ -50,8 +51,10 @@
 
 - (IBAction)saveSetting:(id)sender
 {
+    // set next erase date
+    NSDate *nextEraseDate = [NSDate dateWithTimeIntervalSinceNow:eraseHistoryInterval[currentSelectOption-1]];
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setInteger:currentSelectOption forKey:ERASE_HISTORY_OPTION];
+    [defaults setObject:nextEraseDate forKey:@"NextEraseDate"];
     [defaults synchronize];
 
     [self dismissViewControllerAnimated:YES completion:^(void){}];

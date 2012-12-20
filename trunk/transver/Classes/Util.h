@@ -20,6 +20,8 @@ NSString *g_UserName;
 NSMutableArray *g_AccountPhone;
 NSMutableArray *g_AccountID;
 NSMutableArray *g_AccountName;
+NSMutableDictionary *g_CountryCodeMap;
+
 int g_UserID;
 int destID;
 UITabBarController *g_tabController;
@@ -43,6 +45,7 @@ NSUserDefaults *g_Settings;
 + (NSArray*) fetchRelationships:(int) m_userid;
 + (NSArray*) fetchHistory:(int) m_userid;
 
++ (NSString*) getCountryCode;
 + (void) getParameter;
 + (void) saveParameter;
 + (bool) checkUserInfoExist;
