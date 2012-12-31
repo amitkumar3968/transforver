@@ -93,7 +93,7 @@
 {
     NSArray *array = [Util fetchHistory:g_UserID];
     m_HistoryDialog = [array mutableCopy];
-    NSLog(@"%@", m_HistoryDialog);
+    NSLog(@"Scanhistory %@", m_HistoryDialog);
     [self SortHistory];
     [self.m_historyTableView reloadData];
 }
