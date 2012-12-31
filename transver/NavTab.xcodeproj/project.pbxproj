@@ -666,7 +666,6 @@
 		A44C610B164C611A004B62E0 /* Localization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Localization.h; sourceTree = "<group>"; };
 		A44C610C164C611A004B62E0 /* Localization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Localization.m; sourceTree = "<group>"; };
 		A44C610F164C614F004B62E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		A44C6111164C637E004B62E0 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		A45FEDED15A315AD00CF3D72 /* message_bg_time1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = message_bg_time1.png; path = history/message/message_bg_time1.png; sourceTree = "<group>"; };
 		A45FEDEE15A315AD00CF3D72 /* message_bg_time1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "message_bg_time1@2x.png"; path = "history/message/message_bg_time1@2x.png"; sourceTree = "<group>"; };
 		A45FEDEF15A315AD00CF3D72 /* message_bg_time2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = message_bg_time2.png; path = history/message/message_bg_time2.png; sourceTree = "<group>"; };
@@ -1702,6 +1701,7 @@
 				German,
 				en,
 				"zh-Hant",
+				"zh-Hans",
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
@@ -2200,7 +2200,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				A44C610F164C614F004B62E0 /* en */,
-				A44C6111164C637E004B62E0 /* zh-Hant */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -2279,8 +2278,8 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = "";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ray Yu (55P7VD7797)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ray Yu (55P7VD7797)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ray Yu (J3DP5X6D9L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ray Yu (J3DP5X6D9L)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -2292,8 +2291,8 @@
 					"-ObjC",
 					"-all_load",
 				);
-				PROVISIONING_PROFILE = "D6B25D69-A246-4DEB-B5F1-160212E57CEF";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D6B25D69-A246-4DEB-B5F1-160212E57CEF";
+				PROVISIONING_PROFILE = "F5F74259-B38B-480D-9E55-814755AF4FF2";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F5F74259-B38B-480D-9E55-814755AF4FF2";
 				SDKROOT = iphoneos6.0;
 			};
 			name = Debug;
@@ -2302,8 +2301,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ray Yu (55P7VD7797)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ray Yu (55P7VD7797)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ray Yu (J3DP5X6D9L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ray Yu (J3DP5X6D9L)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -2315,8 +2314,8 @@
 					"-ObjC",
 					"-all_load",
 				);
-				PROVISIONING_PROFILE = "D6B25D69-A246-4DEB-B5F1-160212E57CEF";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D6B25D69-A246-4DEB-B5F1-160212E57CEF";
+				PROVISIONING_PROFILE = "F5F74259-B38B-480D-9E55-814755AF4FF2";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F5F74259-B38B-480D-9E55-814755AF4FF2";
 				SDKROOT = iphoneos6.0;
 			};
 			name = Release;

@@ -302,6 +302,10 @@ NSString *downloadfilename;
     
 }
 
+- (void) runScanMessages {
+    [self performSelectorInBackground:@selector(ScanMessages) withObject:nil];
+}
+
 - (void) ScanMessages {
     NSLog(@"Scan Messages!!src:%d dst:%d", m_srcid, m_dstid);
     [self fetchMessages:m_srcid DstID:m_dstid Messages:m_DicMessages];
@@ -331,7 +335,7 @@ NSString *downloadfilename;
     self.title = self.m_DstName;//NSLocalizedString(@"History", @"History");
     [Util showAlertView:@"Loading"];
     [self performSelectorInBackground:@selector(ScanMessages) withObject:nil];
-    myTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(ScanMessages) userInfo:nil repeats:YES];
+    myTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(runScanMessages) userInfo:nil repeats:YES];
     
     /*
      Check whether the section info array has been created, and if so whether the section count still matches the current section count. In general, you need to keep the section info synchronized with the rows and section. If you support editing in the table view, you need to appropriately update the section info during editing operations.
