@@ -9,6 +9,7 @@
 #import "NavContactsViewController.h"
 #import "AddUserViewController.h"
 #import "Util.h"
+#import "MyContactsView.h"
 
 @implementation NavContactsViewController
 
@@ -110,10 +111,7 @@
     [self.navigationController.navigationBar addSubview:m_rightsideview];
     [m_view release];
     */
-    self.contactsController.delegate = self;
-
 	//[super.tableView addSubview:tableViewNavigationBar];
-    [self.view addSubview:navigationController.view];
     // Do any additional setup after loading the view from its nib.
     
         
