@@ -371,6 +371,7 @@
 		A45FF00115AB191300CF3D72 /* vwAboutController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A45FF00015AB191300CF3D72 /* vwAboutController.xib */; };
 		A462AAF315EFB93B00A6A833 /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A462AAEF15EFB93B00A6A833 /* CAStreamBasicDescription.cpp */; };
 		A462AAF415EFB93B00A6A833 /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A462AAF115EFB93B00A6A833 /* CAXException.cpp */; };
+		A47E0E5C1695EDD10074C0C5 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A47E0E5B1695EDCE0074C0C5 /* ContactsViewController.m */; };
 		A497E19A16671A1600FDA4AE /* player_btn_play_blank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A497E19916671A1600FDA4AE /* player_btn_play_blank@2x.png */; };
 		A497E19C16671ADA00FDA4AE /* dovocode_icon_blank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A497E19B16671ADA00FDA4AE /* dovocode_icon_blank@2x.png */; };
 		A4E5956D1681B18600851A41 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4E5956C1681B18600851A41 /* CoreTelephony.framework */; };
@@ -917,6 +918,8 @@
 		A462AAF015EFB93B00A6A833 /* CAStreamBasicDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAStreamBasicDescription.h; path = iPublicUtility/CAStreamBasicDescription.h; sourceTree = "<group>"; };
 		A462AAF115EFB93B00A6A833 /* CAXException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CAXException.cpp; path = iPublicUtility/CAXException.cpp; sourceTree = "<group>"; };
 		A462AAF215EFB93B00A6A833 /* CAXException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAXException.h; path = iPublicUtility/CAXException.h; sourceTree = "<group>"; };
+		A47E0E5A1695EDCC0074C0C5 /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
+		A47E0E5B1695EDCE0074C0C5 /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
 		A497E19916671A1600FDA4AE /* player_btn_play_blank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "player_btn_play_blank@2x.png"; path = "record/player_btn_play_blank@2x.png"; sourceTree = "<group>"; };
 		A497E19B16671ADA00FDA4AE /* dovocode_icon_blank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dovocode_icon_blank@2x.png"; path = "record/dovocode_icon_blank@2x.png"; sourceTree = "<group>"; };
 		A4E5956C1681B18600851A41 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -1034,6 +1037,8 @@
 				A44035A8166685670017FC6C /* ChatBubbleView.h */,
 				A44035A9166685670017FC6C /* ChatBubbleView.m */,
 				4F7169B31472A38E00E01990 /* Dialog.m */,
+				A47E0E5A1695EDCC0074C0C5 /* ContactsViewController.h */,
+				A47E0E5B1695EDCE0074C0C5 /* ContactsViewController.m */,
 				4F3443031487E89500AF6FC7 /* MyContactsView.h */,
 				4F3443041487E89500AF6FC7 /* MyContactsView.m */,
 				4F3EA8B0149DF334006944DD /* NavContactsViewController.h */,
@@ -2182,6 +2187,7 @@
 				ED49BED216077EFF007EA4F6 /* vwRecordController.m in Sources */,
 				A44C610D164C611A004B62E0 /* Localization.m in Sources */,
 				A44035AA166685680017FC6C /* ChatBubbleView.m in Sources */,
+				A47E0E5C1695EDD10074C0C5 /* ContactsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2224,7 +2230,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = NavTab_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -2256,7 +2262,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = NavTab_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",

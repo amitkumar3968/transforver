@@ -134,7 +134,7 @@ NSMutableArray *imageList;
     [filterButton setSelected:YES];
     //[imageButton setImage:[UIImage imageNamed:@"phone.png"] forState:UIControlStateNormal];
     CGRect transparentViewFrame = CGRectMake(0.0, 0.0f, 320.0f, 44.0f);
-    [self.tableView setFrame:CGRectMake(0.0f, 88.0f, 320.0f, 320.0f)];
+    [self.tableView setFrame:CGRectMake(0.0f, 0.0f, 320.0f, 431.0f)];
     
     m_view = [[UIView alloc] initWithFrame:transparentViewFrame];
     m_view.backgroundColor = [UIColor blackColor];
@@ -143,6 +143,7 @@ NSMutableArray *imageList;
     
     [m_view addSubview:allButton];
     [m_view addSubview:filterButton];
+    
     
     CGRect leftsidebar = CGRectMake(1.0, 0.0f, 19.0f, 44.0f);
     UIImageView *m_leftsideview = [[UIImageView alloc] initWithFrame:leftsidebar];

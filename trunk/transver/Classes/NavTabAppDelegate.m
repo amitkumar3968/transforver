@@ -48,13 +48,17 @@
     [globalSettings initWithObjects:[NSArray arrayWithObjects:@"language", nil] forKeys:[NSArray arrayWithObjects:@"1", nil]];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    UIViewController *vcRecord, *vcContact, *vcHistory, *vcSettings, *vcAbout;
+    UIViewController *vcRecord, *vcHistory, *vcSettings, *vcAbout;
     
-    vcContact = [[NavContactsViewController alloc] initWithNibName:@"NavContactsViewController" bundle:nil];
-    vcRecord = [[vwRecordController alloc] initWithNibName:@"vwRecordController" bundle:nil]; 
+    UINavigationController* vcContact = [[UINavigationController alloc] initWithRootViewController:[[MyContactsView alloc] initWithNibName:@"MyContactsView" bundle:Nil]];
+    vcContact.title = NSLocalizedString(@"Contacts", @"Contacts");
+    vcContact.tabBarItem.image = [UIImage imageNamed:@"common_icon_con_rest.png"];
+    
+    vcRecord = [[vwRecordController alloc] initWithNibName:@"vwRecordController" bundle:nil];
     vcHistory = [[vwHistoryController alloc] initWithNibName:@"vwHistoryController" bundle:nil];    
     vcSettings = [[vwSettingsController alloc] initWithNibName:@"vwSettingsController" bundle:nil];
     vcAbout = [[vwAboutController alloc] initWithNibName:@"vwAboutController" bundle:nil];
+    
     UINavigationController *hisNavCtlr = [[UINavigationController alloc] initWithRootViewController:vcHistory];
     UIImage *origImg =     [[UIImage imageNamed:@"common_bg_header.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:0.0f];
     UIGraphicsBeginImageContext( CGSizeMake(320, 44) );
