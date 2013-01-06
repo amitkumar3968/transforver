@@ -12,14 +12,14 @@
 
 @class OverlayViewController;
 
-@interface MyContactsView : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>{
+@interface MyContactsView : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate, UITextFieldDelegate>{
     NSMutableArray *listOfItems;
     NSMutableArray *listOfPhones;
 	NSMutableArray *copyListOfItems;
     UINavigationBar *tableViewNavigationBar;
     
     IBOutlet UISearchBar *searchBar;
-    UIButton *allButton, *filterButton;
+    UIButton *allButton, *filterButton, *btnAddByPhone;
 	BOOL searching;
 	BOOL letUserSelectRow;
     
@@ -38,6 +38,8 @@
 - (void) filterbuttonPushed: (id) sender;
 - (BOOL)isExistedUser: (NSString *)strPhone;
 -(void) addContactToAddressBook:(ABAddressBookRef)addressesBookRef;
+@property (nonatomic, retain) UIView *coverView;
+@property (nonatomic, retain) UITextField *phoneInput;
 @property (nonatomic, retain) UINavigationBar *tableViewNavigationBar;
 @property (nonatomic, retain) NSMutableArray *listOfItems;
 @property (nonatomic, retain) NSMutableArray *filteredListContent;

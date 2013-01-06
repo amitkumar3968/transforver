@@ -78,17 +78,22 @@ NSString *downloadfilename;
         if (audioRecorder==nil)
             audioRecorder = [[AudioRecorder alloc] init];
         [audioRecorder startRecording];
+        
         [BtnRecord setSelected:YES];
         UIImage *recordLight = [UIImage imageNamed:@"record_icon_record@2x.png"];
         UIImage *smallRecLiht = [Util imageWithImage:recordLight scaledToSize:CGSizeMake(recordLight.size.width/2, recordLight.size.height/2)];
         [BtnRecord setImage:smallRecLiht forState:UIControlStateNormal];
+        
         recTimer = [NSTimer scheduledTimerWithTimeInterval:.05f target:self selector:@selector(updateRecordingState:) userInfo:nil repeats:YES];
+        
         recordingBar= [[UIView alloc] initWithFrame:CGRectMake(0, 48, 320, 30)];
         recordingBar.backgroundColor=[UIColor redColor];
+        
         uilbRecSec =  [[UILabel alloc] initWithFrame: CGRectMake(30, 0, 180, 30)];
         uilbRecSec.backgroundColor = [UIColor clearColor];
         uilbRecSec.textColor = [UIColor yellowColor];
         uilbRecSec.text = @"Recording: Start !";
+        
         [recordingBar addSubview:uilbRecSec];
         [self.view addSubview:recordingBar];
         startTime = [[NSDate date] retain];
@@ -98,10 +103,12 @@ NSString *downloadfilename;
             [audioRecorder stopRecording];
             audioRecorder=nil;
         }
-        [BtnRecord setSelected:NO];        
+        
+        [BtnRecord setSelected:NO];
         UIImage *recordLight = [UIImage imageNamed:@"record_icon_unrecord@2x.png"];
         UIImage *smallRecLiht = [Util imageWithImage:recordLight scaledToSize:CGSizeMake(recordLight.size.width/2, recordLight.size.height/2)];
         [BtnRecord setImage:smallRecLiht forState:UIControlStateNormal];
+        
         destID=self.m_dstid;
         vwRecordController *recCtlr = [g_tabController.viewControllers objectAtIndex:0];
         recCtlr.destName = m_DstName;
@@ -121,6 +128,7 @@ NSString *downloadfilename;
 {
     NSTimeInterval recSeconds = fabs([startTime timeIntervalSinceNow]);
     uilbRecSec.text= [[NSString alloc] initWithFormat:@"Recording:  %02i:%02i", (int)(recSeconds)/60, (int)recSeconds%60];
+    
     if (recSeconds>MAX_RECORD_SECONDS){
         [self recordButtonTapped];
     }
@@ -170,6 +178,7 @@ NSString *downloadfilename;
     [Util showAlertView:@"loading"];
     if( m_DicMessages == nil)
         m_DicMessages = [[NSMutableDictionary alloc] init];
+    
     if( m_Quest == nil)
     {
         m_Quest = [[RKRequestQueue alloc] init];
@@ -185,6 +194,7 @@ NSString *downloadfilename;
     //self.tableView.allowsSelection = NO;
     //Position the bubbleView on the bottom
     [self.view addSubview:self.bubbleView];
+    
     CGRect bubbleFrame = self.bubbleView.frame;
     bubbleFrame.origin.y = CGRectGetHeight(self.view.frame) - CGRectGetHeight(bubbleFrame);
     [self.bubbleView setFrame:bubbleFrame];
