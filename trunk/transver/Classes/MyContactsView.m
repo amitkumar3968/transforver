@@ -18,7 +18,7 @@
 
 NSMutableArray *imageList;
 
-@synthesize tableViewNavigationBar;
+@synthesize tableViewNavigationBar, phoneInput, coverView;
 @synthesize listOfItems, filteredListContent, savedSearchTerm, savedScopeButtonIndex, searchWasActive, searchBar, listOfPhones, m_view;
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -51,19 +51,24 @@ NSMutableArray *imageList;
 
     
     for (int i = 0; i < addressesCount; i++) {
+        
         ABRecordRef record = [addresses objectAtIndex:i];
         NSString *firstName = (NSString *)ABRecordCopyValue(record, kABPersonFirstNameProperty);
         NSString *lastName = (NSString *)ABRecordCopyValue(record, kABPersonLastNameProperty);
+        
         if (firstName==nil)
             firstName=@"";
         if (lastName==nil) {
             lastName=@"";
         }
+        
         UIImageView *contactImage = (UIImageView *)ABPersonCopyImageData(record);
         NSString *contactFirstLast = [NSString stringWithFormat: @"%@ %@", firstName, lastName];
+        
         ABMultiValueRef phoneNumbers = (NSString *)ABRecordCopyValue(record, kABPersonPhoneProperty);
         NSString* mobileNumber=nil;
         NSString* mobileLabel;
+        
         for (CFIndex i = 0; i < ABMultiValueGetCount(phoneNumbers); i++) {
             mobileLabel = ABMultiValueCopyLabelAtIndex(phoneNumbers, i);
             if ([mobileLabel isEqualToString:@"_$!<Mobile>!$_"]) {
@@ -123,15 +128,16 @@ NSMutableArray *imageList;
     [allButton setSelected:NO];
 	[allButton addTarget:self action:@selector(allbuttonPushed:)
         forControlEvents:UIControlEventTouchUpInside];
+    
     filterButton = [UIButton buttonWithType:UIButtonTypeCustom];
     filterButton.frame = CGRectMake(161.0, 0.0, 138.0, 44.0);
     [filterButton setTitle:@"Messenger" forState:UIControlStateNormal];
     [filterButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_unslected.png"] forState:UIControlStateNormal];
     [filterButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_slected.png"] forState:UIControlStateSelected];
-    [filterButton setBackgroundImage:[UIImage imageNamed:@"contacts_btn_header_slected.png"] forState:UIControlStateSelected];
 	[filterButton addTarget:self action:@selector(filterbuttonPushed:)
            forControlEvents:UIControlEventTouchUpInside];
     [filterButton setSelected:YES];
+    
     //[imageButton setImage:[UIImage imageNamed:@"phone.png"] forState:UIControlStateNormal];
     CGRect transparentViewFrame = CGRectMake(0.0, 0.0f, 320.0f, 44.0f);
     [self.tableView setFrame:CGRectMake(0.0f, 0.0f, 320.0f, 431.0f)];
@@ -219,6 +225,23 @@ NSMutableArray *imageList;
 
 }
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    coverView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 70)];
+    [coverView setBackgroundColor:[UIColor colorWithRed:.5 green:.5 blue:.5 alpha:0.1]];
+    [self.navigationController.view addSubview:coverView];
+}
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [coverView removeFromSuperview];
+    [phoneInput resignFirstResponder];
+}
+
+-( BOOL )textFieldShouldReturn:(UITextField *)textField{
+    [phoneInput resignFirstResponder];
+    return  YES;
+}
+
 
 - (void) allbuttonPushed: (id) sender{
     UIButton *imageButton = (UIButton *)sender;
@@ -232,8 +255,8 @@ NSMutableArray *imageList;
         [allButton setSelected:NO];
     }
     [self performSelectorInBackground:@selector(updateContact) withObject:NULL];
-
 }
+
 - (void) filterbuttonPushed: (id) sender{
     UIButton *imageButton = (UIButton *)sender;
     [Util showAlertView:@"Loading"];
@@ -310,17 +333,16 @@ NSMutableArray *imageList;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
+    // Return the number of vem contacts (+1 for the add phone row)
     if (initTable)
         return 0;
     else
     {
         if ([filterButton isSelected]) {
-            return [g_AccountName count];
+            return [g_AccountName count]+1;
         }
         else {
             return [listOfItems count];
-            
         }
     }
 }
@@ -338,34 +360,62 @@ NSMutableArray *imageList;
         //set button appearance
     [cell.uibtContactAdd setBackgroundImage:[UIImage imageNamed:@"history_btn_setncel_pressed@2x.png"] forState:UIControlStateNormal];
     [cell.uibtContactAdd setBackgroundImage:[UIImage imageNamed:@"history_btn_setncel_rest@2x.png"] forState:UIControlStateSelected];
+    
     [cell.uibtContactDel setBackgroundImage:[UIImage imageNamed:@"history_btn_setncel_pressed@2x.png"] forState:UIControlStateNormal];
     [cell.uibtContactDel setBackgroundImage:[UIImage imageNamed:@"history_btn_setncel_rest@2x.png"] forState:UIControlStateSelected];
+    NSLog(@"index row:%d", [indexPath row]);
     
     if ([filterButton isSelected]) {
-        cell.lastNameLabel.text = [g_AccountName objectAtIndex:([indexPath row])];
-        cell.thumbnailView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"common_icon_con_rest@2x.png"]];
-        cell.uibtContactDel.tag = [indexPath row];
-        [cell.uibtContactDel addTarget:self action:@selector(delPerson:) forControlEvents:UIControlEventTouchUpInside];   
-        cell.thumbnailView.contentMode = UIViewContentModeScaleAspectFit;
-        cell.uibtContactAdd.hidden=TRUE;
-        cell.uibtContactDel.hidden=FALSE;
-        [cell.thumbnailView setFrame:CGRectMake(5, 10, 30, 30)];
-        [cell.contentView addSubview:cell.thumbnailView];
+        
+        // Set the first row to be the input phone field for adding friends by typing phone num
+        if ([indexPath row]==0) {
+            UILabel* uilbInputPhone = [[UILabel alloc] initWithFrame:CGRectMake(5, 10, 150, 30)];
+            uilbInputPhone.text = @"Add by Phone:";
+            phoneInput = [[UITextField alloc] initWithFrame:CGRectMake(120, 10, 100, 30)];
+            [phoneInput setBorderStyle:UITextBorderStyleRoundedRect];
+            [phoneInput setKeyboardType:UIKeyboardTypeNumbersAndPunctuation];
+            phoneInput.delegate = self;
+            
+            [cell.uibtContactAdd addTarget:self action:@selector(addPersonByInputPhone) forControlEvents:UIControlEventTouchUpInside];
+            cell.uibtContactAdd.hidden=FALSE;
+            
+            [cell addSubview:uilbInputPhone];
+            [cell addSubview:phoneInput];
+            [cell addSubview:btnAddByPhone];
+        }
+        
+        // From the second row, shows all the contact persons
+        else
+        {
+            cell.lastNameLabel.text = [g_AccountName objectAtIndex:([indexPath row]-1)];
+            cell.thumbnailView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"common_icon_con_rest@2x.png"]];
+            cell.uibtContactDel.tag = [indexPath row]-1;
+            [cell.uibtContactDel addTarget:self action:@selector(delPerson:) forControlEvents:UIControlEventTouchUpInside];
+            
+            cell.thumbnailView.contentMode = UIViewContentModeScaleAspectFit;
+            cell.uibtContactAdd.hidden=TRUE;
+            cell.uibtContactDel.hidden=FALSE;
+            [cell.thumbnailView setFrame:CGRectMake(5, 10, 30, 30)];
+            [cell.contentView addSubview:cell.thumbnailView];
+        }
     }
     else {
         cell.firstNameLabel.hidden=TRUE;
         cell.lastNameLabel.text = [listOfItems objectAtIndex:([indexPath row])];
+        
         cell.thumbnailView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"common_icon_con_rest@2x.png"]];
         cell.thumbnailView.contentMode = UIViewContentModeScaleAspectFit;
         [cell.thumbnailView setFrame:CGRectMake(5, 10, 30, 30)];
+        
         cell.uibtContactAdd.tag = [indexPath row];
         [cell.uibtContactAdd addTarget:self action:@selector(addPerson:) forControlEvents:UIControlEventTouchUpInside];
-
+        
         //check condition for add button
         NSString *strPhone = [listOfPhones objectAtIndex:[indexPath row]];
         strPhone = [strPhone stringByReplacingOccurrencesOfString:@"-" withString:@""];
         strPhone = [[NSString alloc] initWithFormat:@"%@-%@", [Util getCountryCode], [strPhone substringFromIndex:1]];
         NSLog(strPhone);
+        
         BOOL isExistedUserFlag = [self isExistedUser:strPhone];
         if (isExistedUserFlag) {
             cell.uibtContactAdd.hidden=TRUE;
@@ -419,12 +469,20 @@ NSMutableArray *imageList;
     return cell.frame.size.height;
 }
 
+- (void)addPersonByInputPhone
+{
+    NSString *phoneWithoutSeperates = [phoneInput.text stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    [self addRelationships:g_UserID  phonenumber:phoneWithoutSeperates];
+    phoneInput.text=@"";
+}
+
 - (void)addPerson:(UIButton *)sender
 {
     NSLog(@"list of phones: %d", [listOfPhones count]);
     NSString *phoneWithoutSeperates = [[listOfPhones objectAtIndex:sender.tag] stringByReplacingOccurrencesOfString:@"-" withString:@""];
     [self addRelationships:g_UserID  phonenumber:phoneWithoutSeperates];
     [Util getRelationships:g_UserID ];
+    
     [self updateContact];
     [self.tableView reloadData];
 }
@@ -498,8 +556,19 @@ NSMutableArray *imageList;
 }
 
 - (void) addRelationships:(int) uid phonenumber:(NSString *) phone{
+    UIAlertView* respAddVEMContact = [[UIAlertView alloc] initWithTitle:@"Add VEM Contact" message:@"" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    
+    if ([phone length]<=1) {
+        respAddVEMContact.message = @"Invalid Phone Number !";
+        [respAddVEMContact show];
+        return;
+    }
+    
+    NSString *intlPhone = [NSString stringWithFormat:@"%@-%@",[Util getCountryCode], [phone substringFromIndex:1]];
     NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/addRelationships.php?srcID=%d&dstPhone=%@-%@", g_UserID, [Util getCountryCode], [phone substringFromIndex:1]];
-    if (![self isExistedUser:phone]) {
+
+    
+    if (![self isExistedUser:intlPhone]) {
         NSData *data = [DBHandler sendReqToUrl:urlString postString:nil];
         NSArray *array = nil;
         //NSMutableArray *ret = [[NSMutableArray alloc] init ];
@@ -508,10 +577,26 @@ NSMutableArray *imageList;
         {
             NSString *responseString = [[NSString alloc] initWithData:data
                                                              encoding:NSUTF8StringEncoding];
-            array = [responseString JSONValue];
+            if ([responseString integerValue]==0) {
+                respAddVEMContact.message = @"VEM User Not Found !";
+            }
+            else
+            {
+                respAddVEMContact.message = @"Succeeded !";
+            }
             [responseString release];
         }
+        else
+        {
+            respAddVEMContact.message = @"Add VEM Contact Failed! Check Internet Connection and Retry.";
+        }
     }
+    else
+    {
+        respAddVEMContact.message = @"Existed VEM User !";        
+    }
+    
+    [respAddVEMContact show];
     [Util getRelationships:g_UserID];
     [self.tableView reloadData];
 }
@@ -591,25 +676,26 @@ NSMutableArray *imageList;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //todo: if in phone contact list, do nothing when cell is selected
-    NSInteger row = [indexPath row];
+    NSInteger row = [indexPath row]-1;//-1 to compensate the first row which is used to add phone
 
     // check if user selected a VEM contact, and make sure the number of accounts larger than the number of index
     //than retrieve all messages related to that person
     
     if (filterButton.selected) {
-        if( [g_AccountName count] > indexPath.row)
+        if( [g_AccountName count] > row) //-1 to compensate the first row which is used to add phone
         {
             ChatViewController *chat = [[ChatViewController alloc] initWithRelation:g_UserID  DstID:[[g_AccountID objectAtIndex:row] integerValue]];
-            chat.m_DstName = [g_AccountName objectAtIndex:indexPath.row];
-            chat.m_dstid = [[g_AccountID objectAtIndex:indexPath.row] intValue];
+            chat.m_DstName = [g_AccountName objectAtIndex:row];
+            chat.m_dstid = [[g_AccountID objectAtIndex:row] intValue];
             //ChatViewController *chat = [[ChatViewController alloc] initWithRelation:1 DstID:2];
-            NSLog(@"m_dstid:%d", [[g_AccountID objectAtIndex:indexPath.row] intValue]);
+            NSLog(@"m_dstid:%d", [[g_AccountID objectAtIndex:row] intValue]);
+            
             //[chat setContact:contact];
             UINavigationController *navCtlr = [[UINavigationController alloc] initWithRootViewController:chat];
             navCtlr.navigationBar.barStyle = UIBarStyleDefault;
             [g_RootController presentModalViewController:navCtlr animated:YES];
             [navCtlr release];
+            
             //((UITabBarController *)g_RootController).tabBar.hidden = YES;
             //self.navigationController.navigationBar.delegate = self;
             
