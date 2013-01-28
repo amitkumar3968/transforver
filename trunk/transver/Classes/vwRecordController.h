@@ -90,7 +90,7 @@
 @property (nonatomic, retain) IBOutlet  UIActivityIndicatorView *progressView;
 @property (nonatomic, retain) UIView *recordingBar;
 @property (nonatomic, retain) UILabel *uilbRecSec;
-@property (nonatomic, retain) UIView *coverView;
+@property (nonatomic, retain) UIView *coverView, *coverView2;
 
 @property (nonatomic, retain) NSString *vocodedFilepath;
 @property (nonatomic, retain) NSString *originalFilepath;

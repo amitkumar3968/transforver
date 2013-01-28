@@ -35,7 +35,7 @@
 @synthesize uibtRecord;
 @synthesize recorder;
 @synthesize progressView;
-@synthesize coverView;
+@synthesize coverView, coverView2;
 @synthesize uilbRecSec;
 @synthesize recordingBar;
 @synthesize vocodedFilepath;
@@ -61,6 +61,7 @@
     {return YES;}
 }
 
+/*  #2 marked to disable perhaps non-stop process which results in a coverview on top
 - (void) threadStartAnimating:(id)data {
     coverView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
     [coverView setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:.5]];
@@ -68,15 +69,20 @@
     [self.view addSubview:coverView];
     [progressView startAnimating];
 }
+ */
+
 
 - (IBAction)vocodeTapped :(id)sender{
-    [NSThread detachNewThreadSelector:@selector(threadStartAnimating:) toTarget:self withObject:nil];
+    
 	NSString *carrierFilename=[NSString stringWithFormat:@"%@.aif",[arrVocCarrierOpts objectAtIndex:carrierOptIndex]];
 	[Util copyFileWithFilename:carrierFilename];
     
 	NSString *audioFile = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], RECORDING_FILE_AIF];
     if ([[NSFileManager defaultManager] fileExistsAtPath:audioFile])
     {
+        [Util showAlertView:@"sending"];
+        // #2 mark
+        //[NSThread detachNewThreadSelector:@selector(threadStartAnimating:) toTarget:self withObject:nil];
         const char *modulator_filepath = [audioFile UTF8String];
         audioFile = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath], carrierFilename];
         const char *carrier_filepath = [audioFile UTF8String];
@@ -93,6 +99,8 @@
         }	
         dovocode(encrypt_para, output_filepath, meta_filepath, modulator_filepath, carrier_filepath);
         done_vocode=1;
+        vocodeOptionReady.enabled=FALSE;
+        
         btnSend = [UIButton buttonWithType:UIButtonTypeCustom];
         [btnSend setFrame:CGRectMake(160.0, 0.0, 159.0, 44.0)];
         [btnSend setBackgroundImage:[UIImage imageNamed:@"record_btn_sendndelete_slected.png"] forState:UIControlStateNormal];
@@ -104,20 +112,21 @@
         [btnDelete setBackgroundImage:[UIImage imageNamed:@"record_btn_sendndelete_slected.png"] forState:UIControlStateNormal];
         [btnDelete setTitle:@"Delete" forState:UIControlStateNormal];
         [btnDelete addTarget:self action:@selector(deletePressed) forControlEvents:UIControlEventTouchUpInside];
+        
         confirmView = [[UIView alloc] initWithFrame:CGRectMake(0, 436, 320, 44)];
         confirmView.backgroundColor=[UIColor clearColor];
         [confirmView addSubview:btnSend];
         [confirmView addSubview:btnDelete];
         [self.tabBarController.view addSubview:confirmView];
         self.tabBarController.tabBar.hidden=TRUE;
-        ///[self uploadFile:recording_filepath];
+        [Util dissmissAlertView];
+        // #2 mark
+        //[progressView stopAnimating];
     }
     else {
         UIAlertView *recordingFirst = [[UIAlertView alloc] initWithTitle:@"Recording First" message:@"You must record something before encryption" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [recordingFirst show];
     }
-    [progressView stopAnimating];
-    [coverView removeFromSuperview];
 }
 
 - (IBAction) deletePressed
@@ -131,6 +140,9 @@
         [fileManager removeItemAtPath:originalFilepath error:&err];
     } 
      */
+    //[coverView removeFromSuperview];
+    vocodeOptionReady.enabled=TRUE;
+    coverView2.hidden=TRUE;
     [confirmView removeFromSuperview];
     self.tabBarController.tabBar.hidden=FALSE;
 }
@@ -144,9 +156,16 @@
         [alertSetReceiver show];
     }
     else {
-        [NSThread detachNewThreadSelector:@selector(threadStartAnimating:) toTarget:self withObject:nil];
+        // #2 mark
+        //[NSThread detachNewThreadSelector:@selector(threadStartAnimating:) toTarget:self withObject:nil];
         [self converAndSendMessage];
     }
+    //#2 mark
+    //[coverView removeFromSuperview];
+    vocodeOptionReady.enabled=TRUE;
+    coverView2.hidden=TRUE;
+    [confirmView removeFromSuperview];
+    self.tabBarController.tabBar.hidden=FALSE;
 }
 
 
@@ -258,7 +277,6 @@
     }
     self.tabBarController.tabBar.hidden=FALSE;
     [progressView stopAnimating];
-    [coverView removeFromSuperview];
 }
 
 -(NSMutableString *) genRandStringLength: (int) len
@@ -380,7 +398,8 @@
 {
     if ( pickerView == uipkVocodeOpt ) {
         carrierOptIndex=row;
-        [vocodeOptionReady setImage:[UIImage imageNamed:@"dovocode_icon@2x.png"] forState:UIControlStateNormal];
+        //marked to cancel button icon change after vocode enabled
+        //[vocodeOptionReady setImage:[UIImage imageNamed:@"dovocode_icon@2x.png"] forState:UIControlStateNormal];
     } else if ( pickerView == selecteTargetPicker ) {
         destID = [[g_AccountID objectAtIndex:row] integerValue];
         destName = [g_AccountName objectAtIndex:row];
@@ -652,19 +671,26 @@ numberOfRowsInComponent:(NSInteger) component
 - (void)viewWillAppear:(BOOL)animated
 {
     //localized appearance
+    
     uilbAutoDel.text = LOC_TXT_RECORD_AUTO_DEL;
     uilbPassLock.text = LOC_TXT_RECORD_PASS_LOCK;
     uilbPassword.text = LOC_TXT_RECORD_PASSWORD;
     uilbSelectEncryType.text = LOC_TXT_RECORD_ENCRYPTION_TYPE;
     uibtRecord.titleLabel.text = LOC_TXT_RECORD_REC_BUTTON_TITLE;
     uibtSendToWho.titleLabel.text = LOC_TXT_RECORD_RECEIVER_BUTTON_TITLE;
-    [vocodeOptionReady setImage:[UIImage imageNamed:@"dovocode_icon_blank@2x.png"] forState:UIControlStateNormal];
+    // Marked to cancel setting dovocode icon dynamically
+    //[vocodeOptionReady setImage:[UIImage imageNamed:@"dovocode_icon_blank@2x.png"] forState:UIControlStateNormal];
     if (self.destName!=nil) {
         uibtSendToWho.titleLabel.text = [[NSString alloc] initWithFormat:@"Send to:%@", self.destName];
-    }    
+    }
     [super viewWillAppear:animated];
+    coverView2 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+    [coverView2 setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:.5]];
+    [self.view addSubview:coverView2];
+    coverView2.hidden=TRUE;
     recorder = [[AudioRecorder alloc] init];
     [progressView stopAnimating];
+    [coverView removeFromSuperview];
 }
 
 - (void)viewDidAppear:(BOOL)animated

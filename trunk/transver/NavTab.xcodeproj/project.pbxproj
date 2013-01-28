@@ -374,6 +374,7 @@
 		A47E0E5C1695EDD10074C0C5 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A47E0E5B1695EDCE0074C0C5 /* ContactsViewController.m */; };
 		A497E19A16671A1600FDA4AE /* player_btn_play_blank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A497E19916671A1600FDA4AE /* player_btn_play_blank@2x.png */; };
 		A497E19C16671ADA00FDA4AE /* dovocode_icon_blank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A497E19B16671ADA00FDA4AE /* dovocode_icon_blank@2x.png */; };
+		A4C09D5D16B6BCFF00078A93 /* record_btn_bg_dovocode.png in Resources */ = {isa = PBXBuildFile; fileRef = A4C09D5C16B6BCFF00078A93 /* record_btn_bg_dovocode.png */; };
 		A4E5956D1681B18600851A41 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4E5956C1681B18600851A41 /* CoreTelephony.framework */; };
 		A4E595C716831E0400851A41 /* MyContactsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4E595C616831E0400851A41 /* MyContactsView.xib */; };
 		A4F632A3159DD22F003C709D /* vwRecordController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4F632A2159DD22E003C709D /* vwRecordController.xib */; };
@@ -922,6 +923,7 @@
 		A47E0E5B1695EDCE0074C0C5 /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
 		A497E19916671A1600FDA4AE /* player_btn_play_blank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "player_btn_play_blank@2x.png"; path = "record/player_btn_play_blank@2x.png"; sourceTree = "<group>"; };
 		A497E19B16671ADA00FDA4AE /* dovocode_icon_blank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dovocode_icon_blank@2x.png"; path = "record/dovocode_icon_blank@2x.png"; sourceTree = "<group>"; };
+		A4C09D5C16B6BCFF00078A93 /* record_btn_bg_dovocode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = record_btn_bg_dovocode.png; path = record/record_btn_bg_dovocode.png; sourceTree = "<group>"; };
 		A4E5956C1681B18600851A41 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		A4E595C616831E0400851A41 /* MyContactsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MyContactsView.xib; path = Classes/MyContactsView.xib; sourceTree = "<group>"; };
 		A4F632A2159DD22E003C709D /* vwRecordController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = vwRecordController.xib; sourceTree = "<group>"; };
@@ -1261,7 +1263,7 @@
 				4F2B30671470AFF10033E43E /* libRestKitNetwork.a */,
 				4F2B30691470AFF10033E43E /* libRestKitObjectMapping.a */,
 				4F2B306B1470AFF10033E43E /* libRestKitSupport.a */,
-				4F2B306D1470AFF10033E43E /* libRestKitJSONParser+NXJSON.a */,
+				4F2B306D1470AFF10033E43E /* libRestKitJSONParserNXJSON.a */,
 				4F2B306F1470AFF10033E43E /* libRestKitJSONParserYAJL.a */,
 				4F2B30711470AFF10033E43E /* libRestKitJSONParserSBJSON.a */,
 				4F2B30731470AFF10033E43E /* libRestKitJSONParserJSONKit.a */,
@@ -1433,6 +1435,7 @@
 		A4F6312B159D83DE003C709D /* img_record */ = {
 			isa = PBXGroup;
 			children = (
+				A4C09D5C16B6BCFF00078A93 /* record_btn_bg_dovocode.png */,
 				A497E19B16671ADA00FDA4AE /* dovocode_icon_blank@2x.png */,
 				A497E19916671A1600FDA4AE /* player_btn_play_blank@2x.png */,
 				A4307026160B6D1700CFD593 /* dovocode_icon@2x.png */,
@@ -1745,10 +1748,9 @@
 			remoteRef = 4F2B306A1470AFF10033E43E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		4F2B306D1470AFF10033E43E /* libRestKitJSONParser+NXJSON.a */ = {
+		4F2B306D1470AFF10033E43E /* libRestKitJSONParserNXJSON.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = "libRestKitJSONParser+NXJSON.a";
 			path = libRestKitJSONParserNXJSON.a;
 			remoteRef = 4F2B306C1470AFF10033E43E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -2114,6 +2116,7 @@
 				A497E19A16671A1600FDA4AE /* player_btn_play_blank@2x.png in Resources */,
 				A497E19C16671ADA00FDA4AE /* dovocode_icon_blank@2x.png in Resources */,
 				A4E595C716831E0400851A41 /* MyContactsView.xib in Resources */,
+				A4C09D5D16B6BCFF00078A93 /* record_btn_bg_dovocode.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2230,7 +2233,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = NavTab_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -2262,7 +2265,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = NavTab_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",

@@ -71,11 +71,11 @@ NSMutableArray *imageList;
         
         for (CFIndex i = 0; i < ABMultiValueGetCount(phoneNumbers); i++) {
             mobileLabel = ABMultiValueCopyLabelAtIndex(phoneNumbers, i);
-            if ([mobileLabel isEqualToString:@"_$!<Mobile>!$_"]) {
+            if (mobileLabel!=NULL&&[mobileLabel isEqualToString:@"_$!<Mobile>!$_"]) {
                 mobileNumber = (NSString *) ABMultiValueCopyValueAtIndex(phoneNumbers, i);
                 break;
             }
-            if ([mobileLabel isEqualToString:@"iPhone"]) {
+            if (mobileLabel!=NULL&&[mobileLabel isEqualToString:@"iPhone"]) {
                 mobileNumber = (NSString *) ABMultiValueCopyValueAtIndex(phoneNumbers,i);
                 break;
             }
@@ -369,11 +369,22 @@ NSMutableArray *imageList;
         
         // Set the first row to be the input phone field for adding friends by typing phone num
         if ([indexPath row]==0) {
-            UILabel* uilbInputPhone = [[UILabel alloc] initWithFrame:CGRectMake(5, 10, 150, 30)];
-            uilbInputPhone.text = @"Add by Phone:";
-            phoneInput = [[UITextField alloc] initWithFrame:CGRectMake(120, 10, 100, 30)];
+            UILabel* uilbInputPhone = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 150, 30)];
+            uilbInputPhone.text = [NSString stringWithFormat:@"Add Phone: +%@", [Util getCountryCode]];
+            uilbInputPhone.font = [UIFont systemFontOfSize:14];
+            phoneInput = [[UITextField alloc] initWithFrame:CGRectMake(120, 14, 100, 22)];
             [phoneInput setBorderStyle:UITextBorderStyleRoundedRect];
             [phoneInput setKeyboardType:UIKeyboardTypeNumbersAndPunctuation];
+            
+            NSString *countryCode = [Util getCountryCode];
+            if ([countryCode compare:@"886"]==0) {
+                phoneInput.placeholder=@"-925-111-111";
+            }
+            else{
+                phoneInput.placeholder=@"-938-111-1112";
+            }
+            phoneInput.font = [UIFont systemFontOfSize:14];
+            phoneInput.textAlignment = NSTextAlignmentCenter;
             phoneInput.delegate = self;
             
             [cell.uibtContactAdd addTarget:self action:@selector(addPersonByInputPhone) forControlEvents:UIControlEventTouchUpInside];
@@ -454,7 +465,7 @@ NSMutableArray *imageList;
 {
     for (int i=0; i<g_AccountPhone.count; i++)
     {
-        if ([strPhone isEqualToString:[g_AccountPhone objectAtIndex:i]]){
+        if (strPhone!=NULL&&[strPhone isEqualToString:[g_AccountPhone objectAtIndex:i]]){
             return YES;
         }
     }
@@ -564,8 +575,8 @@ NSMutableArray *imageList;
         return;
     }
     
-    NSString *intlPhone = [NSString stringWithFormat:@"%@-%@",[Util getCountryCode], [phone substringFromIndex:1]];
-    NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/addRelationships.php?srcID=%d&dstPhone=%@-%@", g_UserID, [Util getCountryCode], [phone substringFromIndex:1]];
+    NSString *intlPhone = [NSString stringWithFormat:@"%@-%@",[Util getCountryCode], phone];
+    NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/addRelationships.php?srcID=%d&dstPhone=%@-%@", g_UserID, [Util getCountryCode], phone];
 
     
     if (![self isExistedUser:intlPhone]) {

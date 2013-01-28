@@ -402,7 +402,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		20808DBD13DE8CDC000A156A /* libRestKitJSONParser+NXJSON.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libRestKitJSONParser+NXJSON.a"; path = libRestKitJSONParserNXJSON.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		20808DBD13DE8CDC000A156A /* libRestKitJSONParserNXJSON.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRestKitJSONParserNXJSON.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		20808DF613DE90F5000A156A /* NSError+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSError+Extensions.h"; path = "Vendor/NXJSON/NSError+Extensions.h"; sourceTree = "<group>"; };
 		20808DF713DE90F5000A156A /* NSError+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSError+Extensions.m"; path = "Vendor/NXJSON/NSError+Extensions.m"; sourceTree = "<group>"; };
 		20808DF813DE90F5000A156A /* NXDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NXDebug.h; path = Vendor/NXJSON/NXDebug.h; sourceTree = "<group>"; };
@@ -831,7 +831,7 @@
 				253A080C12551D3000976E89 /* libRestKitSupport.a */,
 				253A081412551D5300976E89 /* libRestKitCoreData.a */,
 				3F6C39A510FE5C95008F47C5 /* UISpec.app */,
-				20808DBD13DE8CDC000A156A /* libRestKitJSONParser+NXJSON.a */,
+				20808DBD13DE8CDC000A156A /* libRestKitJSONParserNXJSON.a */,
 			);
 			name = Products;
 			path = ../..;
@@ -1713,7 +1713,7 @@
 			);
 			name = "RestKitJSONParser+NXJSON";
 			productName = "RestKitJSONParser+NSJSON";
-			productReference = 20808DBD13DE8CDC000A156A /* libRestKitJSONParser+NXJSON.a */;
+			productReference = 20808DBD13DE8CDC000A156A /* libRestKitJSONParserNXJSON.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		2523360411E79F090048F9B4 /* RestKitThree20 */ = {
@@ -2330,7 +2330,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 				SYMROOT = Build;
-				VALID_ARCHS = "armv6 armv7 i386 x86_64";
+				VALID_ARCHS = "armv6 armv7 arm7s i386 x86_64";
 			};
 			name = Debug;
 		};
@@ -2350,7 +2350,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 				SYMROOT = Build;
-				VALID_ARCHS = "armv6 armv7 i386 x86_64";
+				VALID_ARCHS = "armv6 armv7 arm7s i386 x86_64";
 			};
 			name = Release;
 		};
@@ -2375,6 +2375,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/Support/JSON/NXJSON/Private;
 				PRODUCT_NAME = RestKitJSONParserNXJSON;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Support/JSON/NXJSON;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 			};
 			name = Debug;
 		};
@@ -2396,6 +2397,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/Support/JSON/NXJSON/Private;
 				PRODUCT_NAME = RestKitJSONParserNXJSON;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Support/JSON/NXJSON;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 			};
 			name = Release;
 		};
@@ -2417,6 +2419,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/Support/JSON/NXJSON/Private;
 				PRODUCT_NAME = RestKitJSONParserNXJSON;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Support/JSON/NXJSON;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 			};
 			name = Distribution;
 		};
@@ -2445,7 +2448,7 @@
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Three20;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				USER_HEADER_SEARCH_PATHS = "";
-				VALID_ARCHS = "armv6 armv7 i386";
+				VALID_ARCHS = "armv6 armv7 armv7s i386";
 			};
 			name = Debug;
 		};
@@ -2472,7 +2475,7 @@
 				PRODUCT_NAME = RestKitThree20;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Three20;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
-				VALID_ARCHS = "armv6 armv7 i386";
+				VALID_ARCHS = "armv6 armv7 armv7s i386";
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -2493,7 +2496,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 				SYMROOT = Build;
-				VALID_ARCHS = "armv6 armv7 i386 x86_64";
+				VALID_ARCHS = "armv6 armv7 arm7s i386 x86_64";
 			};
 			name = Distribution;
 		};
@@ -2508,6 +2511,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/Network/Private;
 				PRODUCT_NAME = RestKitNetwork;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Network;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 				ZERO_LINK = NO;
 			};
 			name = Distribution;
@@ -2523,6 +2527,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/ObjectMapping/Private;
 				PRODUCT_NAME = RestKitObjectMapping;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/ObjectMapping;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 				ZERO_LINK = NO;
 			};
 			name = Distribution;
@@ -2538,6 +2543,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/Support/Private;
 				PRODUCT_NAME = RestKitSupport;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Support;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 				ZERO_LINK = NO;
 			};
 			name = Distribution;
@@ -2559,6 +2565,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/Support/JSON/YAJL/Private;
 				PRODUCT_NAME = RestKitJSONParserYAJL;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Support/JSON/YAJL;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 				YAJL_GENERAL_OTHER_CFLAGS = "-Wdiv-by-zero -Wbad-function-cast -Wnested-externs -Wold-style-definition";
 				ZERO_LINK = NO;
 			};
@@ -2578,6 +2585,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/Support/JSON/SBJSON/Private;
 				PRODUCT_NAME = RestKitJSONParserSBJSON;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Support/JSON/SBJSON;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 				ZERO_LINK = NO;
 			};
 			name = Distribution;
@@ -2595,6 +2603,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/Support/JSON/JSONKit/Private;
 				PRODUCT_NAME = RestKitJSONParserJSONKit;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Support/JSON/JSONKit;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 				ZERO_LINK = NO;
 			};
 			name = Distribution;
@@ -2609,6 +2618,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/CoreData/Private;
 				PRODUCT_NAME = RestKitCoreData;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/CoreData;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 				ZERO_LINK = NO;
 			};
 			name = Distribution;
@@ -2636,7 +2646,7 @@
 				PRODUCT_NAME = RestKitThree20;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Three20;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
-				VALID_ARCHS = "armv6 armv7 i386";
+				VALID_ARCHS = "armv6 armv7 armv7s i386";
 				ZERO_LINK = NO;
 			};
 			name = Distribution;
@@ -2683,6 +2693,7 @@
 				PRODUCT_NAME = UISpec;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 				ZERO_LINK = NO;
 			};
 			name = Distribution;
@@ -2699,6 +2710,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/Network/Private;
 				PRODUCT_NAME = RestKitNetwork;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Network;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 			};
 			name = Debug;
 		};
@@ -2713,6 +2725,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/Network/Private;
 				PRODUCT_NAME = RestKitNetwork;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Network;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -2729,6 +2742,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/ObjectMapping/Private;
 				PRODUCT_NAME = RestKitObjectMapping;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/ObjectMapping;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 			};
 			name = Debug;
 		};
@@ -2743,6 +2757,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/ObjectMapping/Private;
 				PRODUCT_NAME = RestKitObjectMapping;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/ObjectMapping;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -2759,6 +2774,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/Support/Private;
 				PRODUCT_NAME = RestKitSupport;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Support;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 			};
 			name = Debug;
 		};
@@ -2773,6 +2789,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/Support/Private;
 				PRODUCT_NAME = RestKitSupport;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Support;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -2788,6 +2805,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/CoreData/Private;
 				PRODUCT_NAME = RestKitCoreData;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/CoreData;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 			};
 			name = Debug;
 		};
@@ -2801,6 +2819,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/CoreData/Private;
 				PRODUCT_NAME = RestKitCoreData;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/CoreData;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -2821,7 +2840,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 				SYMROOT = Build;
-				VALID_ARCHS = "armv6 armv7 i386 x86_64";
+				VALID_ARCHS = "armv6 armv7 arm7s i386 x86_64";
 			};
 			name = "Ad Hoc";
 		};
@@ -2831,6 +2850,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 			};
 			name = "Ad Hoc";
 		};
@@ -2845,6 +2865,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/Network/Private;
 				PRODUCT_NAME = RestKitNetwork;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Network;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 				ZERO_LINK = NO;
 			};
 			name = "Ad Hoc";
@@ -2860,6 +2881,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/ObjectMapping/Private;
 				PRODUCT_NAME = RestKitObjectMapping;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/ObjectMapping;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 				ZERO_LINK = NO;
 			};
 			name = "Ad Hoc";
@@ -2875,6 +2897,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/Support/Private;
 				PRODUCT_NAME = RestKitSupport;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Support;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 				ZERO_LINK = NO;
 			};
 			name = "Ad Hoc";
@@ -2896,6 +2919,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/Support/JSON/YAJL/Private;
 				PRODUCT_NAME = RestKitJSONParserYAJL;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Support/JSON/YAJL;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 				YAJL_GENERAL_OTHER_CFLAGS = "-Wdiv-by-zero -Wbad-function-cast -Wnested-externs -Wold-style-definition";
 				ZERO_LINK = NO;
 			};
@@ -2915,6 +2939,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/Support/JSON/SBJSON/Private;
 				PRODUCT_NAME = RestKitJSONParserSBJSON;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Support/JSON/SBJSON;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 				ZERO_LINK = NO;
 			};
 			name = "Ad Hoc";
@@ -2932,6 +2957,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/Support/JSON/JSONKit/Private;
 				PRODUCT_NAME = RestKitJSONParserJSONKit;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Support/JSON/JSONKit;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 				ZERO_LINK = NO;
 			};
 			name = "Ad Hoc";
@@ -2949,6 +2975,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/Support/XML/LibXML/Private;
 				PRODUCT_NAME = RestKitXMLParserLibxml;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Support/XML/LibXML;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 			};
 			name = "Ad Hoc";
 		};
@@ -2962,6 +2989,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/CoreData/Private;
 				PRODUCT_NAME = RestKitCoreData;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/CoreData;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 				ZERO_LINK = NO;
 			};
 			name = "Ad Hoc";
@@ -2989,7 +3017,7 @@
 				PRODUCT_NAME = RestKitThree20;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Three20;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
-				VALID_ARCHS = "armv6 armv7 i386";
+				VALID_ARCHS = "armv6 armv7 armv7s i386";
 				ZERO_LINK = NO;
 			};
 			name = "Ad Hoc";
@@ -3036,6 +3064,7 @@
 				PRODUCT_NAME = UISpec;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 				ZERO_LINK = NO;
 			};
 			name = "Ad Hoc";
@@ -3046,6 +3075,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 			};
 			name = Debug;
 		};
@@ -3055,6 +3085,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 			};
 			name = Release;
 		};
@@ -3064,6 +3095,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 			};
 			name = Distribution;
 		};
@@ -3085,6 +3117,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/Support/JSON/YAJL/Private;
 				PRODUCT_NAME = RestKitJSONParserYAJL;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Support/JSON/YAJL;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 				YAJL_GENERAL_OTHER_CFLAGS = "-Wdiv-by-zero -Wbad-function-cast -Wnested-externs -Wold-style-definition";
 			};
 			name = Debug;
@@ -3106,6 +3139,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/Support/JSON/YAJL/Private;
 				PRODUCT_NAME = RestKitJSONParserYAJL;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Support/JSON/YAJL;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 				YAJL_GENERAL_OTHER_CFLAGS = "-Wdiv-by-zero -Wbad-function-cast -Wnested-externs -Wold-style-definition";
 				ZERO_LINK = NO;
 			};
@@ -3126,6 +3160,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/Support/JSON/SBJSON/Private;
 				PRODUCT_NAME = RestKitJSONParserSBJSON;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Support/JSON/SBJSON;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 			};
 			name = Debug;
 		};
@@ -3143,6 +3178,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/Support/JSON/SBJSON/Private;
 				PRODUCT_NAME = RestKitJSONParserSBJSON;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Support/JSON/SBJSON;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -3161,6 +3197,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/Support/XML/LibXML/Private;
 				PRODUCT_NAME = RestKitXMLParserLibxml;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Support/XML/LibXML;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 			};
 			name = Debug;
 		};
@@ -3177,6 +3214,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/Support/XML/LibXML/Private;
 				PRODUCT_NAME = RestKitXMLParserLibxml;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Support/XML/LibXML;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 			};
 			name = Release;
 		};
@@ -3193,6 +3231,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/Support/XML/LibXML/Private;
 				PRODUCT_NAME = RestKitXMLParserLibxml;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Support/XML/LibXML;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 			};
 			name = Distribution;
 		};
@@ -3241,6 +3280,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 			};
 			name = Debug;
 		};
@@ -3286,6 +3326,7 @@
 				PRODUCT_NAME = UISpec;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -3304,6 +3345,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/Support/JSON/JSONKit/Private;
 				PRODUCT_NAME = RestKitJSONParserJSONKit;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Support/JSON/JSONKit;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 			};
 			name = Debug;
 		};
@@ -3320,6 +3362,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/RestKit/Support/JSON/JSONKit/Private;
 				PRODUCT_NAME = RestKitJSONParserJSONKit;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Support/JSON/JSONKit;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 				ZERO_LINK = NO;
 			};
 			name = Release;
