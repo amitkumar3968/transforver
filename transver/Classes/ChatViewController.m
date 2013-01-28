@@ -61,6 +61,8 @@ NSDate* startTime;
 @synthesize uilbRecSec;
 
 NSString *downloadfilename;
+CGRect origViewFrame;
+CGRect origBubbleFrame;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -189,6 +191,8 @@ NSString *downloadfilename;
     m_Messages = [[NSMutableArray alloc] init];
     
     self.title = m_DstName;
+    self.view.frame= CGRectMake(0, 0, 320, 373);
+    origViewFrame = self.view.frame;
     UIImage *bgimage = [UIImage imageNamed:@"common_bg_header.png"];
     [self.navigationController.navigationBar setBackgroundImage:bgimage forBarMetrics:UIBarMetricsDefault];
     //self.tableView.allowsSelection = NO;
@@ -198,6 +202,7 @@ NSString *downloadfilename;
     CGRect bubbleFrame = self.bubbleView.frame;
     bubbleFrame.origin.y = CGRectGetHeight(self.view.frame) - CGRectGetHeight(bubbleFrame);
     [self.bubbleView setFrame:bubbleFrame];
+    origBubbleFrame = bubbleFrame;
     self.bubbleView.view = self.view;
     [self.bubbleView setDelegate:self];
     //[self fetchMessages:1 ];
@@ -1221,12 +1226,12 @@ NSString *downloadfilename;
 
 - (void)keyboardWillHide:(NSNotification*)aNotification {
     
-    CGRect tableFrame = CGRectMake(0.0, 0.0, self.view.frame.size.width, self.view.frame.size.height - self.bubbleView.frame.size.height);
+    CGRect tableFrame = CGRectMake(0.0, 0.0, origViewFrame.size.width, origViewFrame.size.height - self.bubbleView.frame.size.height);
     
     CGRect bubbleFrame = self.bubbleView.frame;
     bubbleFrame.origin.y = CGRectGetMaxY(tableFrame);
     
-    [UIView animateWithDuration:0.3 
+    [UIView animateWithDuration:0.3
                      animations:^ {
                          self.tableView.frame = tableFrame;
                          self.bubbleView.frame = bubbleFrame;
