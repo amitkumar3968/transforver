@@ -16,6 +16,7 @@
 @synthesize image;
 @synthesize backgroundImg;
 @synthesize m_date;
+@synthesize TimerLabel;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

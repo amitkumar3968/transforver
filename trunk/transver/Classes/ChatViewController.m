@@ -28,6 +28,9 @@
 #import "MessageTableViewCell.h"
 #import "Common.h"
 */
+bool playerIsPlaying=FALSE;
+MessageTableViewCell *activeCell=Nil;
+
 
 
 @interface ChatViewController (Private) 
@@ -59,6 +62,8 @@ NSDate* startTime;
 @synthesize recordingBar;
 @synthesize recTimer;
 @synthesize uilbRecSec;
+@synthesize player;
+@synthesize playerTimer;
 
 NSString *downloadfilename;
 CGRect origViewFrame;
@@ -271,6 +276,7 @@ CGRect origBubbleFrame;
     }*/
     
     audioRecorder = [[[AudioRecorder	alloc] init] retain];
+    player=Nil;
     if ([sectionInfoArray count]>=1) {
         SectionInfo *sectionInfo = [self.sectionInfoArray objectAtIndex:[sectionInfoArray count]-1];
         [self sectionHeaderView:sectionInfo.headerView sectionOpened:[sectionInfoArray count]-1];
@@ -828,7 +834,7 @@ CGRect origBubbleFrame;
         UIImage *snap_picture = [UIImage imageNamed:@"message_btn_play.png"];
         [settingBtn setBackgroundImage:snap_picture forState:UIControlStateNormal];
         [settingBtn addTarget:self action:@selector(playVoice:) forControlEvents:UIControlEventTouchUpInside];
-        //settingBtn.tag = 2;
+        settingBtn.tag = [indexPath row];
         settingBtn.titleLabel.text = [NSString stringWithFormat:@"%d:%d", indexPath.section, indexPath.row];
         settingBtn.titleLabel.hidden = YES;
         [settingBtn setEnabled:YES];
@@ -880,13 +886,12 @@ CGRect origBubbleFrame;
         [cell addSubview:VEStateLabel];
         [VEStateLabel release];
         
-        UILabel *TimerLabel = [[UILabel alloc] initWithFrame:lblTimerFrame];
-        TimerLabel.text = [NSString stringWithFormat:@"00:30"];//@"00:30";
-        TimerLabel.textColor = [UIColor redColor];
-        TimerLabel.backgroundColor = [UIColor clearColor];
+        cell.TimerLabel = [[UILabel alloc] initWithFrame:lblTimerFrame];
+        cell.TimerLabel.text = [NSString stringWithFormat:@"00:00"];//@"00:00";
+        cell.TimerLabel.textColor = [UIColor redColor];
+        cell.TimerLabel.backgroundColor = [UIColor clearColor];
         //TimerLabel.tag = 7;
-        [cell addSubview:TimerLabel];
-        [TimerLabel release];
+        [cell addSubview:cell.TimerLabel];
         
         UILabel *DeleteLabel = [[UILabel alloc] initWithFrame:lblDeleteFrame];
         DeleteLabel.text = @"Delete";
@@ -943,12 +948,31 @@ CGRect origBubbleFrame;
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSString *path = [[NSString alloc] initWithString:(NSString*)[timer userInfo]];
     [fileManager removeItemAtPath:(NSString *)path error:NULL];
+    [Util dissmissAlertView];
 }
 
 - (void) playVoice:(id) sender
 {
+    if (player==Nil) {
+        //do nothing
+    }
+    else
+    {
+        if (player.isPlaying)
+        {
+            return;
+        }
+        else
+        {
+            //do nothing
+        }
+    }
+
+    
     NSLog(@"%d", ((UIButton *)sender).tag);
     UIButton *tmpBtn = sender;
+    activeCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:tmpBtn.tag inSection:0]];
+    
     NSArray * tmpArray = [tmpBtn.titleLabel.text componentsSeparatedByString:@":"];
     SectionInfo *sect =[sectionInfoArray objectAtIndex:[[tmpArray objectAtIndex:0] intValue]];
     NSMutableDictionary *dictionary = [m_DicMessages objectForKey:sect.header];
@@ -978,25 +1002,34 @@ CGRect origBubbleFrame;
             filepath = [NSString stringWithFormat:@"%@", tmpDialog.m_Dialog_Encrypt];
         else
             filepath = [NSString stringWithFormat:@"%@", tmpDialog.m_Dialog_Voice];
-        [self playSound:filepath];
     }
+    //todo: set timer     myTimer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(ScanHistory) userInfo:nil repeats:YES];
+    //todo: pass the handle of the time label of the cell (sender) to update time function
+    //todo: implement update time function
+    NSString *audioFullPath = [[NSString alloc] initWithFormat:@"%@/%@",[Util getDocumentPath], filepath];
+    NSError *err=Nil;
     if( decrypted==1)
     {
+        player = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:audioFullPath] error:NULL];
+        [player play];
+        playerTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updatePlayerSeconds:) userInfo:nil repeats:YES];
+        
         NSString *delpath = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath],filepath];
         NSURL* tmpUrl = [[NSURL alloc] initFileURLWithPath:delpath ];
         AVURLAsset* audioAsset = [AVURLAsset URLAssetWithURL:tmpUrl options:nil];
         CMTime audioDuration = audioAsset.duration;
         float audioDurationSeconds = CMTimeGetSeconds(audioDuration);
         NSLog(@"%f", audioDurationSeconds);
-        [NSTimer scheduledTimerWithTimeInterval:audioDurationSeconds target:self selector:@selector(removeFile:) userInfo:delpath repeats:NO];
+        
+        
         if( tmpDialog.m_Dialog_Autodelete == 1)
         {//auto delete the server file
+            [Util showAlertView:@"Message Deleted in 5 seconds !"];
+            [NSTimer scheduledTimerWithTimeInterval:audioDurationSeconds target:self selector:@selector(removeFile:) userInfo:delpath repeats:NO];
             NSLog(@"delete ID:%d", tmpDialog.m_Dialog_ID);
             [Util delMessages:tmpDialog.m_Dialog_ID];
         }
-        
     }
-    
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{ 
@@ -1348,7 +1381,6 @@ NSURLConnection* connection;
 	/*NSLog(@"Playing Sound!");
      [audioRecorder startPlayback];*/
 	//system("ls");
-    
 
 	SystemSoundID soundID = 0;
 	//NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -1369,7 +1401,6 @@ NSURLConnection* connection;
 		AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
 		AudioServicesPlaySystemSound(soundID);
 	}
-    
 	[tmpUrl release];
 }
 
@@ -1638,12 +1669,31 @@ NSURLConnection* connection;
 	AVAudioPlayer *cellPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:[NSURL fileURLWithPath:stringEscapedMyMusic] error:NULL];
 	cellPlayer.numberOfLoops = 0;
 	cellPlayer.volume = .5;
+    
 	//timeSlider.maximumValue = player.duration;
-	//timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(timeLoader) userInfo:nil repeats:YES];
-	[cellPlayer play];
+
+    playerIsPlaying=TRUE;
+	
+    [cellPlayer play];
+    
+    playerIsPlaying=FALSE;
 	[cellPlayer dealloc];
 	//==========================
 };
+
+-(void) updatePlayerSeconds:(NSTimer *)recTimer
+{
+    recSeconds += .1;
+    if (activeCell!=Nil)
+    {
+        activeCell.TimerLabel.text= [[NSString alloc] initWithFormat:@"%02i:%02i", (int)(recSeconds)/60, (int)recSeconds%60];
+    }
+    if (!player.isPlaying) {
+        recSeconds=0;
+        activeCell.TimerLabel.text=[[NSString alloc] initWithFormat:@"%02i:%02i", (int)(player.duration)/60, (int)player.duration%60];
+        [playerTimer invalidate];
+    }
+}
 
 #pragma mark VocSendVoiceDelegate methods
 
