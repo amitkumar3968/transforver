@@ -24,5 +24,6 @@
 @property (nonatomic, retain) NSString *m_date;
 @property (nonatomic, retain) UIImage *image;
 @property (nonatomic, retain) UIImage *backgroundImg;
+@property (nonatomic, retain) UILabel *TimerLabel;
 
 @end

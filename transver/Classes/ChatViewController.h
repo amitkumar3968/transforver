@@ -18,6 +18,7 @@
 #import <RestKit/CoreData/CoreData.h>
 #import "AudioRecorder.h"
 #import "vwRecordController.h"
+#import <AVFoundation/AVFoundation.h>
 
 @class Contact;
 
@@ -60,9 +61,11 @@
 @property (nonatomic, retain) NSMutableDictionary *m_DicMessages;
 
 @property (nonatomic,retain)  AudioRecorder *audioRecorder;
+@property (nonatomic,retain)  AVAudioPlayer *player;
 @property (nonatomic,retain)  UIView *recordingBar;
 @property (nonatomic,retain)  NSTimer *recTimer;
 @property (nonatomic,retain)  UILabel* uilbRecSec;
+@property (nonatomic,retain)  NSTimer* playerTimer;
 
 
 
