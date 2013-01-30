@@ -15,6 +15,7 @@
     
     IBOutlet UITextField *name;
     IBOutlet UITextField *phoneNum;
+    IBOutlet UILabel *phoneNumLabel;
     id <AddUserViewDelegate> delegate;
 }
 

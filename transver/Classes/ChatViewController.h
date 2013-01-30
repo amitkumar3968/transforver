@@ -62,7 +62,7 @@
 
 @property (nonatomic,retain)  AudioRecorder *audioRecorder;
 @property (nonatomic,retain)  AVAudioPlayer *player;
-@property (nonatomic,retain)  UIView *recordingBar;
+@property (nonatomic,retain)  UIView *msgBar;
 @property (nonatomic,retain)  NSTimer *recTimer;
 @property (nonatomic,retain)  UILabel* uilbRecSec;
 @property (nonatomic,retain)  NSTimer* playerTimer;

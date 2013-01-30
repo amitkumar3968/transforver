@@ -158,6 +158,7 @@
     else {
         // #2 mark
         //[NSThread detachNewThreadSelector:@selector(threadStartAnimating:) toTarget:self withObject:nil];
+            [Util showAlertView:@"Uploading ..."];
         [self converAndSendMessage];
     }
     //#2 mark
@@ -171,6 +172,7 @@
 
 -(void) converAndSendMessage
 {
+
     NSString* processingRecordingFileName = RECORDING_FILE_AIF;
     NSString* processingVocodeFileName = VOCODE_FILE_AIF;
  
@@ -210,9 +212,9 @@
 						 toPath:originalFilepath error:nil];
     if( [fileManager fileExistsAtPath:originalFilepath])
     {
-        //todo: file existence check
-        /*
+        
         int error = [self uploadFile:originalFilepath];
+        /*
         if( error )
         {
             [self.view makeToast:@"Fail!!"
@@ -226,7 +228,8 @@
                         position:@"center"
                            title:@"UPLOAD FILE"];
         }
-        */
+         */
+        
     }
     else
     {
@@ -242,9 +245,9 @@
 						 toPath:vocodedFilepath error:nil];
     if( [fileManager fileExistsAtPath:vocodedFilepath])
     {
-        //Todo: file existence check
-        /*
+        
         int error = [self uploadFile:vocodedFilepath];
+        /*
         if( error )
         {
             [self.view makeToast:@"Fail!!"
@@ -259,6 +262,7 @@
                        title:@"UPLOAD FILE"];
         }
          */
+         
     }
     else
     {
@@ -275,6 +279,7 @@
     else{
         [self sendVoice:originalFilename vocode:vocodedFilename pass:@""];
     }
+    [Util dissmissAlertView];
     self.tabBarController.tabBar.hidden=FALSE;
     [progressView stopAnimating];
 }
@@ -292,13 +297,22 @@
 
 
 - (void) sendVoice:(NSString *)origfilename vocode:(NSString *)vocodefilename pass:(NSString *)password{
+    
     NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/sendMessages.php"];
-    NSString *postString = [NSString stringWithFormat:@"srcID=%d&dstID=%d&type=1&orig=%@&vocode=%@&password=%@",g_UserID, destID,origfilename,vocodefilename,password];
+    NSString *postString;
+    if (uiswAutoDel)
+    {
+        postString = [NSString stringWithFormat:@"srcID=%d&dstID=%d&type=1&orig=%@&vocode=%@&password=%@&autodelete=%@",g_UserID, destID,origfilename,vocodefilename,password,@"1"];
+    }
+    else
+    {
+        postString = [NSString stringWithFormat:@"srcID=%d&dstID=%d&type=1&orig=%@&vocode=%@&password=%@&autodelete=%@",g_UserID, destID,origfilename,vocodefilename,password,@"0"];
+    }
+
     //NSString *urlString = @"http://www.entalkie.url.tw/getRelationships.php?masterID=1";
     NSData *data = [DBHandler sendReqToUrl:urlString postString:postString];
     NSArray *array = nil;
     //NSMutableArray *ret = [[NSMutableArray alloc] init ];
-    
     if(data!=Nil)
     {
         NSString *responseString = [[NSString alloc] initWithData:data

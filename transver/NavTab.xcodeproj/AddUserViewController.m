@@ -7,6 +7,7 @@
 //
 
 #import "AddUserViewController.h"
+#import "Util.h"
 
 
 @implementation AddUserViewController
@@ -59,8 +60,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSString *countryCode = [Util getCountryCode];
+    if ([countryCode compare:@"886"]==0) {
+        phoneNum.placeholder=@"-925-111-111";
+    }
+    else{
+        phoneNum.placeholder=@"-938-111-1112";
+    }
+    
     name.keyboardType = UIKeyboardTypeAlphabet;
     phoneNum.keyboardType = UIKeyboardTypeNumberPad;
+    phoneNumLabel.text=[[NSString alloc] initWithFormat:@"Phone No: +%@-", [Util getCountryCode]];
     UIBarButtonItem *rightButton = 
 	[[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStyleDone target:self action:@selector(save:)];
 	

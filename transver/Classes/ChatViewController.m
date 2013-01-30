@@ -30,13 +30,14 @@
 */
 bool playerIsPlaying=FALSE;
 MessageTableViewCell *activeCell=Nil;
-
+float msgBarDuration;
 
 
 @interface ChatViewController (Private) 
 
 #define DEFAULT_ROW_HEIGHT 78
 #define HEADER_HEIGHT 32
+#define AUTODELETE_DELAY 5
 //- (void)configureCell:(MessageTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 - (void)dismissKeyboardIfNeeded;
 - (void)registerForKeyboardNotifications;
@@ -59,7 +60,7 @@ NSDate* startTime;
 @synthesize m_Quest;
 @synthesize audioRecorder;
 @synthesize txtMessage;
-@synthesize recordingBar;
+@synthesize msgBar;
 @synthesize recTimer;
 @synthesize uilbRecSec;
 @synthesize player;
@@ -93,16 +94,16 @@ CGRect origBubbleFrame;
         
         recTimer = [NSTimer scheduledTimerWithTimeInterval:.05f target:self selector:@selector(updateRecordingState:) userInfo:nil repeats:YES];
         
-        recordingBar= [[UIView alloc] initWithFrame:CGRectMake(0, 48, 320, 30)];
-        recordingBar.backgroundColor=[UIColor redColor];
+        msgBar= [[UIView alloc] initWithFrame:CGRectMake(0, 48, 320, 30)];
+        msgBar.backgroundColor=[UIColor redColor];
         
         uilbRecSec =  [[UILabel alloc] initWithFrame: CGRectMake(30, 0, 180, 30)];
         uilbRecSec.backgroundColor = [UIColor clearColor];
         uilbRecSec.textColor = [UIColor yellowColor];
         uilbRecSec.text = @"Recording: Start !";
         
-        [recordingBar addSubview:uilbRecSec];
-        [self.view addSubview:recordingBar];
+        [msgBar addSubview:uilbRecSec];
+        [self.view addSubview:msgBar];
         startTime = [[NSDate date] retain];
     }
     else {
@@ -910,6 +911,7 @@ CGRect origBubbleFrame;
         slider.continuous = YES;
         slider.value = 0.0;
         slider.enabled = NO;
+        slider.hidden=YES;
         [cell addSubview:slider];
         [slider release];
     }
@@ -945,10 +947,36 @@ CGRect origBubbleFrame;
 
 - (void) removeFile:(NSTimer *)timer
 {
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString *path = [[NSString alloc] initWithString:(NSString*)[timer userInfo]];
-    [fileManager removeItemAtPath:(NSString *)path error:NULL];
-    [Util dissmissAlertView];
+    msgBarDuration -=.1;
+    NSLog(@"%f", msgBarDuration);
+    if (msgBarDuration>AUTODELETE_DELAY) {
+        uilbRecSec.text = @"Message will be deleted after playing!";
+        NSLog(@"playing");
+    }
+    else
+    {
+        if (msgBarDuration>0) {
+            uilbRecSec.text = [[NSString alloc] initWithFormat:@"Delete message in %d seconds", (int)msgBarDuration];
+            NSLog(@"countdown");
+        }
+        else{
+            if (msgBarDuration>-1)
+            {
+                uilbRecSec.text = @"Message deleted!";
+            }
+            else
+            {
+                NSFileManager *fileManager = [NSFileManager defaultManager];
+                NSString *path = [[NSString alloc] initWithString:(NSString*)[timer userInfo]];
+                [fileManager removeItemAtPath:(NSString *)path error:NULL];
+                [Util dissmissAlertView];
+                NSLog(@"delete file");
+                [msgBar removeFromSuperview];
+                [timer invalidate];
+                [self viewWillAppear:YES];
+            }
+        }
+    }
 }
 
 - (void) playVoice:(id) sender
@@ -989,6 +1017,8 @@ CGRect origBubbleFrame;
         index++;
         prevDialog = [dictionary objectForKey:key];
     }
+    
+    //check file existed
     NSString *filepath;
     int decrypted = 0;
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -996,6 +1026,8 @@ CGRect origBubbleFrame;
     {
         decrypted = 1;
     }
+    
+    
     if( tmpDialog.m_Dialog_Type == 1)//audio file
     {
         if( [tmpDialog.m_Dialog_Encrypt length]!= 0 && decrypted==0)
@@ -1007,12 +1039,15 @@ CGRect origBubbleFrame;
     //todo: pass the handle of the time label of the cell (sender) to update time function
     //todo: implement update time function
     NSString *audioFullPath = [[NSString alloc] initWithFormat:@"%@/%@",[Util getDocumentPath], filepath];
+    player = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:audioFullPath] error:NULL];
+    [player play];
+    playerTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updatePlayerSeconds:) userInfo:nil repeats:YES];
     NSError *err=Nil;
+    
+    //check auto delete
     if( decrypted==1)
     {
-        player = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:audioFullPath] error:NULL];
-        [player play];
-        playerTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updatePlayerSeconds:) userInfo:nil repeats:YES];
+
         
         NSString *delpath = [NSString stringWithFormat:@"%@/%@", [Util getDocumentPath],filepath];
         NSURL* tmpUrl = [[NSURL alloc] initFileURLWithPath:delpath ];
@@ -1024,8 +1059,17 @@ CGRect origBubbleFrame;
         
         if( tmpDialog.m_Dialog_Autodelete == 1)
         {//auto delete the server file
-            [Util showAlertView:@"Message Deleted in 5 seconds !"];
-            [NSTimer scheduledTimerWithTimeInterval:audioDurationSeconds target:self selector:@selector(removeFile:) userInfo:delpath repeats:NO];
+            msgBar= [[UIView alloc] initWithFrame:CGRectMake(0, 48, 320, 30)];
+            msgBar.backgroundColor=[UIColor redColor];
+            uilbRecSec.text= @"Message will be deleted after playing!";
+            uilbRecSec =  [[UILabel alloc] initWithFrame: CGRectMake(30, 0, 260, 30)];
+            uilbRecSec.backgroundColor = [UIColor clearColor];
+            uilbRecSec.textColor = [UIColor yellowColor];
+            [msgBar addSubview:uilbRecSec];
+            [self.view addSubview:msgBar];
+            
+            msgBarDuration = audioDurationSeconds+AUTODELETE_DELAY;
+            [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(removeFile:) userInfo:delpath repeats:YES];
             NSLog(@"delete ID:%d", tmpDialog.m_Dialog_ID);
             [Util delMessages:tmpDialog.m_Dialog_ID];
         }
@@ -1062,15 +1106,44 @@ CGRect origBubbleFrame;
 
 - (void) decrypt:(id) sender
 {
+    
     NSLog(@"%d", ((UIButton *)sender).tag);
     UIButton *tmpBtn = sender;
+    
+    //set index to retrieve password
     NSArray * tmpArray = [tmpBtn.titleLabel.text componentsSeparatedByString:@":"];
     currentPasswordIndex = [[tmpArray objectAtIndex:1] intValue];
     currentPasswordSection = [[tmpArray objectAtIndex:0] intValue];
-    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"VEM" message:@"Please input password!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [alert show];
-    [alert release];
+    
+    //if password = "", download decrypted file, set decrypt = 1
+    if( currentPasswordIndex != -1 && currentPasswordSection != -1)
+    {
+        SectionInfo *sect =[sectionInfoArray objectAtIndex:currentPasswordSection];
+        NSDictionary *dictionary = [m_DicMessages objectForKey:sect.header];
+        NSEnumerator *enumerator = [dictionary keyEnumerator];
+        id key;
+        int index = 0;
+        Dialog *tmpDialog, *prevDialog;
+        while ((key = [enumerator nextObject])) {
+            tmpDialog = [dictionary objectForKey:key];
+            if( index == currentPasswordIndex)
+                break;
+            index++;
+            prevDialog = [dictionary objectForKey:key];
+        }
+        if ([tmpDialog.m_Dialog_Password compare:@""]==0) {
+            //to download decrypt file
+            NSLog(@"download decrypt file");
+            [self queueRequests:tmpDialog.m_Dialog_Voice];
+        }
+    }
+    else
+    {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"VEM" message:@"Please input password!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+        [alert show];
+        [alert release];
+    }
 }
 
 #pragma mark - Table view delegate
@@ -1124,6 +1197,8 @@ CGRect origBubbleFrame;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // Do nothing!
+    /*
     NSLog(@"selected row:%d",indexPath.row);
     //just return no need any reation
     return;
@@ -1164,6 +1239,7 @@ CGRect origBubbleFrame;
     {
         [self playSound:cellValue];
     }
+    */
     //[self playSound:[elementArr objectAtIndex:0]];
 }
 

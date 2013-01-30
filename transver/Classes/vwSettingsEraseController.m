@@ -116,7 +116,7 @@ NSInteger eraseHistoryInterval[8]={30*12*31*86400,91*86400,30*86400,7*86400,8640
     currentSelectOption = [defaults integerForKey:ERASE_HISTORY_OPTION];
 
     if ( currentSelectOption == 0) { // do not save in standardUserDefaults
-        currentSelectOption = 7; // default setting.
+        currentSelectOption = 1; // default setting.
     }
     
     NSLog(@"Now Option: %d", currentSelectOption);
