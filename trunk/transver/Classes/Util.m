@@ -402,7 +402,7 @@ static UIAlertView *g_AlertView = nil;
 {
     NSDate *nextDeleteDate = [g_Settings objectForKey:@"NextEraseDate"];
     NSDate *now = [NSDate dateWithTimeIntervalSinceNow:0];
-    if (now >nextDeleteDate) {
+    if ([now compare:nextDeleteDate]==NSOrderedDescending&&nextDeleteDate!=Nil) {
         [self eraseHistory];
     }
 }

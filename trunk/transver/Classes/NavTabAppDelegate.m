@@ -109,7 +109,6 @@
     {   
         g_UserName=name;
         NSString* countryCode = [Util getCountryCode];
-        phonenumber = [phonenumber substringFromIndex:1];
         phonenumber = [[NSString alloc] initWithFormat:@"%@-%@", countryCode, phonenumber];
         NSLog(@"phone num:%@", phonenumber);
         g_UserNumber = phonenumber;
