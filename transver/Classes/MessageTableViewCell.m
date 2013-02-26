@@ -159,7 +159,9 @@
         effectiveOriginY = kMessageBigSeparation;
         alignment = UITextAlignmentRight;
     }
-    CGRect textRect = CGRectMake(effectiveOriginY, kMessageTopSeparation, rect.size.width - kMessageSideSeparation*2 - kMessageImageWidth - kMessageBigSeparation, kMaxHeight);
+    CGRect textRect = CGRectMake(effectiveOriginY, kMessageTopSeparation, rect.size.width - kMessageSideSeparation*2 - kMessageImageWidth - kMessageBigSeparation -20, kMaxHeight);
+    
+    //textRect.size.width -= 20;
     CGSize textSize = [text sizeWithFont:font constrainedToSize:textRect.size lineBreakMode:UILineBreakModeWordWrap];
     textRect.size.height = textSize.height;
     NSLog(@"%@", text);
