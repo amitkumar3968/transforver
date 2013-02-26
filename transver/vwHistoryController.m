@@ -174,6 +174,10 @@
                 [m_RelationKey setObject:[dic objectForKey:@"DIALOG_DESTINATIONID"] forKey:[dic objectForKey:@"DIALOG_DESTINATIONID"]];
         }
     }
+    if ( [m_HistoryDialog count] == 0)
+    {
+        [m_RelationKey removeAllObjects];
+    }
     NSLog(@"%d", [m_RelationKey count]);
     [m_AlreadyAdd removeAllObjects];
     return [m_RelationKey count];
