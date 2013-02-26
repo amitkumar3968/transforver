@@ -1180,7 +1180,7 @@ CGRect origBubbleFrame;
         NSString *cellValue = tmpDialog.m_Dialog_Message;
         //Message *message = [_listOfItems objectAtIndex:indexPath.section];
         
-        CGRect textRect = CGRectMake(0.0, 0.0, tbView.frame.size.width - kMessageSideSeparation*2 - kMessageImageWidth - kMessageBigSeparation, kMaxHeight);
+        CGRect textRect = CGRectMake(0.0, 0.0, tbView.frame.size.width - kMessageSideSeparation*2 - kMessageImageWidth - kMessageBigSeparation - 20, kMaxHeight);
         UIFont *font = [UIFont systemFontOfSize:16.0];
         CGSize textSize = [cellValue sizeWithFont:font constrainedToSize:textRect.size lineBreakMode:UILineBreakModeWordWrap];
         
