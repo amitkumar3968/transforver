@@ -1136,13 +1136,13 @@ CGRect origBubbleFrame;
             NSLog(@"download decrypt file");
             [self queueRequests:tmpDialog.m_Dialog_Voice];
         }
-    }
-    else
-    {
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"VEM" message:@"Please input password!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-        [alert show];
-        [alert release];
+        else
+        {
+            UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"VEM" message:@"Please input password!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+            [alert show];
+            [alert release];
+        }
     }
 }
 
