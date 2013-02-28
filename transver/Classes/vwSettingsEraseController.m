@@ -55,6 +55,7 @@ NSInteger eraseHistoryInterval[8]={30*12*31*86400,91*86400,30*86400,7*86400,8640
     NSDate *nextEraseDate = [NSDate dateWithTimeIntervalSinceNow:eraseHistoryInterval[currentSelectOption-1]];
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:nextEraseDate forKey:@"NextEraseDate"];
+    [defaults setInteger:currentSelectOption forKey:ERASE_HISTORY_OPTION];
     [defaults synchronize];
 
     [self dismissViewControllerAnimated:YES completion:^(void){}];

@@ -129,10 +129,10 @@
     int option = [userDefaults integerForKey:ERASE_HISTORY_OPTION];
     NSString* everyXMinsString;
     switch (option) {
-        case 0:// use default value
-            everyXMinsString = @"Every 5 mins";
+        case 0: // Never set, set to default
+            everyXMinsString = @"Never";
             break;
-        case 1:
+        case 1: // Default
             everyXMinsString = @"Never";
             break;
         case 2:
@@ -159,8 +159,8 @@
     }
     [uibtEveryXMins setTitle:everyXMinsString forState:UIControlStateNormal];
     
-    // Load(get) Free Storage Size
-    [uilbFreeStorageSize setText:[self getMPSize]];
+    // Load(get) space used
+    [uilbFreeStorageSize setText: [self getMPSize:[self folderSize]]];
 //    NSError* error = [[NSError alloc] init];
 //    NSDictionary* dic = [NSFileManager attributesOfItemAtPath:@"/" error:error];
 //    NSString* size = [dic objectForKey:@"fileSize"];
@@ -215,11 +215,25 @@
     return totalFreeSpace;
 }
 
--(NSString *)getMPSize
+- (unsigned long long int)folderSize {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *folderPath = [paths objectAtIndex:0];
+    NSArray *filesArray = [[NSFileManager defaultManager] subpathsOfDirectoryAtPath:folderPath error:nil];
+    NSEnumerator *filesEnumerator = [filesArray objectEnumerator];
+    NSString *fileName;
+    unsigned long long int fileSize = 0;
+    
+    while (fileName = [filesEnumerator nextObject]) {
+        NSDictionary *fileDictionary = [[NSFileManager defaultManager] fileAttributesAtPath:[folderPath stringByAppendingPathComponent:fileName] traverseLink:YES];
+        fileSize += [fileDictionary fileSize];
+    }
+    
+    return fileSize;
+}
+
+-(NSString *)getMPSize:(int) size_t
 {
-    int size = [self getFreeDiskspace];
-    NSLog(@"Size %d", size);
-    double d_size = size;
+    double d_size = size_t;
     if ( d_size < 1024 ) {
         return [NSString stringWithFormat:@"0 KB"];
     }
@@ -249,7 +263,38 @@
 
 - (IBAction)cleaAllHistory:(id)sender {
     // TODO clean all voice recorder history
+    UIAlertView *cleanAllHistAlert = [[UIAlertView alloc] initWithTitle:@"Clean All Messages" message:@"Clean All Message?" delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
+    
+    // Remove all audio file in document folder
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSFileManager *fileMgr = [[[NSFileManager alloc] init] autorelease];
+    NSError *error = nil;
+    NSArray *directoryContents = [fileMgr contentsOfDirectoryAtPath:documentsDirectory error:&error];
+    if (error == nil) {
+        for (NSString *path in directoryContents) {
+            NSString *fullPath = [documentsDirectory stringByAppendingPathComponent:path];
+            
+            // Delete caf files only
+            NSRange range = [fullPath rangeOfString:@"caf"];
+            if (range.location != NSNotFound)
+            {
+                BOOL removeSuccess = [fileMgr removeItemAtPath:fullPath error:&error];
+                if (!removeSuccess) {
+                    // Error handling
+                    NSLog(@"file %@ was not deleted!", fullPath);
+                }
+            }
+        }
+    } else {
+        // Error handling
+        NSLog(@"Error when retrieving list of files in document folder!");
+    }
+}
+-(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex==0) {
+        //do nothing
+    }
     [Util eraseHistory];
 }
-
 @end

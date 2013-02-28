@@ -300,7 +300,7 @@
     
     NSString *urlString = [NSString stringWithFormat:@"http://www.entalkie.url.tw/sendMessages.php"];
     NSString *postString;
-    if (uiswAutoDel)
+    if (uiswAutoDel.on)
     {
         postString = [NSString stringWithFormat:@"srcID=%d&dstID=%d&type=1&orig=%@&vocode=%@&password=%@&autodelete=%@",g_UserID, destID,origfilename,vocodefilename,password,@"1"];
     }

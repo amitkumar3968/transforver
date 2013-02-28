@@ -375,7 +375,6 @@
 		A497E19A16671A1600FDA4AE /* player_btn_play_blank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A497E19916671A1600FDA4AE /* player_btn_play_blank@2x.png */; };
 		A497E19C16671ADA00FDA4AE /* dovocode_icon_blank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A497E19B16671ADA00FDA4AE /* dovocode_icon_blank@2x.png */; };
 		A4C09D5D16B6BCFF00078A93 /* record_btn_bg_dovocode.png in Resources */ = {isa = PBXBuildFile; fileRef = A4C09D5C16B6BCFF00078A93 /* record_btn_bg_dovocode.png */; };
-		A4D26A3816B9727A009E840F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D26A3716B9727A009E840F /* Default-568h@2x.png */; };
 		A4E5956D1681B18600851A41 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4E5956C1681B18600851A41 /* CoreTelephony.framework */; };
 		A4E595C716831E0400851A41 /* MyContactsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4E595C616831E0400851A41 /* MyContactsView.xib */; };
 		A4F632A3159DD22F003C709D /* vwRecordController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4F632A2159DD22E003C709D /* vwRecordController.xib */; };
@@ -925,7 +924,6 @@
 		A497E19916671A1600FDA4AE /* player_btn_play_blank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "player_btn_play_blank@2x.png"; path = "record/player_btn_play_blank@2x.png"; sourceTree = "<group>"; };
 		A497E19B16671ADA00FDA4AE /* dovocode_icon_blank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dovocode_icon_blank@2x.png"; path = "record/dovocode_icon_blank@2x.png"; sourceTree = "<group>"; };
 		A4C09D5C16B6BCFF00078A93 /* record_btn_bg_dovocode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = record_btn_bg_dovocode.png; path = record/record_btn_bg_dovocode.png; sourceTree = "<group>"; };
-		A4D26A3716B9727A009E840F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A4E5956C1681B18600851A41 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		A4E595C616831E0400851A41 /* MyContactsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MyContactsView.xib; path = Classes/MyContactsView.xib; sourceTree = "<group>"; };
 		A4F632A2159DD22E003C709D /* vwRecordController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = vwRecordController.xib; sourceTree = "<group>"; };
@@ -1078,7 +1076,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				A4D26A3716B9727A009E840F /* Default-568h@2x.png */,
 				A4E5956C1681B18600851A41 /* CoreTelephony.framework */,
 				4FD9B35316497C5C00107B46 /* CoreMedia.framework */,
 				ED55DB311607273200BBCA5B /* ExtAudioFileConvert.mm */,
@@ -2120,7 +2117,6 @@
 				A497E19C16671ADA00FDA4AE /* dovocode_icon_blank@2x.png in Resources */,
 				A4E595C716831E0400851A41 /* MyContactsView.xib in Resources */,
 				A4C09D5D16B6BCFF00078A93 /* record_btn_bg_dovocode.png in Resources */,
-				A4D26A3816B9727A009E840F /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2297,7 +2293,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				"HEADER_SEARCH_PATHS[arch=*]" = "\"$(SOURCE_ROOT)/RestKit/Build\"";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				"LIBRARY_SEARCH_PATHS[arch=*]" = "\"$(SOURCE_ROOT)/RestKit/Build/$(BUILD_STYLE)-$(PLATFORM_NAME)\"";
 				ONLY_ACTIVE_ARCH = YES;
 				"OTHER_LDFLAGS[arch=*]" = (
@@ -2320,7 +2316,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				"HEADER_SEARCH_PATHS[arch=*]" = "\"$(SOURCE_ROOT)/RestKit/Build\"";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				"LIBRARY_SEARCH_PATHS[arch=*]" = "\"$(SOURCE_ROOT)/RestKit/Build/$(BUILD_STYLE)-$(PLATFORM_NAME)\"";
 				ONLY_ACTIVE_ARCH = YES;
 				"OTHER_LDFLAGS[arch=*]" = (
