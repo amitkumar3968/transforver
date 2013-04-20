@@ -264,37 +264,44 @@
 - (IBAction)cleaAllHistory:(id)sender {
     // TODO clean all voice recorder history
     UIAlertView *cleanAllHistAlert = [[UIAlertView alloc] initWithTitle:@"Clean All Messages" message:@"Clean All Message?" delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
-    
-    // Remove all audio file in document folder
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSFileManager *fileMgr = [[[NSFileManager alloc] init] autorelease];
-    NSError *error = nil;
-    NSArray *directoryContents = [fileMgr contentsOfDirectoryAtPath:documentsDirectory error:&error];
-    if (error == nil) {
-        for (NSString *path in directoryContents) {
-            NSString *fullPath = [documentsDirectory stringByAppendingPathComponent:path];
-            
-            // Delete caf files only
-            NSRange range = [fullPath rangeOfString:@"caf"];
-            if (range.location != NSNotFound)
-            {
-                BOOL removeSuccess = [fileMgr removeItemAtPath:fullPath error:&error];
-                if (!removeSuccess) {
-                    // Error handling
-                    NSLog(@"file %@ was not deleted!", fullPath);
-                }
-            }
-        }
-    } else {
-        // Error handling
-        NSLog(@"Error when retrieving list of files in document folder!");
-    }
+    [cleanAllHistAlert show];
 }
 -(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex==0) {
         //do nothing
     }
-    [Util eraseHistory];
+    else
+    {
+        // Erase messages on the server
+        [Util eraseHistory];
+        
+        // Remove all audio file in document folder
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *documentsDirectory = [paths objectAtIndex:0];
+        NSFileManager *fileMgr = [[[NSFileManager alloc] init] autorelease];
+        NSError *error = nil;
+        NSArray *directoryContents = [fileMgr contentsOfDirectoryAtPath:documentsDirectory error:&error];
+        if (error == nil) {
+            for (NSString *path in directoryContents) {
+                NSString *fullPath = [documentsDirectory stringByAppendingPathComponent:path];
+                
+                // Delete caf files only
+                NSRange range = [fullPath rangeOfString:@"caf"];
+                if (range.location != NSNotFound)
+                {
+                    BOOL removeSuccess = [fileMgr removeItemAtPath:fullPath error:&error];
+                    if (!removeSuccess) {
+                        // Error handling
+                        NSLog(@"file %@ was not deleted!", fullPath);
+                    }
+                }
+            }
+        } else {
+            // Error handling
+            NSLog(@"Error when retrieving list of files in document folder!");
+        }
+        [self viewDidLoad];
+        [self viewWillAppear:YES];
+    }
 }
 @end
